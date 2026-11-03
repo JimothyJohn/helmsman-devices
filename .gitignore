@@ -1,0 +1,4 @@
+*.eds
+*.pdf
+scratch/
+.claude/handoff.md

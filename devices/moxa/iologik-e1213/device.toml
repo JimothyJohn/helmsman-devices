@@ -1,0 +1,67 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1213"
+kind = "remote-io"
+channels = "8 DI, 4 DO, 4 DIO (source type)"
+checked_on = "2026-11-02"
+firmware = "V3.1 Build19110615"
+checked_by = "helmsman bench, serial TAIGB1106222"
+
+[identity.enip]
+vendor_id = 991
+product_code = 515
+device_type = 12
+revisions = ["3.1", "4.1"]
+product_name = "ioLogik E1213"
+
+[protocols.enip]
+driver = "enip-io"
+map = "enip.map"
+profile = "moxa-e1213"
+rpi_ms = { min = 100, max = 3000, default = 100 }
+input_assembly = { instance = 101, bytes = 51 }
+output_assembly = { instance = 102, bytes = 1 }
+# The device names UDP 5222 for O->T data in its Forward_Open reply and
+# ignores O->T sent to 2222 (firmware 3.1, bench 2026-11-02).
+o_to_t_port_from_reply = true
+eds = { name = "moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds", size = 42906, sha256 = "3895fbca8bb036c1b31a9d6b68dea69eca6892fe0a6bce7409ab76311cfd470d", url = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-ios/iologik-e1200-series#resources", terms = "none stated in the file; not redistributed here" }
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+[[points]]
+name = "DI-00..DI-11"
+enip = "di:0..di:11 (input bytes 0-1, bit n = channel n)"
+modbus = "di:0..di:11"
+meaning = "digital input state, 1 = on"
+source = "E1200 manual v15.10 p. B-1, p. A-7; bit order confirmed on the bench 2026-11-02"
+
+[[points]]
+name = "DI counters"
+enip = "in:2:u32 .. in:46:u32 (UDINT at byte 2 + 4n, little-endian)"
+modbus = "ir:16:u32 .. ir:38:u32 (two words a channel, high word first)"
+meaning = "counter mode value; 0 in DI mode"
+source = "E1200 manual v15.10 p. B-1, p. A-7; byte order inferred"
+
+[[points]]
+name = "DO-00..DO-07"
+enip = "do:0..do:7 (output byte 0, bit n = channel n); status in:50.0..in:50.7"
+modbus = "coil:0..coil:7; hr:32 = all eight as one word"
+meaning = "digital output command and state, 1 = on; DO-04..07 are the hybrid DIO channels in DO mode"
+source = "E1200 manual v15.10 p. B-2, p. A-7; confirmed on the bench 2026-11-02"
+
+[wiring]
+note = "The DO are source type and need EXT field power (12-36 V on the EXT terminals, jumper JP10 default) before an output drives anything; the console's overview says 'No External Power' until then."
+source = "E1200 manual v15.10 p. 2-6, p. 1-4; bench 2026-11-02"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "E1213 EDS v2.0 (EZ-EDS 3.27, revision 1 for firmware 4.0)"
+sha256 = "3895fbca8bb036c1b31a9d6b68dea69eca6892fe0a6bce7409ab76311cfd470d"
