@@ -37,6 +37,20 @@ def entry(folder: pathlib.Path) -> dict:
         "model": text(dev.get("model"), f"{rel}: device.model"),
         "kind": text(dev.get("kind", "other"), f"{rel}: device.kind"),
     }
+    profile = dev.get("profile")
+    if profile is not None:
+        profile = text(profile, f"{rel}: device.profile")
+        stem = profile[: -len(".device")] if profile.endswith(".device") else ""
+        if not stem or not (1 <= len(stem) <= 48) or not stem[0].isalnum() or any(
+            c not in "abcdefghijklmnopqrstuvwxyz0123456789_-" for c in stem
+        ):
+            raise SystemExit(f"{rel}: device.profile: NAME.device, NAME 1 to 48 of a-z 0-9 _ -")
+        if not (folder / profile).is_file():
+            raise SystemExit(f"{rel}: device.profile names {profile}, which is not in the folder")
+        first = (folder / profile).read_text().splitlines()[:1]
+        if first != ["helmsman-device 1"]:
+            raise SystemExit(f"{rel}: {profile}: the first line must be helmsman-device 1")
+        out["profile"] = profile
     ident = {}
     enip = t.get("identity", {}).get("enip")
     if enip:
