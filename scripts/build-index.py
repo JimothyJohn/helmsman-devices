@@ -11,6 +11,7 @@ Usage: python3 -I scripts/build-index.py [--check]
 
 Standard library only (tomllib needs Python 3.11).
 """
+
 import json
 import pathlib
 import sys
@@ -41,8 +42,11 @@ def entry(folder: pathlib.Path) -> dict:
     if profile is not None:
         profile = text(profile, f"{rel}: device.profile")
         stem = profile[: -len(".device")] if profile.endswith(".device") else ""
-        if not stem or not (1 <= len(stem) <= 48) or not stem[0].isalnum() or any(
-            c not in "abcdefghijklmnopqrstuvwxyz0123456789_-" for c in stem
+        if (
+            not stem
+            or not (1 <= len(stem) <= 48)
+            or not stem[0].isalnum()
+            or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789_-" for c in stem)
         ):
             raise SystemExit(f"{rel}: device.profile: NAME.device, NAME 1 to 48 of a-z 0-9 _ -")
         if not (folder / profile).is_file():
@@ -70,13 +74,19 @@ def entry(folder: pathlib.Path) -> dict:
             if key in p:
                 rec[key] = text(p[key], f"{rel}: protocols.{name}.{key}")
                 if key == "map" and not (folder / rec[key]).is_file():
-                    raise SystemExit(f"{rel}: protocols.{name}.map names {rec[key]}, which is not in the folder")
+                    raise SystemExit(
+                        f"{rel}: protocols.{name}.map names {rec[key]}, which is not in the folder"
+                    )
         eds = p.get("eds")
         if eds:
             sha = str(eds.get("sha256", ""))
             if len(sha) != 64 or any(c not in "0123456789abcdefABCDEF" for c in sha):
                 raise SystemExit(f"{rel}: protocols.{name}.eds.sha256: 64 hex digits")
-            rec["eds"] = {"name": text(eds.get("name"), f"{rel}: eds.name"), "size": int(eds.get("size", 0)), "sha256": sha.lower()}
+            rec["eds"] = {
+                "name": text(eds.get("name"), f"{rel}: eds.name"),
+                "size": int(eds.get("size", 0)),
+                "sha256": sha.lower(),
+            }
         protocols[name] = rec
     if protocols:
         out["protocols"] = protocols
