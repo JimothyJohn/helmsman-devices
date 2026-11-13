@@ -162,8 +162,14 @@ against anyone on the same network; keep the console on the device link.
   moxa -> moxa both answered "Change Password Fail!", with the request
   built exactly as the page's script builds it (07.htm unchanged but for its
   token; `OldPwd` = MD5("moxa") as Moxa's own `md5.js` computes it). The first
-  change, from no password, was accepted. Not understood yet; the next step
-  is to capture what a browser sends for the same change.
+  change, from no password, was accepted. **Not the client's fault**: the
+  unit's own 07.htm, passwd.js (a plain getCookie/setCookie) and md5.js,
+  run in headless Chromium against a local stub with the unit's cookies,
+  send a query byte-for-byte equal to the client's for all three changes
+  (""->moxa, moxa->"", moxa->moxa). So a browser would send exactly what the
+  unit refused; what is left is headers (Referer, User-Agent), not tried.
+  The bench unit stays on "moxa", the default of firmware 3.3 and later;
+  whether a firmware update fixes the change is untested.
 
 Not done, and why:
 - **Changing a password once one is set**, above.
