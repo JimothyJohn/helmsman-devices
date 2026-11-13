@@ -5,6 +5,7 @@ helmsman-device 1
 vendor Moxa
 model  ioLogik E1213
 kind   remote-io
+configure moxa-e1200   # the web console: helmsman-devconf's moxa_e1200 (config, restart, restore, password)
 
 # EtherNet/IP first (cyclic, one connection); Modbus TCP when the unit's one
 # connection is taken (its firmware 3.1 grants a single owner). The box asks

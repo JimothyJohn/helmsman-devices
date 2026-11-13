@@ -4,6 +4,7 @@ helmsman-device 1
 vendor Moxa
 model  ioLogik E1210
 kind   remote-io
+configure moxa-e1200   # the web console: helmsman-devconf's moxa_e1200 (config, restart, restore, password)
 
 # Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
 # connection is not recorded (README.md).
