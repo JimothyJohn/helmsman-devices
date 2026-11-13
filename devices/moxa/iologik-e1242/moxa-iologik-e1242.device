@@ -1,0 +1,55 @@
+helmsman-device 1
+# Moxa ioLogik E1242: 4 analog inputs, 4 DI and 4 DIO channels (each DIO a DI or a
+# DO, by jumper). Not checked on a unit; where each address comes from, and why
+# the scaled analog value is not here, is in README.md.
+vendor Moxa
+model  ioLogik E1242
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# digital inputs: discrete inputs 0..7
+in  DI-00        bool modbus-tcp=di:0
+in  DI-01        bool modbus-tcp=di:1
+in  DI-02        bool modbus-tcp=di:2
+in  DI-03        bool modbus-tcp=di:3
+in  DI-04        bool modbus-tcp=di:4
+in  DI-05        bool modbus-tcp=di:5
+in  DI-06        bool modbus-tcp=di:6
+in  DI-07        bool modbus-tcp=di:7
+
+# counters (counter mode; 0 in DI mode): input registers 16 + 2n, high word first
+in  DI-00-count  int  modbus-tcp=ir:16:u32
+in  DI-01-count  int  modbus-tcp=ir:18:u32
+in  DI-02-count  int  modbus-tcp=ir:20:u32
+in  DI-03-count  int  modbus-tcp=ir:22:u32
+in  DI-04-count  int  modbus-tcp=ir:24:u32
+in  DI-05-count  int  modbus-tcp=ir:26:u32
+in  DI-06-count  int  modbus-tcp=ir:28:u32
+in  DI-07-count  int  modbus-tcp=ir:30:u32
+
+# digital outputs: coils 0..3
+out DO-00        bool safe=false modbus-tcp=coil:0
+out DO-01        bool safe=false modbus-tcp=coil:1
+out DO-02        bool safe=false modbus-tcp=coil:2
+out DO-03        bool safe=false modbus-tcp=coil:3
+
+# what the unit says its outputs are: the coils read back
+in  DO-00-status bool modbus-tcp=coil:0
+in  DO-01-status bool modbus-tcp=coil:1
+in  DO-02-status bool modbus-tcp=coil:2
+in  DO-03-status bool modbus-tcp=coil:3
+
+# analog inputs, raw value: input registers 512..515
+in  AI-00-raw    int  modbus-tcp=ir:512
+in  AI-01-raw    int  modbus-tcp=ir:513
+in  AI-02-raw    int  modbus-tcp=ir:514
+in  AI-03-raw    int  modbus-tcp=ir:515
+
+# 0 normal, 1 burnout, 2 over range, 3 under range
+in  AI-00-status int  modbus-tcp=ir:576
+in  AI-01-status int  modbus-tcp=ir:577
+in  AI-02-status int  modbus-tcp=ir:578
+in  AI-03-status int  modbus-tcp=ir:579

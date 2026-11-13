@@ -2,6 +2,60 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/moxa/iologik-e1210",
+   "vendor": "Moxa",
+   "model": "ioLogik E1210",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1210.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1211",
+   "vendor": "Moxa",
+   "model": "ioLogik E1211",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1211.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1212",
+   "vendor": "Moxa",
+   "model": "ioLogik E1212",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1212.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 991,
+     "product_code": 514
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map",
+     "eds": {
+      "name": "ioLogik_E1212_EtherNetIP_V1.1_170207.eds",
+      "size": 42491,
+      "sha256": "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
    "folder": "devices/moxa/iologik-e1213",
    "vendor": "Moxa",
    "model": "ioLogik E1213",
@@ -24,6 +78,84 @@
       "sha256": "3895fbca8bb036c1b31a9d6b68dea69eca6892fe0a6bce7409ab76311cfd470d"
      }
     },
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1214",
+   "vendor": "Moxa",
+   "model": "ioLogik E1214",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1214.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1240",
+   "vendor": "Moxa",
+   "model": "ioLogik E1240",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1240.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1241",
+   "vendor": "Moxa",
+   "model": "ioLogik E1241",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1241.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1242",
+   "vendor": "Moxa",
+   "model": "ioLogik E1242",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1242.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1260",
+   "vendor": "Moxa",
+   "model": "ioLogik E1260",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1260.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1262",
+   "vendor": "Moxa",
+   "model": "ioLogik E1262",
+   "kind": "remote-io",
+   "profile": "moxa-iologik-e1262.device",
+   "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
      "map": "modbus.map"

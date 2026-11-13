@@ -1,0 +1,55 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1214"
+kind = "remote-io"
+channels = "6 DI, 6 relays"
+profile = "moxa-iologik-e1214.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this model has been checked: checked_on, firmware and checked_by are
+# left out until one has. Every fact here is from the documents under [[sources]].
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+# EtherNet/IP: the unit speaks it (firmware 2.5 or later, manual p. 5-1) and the manual gives
+# the bytes (the enip lines under [[points]]), but this model's EDS has not been read, so
+# the product code and the connection are not recorded and the profile is Modbus only.
+
+[[points]]
+name = "DI-00..DI-05"
+enip = "di:0..di:5 (input byte 0, bit n = channel n)"
+modbus = "di:0..di:5; ir:48 = all of them as one word"
+meaning = "digital input state, 1 = on"
+source = "E1200 manual v15.10 p. A-9, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+
+[[points]]
+name = "DI counters"
+enip = "in:1:u32 .. in:21:u32 (UDINT at byte 1 + 4n, little-endian)"
+modbus = "ir:16:u32 .. ir:26:u32 (two words a channel, high word first)"
+meaning = "counter mode value; a channel in DI mode (the factory default) does not count"
+source = "E1200 manual v15.10 p. A-9, p. B-1, Appendix E; counter n at 16 + 2n and at byte 1 + 4n is inferred"
+
+[[points]]
+name = "RLY-00..RLY-05"
+enip = "do:0..do:5 (output byte 0, bit n = channel n); status in input byte 25"
+modbus = "coil:0..coil:5; hr:32 = all of them as one word"
+meaning = "relay command and state, 1 = on"
+source = "E1200 manual v15.10 p. A-9, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+
+[[points]]
+name = "RLY-00..RLY-05 total count"
+modbus = "ir:64:u32 .. ir:74:u32 (two words a relay, high word first)"
+meaning = "how many times the relay has switched; the EtherNet/IP assemblies do not carry it (Relay Channel Object attribute 8, p. B-3)"
+source = "E1200 manual v15.10 p. A-9; relay n at 64 + 2n is inferred"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "Firmware for ioLogik E1200 Series (ioLogik E1214/E1214-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)"
+sha256 = "f50af21903ef61310eac623d887ce080110e361d3076ec5de7c2c92b77f27c72"
+where = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1214-e1214-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"

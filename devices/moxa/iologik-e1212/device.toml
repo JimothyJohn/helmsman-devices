@@ -1,0 +1,68 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1212"
+kind = "remote-io"
+channels = "8 DI, 8 DIO"
+profile = "moxa-iologik-e1212.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this model has been checked: checked_on, firmware and checked_by are
+# left out until one has. Every fact here is from the documents under [[sources]].
+
+[identity.enip]
+vendor_id = 991
+product_code = 514
+device_type = 12
+revisions = ["2.6"]             # the EDS's; no unit has answered ListIdentity here
+product_name = "E1212"          # the EDS's ProdName; the E1213 unit answers "ioLogik E1213"
+
+[protocols.enip]
+driver = "enip-io"
+map = "enip.map"
+rpi_ms = { min = 100, max = 3000, default = 100 }
+input_assembly = { instance = 101, bytes = 67 }
+output_assembly = { instance = 102, bytes = 1 }
+# Firmware before 3.2 names another UDP port for O->T data in its Forward_Open
+# reply (5222 on the E1213 at 3.1); the release notes list the fix for this model too.
+o_to_t_port_from_reply = true
+eds = { name = "ioLogik_E1212_EtherNetIP_V1.1_170207.eds", size = 42491, sha256 = "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8", url = "https://marketplace.odva.org/products/1870-iologik-e1212", terms = "none stated in the file; not redistributed here" }
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+[[points]]
+name = "DI-00..DI-15"
+enip = "di:0..di:15 (input bytes 0-1, bit n = channel n)"
+modbus = "di:0..di:15; ir:48 = all of them as one word"
+meaning = "digital input state, 1 = on"
+source = "E1200 manual v15.10 p. A-5, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+
+[[points]]
+name = "DI counters"
+enip = "in:2:u32 .. in:62:u32 (UDINT at byte 2 + 4n, little-endian)"
+modbus = "ir:16:u32 .. ir:46:u32 (two words a channel, high word first)"
+meaning = "counter mode value; a channel in DI mode (the factory default) does not count"
+source = "E1200 manual v15.10 p. A-5, p. B-1, Appendix E; counter n at 16 + 2n and at byte 2 + 4n is inferred"
+
+[[points]]
+name = "DO-00..DO-07"
+enip = "do:0..do:7 (output byte 0, bit n = channel n); status in input byte 66"
+modbus = "coil:0..coil:7; hr:32 = all of them as one word"
+meaning = "digital output command and state, 1 = on"
+source = "E1200 manual v15.10 p. A-5, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "Firmware for ioLogik E1200 Series (ioLogik E1212/E1212-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)"
+sha256 = "d5eed5bd230dc012d4d47305f5ea22d7b81270bdc03baa71d99b212cc7610dba"
+where = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+
+[[sources]]
+title = "E1212 EDS V1.1 (EZ-EDS 3.11.1, 02-07-2017, revision 2.6)"
+sha256 = "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8"
+where = "https://marketplace.odva.org/products/1870-iologik-e1212"

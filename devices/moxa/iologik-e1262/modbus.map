@@ -1,0 +1,15 @@
+# Moxa ioLogik E1262 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1262.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-18), not its 1-based "Start Register". Not checked on a unit.
+device e1262 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# value in tenths of a degree, or in 0.0001 mV in a mV mode: input registers 2048 + 2n
+in  e1262_tc_00_x10 int  e1262 ir:2048:i32
+in  e1262_tc_01_x10 int  e1262 ir:2050:i32
+in  e1262_tc_02_x10 int  e1262 ir:2052:i32
+in  e1262_tc_03_x10 int  e1262 ir:2054:i32
+in  e1262_tc_04_x10 int  e1262 ir:2056:i32
+in  e1262_tc_05_x10 int  e1262 ir:2058:i32
+in  e1262_tc_06_x10 int  e1262 ir:2060:i32
+in  e1262_tc_07_x10 int  e1262 ir:2062:i32

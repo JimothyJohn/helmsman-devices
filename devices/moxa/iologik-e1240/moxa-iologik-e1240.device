@@ -1,0 +1,31 @@
+helmsman-device 1
+# Moxa ioLogik E1240: 8 analog inputs (0-10 V or 0/4-20 mA, by jumper and mode).
+# The raw value and the status of each channel. Not checked on a unit; where
+# each address comes from, and why the scaled value is not here, is in README.md.
+vendor Moxa
+model  ioLogik E1240
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# analog inputs, raw value: input registers 0..7
+in  AI-00-raw    int  modbus-tcp=ir:0
+in  AI-01-raw    int  modbus-tcp=ir:1
+in  AI-02-raw    int  modbus-tcp=ir:2
+in  AI-03-raw    int  modbus-tcp=ir:3
+in  AI-04-raw    int  modbus-tcp=ir:4
+in  AI-05-raw    int  modbus-tcp=ir:5
+in  AI-06-raw    int  modbus-tcp=ir:6
+in  AI-07-raw    int  modbus-tcp=ir:7
+
+# 0 normal, 1 burnout, 2 over range, 3 under range
+in  AI-00-status int  modbus-tcp=ir:60
+in  AI-01-status int  modbus-tcp=ir:61
+in  AI-02-status int  modbus-tcp=ir:62
+in  AI-03-status int  modbus-tcp=ir:63
+in  AI-04-status int  modbus-tcp=ir:64
+in  AI-05-status int  modbus-tcp=ir:65
+in  AI-06-status int  modbus-tcp=ir:66
+in  AI-07-status int  modbus-tcp=ir:67

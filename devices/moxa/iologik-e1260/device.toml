@@ -1,0 +1,35 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1260"
+kind = "remote-io"
+channels = "6 RTD"
+profile = "moxa-iologik-e1260.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this model has been checked: checked_on, firmware and checked_by are
+# left out until one has. Every fact here is from the documents under [[sources]].
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+# EtherNet/IP: the unit speaks it (firmware 2.5 or later, manual p. 5-1) and the manual gives
+# the bytes (the enip lines under [[points]]), but this model's EDS has not been read, so
+# the product code and the connection are not recorded and the profile is Modbus only.
+
+[[points]]
+name = "RTD-00..RTD-05 engineering value x 10"
+enip = "in:0:u16 .. in:10:u16 (UINT at byte 2n, little-endian)"
+modbus = "ir:1536:i16 .. ir:1541:i16"
+meaning = "the measured value times ten, in the unit the channel is set to (the manual: 'Unit: 0.1'); one word a channel"
+source = "E1200 manual v15.10 p. A-16, p. B-2; channel n at 1536 + n, and a value below zero as two's complement, are inferred"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "Firmware for ioLogik E1200 Series (ioLogik E1260/E1260-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)"
+sha256 = "c175dd5e616c0fd4c4182be34067ff84b418870ff7b194ffde0b4da9cd964ae8"
+where = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1260-e1260-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"

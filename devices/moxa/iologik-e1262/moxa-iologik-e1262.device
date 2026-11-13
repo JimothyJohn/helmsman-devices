@@ -1,0 +1,21 @@
+helmsman-device 1
+# Moxa ioLogik E1262: 8 thermocouple inputs. Each channel's value in tenths of a
+# degree (or in 0.0001 mV in a mV mode). Not checked on a unit; where each address
+# comes from is in README.md.
+vendor Moxa
+model  ioLogik E1262
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# value in tenths of a degree, or in 0.0001 mV in a mV mode: input registers 2048 + 2n
+in  TC-00-x10 int  modbus-tcp=ir:2048:i32
+in  TC-01-x10 int  modbus-tcp=ir:2050:i32
+in  TC-02-x10 int  modbus-tcp=ir:2052:i32
+in  TC-03-x10 int  modbus-tcp=ir:2054:i32
+in  TC-04-x10 int  modbus-tcp=ir:2056:i32
+in  TC-05-x10 int  modbus-tcp=ir:2058:i32
+in  TC-06-x10 int  modbus-tcp=ir:2060:i32
+in  TC-07-x10 int  modbus-tcp=ir:2062:i32

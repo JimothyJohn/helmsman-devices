@@ -1,0 +1,46 @@
+helmsman-device 1
+# Moxa ioLogik E1211: 16 DO channels.
+# Not checked on a unit; where each address comes from is in README.md.
+vendor Moxa
+model  ioLogik E1211
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# digital outputs: coils 0..15
+out DO-00        bool safe=false modbus-tcp=coil:0
+out DO-01        bool safe=false modbus-tcp=coil:1
+out DO-02        bool safe=false modbus-tcp=coil:2
+out DO-03        bool safe=false modbus-tcp=coil:3
+out DO-04        bool safe=false modbus-tcp=coil:4
+out DO-05        bool safe=false modbus-tcp=coil:5
+out DO-06        bool safe=false modbus-tcp=coil:6
+out DO-07        bool safe=false modbus-tcp=coil:7
+out DO-08        bool safe=false modbus-tcp=coil:8
+out DO-09        bool safe=false modbus-tcp=coil:9
+out DO-10        bool safe=false modbus-tcp=coil:10
+out DO-11        bool safe=false modbus-tcp=coil:11
+out DO-12        bool safe=false modbus-tcp=coil:12
+out DO-13        bool safe=false modbus-tcp=coil:13
+out DO-14        bool safe=false modbus-tcp=coil:14
+out DO-15        bool safe=false modbus-tcp=coil:15
+
+# what the unit says its outputs are: the coils read back
+in  DO-00-status bool modbus-tcp=coil:0
+in  DO-01-status bool modbus-tcp=coil:1
+in  DO-02-status bool modbus-tcp=coil:2
+in  DO-03-status bool modbus-tcp=coil:3
+in  DO-04-status bool modbus-tcp=coil:4
+in  DO-05-status bool modbus-tcp=coil:5
+in  DO-06-status bool modbus-tcp=coil:6
+in  DO-07-status bool modbus-tcp=coil:7
+in  DO-08-status bool modbus-tcp=coil:8
+in  DO-09-status bool modbus-tcp=coil:9
+in  DO-10-status bool modbus-tcp=coil:10
+in  DO-11-status bool modbus-tcp=coil:11
+in  DO-12-status bool modbus-tcp=coil:12
+in  DO-13-status bool modbus-tcp=coil:13
+in  DO-14-status bool modbus-tcp=coil:14
+in  DO-15-status bool modbus-tcp=coil:15

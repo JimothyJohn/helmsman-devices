@@ -1,0 +1,50 @@
+helmsman-device 1
+# Moxa ioLogik E1214: 6 DI and 6 relay channels.
+# Not checked on a unit; where each address comes from is in README.md.
+vendor Moxa
+model  ioLogik E1214
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# digital inputs: discrete inputs 0..5
+in  DI-00              bool modbus-tcp=di:0
+in  DI-01              bool modbus-tcp=di:1
+in  DI-02              bool modbus-tcp=di:2
+in  DI-03              bool modbus-tcp=di:3
+in  DI-04              bool modbus-tcp=di:4
+in  DI-05              bool modbus-tcp=di:5
+
+# counters (counter mode; 0 in DI mode): input registers 16 + 2n, high word first
+in  DI-00-count        int  modbus-tcp=ir:16:u32
+in  DI-01-count        int  modbus-tcp=ir:18:u32
+in  DI-02-count        int  modbus-tcp=ir:20:u32
+in  DI-03-count        int  modbus-tcp=ir:22:u32
+in  DI-04-count        int  modbus-tcp=ir:24:u32
+in  DI-05-count        int  modbus-tcp=ir:26:u32
+
+# relays: coils 0..5
+out RLY-00             bool safe=false modbus-tcp=coil:0
+out RLY-01             bool safe=false modbus-tcp=coil:1
+out RLY-02             bool safe=false modbus-tcp=coil:2
+out RLY-03             bool safe=false modbus-tcp=coil:3
+out RLY-04             bool safe=false modbus-tcp=coil:4
+out RLY-05             bool safe=false modbus-tcp=coil:5
+
+# what the unit says its outputs are: the coils read back
+in  RLY-00-status      bool modbus-tcp=coil:0
+in  RLY-01-status      bool modbus-tcp=coil:1
+in  RLY-02-status      bool modbus-tcp=coil:2
+in  RLY-03-status      bool modbus-tcp=coil:3
+in  RLY-04-status      bool modbus-tcp=coil:4
+in  RLY-05-status      bool modbus-tcp=coil:5
+
+# how often each relay has switched: input registers 64 + 2n, high word first
+in  RLY-00-total-count int  modbus-tcp=ir:64:u32
+in  RLY-01-total-count int  modbus-tcp=ir:66:u32
+in  RLY-02-total-count int  modbus-tcp=ir:68:u32
+in  RLY-03-total-count int  modbus-tcp=ir:70:u32
+in  RLY-04-total-count int  modbus-tcp=ir:72:u32
+in  RLY-05-total-count int  modbus-tcp=ir:74:u32

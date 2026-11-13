@@ -1,0 +1,18 @@
+helmsman-device 1
+# Moxa ioLogik E1260: 6 RTD inputs. Each channel's value in tenths of its unit.
+# Not checked on a unit; where each address comes from is in README.md.
+vendor Moxa
+model  ioLogik E1260
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# temperature in tenths of the channel's unit (215 is 21.5): input registers 1536..1541
+in  RTD-00-x10 int  modbus-tcp=ir:1536:i16
+in  RTD-01-x10 int  modbus-tcp=ir:1537:i16
+in  RTD-02-x10 int  modbus-tcp=ir:1538:i16
+in  RTD-03-x10 int  modbus-tcp=ir:1539:i16
+in  RTD-04-x10 int  modbus-tcp=ir:1540:i16
+in  RTD-05-x10 int  modbus-tcp=ir:1541:i16
