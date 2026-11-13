@@ -264,6 +264,39 @@ class Import(unittest.TestCase):
             console.token_of("<form></form>")
 
 
+class Reboot(unittest.TestCase):
+    # (seconds after the request, HTTP answers, Modbus accepts), probed as the
+    # E1213 behaved on 2026-11-12: HTTP back at 11.4 s with Modbus still down,
+    # down again at 14 s, all back at 20.1 s.
+    OBSERVED = (
+        (0.3, True, True),
+        (1.1, False, True),
+        (6.5, False, False),
+        (11.4, True, False),
+        (14.0, False, False),
+        (17.0, False, False),
+        (20.0, True, False),
+        (20.1, True, True),
+    )
+
+    def first_back(self, probes):
+        w = console.RebootWatch()
+        for t, h, m in probes:
+            if w.feed(h, m):
+                return t
+        return None
+
+    def test_the_first_http_answer_is_not_back_the_unit_is_back_at_20_s(self):
+        self.assertEqual(self.first_back(self.OBSERVED), 20.1)
+
+    def test_a_console_that_never_went_down_is_not_back(self):
+        # the request did nothing: answering all along must not read as "rebooted"
+        self.assertIsNone(self.first_back([(t, True, True) for t in range(10)]))
+
+    def test_http_without_modbus_is_not_back(self):
+        self.assertIsNone(self.first_back([(0, False, False), (1, True, False), (2, True, False)]))
+
+
 class Diff(unittest.TestCase):
     def test_changed_lines_and_a_length_change_are_both_reported(self):
         self.assertEqual(console.diff("A=1\nB=2\n", "A=1\nB=3\n"), [("B=2", "B=3")])
