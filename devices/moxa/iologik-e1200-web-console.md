@@ -79,17 +79,57 @@ The other settings pages (`03_1.htm` Modbus addressing, `04_2.htm` Ethernet,
 were read, not written. `04_2.htm` holds the unit's IP settings, and changing
 those always asks Nick first.
 
+## Save/Restart (`09.htm`)
+
+The page is a form, `GET set_ok.htm` with a hidden `token` whose value is
+empty and a submit button without a name: so the request is
+`GET /set_ok.htm?token=`. The unit reboots ("Rebooting will disconnect your
+Ethernet connections"), and what was staged becomes running. Fetching
+`09.htm` itself does nothing (checked: the unit stayed up). The client's
+`restart` sends it and waits, bounded, until the console answers again.
+How long the reboot takes, and that a staged value survives it, are
+measured by `/tmp/hd/01-e1213-apply.sh` and `02-e1213-revert.sh` (Nick's to
+run: the session's request to reboot the unit was refused by the agent's
+permission check).
+
+## Import (`06_5.htm`), the restore path
+
+`POST /06_5_1.htm`, `multipart/form-data`: `token` (from `06_5.htm`),
+`NetConfig_OverWrite=1`, `importfile` (an export file), `import=Import`. The
+page ticks **"Update network settings (IP, Gateway, etc.)"** by default:
+imported as the browser offers it, a file from another unit gives this one
+that unit's IP. The client's `import` leaves the box unticked unless
+`--overwrite-network` is given. The page warns that the import "could take
+up to 10 seconds" and not to cut power meanwhile. Whether it reboots the
+unit is not yet seen (`/tmp/hd/03-e1213-import.sh`, restoring the unit's own
+export, settles it).
+
+## Change Password (`07.htm`, `code=7`)
+
+The page's script (`ChangePassword()` with `md5.js`, a hand-written MD5 that
+agrees with the standard one) replaces the typed passwords before the GET:
+`OldPassword`, `NewPassword` and `ReTypePassword` go empty, and
+
+- `ChallID` = MD5 of the `ChallID` cookie (lowercase hex);
+- `OldPwd` = MD5 of the old password;
+- `NewPwd` = the 16 bytes of MD5(cookie) XORed with the new password's ASCII
+  codes, byte for byte, the rest unchanged (new password at most 16
+  characters, old at most 24).
+
+`password_fields()` in the client reproduces this and is held to six vectors
+computed by Moxa's own `md5.js` and `Xor()` under node. **The `ChallID`
+cookie was `4739` in every session on 2026-11-12, before and after other
+sessions**: if the challenge never changes, a captured `NewPwd` decodes with
+MD5("4739") and a captured request replays. The password protects nothing
+against anyone on the same network; keep the console on the device link.
+
 Not done, and why:
-- **Save/Restart** (`09.htm`) and **Load Factory Default** (`08.htm`) were not
-  even fetched, in case a GET acts. Applying a staged change needs
-  Save/Restart, which takes the unit off the network for its reboot. That's
-  the next step, with Nick's go, since the P4 node reads this unit over
-  Modbus.
-- **Import** (`06_5.htm`, a multipart POST of the export file to
-  `06_5_1.htm`) and **Firmware Update** (`06_4.htm` to `06_4_1.htm`). Import
-  is the restore path for a replaced unit.
-- **A password-protected console** (3.3 and later default to "moxa"): the
-  login exchange is in `md5.js` and not read yet.
+- **Logging in to a console that has a password.** Not seen: the bench unit
+  has none. Setting one to look would also lock the tooling out until it is
+  cleared, so it waits for Nick's go.
+- **Load Factory Default** (`08.htm`) is never fetched, and **Firmware
+  Update** (`06_4.htm` to `06_4_1.htm`) is the scripted procedure of the
+  firmware plan.
 
 ## What the bench unit's export says (2026-11-12)
 
