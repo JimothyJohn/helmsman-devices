@@ -32,6 +32,7 @@ import html.parser
 import http.client
 import http.cookiejar
 import re
+import socket
 import sys
 import time
 import urllib.parse
@@ -50,6 +51,7 @@ class Console:
     def __init__(self, host):
         if not re.fullmatch(r"[A-Za-z0-9.:-]{1,255}", host):
             raise ValueError(f"not a host: {host!r}")
+        self.host = host
         self.base = f"http://{host}/"
         self.jar = http.cookiejar.CookieJar()
         self.op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
@@ -68,16 +70,49 @@ class Console:
         with self.op.open(req, timeout=TIMEOUT_S * 3) as r:
             return r.read(MAX_BYTES).decode("latin-1")
 
-    def answers(self, deadline_s):
-        """Seconds until the console answers a read again, or None by the deadline."""
+    def http_ok(self):
+        try:
+            self.get("06_3.htm", retry=False)
+            return True
+        except (OSError, http.client.HTTPException):
+            return False
+
+    def modbus_ok(self):
+        try:
+            with socket.create_connection((self.host, 502), timeout=0.5):
+                return True
+        except OSError:
+            return False
+
+    def back_after_reboot(self, deadline_s=120.0):
+        """Seconds until the unit is really back after a reboot it was asked for, or None."""
+        watch = RebootWatch()
         t0 = time.monotonic()
         while time.monotonic() - t0 < deadline_s:
-            try:
-                self.get("06_3.htm", retry=False)
+            if watch.feed(self.http_ok(), self.modbus_ok()):
                 return time.monotonic() - t0
-            except (OSError, http.client.HTTPException):
-                time.sleep(0.5)
+            time.sleep(0.3)
         return None
+
+
+class RebootWatch:
+    """Whether an E1200 is back after a reboot, from repeated probes of HTTP and Modbus.
+
+    Measured on the E1213 (2026-11-12, twice): HTTP goes down about 1 s after the
+    request and answers again at 11 s while Modbus is still down, then goes down a
+    second time and is back for good at 20 s together with Modbus. So "HTTP
+    answers" is not enough: back means HTTP answered after it was seen down AND
+    Modbus TCP accepts. (EtherNet/IP is left out: it can be switched off.)
+    """
+
+    def __init__(self):
+        self.went_down = False
+
+    def feed(self, http_ok, modbus_ok):
+        if not http_ok:
+            self.went_down = True
+            return False
+        return self.went_down and modbus_ok
 
     def get(self, path, retry=True):
         time.sleep(GAP_S)
@@ -257,9 +292,8 @@ def restart(c):
         c.get("set_ok.htm?token=", retry=False)
     except (OSError, http.client.HTTPException):
         pass  # the unit may drop the connection as it goes down
-    back = c.answers(180)
-    if back is None:
-        raise ValueError("the console did not answer within 180 s of the restart")
+    if c.back_after_reboot() is None:
+        raise ValueError("the unit was not back (HTTP after a drop, and Modbus) within 120 s of the restart")
     return time.monotonic() - t0
 
 
@@ -280,7 +314,7 @@ def main(argv):
         return 0
     if cmd == "restart":
         print("GET /set_ok.htm?token= (Save/Restart)")
-        print(f"the console answers again {restart(c):.1f} s after the request")
+        print(f"the unit is back {restart(c):.1f} s after the request")
         return 0
     if cmd == "import":
         flags = {x for x in rest if x.startswith("--")}
@@ -298,8 +332,16 @@ def main(argv):
         if "--dry-run" in flags:
             return 0
         body, ctype = multipart(fields, "importfile", "ik12xx.txt", data)
+        t0 = time.monotonic()
         reply = c.post("06_5_1.htm", body, ctype)
         print("reply:", " ".join(re.sub(r"<[^>]*>", " ", reply).split())[:300])
+        if "--overwrite-network" in flags:
+            print("not waiting: the imported network settings may have moved the unit to another address")
+            return 0
+        # the import reboots the unit ("imported and restart successfully", 2026-11-12)
+        if c.back_after_reboot() is None:
+            raise ValueError("the unit was not back within 120 s of the import")
+        print(f"the unit is back {time.monotonic() - t0:.1f} s after the import")
         return 0
     if cmd == "password":
         dry = "--dry-run" in rest

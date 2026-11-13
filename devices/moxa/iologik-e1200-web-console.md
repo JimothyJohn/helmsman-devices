@@ -85,12 +85,28 @@ The page is a form, `GET set_ok.htm` with a hidden `token` whose value is
 empty and a submit button without a name: so the request is
 `GET /set_ok.htm?token=`. The unit reboots ("Rebooting will disconnect your
 Ethernet connections"), and what was staged becomes running. Fetching
-`09.htm` itself does nothing (checked: the unit stayed up). The client's
-`restart` sends it and waits, bounded, until the console answers again.
-How long the reboot takes, and that a staged value survives it, are
-measured by `/tmp/hd/01-e1213-apply.sh` and `02-e1213-revert.sh` (Nick's to
-run: the session's request to reboot the unit was refused by the agent's
-permission check).
+`09.htm` itself does nothing (checked: the unit stayed up).
+
+Measured on the bench unit (2026-11-12, two reboots, the same both times),
+seconds from the request:
+
+| s | |
+| --- | --- |
+| 0.1 | the reply (451 bytes) arrives; the unit is still up |
+| 1.1 | HTTP stops answering |
+| 6.5 | Modbus TCP (502) stops accepting |
+| 11.4 | **HTTP answers again, while 502 is still down** |
+| 14.0 | HTTP stops again; EtherNet/IP (44818) stops at 14.5 |
+| 20.0-20.9 | HTTP, 502 and 44818 back, for good |
+
+So **the first HTTP answer is not "back"**: a client that reads the export
+at 11 s reads a unit halfway through its boot. The client's `restart` waits
+until HTTP answers after it was seen down AND Modbus TCP accepts
+(`RebootWatch`, held to the sequence above in the tests), at most 120 s.
+EtherNet/IP is left out of that test because it can be switched off. A value
+staged before the restart was there after it, and the output coils read the
+same before and after (DO-01 on, `01000000`). Whether they glitch during
+the reboot was not measured.
 
 ## Import (`06_5.htm`), the restore path
 
@@ -100,9 +116,11 @@ page ticks **"Update network settings (IP, Gateway, etc.)"** by default:
 imported as the browser offers it, a file from another unit gives this one
 that unit's IP. The client's `import` leaves the box unticked unless
 `--overwrite-network` is given. The page warns that the import "could take
-up to 10 seconds" and not to cut power meanwhile. Whether it reboots the
-unit is not yet seen (`/tmp/hd/03-e1213-import.sh`, restoring the unit's own
-export, settles it).
+up to 10 seconds" and not to cut power meanwhile. **An import reboots the
+unit**: the reply is "System configuration file imported and restart
+successfully", and the client then waits as `restart` does. Importing the
+unit's own export, network settings kept out, left the export identical,
+line for line (2026-11-12).
 
 ## Change Password (`07.htm`, `code=7`)
 
