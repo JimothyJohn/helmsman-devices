@@ -56,6 +56,9 @@ share their folders.
   value) once the communication watchdog trips. Off by default, so a unit
   out of the box holds its outputs when its controller vanishes. From
   firmware 3.2 Safe Mode covers EtherNet/IP too.
+- **The web console, headless**: how its settings are read and written
+  without a browser, and a client for it, are in
+  [iologik-e1200-web-console.md](iologik-e1200-web-console.md).
 - **Configuration** export and import as a text file, from the web console
   (pp. 3-29) or ioSearch, in bulk for units of one model (pp. 4-6, 4-10).
 
