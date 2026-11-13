@@ -38,6 +38,8 @@ jobs:
         run: ruff format --check .
       - name: Index matches the device folders
         run: python3 -I scripts/build-index.py --check
+      - name: Unit tests (stdlib unittest; tests that need a bench unit skip without one)
+        run: python3 -I -B -m unittest discover -s tests -v
       - name: No vendor file is tracked (README, Vendor files)
         run: |
           if git ls-files | grep -Eiq '\.(eds|pdf)$'; then
