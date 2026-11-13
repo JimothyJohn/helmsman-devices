@@ -15,13 +15,19 @@ line that changed.
   import HOST FILE [--overwrite-network] [--dry-run]
                                            send an export back (the restore path); its network
                                            settings are kept OUT unless --overwrite-network
-  password HOST OLD NEW [--dry-run]        change the console's password (code 7)
+  password HOST [--dry-run]                change the console's password (code 7): from
+                                           MOXA_E1200_PASSWORD (empty if unset) to
+                                           MOXA_E1200_NEW_PASSWORD (empty clears it)
+
+A console with a password set answers every page with its login page until
+a session logs in; the client logs in with MOXA_E1200_PASSWORD when it sees
+one (firmware 3.1 ships without a password, 3.3 and later with "moxa").
+Passwords come from the environment, never the command line, which shell
+history and `ps` keep.
 
 A checkbox is KEY=1 to tick it and KEY= to untick it. A write changes the
-staged settings only: the unit applies them after `restart`. A write, a
-restart and an import are never retried. Reading or writing a console that
-HAS a password is not supported: how it asks for a login has not been seen
-(firmware 3.1 ships without one; 3.3 and later default to "moxa").
+staged settings only: the unit applies them after `restart` (a password
+change applies at once). A write, a restart and an import are never retried.
 
 Standard library only, Python 3.9 or later (macOS: Apple's /usr/bin/python3
 from an agent session, for Local Network privacy).
@@ -31,6 +37,7 @@ import hashlib
 import html.parser
 import http.client
 import http.cookiejar
+import os
 import re
 import socket
 import sys
@@ -47,15 +54,43 @@ MAX_BYTES = 1 << 20
 DISABLED_UNLESS = {"IdleTime": "EnableIDLE", "WDTime": "EnableWD"}
 
 
+def is_login_page(body):
+    """The page a password-protected console serves instead of any other until logged in."""
+    return "name=InputPassword" in body and "home.htm" in body
+
+
+def login_fields(password, token):
+    """What the login page's SetPass() posts to home.htm: Password = MD5(password + Token)."""
+    printable(password, 24, "password")  # the field's maxlength="24"
+    return [
+        ("Password", hashlib.md5((password + token).encode("ascii")).hexdigest()),
+        ("Token", token),
+        ("Submit", "Submit"),
+    ]
+
+
 class Console:
-    def __init__(self, host):
+    def __init__(self, host, password=None):
         if not re.fullmatch(r"[A-Za-z0-9.:-]{1,255}", host):
             raise ValueError(f"not a host: {host!r}")
         self.host = host
+        self.password = password
         self.base = f"http://{host}/"
         self.jar = http.cookiejar.CookieJar()
         self.op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
-        self.get("")  # the session cookies the frameset sets (ChallID, MoxaPass)
+        self.get("")  # the session cookies the frameset sets (ChallID, MoxaPass), or the login
+
+    def login(self, page):
+        """Log in from a login page; the session cookie lands in the jar. Never retried."""
+        if self.password is None:
+            raise ValueError("the console asks for a password: set MOXA_E1200_PASSWORD")
+        m = re.search(r'name="Token"\s+value="([^"]*)"', page)
+        if not m:
+            raise ValueError("the login page carries no Token")
+        body = urllib.parse.urlencode(login_fields(self.password, m.group(1))).encode("ascii")
+        reply = self.post("home.htm", body, "application/x-www-form-urlencoded")
+        if is_login_page(reply):
+            raise ValueError("the console refused the password")
 
     def cookie(self, name):
         for c in self.jar:
@@ -71,8 +106,11 @@ class Console:
             return r.read(MAX_BYTES).decode("latin-1")
 
     def http_ok(self):
+        """The console answers HTTP at all (a login page counts): no login, no retry."""
+        time.sleep(GAP_S)
         try:
-            self.get("06_3.htm", retry=False)
+            with self.op.open(self.base + "06_3.htm", timeout=TIMEOUT_S) as r:
+                r.read(MAX_BYTES)
             return True
         except (OSError, http.client.HTTPException):
             return False
@@ -94,7 +132,7 @@ class Console:
             time.sleep(0.3)
         return None
 
-    def get(self, path, retry=True):
+    def get(self, path, retry=True, logged_in=False):
         time.sleep(GAP_S)
         try:
             with self.op.open(self.base + path, timeout=TIMEOUT_S) as r:
@@ -103,10 +141,22 @@ class Console:
             if not retry:
                 raise
             time.sleep(1.0)
-            return self.get(path, retry=False)
+            return self.get(path, retry=False, logged_in=logged_in)
         if len(body) > MAX_BYTES:
             raise ValueError(f"{path}: more than {MAX_BYTES} bytes")
-        return body.decode("latin-1")
+        text = body.decode("latin-1")
+        if is_login_page(text):
+            if logged_in:
+                raise ValueError(f"{path}: still the login page after logging in")
+            self.login(text)
+            # a write is not repeated: the login page answered it instead of the write's reply,
+            # which reads as not done (assumed: the console checks the session before acting)
+            if path.startswith(("set.htm", "set_ok.htm")):
+                raise ValueError(
+                    "the console asked for a login before the write; logged in, nothing written: run it again"
+                )
+            return self.get(path, retry=retry, logged_in=True)
+        return text
 
     def export(self):
         """The configuration export: the overview page names the model (E1213 serves ik1213.txt)."""
@@ -302,7 +352,7 @@ def main(argv):
         print(__doc__)
         return 2
     cmd, host, rest = argv[0], argv[1], argv[2:]
-    c = Console(host)
+    c = Console(host, os.environ.get("MOXA_E1200_PASSWORD"))
     if cmd == "export":
         text = c.export()
         if rest:
@@ -345,12 +395,16 @@ def main(argv):
         return 0
     if cmd == "password":
         dry = "--dry-run" in rest
-        args = [x for x in rest if x != "--dry-run"]
-        if len(args) != 2:
-            print("password HOST OLD NEW [--dry-run]", file=sys.stderr)
+        if [x for x in rest if x != "--dry-run"]:
+            print(
+                "password HOST [--dry-run]; the passwords come from MOXA_E1200_PASSWORD and MOXA_E1200_NEW_PASSWORD",
+                file=sys.stderr,
+            )
             return 2
+        old = os.environ.get("MOXA_E1200_PASSWORD", "")
+        new = os.environ.get("MOXA_E1200_NEW_PASSWORD", "")
         fields = form_of(c.get("07.htm"))
-        computed = password_fields(c.cookie("ChallID"), args[0], args[1])
+        computed = password_fields(c.cookie("ChallID"), old, new)
         changes = dict(computed, OldPassword="", NewPassword="", ReTypePassword="")
         query = urllib.parse.urlencode(submitted(apply(fields, changes)))
         shown = re.sub(r"(token|OldPwd|NewPwd)=[^&]*", r"\1=<hidden>", query)
@@ -358,10 +412,9 @@ def main(argv):
         if dry:
             return 0
         reply = c.get("set.htm?" + query, retry=False)
-        ok = "Configuration Complete" in reply
-        print(
-            f"reply: {'Configuration Complete' if ok else ' '.join(re.sub(r'<[^>]*>', ' ', reply).split())[:300]}"
-        )
+        ok = "Change Password OK" in reply  # its reply page; the settings pages say "Configuration Complete"
+        text = " ".join(re.sub(r"<[^>]*>", " ", reply).split())
+        print(f"reply: {'Change Password OK (applies at once)' if ok else text[:300]}")
         return 0 if ok else 1
     if not rest or not re.fullmatch(r"[0-9a-zA-Z_]{1,32}\.htm", rest[0]):
         print("PAGE is a console page such as 04_1.htm", file=sys.stderr)
