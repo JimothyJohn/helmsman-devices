@@ -3,3 +3,4 @@
 scratch/
 .claude/handoff.md
 __pycache__/
+*.zip

@@ -6,9 +6,9 @@ model  IMPACT67 E DI8 DO8
 kind   remote-io
 
 # One Class 1 exclusive owner, written out from the handbook (no EDS read).
-# RPI: 5 ms at least, 10 ms by default, tested below 10 ms only (pp. 21, 58);
-# the 1 s ceiling is ours, the handbook gives none.
-transport enip-io config=128 o2t=112:2 t2o=100:4 rpi_ms=10 cycle_ms=10..1000
+# RPI: the EDS's 5 ms to 3.2 s, 10 ms by default; the handbook asks for a test
+# below 10 ms (pp. 21, 58), so the box goes no faster than 10.
+transport enip-io config=128 o2t=112:2 t2o=100:4 rpi_ms=10 cycle_ms=10..3200
 
 # inputs, input byte 0: channel 00..07
 in  DI-00             bool enip-io=in:0.0
