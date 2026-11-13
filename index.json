@@ -6,6 +6,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1213",
    "kind": "remote-io",
+   "profile": "moxa-iologik-e1213.device",
    "identity": {
     "enip": {
      "vendor_id": 991,
