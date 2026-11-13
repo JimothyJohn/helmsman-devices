@@ -6,6 +6,7 @@ channels = "8 DI, 4 DO, 4 DIO (source type)"
 checked_on = "2026-11-02"
 firmware = "V3.1 Build19110615"
 checked_by = "helmsman bench, serial TAIGB1106222"
+profile = "moxa-iologik-e1213.device"   # the device profile a controller copies into a project (helmsman-device 1)
 
 [identity.enip]
 vendor_id = 991

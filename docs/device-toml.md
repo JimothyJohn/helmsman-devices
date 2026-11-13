@@ -9,6 +9,7 @@ model = "ioLogik E1213"         # text, for a search
 kind = "remote-io"              # remote-io | drive | controller | sensor | other
 checked_on = "2026-11-02"       # the date the facts were last checked on a unit
 firmware = "V3.1 Build19110615" # the firmware they were checked against
+profile = "moxa-iologik-e1213.device"  # the device profile in this folder (helmsman-device 1): a controller copies it into a project when the device is added
 
 [identity.enip]                 # ListIdentity, the first key a lookup tries
 vendor_id = 991

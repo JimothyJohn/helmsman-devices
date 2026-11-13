@@ -1,0 +1,45 @@
+# Baseline CI (from ~/.claude/templates/github/ci-python.yml, adapted: this is
+# a stdlib-only repo with no uv project, so dev tools come from
+# requirements-dev.txt installed with --require-hashes).
+# The `gate` job name is the required status check that branch protection on
+# `dev` and the automerge workflow rely on: if you rename the job or add jobs,
+# update the protection rule's contexts to match.
+# SHA-pinned actions only (house rule). Bump pins via Dependabot's
+# github-actions ecosystem, not by hand-editing to a tag.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11" # the floor build-index.py states (tomllib)
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install dev tools (hash-pinned)
+        run: python -m pip install --require-hashes -r requirements-dev.txt
+      - name: Lint
+        run: ruff check .
+      - name: Format check
+        run: ruff format --check .
+      - name: Index matches the device folders
+        run: python3 -I scripts/build-index.py --check
+      - name: No vendor file is tracked (README, Vendor files)
+        run: |
+          if git ls-files | grep -Eiq '\.(eds|pdf)$'; then
+            echo "a vendor file is tracked:"; git ls-files | grep -Ei '\.(eds|pdf)$'; exit 1
+          fi
