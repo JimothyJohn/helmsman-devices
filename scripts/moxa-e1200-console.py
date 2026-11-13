@@ -94,26 +94,6 @@ class Console:
             time.sleep(0.3)
         return None
 
-
-class RebootWatch:
-    """Whether an E1200 is back after a reboot, from repeated probes of HTTP and Modbus.
-
-    Measured on the E1213 (2026-11-12, twice): HTTP goes down about 1 s after the
-    request and answers again at 11 s while Modbus is still down, then goes down a
-    second time and is back for good at 20 s together with Modbus. So "HTTP
-    answers" is not enough: back means HTTP answered after it was seen down AND
-    Modbus TCP accepts. (EtherNet/IP is left out: it can be switched off.)
-    """
-
-    def __init__(self):
-        self.went_down = False
-
-    def feed(self, http_ok, modbus_ok):
-        if not http_ok:
-            self.went_down = True
-            return False
-        return self.went_down and modbus_ok
-
     def get(self, path, retry=True):
         time.sleep(GAP_S)
         try:
@@ -135,6 +115,26 @@ class RebootWatch:
         if not m:
             raise ValueError("06_6.htm names no ik12xx.txt export")
         return self.get(m.group(1))
+
+
+class RebootWatch:
+    """Whether an E1200 is back after a reboot, from repeated probes of HTTP and Modbus.
+
+    Measured on the E1213 (2026-11-12, twice): HTTP goes down about 1 s after the
+    request and answers again at 11 s while Modbus is still down, then goes down a
+    second time and is back for good at 20 s together with Modbus. So "HTTP
+    answers" is not enough: back means HTTP answered after it was seen down AND
+    Modbus TCP accepts. (EtherNet/IP is left out: it can be switched off.)
+    """
+
+    def __init__(self):
+        self.went_down = False
+
+    def feed(self, http_ok, modbus_ok):
+        if not http_ok:
+            self.went_down = True
+            return False
+        return self.went_down and modbus_ok
 
 
 class Form(html.parser.HTMLParser):
