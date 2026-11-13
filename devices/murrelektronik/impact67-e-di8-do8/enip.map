@@ -1,0 +1,41 @@
+# Murrelektronik IMPACT67 E DI8 DO8 (art. no. 55086) over EtherNet/IP (enip-io, one
+# Class 1 exclusive-owner connection at 10 ms): every channel of the profile.
+# Assemblies and bits from the IMPACT67 E handbook, edition 1.8, pp. 66.
+# Not checked on a unit.
+device i67 enip-io ADDR config=128 o2t=112:2 t2o=100:4 rpi_ms=10
+
+# inputs, input byte 0: channel 00..07
+in  i67_di_00             bool i67 in:0.0
+in  i67_di_01             bool i67 in:0.1
+in  i67_di_02             bool i67 in:0.2
+in  i67_di_03             bool i67 in:0.3
+in  i67_di_04             bool i67 in:0.4
+in  i67_di_05             bool i67 in:0.5
+in  i67_di_06             bool i67 in:0.6
+in  i67_di_07             bool i67 in:0.7
+
+# group diagnosis, input byte 1 (handbook 6.6.1, p. 92)
+in  i67_us_low            bool i67 in:1.0
+in  i67_ua_low            bool i67 in:1.1
+in  i67_sensor_short      bool i67 in:1.2
+in  i67_actuator_overload bool i67 in:1.3
+
+# output overload per channel, input byte 2
+in  i67_do_00_overload    bool i67 in:2.0
+in  i67_do_01_overload    bool i67 in:2.1
+in  i67_do_02_overload    bool i67 in:2.2
+in  i67_do_03_overload    bool i67 in:2.3
+in  i67_do_04_overload    bool i67 in:2.4
+in  i67_do_05_overload    bool i67 in:2.5
+in  i67_do_06_overload    bool i67 in:2.6
+in  i67_do_07_overload    bool i67 in:2.7
+
+# outputs, output byte 0: channel 00..07
+out i67_do_00             bool i67 out:0.0 safe=false
+out i67_do_01             bool i67 out:0.1 safe=false
+out i67_do_02             bool i67 out:0.2 safe=false
+out i67_do_03             bool i67 out:0.3 safe=false
+out i67_do_04             bool i67 out:0.4 safe=false
+out i67_do_05             bool i67 out:0.5 safe=false
+out i67_do_06             bool i67 out:0.6 safe=false
+out i67_do_07             bool i67 out:0.7 safe=false

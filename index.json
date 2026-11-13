@@ -161,6 +161,77 @@
      "map": "modbus.map"
     }
    }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI16",
+   "kind": "remote-io",
+   "profile": "murrelektronik-impact67-e-di16.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di8-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI8 DO8",
+   "kind": "remote-io",
+   "profile": "murrelektronik-impact67-e-di8-do8.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-dio8-dio8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DIO8 (DIO8)",
+   "kind": "remote-io",
+   "profile": "murrelektronik-impact67-e-dio8-dio8.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 640,
+     "product_code": 55089
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO16",
+   "kind": "remote-io",
+   "profile": "murrelektronik-impact67-e-do16.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO8",
+   "kind": "remote-io",
+   "profile": "murrelektronik-impact67-e-do8.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
   }
  ]
 }
