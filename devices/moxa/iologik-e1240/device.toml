@@ -1,0 +1,41 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1240"
+kind = "remote-io"
+channels = "8 AI"
+profile = "moxa-iologik-e1240.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this model has been checked: checked_on, firmware and checked_by are
+# left out until one has. Every fact here is from the documents under [[sources]].
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+# EtherNet/IP: the unit speaks it (firmware 2.4 or later, manual p. 5-1) and the manual gives
+# the bytes (the enip lines under [[points]]), but this model's EDS has not been read, so
+# the product code and the connection are not recorded and the profile is Modbus only.
+
+[[points]]
+name = "AI-00..AI-07 raw value"
+enip = "in:0:u16 .. in:14:u16 (UINT at byte 0 + 2n, little-endian)"
+modbus = "ir:0..ir:7"
+meaning = "the converter's raw value, one word a channel; what a count is in volts or mA depends on the channel's mode and jumper"
+source = "E1200 manual v15.10 p. A-11, p. B-1; channel n at 0 + n and at byte 0 + 2n is inferred"
+
+[[points]]
+name = "AI-00..AI-07 status"
+modbus = "ir:60..ir:67"
+meaning = "0 normal, 1 burnout, 2 over range, 3 under range"
+source = "E1200 manual v15.10 p. A-11"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "Firmware for ioLogik E1200 Series (ioLogik E1240/E1240-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)"
+sha256 = "8362136b310a248420c6282ed7bb8a1740b295c2c6a59003d328b40f26152fce"
+where = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1240-e1240-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"

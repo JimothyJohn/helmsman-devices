@@ -1,0 +1,25 @@
+# Moxa ioLogik E1240 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1240.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-11), not its 1-based "Start Register". Not checked on a unit.
+device e1240 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# analog inputs, raw value: input registers 0..7
+in  e1240_ai_00_raw    int  e1240 ir:0
+in  e1240_ai_01_raw    int  e1240 ir:1
+in  e1240_ai_02_raw    int  e1240 ir:2
+in  e1240_ai_03_raw    int  e1240 ir:3
+in  e1240_ai_04_raw    int  e1240 ir:4
+in  e1240_ai_05_raw    int  e1240 ir:5
+in  e1240_ai_06_raw    int  e1240 ir:6
+in  e1240_ai_07_raw    int  e1240 ir:7
+
+# 0 normal, 1 burnout, 2 over range, 3 under range
+in  e1240_ai_00_status int  e1240 ir:60
+in  e1240_ai_01_status int  e1240 ir:61
+in  e1240_ai_02_status int  e1240 ir:62
+in  e1240_ai_03_status int  e1240 ir:63
+in  e1240_ai_04_status int  e1240 ir:64
+in  e1240_ai_05_status int  e1240 ir:65
+in  e1240_ai_06_status int  e1240 ir:66
+in  e1240_ai_07_status int  e1240 ir:67

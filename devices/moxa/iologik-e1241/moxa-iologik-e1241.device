@@ -1,0 +1,17 @@
+helmsman-device 1
+# Moxa ioLogik E1241: 4 analog outputs (0-10 V or 4-20 mA / 0-20 mA, by mode).
+# The raw value of each channel, 0..4095. Not checked on a unit; where each
+# address comes from, and why the scaled value is not here, is in README.md.
+vendor Moxa
+model  ioLogik E1241
+kind   remote-io
+
+# Modbus TCP only: this model's EDS has not been read, so its EtherNet/IP
+# connection is not recorded (README.md).
+transport modbus-tcp unit=1
+
+# analog outputs, raw value 0..4095: holding registers 1024..1027
+out AO-00-raw int  safe=0 modbus-tcp=hr:1024
+out AO-01-raw int  safe=0 modbus-tcp=hr:1025
+out AO-02-raw int  safe=0 modbus-tcp=hr:1026
+out AO-03-raw int  safe=0 modbus-tcp=hr:1027

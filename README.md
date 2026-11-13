@@ -15,6 +15,12 @@ devices/<vendor>/<model>/
   README.md       the device in words, with the manual's page for each claim
 ```
 
+A family that shares a manual and a firmware line gets a page beside its
+folders (`devices/moxa/iologik-e1200-series.md`). A folder whose facts
+nobody has checked on a unit has no `checked_on` and says so at the top of
+its README. How firmware and versions are to be handled is planned in
+[`docs/firmware-and-resilience.md`](docs/firmware-and-resilience.md).
+
 `device.toml` is the record a lookup matches: first by what the wire gives
 (an EtherNet/IP vendor id and product code from ListIdentity, a Modbus
 unit's identification), then by vendor and model text. See

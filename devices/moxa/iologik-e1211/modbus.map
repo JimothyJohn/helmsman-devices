@@ -1,0 +1,41 @@
+# Moxa ioLogik E1211 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1211.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-4), not its 1-based "Start Register". Not checked on a unit.
+device e1211 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# digital outputs: coils 0..15
+out e1211_do_00        bool e1211 coil:0 safe=false
+out e1211_do_01        bool e1211 coil:1 safe=false
+out e1211_do_02        bool e1211 coil:2 safe=false
+out e1211_do_03        bool e1211 coil:3 safe=false
+out e1211_do_04        bool e1211 coil:4 safe=false
+out e1211_do_05        bool e1211 coil:5 safe=false
+out e1211_do_06        bool e1211 coil:6 safe=false
+out e1211_do_07        bool e1211 coil:7 safe=false
+out e1211_do_08        bool e1211 coil:8 safe=false
+out e1211_do_09        bool e1211 coil:9 safe=false
+out e1211_do_10        bool e1211 coil:10 safe=false
+out e1211_do_11        bool e1211 coil:11 safe=false
+out e1211_do_12        bool e1211 coil:12 safe=false
+out e1211_do_13        bool e1211 coil:13 safe=false
+out e1211_do_14        bool e1211 coil:14 safe=false
+out e1211_do_15        bool e1211 coil:15 safe=false
+
+# what the unit says its outputs are: the coils read back
+in  e1211_do_00_status bool e1211 coil:0
+in  e1211_do_01_status bool e1211 coil:1
+in  e1211_do_02_status bool e1211 coil:2
+in  e1211_do_03_status bool e1211 coil:3
+in  e1211_do_04_status bool e1211 coil:4
+in  e1211_do_05_status bool e1211 coil:5
+in  e1211_do_06_status bool e1211 coil:6
+in  e1211_do_07_status bool e1211 coil:7
+in  e1211_do_08_status bool e1211 coil:8
+in  e1211_do_09_status bool e1211 coil:9
+in  e1211_do_10_status bool e1211 coil:10
+in  e1211_do_11_status bool e1211 coil:11
+in  e1211_do_12_status bool e1211 coil:12
+in  e1211_do_13_status bool e1211 coil:13
+in  e1211_do_14_status bool e1211 coil:14
+in  e1211_do_15_status bool e1211 coil:15
