@@ -2,3 +2,4 @@
 *.pdf
 scratch/
 .claude/handoff.md
+__pycache__/
