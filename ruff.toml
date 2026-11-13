@@ -1,0 +1,6 @@
+# ruff for the stdlib-only scripts; no pyproject here on purpose (README: Contributing).
+target-version = "py311"
+line-length = 110
+
+[lint]
+extend-select = ["I", "UP", "B"]
