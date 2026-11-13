@@ -8,20 +8,26 @@ page, take its form as the browser would submit it, change only the fields
 asked for, submit, then read the configuration export again and print every
 line that changed.
 
-  export HOST [FILE]                      the configuration export (ik12xx.txt)
-  form HOST PAGE                          the fields PAGE's form would submit now
-  set HOST PAGE KEY=VALUE ... [--dry-run] change those fields and submit
+  export HOST [FILE]                       the configuration export (ik12xx.txt)
+  form HOST PAGE                           the fields PAGE's form would submit now
+  set HOST PAGE KEY=VALUE ... [--dry-run]  change those fields and submit
+  restart HOST                             Save/Restart: the unit reboots and applies what is staged
+  import HOST FILE [--overwrite-network] [--dry-run]
+                                           send an export back (the restore path); its network
+                                           settings are kept OUT unless --overwrite-network
+  password HOST OLD NEW [--dry-run]        change the console's password (code 7)
 
 A checkbox is KEY=1 to tick it and KEY= to untick it. A write changes the
-staged settings only: the unit applies them after Save/Restart, which this
-does not do. A write is never retried. The console must have no password
-set (firmware 3.1 ships without one; 3.3 and later default to "moxa", which
-this does not handle yet).
+staged settings only: the unit applies them after `restart`. A write, a
+restart and an import are never retried. Reading or writing a console that
+HAS a password is not supported: how it asks for a login has not been seen
+(firmware 3.1 ships without one; 3.3 and later default to "moxa").
 
 Standard library only, Python 3.9 or later (macOS: Apple's /usr/bin/python3
 from an agent session, for Local Network privacy).
 """
 
+import hashlib
 import html.parser
 import http.client
 import http.cookiejar
@@ -45,8 +51,33 @@ class Console:
         if not re.fullmatch(r"[A-Za-z0-9.:-]{1,255}", host):
             raise ValueError(f"not a host: {host!r}")
         self.base = f"http://{host}/"
-        self.op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+        self.jar = http.cookiejar.CookieJar()
+        self.op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar))
         self.get("")  # the session cookies the frameset sets (ChallID, MoxaPass)
+
+    def cookie(self, name):
+        for c in self.jar:
+            if c.name == name:
+                return c.value
+        raise ValueError(f"the console set no {name} cookie")
+
+    def post(self, path, body, content_type):
+        """One POST, never retried (an import is a write)."""
+        time.sleep(GAP_S)
+        req = urllib.request.Request(self.base + path, data=body, headers={"Content-Type": content_type})
+        with self.op.open(req, timeout=TIMEOUT_S * 3) as r:
+            return r.read(MAX_BYTES).decode("latin-1")
+
+    def answers(self, deadline_s):
+        """Seconds until the console answers a read again, or None by the deadline."""
+        t0 = time.monotonic()
+        while time.monotonic() - t0 < deadline_s:
+            try:
+                self.get("06_3.htm", retry=False)
+                return time.monotonic() - t0
+            except (OSError, http.client.HTTPException):
+                time.sleep(0.5)
+        return None
 
     def get(self, path, retry=True):
         time.sleep(GAP_S)
@@ -156,8 +187,84 @@ def diff(before, after):
     return rows
 
 
+def printable(s, most, what):
+    if len(s) > most or any(not (32 <= ord(ch) <= 126) for ch in s):
+        raise ValueError(f"{what}: at most {most} printable ASCII characters")
+    return s
+
+
+def password_fields(challenge, old, new):
+    """OldPwd, NewPwd and ChallID as 07.htm's ChangePassword() computes them.
+
+    ChallID is MD5 of the ChallID cookie; OldPwd MD5 of the old password; NewPwd
+    MD5(cookie) XORed byte by byte with the new password's ASCII codes (the rest
+    of the 16 bytes unchanged), all lowercase hex. Checked against Moxa's own
+    md5.js and Xor() (tests/test_moxa_console.py, VENDOR_VECTORS).
+    """
+    printable(old, 24, "old password")  # OldPassword maxlength="24"
+    printable(new, 16, "new password")  # NewPassword maxlength="16"
+    chall = hashlib.md5(challenge.encode("ascii")).digest()
+    mixed = bytes(b ^ ord(new[i]) if i < len(new) else b for i, b in enumerate(chall))
+    return {
+        "OldPwd": hashlib.md5(old.encode("ascii")).hexdigest(),
+        "NewPwd": mixed.hex(),
+        "ChallID": chall.hex(),
+    }
+
+
+BOUNDARY = "----helmsman-moxa-import"
+
+
+def multipart(fields, file_field, file_name, file_bytes, boundary=BOUNDARY):
+    """A multipart/form-data body: the text fields in order, then the file."""
+    if boundary.encode() in file_bytes:
+        raise ValueError("the file contains the multipart boundary")
+    out = []
+    for name, value in fields:
+        out.append(
+            f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n\r\n{value}\r\n'.encode(
+                "latin-1"
+            )
+        )
+    out.append(
+        f'--{boundary}\r\nContent-Disposition: form-data; name="{file_field}"; filename="{file_name}"\r\n'
+        "Content-Type: text/plain\r\n\r\n".encode("latin-1")
+    )
+    out.append(file_bytes + f"\r\n--{boundary}--\r\n".encode("latin-1"))
+    return b"".join(out), f"multipart/form-data; boundary={boundary}"
+
+
+def import_fields(token, overwrite_network):
+    """What 06_5.htm's form sends, except the network-overwrite box: off unless asked."""
+    fields = [("token", token)]
+    if overwrite_network:
+        fields.append(("NetConfig_OverWrite", "1"))
+    fields.append(("import", "Import"))
+    return fields
+
+
+def token_of(page):
+    m = re.search(r'name="token"\s+value="([^"]*)"', page)
+    if not m:
+        raise ValueError("the page carries no token")
+    return m.group(1)
+
+
+def restart(c):
+    """Save/Restart (09.htm's form: GET set_ok.htm with an empty token), then wait for the console."""
+    t0 = time.monotonic()
+    try:
+        c.get("set_ok.htm?token=", retry=False)
+    except (OSError, http.client.HTTPException):
+        pass  # the unit may drop the connection as it goes down
+    back = c.answers(180)
+    if back is None:
+        raise ValueError("the console did not answer within 180 s of the restart")
+    return time.monotonic() - t0
+
+
 def main(argv):
-    if len(argv) < 2 or argv[0] not in ("export", "form", "set"):
+    if len(argv) < 2 or argv[0] not in ("export", "form", "set", "restart", "import", "password"):
         print(__doc__)
         return 2
     cmd, host, rest = argv[0], argv[1], argv[2:]
@@ -171,6 +278,49 @@ def main(argv):
         else:
             sys.stdout.write(text)
         return 0
+    if cmd == "restart":
+        print("GET /set_ok.htm?token= (Save/Restart)")
+        print(f"the console answers again {restart(c):.1f} s after the request")
+        return 0
+    if cmd == "import":
+        flags = {x for x in rest if x.startswith("--")}
+        args = [x for x in rest if not x.startswith("--")]
+        if len(args) != 1 or flags - {"--overwrite-network", "--dry-run"}:
+            print("import HOST FILE [--overwrite-network] [--dry-run]", file=sys.stderr)
+            return 2
+        with open(args[0], "rb") as f:
+            data = f.read(MAX_BYTES + 1)
+        if len(data) > MAX_BYTES or not data.startswith(b"ioLogik E12"):
+            raise ValueError(f"{args[0]}: not an ioLogik E1200 export")
+        fields = import_fields(token_of(c.get("06_5.htm")), "--overwrite-network" in flags)
+        shown = [(n, "<token>" if n == "token" else v) for n, v in fields]
+        print(f"POST /06_5_1.htm multipart: {shown} + importfile ({len(data)} bytes)")
+        if "--dry-run" in flags:
+            return 0
+        body, ctype = multipart(fields, "importfile", "ik12xx.txt", data)
+        reply = c.post("06_5_1.htm", body, ctype)
+        print("reply:", " ".join(re.sub(r"<[^>]*>", " ", reply).split())[:300])
+        return 0
+    if cmd == "password":
+        dry = "--dry-run" in rest
+        args = [x for x in rest if x != "--dry-run"]
+        if len(args) != 2:
+            print("password HOST OLD NEW [--dry-run]", file=sys.stderr)
+            return 2
+        fields = form_of(c.get("07.htm"))
+        computed = password_fields(c.cookie("ChallID"), args[0], args[1])
+        changes = dict(computed, OldPassword="", NewPassword="", ReTypePassword="")
+        query = urllib.parse.urlencode(submitted(apply(fields, changes)))
+        shown = re.sub(r"(token|OldPwd|NewPwd)=[^&]*", r"\1=<hidden>", query)
+        print(f"GET /set.htm?{shown}")
+        if dry:
+            return 0
+        reply = c.get("set.htm?" + query, retry=False)
+        ok = "Configuration Complete" in reply
+        print(
+            f"reply: {'Configuration Complete' if ok else ' '.join(re.sub(r'<[^>]*>', ' ', reply).split())[:300]}"
+        )
+        return 0 if ok else 1
     if not rest or not re.fullmatch(r"[0-9a-zA-Z_]{1,32}\.htm", rest[0]):
         print("PAGE is a console page such as 04_1.htm", file=sys.stderr)
         return 2
@@ -200,7 +350,7 @@ def main(argv):
     for x, y in rows:
         print(f"  - {x}\n  + {y}")
     if "Save/Restart" in reply:
-        print("staged: the unit applies it after Save/Restart (09.htm), which this did not do")
+        print("staged: the unit applies it after Save/Restart (`restart HOST`)")
     return 0 if ok else 1
 
 
@@ -208,5 +358,6 @@ if __name__ == "__main__":
     try:
         sys.exit(main(sys.argv[1:]))
     except ValueError as e:
-        print(f"refused, nothing sent: {e}" if "set" in sys.argv[1:2] else f"error: {e}", file=sys.stderr)
+        writes = ("set", "import", "password")
+        print(f"refused: {e}" if sys.argv[1:2] and sys.argv[1] in writes else f"error: {e}", file=sys.stderr)
         sys.exit(2)

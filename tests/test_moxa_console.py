@@ -155,6 +155,115 @@ class Fuzz(unittest.TestCase):
             console.urllib.parse.urlencode(pairs)  # always encodable
 
 
+# Computed by running Moxa's own md5.js and 07.htm's Xor() under node on
+# 2026-11-12: (ChallID cookie, password) -> (MD5(cookie), MD5(password), NewPwd).
+VENDOR_VECTORS = [
+    (
+        "",
+        "moxa",
+        "d41d8cd98f00b204e9800998ecf8427e",
+        "d3bff8450106a52369b8b4dbca7b1b16",
+        "b972f4b88f00b204e9800998ecf8427e",
+    ),
+    (
+        "4739",
+        "",
+        "f3507289cfdc8c9ae93f4098111a13f9",
+        "d41d8cd98f00b204e9800998ecf8427e",
+        "f3507289cfdc8c9ae93f4098111a13f9",
+    ),
+    (
+        "4739",
+        "moxa",
+        "f3507289cfdc8c9ae93f4098111a13f9",
+        "d3bff8450106a52369b8b4dbca7b1b16",
+        "9e3f0ae8cfdc8c9ae93f4098111a13f9",
+    ),
+    (
+        "12345",
+        "Abc!~ 09",
+        "827ccb0eea8a706c4c34a16891f84e7b",
+        "54832070cac8fae13e9debcb61ec8ecf",
+        "c31ea82f94aa40554c34a16891f84e7b",
+    ),
+    (
+        "65535",
+        "sixteen-chars-xx",
+        "3c9b5f1cd6a030bcb7bed9eac80589fb",
+        "db5dbdd94d28c99f28055567d9500bd9",
+        "4ff22768b3c55e91d4d6b898bb28f183",
+    ),
+    (
+        "0",
+        "0123456789",
+        "cfcd208495d565ef66e7dff9f98764da",
+        "781e5e245d69b566979b86e28d23f2c7",
+        "fffc12b7a1e053d85ededff9f98764da",
+    ),
+]
+
+
+class Password(unittest.TestCase):
+    def test_the_fields_match_the_vendors_own_javascript(self):
+        for chall, pw, md5_chall, md5_pw, newpwd in VENDOR_VECTORS:
+            # the vector's password is both the old one (OldPwd) and the new one (NewPwd)
+            f = console.password_fields(chall, pw, pw)
+            self.assertEqual(
+                (f["ChallID"], f["OldPwd"], f["NewPwd"]), (md5_chall, md5_pw, newpwd), (chall, pw)
+            )
+
+    def test_long_or_unprintable_passwords_are_refused(self):
+        for old, new in (("x" * 25, "a"), ("a", "x" * 17), ("a", "é"), ("a", "a\nb"), ("\x00", "a")):
+            with self.assertRaises(ValueError, msg=(old, new)):
+                console.password_fields("1", old, new)
+
+    def test_the_change_password_form_sends_the_hashes_and_empties_the_plain_fields(self):
+        page = """<FORM method="GET" action="set.htm"><INPUT type="hidden" name="token" value="T"/>
+<INPUT type="password" name="OldPassword"><INPUT type="password" name="NewPassword">
+<INPUT type="password" name="ReTypePassword"><INPUT type="hidden" name="OldPwd" value="1">
+<INPUT type="hidden" name="NewPwd" value="1"><INPUT type="hidden" name="ChallID" value="1">
+<INPUT type="hidden" name="code" value="7"><INPUT type="submit" value="Submit" name="Submit"></FORM>"""
+        changes = dict(
+            console.password_fields("4739", "moxa", "moxa"), OldPassword="", NewPassword="", ReTypePassword=""
+        )
+        s = dict(sent(page, **changes))
+        self.assertEqual((s["OldPassword"], s["NewPassword"], s["ReTypePassword"]), ("", "", ""))
+        self.assertEqual(s["NewPwd"], "9e3f0ae8cfdc8c9ae93f4098111a13f9")
+        self.assertNotIn("moxa", console.urllib.parse.urlencode(list(s.items())))
+
+
+class Import(unittest.TestCase):
+    def test_network_settings_stay_out_unless_asked(self):
+        self.assertEqual(console.import_fields("T", False), [("token", "T"), ("import", "Import")])
+        self.assertIn(("NetConfig_OverWrite", "1"), console.import_fields("T", True))
+
+    def test_the_multipart_body_has_each_field_then_the_file(self):
+        body, ctype = console.multipart(
+            [("token", "T"), ("import", "Import")],
+            "importfile",
+            "ik.txt",
+            b"ioLogik E1213\r\nA=1\r\n",
+            boundary="B",
+        )
+        self.assertEqual(ctype, "multipart/form-data; boundary=B")
+        self.assertEqual(
+            body,
+            b'--B\r\nContent-Disposition: form-data; name="token"\r\n\r\nT\r\n'
+            b'--B\r\nContent-Disposition: form-data; name="import"\r\n\r\nImport\r\n'
+            b'--B\r\nContent-Disposition: form-data; name="importfile"; filename="ik.txt"\r\nContent-Type: text/plain\r\n\r\n'
+            b"ioLogik E1213\r\nA=1\r\n\r\n--B--\r\n",
+        )
+
+    def test_a_file_holding_the_boundary_is_refused(self):
+        with self.assertRaises(ValueError):
+            console.multipart([], "f", "x", b"a --B b", boundary="B")
+
+    def test_the_token_is_read_from_the_page(self):
+        self.assertEqual(console.token_of('<INPUT type="hidden" name="token" value="67wq"/>'), "67wq")
+        with self.assertRaises(ValueError):
+            console.token_of("<form></form>")
+
+
 class Diff(unittest.TestCase):
     def test_changed_lines_and_a_length_change_are_both_reported(self):
         self.assertEqual(console.diff("A=1\nB=2\n", "A=1\nB=3\n"), [("B=2", "B=3")])
