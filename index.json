@@ -181,10 +181,21 @@
    "model": "IMPACT67 E DI8 DO8",
    "kind": "remote-io",
    "profile": "murrelektronik-impact67-e-di8-do8.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 640,
+     "product_code": 55086
+    }
+   },
    "protocols": {
     "enip": {
      "driver": "enip-io",
-     "map": "enip.map"
+     "map": "enip.map",
+     "eds": {
+      "name": "55086_Impact67_EIP_DI8DO8.eds",
+      "size": 11427,
+      "sha256": "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e"
+     }
     }
    }
   },

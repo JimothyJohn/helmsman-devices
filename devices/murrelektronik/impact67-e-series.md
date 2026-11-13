@@ -1,8 +1,8 @@
 # Murrelektronik IMPACT67 E series (EtherNet/IP)
 
 Five IP67 I/O blocks under one handbook. Each has a folder; none has been
-on the bench yet. Which article the bench block is will be known from its
-label or its first `ListIdentity` answer.
+on the bench yet. **The bench block is a 55086 (DI8 DO8)**: Nick has its
+EDS (2026-11-12), and its folder carries what the EDS says.
 
 | article | model | channels | input / output / config instance, bytes | folder |
 | --- | --- | --- | --- | --- |
@@ -27,9 +27,10 @@ this repository ("Copyright", p. 104).
 - **Vendor ID 640** (technical data, pp. 93-101). The product codes are not
   in the handbook. The 55089's EDS file is named `02800007D7310101.eds`
   (p. 45), which reads as vendor 0x0280 = 640, device type 7, product code
-  0xD731 = 55089, revision 1.1. If the others follow the pattern, each product
-  code is its article number. That is inferred, so only the 55089's folder
-  records it.
+  0xD731 = 55089, revision 1.1. The 55086's EDS says it outright:
+  `ProdCode = 55086`, type 7. So the product code is the article number on
+  two of the five. The 55085, 55087 and 55088 folders still leave it out
+  until their EDS or a unit says so.
 - **EtherNet/IP only.** Two M12 D-coded ports through an internal switch;
   power over 7/8" (US for the module and sensors, UA for the actuators,
   18-30 V, 9 A a connector; pp. 24-26).

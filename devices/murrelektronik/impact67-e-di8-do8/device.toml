@@ -8,10 +8,18 @@ profile = "murrelektronik-impact67-e-di8-do8.device"   # the device profile a co
 # No unit of this article has been checked: checked_on, firmware and checked_by are
 # left out until one has.
 
+[identity.enip]                     # the EDS's [Device]; no unit has answered ListIdentity here yet
+vendor_id = 640
+product_code = 55086
+device_type = 7
+revisions = ["1.1"]
+product_name = "IMPACT67 DI8 DO8"
+
 [protocols.enip]
 driver = "enip-io"
 map = "enip.map"
-rpi_ms = { min = 5, default = 10 }   # the handbook gives no maximum
+rpi_ms = { min = 5, max = 3200, default = 10 }   # the EDS's Param4
+eds = { name = "55086_Impact67_EIP_DI8DO8.eds", size = 11427, sha256 = "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e", url = "https://www.murrelektronik.com/en", terms = "none stated in the file; not redistributed here" }
 input_assembly = { instance = 100, bytes = 4 }
 output_assembly = { instance = 112, bytes = 2 }
 config_assembly = { instance = 128, bytes = 0 }
@@ -24,3 +32,8 @@ source = "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
 title = "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)"
 sha256 = "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f"
 where = "Murrelektronik's download area, article 55368; not redistributed here"
+
+[[sources]]
+title = "55086_Impact67_EIP_DI8DO8.eds, EDS revision 1.1 (EZ-EDS 3.11, 2015-04-29)"
+sha256 = "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e"
+where = "Murrelektronik's configuration-file downloads, 55086_IMPACT67_KF5_x_11.zip; not redistributed here"
