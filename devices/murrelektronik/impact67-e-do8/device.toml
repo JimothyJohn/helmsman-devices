@@ -1,0 +1,26 @@
+[device]
+vendor = "Murrelektronik"
+model = "IMPACT67 E DO8"
+kind = "remote-io"
+article = "55087"
+channels = "8 DO (2 A each)"
+profile = "murrelektronik-impact67-e-do8.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this article has been checked: checked_on, firmware and checked_by are
+# left out until one has.
+
+[protocols.enip]
+driver = "enip-io"
+map = "enip.map"
+rpi_ms = { min = 5, default = 10 }   # the handbook gives no maximum
+input_assembly = { instance = 100, bytes = 2 }
+output_assembly = { instance = 112, bytes = 2 }
+config_assembly = { instance = 128, bytes = 0 }
+
+[wiring]
+note = "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1."
+source = "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+
+[[sources]]
+title = "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)"
+sha256 = "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f"
+where = "Murrelektronik's download area, article 55368; not redistributed here"
