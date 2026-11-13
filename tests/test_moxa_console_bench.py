@@ -24,7 +24,7 @@ MARK = "helmsman bench test"
 @unittest.skipUnless(HOST, "MOXA_E1200_HOST names no unit")
 class OnTheBench(unittest.TestCase):
     def setUp(self):
-        self.c = console.Console(HOST)
+        self.c = console.Console(HOST, os.environ.get("MOXA_E1200_PASSWORD"))
 
     def test_the_export_names_the_firmware_and_its_sections(self):
         text = self.c.export()

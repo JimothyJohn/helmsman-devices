@@ -141,10 +141,32 @@ sessions**: if the challenge never changes, a captured `NewPwd` decodes with
 MD5("4739") and a captured request replays. The password protects nothing
 against anyone on the same network; keep the console on the device link.
 
+## With a password set (bench unit, 2026-11-12, set to "moxa" with Nick's go)
+
+- **A password change applies at once**, though the reply says "will not
+  take effect until you Save/Restart": the next page without a session was
+  the login page.
+- **Every page, the export included, is then the login page** (6 891 bytes)
+  until a session logs in: `<FORM name=InputPassword method="post"
+  action=home.htm>`, fields `Password` and a hidden `Token` (39 characters,
+  fresh on each login page), and the page's `SetPass()` replaces the typed
+  password with **MD5(password + Token)** before posting. The client sends
+  `Password=<that>&Token=<token>&Submit=Submit`.
+- A right password gets the frameset back with `ChallID` (still `4739`) and
+  a new 39-character `MoxaPass`, the session; `MoxaPass` is not the login
+  `Token`. A wrong one gets the login page again and no cookie.
+- **The password is not in the export**: through the login, the export was
+  identical to the one taken before the password was set. So an import does
+  not reset a forgotten password, and an export does not leak it.
+- **Changing a password that is set failed** on this unit: moxa -> empty and
+  moxa -> moxa both answered "Change Password Fail!", with the request
+  built exactly as the page's script builds it (07.htm unchanged but for its
+  token; `OldPwd` = MD5("moxa") as Moxa's own `md5.js` computes it). The first
+  change, from no password, was accepted. Not understood yet; the next step
+  is to capture what a browser sends for the same change.
+
 Not done, and why:
-- **Logging in to a console that has a password.** Not seen: the bench unit
-  has none. Setting one to look would also lock the tooling out until it is
-  cleared, so it waits for Nick's go.
+- **Changing a password once one is set**, above.
 - **Load Factory Default** (`08.htm`) is never fetched, and **Firmware
   Update** (`06_4.htm` to `06_4_1.htm`) is the scripted procedure of the
   firmware plan.
