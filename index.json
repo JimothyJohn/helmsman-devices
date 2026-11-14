@@ -328,6 +328,50 @@
    }
   },
   {
+   "folder": "devices/omron/ert1-od32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-OD32SLH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1106
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-OD32SLH-1.eds",
+      "size": 45765,
+      "sha256": "068568cf28a53b7898fcb3ae41c8f96c013fccbe88a90123f1ef3a601319b3db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/nx-eic202",
+   "vendor": "Omron",
+   "model": "NX-EIC202",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1660
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NX-EIC202.eds",
+      "size": 16580,
+      "sha256": "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s1-4dip-4dop",
    "vendor": "TURCK",
    "model": "TBEN-S1-4DIP-4DOP",

@@ -1,0 +1,51 @@
+format = "helmsman-devices-collect 1"
+vendor = "Omron"
+
+# NX-EIC202 EtherNet/IP coupler. Omron's own product page
+# (https://industrial.omron.co.uk/en/products/NX-EIC202) lists the V1.3 EDS zip
+# and the manuals but shows "Please log in or register" for them.
+# behind login: https://industrial.omron.co.uk/en/products/NX-EIC202 (EDS V1.3 zip)
+# The EDS below is the ODVA marketplace conformance submission instead.
+
+[[doc]]
+folder = "devices/omron/nx-eic202"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds"
+title = "NX-EIC202 EDS (ODVA marketplace, product 1170)"
+found = "2026-11-14 search: omron nx-eic202 eds; https://marketplace.odva.org/products/1170-nx-eic202, Download the EDS File"
+terms = "none stated"
+
+# behind robots.txt: the W536-E1-10 PDF on static.helpjuice.com (fetcher refuses it:
+# "static.helpjuice.com: robots.txt disallows /helpjuice_production/..."); same host
+# serves a V1.3 EDS zip. Omron's knowledge base attachment (W536-E1-01) is used instead.
+# not fetchable: datasheet https://www.fa.omron.co.jp/data_pdf/cat/nx-eic_ds_e_4_7_csm1055927.pdf (HTTP 403)
+
+[[doc]]
+folder = "devices/omron/nx-eic202"
+kind = "manual"
+url = "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414"
+title = "NX-series EtherNet/IP Coupler Unit User's Manual W536-E1-01 (Omron knowledge base attachment)"
+found = "2026-11-14 page https://automation-knowledge-base.omron.eu/support/solutions/articles/103000352850-how-to-configure-ethernet-ip-coupler-unit, attachment link /helpdesk/attachments/103252089414 resolved against the page host"
+terms = "none stated"
+
+# ERT1-OD32SLH-1 and siblings: high-density EtherNet/IP slave I/O blocks.
+# The Operation Manual is W481-E1-02 ("ERT1 Series EtherNet/IP Slave Units")
+# per https://edata.omron.com.au/eData/manuals.html; no direct PDF link was
+# found on an Omron domain, only third-party mirrors (manualmachine.com).
+# behind login/not found: W481 manual, listed on https://edata.omron.com.au/eData/manuals.html
+
+[[doc]]
+folder = "devices/omron/ert1-od32slh-1"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip"
+title = "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)"
+found = "2026-11-14 search: marketplace.odva.org omron; https://marketplace.odva.org/organizations/160-omron-corporation -> https://marketplace.odva.org/products/1237-ert1-xd16ch-1-ert1-xd32slh-1-or-ert1-od32slh-1"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/omron/ert1-od32slh-1"
+kind = "datasheet"
+url = "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf"
+title = "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet"
+found = "2026-11-14 search: W481 ERT1 Series EtherNet/IP Slave Units Operation Manual Omron pdf, restricted to Omron domains"
+terms = "none stated"

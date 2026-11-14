@@ -1,0 +1,38 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Omron"
+model = "NX-EIC202"
+kind = "remote-io"
+article = "NX-EIC202"
+
+[identity.enip]
+vendor_id = 47
+product_code = 1660
+device_type = 12
+revisions = ["1.3"]   # the EDS's MajRev.MinRev
+product_name = "NX-EIC202"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Input / Output"
+# The coupler's I/O size depends on the NX units attached: the EDS declares 4032-bit
+# (504-byte) assemblies as the ceiling, and the manual gives "Input: 504 bytes max.,
+# Output: 504 bytes max." (W536-E1-01 printed p. 3-3, PDF p. 57). So no bytes here.
+# The EDS lists Assem150 "NX Output area" but Connection1's path ends O->T at 0x94 = 148
+# ("20 04 24 C7 2C 94 2C 64"); the draft follows the connection path.
+input_assembly = { instance = 100 }
+output_assembly = { instance = 148 }
+config_assembly = { instance = 199 }
+eds = { name = "NX-EIC202.eds", size = 16580, sha256 = "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds", terms = "none stated" }
+
+[[sources]]
+title = "NX-EIC202 EDS (ODVA marketplace, product 1170)"
+sha256 = "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "NX-series EtherNet/IP Coupler Unit User's Manual W536-E1-01 (Omron knowledge base attachment)"
+sha256 = "7534c445d65d1cbbb934f2a6d2d56b0fa7bcef459a1ab27a9060f79ec43a8a45"
+where = "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414; retrieved 2026-11-14; not redistributed here"
