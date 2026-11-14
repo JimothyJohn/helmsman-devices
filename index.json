@@ -243,6 +243,226 @@
      "map": "enip.map"
     }
    }
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dip-4dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-4DIP-4DOP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14021
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-4DIP-4DOP_R2.8.eds",
+      "size": 23946,
+      "sha256": "6a857eccb596ebd025d5179083c08b00381780b1037d6b2e2db45cb35bf6c5a8"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S1-4DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 20027
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-4DXP_R2.7.eds",
+      "size": 28795,
+      "sha256": "3d7b5a17cca4384c8959a03c4ad0f6ab803cf7a57c1629e63550d9639bd1ce84"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14020
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DIP_R2.8.eds",
+      "size": 23837,
+      "sha256": "7535273424d9340bf7a5e211bf7f6dfcd7b28d4b47880c396259ba8ec363a7da"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip-d",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP-D",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14034
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DIP-D_R2.8.eds",
+      "size": 23845,
+      "sha256": "c64c6276e08044e5b75ea1bdc70f2bd35016b92e59f739f2cb6c8aa46ee81c93"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DOP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14022
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DOP_R2.8.eds",
+      "size": 23748,
+      "sha256": "f9e21be04086ec9a15f5c1d1e118f66a5ef5ac878f2744ff243728702f0ea2ac"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dxp",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14023
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DXP_R2.8.eds",
+      "size": 23984,
+      "sha256": "7131b879442bc0bc18c4f2e1eb47d3dbe97f8fe0a38054ddfddce533fc92bf0c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ai",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AI",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14025
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4AI_R2.8.eds",
+      "size": 28669,
+      "sha256": "ffd8e745085c4447aa460ccce13c70608fdd154743d6fc73d022ee08c11e9c23"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ao",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AO",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14028
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4AO_R2.8.eds",
+      "size": 28667,
+      "sha256": "b07e2643b6c61174d4987fe2997d7702a13e8a3554f628823bd64d43890fdc43"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dip",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DIP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14073
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-8DIP_R1.1.eds",
+      "size": 29714,
+      "sha256": "7da97b3c4d27848480226b0b8748ada44e3fa37e5cfb56a7b7872d5eeb360fa0"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14076
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-8DXP_R1.1.eds",
+      "size": 29861,
+      "sha256": "2d3f0fa696be4d79ae1898ff32d44c518fe8dd8090ec678612b1a91edde50f9a"
+     }
+    }
+   }
   }
  ]
 }
