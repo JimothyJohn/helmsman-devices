@@ -141,6 +141,23 @@ class Grammar(unittest.TestCase):
         )
         self.assertNotIn("bytes", ed.parse(unknown.encode())["assemblies"][0])
 
+    def test_path_parameters_resolve_to_their_defaults(self):
+        """WAGO's 750-363 picks its connection points by parameter: "2C [Param300] 2C [Param301]"."""
+        text = EDS.replace(
+            "[Assembly]",
+            'Param300 = 0, , , 0x0000, 0xC6, 1, "O->T", "", "", 101, 103, 102, , , , , , , , , 0;\n'
+            'Param301 = 0, , , 0x0000, 0xC6, 1, "T->O", "", "", 104, 109, 104, , , , , , , , , 0;\n'
+            'Param302 = 0, , , 0x0000, 0xC7, 2, "wide", "", "", 0, 999, 300, , , , , , , , , 0;\n'
+            "[Assembly]",
+        ).replace('"20 04 24 6A 2C 68 2C 67"', '"20 04 24 01 2C [Param300] 2C [Param301]"')
+        c = ed.parse(text.encode())["connections"][0]
+        self.assertEqual((c["config_instance"], c["o_to_t_instance"], c["t_to_o_instance"]), (1, 102, 104), c)
+        self.assertEqual(c["from_params"], ["Param300", "Param301"])
+        for bad in ("[Param302]", "[Param999]", "[Param300"):
+            t = text.replace("[Param301]", bad)
+            c = ed.parse(t.encode())["connections"][0]
+            self.assertNotIn("t_to_o_instance", c, bad)
+
     def test_crlf_latin1_and_bom(self):
         text = "﻿" + EDS.replace("Turck", "Türck").replace("\n", "\r\n")
         self.assertEqual(ed.parse(text[1:].encode("latin-1"))["device"]["vendor_name"], "Türck")

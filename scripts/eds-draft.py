@@ -130,6 +130,21 @@ def number(f: str) -> int | None:
     return None
 
 
+def resolve_params(path: str, params: dict[str, int]) -> tuple[str, list[str]]:
+    """An EPATH with each [ParamN] replaced by that parameter's default byte, and the names used."""
+    used = []
+
+    def sub(m):
+        name = m.group(1)
+        v = params.get(name.lower())
+        if v is None or not 0 <= v <= 255:
+            return "??"
+        used.append(name)
+        return f"{v:02X}"
+
+    return re.sub(r"\[\s*(Param\d{1,5})\s*\]", sub, path, flags=re.IGNORECASE), used
+
+
 def path_instances(path: str) -> list[int]:
     """The instance/connection-point numbers in an EPATH like "20 04 24 80 2C 96 2C 64"."""
     toks = path.split()
@@ -219,6 +234,11 @@ def parse(data: bytes) -> dict:
         assemblies.append(rec)
     out["assemblies"] = sorted(assemblies, key=lambda a: a["instance"])
 
+    params = {}  # paramN (lower case) -> default value (field 11), when a number
+    for k, f in sec.get("params", []):
+        if re.fullmatch(r"Param\d{1,5}", k, re.IGNORECASE) and len(f) > 11 and number(f[11]) is not None:
+            params[k.lower()] = number(f[11])
+
     connections = []
     for k, f in sec.get("connection manager", []):
         if not re.fullmatch(r"Connection\d{1,4}", k, re.IGNORECASE) or len(f) < 15:
@@ -232,11 +252,16 @@ def parse(data: bytes) -> dict:
             if v is not None:
                 rec[key] = v
         p = string(f[14])
+        used = []
+        if p:
+            p, used = resolve_params(p, params)
         inst = path_instances(p) if p else []
         if len(inst) >= 3:
             rec["config_instance"], rec["o_to_t_instance"], rec["t_to_o_instance"] = inst[:3]
         elif len(inst) == 2:
             rec["o_to_t_instance"], rec["t_to_o_instance"] = inst
+        if used and len(inst) >= 2:
+            rec["from_params"] = used
         connections.append(rec)
     out["connections"] = connections
     return out
@@ -293,6 +318,10 @@ def draft(eds: dict, eds_file: dict, sources: list[dict], vendor: str, model: st
     sizes = {a["instance"]: a.get("bytes") for a in eds["assemblies"]}
     if c:
         lines.append(f"# from {c['entry']}{' ' + toml_str(c['name']) if c.get('name') else ''}")
+        if c.get("from_params"):
+            lines.append(
+                f"# instances are the defaults of {', '.join(c['from_params'])}: the EDS lets a scanner choose others"
+            )
         for role, inst_key, size_key in (
             ("input_assembly", "t_to_o_instance", "t_to_o_bytes"),
             ("output_assembly", "o_to_t_instance", "o_to_t_bytes"),
@@ -413,7 +442,11 @@ def main(argv: list[str]) -> int:
         force = "--force" in args
         if force:
             args.remove("--force")
-        model = choose = None
+        model = choose = vendor = None
+        if "--vendor" in args:
+            i = args.index("--vendor")
+            vendor = args[i + 1] if i + 1 < len(args) else None
+            del args[i : i + 2]
         if "--eds" in args:
             i = args.index("--eds")
             choose = args[i + 1] if i + 1 < len(args) else None
@@ -434,7 +467,7 @@ def main(argv: list[str]) -> int:
             eds = parse(data)
         except EdsError as e:
             raise SystemExit(f"{eds_file['name']}: {e}") from None
-        vendor = eds["device"].get("vendor_name") or parts[1]
+        vendor = vendor or eds["device"].get("vendor_name") or parts[1]
         model = model or eds["device"].get("product_name") or parts[2]
         target = ROOT / folder
         if (target / "device.toml").exists() and not force:
