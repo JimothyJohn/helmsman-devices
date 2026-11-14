@@ -17,7 +17,7 @@ The pipeline is three steps, each leaving a committed record:
    and a README stub from the EDS: identity, assemblies, connections. Nothing in a
    draft is checked on a unit.
 
-Then a draft PR into `dev`, one per family.
+Then a PR into `dev`, one per family, opened ready so auto-merge takes it.
 
 ## 1. Find
 
@@ -96,5 +96,9 @@ python3 -I -B -m unittest discover -s tests
 ```
 
 Commit `collect/<vendor>.toml`, `collect/<vendor>.lock.json`, the folders and
-`index.json`; never a file from `cache/`. Open the PR as a draft: every value in
-it is read from documents and wants a person's eyes.
+`index.json`; never a file from `cache/`. Open the PR ready, not as a draft (Nick,
+2026-11-14): the auto-merge workflow skips drafts, and a folder from documents
+already says so (no `checked_on`), which the site shows as "from documents". Say
+in the PR body what a unit must settle (a contradiction between documents, a
+size the EDS leaves open). Two family PRs both regenerate `index.json`: when one
+merges, merge `origin/dev` into the other and rerun `scripts/build-index.py`.
