@@ -29,6 +29,11 @@ ask. For each model:
   Open the product page with WebFetch and take the download links from it.
 - **Every URL comes from a page you saw.** Never build one from a pattern you
   expect; a vendor's portal changes and a guessed URL fetches someone's login page.
+- **The ODVA marketplace** (`marketplace.odva.org/products/...`) lists the EDS a
+  vendor submitted for conformance, with a direct file link. Try it for any
+  EtherNet/IP device whose vendor page builds its downloads in JavaScript (WAGO's
+  does: a page fetch sees no links). Some devices write their own EDS (Beckhoff's
+  EK9500): then there is no file to collect, only the manual's page saying so.
 - Prefer the vendor's domain. A mirror (a university wiki, a distributor) only
   when the vendor's link serves HTML instead of the file; say so in `found`.
 - One `[[doc]]` per file (a URL appears once). An EDS that ships in a zip is
@@ -66,7 +71,7 @@ do not work around the rule. Exit 1 when anything was refused.
 
 ```sh
 python3 -I scripts/eds-draft.py show cache/sha256/<hex>          # what an EDS says
-python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json devices/<vendor>/<model> [--eds NAME] [--model "TEXT"]
+python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json devices/<vendor>/<model> [--eds NAME] [--vendor TEXT] [--model "TEXT"]
 ```
 
 With several EDS in reach the draft refuses to pick: name the model's own file,
