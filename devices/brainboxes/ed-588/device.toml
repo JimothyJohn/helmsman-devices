@@ -1,0 +1,46 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Brainboxes"
+model = "ED-588"
+kind = "remote-io"
+channels = "8 DI, 8 DO"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# Ships speaking Brainboxes ASCII: Modbus TCP must be chosen on the web console's protocol page (http://ADDR/#/protocol) first. Port 502, idle timeout 0, 8 connections by default (Modbus TCP Manual p. 3).
+
+[[points]]
+name = "DI"
+modbus = "di:0..di:7 (FC 2); also coil:32..coil:39 (FC 1); ir:32 = all eight"
+meaning = "digital input state, 1 = on"
+source = "Brainboxes Modbus TCP Manual §9.1 p. 7"
+
+[[points]]
+name = "DO"
+modbus = "coil:0..coil:7 (FC 1, 5, 15); hr:32 = all 8 as one word (FC 3, 6, 16)"
+meaning = "digital output command and state, 1 = on"
+source = "Brainboxes Modbus TCP Manual §9.1 p. 7; the worked example (p. 8) writes output 1 at coil 0x0001, the table says 0x0000: unresolved"
+
+[[points]]
+name = "DI counters"
+modbus = "ir:0..ir:7 or hr:0..hr:7; clear with coil:512..coil:519"
+meaning = "pulse count per input"
+source = "Brainboxes Modbus TCP Manual §9.1 p. 7"
+
+[[points]]
+name = "output overload"
+modbus = "di:1024..di:1031 (FC 2); ir:1024 = all"
+meaning = "1 = that output is overloaded"
+source = "Brainboxes Modbus TCP Manual §9.1 p. 7"
+
+[[sources]]
+title = "Brainboxes Modbus TCP Manual"
+sha256 = "7fe3af1bf165f8c2f1fa25df39adcc59ede03364d2a9d3c80eedf8772d4026f8"
+where = "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "Brainboxes ED Range Manual"
+sha256 = "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651"
+where = "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
