@@ -1,0 +1,22 @@
+format = "helmsman-devices-collect 1"
+vendor = "Brainboxes"
+
+# ED range Ethernet I/O. The units ship speaking Brainboxes ASCII; Modbus TCP
+# is switched on in the web console's protocol page (docs.brainboxes.com,
+# ED Modbus TCP introduction, read 2026-11-14).
+
+[[doc]]
+folders = ["devices/brainboxes/ed-538", "devices/brainboxes/ed-588"]
+kind = "manual"
+url = "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf"
+title = "Brainboxes ED Range Manual"
+found = "2026-11-14 search: brainboxes ed-538 ed-588 manual pdf modbus tcp register"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/brainboxes/ed-538", "devices/brainboxes/ed-588"]
+kind = "register-map"
+url = "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf"
+title = "Brainboxes Modbus TCP Manual"
+found = "2026-11-14 search: brainboxes ed-538 ed-588 manual pdf modbus tcp register"
+terms = "none stated"

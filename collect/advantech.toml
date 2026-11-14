@@ -1,0 +1,12 @@
+format = "helmsman-devices-collect 1"
+vendor = "Advantech"
+
+# ADAM-6000 Modbus TCP I/O: one series manual covers the models.
+
+[[doc]]
+folders = ["devices/advantech/adam-6050", "devices/advantech/adam-6052", "devices/advantech/adam-6060"]
+kind = "manual"
+url = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf"
+title = "ADAM-6000 Series User Manual, Edition 12"
+found = "2026-11-14 search: advdownload.advantech.com adam-6000 series user manual pdf"
+terms = "none stated"
