@@ -20,15 +20,15 @@ protocols = ["enip"]
 [[family]]
 vendor = "WAGO"
 series = "750 couplers"
-why = "DIN-rail coupler plants already run; Modbus TCP and EtherNet/IP"
-models = ["750-352", "750-362", "750-363"]
+why = "DIN-rail coupler plants already run; 750-362 is Modbus TCP only, 750-363 EtherNet/IP (both 4th gen); 750-352 unconfirmed"
+models = ["750-362", "750-363", "750-352"]
 protocols = ["enip", "modbus"]
 
 [[family]]
 vendor = "Beckhoff"
 series = "EK9xxx / BK9xxx couplers"
 why = "EtherCAT terminals behind a Modbus TCP or EtherNet/IP coupler"
-models = ["EK9000", "EK9500", "BK9000"]
+models = ["EK9000", "EK9500"]   # BK9000: "not recommended for new projects" (Beckhoff)
 protocols = ["enip", "modbus"]
 
 [[family]]

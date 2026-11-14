@@ -1,0 +1,52 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Beckhoff"
+model = "EK9000"
+kind = "remote-io"
+channels = "none of its own: the EtherCAT terminals behind it set the I/O"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+
+[[points]]
+name = "inputs"
+modbus = "registers 0x0000..0x00FF"
+meaning = "process image of the attached input terminals, in terminal order"
+source = "EK9000 manual v2.4.0 p. 49; function codes not given on that page"
+
+[[points]]
+name = "outputs"
+modbus = "registers 0x0800..0x08FF"
+meaning = "process image of the attached output terminals, in terminal order"
+source = "EK9000 manual v2.4.0 p. 49"
+
+[[points]]
+name = "process image lengths"
+modbus = "0x1010 AO, 0x1011 AI, 0x1012 DO, 0x1013 DI (bits)"
+meaning = "how many bits each image has with the terminals attached"
+source = "EK9000 manual v2.4.0 p. 49"
+
+[[points]]
+name = "identity"
+modbus = "0x6000 (read only) = 9000; 0x6001.. one register per terminal"
+meaning = "Bus Coupler detection: the extended interface answers 9000 for an EK9000"
+source = "EK9000 manual v2.4.0 p. 49"
+
+[[points]]
+name = "watchdog"
+modbus = "0x1120 time ms (default 1000); 0x1122 type (1 telegram, default; 0 write telegram; 2 off); 0x1123 fallback (0 zero, default; 1 freeze; 2 stop E-bus)"
+meaning = "the coupler's own safe state when the client goes quiet: outputs to zero after 1 s by default"
+source = "EK9000 manual v2.4.0 p. 49"
+
+[[points]]
+name = "write lock"
+modbus = "0x1124 (1 = a second Modbus client cannot write, default)"
+meaning = "one writing client at a time by default"
+source = "EK9000 manual v2.4.0 p. 49"
+
+[[sources]]
+title = "EK9000 Modbus TCP/UDP Bus Coupler, Documentation, Version 2.4.0 (2024-10-16)"
+sha256 = "cee01984e5e5ebd4e5b6dc6fd7dd099e0fd9707c9a797ea1b32555d0e1eb1434"
+where = "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf; retrieved 2026-11-14; not redistributed here"

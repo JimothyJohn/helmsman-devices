@@ -1,0 +1,33 @@
+# Written by hand from the manual (no vendor EDS exists to draft from: the
+# coupler writes its own). No unit has been checked: checked_on, firmware and
+# checked_by stay out until one has.
+[device]
+vendor = "Beckhoff"
+model = "EK9500"
+kind = "remote-io"
+channels = "none of its own: the EtherCAT terminals behind it set the I/O"
+
+[identity.enip]
+vendor_id = 106
+product_code = 9500
+device_type = 12
+product_name = "EK9500"
+
+[protocols.enip]
+driver = "enip-io"
+# Sizes depend on the terminals attached (manual v1.7.0 p. 61), so none is given.
+input_assembly = { instance = 129 }
+output_assembly = { instance = 130 }
+config_assembly = { instance = 128 }
+# No eds = {...}: none to download: the coupler's web pages write one (Electronic Data Sheet > Create EDS File, generic or for the current terminal set; manual v1.7.0 p. 42)
+
+[[points]]
+name = "process data"
+enip = "in: and out: bytes of assemblies 129 / 130, in terminal order"
+meaning = "the attached terminals' process images; the layout follows the terminal set, read it from the EDS the coupler writes"
+source = "EK9500 manual v1.7.0 pp. 57, 61; layout inferred"
+
+[[sources]]
+title = "EK9500 EtherNet/IP Bus Coupler, Documentation, Version 1.7.0 (2025-10-09)"
+sha256 = "0daa11f3e4bb1dfab197af92c106775e4a2791dc95a46608f884db52ecb47951"
+where = "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9500_en.pdf; retrieved 2026-11-14; not redistributed here"

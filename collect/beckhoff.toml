@@ -1,0 +1,24 @@
+format = "helmsman-devices-collect 1"
+vendor = "Beckhoff"
+
+# EK9000 (Modbus TCP/UDP) and EK9500 (EtherNet/IP) couplers for EtherCAT
+# terminals. The EK9500 has no vendor EDS to download: the coupler writes
+# its own from its web pages ("Create EDS File", generic or for the current
+# terminal set; manual section 8.2, infosys 7216074763). BK9000 is left out:
+# Beckhoff marks it "not recommended for new projects" (BK9050 instead).
+
+[[doc]]
+folder = "devices/beckhoff/ek9500"
+kind = "manual"
+url = "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9500_en.pdf"
+title = "EK9500 EtherNet/IP Bus Coupler, Documentation (English)"
+found = "2026-11-14 search: beckhoff ek9500 ethernet/ip bus coupler eds download"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/beckhoff/ek9000"
+kind = "manual"
+url = "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf"
+title = "EK9000 Modbus TCP/UDP Bus Coupler, Documentation (English)"
+found = "2026-11-14 search: beckhoff ek9000 bk9000 modbus tcp bus coupler documentation pdf"
+terms = "none stated"
