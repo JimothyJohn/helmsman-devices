@@ -1,0 +1,51 @@
+{
+ "docs": {
+  "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf",
+   "folders": [
+    "devices/balluff/bni-eip-104-105-z015",
+    "devices/balluff/bni-eip-202-105-z015",
+    "devices/balluff/bni-eip-302-105-z015"
+   ],
+   "kind": "manual",
+   "name": "MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf",
+   "retrieved": "2026-11-14T18:11:12Z",
+   "sha256": "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a",
+   "size": 1948200,
+   "terms": "none stated",
+   "title": "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip",
+   "folders": [
+    "devices/balluff/bni-eip-302-105-z015"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "BNI EIP-302-105-Z015.eds",
+     "sha256": "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38",
+     "size": 16559,
+     "type": "eds"
+    },
+    {
+     "name": "BNI EIP-508-105-Z015.eds",
+     "sha256": "593a700b5a81c73009eec3f7a2fa019b1ef3bffe421b6d75c388c2b7bb945fab",
+     "size": 198637,
+     "type": "eds"
+    }
+   ],
+   "name": "10943.03-EDSFiles.zip",
+   "retrieved": "2026-11-14T18:11:12Z",
+   "sha256": "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822",
+   "size": 17597,
+   "terms": "none stated",
+   "title": "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
