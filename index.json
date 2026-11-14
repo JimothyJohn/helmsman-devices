@@ -6,6 +6,7 @@
    "vendor": "Advantech",
    "model": "ADAM-6050",
    "kind": "remote-io",
+   "channels": "12 DI, 6 DO (isolated)",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -17,6 +18,7 @@
    "vendor": "Advantech",
    "model": "ADAM-6052",
    "kind": "remote-io",
+   "channels": "8 DI, 8 DO (source type)",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -28,6 +30,7 @@
    "vendor": "Advantech",
    "model": "ADAM-6060",
    "kind": "remote-io",
+   "channels": "6 DI, 6 relay (form A)",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -39,6 +42,7 @@
    "vendor": "Beckhoff",
    "model": "EK9000",
    "kind": "remote-io",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -50,6 +54,7 @@
    "vendor": "Beckhoff",
    "model": "EK9500",
    "kind": "remote-io",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
    "identity": {
     "enip": {
      "vendor_id": 106,
@@ -67,6 +72,7 @@
    "vendor": "Brainboxes",
    "model": "ED-538",
    "kind": "remote-io",
+   "channels": "8 DI, 4 DO",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -78,6 +84,7 @@
    "vendor": "Brainboxes",
    "model": "ED-588",
    "kind": "remote-io",
+   "channels": "8 DI, 8 DO",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -89,6 +96,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1210",
    "kind": "remote-io",
+   "channels": "16 DI",
    "profile": "moxa-iologik-e1210.device",
    "protocols": {
     "modbus": {
@@ -102,6 +110,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1211",
    "kind": "remote-io",
+   "channels": "16 DO",
    "profile": "moxa-iologik-e1211.device",
    "protocols": {
     "modbus": {
@@ -115,6 +124,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1212",
    "kind": "remote-io",
+   "channels": "8 DI, 8 DIO",
    "profile": "moxa-iologik-e1212.device",
    "identity": {
     "enip": {
@@ -143,6 +153,9 @@
    "vendor": "Moxa",
    "model": "ioLogik E1213",
    "kind": "remote-io",
+   "channels": "8 DI, 4 DO, 4 DIO (source type)",
+   "firmware": "V3.1 Build19110615",
+   "checked_on": "2026-11-02",
    "profile": "moxa-iologik-e1213.device",
    "identity": {
     "enip": {
@@ -172,6 +185,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1214",
    "kind": "remote-io",
+   "channels": "6 DI, 6 relays",
    "profile": "moxa-iologik-e1214.device",
    "protocols": {
     "modbus": {
@@ -185,6 +199,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1240",
    "kind": "remote-io",
+   "channels": "8 AI",
    "profile": "moxa-iologik-e1240.device",
    "protocols": {
     "modbus": {
@@ -198,6 +213,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1241",
    "kind": "remote-io",
+   "channels": "4 AO",
    "profile": "moxa-iologik-e1241.device",
    "protocols": {
     "modbus": {
@@ -211,6 +227,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1242",
    "kind": "remote-io",
+   "channels": "4 AI, 4 DI, 4 DIO",
    "profile": "moxa-iologik-e1242.device",
    "protocols": {
     "modbus": {
@@ -224,6 +241,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1260",
    "kind": "remote-io",
+   "channels": "6 RTD",
    "profile": "moxa-iologik-e1260.device",
    "protocols": {
     "modbus": {
@@ -237,6 +255,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1262",
    "kind": "remote-io",
+   "channels": "8 TC",
    "profile": "moxa-iologik-e1262.device",
    "protocols": {
     "modbus": {
@@ -250,6 +269,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DI16",
    "kind": "remote-io",
+   "channels": "16 DI (8 on pin 4, 8 on pin 2 of 8 M12 ports)",
    "profile": "murrelektronik-impact67-e-di16.device",
    "protocols": {
     "enip": {
@@ -263,6 +283,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DI8 DO8",
    "kind": "remote-io",
+   "channels": "8 DI, 8 DO (2 A each)",
    "profile": "murrelektronik-impact67-e-di8-do8.device",
    "identity": {
     "enip": {
@@ -287,6 +308,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DIO8 (DIO8)",
    "kind": "remote-io",
+   "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
    "profile": "murrelektronik-impact67-e-dio8-dio8.device",
    "identity": {
     "enip": {
@@ -306,6 +328,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DO16",
    "kind": "remote-io",
+   "channels": "16 DO (0.5 A each)",
    "profile": "murrelektronik-impact67-e-do16.device",
    "protocols": {
     "enip": {
@@ -319,6 +342,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DO8",
    "kind": "remote-io",
+   "channels": "8 DO (2 A each)",
    "profile": "murrelektronik-impact67-e-do8.device",
    "protocols": {
     "enip": {
