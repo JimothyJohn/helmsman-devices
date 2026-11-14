@@ -36,7 +36,7 @@ DEVICE_KINDS = {  # CIP device type -> device.toml kind
     14: "controller",
     19: "drive",
     24: "remote-io",
-    43: "other",
+    43: "remote-io",  # "Generic Device": what many I/O blocks declare (Balluff BNI EIP)
 }
 
 
@@ -235,9 +235,13 @@ def parse(data: bytes) -> dict:
     out["assemblies"] = sorted(assemblies, key=lambda a: a["instance"])
 
     params = {}  # paramN (lower case) -> default value (field 11), when a number
+    ranges = {}  # paramN (lower case) -> (name, min, max, default) when all three are numbers
     for k, f in sec.get("params", []):
         if re.fullmatch(r"Param\d{1,5}", k, re.IGNORECASE) and len(f) > 11 and number(f[11]) is not None:
             params[k.lower()] = number(f[11])
+            lo, hi = number(f[9]), number(f[10])
+            if lo is not None and hi is not None:
+                ranges[k.lower()] = (k, lo, hi, number(f[11]))
 
     connections = []
     for k, f in sec.get("connection manager", []):
@@ -251,6 +255,16 @@ def parse(data: bytes) -> dict:
             v = number(f[idx])
             if v is not None:
                 rec[key] = v
+            elif f[idx].strip().lower() in ranges:
+                # A size the scanner sets within a range (Phoenix's AXL F BK EIP EF):
+                # the assembly's declared size is then a ceiling, not the size.
+                name, lo, hi, default = ranges[f[idx].strip().lower()]
+                rec[key.replace("_bytes", "_size")] = {
+                    "param": name,
+                    "min": lo,
+                    "max": hi,
+                    "default": default,
+                }
         p = string(f[14])
         used = []
         if p:
@@ -330,7 +344,15 @@ def draft(eds: dict, eds_file: dict, sources: list[dict], vendor: str, model: st
             if inst_key not in c:
                 continue
             inst = c[inst_key]
-            size = c.get(size_key, sizes.get(inst))
+            ranged = c.get(size_key.replace("_bytes", "_size"))
+            if ranged:
+                lines.append(
+                    f"# {role}: the size is set by {ranged['param']}: "
+                    f"{ranged['min']}..{ranged['max']} bytes, default {ranged['default']}"
+                )
+                size = None
+            else:
+                size = c.get(size_key, sizes.get(inst))
             body = f"instance = {inst}" + (f", bytes = {size}" if size is not None else "")
             lines.append(f"{role} = {{ {body} }}")
     lines.append(
@@ -351,9 +373,14 @@ def draft(eds: dict, eds_file: dict, sources: list[dict], vendor: str, model: st
 def readme(eds: dict, vendor: str, model: str, sources: list[dict]) -> str:
     d = eds["device"]
     rows = "\n".join(f"| {s['title']} | `{s['sha256'][:16]}…` | {s['where']} |" for s in sources)
+
+    def size(c, d):
+        r = c.get(f"{d}_size")
+        return f"{r['min']}..{r['max']} ({r['param']})" if r else c.get(f"{d}_bytes", "")
+
     conns = "\n".join(
-        f"| {c['entry']} | {c.get('name', '')} | {c.get('t_to_o_instance', '')} / {c.get('t_to_o_bytes', '')} "
-        f"| {c.get('o_to_t_instance', '')} / {c.get('o_to_t_bytes', '')} | {c.get('config_instance', '')} |"
+        f"| {c['entry']} | {c.get('name', '')} | {c.get('t_to_o_instance', '')} / {size(c, 't_to_o')} "
+        f"| {c.get('o_to_t_instance', '')} / {size(c, 'o_to_t')} | {c.get('config_instance', '')} |"
         for c in eds["connections"]
     )
     return f"""> **Draft from documents.** No unit has been checked; every value here is the
@@ -435,7 +462,13 @@ def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path, choose: str 
 
 def main(argv: list[str]) -> int:
     if len(argv) == 2 and argv[0] == "show":
-        print(json.dumps(parse(pathlib.Path(argv[1]).read_bytes()), indent=1, ensure_ascii=False))
+        path = pathlib.Path(argv[1])
+        if not path.is_file():
+            raise SystemExit(f"{argv[1]}: no such file")
+        try:
+            print(json.dumps(parse(path.read_bytes()), indent=1, ensure_ascii=False))
+        except EdsError as e:
+            raise SystemExit(f"{argv[1]}: {e}") from None
         return 0
     if len(argv) >= 3 and argv[0] == "draft":
         args = argv[1:]

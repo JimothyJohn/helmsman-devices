@@ -158,6 +158,42 @@ class Grammar(unittest.TestCase):
             c = ed.parse(t.encode())["connections"][0]
             self.assertNotIn("t_to_o_instance", c, bad)
 
+    def test_connection_sizes_set_by_parameters_are_ranges(self):
+        """Phoenix's AXL F BK EIP EF: "Param1,Param3,Assem100" with Param3 2..502, default 2."""
+        text = (
+            EDS.replace(
+                "[Assembly]",
+                'Param2 = 0, , , 0x0000, 0xC7, 2, "Input Size", "", "", 2, 502, 2, , , , , , , , , 0;\n'
+                'Param3 = 0, , , 0x0000, 0xC7, 2, "Output Size", "", "", 2, 502, 4, , , , , , , , , 0;\n'
+                "[Assembly]",
+            )
+            .replace("Param1, 2, Assem104,", "Param1, Param3, Assem104,")
+            .replace(
+                "Param1, 6, Assem103,\n                0, ,",
+                "Param1, Param2, Assem103,\n                0, ,",
+            )
+        )
+        e = ed.parse(text.encode())
+        c = e["connections"][0]
+        self.assertNotIn("o_to_t_bytes", c)
+        self.assertEqual(c["o_to_t_size"], {"param": "Param3", "min": 2, "max": 502, "default": 4})
+        self.assertEqual(c["t_to_o_size"], {"param": "Param2", "min": 2, "max": 502, "default": 2})
+        sha = "0" * 64
+        t = tomllib.loads(ed.draft(e, {"name": "x.eds", "size": 1, "sha256": sha}, [], "V", "M"))
+        enip = t["protocols"]["enip"]
+        self.assertNotIn("bytes", enip["input_assembly"])
+        self.assertNotIn("bytes", enip["output_assembly"])
+        self.assertIn(
+            "Param3: 2..502 bytes, default 4",
+            ed.draft(e, {"name": "x.eds", "size": 1, "sha256": sha}, [], "V", "M"),
+        )
+
+    def test_generic_device_is_remote_io(self):
+        """Balluff's BNI EIP-302 declares ProdType 43, "Generic Device"; I/O blocks commonly do."""
+        e = ed.parse(EDS.replace("ProdType = 12;", "ProdType = 43;").encode())
+        t = tomllib.loads(ed.draft(e, {"name": "x.eds", "size": 1, "sha256": "0" * 64}, [], "V", "M"))
+        self.assertEqual(t["device"]["kind"], "remote-io")
+
     def test_crlf_latin1_and_bom(self):
         text = "﻿" + EDS.replace("Turck", "Türck").replace("\n", "\r\n")
         self.assertEqual(ed.parse(text[1:].encode("latin-1"))["device"]["vendor_name"], "Türck")

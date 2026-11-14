@@ -292,6 +292,36 @@ class OverHttp(unittest.TestCase):
         self.assertEqual((what, e2), ("stored", e))
         self.assertEqual(SEEN, [])
 
+    def test_a_stored_entry_takes_the_candidates_current_description(self):
+        """Regression (Omron run, 2026-11-14): a folder renamed in <vendor>.toml stayed stale in the lock."""
+        SITES["vendor.example"]["/m.pdf"] = (200, {}, PDF)
+        e, _ = self.collect("https://vendor.example/m.pdf")
+        SEEN.clear()
+        doc = self.doc("https://vendor.example/m.pdf") | {
+            "folders": ["devices/v/renamed"],
+            "title": "New title",
+            "terms": "now stated",
+        }
+        e2, what = df.collect_one(doc, e, self.fetcher, self.store, False, "2026-11-15T00:00:00Z")
+        self.assertEqual(what, "stored")
+        self.assertEqual(SEEN, [])
+        self.assertEqual(
+            (e2["folders"], e2["title"], e2["terms"]), (["devices/v/renamed"], "New title", "now stated")
+        )
+        self.assertEqual((e2["sha256"], e2["retrieved"]), (e["sha256"], e["retrieved"]))
+        no_terms = {k: v for k, v in doc.items() if k != "terms"}
+        e3, _ = df.collect_one(no_terms, e2, self.fetcher, self.store, False, "2026-11-15T00:00:00Z")
+        self.assertNotIn("terms", e3)
+
+    def test_a_refused_refetch_still_takes_the_new_description(self):
+        SITES["vendor.example"]["/m.pdf"] = (200, {}, PDF)
+        e, _ = self.collect("https://vendor.example/m.pdf")
+        SITES["vendor.example"]["/m.pdf"] = (404, {}, b"gone")
+        doc = self.doc("https://vendor.example/m.pdf") | {"folders": ["devices/v/renamed"]}
+        e2, what = df.collect_one(doc, e, self.fetcher, self.store, True, "2026-11-15T00:00:00Z")
+        self.assertTrue(what.startswith("refused"), what)
+        self.assertEqual((e2["folders"], e2["sha256"]), (["devices/v/renamed"], e["sha256"]))
+
     def test_refresh_reports_a_changed_file(self):
         SITES["vendor.example"]["/m.pdf"] = (200, {}, PDF)
         e, _ = self.collect("https://vendor.example/m.pdf")
@@ -447,6 +477,11 @@ class Candidates(unittest.TestCase):
     def test_wrong_format(self):
         with self.assertRaises(SystemExit):
             df.load_candidates(self.write('format = "x"\nvendor = "V"\n'))
+
+    def test_urls_gone_from_the_candidates_leave_the_lock(self):
+        lock = {"format": df.LOCK_FORMAT, "docs": {"https://a": {"k": 1}, "https://b": {"k": 2}}}
+        gone = df.prune(lock, {"https://b", "https://c"})
+        self.assertEqual((sorted(lock["docs"]), gone), (["https://b"], ["https://a"]))
 
     def test_lock_is_deterministic(self):
         d = pathlib.Path(tempfile.mkdtemp())
