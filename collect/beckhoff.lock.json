@@ -1,0 +1,35 @@
+{
+ "docs": {
+  "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf",
+   "folders": [
+    "devices/beckhoff/ek9000"
+   ],
+   "kind": "manual",
+   "name": "ek9000_en.pdf",
+   "retrieved": "2026-11-14T17:03:07Z",
+   "sha256": "cee01984e5e5ebd4e5b6dc6fd7dd099e0fd9707c9a797ea1b32555d0e1eb1434",
+   "size": 6416898,
+   "terms": "none stated",
+   "title": "EK9000 Modbus TCP/UDP Bus Coupler, Documentation (English)",
+   "type": "pdf"
+  },
+  "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9500_en.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9500_en.pdf",
+   "folders": [
+    "devices/beckhoff/ek9500"
+   ],
+   "kind": "manual",
+   "name": "ek9500_en.pdf",
+   "retrieved": "2026-11-14T17:03:07Z",
+   "sha256": "0daa11f3e4bb1dfab197af92c106775e4a2791dc95a46608f884db52ecb47951",
+   "size": 6829904,
+   "terms": "none stated",
+   "title": "EK9500 EtherNet/IP Bus Coupler, Documentation (English)",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
