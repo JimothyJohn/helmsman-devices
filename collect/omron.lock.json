@@ -1,0 +1,97 @@
+{
+ "docs": {
+  "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf",
+   "folders": [
+    "devices/omron/ert1-od32slh-1"
+   ],
+   "kind": "datasheet",
+   "name": "r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf",
+   "retrieved": "2026-11-14T18:13:25Z",
+   "sha256": "4c1de6bd123f75fb6391090cf550cea149c96ba5d71620d05abe232c96ad5565",
+   "size": 1203938,
+   "terms": "none stated",
+   "title": "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet",
+   "type": "pdf"
+  },
+  "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414": {
+   "content_type": "application/pdf",
+   "final_url": "https://omron-bnl.attachments-euc10.freshdesk.com/data/helpdesk/attachments/production/103252089414/original/W536-E1-01_NX_EtherNetIP-Coupler_UserManual.pdf?response-content-type=application%2Fpdf&Expires=1794680309&Signature=SrkeN6xGwuevy32~jBkKMHLqSByRcpxUT3nkH58HuZelLOGcMQPKOgmdi3XDA6ACsqk3Mw0Bs0ITDyTPu3XHHXUmSp20~B1p1fv-xbmUM~LuCJTAnrjmlRNfFcUPfJrp1v53wtZMAHx5vBAuJzNOrOWV8NHj7Rn9wTWmmKIzGl5qWBvc4sD6esNK2riAduv42z-8gf~l88pzBcUyl9AN7MmG7VqmISriaZE3LvJ9QQjnFts2TAOdl2NuueNWJIA3vikMnRNayQvWsG7NlCNYB2UvX2NgALJGkii4TdV28BoK~HxZbve8Z8OZe2xOqKN21LXNhdGoUB1N59UqJpTgEg__&Key-Pair-Id=APKAJ7JARUX3F6RQIXLA",
+   "folders": [
+    "devices/omron/nx-eic202"
+   ],
+   "kind": "manual",
+   "name": "W536-E1-01_NX_EtherNetIP-Coupler_UserManual.pdf",
+   "retrieved": "2026-11-14T18:13:25Z",
+   "sha256": "7534c445d65d1cbbb934f2a6d2d56b0fa7bcef459a1ab27a9060f79ec43a8a45",
+   "size": 34316939,
+   "terms": "none stated",
+   "title": "NX-series EtherNet/IP Coupler Unit User's Manual W536-E1-01 (Omron knowledge base attachment)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds",
+   "folders": [
+    "devices/omron/nx-eic202"
+   ],
+   "kind": "eds",
+   "name": "NX-EIC202.eds",
+   "retrieved": "2026-11-14T18:13:25Z",
+   "sha256": "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6",
+   "size": 16580,
+   "terms": "none stated",
+   "title": "NX-EIC202 EDS (ODVA marketplace, product 1170)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip",
+   "folders": [
+    "devices/omron/ert1-od32slh-1"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ERT1-HD16CH-1.eds",
+     "sha256": "78af590da4f7a7c60580d5ed53760c4017c6519cb1fa76ff2be5155c43a5238b",
+     "size": 15388,
+     "type": "eds"
+    },
+    {
+     "name": "ERT1-ID32SLH-1.eds",
+     "sha256": "c6c07d841714183a2ef67e74685d9fbe76c56a724ccb481bde16ba565184b54f",
+     "size": 15867,
+     "type": "eds"
+    },
+    {
+     "name": "ERT1-MD32SLH-1.eds",
+     "sha256": "29f131f210cf4d38798fdae75b433407c3b2f238ced0ea4df8ef6e70e149435b",
+     "size": 33523,
+     "type": "eds"
+    },
+    {
+     "name": "ERT1-OD32SLH-1.eds",
+     "sha256": "068568cf28a53b7898fcb3ae41c8f96c013fccbe88a90123f1ef3a601319b3db",
+     "size": 45765,
+     "type": "eds"
+    },
+    {
+     "name": "ERT1-WD16CH-1.eds",
+     "sha256": "8262a974f075c1e7d58e723574570cc4fb6e9ce9be4ba4b40a2070ffa8d58ca1",
+     "size": 29699,
+     "type": "eds"
+    }
+   ],
+   "name": "10718-EDS.zip",
+   "retrieved": "2026-11-14T18:13:25Z",
+   "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+   "size": 13608,
+   "terms": "none stated",
+   "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
