@@ -2,6 +2,34 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/beckhoff/ek9000",
+   "vendor": "Beckhoff",
+   "model": "EK9000",
+   "kind": "remote-io",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/beckhoff/ek9500",
+   "vendor": "Beckhoff",
+   "model": "EK9500",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 106,
+     "product_code": 9500
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
    "folder": "devices/moxa/iologik-e1210",
    "vendor": "Moxa",
    "model": "ioLogik E1210",
@@ -460,6 +488,28 @@
       "name": "TBEN-S2-8DXP_R1.1.eds",
       "size": 29861,
       "sha256": "2d3f0fa696be4d79ae1898ff32d44c518fe8dd8090ec678612b1a91edde50f9a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-363",
+   "vendor": "WAGO",
+   "model": "750-363",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 363
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500363.eds",
+      "size": 20821,
+      "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
      }
     }
    }
