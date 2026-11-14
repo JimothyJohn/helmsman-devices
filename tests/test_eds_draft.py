@@ -121,6 +121,26 @@ class Grammar(unittest.TestCase):
         )
         self.assertEqual((c2["name"], c2["o_to_t_instance"], c2["o_to_t_bytes"]), ("Input Only", 0xC6, 0))
 
+    def test_size_from_members_when_the_size_field_is_empty(self):
+        """Turck's TBEN-S EDS leave the size empty and list 16-bit members (CIP Vol. 1 7-3.6.11)."""
+        text = EDS.replace(
+            '"20 04 24 67 30 03", 6, 0x0000, , , 48, ;',
+            '"20 04 24 67 30 03", , 0x0000, ,, 16,Param1, 16,Param1, 16,Param1;',
+        ).replace(
+            'Assem106 = "Config", "20 04 24 6A 30 03", 0, 0x0000, , , ;',
+            'Assem106 = "Config", , , 0x0000, ,, 72,, 1,Param1, 1,Param1, 1,Param1, 5,;',
+        )
+        a = {x["instance"]: x.get("bytes") for x in ed.parse(text.encode())["assemblies"]}
+        self.assertEqual(a, {103: 6, 104: 2, 106: 10})
+        odd = EDS.replace(
+            '"20 04 24 67 30 03", 6, 0x0000, , , 48, ;', '"20 04 24 67 30 03", , 0x0000, ,, 3,Param1;'
+        )
+        self.assertNotIn("bytes", ed.parse(odd.encode())["assemblies"][0])
+        unknown = EDS.replace(
+            '"20 04 24 67 30 03", 6, 0x0000, , , 48, ;', '"20 04 24 67 30 03", , 0x0000, ,, Param1,Param1;'
+        )
+        self.assertNotIn("bytes", ed.parse(unknown.encode())["assemblies"][0])
+
     def test_crlf_latin1_and_bom(self):
         text = "﻿" + EDS.replace("Turck", "Türck").replace("\n", "\r\n")
         self.assertEqual(ed.parse(text[1:].encode("latin-1"))["device"]["vendor_name"], "Türck")
@@ -225,3 +245,54 @@ class Draft(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class FromLock(unittest.TestCase):
+    """A family package (Turck's TBEN-S zip holds 21 EDS) must not draft a folder from a sibling's EDS."""
+
+    def setUp(self):
+        self.store = pathlib.Path(tempfile.mkdtemp())
+        (self.store / "sha256").mkdir()
+        self.members = []
+        for name in ("pkg/TBEN-S1-4DIP-4DOP_R2.7.eds", "pkg/TBEN-S2-8DXP_R1.1.eds"):
+            body = EDS.replace("TBEN-S2-8DXP", pathlib.PurePosixPath(name).stem).encode()
+            sha = hashlib.sha256(body).hexdigest()
+            (self.store / "sha256" / sha).write_bytes(body)
+            self.members.append({"name": name, "sha256": sha, "size": len(body), "type": "eds"})
+        self.lock = {
+            "docs": {
+                "https://v.example/pkg.zip": {
+                    "folders": ["devices/turck/tben-s2-8dxp", "devices/turck/tben-s1-4dip-4dop"],
+                    "kind": "eds",
+                    "type": "zip",
+                    "name": "pkg.zip",
+                    "title": "pkg",
+                    "sha256": "0" * 64,
+                    "size": 1,
+                    "retrieved": "2026-11-14T00:00:00Z",
+                    "members": self.members,
+                }
+            }
+        }
+
+    def test_several_eds_refuse_to_guess(self):
+        with self.assertRaises(SystemExit) as e:
+            ed.eds_from_lock(self.lock, "devices/turck/tben-s2-8dxp", self.store)
+        self.assertIn("TBEN-S2-8DXP_R1.1.eds", str(e.exception))
+
+    def test_the_named_eds_is_the_one_drafted(self):
+        data, f, _ = ed.eds_from_lock(
+            self.lock, "devices/turck/tben-s2-8dxp", self.store, "TBEN-S2-8DXP_R1.1.eds"
+        )
+        self.assertEqual(f["name"], "TBEN-S2-8DXP_R1.1.eds")
+        self.assertIn(b"TBEN-S2-8DXP_R1.1", data)
+
+    def test_a_shared_document_serves_each_folder(self):
+        _, f, _ = ed.eds_from_lock(
+            self.lock, "devices/turck/tben-s1-4dip-4dop", self.store, "TBEN-S1-4DIP-4DOP_R2.7.eds"
+        )
+        self.assertEqual(f["sha256"], self.members[0]["sha256"])
+
+    def test_unknown_name_refused(self):
+        with self.assertRaises(SystemExit):
+            ed.eds_from_lock(self.lock, "devices/turck/tben-s2-8dxp", self.store, "nope.eds")

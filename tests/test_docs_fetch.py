@@ -267,7 +267,7 @@ class OverHttp(unittest.TestCase):
         return http.client.HTTPConnection("127.0.0.1", self.port, timeout=5)
 
     def doc(self, url, kind="manual"):
-        return {"folder": "devices/v/m", "kind": kind, "url": url, "title": "T", "found": "test"}
+        return {"folders": ["devices/v/m"], "kind": kind, "url": url, "title": "T", "found": "test"}
 
     def collect(self, url, kind="manual", entry=None, refresh=False):
         return df.collect_one(
@@ -423,9 +423,26 @@ class Candidates(unittest.TestCase):
             ("other/v/m", "manual", "https://a.example/x"),
             ("devices/v/m", "firmware", "https://a.example/x"),
             ("devices/v/m", "manual", "http://a.example/x"),
+            ("devices/v/m\n", "manual", "https://a.example/x"),
+            ("devices/v/m\\n", "manual", "https://a.example/x"),
+            ("devices/V/m", "manual", "https://a.example/x"),
+            ("devices/v/m%2f..", "manual", "https://a.example/x"),
         ]:
             with self.subTest(f=f, k=k, u=u), self.assertRaises(SystemExit):
                 df.load_candidates(self.write(self.HEAD + self.DOC.format(f=f, k=k, u=u)))
+
+    def test_a_url_listed_twice_is_refused(self):
+        doc = self.DOC.format(f="devices/v/m", k="eds", u="https://a.example/x")
+        with self.assertRaises(SystemExit):
+            df.load_candidates(self.write(self.HEAD + doc + doc.replace("devices/v/m", "devices/v/n")))
+
+    def test_folders_list(self):
+        body = self.HEAD + self.DOC.format(f="devices/v/m", k="eds", u="https://a.example/x").replace(
+            'folder = "devices/v/m"', 'folders = ["devices/v/n", "devices/v/m", "devices/v/m"]'
+        )
+        self.assertEqual(
+            df.load_candidates(self.write(body))["doc"][0]["folders"], ["devices/v/m", "devices/v/n"]
+        )
 
     def test_wrong_format(self):
         with self.assertRaises(SystemExit):

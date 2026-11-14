@@ -19,7 +19,8 @@ format = "helmsman-devices-collect 1"
 vendor = "Turck"
 
 [[doc]]
-folder = "devices/turck/tben-s2-8dxp"   # the library folder it is for
+folder = "devices/turck/tben-s2-8dxp"   # the library folder it is for; a family package
+                                        # serving several: folders = ["...", "..."]
 kind = "eds"                            # eds gsdml esi manual release-notes register-map datasheet archive
 url = "https://..."                     # https on 443 only
 title = "TBEN-S2-8DXP EDS"

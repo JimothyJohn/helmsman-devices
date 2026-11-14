@@ -31,8 +31,10 @@ ask. For each model:
   expect; a vendor's portal changes and a guessed URL fetches someone's login page.
 - Prefer the vendor's domain. A mirror (a university wiki, a distributor) only
   when the vendor's link serves HTML instead of the file; say so in `found`.
-- One `[[doc]]` per file. An EDS that ships in a zip is `kind = "eds"` with the
-  zip's URL; the fetcher records each member.
+- One `[[doc]]` per file (a URL appears once). An EDS that ships in a zip is
+  `kind = "eds"` with the zip's URL; the fetcher records each member. A family
+  package (Turck's TBEN-S zip holds 21 EDS) is one doc with
+  `folders = [...]`, and the draft names its member with `--eds`.
 - `found` says how: `"2026-11-14 search: turck tben-s2-8dxp eds; product page https://..."`.
 - `terms`: only what the page or file says about redistribution, quoted short.
   Silence is `"none stated"`, not a guess. Nothing is committed either way.
@@ -64,8 +66,12 @@ do not work around the rule. Exit 1 when anything was refused.
 
 ```sh
 python3 -I scripts/eds-draft.py show cache/sha256/<hex>          # what an EDS says
-python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json devices/<vendor>/<model> [--model "TEXT"]
+python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json devices/<vendor>/<model> [--eds NAME] [--model "TEXT"]
 ```
+
+With several EDS in reach the draft refuses to pick: name the model's own file,
+the newest revision (`_R2.8` over `_R2.7`). A config assembly without `bytes`
+is one the EDS gives no size for (often instance 1, "no configuration data").
 
 A folder with no EDS (a Modbus-only unit) gets a hand-written `device.toml`
 with `[device]` and `[[sources]]` only, from the manual. Then, for any folder,

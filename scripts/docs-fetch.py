@@ -33,6 +33,7 @@ import ipaddress
 import json
 import os
 import pathlib
+import re
 import shutil
 import socket
 import ssl
@@ -48,6 +49,7 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FORMAT = "helmsman-devices-collect 1"
 LOCK_FORMAT = "helmsman-devices-collect-lock 1"
+FOLDER = re.compile(r"devices/[a-z0-9][a-z0-9_.-]{0,63}/[a-z0-9][a-z0-9_.-]{0,63}")
 USER_AGENT = "helmsman-devices-collect/1 (+https://github.com/JimothyJohn/helmsman-devices)"
 MAX_BYTES = 64 * 1024 * 1024
 ROBOTS_MAX_BYTES = 512 * 1024
@@ -391,26 +393,35 @@ class Store:
 
 
 def load_candidates(path: pathlib.Path) -> dict:
-    t = tomllib.loads(path.read_text())
+    try:
+        t = tomllib.loads(path.read_text())
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
+        raise SystemExit(f"{path}: {e}") from None
     if t.get("format") != FORMAT:
         raise SystemExit(f"{path}: format must be {FORMAT!r}")
     if not isinstance(t.get("vendor"), str) or not t["vendor"]:
         raise SystemExit(f'{path}: vendor = "..." is required')
     docs = t.get("doc", [])
+    seen = set()
     for n, d in enumerate(docs, 1):
         where = f"{path}: doc {n}"
-        for key in ("folder", "kind", "url", "title", "found"):
+        if "folder" in d:
+            d["folders"] = [d.pop("folder")]
+        folders = d.get("folders")
+        if not isinstance(folders, list) or not folders or not all(isinstance(f, str) for f in folders):
+            raise SystemExit(f'{where}: folder = "..." or folders = [...] is required')
+        d["folders"] = sorted(set(folders))
+        for key in ("kind", "url", "title", "found"):
             if not isinstance(d.get(key), str) or not d[key]:
                 raise SystemExit(f"{where}: {key} is required")
+        if d["url"] in seen:
+            raise SystemExit(f"{where}: {d['url']} is listed twice; give one doc its folders = [...]")
+        seen.add(d["url"])
         if d["kind"] not in KINDS:
             raise SystemExit(f"{where}: kind must be one of {', '.join(sorted(KINDS))}")
-        parts = pathlib.PurePosixPath(d["folder"]).parts
-        if (
-            len(parts) != 3
-            or parts[0] != "devices"
-            or any(p in ("..", ".") or p.startswith(".") for p in parts)
-        ):
-            raise SystemExit(f"{where}: folder must be devices/<vendor>/<model>")
+        for f in d["folders"]:
+            if not FOLDER.fullmatch(f):
+                raise SystemExit(f"{where}: folder {f!r} must be devices/<vendor>/<model>, a-z 0-9 . _ -")
         try:
             check_url(d["url"])
         except Refused as e:
@@ -468,7 +479,7 @@ def collect_one(doc: dict, entry: dict | None, fetcher: Fetcher, store: Store, r
     sha = hashlib.sha256(data).hexdigest()
     store.put(sha, data, final)
     new = {
-        "folder": doc["folder"],
+        "folders": doc["folders"],
         "kind": doc["kind"],
         "title": doc["title"],
         "name": file_name(final, sha, doc["kind"], typ),
@@ -514,7 +525,7 @@ def main(argv: list[str]) -> int:
     now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     failed = 0
     for doc in cand.get("doc", []):
-        if only and doc["folder"] != only:
+        if only and only not in doc["folders"]:
             continue
         entry, what = collect_one(doc, lock["docs"].get(doc["url"]), fetcher, store, refresh, now)
         if entry is not None:
@@ -522,7 +533,9 @@ def main(argv: list[str]) -> int:
         if what.startswith("refused"):
             failed += 1
         sha = entry["sha256"][:12] if entry else "-" * 12
-        print(f"{what.split(':')[0]:8} {sha} {doc['kind']:13} {doc['folder']}  {what.partition(': ')[2]}")
+        fs = doc["folders"]
+        where = fs[0] if len(fs) == 1 else f"{len(fs)} folders ({fs[0]}, ...)"
+        print(f"{what.split(':')[0]:8} {sha} {doc['kind']:13} {where}  {what.partition(': ')[2]}")
     write_lock(lpath, lock)
     print(
         f"{lpath.relative_to(ROOT) if lpath.is_relative_to(ROOT) else lpath}: {len(lock['docs'])} document(s)"

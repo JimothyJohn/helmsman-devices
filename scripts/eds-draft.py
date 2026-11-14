@@ -11,9 +11,10 @@ Usage:
   python3 -I scripts/eds-draft.py show EDS
       print what the EDS says, as JSON
   python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json FOLDER [--model TEXT] [--force]
+      [--eds NAME]
       write FOLDER/device.toml and README.md from the EDS the lock lists for FOLDER
-      (the stored file, or the archive member when the EDS came zipped; with
-      several EDS for one folder, the first by name)
+      (the stored file, or the archive member when the EDS came zipped); when
+      more than one EDS is in reach (a family package), --eds names the file
 
 An existing device.toml is never overwritten without --force.
 Standard library only (Python 3.11).
@@ -210,6 +211,11 @@ def parse(data: bytes) -> dict:
             rec["name"] = string(f[0])
         if len(f) > 2 and number(f[2]) is not None:
             rec["bytes"] = number(f[2])
+        elif len(f) > 2 and not f[2].strip():
+            # No size: the sum of the members' sizes in bits (CIP Vol. 1 7-3.6.11).
+            bits = [number(x) for x in f[6::2] if x.strip()]
+            if bits and all(b is not None for b in bits) and sum(bits) % 8 == 0:
+                rec["bytes"] = sum(bits) // 8
         assemblies.append(rec)
     out["assemblies"] = sorted(assemblies, key=lambda a: a["instance"])
 
@@ -349,9 +355,13 @@ Vendor files are not in this repository; fetch them with
 """
 
 
-def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path):
-    """(EDS bytes, its file record, the folder's sources) from the lock and the store."""
-    docs = [d for d in lock["docs"].items() if d[1]["folder"] == folder]
+def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path, choose: str | None = None):
+    """(EDS bytes, its file record, the folder's sources) from the lock and the store.
+
+    A family package holds many models' EDS; with more than one in reach, choose
+    (a file name) must say which, and nothing is guessed.
+    """
+    docs = [d for d in lock["docs"].items() if folder in d[1].get("folders", [])]
     if not docs:
         raise SystemExit(f"the lock lists nothing for {folder}")
     candidates = []
@@ -365,7 +375,14 @@ def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path):
                 candidates.append((pathlib.PurePosixPath(m["name"]).name, m["sha256"], m["size"], url, d))
     if not candidates:
         raise SystemExit(f"the lock has no EDS for {folder}")
-    name, sha, size, url, d = min(candidates, key=lambda c: (c[0], c[1]))
+    names = sorted(c[0] for c in candidates)
+    if choose is not None:
+        candidates = [c for c in candidates if c[0] == choose]
+        if len(candidates) != 1:
+            raise SystemExit(f"--eds {choose}: not exactly one of: {', '.join(names)}")
+    elif len(candidates) > 1:
+        raise SystemExit(f"{len(candidates)} EDS for {folder}; name one with --eds: {', '.join(names)}")
+    name, sha, size, url, d = candidates[0]
     p = store_dir / "sha256" / sha
     if not p.is_file():
         raise SystemExit(f"{sha[:12]} is not in the store: run scripts/docs-fetch.py first")
@@ -396,7 +413,11 @@ def main(argv: list[str]) -> int:
         force = "--force" in args
         if force:
             args.remove("--force")
-        model = None
+        model = choose = None
+        if "--eds" in args:
+            i = args.index("--eds")
+            choose = args[i + 1] if i + 1 < len(args) else None
+            del args[i : i + 2]
         if "--model" in args:
             i = args.index("--model")
             model = args[i + 1] if i + 1 < len(args) else None
@@ -405,10 +426,10 @@ def main(argv: list[str]) -> int:
             raise SystemExit("draft needs LOCK FOLDER")
         lock = json.loads(pathlib.Path(args[0]).read_text())
         folder = args[1].rstrip("/")
-        parts = pathlib.PurePosixPath(folder).parts
-        if len(parts) != 3 or parts[0] != "devices" or any(p.startswith(".") for p in parts):
-            raise SystemExit("FOLDER must be devices/<vendor>/<model>")
-        data, eds_file, sources = eds_from_lock(lock, folder, ROOT / "cache")
+        if not re.fullmatch(r"devices/[a-z0-9][a-z0-9_.-]{0,63}/[a-z0-9][a-z0-9_.-]{0,63}", folder):
+            raise SystemExit("FOLDER must be devices/<vendor>/<model>, a-z 0-9 . _ -")
+        parts = folder.split("/")
+        data, eds_file, sources = eds_from_lock(lock, folder, ROOT / "cache", choose)
         try:
             eds = parse(data)
         except EdsError as e:
