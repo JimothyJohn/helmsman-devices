@@ -453,8 +453,36 @@ def file_name(final_url: str, sha: str, kind: str, typ: str) -> str:
     return base or f"{kind}-{sha[:12]}.{typ}"
 
 
+def described(entry: dict | None, doc: dict) -> dict | None:
+    """The lock entry with the candidate's current description (folders, kind, title, terms).
+
+    The file's record (hash, size, URL after redirects, date) is the fetch's; what
+    the file is for is the candidates file's, and follows it when it changes.
+    """
+    if entry is None:
+        return None
+    out = dict(entry)
+    for key in ("folders", "kind", "title"):
+        out[key] = doc[key]
+    if doc.get("terms"):
+        out["terms"] = doc["terms"]
+    else:
+        out.pop("terms", None)
+    out.pop("folder", None)
+    return out
+
+
+def prune(lock: dict, urls: set[str]) -> list[str]:
+    """Drop lock entries whose URL the candidates no longer list; the URLs dropped."""
+    gone = sorted(u for u in lock["docs"] if u not in urls)
+    for u in gone:
+        del lock["docs"][u]
+    return gone
+
+
 def collect_one(doc: dict, entry: dict | None, fetcher: Fetcher, store: Store, refresh: bool, now: str):
     """(lock entry, what happened): fetched | stored | changed | refused: why."""
+    entry = described(entry, doc)
     if entry and not refresh and store.get(entry["sha256"]) is not None:
         return entry, "stored"
     try:
@@ -536,6 +564,9 @@ def main(argv: list[str]) -> int:
         fs = doc["folders"]
         where = fs[0] if len(fs) == 1 else f"{len(fs)} folders ({fs[0]}, ...)"
         print(f"{what.split(':')[0]:8} {sha} {doc['kind']:13} {where}  {what.partition(': ')[2]}")
+    if not only:
+        for u in prune(lock, {d["url"] for d in cand.get("doc", [])}):
+            print(f"dropped  {'-' * 12} {'':13} no longer in {cpath.name}: {u}")
     write_lock(lpath, lock)
     print(
         f"{lpath.relative_to(ROOT) if lpath.is_relative_to(ROOT) else lpath}: {len(lock['docs'])} document(s)"
