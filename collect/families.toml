@@ -1,0 +1,60 @@
+# The I/O families the library should cover, in the order to collect them
+# (decided 2026-11-14). Models are the search's starting points; the vendor's
+# product pages settle the exact list, and a model that turns out not to exist
+# or not to speak a protocol here is dropped with a note, not kept.
+
+[[family]]
+vendor = "Turck"
+series = "TBEN-S"
+why = "the M12 IP67 pick (2026-11-13): EtherNet/IP + Modbus TCP, PNP"
+models = ["TBEN-S2-8DXP"]
+protocols = ["enip", "modbus"]
+
+[[family]]
+vendor = "Balluff"
+series = "BNI EtherNet/IP blocks"
+why = "the other common M12 block on EtherNet/IP lines"
+models = []
+protocols = ["enip"]
+
+[[family]]
+vendor = "WAGO"
+series = "750 couplers"
+why = "DIN-rail coupler plants already run; Modbus TCP and EtherNet/IP"
+models = ["750-352", "750-362", "750-363"]
+protocols = ["enip", "modbus"]
+
+[[family]]
+vendor = "Beckhoff"
+series = "EK9xxx / BK9xxx couplers"
+why = "EtherCAT terminals behind a Modbus TCP or EtherNet/IP coupler"
+models = ["EK9000", "EK9500", "BK9000"]
+protocols = ["enip", "modbus"]
+
+[[family]]
+vendor = "Advantech"
+series = "ADAM-6000"
+why = "cheap Modbus TCP panel I/O, the E1200's class"
+models = ["ADAM-6050", "ADAM-6052", "ADAM-6060"]
+protocols = ["modbus"]
+
+[[family]]
+vendor = "Brainboxes"
+series = "ED"
+why = "cheap Modbus TCP panel I/O"
+models = ["ED-538", "ED-588"]
+protocols = ["modbus"]
+
+[[family]]
+vendor = "Phoenix Contact"
+series = "Axioline F"
+why = "PROFINET-heavy; the EtherNet/IP coupler where there is one, GSDML collected for the rest"
+models = []
+protocols = ["enip", "profinet"]
+
+[[family]]
+vendor = "Siemens"
+series = "ET 200SP"
+why = "PROFINET only today: GSDML and manual collected, no draft until helmsman speaks PROFINET"
+models = []
+protocols = ["profinet"]
