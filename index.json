@@ -38,6 +38,53 @@
    }
   },
   {
+   "folder": "devices/balluff/bni-eip-104-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-104-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 16 inputs",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-202-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-202-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 8 outputs (pin 4, 2 A each)",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-302-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-302-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 16 channels (pins 2 and 4 each input or 2 A output)",
+   "identity": {
+    "enip": {
+     "vendor_id": 43,
+     "product_code": 12330
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BNI EIP-302-105-Z015.eds",
+      "size": 16559,
+      "sha256": "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/beckhoff/ek9000",
    "vendor": "Beckhoff",
    "model": "EK9000",
@@ -391,6 +438,29 @@
       "name": "NX-EIC202.eds",
       "size": 16580,
       "sha256": "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
+   "vendor": "Phoenix Contact",
+   "model": "AXL F BK EIP EF",
+   "kind": "remote-io",
+   "channels": "none of its own: the Axioline F modules behind it (up to 63) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 562,
+     "product_code": 8169
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "AXL_F_BK_EIP_EF.eds",
+      "size": 22806,
+      "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592"
      }
     }
    }

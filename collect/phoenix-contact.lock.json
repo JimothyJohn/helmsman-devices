@@ -1,0 +1,35 @@
+{
+ "docs": {
+  "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/2702782_Ds.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/2702782_Ds.pdf",
+   "folders": [
+    "devices/phoenix-contact/axl-f-bk-eip-ef"
+   ],
+   "kind": "datasheet",
+   "name": "2702782_Ds.pdf",
+   "retrieved": "2026-11-14T18:11:24Z",
+   "sha256": "f20dca065b58f94b8aaebcc368c7801f95b64121845fcb98e8e3e6306801cba1",
+   "size": 231223,
+   "terms": "none stated",
+   "title": "AXL F BK EIP EF data sheet 107469_en_01 (DigiKey mirror)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds",
+   "folders": [
+    "devices/phoenix-contact/axl-f-bk-eip-ef"
+   ],
+   "kind": "eds",
+   "name": "AXL_F_BK_EIP_EF.eds",
+   "retrieved": "2026-11-14T18:11:24Z",
+   "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592",
+   "size": 22806,
+   "terms": "none stated",
+   "title": "AXL F BK EIP EF EDS (ODVA marketplace 1873)",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

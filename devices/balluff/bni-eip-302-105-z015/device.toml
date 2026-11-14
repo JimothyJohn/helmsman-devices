@@ -1,0 +1,74 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Balluff"
+model = "BNI EIP-302-105-Z015"
+kind = "remote-io"
+channels = "8 M12 ports, 16 channels (pins 2 and 4 each input or 2 A output)"
+article = "BNI004F"
+
+[identity.enip]
+vendor_id = 43
+product_code = 12330
+device_type = 43
+revisions = ["2.6"]   # the EDS's MajRev.MinRev
+product_name = "BNI EIP-302-105-Z015"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection2 "Exclusive Owner"
+input_assembly = { instance = 100, bytes = 8 }
+output_assembly = { instance = 101, bytes = 6 }
+config_assembly = { instance = 1 }   # the EDS gives no size
+eds = { name = "BNI EIP-302-105-Z015.eds", size = 16559, sha256 = "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip (member of 10943.03-EDSFiles.zip)", terms = "none stated" }
+
+[[points]]
+name = "inputs I02..I74"
+enip = "in:0.0..in:1.7"
+meaning = "pin 2 and pin 4 level of ports 0 to 7, 1 = on; byte 0 holds ports 0-3, byte 1 ports 4-7 (bit layout I[port][pin])"
+source = "BNI EIP-xxx-105-Z015 user's guide (German, DOK 886816) PDF p. 22, section 7.1"
+
+[[points]]
+name = "short circuit S0..S7"
+enip = "in:2.0..in:3.7"
+meaning = "two bits a port, short circuit between pin 1 and 3 on the reported port"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+
+[[points]]
+name = "overload O02..O74"
+enip = "in:4.0..in:5.7"
+meaning = "overload status of a pin, only when the port is configured as output"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+
+[[points]]
+name = "power status PS, PA"
+enip = "in:6.0..in:6.1"
+meaning = "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 7 reserved"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+
+[[points]]
+name = "outputs O02..O74"
+enip = "out:0.0..out:1.7"
+meaning = "output command for pin 2 and 4 of ports 0 to 7, 1 = on (a pin used as input stays 0)"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.2; used-as-input rule inferred"
+
+[[points]]
+name = "restart R02..R74"
+enip = "out:2.0..out:3.7"
+meaning = "restart the output after a detected short circuit"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.2"
+
+[wiring]
+note = "8 x M12 A-coded socket: pin 1 +24 V 200 mA, pin 2 in/out 2 A, pin 3 GND, pin 4 in/out 2 A, pin 5 FE; module total max 9 A; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch)"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+
+[[sources]]
+title = "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015"
+sha256 = "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)"
+sha256 = "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a"
+where = "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"
