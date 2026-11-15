@@ -81,8 +81,16 @@ is the format. Follow both as written; the rules in them are not optional:
 3. Have the person change one input at a time (press the sensor, bridge the
    terminal) and read again. A point is confirmed when the bit or value you
    predicted is the one that moved.
-4. Outputs: you do not switch them. If the person switches one with their
-   own tools and tells you what happened, record that as their observation.
+4. Outputs: you do not switch them. Switching an output moves whatever is
+   wired to it, so that step belongs to the person. For a Modbus TCP coil,
+   ask them to run `python3 -I scripts/modbus-pulse.py <address> coil:N`
+   in their own terminal: it shows what it will do, waits for a word typed
+   back, switches the one coil for two seconds and writes the first state
+   back. It refuses to run without a terminal, so it will not run from your
+   shell. Ask what moved, and paste the line it printed into the pull
+   request. For an EtherNet/IP output there is no such script yet: if the
+   person switches one with their own tools, record what they tell you as
+   their observation.
 
 Stop and report when the unit and the documents disagree and you cannot tell
 which is right. A contradiction written down is worth more than a guess.
