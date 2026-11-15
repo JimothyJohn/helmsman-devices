@@ -46,7 +46,10 @@ searching for the files included.
 ## Contributing
 
 Open a pull request with one folder. Say which unit and firmware you
-checked the facts on; mark anything inferred as inferred. Metadata and map
+checked the facts on; mark anything inferred as inferred. An agent working
+for someone with a device on their network follows [`AGENTS.md`](AGENTS.md):
+identify the unit, draft or look up its entry, test it against the unit,
+send the pull request. Metadata and map
 lines in this repository are MIT licensed; the vendors' files keep their
 own terms.
 
