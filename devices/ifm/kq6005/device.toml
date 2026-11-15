@@ -1,0 +1,356 @@
+# Drafted by scripts/iodd-draft.py from the IODD alone. No unit has been checked:
+# checked_on and checked_by stay out until one has, and every value below is
+# what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "KQxxxx"
+# kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
+kind = "sensor"
+family = "KQ"
+vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
+
+# What the device answers on an IO-Link port. Not needed to use it on a digital channel;
+# it is how this record is found again from the device's IODD.
+[identity.iolink]
+vendor_id = 310
+device_id = 371
+
+[[variants]]
+product_id = "KQ6001"
+name = "KQ6001"
+description = "Capacitive sensor. Connection: 1x open collector with automatic load detection (DC PNP or DC NPN); PVC cable"
+
+[[variants]]
+product_id = "KQ6002"
+name = "KQ6002"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6003"
+name = "KQ6003"
+description = "Capacitive sensor. Connection: 1x open collector with automatic load detection (DC PNP or DC NPN); PVC cable"
+
+[[variants]]
+product_id = "KQ6004"
+name = "KQ6004"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6005"
+name = "KQ6005"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6006"
+name = "KQ6006"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ6007"
+name = "KQ6007"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6008"
+name = "KQ6008"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6010"
+name = "KQ6010"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ6015"
+name = "KQ6015"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ6016"
+name = "KQ6016"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5100"
+name = "KQ5100"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5101"
+name = "KQ5101"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5102"
+name = "KQ5102"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5105"
+name = "KQ5105"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5108"
+name = "KQ5108"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5109"
+name = "KQ5109"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5110"
+name = "KQ5110"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5111"
+name = "KQ5111"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5112"
+name = "KQ5112"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5113"
+name = "KQ5113"
+description = "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+
+[[variants]]
+product_id = "KQ5114"
+name = "KQ5114"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+[[variants]]
+product_id = "KQ5115"
+name = "KQ5115"
+description = "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+
+# The device on plain digital channels, with no IO-Link master.
+[wired]
+sio = true   # it switches its C/Q wire on its own (SIO mode)
+# Which signal the switching wire carries is not in an IODD: read it from the manual,
+# then add: switching = "<signal name>", source = "<manual, page>"
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6001"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6002"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ6003"]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ6004"]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ6005"]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6006"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6007"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ6008"]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ6010"]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6015"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ6016"]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5100"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ5101"]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ5102"]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5105"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Other"
+products = ["KQ5108"]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5109"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5110"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5111"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5112"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5113"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5114"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["KQ5115"]
+wires = [
+  { n = 1, function = "L+", color = "BN", name = "L+" },
+  { n = 3, function = "L-", color = "BU", name = "L-" },
+  { n = 4, function = "C/Q", color = "BK", name = "C/Q" },
+]
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Process value"
+type = "int"
+bits = "4..15"
+description = "Fig. PDV1. Current process value."
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Switch state [OUT1]"
+type = "bool"
+bits = "0"
+description = "Fig. BDC1. State depends on settings for BDC1."
+off = "inactive"
+on = "active"
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "TeachIn Channel"
+index = 58
+default = "1"
+default_name = "BDC1"
+values = { 1 = "BDC1" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switch Point 2"
+index = 60
+subindex = 2
+default = "0"
+default_name = "(not used)"
+values = { 0 = "(not used)" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switchpoint Mode"
+index = 61
+subindex = 2
+default = "1"
+default_name = "Single Point"
+values = { 1 = "Single Point" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Keylock"
+index = 100
+default = "1"
+default_name = "unlocked"
+values = { 0 = "locked", 1 = "unlocked" }
+
+[iodd]
+file = { name = "ifm-000173-20260420-IODD1.1.xml", size = 43048, sha256 = "58a21e485078ac3c37c0390c1529ca57253496bc92a700cf8bcfc37141995996", url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated" }
+version = "V1.0.26"
+date = "2026-04-20"
+profile_characteristic = [1, 32769, 32770, 32772]   # the profiles and function classes the device declares
+
+[[sources]]
+title = "IODD ifm-000173-20260420-IODD1.1.xml"
+sha256 = "58a21e485078ac3c37c0390c1529ca57253496bc92a700cf8bcfc37141995996"
+where = "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated; not redistributed here"

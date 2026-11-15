@@ -1,0 +1,44 @@
+format = "helmsman-devices-collect 1"
+vendor = "ifm"
+
+# Sensors that sit on a plain digital channel. Their record is drafted from
+# the IODD (scripts/iodd-draft.py); the IODD comes from IODDfinder, the IO-Link
+# Community's directory (https://ioddfinder.io-link.com), as a zip with the
+# description, its language files and pictures.
+#
+# Not found yet: each product's data sheet, which is what says which signal
+# the switching wire carries with no IO-Link master and whether it is
+# normally open. ifm.com's product pages are rendered by script and
+# its asset service answered 404 and 403 to the links tried (2026-11-14).
+
+[[doc]]
+folder = "devices/ifm/if6123"
+kind = "archive"
+url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated"
+title = "IODD package ifm-000317-20170707-IODD1.1 (IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173)"
+found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=IF6123 (vendorId 310, ioddId 4071)"
+terms = "none stated with the file"
+
+[[doc]]
+folder = "devices/ifm/o5d100"
+kind = "archive"
+url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated"
+title = "IODD package ifm-000174-20210526-IODD1.1 (O5D100, O5D102, O5D150, O5D152, O5D159)"
+found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=O5D100 (vendorId 310, ioddId 11838)"
+terms = "none stated with the file"
+
+[[doc]]
+folder = "devices/ifm/pn7092"
+kind = "archive"
+url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated"
+title = "IODD package ifm-000257-20190307-IODD1.1 (PN7072, PN7092, PN7572, PN7592, status B)"
+found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=PN7092 (vendorId 310, ioddId 9066)"
+terms = "none stated with the file"
+
+[[doc]]
+folder = "devices/ifm/kq6005"
+kind = "archive"
+url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated"
+title = "IODD package ifm-000173-20260420-IODD1.1 (KQ6001 to KQ6006)"
+found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=KQ6005 (vendorId 310, ioddId 25170)"
+terms = "none stated with the file"

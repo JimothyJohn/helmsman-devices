@@ -1,0 +1,193 @@
+# Drafted by scripts/iodd-draft.py from the IODD alone. No unit has been checked:
+# checked_on and checked_by stay out until one has, and every value below is
+# what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "(PN7072, PN7092, PN7572, PN7592) Status B"
+# kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
+kind = "sensor"
+family = "PN7"
+vendor_url = "www.ifm.com/gb/en/downloadarea/IOContent"
+
+# What the device answers on an IO-Link port. Not needed to use it on a digital channel;
+# it is how this record is found again from the device's IODD.
+[identity.iolink]
+vendor_id = 310
+device_id = 599
+
+[[variants]]
+product_id = "PN7072"
+name = "PN7072 Status B"
+description = "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4I"
+
+[[variants]]
+product_id = "PN7092"
+name = "PN7092 Status B"
+description = "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4I"
+
+[[variants]]
+product_id = "PN7572"
+name = "PN7572 Status B"
+description = "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4A"
+
+[[variants]]
+product_id = "PN7592"
+name = "PN7592 Status B"
+description = "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4A"
+
+# The device on plain digital channels, with no IO-Link master.
+[wired]
+sio = true   # it switches its C/Q wire on its own (SIO mode)
+# Which signal the switching wire carries is not in an IODD: read it from the manual,
+# then add: switching = "<signal name>", source = "<manual, page>"
+
+[[wired.connections]]
+type = "M12-4"
+products = ["PN7072"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["PN7092"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["PN7572"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["PN7592"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Pressure"
+type = "int"
+bits = "16..31"
+description = "Current pressure"
+values = { 32760 = "OL", 32764 = "NoData" }
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Device status"
+type = "uint"
+bits = "4..7"
+description = "Current device status, a copy of the parameter [Device Status, Index 36] in the process data channel"
+values = { 0 = "Device is OK", 1 = "Maintenance required", 2 = "Out of specification", 3 = "Functional check", 4 = "Failure" }
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "OUT2"
+type = "bool"
+bits = "1"
+description = "Current status of the digital signal [OUT2]"
+off = "OFF"
+on = "On"
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "OUT1"
+type = "bool"
+bits = "0"
+description = "Current status of the digital signal [OUT1]"
+off = "OFF"
+on = "On"
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "P-n"
+index = 500
+default = "0"
+default_name = "PnP"
+values = { 0 = "PnP", 1 = "nPn" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Loc"
+index = 550
+default = "1"
+default_name = "uLoc"
+values = { 0 = "Loc", 1 = "uLoc" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "uni"
+index = 551
+default = "1"
+default_name = "bar"
+values = { 0 = "MPa", 1 = "bar", 2 = "psi" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "diS: Display On / OFF"
+index = 552
+subindex = 1
+default = "false"
+default_name = "On"
+values = { false = "On", true = "OFF" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "diS: Display orientation"
+index = 552
+subindex = 2
+default = "false"
+default_name = "Not rotated"
+values = { false = "Not rotated", true = "Rotated 180°" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "diS: Update rate"
+index = 552
+subindex = 3
+default = "2"
+default_name = "d2 / medium"
+values = { 1 = "d1 / fast", 2 = "d2 / medium", 4 = "d3 / slow" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "coLr"
+index = 554
+default = "2"
+default_name = "rEd / Displayed value red"
+values = { 2 = "rEd / Displayed value red", 3 = "GrEn / Displayed value green", 4 = "r1ou / Displayed value red when OUT1 switches", 5 = "G1ou / Displayed value green when OUT1 switches", 6 = "r2ou / Displayed value red when OUT2 switches", 7 = "G2ou / Displayed value green when OUT2 switches", 8 = "r-12 / Displayed value red when the measured value is inside the limits of OUT1 and OUT2", 9 = "G-12 / Displayed value green when the measured value is inside the limits of OUT1 and OUT2", 10 = "r-cF / Displayed value red when the measured value is inside the limits of [cFL] and [cFH]", 11 = "G-cF / Displayed value green when the measured value is inside the limits of [cFL] and [cFH]" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "ou1"
+index = 580
+default = "3"
+default_name = "Hno / Hysteresis fct normally open"
+values = { 3 = "Hno / Hysteresis fct normally open", 4 = "Hnc / Hysteresis fct normally closed", 5 = "Fno / Window fct normally open", 6 = "Fnc / Window fct normally closed", 16 = "OFF / Output Off" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "ou2"
+index = 590
+default = "3"
+default_name = "Hno / Hysteresis fct normally open"
+values = { 3 = "Hno / Hysteresis fct normally open", 4 = "Hnc / Hysteresis fct normally closed", 5 = "Fno / Window fct normally open", 6 = "Fnc / Window fct normally closed", 16 = "OFF / Output Off" }
+
+[iodd]
+file = { name = "ifm-000257-20190307-IODD1.1.xml", size = 86036, sha256 = "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831", url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated" }
+version = "V1.3.54.803448"
+date = "2019-03-07"
+profile_characteristic = [10, 16384]   # the profiles and function classes the device declares
+
+[[sources]]
+title = "IODD ifm-000257-20190307-IODD1.1.xml"
+sha256 = "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831"
+where = "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated; not redistributed here"

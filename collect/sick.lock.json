@@ -1,0 +1,28 @@
+{
+ "docs": {
+  "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated": {
+   "content_type": "application/zip",
+   "final_url": "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated",
+   "folders": [
+    "devices/sick/wtb4f-did8389194"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "SICK-WTB4F_DID8389194-20211014-IODD1.1.xml",
+     "sha256": "b90941d68a47a7b41dbaa58dc26d5807266c641e924e3c076434b26b09598a65",
+     "size": 65546,
+     "type": "xml"
+    }
+   ],
+   "name": "rated",
+   "retrieved": "2026-11-15T05:45:24Z",
+   "sha256": "865aaac81a7f58af9d514477062b1be53824c07410139b53b71d7a0f8a30e871",
+   "size": 31842,
+   "terms": "none stated with the file",
+   "title": "IODD package SICK-WTB4F_DID8389194-20211014-IODD1.1 (WTB4FP photoelectric proximity sensors)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

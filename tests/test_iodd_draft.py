@@ -47,6 +47,7 @@ IODD = """<?xml version="1.0" encoding="UTF-8"?>
       </DeviceVariantCollection>
     </DeviceIdentity>
     <DeviceFunction>
+      <Features blockParameter="true" dataStorage="true" profileCharacteristic="1 32768 32769"/>
       <DatatypeCollection>
         <Datatype id="D_Switch" xsi:type="BooleanT">
           <SingleValue value="false"><Name textId="T_Free"/></SingleValue>
@@ -63,6 +64,48 @@ IODD = """<?xml version="1.0" encoding="UTF-8"?>
           <RecordItem subindex="4" bitOffset="1"><DatatypeRef datatypeId="D_Switch"/><Name textId="T_Sw2"/></RecordItem>
         </Datatype>
       </DatatypeCollection>
+      <VariableCollection>
+        <Variable id="V_Out" index="500" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="0"><Name textId="T_PnP"/></SingleValue>
+            <SingleValue value="1"><Name textId="T_NpN"/></SingleValue>
+          </Datatype>
+          <Name textId="T_Out"/>
+        </Variable>
+        <Variable id="V_Cfg" index="61" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="16">
+            <RecordItem subindex="1" bitOffset="8">
+              <SimpleDatatype xsi:type="UIntegerT" bitLength="8">
+                <SingleValue value="0"><Name textId="T_High"/></SingleValue>
+                <SingleValue value="1"><Name textId="T_Low"/></SingleValue>
+              </SimpleDatatype>
+              <Name textId="T_Logic"/>
+            </RecordItem>
+            <RecordItem subindex="2" bitOffset="0"><SimpleDatatype xsi:type="UIntegerT" bitLength="8"/>
+              <Name textId="T_Hyst"/></RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="0"/>
+          <RecordItemInfo subindex="2" defaultValue="7"/>
+          <Name textId="T_Cfg"/>
+        </Variable>
+        <Variable id="V_Lock" index="100" accessRights="rw" defaultValue="false">
+          <Datatype xsi:type="BooleanT"/><Name textId="T_Lock"/>
+        </Variable>
+        <Variable id="V_Delay" index="370" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="16"/><Name textId="T_Delay"/>
+        </Variable>
+        <Variable id="V_Hours" index="542" accessRights="ro" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="8"><SingleValue value="0"><Name textId="T_High"/></SingleValue></Datatype>
+          <Name textId="T_Hours"/>
+        </Variable>
+        <Variable id="V_Odd" index="900" accessRights="rw" defaultValue="1">
+          <Datatype xsi:type="MysteryT"/><Name textId="T_Odd"/>
+        </Variable>
+        <Variable id="V_Float" index="901" accessRights="rw" defaultValue="0.5">
+          <Datatype xsi:type="Float32T"><SingleValue value="0.5"><Name textId="T_Half"/></SingleValue></Datatype>
+          <Name textId="T_Float"/>
+        </Variable>
+      </VariableCollection>
       <ProcessDataCollection>
         <ProcessData id="P_PD">
           <ProcessDataIn id="PI" bitLength="32"><DatatypeRef datatypeId="D_In"/><Name textId="T_In"/></ProcessDataIn>
@@ -78,7 +121,7 @@ IODD = """<?xml version="1.0" encoding="UTF-8"?>
       <PhysicalLayer bitrate="COM2" minCycleTime="2300" sioSupported="true" mSequenceCapability="27">
         <Connection xsi:type="M12-4ConnectionT">
           <ProductRef productId="BX-12 PNP"/>
-          <Wire1 function="L+"/><Wire2 function="Other"/><Wire3 function="L-"/><Wire4 function="C/Q"/>
+          <Wire1/><Wire2 function="Other"/><Wire3/><Wire4/>
         </Connection>
         <Connection xsi:type="CableConnectionT">
           <ProductRef productId="BX-12 cable"/>
@@ -109,6 +152,20 @@ IODD = """<?xml version="1.0" encoding="UTF-8"?>
       <Text id="T_In" value="Measurement"/>
       <Text id="T_Teach" value="Teach"/>
       <Text id="T_Q2" value="Q2 (second switching output)"/>
+      <Text id="T_PnP" value="PnP"/>
+      <Text id="T_NpN" value="nPn"/>
+      <Text id="T_Out" value="P-n"/>
+      <Text id="T_High" value="High active"/>
+      <Text id="T_Low" value="Low active"/>
+      <Text id="T_Logic" value="Logic"/>
+      <Text id="T_Hyst" value="Hyst"/>
+      <Text id="T_Cfg" value="SSC1 Config"/>
+      <Text id="T_Lock" value="Keylock"/>
+      <Text id="T_Delay" value="Switch-on delay"/>
+      <Text id="T_Hours" value="Operating hours"/>
+      <Text id="T_Odd" value="Odd"/>
+      <Text id="T_Half" value="Half"/>
+      <Text id="T_Float" value="Gain"/>
     </PrimaryLanguage>
     <Language xml:lang="de"><Text id="T_Device" value="BX-12 induktiver Sensor"/></Language>
   </ExternalTextCollection>
@@ -149,7 +206,16 @@ class Read(unittest.TestCase):
         self.assertEqual((d["bitrate"], d["min_cycle_us"]), ("COM2", 2300))
         plug, cable = d["connections"]
         self.assertEqual((plug["type"], plug["products"]), ("M12-4", ["BX-12 PNP"]))
-        self.assertEqual([w["function"] for w in plug["wires"]], ["L+", "Other", "L-", "C/Q"])
+        # The file leaves wires 1, 3 and 4 bare: the schema fixes them on a standard connector.
+        self.assertEqual(
+            plug["wires"],
+            [
+                {"n": 1, "function": "L+", "color": "BN"},
+                {"n": 2, "function": "Other", "color": "WH"},
+                {"n": 3, "function": "L-", "color": "BU"},
+                {"n": 4, "function": "C/Q", "color": "BK"},
+            ],
+        )
         self.assertEqual(cable["type"], "Cable")
         self.assertEqual(
             cable["wires"][1],
@@ -178,6 +244,47 @@ class Read(unittest.TestCase):
             layout["out"]["signals"],
             [{"name": "Teach", "subindex": 0, "bit_offset": 0, "type": "bool", "bit_length": 1}],
         )
+
+    def test_settings_are_the_choices_with_a_factory_value(self):
+        self.assertEqual(
+            self.iodd["settings"],
+            [
+                {
+                    "name": "P-n",
+                    "index": 500,
+                    "default": "0",
+                    "default_name": "PnP",
+                    "values": {"0": "PnP", "1": "nPn"},
+                },
+                {
+                    "name": "SSC1 Config: Logic",
+                    "index": 61,
+                    "subindex": 1,
+                    "default": "0",
+                    "default_name": "High active",
+                    "values": {"0": "High active", "1": "Low active"},
+                },
+                {"name": "Keylock", "index": 100, "default": "false"},
+                {
+                    "name": "Gain",
+                    "index": 901,
+                    "default": "0.5",
+                    "default_name": "Half",
+                    "values": {"0.5": "Half"},
+                },
+            ],
+        )
+        # Not there: a number with no named values, a read-only variable, a type nobody knows.
+        self.assertEqual(self.iodd["profile_characteristic"], [1, 32768, 32769])
+
+    def test_a_wrong_profile_list_or_setting_is_left_out_not_fatal(self):
+        text = IODD.replace('profileCharacteristic="1 32768 32769"', 'profileCharacteristic="1 x 99999"')
+        text = text.replace('index="500"', 'index="70000"').replace(
+            '<RecordItemInfo subindex="1" defaultValue="0"/>', ""
+        )
+        d = iod.parse(text.encode())
+        self.assertNotIn("profile_characteristic", d)
+        self.assertEqual([st["name"] for st in d["settings"]], ["Keylock", "Gain"])
 
     def test_an_array_packs_its_highest_subindex_at_the_right(self):
         text = IODD.replace(
@@ -239,11 +346,15 @@ class Read(unittest.TestCase):
                 "where a simple type is needed",
             ),
             (
-                '<Datatype xsi:type="BooleanT"/>',
-                '<Datatype xsi:type="ProcessDataOutUnionT"/>',
+                '<Datatype xsi:type="BooleanT"/><Name textId="T_Teach"/>',
+                '<Datatype xsi:type="ProcessDataOutUnionT"/><Name textId="T_Teach"/>',
                 "where a simple type",
             ),
-            ('<Datatype xsi:type="BooleanT"/>', "<Datatype/>", "where a simple type"),
+            (
+                '<Datatype xsi:type="BooleanT"/><Name textId="T_Teach"/>',
+                '<Datatype/><Name textId="T_Teach"/>',
+                "where a simple type",
+            ),
             ("</IODevice>", "", "not well-formed"),
         ]
         for old, new, why in cases:
@@ -350,6 +461,21 @@ class Draft(unittest.TestCase):
         )
         self.assertEqual(next(s for s in t["signals"] if s["name"] == "Distance")["bits"], "16..31")
         self.assertEqual(
+            t["settings"][1],
+            {
+                "name": "SSC1 Config: Logic",
+                "index": 61,
+                "subindex": 1,
+                "default": "0",
+                "default_name": "High active",
+                "values": {"0": "High active", "1": "Low active"},
+            },
+        )
+        # A value that is not a bare TOML key stays a key.
+        self.assertEqual(t["settings"][3]["values"], {"0.5": "Half"})
+        self.assertEqual(t["iodd"]["profile_characteristic"], [1, 32768, 32769])
+        self.assertEqual(t["wired"]["connections"][0]["wires"][3], {"n": 4, "function": "C/Q", "color": "BK"})
+        self.assertEqual(
             next(s for s in t["signals"] if s["name"] == "Signal quality")["values"], {"255": "No echo"}
         )
         data = (root / "BX-12-IODD1.1.xml").read_bytes()
@@ -365,6 +491,11 @@ class Draft(unittest.TestCase):
         e = self.entry(root, f)
         self.assertEqual(e["identity"], {"iolink": {"vendor_id": 310, "device_id": 666}}, json.dumps(e))
         self.assertEqual((e["kind"], e["vendor"]), ("sensor", "Bench & Co"))
+        self.assertEqual(e["products"], ["BX-12 PNP", "BX-12 cable"])
+        self.assertIn(
+            "| SSC1 Config: Logic | 61.1 | High active | High active, Low active |",
+            (f / "README.md").read_text(),
+        )
         readme = (f / "README.md").read_text()
         self.assertIn("Draft from documents", readme)
         self.assertIn(
@@ -473,6 +604,17 @@ class Index(unittest.TestCase):
         e = self.entry("[identity.iolink]\nvendor_id = 310\ndevice_id = 16777215\n")
         self.assertEqual(e["identity"], {"iolink": {"vendor_id": 310, "device_id": 16777215}})
         self.assertNotIn("protocols", e)
+
+    def test_order_numbers_are_indexed_and_bounded(self):
+        e = self.entry('[[variants]]\nproduct_id = "IF6123"\n[[variants]]\nproduct_id = "IG6615"\n')
+        self.assertEqual(e["products"], ["IF6123", "IG6615"])
+        for bad in (
+            '[[variants]]\nname = "x"\n',
+            "[[variants]]\nproduct_id = 5\n",
+            '[variants]\nproduct_id = "x"\n',
+        ):
+            with self.assertRaises(SystemExit, msg=bad):
+                self.entry(bad)
 
     def test_a_wrong_iolink_identity_is_refused(self):
         for identity in (

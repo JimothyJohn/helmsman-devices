@@ -1,0 +1,265 @@
+{
+ "docs": {
+  "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated": {
+   "content_type": "application/zip",
+   "final_url": "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated",
+   "folders": [
+    "devices/ifm/o5d100"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "ifm-000174-20210526-IODD1.1-de.xml",
+     "sha256": "6eddb377809b69d3c456054f3accb9a13f4c310b99134e41a8a614cbb892fa30",
+     "size": 5638,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000174-20210526-IODD1.1.xml",
+     "sha256": "1c71ca9fb45ae4d496e91dd3c8e9b6e92784ac267a95592088293208732ff1aa",
+     "size": 25802,
+     "type": "xml"
+    }
+   ],
+   "name": "rated",
+   "retrieved": "2026-11-15T05:45:38Z",
+   "sha256": "8db2cd21f9d7f92cf540ffd506f0eee336050126cf7a5fba81666c8fa9a8fcdf",
+   "size": 297136,
+   "terms": "none stated with the file",
+   "title": "IODD package ifm-000174-20210526-IODD1.1 (O5D100, O5D102, O5D150, O5D152, O5D159)",
+   "type": "zip"
+  },
+  "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated": {
+   "content_type": "application/zip",
+   "final_url": "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated",
+   "folders": [
+    "devices/ifm/kq6005"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "ifm-000173-20260420-IODD1.1-de.xml",
+     "sha256": "86dd61fb9b9e460baff7f3584647ccc91f18751bf76694f1786ef9f1c5337e3f",
+     "size": 8967,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-es.xml",
+     "sha256": "611fe027165855769f735c640c4c9374b80ca6c7bfaa335766f3fd303439e8d9",
+     "size": 9174,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-fr.xml",
+     "sha256": "145e13885597627e17802ffb8a3496b35ae27ba8cbf8578aab1a2dd0bed9cf7b",
+     "size": 9366,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-it.xml",
+     "sha256": "28dd04d0cc5e2f9f81d26060f6c3b47e5265c31cb02a24488cdb2b2e6c4a82b6",
+     "size": 9026,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-ja.xml",
+     "sha256": "3174f5d60483a94dfc04d4e576e66d5b380b676c69cbf5f58324c2dda074e03e",
+     "size": 9974,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-ko.xml",
+     "sha256": "b28dda7eba5fff159b2b9e8ad8736a07edd45beac0e97defd316f7fc63dd3410",
+     "size": 9164,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-pt.xml",
+     "sha256": "71da2bf0958a3d3ddfbecb40ed3ac2bc67057c0a0709f32c3e9b16fee2ad9151",
+     "size": 8970,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-ru.xml",
+     "sha256": "3d1edc72b924d6a8b68cefd92b1978126349fdeed370e0d2896208b4f0709f8f",
+     "size": 11737,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1-zh.xml",
+     "sha256": "a02b9a66f8666a4654c8602ce033e16ee616f08567f02d51567fffcb76ace0cc",
+     "size": 8590,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000173-20260420-IODD1.1.xml",
+     "sha256": "58a21e485078ac3c37c0390c1529ca57253496bc92a700cf8bcfc37141995996",
+     "size": 43048,
+     "type": "xml"
+    }
+   ],
+   "name": "rated",
+   "retrieved": "2026-11-15T05:45:38Z",
+   "sha256": "0d16a72130a286fb7e826b041fd7a9bb67d2267d44604fe13e38cbfee4194490",
+   "size": 125923,
+   "terms": "none stated with the file",
+   "title": "IODD package ifm-000173-20260420-IODD1.1 (KQ6001 to KQ6006)",
+   "type": "zip"
+  },
+  "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated": {
+   "content_type": "application/zip",
+   "final_url": "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated",
+   "folders": [
+    "devices/ifm/if6123"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "ifm-000317-20170707-IODD1.1-de.xml",
+     "sha256": "5d1ce3f73487d8b7245c15de89da98cbbf4b33c1b87552564e27f90420091a83",
+     "size": 13740,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-es.xml",
+     "sha256": "0e22d0a2afdb7102cb96e02666d060005371d00f6f3162ae744892c0253a6358",
+     "size": 12571,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-fr.xml",
+     "sha256": "791079d6389163a53612b6787127de764d7e270f0ad9d3f09b4c00a268737afa",
+     "size": 13774,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-it.xml",
+     "sha256": "5ab68328e10ddf8749aa754201d4dbc0159d5cbbdf3a5c168ff9756bd066acae",
+     "size": 12631,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-ja.xml",
+     "sha256": "d2ad109a8fe1c9c8ae1344fc65810aecc9810e6c6b7674941c6f33469b93a08b",
+     "size": 14425,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-ko.xml",
+     "sha256": "0408a67747e22cafd479a4b46b3ee0c9e4009799a7c81c55d466dea6829952b1",
+     "size": 13910,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-pt.xml",
+     "sha256": "37c6ca614f004fe1c6422a0e94971b38b8637bb1cb7427ae5ed17bbb5eb1df4f",
+     "size": 12121,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-ru.xml",
+     "sha256": "19f7a0e7765b6278cc528e342b10bebd6d1edee9aa04759ea0240b76b0b945d0",
+     "size": 15237,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1-zh.xml",
+     "sha256": "21a6bcda4e50b514d3d85b30a6a0e38cbaee4381f5e97bfb4819c80bc69492ed",
+     "size": 13241,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000317-20170707-IODD1.1.xml",
+     "sha256": "4de29691d78892a033f73f35e238e808c4c48adaa4d1bd752bb1334022fe6a4b",
+     "size": 57839,
+     "type": "xml"
+    }
+   ],
+   "name": "rated",
+   "retrieved": "2026-11-15T05:45:38Z",
+   "sha256": "9cc22f9ceb95ec6d466f9fc90ab275133c8e417611ce72a905ea1e360bbfeaa9",
+   "size": 74738,
+   "terms": "none stated with the file",
+   "title": "IODD package ifm-000317-20170707-IODD1.1 (IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173)",
+   "type": "zip"
+  },
+  "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated": {
+   "content_type": "application/zip",
+   "final_url": "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated",
+   "folders": [
+    "devices/ifm/pn7092"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "ifm-000257-20190307-IODD1.1-de.xml",
+     "sha256": "2019f67f863fb342649c793973441ffffa26f60efbed47dcbb00ea3067548966",
+     "size": 17885,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-es.xml",
+     "sha256": "153d2edd5aef48608ee71914e98f1e336e24118703a5b6e302e5996ce79142fc",
+     "size": 18626,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-fr.xml",
+     "sha256": "76d4c4f75e10170de8ecacd57f1e640d7ad27056de2de52d52cbcb0b29a23e57",
+     "size": 18404,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-it.xml",
+     "sha256": "3e9321c21c2f911c7f261aac48226abd1abc060b2552727718bdf2fc95b9bed0",
+     "size": 18083,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-ja.xml",
+     "sha256": "df7358b6d9652dcdb61e9b660d979290580d27adb3f188e859b636ba45eb9d08",
+     "size": 18546,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-ko.xml",
+     "sha256": "c5a77f8610575160f3b4f1322f6533a99110244a63ba607458c49d3f72c445d4",
+     "size": 18462,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-pt.xml",
+     "sha256": "d92b563ed91c5a34803c7499991fc92583ed9a6556f90e2f1c99c662bfd8f164",
+     "size": 18190,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-ru.xml",
+     "sha256": "c1031a6f3a291fb6f903c3716bd712043d6be234fb019c3d9117b7e21d126eca",
+     "size": 21941,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1-zh.xml",
+     "sha256": "052a3e4684a88653f2ca8930bd956fcbee5a80779224f6fa7c3e9c6d452a8967",
+     "size": 16553,
+     "type": "xml"
+    },
+    {
+     "name": "ifm-000257-20190307-IODD1.1.xml",
+     "sha256": "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831",
+     "size": 86036,
+     "type": "xml"
+    }
+   ],
+   "name": "rated",
+   "retrieved": "2026-11-15T05:45:38Z",
+   "sha256": "9bf1516daf4af945861ec6f44caecf561f67fe199406ae182dee24935dc95009",
+   "size": 185479,
+   "terms": "none stated with the file",
+   "title": "IODD package ifm-000257-20190307-IODD1.1 (PN7072, PN7092, PN7572, PN7592, status B)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

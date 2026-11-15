@@ -55,6 +55,15 @@ SIMPLE = {
 }
 
 
+# IODD-Communication1.1.xsd: on the standard connectors wire 1 is L+ (brown),
+# wire 3 is L- (blue) and wire 4 is C/Q (black) unless the file says another
+# function; a file may leave these out. Wire 2 is white on the 4-pole ones.
+STANDARD_CONNECTORS = ("M5", "M8", "M12-4", "M12-5")
+FIXED_WIRES = {1: ("L+", "BN"), 3: ("L-", "BU"), 4: ("C/Q", "BK")}
+MAX_SETTINGS = 64
+MAX_VALUES = 16
+
+
 class IoddError(ValueError):
     pass
 
@@ -149,6 +158,54 @@ class Reader:
         if values:
             out["values"] = values
         return out
+
+    def settings(self, function) -> list[dict]:
+        """The parameters a person chooses between, each with its factory value.
+
+        Kept: a read-write variable, or an item of a read-write record, that is a
+        choice (a boolean, or a number whose values have names) and has a
+        default in the file. Numbers without named values (a delay, a setpoint)
+        are left out, and so is anything this reader cannot type: a setting is
+        an extra, and a file is not refused over one.
+        """
+        out = []
+        collection = child(function, "VariableCollection")
+        for v in children(collection, "Variable") if collection is not None else []:
+            raw = v.get("index") or ""
+            if v.get("accessRights") != "rw" or not re.fullmatch(r"[0-9]{1,5}", raw) or int(raw) > 65535:
+                continue
+            try:
+                dt = self.datatype(v)
+                name = self.text(v, "Name") or clean(v.get("id") or "", 64)
+                if dt.get(XSI_TYPE) == "RecordT":
+                    defaults = {
+                        i.get("subindex"): i.get("defaultValue") for i in children(v, "RecordItemInfo")
+                    }
+                    for ri in children(dt, "RecordItem"):
+                        sub = number(ri, "subindex", 1, 255)
+                        item = self.text(ri, "Name") or str(sub)
+                        self.setting(out, f"{name}: {item}", int(raw), sub, ri, defaults.get(str(sub)))
+                else:
+                    self.setting(out, name, int(raw), None, v, v.get("defaultValue"))
+            except IoddError:
+                continue
+        return out[:MAX_SETTINGS]
+
+    def setting(self, out: list, name: str, index: int, sub: int | None, el, default) -> None:
+        s = self.simple(self.datatype(el))
+        values = s.get("values", {})
+        if default is None or not (values or s["type"] == "bool"):
+            return
+        default = clean(default, 24)
+        rec = {"name": clean(name), "index": index}
+        if sub is not None:
+            rec["subindex"] = sub
+        rec["default"] = default
+        if default in values:
+            rec["default_name"] = values[default]
+        if values:
+            rec["values"] = dict(list(values.items())[:MAX_VALUES])
+        out.append(rec)
 
     def signals(self, item, bit_length: int) -> list[dict]:
         dt = self.datatype(item)
@@ -280,9 +337,15 @@ def parse(data: bytes) -> dict:
                 if w is None:
                     continue
                 wire = {"n": n}
+                given = {key: clean(w.get(key), 24) for key in ("function", "color") if w.get(key)}
+                if kind in STANDARD_CONNECTORS:
+                    fixed = FIXED_WIRES.get(n, (None, "WH" if n == 2 and kind != "M12-5" else None))
+                    for key, value in zip(("function", "color"), fixed, strict=True):
+                        if value:
+                            given.setdefault(key, value)
                 for key in ("function", "color"):
-                    if w.get(key):
-                        wire[key] = clean(w.get(key), 24)
+                    if key in given:
+                        wire[key] = given[key]
                 label = r.text(w, "Name")
                 if label:
                     wire["name"] = label
@@ -316,6 +379,11 @@ def parse(data: bytes) -> dict:
                 layout[key] = r.item(el)
         layouts.append(layout)
     out["process_data"] = layouts
+    out["settings"] = r.settings(function)
+    features = child(function, "Features")
+    ids = (features.get("profileCharacteristic") or "").split() if features is not None else []
+    if ids and len(ids) <= 32 and all(re.fullmatch(r"[0-9]{1,5}", i) and int(i) <= 65535 for i in ids):
+        out["profile_characteristic"] = [int(i) for i in ids]
     return out
 
 
@@ -330,9 +398,13 @@ def guess_kind(iodd: dict) -> str:
     return "sensor" if has_in else "actuator" if has_out else "other"
 
 
+def toml_key(k: str) -> str:
+    return k if re.fullmatch(r"[A-Za-z0-9_-]+", k) else toml_str(k)
+
+
 def inline(table: dict) -> str:
     body = ", ".join(
-        f"{k} = {toml_str(v) if isinstance(v, str) else json.dumps(v, ensure_ascii=False)}"
+        f"{toml_key(k)} = {toml_str(v) if isinstance(v, str) else json.dumps(v, ensure_ascii=False)}"
         for k, v in table.items()
     )
     return "{ " + body + " }"
@@ -414,6 +486,20 @@ def draft(iodd: dict, file: dict, vendor: str, model: str, kind: str) -> str:
                             lines.append(f"{label} = {toml_str(values[key])}")
                 elif values:
                     lines.append(f"values = {inline(values)}")
+    for st in iodd.get("settings", []):
+        lines += [
+            "",
+            "[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it",
+            f"name = {toml_str(st['name'])}",
+            f"index = {st['index']}",
+        ]
+        if "subindex" in st:
+            lines.append(f"subindex = {st['subindex']}")
+        lines.append(f"default = {toml_str(st['default'])}")
+        if "default_name" in st:
+            lines.append(f"default_name = {toml_str(st['default_name'])}")
+        if st.get("values"):
+            lines.append(f"values = {inline(st['values'])}")
     lines += [
         "",
         "[iodd]",
@@ -422,6 +508,11 @@ def draft(iodd: dict, file: dict, vendor: str, model: str, kind: str) -> str:
     for key in ("iodd_version", "iodd_date"):
         if iodd.get(key):
             lines.append(f"{key.removeprefix('iodd_')} = {toml_str(iodd[key])}")
+    if iodd.get("profile_characteristic"):
+        lines.append(
+            f"profile_characteristic = {json.dumps(iodd['profile_characteristic'])}"
+            "   # the profiles and function classes the device declares"
+        )
     lines += [
         "",
         "[[sources]]",
@@ -460,6 +551,13 @@ def readme(iodd: dict, file: dict, vendor: str, model: str) -> str:
         for direction in ("in", "out")
         for s in layout.get(direction, {}).get("signals", [])
     )
+    settings = "\n".join(
+        f"| {cell(st['name'])} | {st['index']}{'.' + str(st['subindex']) if 'subindex' in st else ''} | "
+        f"{cell(st.get('default_name', st['default']))} | "
+        + cell(", ".join(st.get("values", {}).values()))
+        + " |"
+        for st in iodd.get("settings", [])
+    )
     sio = {True: "yes", False: "no"}.get(iodd.get("sio"), "not stated")
     return f"""> **Draft from documents.** No unit has been checked; every value here is the
 > IODD's, read by `scripts/iodd-draft.py`. Which signal the switching wire
@@ -489,6 +587,12 @@ Switches without a master (SIO): {sio}.
 | dir | name | type | bits | values |
 | --- | --- | --- | --- | --- |
 {signals or "| none | | | | |"}
+
+## Settings and their factory values
+
+| setting | index | factory value | choices |
+| --- | --- | --- | --- |
+{settings or "| none read | | | |"}
 
 ## Sources
 

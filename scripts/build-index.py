@@ -98,6 +98,16 @@ def entry(folder: pathlib.Path) -> dict:
         ident["iolink"] = {"vendor_id": v, "device_id": d}
     if ident:
         out["identity"] = ident
+    # The order numbers one record covers (a sensor's IODD names several), so
+    # a search by the number on the label finds it.
+    variants = t.get("variants")
+    if variants:
+        if not isinstance(variants, list) or len(variants) > 128:
+            raise SystemExit(f"{rel}: variants: at most 128 tables")
+        out["products"] = [
+            text(v.get("product_id") if isinstance(v, dict) else None, f"{rel}: variants.product_id")
+            for v in variants
+        ]
     protocols = {}
     for name, p in t.get("protocols", {}).items():
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")
