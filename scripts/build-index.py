@@ -81,6 +81,21 @@ def entry(folder: pathlib.Path) -> dict:
         if not (isinstance(v, int) and isinstance(p, int) and 0 <= v <= 65535 and 0 <= p <= 65535):
             raise SystemExit(f"{rel}: identity.enip needs vendor_id and product_code 0..65535")
         ident["enip"] = {"vendor_id": v, "product_code": p}
+    # A sensor or actuator's own identity (its IODD's): how a record drafted
+    # from an IODD is found again. Additive: a box ignores keys it does not read.
+    iolink = t.get("identity", {}).get("iolink")
+    if iolink:
+        v, d = iolink.get("vendor_id"), iolink.get("device_id")
+        if not (
+            isinstance(v, int)
+            and isinstance(d, int)
+            and not isinstance(v, bool)
+            and not isinstance(d, bool)
+            and 1 <= v <= 65535
+            and 1 <= d <= 16777215
+        ):
+            raise SystemExit(f"{rel}: identity.iolink needs vendor_id 1..65535 and device_id 1..16777215")
+        ident["iolink"] = {"vendor_id": v, "device_id": d}
     if ident:
         out["identity"] = ident
     protocols = {}
