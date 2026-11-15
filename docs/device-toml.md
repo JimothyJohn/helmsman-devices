@@ -109,14 +109,42 @@ off = "No target"               # what each state is called, when the IODD says
 on = "Target present"
 description = "..."
 
+[[settings]]                    # a parameter that is a choice, with the value it leaves the factory with
+name = "SSC1 Config: Logic"     # a record's item is "record: item"
+index = 61                      # where it is on the device, for a tool that can set it
+subindex = 1
+default = "0"
+default_name = "High active"
+values = { 0 = "High active", 1 = "Low active" }
+
 [iodd]
 file = { name = "...", size = 123456, sha256 = "...", url = "https://..." }
 version = "V1.2"
 date = "2026-11-14"
+profile_characteristic = [1, 32768, 32769]   # the profiles and function classes the device declares
 ```
+
+`settings` holds only choices: a boolean, or a number whose values have
+names, that is read-write and has a default in the IODD. They are what a
+sensor does as delivered: whether its output is PNP or NPN, whether a
+switching signal is high or low when a target is there, what the second
+pin does. A setpoint or a delay is a number someone sets and is not
+listed. On the standard connectors (M5, M8, M12 with 4 or 5 poles) wire 1
+is L+ (brown), wire 3 is L- (blue) and wire 4 is C/Q (black) by the IODD
+schema, so the draft fills them in when the file leaves them bare.
 
 An IODD says how the device is wired and what its signals are called. It
 does not say which signal the switching wire carries when no master is
 connected, or whether the output is normally open: `wired.switching`
 stays out of a draft until someone has read it in the manual and given
-the page. The index carries `identity.iolink` beside `identity.enip`.
+the page. The Smart Sensor Profile leaves it open too: "While the Device
+is used in SIO the physical output on C/Q may represent the activity
+state of the switching signal SSC1. The behavior of the sensor in SIO
+mode is not scope of this standard." (IO-Link Smart Sensor Profile
+V1.2.1, order no. 10.042, p. 59-60.) The index carries `identity.iolink`
+beside `identity.enip`, and the variants' order numbers as `products`,
+so a search by the number on the label finds the record.
+
+The IODD comes from IODDfinder (https://ioddfinder.io-link.com), as a
+`kind = "archive"` entry in `collect/<vendor>.toml`; the record's
+`iodd.file` is the description inside that zip, with its own hash.

@@ -543,6 +543,58 @@
    ]
   },
   {
+   "folder": "devices/ifm/if6123",
+   "vendor": "ifm",
+   "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
+   "points": [],
+   "sources": [
+    {
+     "title": "IODD ifm-000317-20170707-IODD1.1.xml",
+     "sha256": "4de29691d78892a033f73f35e238e808c4c48adaa4d1bd752bb1334022fe6a4b",
+     "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/ifm/kq6005",
+   "vendor": "ifm",
+   "model": "KQxxxx",
+   "points": [],
+   "sources": [
+    {
+     "title": "IODD ifm-000173-20260420-IODD1.1.xml",
+     "sha256": "58a21e485078ac3c37c0390c1529ca57253496bc92a700cf8bcfc37141995996",
+     "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/ifm/o5d100",
+   "vendor": "ifm",
+   "model": "O5D100/O5D102/O5D150/O5D152/O5D159",
+   "points": [],
+   "sources": [
+    {
+     "title": "IODD ifm-000174-20210526-IODD1.1.xml",
+     "sha256": "1c71ca9fb45ae4d496e91dd3c8e9b6e92784ac267a95592088293208732ff1aa",
+     "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/ifm/pn7092",
+   "vendor": "ifm",
+   "model": "(PN7072, PN7092, PN7572, PN7592) Status B",
+   "points": [],
+   "sources": [
+    {
+     "title": "IODD ifm-000257-20190307-IODD1.1.xml",
+     "sha256": "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831",
+     "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/moxa/iologik-e1210",
    "vendor": "Moxa",
    "model": "ioLogik E1210",
@@ -1333,6 +1385,19 @@
     "note": "2 x RJ45 10/100 (switch, DLR beacon-based ring node), 24 V DC logic supply 19.2..30 V, up to 63 Axioline F devices on the local bus, rotary switches set the IP assignment.",
     "source": "AXL F BK EIP EF data sheet 107469_en_01 pp. 1, 5, 6, 20"
    }
+  },
+  {
+   "folder": "devices/sick/wtb4f-did8389194",
+   "vendor": "SICK",
+   "model": "WTB4F_DID8389194",
+   "points": [],
+   "sources": [
+    {
+     "title": "IODD SICK-WTB4F_DID8389194-20211014-IODD1.1.xml",
+     "sha256": "b90941d68a47a7b41dbaa58dc26d5807266c641e924e3c076434b26b09598a65",
+     "where": "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated; not redistributed here"
+    }
+   ]
   },
   {
    "folder": "devices/turck/tben-s1-4dip-4dop",
