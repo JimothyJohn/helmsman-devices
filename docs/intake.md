@@ -64,6 +64,17 @@ run.
 
 Never quote the issue, in a comment, a commit, a pull request or a file.
 
+## What runs it
+
+A scheduled cloud routine, "Device intake — helmsman-devices", runs this
+page every day at 06:00 US Central on the `dev` branch. With no issue
+labelled `intake` it stops after the one command. It has no connectors,
+opens draft pull requests only, and takes at most three items a run. Its
+owner pauses or edits it at <https://claude.ai/code/routines>.
+
+To have a device drafted: read the issue, then add the `intake` label.
+To stop one before the next run: remove the label.
+
 ## What it does not take
 
 `Review:`, `Unit check:` and `Unit offer:` issues are a person's words
