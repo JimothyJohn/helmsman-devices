@@ -45,3 +45,7 @@ where = "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/270278
 title = "AXL F BK EIP EF EDS (ODVA marketplace 1873)"
 sha256 = "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds; retrieved 2026-11-14; not redistributed here"
+
+[[questions]]
+ask = "Which way round does a unit connect: instance 100 as output data and 110 as input data, as the data sheet's table and the EDS say, or the reverse, as the data sheet's text under each instance says?"
+source = "AXL F BK EIP EF data sheet 107469_en_01 p. 19; the EDS's Connection entries"

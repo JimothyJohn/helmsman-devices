@@ -55,6 +55,10 @@ source = "manual p. B-1"
 note = "needs field power"
 source = "manual p. 2-6"
 
+[[questions]]
+ask = "Which coil is the first output: 0 or 1?"
+source = "manual p. 7 against p. 8"
+
 [[sources]]
 title = "Manual"
 sha256 = "F8788816B2E0062A68F9B7F1EF9850A2D57F92946AC8B64077C4E77097744454"
@@ -117,6 +121,9 @@ class Claims(unittest.TestCase):
                         "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
                         "where": "https://example.invalid/m.pdf",
                     }
+                ],
+                "questions": [
+                    {"ask": "Which coil is the first output: 0 or 1?", "source": "manual p. 7 against p. 8"}
                 ],
                 "wiring": {"note": "needs field power", "source": "manual p. 2-6"},
             },
@@ -208,6 +215,9 @@ class Refused(unittest.TestCase):
         self.refused('device = "x"\n', "device")
         self.refused(BASE + '\n[wiring]\nsource = "p. 1"\n', "wiring.note")
         self.refused(BASE + "\n" + '[[points]]\nname = "p"\n' * 257, "points")
+        self.refused(BASE + '\n[[questions]]\nsource = "p. 1"\n', "questions[0].ask")
+        self.refused(BASE + '\n[[questions]]\nask = "line\\nbreak"\n', "questions[0].ask")
+        self.refused('questions = "none"\n' + BASE, "questions")
 
 
 class Built(unittest.TestCase):

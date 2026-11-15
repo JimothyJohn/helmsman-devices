@@ -43,7 +43,15 @@ source = "E1200 manual v15.10 p. B-1; bench 2026-11-02"
 title = "ioLogik E1200 Series User's Manual, Version 15.10"
 sha256 = "..."
 where = "..."
+
+[[questions]]                   # what the documents leave open or contradict; a unit settles it
+ask = "Which coil switches the first output: 0x0000, as the table says, or 0x0001, as the example writes?"
+source = "Modbus TCP Manual p. 7 (the table) and p. 8 (the example)"
 ```
+
+A `[[questions]]` entry is removed in the change that answers it, and the
+answer goes where it belongs (a point, an assembly) with the unit and
+firmware it was seen on.
 
 Everything a lookup matches on is under `identity`; everything a map needs
 is under `protocols`; everything a person wants to read is in the
