@@ -30,6 +30,7 @@ Both scripts only read. Standard library, Python 3.9 or later.
 ```sh
 python3 -I scripts/enip-list.py <the subnet's broadcast address>   # every EtherNet/IP device that answers
 python3 -I scripts/enip-identify.py <address> [assembly ...]       # identity, and each assembly's size and bytes
+python3 -I scripts/modbus-read.py <address> [range ...]            # Modbus TCP: identification, bits and registers
 ```
 
 `enip-identify.py` prints an `[identity.enip]` fragment and one line per
@@ -37,9 +38,12 @@ assembly: `# assembly 101: 51 bytes, now 0100…`. Keep that output; it is the
 evidence for the pull request. Leave the serial number out of anything you
 commit or post.
 
-A device that speaks only Modbus TCP has no script here yet. Read it with
-whatever Modbus client you have and record exactly which function code and
-address gave which value.
+For Modbus TCP, `modbus-read.py` takes the ranges in the library's own
+point syntax (`di:0..di:11`, `ir:16:u32..ir:38:u32`, `coil:0..7`) and prints
+one line a range: `# di 0..11: 001000000000`, one digit an address. It sends
+read function codes only. Many devices refuse Read Device Identification
+(the ioLogik E1213 on firmware 3.1 does); that is not a fault, and the
+entry then has no `[identity.modbus]`.
 
 ### 2. Look it up
 
@@ -71,7 +75,7 @@ is the format. Follow both as written; the rules in them are not optional:
    assembly sizes in `[protocols.enip]`. A difference is a finding: fix the
    entry and say which firmware showed it. A revision the entry does not
    list is added to `revisions`.
-2. Decode the assembly bytes the way each `[[points]]` entry says, and tell
+2. Decode the assembly bytes, or the Modbus bits and registers, the way each `[[points]]` entry says, and tell
    the person in plain words what that means: "the entry says input 4 is on
    and the rest are off". Ask whether that is what the device is doing.
 3. Have the person change one input at a time (press the sensor, bridge the
