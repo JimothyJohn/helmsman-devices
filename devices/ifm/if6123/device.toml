@@ -1,0 +1,177 @@
+# Drafted by scripts/iodd-draft.py from the IODD alone. No unit has been checked:
+# checked_on and checked_by stay out until one has, and every value below is
+# what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173"
+# kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
+kind = "sensor"
+family = "I"
+vendor_url = "www.ifm.com/ifmgb/web/io-link-download.htm"
+
+# What the device answers on an IO-Link port. Not needed to use it on a digital channel;
+# it is how this record is found again from the device's IODD.
+[identity.iolink]
+vendor_id = 310
+device_id = 791
+
+[[variants]]
+product_id = "IF6123"
+name = "IF6123"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "IF6124"
+name = "IF6124"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "IG6615"
+name = "IG6615"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "IG6616"
+name = "IG6616"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "II5973"
+name = "II5973"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "II5974"
+name = "II5974"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "IM5172"
+name = "IM5172"
+description = "Inductive sensor"
+
+[[variants]]
+product_id = "IM5173"
+name = "IM5173"
+description = "Inductive sensor"
+
+# The device on plain digital channels, with no IO-Link master.
+[wired]
+sio = true   # it switches its C/Q wire on its own (SIO mode)
+# Which signal the switching wire carries is not in an IODD: read it from the manual,
+# then add: switching = "<signal name>", source = "<manual, page>"
+
+[[wired.connections]]
+type = "Other"
+products = ["IF6123"]
+
+[[wired.connections]]
+type = "Other"
+products = ["IF6124"]
+
+[[wired.connections]]
+type = "Other"
+products = ["IG6615"]
+
+[[wired.connections]]
+type = "Other"
+products = ["IG6616"]
+
+[[wired.connections]]
+type = "Other"
+products = ["II5973"]
+
+[[wired.connections]]
+type = "Other"
+products = ["II5974"]
+
+[[wired.connections]]
+type = "Other"
+products = ["IM5172"]
+
+[[wired.connections]]
+type = "Other"
+products = ["IM5173"]
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "PDV1"
+type = "int"
+bits = "2..15"
+description = "Current process data 1"
+values = { -8184 = "UL", 8184 = "OL" }
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "SSC2"
+type = "bool"
+bits = "1"
+description = "Status depends on SSC2-Config.Logic and SSC2-Config.Mode"
+off = "inactive"
+on = "active"
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "SSC1"
+type = "bool"
+bits = "0"
+description = "Status depends on SSC1-Config.Logic and SSC1-Config.Mode"
+off = "inactive"
+on = "active"
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "TI Select"
+index = 58
+default = "1"
+default_name = "SSC1"
+values = { 1 = "SSC1", 2 = "SSC2" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SSC1 Config: Logic"
+index = 61
+subindex = 1
+default = "0"
+default_name = "High active"
+values = { 0 = "High active", 1 = "Low active" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SSC1 Config: Mode"
+index = 61
+subindex = 2
+default = "1"
+default_name = "Single point"
+values = { 1 = "Single point", 2 = "Window", 3 = "Two point" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SSC2 Config: Logic"
+index = 63
+subindex = 1
+default = "0"
+default_name = "High active"
+values = { 0 = "High active", 1 = "Low active" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SSC2 Config: Mode"
+index = 63
+subindex = 2
+default = "1"
+default_name = "Single point"
+values = { 1 = "Single point", 2 = "Window", 3 = "Two point" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "P-n"
+index = 500
+default = "0"
+default_name = "PnP"
+values = { 0 = "PnP", 1 = "nPn" }
+
+[iodd]
+file = { name = "ifm-000317-20170707-IODD1.1.xml", size = 57839, sha256 = "4de29691d78892a033f73f35e238e808c4c48adaa4d1bd752bb1334022fe6a4b", url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated" }
+version = "V1.3.14.18"
+date = "2017-07-07"
+profile_characteristic = [1, 32768, 32769, 32770, 32771, 32772]   # the profiles and function classes the device declares
+
+[[sources]]
+title = "IODD ifm-000317-20170707-IODD1.1.xml"
+sha256 = "4de29691d78892a033f73f35e238e808c4c48adaa4d1bd752bb1334022fe6a4b"
+where = "https://ioddfinder.io-link.com/api/vendors/310/iodds/4071/files/zip/rated; not redistributed here"

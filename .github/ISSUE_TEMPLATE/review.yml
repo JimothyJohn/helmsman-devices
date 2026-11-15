@@ -1,0 +1,30 @@
+name: An entry is wrong
+description: Something a device's entry claims does not match its documents or a unit.
+title: "Review: "
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Vendor and model, or the entry's folder.
+    validations:
+      required: true
+  - type: textarea
+    id: says
+    attributes:
+      label: What the entry says
+    validations:
+      required: true
+  - type: textarea
+    id: should
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where it says so
+      description: The document and page, or the unit and firmware you saw it on.
+    validations:
+      required: true

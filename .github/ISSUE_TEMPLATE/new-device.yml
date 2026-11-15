@@ -1,0 +1,41 @@
+name: Ask for a device
+description: A device the library should have.
+title: "New device: "
+body:
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Product page
+      placeholder: https://
+  - type: checkboxes
+    id: protocols
+    attributes:
+      label: Protocols
+      options:
+        - label: EtherNet/IP
+        - label: Modbus TCP
+        - label: Something else, or not sure
+  - type: checkboxes
+    id: unit
+    attributes:
+      label: A unit within reach
+      options:
+        - label: I have one and can run a read-only test on it
+        - label: I could send one to the bench
+  - type: textarea
+    id: files
+    attributes:
+      label: Documents you know of
+      description: Links to the EDS, the manual, a register list. For a file with no public link, give its name, size and SHA-256; do not attach vendor files.

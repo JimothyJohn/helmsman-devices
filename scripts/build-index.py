@@ -81,8 +81,37 @@ def entry(folder: pathlib.Path) -> dict:
         if not (isinstance(v, int) and isinstance(p, int) and 0 <= v <= 65535 and 0 <= p <= 65535):
             raise SystemExit(f"{rel}: identity.enip needs vendor_id and product_code 0..65535")
         ident["enip"] = {"vendor_id": v, "product_code": p}
+    # A sensor or actuator's own identity (its IODD's): how a record drafted
+    # from an IODD is found again. Additive: a box ignores keys it does not read.
+    iolink = t.get("identity", {}).get("iolink")
+    if iolink:
+        v, d = iolink.get("vendor_id"), iolink.get("device_id")
+        if not (
+            isinstance(v, int)
+            and isinstance(d, int)
+            and not isinstance(v, bool)
+            and not isinstance(d, bool)
+            and 1 <= v <= 65535
+            and 1 <= d <= 16777215
+        ):
+            raise SystemExit(f"{rel}: identity.iolink needs vendor_id 1..65535 and device_id 1..16777215")
+        ident["iolink"] = {"vendor_id": v, "device_id": d}
     if ident:
         out["identity"] = ident
+    # The order numbers one record covers (a sensor's IODD names several), so
+    # a search by the number on the label finds it.
+    variants = t.get("variants")
+    if variants:
+        if not isinstance(variants, list) or len(variants) > 128:
+            raise SystemExit(f"{rel}: variants: at most 128 tables")
+        out["products"] = [
+            text(v.get("product_id") if isinstance(v, dict) else None, f"{rel}: variants.product_id")
+            for v in variants
+        ]
+    # A wired sensor or actuator has its detail in record.json beside
+    # device.toml (scripts/build-records.py): say that it is there.
+    if "wired" in t:
+        out["record"] = "record.json"
     protocols = {}
     for name, p in t.get("protocols", {}).items():
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")

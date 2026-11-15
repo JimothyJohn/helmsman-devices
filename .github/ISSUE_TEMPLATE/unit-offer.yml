@@ -1,0 +1,48 @@
+name: Offer a unit for the bench
+description: You have a device the library has not tested and could send it in.
+title: "Unit offer: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Offer the unit here and wait for a yes before posting anything, so two people do not send the same one.
+        This issue is public. **Do not write a shipping address, a serial number or payment details here**; those are arranged in private after a yes.
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Vendor and model, as the nameplate spells them.
+      placeholder: WAGO 750-362
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware, if you know it
+  - type: input
+    id: from
+    attributes:
+      label: Ships from
+      description: Country only.
+    validations:
+      required: true
+  - type: dropdown
+    id: back
+    attributes:
+      label: After testing
+      options:
+        - I want it back
+        - Keep it
+    validations:
+      required: true
+  - type: checkboxes
+    id: state
+    attributes:
+      label: Condition
+      options:
+        - label: It powers up and worked when last used
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything to know
+      description: Missing connectors, odd power needs, a password set on it.

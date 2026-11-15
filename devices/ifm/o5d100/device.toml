@@ -1,0 +1,177 @@
+# Drafted by scripts/iodd-draft.py from the IODD alone. No unit has been checked:
+# checked_on and checked_by stay out until one has, and every value below is
+# what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "O5D100/O5D102/O5D150/O5D152/O5D159"
+# kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
+kind = "sensor"
+family = "O5D"
+vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
+
+# What the device answers on an IO-Link port. Not needed to use it on a digital channel;
+# it is how this record is found again from the device's IODD.
+[identity.iolink]
+vendor_id = 310
+device_id = 372
+
+[[variants]]
+product_id = "O5D100"
+name = "O5D100"
+description = "Optical distance sensor. Visible laser light, protection class 2 laser. Connection: 2 switching outputs normally open / "
+
+[[variants]]
+product_id = "O5D102"
+name = "O5D102"
+description = "Optical distance sensor. Visible laser light, protection class 2 laser. Connection: 2 switching outputs normally open / "
+
+[[variants]]
+product_id = "O5D150"
+name = "O5D150"
+description = "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+
+[[variants]]
+product_id = "O5D152"
+name = "O5D152"
+description = "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+
+[[variants]]
+product_id = "O5D159"
+name = "O5D159"
+description = "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+
+# The device on plain digital channels, with no IO-Link master.
+[wired]
+sio = true   # it switches its C/Q wire on its own (SIO mode)
+# Which signal the switching wire carries is not in an IODD: read it from the manual,
+# then add: switching = "<signal name>", source = "<manual, page>"
+
+[[wired.connections]]
+type = "M12-4"
+products = ["O5D100"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["O5D150"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["O5D159"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["O5D102"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["O5D152"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Distance"
+type = "uint"
+bits = "4..15"
+description = "Fig. PDV1. Current distance."
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Switch state [OUT1]"
+type = "bool"
+bits = "0"
+description = "Fig. BDC1. State depends on settings for BDC1."
+off = "Inactive"
+on = "Active"
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switch Point 2"
+index = 60
+subindex = 2
+default = "0"
+default_name = "(Not used)"
+values = { 0 = "(Not used)" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switchpoint Logic"
+index = 61
+subindex = 1
+default = "0"
+default_name = "Closing Contact"
+values = { 0 = "Closing Contact", 1 = "Break Contact" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switchpoint Mode"
+index = 61
+subindex = 2
+default = "1"
+default_name = "Single Point"
+values = { 1 = "Single Point" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "SP: Switchpoint Hysteresis"
+index = 61
+subindex = 3
+default = "0"
+default_name = "(Not used)"
+values = { 0 = "(Not used)" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Laser"
+index = 80
+default = "1"
+default_name = "Laser on"
+values = { 0 = "Laser off", 1 = "Laser on" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Display"
+index = 96
+default = "1"
+default_name = "Display on"
+values = { 0 = "Display off", 1 = "Display on", 2 = "Display rotated" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Keylock"
+index = 100
+default = "1"
+default_name = "Unlocked"
+values = { 0 = "Locked", 1 = "Unlocked" }
+
+[iodd]
+file = { name = "ifm-000174-20210526-IODD1.1.xml", size = 25802, sha256 = "1c71ca9fb45ae4d496e91dd3c8e9b6e92784ac267a95592088293208732ff1aa", url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated" }
+version = "V1.0.8"
+date = "2021-05-26"
+profile_characteristic = [1, 32769, 32770]   # the profiles and function classes the device declares
+
+[[sources]]
+title = "IODD ifm-000174-20210526-IODD1.1.xml"
+sha256 = "1c71ca9fb45ae4d496e91dd3c8e9b6e92784ac267a95592088293208732ff1aa"
+where = "https://ioddfinder.io-link.com/api/vendors/310/iodds/11838/files/zip/rated; not redistributed here"

@@ -1,0 +1,385 @@
+{
+ "format": "helmsman-device-record 1",
+ "folder": "devices/sick/wtb4f-did8389194",
+ "vendor": "SICK",
+ "model": "WTB4F_DID8389194",
+ "kind": "sensor",
+ "draft": true,
+ "family": "Photoelectric sensors",
+ "vendor_url": "https://www.sick.com",
+ "iolink": {
+  "vendor_id": 26,
+  "device_id": 8389194
+ },
+ "variants": [
+  {
+   "product_id": "1222998",
+   "name": "WTB4FP-22161120A00",
+   "description": "Photoelectric proximity sensor"
+  },
+  {
+   "product_id": "1223017",
+   "name": "WTB4FP-1H161120A00",
+   "description": "Photoelectric proximity sensor"
+  },
+  {
+   "product_id": "1105505",
+   "name": "WTB4FP-32161120A00",
+   "description": "Photoelectric proximity sensor"
+  },
+  {
+   "product_id": "1123751",
+   "name": "WTB4FP-84161120A00",
+   "description": "Photoelectric proximity sensor"
+  },
+  {
+   "product_id": "1123757",
+   "name": "WTB4FP-6H161120A00",
+   "description": "Photoelectric proximity sensor"
+  }
+ ],
+ "wired": {
+  "sio": true,
+  "connections": [
+   {
+    "type": "M8",
+    "products": [
+     "1222998",
+     "1105505"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH",
+      "name": "MF Multi-Function - input / output"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "1123751"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH",
+      "name": "MF Multi-Function - input / output"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "1223017",
+     "1123757"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH",
+      "name": "MF Multi-Function - input / output"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   }
+  ]
+ },
+ "signals": [
+  {
+   "dir": "in",
+   "name": "QL1",
+   "type": "bool",
+   "bits": "0"
+  },
+  {
+   "dir": "in",
+   "name": "QL2",
+   "type": "bool",
+   "bits": "1"
+  },
+  {
+   "dir": "in",
+   "name": "Current receive level (live)",
+   "type": "uint",
+   "bits": "2..15"
+  }
+ ],
+ "settings": [
+  {
+   "name": "Teach-in channel",
+   "index": 58,
+   "default": "0",
+   "default_name": "default Qint. = Qint.1",
+   "values": {
+    "0": "default Qint. = Qint.1",
+    "1": "Qint.1",
+    "2": "Qint.2"
+   }
+  },
+  {
+   "name": "Qint.1 SP1 / SP2: SP2 sensing range",
+   "index": 60,
+   "subindex": 2,
+   "default": "0",
+   "default_name": "SP2 not used",
+   "values": {
+    "0": "SP2 not used"
+   }
+  },
+  {
+   "name": "Qint.1 configuration: Switchpoint logic",
+   "index": 61,
+   "subindex": 1,
+   "default": "128",
+   "default_name": "Vendor specific",
+   "values": {
+    "128": "Vendor specific"
+   }
+  },
+  {
+   "name": "Qint.1 configuration: Switchpoint mode",
+   "index": 61,
+   "subindex": 2,
+   "default": "128",
+   "default_name": "Vendor specific",
+   "values": {
+    "128": "Vendor specific"
+   }
+  },
+  {
+   "name": "Qint.1 configuration: Switchpoint hysteresis",
+   "index": 61,
+   "subindex": 3,
+   "default": "0",
+   "default_name": "Autodefined hysteresis",
+   "values": {
+    "0": "Autodefined hysteresis"
+   }
+  },
+  {
+   "name": "Qint.2 SP1 / SP2: SP2 sensing range",
+   "index": 62,
+   "subindex": 2,
+   "default": "0",
+   "default_name": "SP2 not used",
+   "values": {
+    "0": "SP2 not used"
+   }
+  },
+  {
+   "name": "Qint.2 configuration: Switchpoint logic",
+   "index": 63,
+   "subindex": 1,
+   "default": "128",
+   "default_name": "Vendor specific",
+   "values": {
+    "128": "Vendor specific"
+   }
+  },
+  {
+   "name": "Qint.2 configuration: Switchpoint mode",
+   "index": 63,
+   "subindex": 2,
+   "default": "128",
+   "default_name": "Vendor specific",
+   "values": {
+    "128": "Vendor specific"
+   }
+  },
+  {
+   "name": "Qint.2 configuration: Switchpoint hysteresis",
+   "index": 63,
+   "subindex": 3,
+   "default": "0",
+   "default_name": "Autodefined hysteresis",
+   "values": {
+    "0": "Autodefined hysteresis"
+   }
+  },
+  {
+   "name": "Physical input / output type configuration pin2",
+   "index": 92,
+   "default": "3",
+   "default_name": "Push/Pull",
+   "values": {
+    "1": "PNP",
+    "2": "NPN",
+    "3": "Push/Pull"
+   }
+  },
+  {
+   "name": "Sender configuration",
+   "index": 97,
+   "default": "0",
+   "default_name": "Sender active",
+   "values": {
+    "0": "Sender active",
+    "1": "Sender not active"
+   }
+  },
+  {
+   "name": "Pin 2 configuration",
+   "index": 121,
+   "default": "40",
+   "default_name": "Switching signal QL1/",
+   "values": {
+    "0": "Deactivated / no function",
+    "1": "External input (Smart Task)",
+    "16": "Sender off",
+    "17": "Teach-in",
+    "34": "Switching signal QL2",
+    "35": "Detection output Qint.1",
+    "39": "Switching signal QL1",
+    "40": "Switching signal QL1/"
+   }
+  },
+  {
+   "name": "Find me",
+   "index": 204,
+   "default": "0",
+   "default_name": "Find me deactivated",
+   "values": {
+    "0": "Find me deactivated",
+    "1": "Find me activated"
+   }
+  },
+  {
+   "name": "Notification handling",
+   "index": 227,
+   "default": "0",
+   "default_name": "All enabled",
+   "values": {
+    "0": "All enabled",
+    "1": "All disabled",
+    "2": "Events enabled, PD invalid flag disabled",
+    "3": "Events disabled, PD invalid flag enabled"
+   }
+  },
+  {
+   "name": "Logic 1",
+   "index": 1083,
+   "default": "0",
+   "default_name": "DIRECT",
+   "values": {
+    "0": "DIRECT",
+    "1": "AND",
+    "2": "OR"
+   }
+  },
+  {
+   "name": "Logic 2",
+   "index": 1084,
+   "default": "0",
+   "default_name": "DIRECT",
+   "values": {
+    "0": "DIRECT",
+    "1": "AND",
+    "2": "OR"
+   }
+  },
+  {
+   "name": "Timer 1 Mode",
+   "index": 1085,
+   "default": "0",
+   "default_name": "deactivated",
+   "values": {
+    "0": "deactivated",
+    "1": "T-on delay",
+    "2": "T-off delay",
+    "3": "T-on/T-off delay",
+    "4": "Impulse (one shot)"
+   }
+  },
+  {
+   "name": "Timer 2 Mode",
+   "index": 1086,
+   "default": "0",
+   "default_name": "deactivated",
+   "values": {
+    "0": "deactivated",
+    "1": "T-on delay",
+    "2": "T-off delay",
+    "3": "T-on/T-off delay",
+    "4": "Impulse (one shot)"
+   }
+  },
+  {
+   "name": "Inverter 1",
+   "index": 1089,
+   "default": "0",
+   "default_name": "not inverted",
+   "values": {
+    "0": "not inverted",
+    "1": "inverted"
+   }
+  },
+  {
+   "name": "Inverter 2",
+   "index": 1090,
+   "default": "0",
+   "default_name": "not inverted",
+   "values": {
+    "0": "not inverted",
+    "1": "inverted"
+   }
+  },
+  {
+   "name": "Inverter Ext. Input",
+   "index": 1093,
+   "default": "0",
+   "default_name": "not inverted",
+   "values": {
+    "0": "not inverted",
+    "1": "inverted"
+   }
+  }
+ ]
+}

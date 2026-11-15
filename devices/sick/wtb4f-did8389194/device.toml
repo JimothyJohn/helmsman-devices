@@ -1,0 +1,261 @@
+# Drafted by scripts/iodd-draft.py from the IODD alone. No unit has been checked:
+# checked_on and checked_by stay out until one has, and every value below is
+# what the vendor's file says, not what a device did.
+[device]
+vendor = "SICK"
+model = "WTB4F_DID8389194"
+# kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
+kind = "sensor"
+family = "Photoelectric sensors"
+vendor_url = "https://www.sick.com"
+
+# What the device answers on an IO-Link port. Not needed to use it on a digital channel;
+# it is how this record is found again from the device's IODD.
+[identity.iolink]
+vendor_id = 26
+device_id = 8389194
+
+[[variants]]
+product_id = "1222998"
+name = "WTB4FP-22161120A00"
+description = "Photoelectric proximity sensor"
+
+[[variants]]
+product_id = "1223017"
+name = "WTB4FP-1H161120A00"
+description = "Photoelectric proximity sensor"
+
+[[variants]]
+product_id = "1105505"
+name = "WTB4FP-32161120A00"
+description = "Photoelectric proximity sensor"
+
+[[variants]]
+product_id = "1123751"
+name = "WTB4FP-84161120A00"
+description = "Photoelectric proximity sensor"
+
+[[variants]]
+product_id = "1123757"
+name = "WTB4FP-6H161120A00"
+description = "Photoelectric proximity sensor"
+
+# The device on plain digital channels, with no IO-Link master.
+[wired]
+sio = true   # it switches its C/Q wire on its own (SIO mode)
+# Which signal the switching wire carries is not in an IODD: read it from the manual,
+# then add: switching = "<signal name>", source = "<manual, page>"
+
+[[wired.connections]]
+type = "M8"
+products = ["1222998", "1105505"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH", name = "MF Multi-Function - input / output" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "M12-4"
+products = ["1123751"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH", name = "MF Multi-Function - input / output" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[wired.connections]]
+type = "Cable"
+products = ["1223017", "1123757"]
+wires = [
+  { n = 1, function = "L+", color = "BN" },
+  { n = 2, function = "Other", color = "WH", name = "MF Multi-Function - input / output" },
+  { n = 3, function = "L-", color = "BU" },
+  { n = 4, function = "C/Q", color = "BK" },
+]
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "QL1"
+type = "bool"
+bits = "0"
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "QL2"
+type = "bool"
+bits = "1"
+
+[[signals]]   # as the device names it over IO-Link
+dir = "in"
+name = "Current receive level (live)"
+type = "uint"
+bits = "2..15"
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Teach-in channel"
+index = 58
+default = "0"
+default_name = "default Qint. = Qint.1"
+values = { 0 = "default Qint. = Qint.1", 1 = "Qint.1", 2 = "Qint.2" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.1 SP1 / SP2: SP2 sensing range"
+index = 60
+subindex = 2
+default = "0"
+default_name = "SP2 not used"
+values = { 0 = "SP2 not used" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.1 configuration: Switchpoint logic"
+index = 61
+subindex = 1
+default = "128"
+default_name = "Vendor specific"
+values = { 128 = "Vendor specific" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.1 configuration: Switchpoint mode"
+index = 61
+subindex = 2
+default = "128"
+default_name = "Vendor specific"
+values = { 128 = "Vendor specific" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.1 configuration: Switchpoint hysteresis"
+index = 61
+subindex = 3
+default = "0"
+default_name = "Autodefined hysteresis"
+values = { 0 = "Autodefined hysteresis" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.2 SP1 / SP2: SP2 sensing range"
+index = 62
+subindex = 2
+default = "0"
+default_name = "SP2 not used"
+values = { 0 = "SP2 not used" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.2 configuration: Switchpoint logic"
+index = 63
+subindex = 1
+default = "128"
+default_name = "Vendor specific"
+values = { 128 = "Vendor specific" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.2 configuration: Switchpoint mode"
+index = 63
+subindex = 2
+default = "128"
+default_name = "Vendor specific"
+values = { 128 = "Vendor specific" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Qint.2 configuration: Switchpoint hysteresis"
+index = 63
+subindex = 3
+default = "0"
+default_name = "Autodefined hysteresis"
+values = { 0 = "Autodefined hysteresis" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Physical input / output type configuration pin2"
+index = 92
+default = "3"
+default_name = "Push/Pull"
+values = { 1 = "PNP", 2 = "NPN", 3 = "Push/Pull" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Sender configuration"
+index = 97
+default = "0"
+default_name = "Sender active"
+values = { 0 = "Sender active", 1 = "Sender not active" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Pin 2 configuration"
+index = 121
+default = "40"
+default_name = "Switching signal QL1/"
+values = { 0 = "Deactivated / no function", 1 = "External input (Smart Task)", 16 = "Sender off", 17 = "Teach-in", 34 = "Switching signal QL2", 35 = "Detection output Qint.1", 39 = "Switching signal QL1", 40 = "Switching signal QL1/" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Find me"
+index = 204
+default = "0"
+default_name = "Find me deactivated"
+values = { 0 = "Find me deactivated", 1 = "Find me activated" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Notification handling"
+index = 227
+default = "0"
+default_name = "All enabled"
+values = { 0 = "All enabled", 1 = "All disabled", 2 = "Events enabled, PD invalid flag disabled", 3 = "Events disabled, PD invalid flag enabled" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Logic 1"
+index = 1083
+default = "0"
+default_name = "DIRECT"
+values = { 0 = "DIRECT", 1 = "AND", 2 = "OR" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Logic 2"
+index = 1084
+default = "0"
+default_name = "DIRECT"
+values = { 0 = "DIRECT", 1 = "AND", 2 = "OR" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Timer 1 Mode"
+index = 1085
+default = "0"
+default_name = "deactivated"
+values = { 0 = "deactivated", 1 = "T-on delay", 2 = "T-off delay", 3 = "T-on/T-off delay", 4 = "Impulse (one shot)" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Timer 2 Mode"
+index = 1086
+default = "0"
+default_name = "deactivated"
+values = { 0 = "deactivated", 1 = "T-on delay", 2 = "T-off delay", 3 = "T-on/T-off delay", 4 = "Impulse (one shot)" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Inverter 1"
+index = 1089
+default = "0"
+default_name = "not inverted"
+values = { 0 = "not inverted", 1 = "inverted" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Inverter 2"
+index = 1090
+default = "0"
+default_name = "not inverted"
+values = { 0 = "not inverted", 1 = "inverted" }
+
+[[settings]]   # a parameter that is a choice, with its factory value, as the IODD states it
+name = "Inverter Ext. Input"
+index = 1093
+default = "0"
+default_name = "not inverted"
+values = { 0 = "not inverted", 1 = "inverted" }
+
+[iodd]
+file = { name = "SICK-WTB4F_DID8389194-20211014-IODD1.1.xml", size = 65546, sha256 = "b90941d68a47a7b41dbaa58dc26d5807266c641e924e3c076434b26b09598a65", url = "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated" }
+version = "V1.30612"
+date = "2021-10-14"
+profile_characteristic = [1, 32768, 32769, 32771, 32772]   # the profiles and function classes the device declares
+
+[[sources]]
+title = "IODD SICK-WTB4F_DID8389194-20211014-IODD1.1.xml"
+sha256 = "b90941d68a47a7b41dbaa58dc26d5807266c641e924e3c076434b26b09598a65"
+where = "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated; not redistributed here"

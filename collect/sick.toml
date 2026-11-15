@@ -1,0 +1,19 @@
+format = "helmsman-devices-collect 1"
+vendor = "SICK"
+
+# Sensors that sit on a plain digital channel. Their record is drafted from
+# the IODD (scripts/iodd-draft.py); the IODD comes from IODDfinder, the IO-Link
+# Community's directory (https://ioddfinder.io-link.com), as a zip with the
+# description, its language files and pictures.
+#
+# Not found yet: each product's data sheet, which is what says which signal
+# the switching wire carries with no IO-Link master and whether it is
+# normally open. Not searched for yet.
+
+[[doc]]
+folder = "devices/sick/wtb4f-did8389194"
+kind = "archive"
+url = "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated"
+title = "IODD package SICK-WTB4F_DID8389194-20211014-IODD1.1 (WTB4FP photoelectric proximity sensors)"
+found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=WTB4 (vendorId 26, ioddId 12863)"
+terms = "none stated with the file"
