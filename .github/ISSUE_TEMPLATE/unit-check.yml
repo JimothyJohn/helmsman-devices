@@ -1,0 +1,46 @@
+name: Report a check on a unit
+description: You ran a device you own against its entry and can say what matched.
+title: "Unit check: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The read scripts are `scripts/enip-list.py`, `scripts/enip-identify.py` and `scripts/modbus-read.py` (see `AGENTS.md`). They only read. Leave the serial number line out of what you paste.
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Vendor and model, or the entry's folder.
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware the unit reports
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date of the reading
+      placeholder: "2026-11-15"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What the script printed
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: seen
+    attributes:
+      label: What you saw on the device
+      description: Which inputs were on, which outputs were lit, and whether that is what the entry's points predict.
+    validations:
+      required: true
+  - type: textarea
+    id: differs
+    attributes:
+      label: What differed from the entry
