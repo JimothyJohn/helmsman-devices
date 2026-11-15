@@ -108,6 +108,10 @@ def entry(folder: pathlib.Path) -> dict:
             text(v.get("product_id") if isinstance(v, dict) else None, f"{rel}: variants.product_id")
             for v in variants
         ]
+    # A wired sensor or actuator has its detail in record.json beside
+    # device.toml (scripts/build-records.py): say that it is there.
+    if "wired" in t:
+        out["record"] = "record.json"
     protocols = {}
     for name, p in t.get("protocols", {}).items():
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")

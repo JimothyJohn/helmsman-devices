@@ -158,7 +158,8 @@
     "II5974",
     "IM5172",
     "IM5173"
-   ]
+   ],
+   "record": "record.json"
   },
   {
    "folder": "devices/ifm/kq6005",
@@ -195,7 +196,8 @@
     "KQ5113",
     "KQ5114",
     "KQ5115"
-   ]
+   ],
+   "record": "record.json"
   },
   {
    "folder": "devices/ifm/o5d100",
@@ -214,7 +216,8 @@
     "O5D150",
     "O5D152",
     "O5D159"
-   ]
+   ],
+   "record": "record.json"
   },
   {
    "folder": "devices/ifm/pn7092",
@@ -232,7 +235,8 @@
     "PN7092",
     "PN7572",
     "PN7592"
-   ]
+   ],
+   "record": "record.json"
   },
   {
    "folder": "devices/moxa/iologik-e1210",
@@ -578,7 +582,8 @@
     "1105505",
     "1123751",
     "1123757"
-   ]
+   ],
+   "record": "record.json"
   },
   {
    "folder": "devices/turck/tben-s1-4dip-4dop",

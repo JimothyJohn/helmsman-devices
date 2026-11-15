@@ -145,6 +145,14 @@ V1.2.1, order no. 10.042, p. 59-60.) The index carries `identity.iolink`
 beside `identity.enip`, and the variants' order numbers as `products`,
 so a search by the number on the label finds the record.
 
+`scripts/build-records.py` writes `record.json` beside the `device.toml`
+of every folder with a `[wired]` table: the same facts, checked and
+bounded, as JSON (format `helmsman-device-record 1`), because a
+controller reads JSON and not TOML. It carries `"draft": true` until the
+folder has a `checked_on`, and `wired.switching` only together with its
+`source`. The index entry says `"record": "record.json"`. Run the script
+after editing such a folder; CI fails when a `record.json` is stale.
+
 The IODD comes from IODDfinder (https://ioddfinder.io-link.com), as a
 `kind = "archive"` entry in `collect/<vendor>.toml`; the record's
 `iodd.file` is the description inside that zip, with its own hash.

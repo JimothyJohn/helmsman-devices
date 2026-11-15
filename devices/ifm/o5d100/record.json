@@ -1,0 +1,278 @@
+{
+ "format": "helmsman-device-record 1",
+ "folder": "devices/ifm/o5d100",
+ "vendor": "ifm",
+ "model": "O5D100/O5D102/O5D150/O5D152/O5D159",
+ "kind": "sensor",
+ "draft": true,
+ "family": "O5D",
+ "vendor_url": "www.ifm.com/ifmgb/web/io-link_down.htm",
+ "iolink": {
+  "vendor_id": 310,
+  "device_id": 372
+ },
+ "variants": [
+  {
+   "product_id": "O5D100",
+   "name": "O5D100",
+   "description": "Optical distance sensor. Visible laser light, protection class 2 laser. Connection: 2 switching outputs normally open / "
+  },
+  {
+   "product_id": "O5D102",
+   "name": "O5D102",
+   "description": "Optical distance sensor. Visible laser light, protection class 2 laser. Connection: 2 switching outputs normally open / "
+  },
+  {
+   "product_id": "O5D150",
+   "name": "O5D150",
+   "description": "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+  },
+  {
+   "product_id": "O5D152",
+   "name": "O5D152",
+   "description": "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+  },
+  {
+   "product_id": "O5D159",
+   "name": "O5D159",
+   "description": "Optical distance sensor. Visible laser light, protection class 1 laser. Connection: 2 switching outputs normally open / "
+  }
+ ],
+ "wired": {
+  "sio": true,
+  "connections": [
+   {
+    "type": "M12-4",
+    "products": [
+     "O5D100"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "O5D150"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "O5D159"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "O5D102"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "O5D152"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   }
+  ]
+ },
+ "signals": [
+  {
+   "dir": "in",
+   "name": "Distance",
+   "type": "uint",
+   "bits": "4..15",
+   "description": "Fig. PDV1. Current distance."
+  },
+  {
+   "dir": "in",
+   "name": "Switch state [OUT1]",
+   "type": "bool",
+   "bits": "0",
+   "on": "Active",
+   "off": "Inactive",
+   "description": "Fig. BDC1. State depends on settings for BDC1."
+  }
+ ],
+ "settings": [
+  {
+   "name": "SP: Switch Point 2",
+   "index": 60,
+   "subindex": 2,
+   "default": "0",
+   "default_name": "(Not used)",
+   "values": {
+    "0": "(Not used)"
+   }
+  },
+  {
+   "name": "SP: Switchpoint Logic",
+   "index": 61,
+   "subindex": 1,
+   "default": "0",
+   "default_name": "Closing Contact",
+   "values": {
+    "0": "Closing Contact",
+    "1": "Break Contact"
+   }
+  },
+  {
+   "name": "SP: Switchpoint Mode",
+   "index": 61,
+   "subindex": 2,
+   "default": "1",
+   "default_name": "Single Point",
+   "values": {
+    "1": "Single Point"
+   }
+  },
+  {
+   "name": "SP: Switchpoint Hysteresis",
+   "index": 61,
+   "subindex": 3,
+   "default": "0",
+   "default_name": "(Not used)",
+   "values": {
+    "0": "(Not used)"
+   }
+  },
+  {
+   "name": "Laser",
+   "index": 80,
+   "default": "1",
+   "default_name": "Laser on",
+   "values": {
+    "0": "Laser off",
+    "1": "Laser on"
+   }
+  },
+  {
+   "name": "Display",
+   "index": 96,
+   "default": "1",
+   "default_name": "Display on",
+   "values": {
+    "0": "Display off",
+    "1": "Display on",
+    "2": "Display rotated"
+   }
+  },
+  {
+   "name": "Keylock",
+   "index": 100,
+   "default": "1",
+   "default_name": "Unlocked",
+   "values": {
+    "0": "Locked",
+    "1": "Unlocked"
+   }
+  }
+ ]
+}

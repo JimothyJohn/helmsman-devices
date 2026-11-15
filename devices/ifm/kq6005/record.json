@@ -1,0 +1,622 @@
+{
+ "format": "helmsman-device-record 1",
+ "folder": "devices/ifm/kq6005",
+ "vendor": "ifm",
+ "model": "KQxxxx",
+ "kind": "sensor",
+ "draft": true,
+ "family": "KQ",
+ "vendor_url": "www.ifm.com/ifmgb/web/io-link_down.htm",
+ "iolink": {
+  "vendor_id": 310,
+  "device_id": 371
+ },
+ "variants": [
+  {
+   "product_id": "KQ6001",
+   "name": "KQ6001",
+   "description": "Capacitive sensor. Connection: 1x open collector with automatic load detection (DC PNP or DC NPN); PVC cable"
+  },
+  {
+   "product_id": "KQ6002",
+   "name": "KQ6002",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6003",
+   "name": "KQ6003",
+   "description": "Capacitive sensor. Connection: 1x open collector with automatic load detection (DC PNP or DC NPN); PVC cable"
+  },
+  {
+   "product_id": "KQ6004",
+   "name": "KQ6004",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6005",
+   "name": "KQ6005",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6006",
+   "name": "KQ6006",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ6007",
+   "name": "KQ6007",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6008",
+   "name": "KQ6008",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6010",
+   "name": "KQ6010",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ6015",
+   "name": "KQ6015",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ6016",
+   "name": "KQ6016",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5100",
+   "name": "KQ5100",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5101",
+   "name": "KQ5101",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5102",
+   "name": "KQ5102",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5105",
+   "name": "KQ5105",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5108",
+   "name": "KQ5108",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5109",
+   "name": "KQ5109",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5110",
+   "name": "KQ5110",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5111",
+   "name": "KQ5111",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5112",
+   "name": "KQ5112",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5113",
+   "name": "KQ5113",
+   "description": "Capacitive sensor. Connection: 1x open collector DC NPN; PVC cable"
+  },
+  {
+   "product_id": "KQ5114",
+   "name": "KQ5114",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  },
+  {
+   "product_id": "KQ5115",
+   "name": "KQ5115",
+   "description": "Capacitive sensor. Connection: 1x open collector DC PNP; PVC cable"
+  }
+ ],
+ "wired": {
+  "sio": true,
+  "connections": [
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6001"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6002"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ6003"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ6004"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ6005"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6006"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6007"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ6008"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ6010"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6015"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ6016"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5100"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ5101"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ5102"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5105"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Other",
+    "products": [
+     "KQ5108"
+    ],
+    "wires": []
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5109"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5110"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5111"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5112"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5113"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5114"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   },
+   {
+    "type": "Cable",
+    "products": [
+     "KQ5115"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN",
+      "name": "L+"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU",
+      "name": "L-"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK",
+      "name": "C/Q"
+     }
+    ]
+   }
+  ]
+ },
+ "signals": [
+  {
+   "dir": "in",
+   "name": "Process value",
+   "type": "int",
+   "bits": "4..15",
+   "description": "Fig. PDV1. Current process value."
+  },
+  {
+   "dir": "in",
+   "name": "Switch state [OUT1]",
+   "type": "bool",
+   "bits": "0",
+   "on": "active",
+   "off": "inactive",
+   "description": "Fig. BDC1. State depends on settings for BDC1."
+  }
+ ],
+ "settings": [
+  {
+   "name": "TeachIn Channel",
+   "index": 58,
+   "default": "1",
+   "default_name": "BDC1",
+   "values": {
+    "1": "BDC1"
+   }
+  },
+  {
+   "name": "SP: Switch Point 2",
+   "index": 60,
+   "subindex": 2,
+   "default": "0",
+   "default_name": "(not used)",
+   "values": {
+    "0": "(not used)"
+   }
+  },
+  {
+   "name": "SP: Switchpoint Mode",
+   "index": 61,
+   "subindex": 2,
+   "default": "1",
+   "default_name": "Single Point",
+   "values": {
+    "1": "Single Point"
+   }
+  },
+  {
+   "name": "Keylock",
+   "index": 100,
+   "default": "1",
+   "default_name": "unlocked",
+   "values": {
+    "0": "locked",
+    "1": "unlocked"
+   }
+  }
+ ]
+}
