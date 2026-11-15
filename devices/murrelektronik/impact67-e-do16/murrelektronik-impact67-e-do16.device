@@ -1,0 +1,56 @@
+helmsman-device 1
+# Murrelektronik IMPACT67 E DO16 (art. no. 55088): 16 DO (0.5 A each).
+# EtherNet/IP only. Not checked on a unit; where each bit comes from is in README.md.
+vendor Murrelektronik
+model  IMPACT67 E DO16
+kind   remote-io
+
+# One Class 1 exclusive owner, written out from the handbook (no EDS read).
+# RPI: 5 ms at least, 10 ms by default, tested below 10 ms only (pp. 21, 58);
+# the 1 s ceiling is ours, the handbook gives none.
+transport enip-io config=128 o2t=112:2 t2o=100:4 rpi_ms=10 cycle_ms=10..1000
+
+# group diagnosis, input byte 0 (handbook 6.6.1, p. 92)
+in  US-low            bool enip-io=in:0.0
+in  UA-low            bool enip-io=in:0.1
+in  actuator-overload bool enip-io=in:0.3
+
+# output overload per channel, input byte 1
+in  DO-00-overload    bool enip-io=in:1.0
+in  DO-01-overload    bool enip-io=in:1.1
+in  DO-02-overload    bool enip-io=in:1.2
+in  DO-03-overload    bool enip-io=in:1.3
+in  DO-04-overload    bool enip-io=in:1.4
+in  DO-05-overload    bool enip-io=in:1.5
+in  DO-06-overload    bool enip-io=in:1.6
+in  DO-07-overload    bool enip-io=in:1.7
+
+# output overload per channel, input byte 2
+in  DO-10-overload    bool enip-io=in:2.0
+in  DO-11-overload    bool enip-io=in:2.1
+in  DO-12-overload    bool enip-io=in:2.2
+in  DO-13-overload    bool enip-io=in:2.3
+in  DO-14-overload    bool enip-io=in:2.4
+in  DO-15-overload    bool enip-io=in:2.5
+in  DO-16-overload    bool enip-io=in:2.6
+in  DO-17-overload    bool enip-io=in:2.7
+
+# outputs, output byte 0: channel 00..07
+out DO-00             bool safe=false enip-io=out:0.0
+out DO-01             bool safe=false enip-io=out:0.1
+out DO-02             bool safe=false enip-io=out:0.2
+out DO-03             bool safe=false enip-io=out:0.3
+out DO-04             bool safe=false enip-io=out:0.4
+out DO-05             bool safe=false enip-io=out:0.5
+out DO-06             bool safe=false enip-io=out:0.6
+out DO-07             bool safe=false enip-io=out:0.7
+
+# outputs, output byte 1: channel 10..17
+out DO-10             bool safe=false enip-io=out:1.0
+out DO-11             bool safe=false enip-io=out:1.1
+out DO-12             bool safe=false enip-io=out:1.2
+out DO-13             bool safe=false enip-io=out:1.3
+out DO-14             bool safe=false enip-io=out:1.4
+out DO-15             bool safe=false enip-io=out:1.5
+out DO-16             bool safe=false enip-io=out:1.6
+out DO-17             bool safe=false enip-io=out:1.7

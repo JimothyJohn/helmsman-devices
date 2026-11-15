@@ -12,6 +12,7 @@ Usage: python3 -I scripts/build-index.py [--check]
 Standard library only (tomllib needs Python 3.11).
 """
 
+import datetime
 import json
 import pathlib
 import sys
@@ -28,6 +29,18 @@ def text(v, what):
     return v
 
 
+def date(v, what):
+    """A YYYY-MM-DD date, as text, from a TOML date or a string."""
+    if isinstance(v, datetime.date) and not isinstance(v, datetime.datetime):
+        return v.isoformat()
+    if isinstance(v, str) and len(v) == 10:
+        try:
+            return datetime.date.fromisoformat(v).isoformat()
+        except ValueError:
+            pass
+    raise SystemExit(f"{what}: a date YYYY-MM-DD, got {v!r}")
+
+
 def entry(folder: pathlib.Path) -> dict:
     t = tomllib.loads((folder / "device.toml").read_text())
     dev = t.get("device", {})
@@ -38,6 +51,12 @@ def entry(folder: pathlib.Path) -> dict:
         "model": text(dev.get("model"), f"{rel}: device.model"),
         "kind": text(dev.get("kind", "other"), f"{rel}: device.kind"),
     }
+    # Catalog fields: what a page shows. A box ignores keys it does not read.
+    for key in ("channels", "firmware"):
+        if key in dev:
+            out[key] = text(dev[key], f"{rel}: device.{key}")
+    if "checked_on" in dev:
+        out["checked_on"] = date(dev["checked_on"], f"{rel}: device.checked_on")
     profile = dev.get("profile")
     if profile is not None:
         profile = text(profile, f"{rel}: device.profile")

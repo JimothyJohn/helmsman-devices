@@ -1,0 +1,73 @@
+format = "helmsman-devices-collect 1"
+vendor = "Turck"
+
+# TBEN-S digital and analog blocks. Links from the TBEN-S2-8DXP product page
+# https://www.turck.us/en/product/6814076 (read 2026-11-14); the EDS and GSDML
+# packages and the instructions for use cover the whole series. The 2COM,
+# 2RFID and 4IOL blocks are in the packages too and are left for later: they
+# are serial, RFID and IO-Link masters, not plain I/O.
+
+[[doc]]
+folders = [
+  "devices/turck/tben-s1-4dip-4dop",
+  "devices/turck/tben-s1-4dxp",
+  "devices/turck/tben-s1-8dip",
+  "devices/turck/tben-s1-8dip-d",
+  "devices/turck/tben-s1-8dop",
+  "devices/turck/tben-s1-8dxp",
+  "devices/turck/tben-s2-4ai",
+  "devices/turck/tben-s2-4ao",
+  "devices/turck/tben-s2-8dip",
+  "devices/turck/tben-s2-8dxp",
+]
+kind = "eds"
+url = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip"
+title = "TBEN-S EDS files and catalog files (family package)"
+found = "2026-11-14 search: turck tben-s2-8dxp eds; product page https://www.turck.us/en/product/6814076, Configuration Files"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/turck/tben-s1-4dip-4dop",
+  "devices/turck/tben-s1-4dxp",
+  "devices/turck/tben-s1-8dip",
+  "devices/turck/tben-s1-8dip-d",
+  "devices/turck/tben-s1-8dop",
+  "devices/turck/tben-s1-8dxp",
+  "devices/turck/tben-s2-4ai",
+  "devices/turck/tben-s2-4ao",
+  "devices/turck/tben-s2-8dip",
+  "devices/turck/tben-s2-8dxp",
+]
+kind = "gsdml"
+url = "https://www.turck.us/attachment/TBEN-S_PROFINET.zip"
+title = "TBEN-S GSDML files (family package)"
+found = "2026-11-14 product page https://www.turck.us/en/product/6814076, Configuration Files"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/turck/tben-s1-4dip-4dop",
+  "devices/turck/tben-s1-4dxp",
+  "devices/turck/tben-s1-8dip",
+  "devices/turck/tben-s1-8dip-d",
+  "devices/turck/tben-s1-8dop",
+  "devices/turck/tben-s1-8dxp",
+  "devices/turck/tben-s2-4ai",
+  "devices/turck/tben-s2-4ao",
+  "devices/turck/tben-s2-8dip",
+  "devices/turck/tben-s2-8dxp",
+]
+kind = "manual"
+url = "https://www.turck.us/attachment/100001931.pdf"
+title = "TBEN-S Analog and Digital I/O, Instructions for Use"
+found = "2026-11-14 product page https://www.turck.us/en/product/6814076, Instructions for Use"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/turck/tben-s2-8dxp"
+kind = "datasheet"
+url = "https://www.turck.us/datasheet/_us/edb_6814076_eng_us.pdf"
+title = "TBEN-S2-8DXP data sheet (6814076), English"
+found = "2026-11-14 product page https://www.turck.us/en/product/6814076, Data Sheets"
+terms = "none stated"

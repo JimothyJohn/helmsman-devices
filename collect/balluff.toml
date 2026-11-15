@@ -1,0 +1,36 @@
+format = "helmsman-devices-collect 1"
+vendor = "Balluff"
+
+# BNI EIP-104/202/302-105-Z015 plain M12 digital I/O blocks (input, output and
+# input/output). balluff.com answers every page and download request with
+# HTTP 403 (curl and WebFetch, 2026-11-14), so the product pages and the EDS
+# download list could not be read. The manual is on assets.balluff.com (link
+# seen in a search result); the EDS is the ODVA marketplace listing
+# "Balluff EtherNet/IP IO-Link Master" (448), whose zip holds the BNI
+# EIP-302-105-Z015 and BNI EIP-508-105-Z015 EDS.
+#
+# No EDS found for BNI EIP-104-105-Z015 (BNI004M) or BNI EIP-202-105-Z015
+# (BNI005J): not in the ODVA zip, and balluff.com's software list
+# (https://www.balluff.com/en-be/downloads/software) is behind HTTP 403.
+# The manual below gives their process data, so their folders are hand-written.
+# IO-Link masters (BNI EIP-502/508) are out of scope.
+
+[[doc]]
+folder = "devices/balluff/bni-eip-302-105-z015"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip"
+title = "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015"
+found = "2026-11-14 search: balluff bni eip-302 eds; ODVA marketplace page https://marketplace.odva.org/products/448-balluff-ethernet-ip-io-link-master, EDS file link"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/balluff/bni-eip-104-105-z015",
+  "devices/balluff/bni-eip-202-105-z015",
+  "devices/balluff/bni-eip-302-105-z015",
+]
+kind = "manual"
+url = "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf"
+title = "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)"
+found = "2026-11-14 search: balluff bni eip-302-105-z015 eds; link from the search result list (assets.balluff.com)"
+terms = "none stated"

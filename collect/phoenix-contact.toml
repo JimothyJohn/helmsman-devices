@@ -1,0 +1,32 @@
+format = "helmsman-devices-collect 1"
+vendor = "Phoenix Contact"
+
+# AXL F BK EIP EF (2702782). phoenixcontact.com answers every request,
+# robots.txt included, with HTTP 403 "Access Denied" (curl and WebFetch,
+# 2026-11-14), so the product page and its downloads could not be read.
+# The EDS is on the ODVA marketplace listing; the data sheet is Phoenix
+# Contact's own PDF as mirrored by DigiKey (the vendor's link is behind the 403).
+#
+# AXL F BK EIP (2688394), the non-EF coupler: EDS "can be downloaded at
+# www.phoenixcontact.com/product/2688394" (behind the 403), and no ODVA
+# marketplace listing was found by search. Left out; no folder.
+# Axioline Smart Elements (AXL SE): not searched for beyond the two searches above;
+# none turned up. The user manuals UM EN AXL F BK EIP (EF) - OBJECTS and
+# UM EN AXL F SYS INST (named on the data sheet p. 4) are on phoenixcontact.com only.
+# No PROFINET model (AXL F BK PN) was collected.
+
+[[doc]]
+folder = "devices/phoenix-contact/axl-f-bk-eip-ef"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds"
+title = "AXL F BK EIP EF EDS (ODVA marketplace 1873)"
+found = "2026-11-14 search: phoenix contact axl f bk eip eds; ODVA marketplace page https://marketplace.odva.org/products/1873-axl-f-bk-eip-ef, EDS file link"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/phoenix-contact/axl-f-bk-eip-ef"
+kind = "datasheet"
+url = "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/2702782_Ds.pdf"
+title = "AXL F BK EIP EF data sheet 107469_en_01 (DigiKey mirror)"
+found = "2026-11-14 search: phoenix contact axl f bk eip eds; link from the search result list. Mirror used because phoenixcontact.com answers 403"
+terms = "none stated"

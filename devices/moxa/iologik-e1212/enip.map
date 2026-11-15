@@ -1,0 +1,61 @@
+# Moxa ioLogik E1212 over EtherNet/IP (enip-io, one Class 1 exclusive-owner
+# connection at 100 ms): every channel of the profile. The connection is the
+# EDS's Connection1 written out; the bytes are the manual's Appendix B.
+# Not checked on a unit.
+device e1212 enip-io ADDR config=100 o2t=102:1 t2o=101:67 rpi_ms=100
+
+# digital inputs: discrete inputs 0..15
+in  e1212_di_00        bool e1212 di:0
+in  e1212_di_01        bool e1212 di:1
+in  e1212_di_02        bool e1212 di:2
+in  e1212_di_03        bool e1212 di:3
+in  e1212_di_04        bool e1212 di:4
+in  e1212_di_05        bool e1212 di:5
+in  e1212_di_06        bool e1212 di:6
+in  e1212_di_07        bool e1212 di:7
+in  e1212_di_08        bool e1212 di:8
+in  e1212_di_09        bool e1212 di:9
+in  e1212_di_10        bool e1212 di:10
+in  e1212_di_11        bool e1212 di:11
+in  e1212_di_12        bool e1212 di:12
+in  e1212_di_13        bool e1212 di:13
+in  e1212_di_14        bool e1212 di:14
+in  e1212_di_15        bool e1212 di:15
+
+# counters (counter mode; 0 in DI mode): input registers 16 + 2n, high word first
+in  e1212_di_00_count  int  e1212 in:2:u32
+in  e1212_di_01_count  int  e1212 in:6:u32
+in  e1212_di_02_count  int  e1212 in:10:u32
+in  e1212_di_03_count  int  e1212 in:14:u32
+in  e1212_di_04_count  int  e1212 in:18:u32
+in  e1212_di_05_count  int  e1212 in:22:u32
+in  e1212_di_06_count  int  e1212 in:26:u32
+in  e1212_di_07_count  int  e1212 in:30:u32
+in  e1212_di_08_count  int  e1212 in:34:u32
+in  e1212_di_09_count  int  e1212 in:38:u32
+in  e1212_di_10_count  int  e1212 in:42:u32
+in  e1212_di_11_count  int  e1212 in:46:u32
+in  e1212_di_12_count  int  e1212 in:50:u32
+in  e1212_di_13_count  int  e1212 in:54:u32
+in  e1212_di_14_count  int  e1212 in:58:u32
+in  e1212_di_15_count  int  e1212 in:62:u32
+
+# digital outputs: coils 0..7
+out e1212_do_00        bool e1212 do:0 safe=false
+out e1212_do_01        bool e1212 do:1 safe=false
+out e1212_do_02        bool e1212 do:2 safe=false
+out e1212_do_03        bool e1212 do:3 safe=false
+out e1212_do_04        bool e1212 do:4 safe=false
+out e1212_do_05        bool e1212 do:5 safe=false
+out e1212_do_06        bool e1212 do:6 safe=false
+out e1212_do_07        bool e1212 do:7 safe=false
+
+# what the unit says its outputs are: the coils read back
+in  e1212_do_00_status bool e1212 in:66.0
+in  e1212_do_01_status bool e1212 in:66.1
+in  e1212_do_02_status bool e1212 in:66.2
+in  e1212_do_03_status bool e1212 in:66.3
+in  e1212_do_04_status bool e1212 in:66.4
+in  e1212_do_05_status bool e1212 in:66.5
+in  e1212_do_06_status bool e1212 in:66.6
+in  e1212_do_07_status bool e1212 in:66.7

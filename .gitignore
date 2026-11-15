@@ -2,3 +2,7 @@
 *.pdf
 scratch/
 .claude/handoff.md
+__pycache__/
+*.zip
+cache/
+target/

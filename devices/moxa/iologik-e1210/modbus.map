@@ -1,0 +1,41 @@
+# Moxa ioLogik E1210 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1210.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-2), not its 1-based "Start Register". Not checked on a unit.
+device e1210 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# digital inputs: discrete inputs 0..15
+in  e1210_di_00       bool e1210 di:0
+in  e1210_di_01       bool e1210 di:1
+in  e1210_di_02       bool e1210 di:2
+in  e1210_di_03       bool e1210 di:3
+in  e1210_di_04       bool e1210 di:4
+in  e1210_di_05       bool e1210 di:5
+in  e1210_di_06       bool e1210 di:6
+in  e1210_di_07       bool e1210 di:7
+in  e1210_di_08       bool e1210 di:8
+in  e1210_di_09       bool e1210 di:9
+in  e1210_di_10       bool e1210 di:10
+in  e1210_di_11       bool e1210 di:11
+in  e1210_di_12       bool e1210 di:12
+in  e1210_di_13       bool e1210 di:13
+in  e1210_di_14       bool e1210 di:14
+in  e1210_di_15       bool e1210 di:15
+
+# counters (counter mode; 0 in DI mode): input registers 16 + 2n, high word first
+in  e1210_di_00_count int  e1210 ir:16:u32
+in  e1210_di_01_count int  e1210 ir:18:u32
+in  e1210_di_02_count int  e1210 ir:20:u32
+in  e1210_di_03_count int  e1210 ir:22:u32
+in  e1210_di_04_count int  e1210 ir:24:u32
+in  e1210_di_05_count int  e1210 ir:26:u32
+in  e1210_di_06_count int  e1210 ir:28:u32
+in  e1210_di_07_count int  e1210 ir:30:u32
+in  e1210_di_08_count int  e1210 ir:32:u32
+in  e1210_di_09_count int  e1210 ir:34:u32
+in  e1210_di_10_count int  e1210 ir:36:u32
+in  e1210_di_11_count int  e1210 ir:38:u32
+in  e1210_di_12_count int  e1210 ir:40:u32
+in  e1210_di_13_count int  e1210 ir:42:u32
+in  e1210_di_14_count int  e1210 ir:44:u32
+in  e1210_di_15_count int  e1210 ir:46:u32

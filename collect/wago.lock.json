@@ -1,0 +1,40 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip",
+   "folders": [
+    "devices/wago/750-363"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "07500363.eds",
+     "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e",
+     "size": 20821,
+     "type": "eds"
+    },
+    {
+     "name": "07500823.eds",
+     "sha256": "82f4dfb6221521033b3407dd80e1dc91b3814ab012ad4aedfaf89119b9087907",
+     "size": 23432,
+     "type": "eds"
+    },
+    {
+     "name": "07500893.eds",
+     "sha256": "5bab4675e2f8be707a36bbdc914b2d5b28d36dcbf33c2c1cffa25891e3a78757",
+     "size": 23432,
+     "type": "eds"
+    }
+   ],
+   "name": "11921.02-EDS.zip",
+   "retrieved": "2026-11-14T17:01:59Z",
+   "sha256": "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36",
+   "size": 10991,
+   "terms": "none stated",
+   "title": "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

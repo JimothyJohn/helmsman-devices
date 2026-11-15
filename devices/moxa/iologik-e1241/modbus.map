@@ -1,0 +1,11 @@
+# Moxa ioLogik E1241 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1241.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-12), not its 1-based "Start Register". Not checked on a unit.
+device e1241 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# analog outputs, raw value 0..4095: holding registers 1024..1027
+out e1241_ao_00_raw int  e1241 hr:1024 safe=0
+out e1241_ao_01_raw int  e1241 hr:1025 safe=0
+out e1241_ao_02_raw int  e1241 hr:1026 safe=0
+out e1241_ao_03_raw int  e1241 hr:1027 safe=0

@@ -15,6 +15,12 @@ devices/<vendor>/<model>/
   README.md       the device in words, with the manual's page for each claim
 ```
 
+A family that shares a manual and a firmware line gets a page beside its
+folders (`devices/moxa/iologik-e1200-series.md`). A folder whose facts
+nobody has checked on a unit has no `checked_on` and says so at the top of
+its README. How firmware and versions are to be handled is planned in
+[`docs/firmware-and-resilience.md`](docs/firmware-and-resilience.md).
+
 `device.toml` is the record a lookup matches: first by what the wire gives
 (an EtherNet/IP vendor id and product code from ListIdentity, a Modbus
 unit's identification), then by vendor and model text. See
@@ -26,6 +32,16 @@ Vendor files (an EDS, a manual) are not committed unless their terms allow
 redistribution. A folder gives the file's name, size and SHA-256 and where
 to download it; a controller with the file at hand checks the hash before
 trusting it. `*.eds` and `*.pdf` are ignored here on purpose.
+
+## Collecting documents
+
+[`collect/`](collect/README.md) records where each vendor file comes from
+and what was fetched: `scripts/docs-fetch.py` downloads the files a
+`collect/<vendor>.toml` names (https only, public addresses only,
+robots.txt honoured, every file's type and hash checked) into an ignored
+`cache/`, and `scripts/eds-draft.py` drafts a folder's `device.toml` from
+an EDS. In Claude Code, the `collect-docs` skill runs the whole loop,
+searching for the files included.
 
 ## Contributing
 

@@ -1,0 +1,47 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6050"
+kind = "remote-io"
+channels = "12 DI, 6 DO (isolated)"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read; addresses are user-definable in Advantech's utility (defaults below).
+
+[[points]]
+name = "DI"
+modbus = "coil:0..coil:11 (0X 00001-00012, FC 1, read only)"
+meaning = "digital input state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 204-205"
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:21 (0X 00017-00022, R/W)"
+meaning = "digital output command and state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 204-205"
+
+[[points]]
+name = "DI counters"
+modbus = "hr:0:u32 .. hr:22:u32 (4X 40001-, two words a channel, LOW word first)"
+meaning = "counter value in counter mode; frequency = low word / 10 Hz in frequency mode"
+source = "ADAM-6000 User Manual Ed. 12 p. 207-208; 'Counter = (40002) x 65536 + (40001)'"
+
+[[points]]
+name = "module name"
+modbus = "hr:210 (4X 40211), read"
+meaning = "the model as hex, e.g. 0x6050: a cheap identity check"
+source = "ADAM-6000 User Manual Ed. 12 p. 208, remark 7"
+
+[[points]]
+name = "DI/DO as words"
+modbus = "hr:300 all DI, hr:302 all DO (4X 40301, 40303)"
+meaning = "every channel in one register"
+source = "ADAM-6000 User Manual Ed. 12 p. 206"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"

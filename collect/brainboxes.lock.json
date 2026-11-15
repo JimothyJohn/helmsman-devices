@@ -1,0 +1,37 @@
+{
+ "docs": {
+  "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf",
+   "folders": [
+    "devices/brainboxes/ed-538",
+    "devices/brainboxes/ed-588"
+   ],
+   "kind": "manual",
+   "name": "EDRangeManual.pdf",
+   "retrieved": "2026-11-14T17:07:47Z",
+   "sha256": "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651",
+   "size": 5229558,
+   "terms": "none stated",
+   "title": "Brainboxes ED Range Manual",
+   "type": "pdf"
+  },
+  "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf",
+   "folders": [
+    "devices/brainboxes/ed-538",
+    "devices/brainboxes/ed-588"
+   ],
+   "kind": "register-map",
+   "name": "BrainboxesModbusTCPManual.pdf",
+   "retrieved": "2026-11-14T17:07:47Z",
+   "sha256": "7fe3af1bf165f8c2f1fa25df39adcc59ede03364d2a9d3c80eedf8772d4026f8",
+   "size": 977944,
+   "terms": "none stated",
+   "title": "Brainboxes Modbus TCP Manual",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

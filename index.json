@@ -2,10 +2,207 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/advantech/adam-6050",
+   "vendor": "Advantech",
+   "model": "ADAM-6050",
+   "kind": "remote-io",
+   "channels": "12 DI, 6 DO (isolated)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6052",
+   "vendor": "Advantech",
+   "model": "ADAM-6052",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DO (source type)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6060",
+   "vendor": "Advantech",
+   "model": "ADAM-6060",
+   "kind": "remote-io",
+   "channels": "6 DI, 6 relay (form A)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-104-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-104-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 16 inputs",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-202-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-202-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 8 outputs (pin 4, 2 A each)",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-302-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-302-105-Z015",
+   "kind": "remote-io",
+   "channels": "8 M12 ports, 16 channels (pins 2 and 4 each input or 2 A output)",
+   "identity": {
+    "enip": {
+     "vendor_id": 43,
+     "product_code": 12330
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BNI EIP-302-105-Z015.eds",
+      "size": 16559,
+      "sha256": "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/beckhoff/ek9000",
+   "vendor": "Beckhoff",
+   "model": "EK9000",
+   "kind": "remote-io",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/beckhoff/ek9500",
+   "vendor": "Beckhoff",
+   "model": "EK9500",
+   "kind": "remote-io",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 106,
+     "product_code": 9500
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/brainboxes/ed-538",
+   "vendor": "Brainboxes",
+   "model": "ED-538",
+   "kind": "remote-io",
+   "channels": "8 DI, 4 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/brainboxes/ed-588",
+   "vendor": "Brainboxes",
+   "model": "ED-588",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1210",
+   "vendor": "Moxa",
+   "model": "ioLogik E1210",
+   "kind": "remote-io",
+   "channels": "16 DI",
+   "profile": "moxa-iologik-e1210.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1211",
+   "vendor": "Moxa",
+   "model": "ioLogik E1211",
+   "kind": "remote-io",
+   "channels": "16 DO",
+   "profile": "moxa-iologik-e1211.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1212",
+   "vendor": "Moxa",
+   "model": "ioLogik E1212",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DIO",
+   "profile": "moxa-iologik-e1212.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 991,
+     "product_code": 514
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map",
+     "eds": {
+      "name": "ioLogik_E1212_EtherNetIP_V1.1_170207.eds",
+      "size": 42491,
+      "sha256": "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
    "folder": "devices/moxa/iologik-e1213",
    "vendor": "Moxa",
    "model": "ioLogik E1213",
    "kind": "remote-io",
+   "channels": "8 DI, 4 DO, 4 DIO (source type)",
+   "firmware": "V3.1 Build19110615",
+   "checked_on": "2026-11-02",
    "profile": "moxa-iologik-e1213.device",
    "identity": {
     "enip": {
@@ -27,6 +224,486 @@
     "modbus": {
      "driver": "modbus-tcp",
      "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1214",
+   "vendor": "Moxa",
+   "model": "ioLogik E1214",
+   "kind": "remote-io",
+   "channels": "6 DI, 6 relays",
+   "profile": "moxa-iologik-e1214.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1240",
+   "vendor": "Moxa",
+   "model": "ioLogik E1240",
+   "kind": "remote-io",
+   "channels": "8 AI",
+   "profile": "moxa-iologik-e1240.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1241",
+   "vendor": "Moxa",
+   "model": "ioLogik E1241",
+   "kind": "remote-io",
+   "channels": "4 AO",
+   "profile": "moxa-iologik-e1241.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1242",
+   "vendor": "Moxa",
+   "model": "ioLogik E1242",
+   "kind": "remote-io",
+   "channels": "4 AI, 4 DI, 4 DIO",
+   "profile": "moxa-iologik-e1242.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1260",
+   "vendor": "Moxa",
+   "model": "ioLogik E1260",
+   "kind": "remote-io",
+   "channels": "6 RTD",
+   "profile": "moxa-iologik-e1260.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1262",
+   "vendor": "Moxa",
+   "model": "ioLogik E1262",
+   "kind": "remote-io",
+   "channels": "8 TC",
+   "profile": "moxa-iologik-e1262.device",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI16",
+   "kind": "remote-io",
+   "channels": "16 DI (8 on pin 4, 8 on pin 2 of 8 M12 ports)",
+   "profile": "murrelektronik-impact67-e-di16.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di8-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI8 DO8",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DO (2 A each)",
+   "profile": "murrelektronik-impact67-e-di8-do8.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 640,
+     "product_code": 55086
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map",
+     "eds": {
+      "name": "55086_Impact67_EIP_DI8DO8.eds",
+      "size": 11427,
+      "sha256": "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-dio8-dio8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DIO8 (DIO8)",
+   "kind": "remote-io",
+   "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
+   "profile": "murrelektronik-impact67-e-dio8-dio8.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 640,
+     "product_code": 55089
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO16",
+   "kind": "remote-io",
+   "channels": "16 DO (0.5 A each)",
+   "profile": "murrelektronik-impact67-e-do16.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO8",
+   "kind": "remote-io",
+   "channels": "8 DO (2 A each)",
+   "profile": "murrelektronik-impact67-e-do8.device",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-od32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-OD32SLH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1106
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-OD32SLH-1.eds",
+      "size": 45765,
+      "sha256": "068568cf28a53b7898fcb3ae41c8f96c013fccbe88a90123f1ef3a601319b3db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/nx-eic202",
+   "vendor": "Omron",
+   "model": "NX-EIC202",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1660
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NX-EIC202.eds",
+      "size": 16580,
+      "sha256": "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
+   "vendor": "Phoenix Contact",
+   "model": "AXL F BK EIP EF",
+   "kind": "remote-io",
+   "channels": "none of its own: the Axioline F modules behind it (up to 63) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 562,
+     "product_code": 8169
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "AXL_F_BK_EIP_EF.eds",
+      "size": 22806,
+      "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dip-4dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-4DIP-4DOP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14021
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-4DIP-4DOP_R2.8.eds",
+      "size": 23946,
+      "sha256": "6a857eccb596ebd025d5179083c08b00381780b1037d6b2e2db45cb35bf6c5a8"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S1-4DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 20027
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-4DXP_R2.7.eds",
+      "size": 28795,
+      "sha256": "3d7b5a17cca4384c8959a03c4ad0f6ab803cf7a57c1629e63550d9639bd1ce84"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14020
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DIP_R2.8.eds",
+      "size": 23837,
+      "sha256": "7535273424d9340bf7a5e211bf7f6dfcd7b28d4b47880c396259ba8ec363a7da"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip-d",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP-D",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14034
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DIP-D_R2.8.eds",
+      "size": 23845,
+      "sha256": "c64c6276e08044e5b75ea1bdc70f2bd35016b92e59f739f2cb6c8aa46ee81c93"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DOP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14022
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DOP_R2.8.eds",
+      "size": 23748,
+      "sha256": "f9e21be04086ec9a15f5c1d1e118f66a5ef5ac878f2744ff243728702f0ea2ac"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dxp",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14023
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S1-8DXP_R2.8.eds",
+      "size": 23984,
+      "sha256": "7131b879442bc0bc18c4f2e1eb47d3dbe97f8fe0a38054ddfddce533fc92bf0c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ai",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AI",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14025
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4AI_R2.8.eds",
+      "size": 28669,
+      "sha256": "ffd8e745085c4447aa460ccce13c70608fdd154743d6fc73d022ee08c11e9c23"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ao",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AO",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14028
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4AO_R2.8.eds",
+      "size": 28667,
+      "sha256": "b07e2643b6c61174d4987fe2997d7702a13e8a3554f628823bd64d43890fdc43"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dip",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DIP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14073
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-8DIP_R1.1.eds",
+      "size": 29714,
+      "sha256": "7da97b3c4d27848480226b0b8748ada44e3fa37e5cfb56a7b7872d5eeb360fa0"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14076
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-8DXP_R1.1.eds",
+      "size": 29861,
+      "sha256": "2d3f0fa696be4d79ae1898ff32d44c518fe8dd8090ec678612b1a91edde50f9a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-363",
+   "vendor": "WAGO",
+   "model": "750-363",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 363
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500363.eds",
+      "size": 20821,
+      "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
+     }
     }
    }
   }

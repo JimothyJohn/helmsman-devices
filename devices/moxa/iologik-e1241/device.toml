@@ -1,0 +1,35 @@
+[device]
+vendor = "Moxa"
+model = "ioLogik E1241"
+kind = "remote-io"
+channels = "4 AO"
+profile = "moxa-iologik-e1241.device"   # the device profile a controller copies into a project (helmsman-device 1)
+# No unit of this model has been checked: checked_on, firmware and checked_by are
+# left out until one has. Every fact here is from the documents under [[sources]].
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1
+
+# EtherNet/IP: the unit speaks it (firmware 2.5 or later, manual p. 5-1) and the manual gives
+# the bytes (the enip lines under [[points]]), but this model's EDS has not been read, so
+# the product code and the connection are not recorded and the profile is Modbus only.
+
+[[points]]
+name = "AO-00..AO-03 raw value"
+enip = "out:0:u16 .. out:6:u16 (UINT at byte 2n of the output assembly, little-endian); the same 8 bytes read back in the input assembly"
+modbus = "hr:1024..hr:1027"
+meaning = "the converter's raw value, 0..4095 (the range of the Safe Mode value, p. 3-21); what a count is in volts or mA depends on the channel's mode"
+source = "E1200 manual v15.10 p. A-12, p. B-1, p. B-2; channel n at 1024 + n and at byte 2n is inferred"
+
+[[sources]]
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+sha256 = "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454"
+where = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+
+[[sources]]
+title = "Firmware for ioLogik E1200 Series (ioLogik E1241/E1241-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)"
+sha256 = "28c70f0d56345d3617c4c19cd468f49465d31ffad1b9349fcc0e1002f91802da"
+where = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1241-e1241-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"

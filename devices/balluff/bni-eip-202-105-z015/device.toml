@@ -1,0 +1,60 @@
+# Written by hand from the manual: no EDS for this model was in reach (it is not in
+# the ODVA zip and balluff.com answers 403), so there is no identity.enip: the
+# vendor id is 43 on the other Balluff EDS, but the product code is unknown. No unit
+# has been checked: checked_on, firmware and checked_by stay out until one has.
+[device]
+vendor = "Balluff"
+model = "BNI EIP-202-105-Z015"
+kind = "remote-io"
+channels = "8 M12 ports, 8 outputs (pin 4, 2 A each)"
+article = "BNI005J"
+
+[protocols.enip]
+driver = "enip-io"
+input_assembly = { instance = 100, bytes = 6 }
+output_assembly = { instance = 101, bytes = 6 }
+
+[[points]]
+name = "status I04..I74"
+enip = "in:0.0..in:1.7"
+meaning = "state of the output on pin 4 of ports 0 to 7 (the manual calls byte 0 handshake data): bits 0,2,4,6 of byte 0 are ports 0-3, the same bits of byte 1 ports 4-7; odd bits 0"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3; the manual names byte 0 'Handshakedaten'"
+
+[[points]]
+name = "overload O04..O74"
+enip = "in:2.0..in:3.7"
+meaning = "overload status of the output on pin 4 of a port"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3"
+
+[[points]]
+name = "power status PS, PA"
+enip = "in:4.0..in:4.1"
+meaning = "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 5 reserved"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3"
+
+[[points]]
+name = "outputs O04..O74"
+enip = "out:0.0..out:1.7"
+meaning = "output command, pin 4 of ports 0 to 7, 1 = on (even bits of each byte; odd bits 0)"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+
+[[points]]
+name = "restart R04..R74"
+enip = "out:2.0..out:3.7"
+meaning = "restart the output after a detected short circuit"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+
+[[points]]
+name = "display control DL, GO, RO"
+enip = "out:5.0..out:5.2"
+meaning = "bit 2 DL display locked / PLC lock, bit 1 GO green display LED on, bit 0 RO red display LED on"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+
+[wiring]
+note = "8 x M12 A-coded socket; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch); each output takes at most 2 A, module total at most 9 A."
+source = "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+
+[[sources]]
+title = "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)"
+sha256 = "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a"
+where = "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"

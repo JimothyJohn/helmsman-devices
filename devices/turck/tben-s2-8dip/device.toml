@@ -1,0 +1,38 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Turck"
+model = "TBEN-S2-8DIP"
+kind = "remote-io"
+article = "6814073"
+
+[identity.enip]
+vendor_id = 48
+product_code = 14073
+device_type = 12
+revisions = ["2.7"]   # the EDS's MajRev.MinRev
+product_name = "TBEN-S2-8DIP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 103, bytes = 16 }
+output_assembly = { instance = 104, bytes = 8 }
+config_assembly = { instance = 106, bytes = 10 }
+eds = { name = "TBEN-S2-8DIP_R1.1.eds", size = 29714, sha256 = "7da97b3c4d27848480226b0b8748ada44e3fa37e5cfb56a7b7872d5eeb360fa0", url = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip (member of TBEN-S_ETHERNETIP.zip)", terms = "none stated" }
+
+[[sources]]
+title = "TBEN-S EDS files and catalog files (family package)"
+sha256 = "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9"
+where = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "TBEN-S GSDML files (family package)"
+sha256 = "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9"
+where = "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "TBEN-S Analog and Digital I/O, Instructions for Use"
+sha256 = "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3"
+where = "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"

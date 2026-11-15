@@ -1,0 +1,47 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Phoenix Contact"
+model = "AXL F BK EIP EF"
+kind = "remote-io"
+channels = "none of its own: the Axioline F modules behind it (up to 63) set the I/O"
+article = "2702782"
+
+[identity.enip]
+vendor_id = 562
+product_code = 8169
+device_type = 12
+revisions = ["1.10"]   # the EDS's MajRev.MinRev
+product_name = "AXL F BK EIP EF"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Class1 Exclusive Owner"
+# The sizes follow the Axioline F modules on the local bus (data sheet p. 19); the EDS
+# lets the scanner pick 2..502 bytes each way (Param2 "Input Size", Param3 "Output
+# Size": min 2, max 502, default 2). So no bytes are given here.
+input_assembly = { instance = 110 }    # T->O, the station's input data
+output_assembly = { instance = 100 }   # O->T, the station's output data
+config_assembly = { instance = 1 }
+eds = { name = "AXL_F_BK_EIP_EF.eds", size = 22806, sha256 = "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds", terms = "none stated" }
+
+[[points]]
+name = "process data"
+enip = "in: and out: words of assemblies 110 / 100, in module order"
+meaning = "the attached modules' process data words; the data sheet lists the mapping in its own words as instance 100 output data and 110 input data, but its description text under each instance is the other way round (data sheet p. 19); the EDS has 100 as O->T 'Output Data' and 110 as T->O 'Input Data'. The mapping for the actual station is on the coupler's web page 'EtherNet/IP, I/O Assembly table'"
+source = "AXL F BK EIP EF data sheet 107469_en_01 p. 19; layout inferred"
+
+[wiring]
+note = "2 x RJ45 10/100 (switch, DLR beacon-based ring node), 24 V DC logic supply 19.2..30 V, up to 63 Axioline F devices on the local bus, rotary switches set the IP assignment."
+source = "AXL F BK EIP EF data sheet 107469_en_01 pp. 1, 5, 6, 20"
+
+[[sources]]
+title = "AXL F BK EIP EF data sheet 107469_en_01 (DigiKey mirror)"
+sha256 = "f20dca065b58f94b8aaebcc368c7801f95b64121845fcb98e8e3e6306801cba1"
+where = "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/2702782_Ds.pdf; retrieved 2026-11-14; not redistributed here"
+
+[[sources]]
+title = "AXL F BK EIP EF EDS (ODVA marketplace 1873)"
+sha256 = "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds; retrieved 2026-11-14; not redistributed here"

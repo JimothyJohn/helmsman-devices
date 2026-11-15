@@ -1,0 +1,22 @@
+{
+ "docs": {
+  "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf",
+   "folders": [
+    "devices/advantech/adam-6050",
+    "devices/advantech/adam-6052",
+    "devices/advantech/adam-6060"
+   ],
+   "kind": "manual",
+   "name": "ADAM-6000_User_Manaul_Ed.12-FINAL.pdf",
+   "retrieved": "2026-11-14T17:07:42Z",
+   "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+   "size": 14756708,
+   "terms": "none stated",
+   "title": "ADAM-6000 Series User Manual, Edition 12",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

@@ -1,0 +1,48 @@
+# Written by hand from the manual: no EDS for this model was in reach (it is not in
+# the ODVA zip and balluff.com answers 403), so there is no identity.enip: the
+# vendor id is 43 on the other Balluff EDS, but the product code is unknown. No unit
+# has been checked: checked_on, firmware and checked_by stay out until one has.
+[device]
+vendor = "Balluff"
+model = "BNI EIP-104-105-Z015"
+kind = "remote-io"
+channels = "8 M12 ports, 16 inputs"
+article = "BNI004M"
+
+[protocols.enip]
+driver = "enip-io"
+input_assembly = { instance = 100, bytes = 6 }
+output_assembly = { instance = 101, bytes = 2 }
+
+[[points]]
+name = "inputs I02..I74"
+enip = "in:0.0..in:1.7"
+meaning = "pin 2 and pin 4 level of ports 0 to 7, 1 = on (bit layout I[port][pin], as the 302)"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+
+[[points]]
+name = "short circuit S0..S7"
+enip = "in:2.0..in:3.7"
+meaning = "two bits a port, short circuit between pin 1 and 3 on the reported port"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+
+[[points]]
+name = "power status PS, PA"
+enip = "in:4.0..in:4.1"
+meaning = "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 5 reserved"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+
+[[points]]
+name = "display control DL, GO, RO"
+enip = "out:1.0..out:1.2"
+meaning = "bit 2 DL display locked / PLC lock, bit 1 GO green display LED on, bit 0 RO red display LED on; byte 0 reserved"
+source = "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.6"
+
+[wiring]
+note = "8 x M12 A-coded socket; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch); each output takes at most 2 A, module total at most 9 A."
+source = "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+
+[[sources]]
+title = "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)"
+sha256 = "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a"
+where = "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"

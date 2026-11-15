@@ -1,0 +1,45 @@
+# Moxa ioLogik E1214 over Modbus/TCP (modbus-tcp, port 502): every channel of
+# moxa-iologik-e1214.device. Addresses are 0-based PDU addresses, the manual's
+# "Start Address (decimal)" column (ioLogik E1200 User's Manual v15.10,
+# p. A-9), not its 1-based "Start Register". Not checked on a unit.
+device e1214 modbus-tcp ADDR:502 unit=1 timeout_ms=300
+
+# digital inputs: discrete inputs 0..5
+in  e1214_di_00              bool e1214 di:0
+in  e1214_di_01              bool e1214 di:1
+in  e1214_di_02              bool e1214 di:2
+in  e1214_di_03              bool e1214 di:3
+in  e1214_di_04              bool e1214 di:4
+in  e1214_di_05              bool e1214 di:5
+
+# counters (counter mode; 0 in DI mode): input registers 16 + 2n, high word first
+in  e1214_di_00_count        int  e1214 ir:16:u32
+in  e1214_di_01_count        int  e1214 ir:18:u32
+in  e1214_di_02_count        int  e1214 ir:20:u32
+in  e1214_di_03_count        int  e1214 ir:22:u32
+in  e1214_di_04_count        int  e1214 ir:24:u32
+in  e1214_di_05_count        int  e1214 ir:26:u32
+
+# relays: coils 0..5
+out e1214_rly_00             bool e1214 coil:0 safe=false
+out e1214_rly_01             bool e1214 coil:1 safe=false
+out e1214_rly_02             bool e1214 coil:2 safe=false
+out e1214_rly_03             bool e1214 coil:3 safe=false
+out e1214_rly_04             bool e1214 coil:4 safe=false
+out e1214_rly_05             bool e1214 coil:5 safe=false
+
+# what the unit says its outputs are: the coils read back
+in  e1214_rly_00_status      bool e1214 coil:0
+in  e1214_rly_01_status      bool e1214 coil:1
+in  e1214_rly_02_status      bool e1214 coil:2
+in  e1214_rly_03_status      bool e1214 coil:3
+in  e1214_rly_04_status      bool e1214 coil:4
+in  e1214_rly_05_status      bool e1214 coil:5
+
+# how often each relay has switched: input registers 64 + 2n, high word first
+in  e1214_rly_00_total_count int  e1214 ir:64:u32
+in  e1214_rly_01_total_count int  e1214 ir:66:u32
+in  e1214_rly_02_total_count int  e1214 ir:68:u32
+in  e1214_rly_03_total_count int  e1214 ir:70:u32
+in  e1214_rly_04_total_count int  e1214 ir:72:u32
+in  e1214_rly_05_total_count int  e1214 ir:74:u32

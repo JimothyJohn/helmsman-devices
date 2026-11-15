@@ -1,0 +1,18 @@
+format = "helmsman-devices-collect 1"
+vendor = "WAGO"
+
+# 750-363 (EtherNet/IP, 4th generation, ECO). WAGO's product pages build
+# their download lists in JavaScript, so neither a page fetch nor a search
+# finds the files' own URLs there (2026-11-14). The EDS comes from the ODVA
+# marketplace listing (WAGO's conformance submission, vendor id 40).
+# behind login/JS: the product manuals (FC EtherNet/IP G4 ECO V1.1.0;
+# FC Modbus TCP V1.1.1) on https://www.wago.com/750-363 and /750-362.
+# 750-362 is Modbus TCP only (no EDS); it waits for its manual.
+
+[[doc]]
+folder = "devices/wago/750-363"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip"
+title = "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)"
+found = "2026-11-14 search: wago 750-363 eds; https://marketplace.odva.org/products/2172-wago-750-363-ethernet-ip-wago-750-893-ethernet-ip-wago-750-823-ethernet-ip, Download the EDS File"
+terms = "none stated"
