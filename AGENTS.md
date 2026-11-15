@@ -99,8 +99,9 @@ which is right. A contradiction written down is worth more than a guess.
 ### 6. Check and send
 
 ```sh
-python3 -I scripts/build-index.py
-uvx ruff@0.17.4 check . && uvx ruff@0.17.4 format --check . && python3 -I scripts/build-index.py --check
+python3 -I scripts/build-index.py && python3 -I scripts/build-review.py
+uvx ruff@0.17.4 check . && uvx ruff@0.17.4 format --check .
+python3 -I scripts/build-index.py --check && python3 -I scripts/build-review.py --check
 python3 -I -B -m unittest discover -s tests
 ```
 

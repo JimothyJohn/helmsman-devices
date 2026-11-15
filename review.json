@@ -1,0 +1,1829 @@
+{
+ "format": "helmsman-devices-review 1",
+ "devices": [
+  {
+   "folder": "devices/advantech/adam-6050",
+   "vendor": "Advantech",
+   "model": "ADAM-6050",
+   "channels": "12 DI, 6 DO (isolated)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:11 (0X 00001-00012, FC 1, read only)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204-205"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204-205"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "hr:0:u32 .. hr:22:u32 (4X 40001-, two words a channel, LOW word first)",
+     "meaning": "counter value in counter mode; frequency = low word / 10 Hz in frequency mode",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 207-208; 'Counter = (40002) x 65536 + (40001)'"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210 (4X 40211), read",
+     "meaning": "the model as hex, e.g. 0x6050: a cheap identity check",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 208, remark 7"
+    },
+    {
+     "name": "DI/DO as words",
+     "modbus": "hr:300 all DI, hr:302 all DO (4X 40301, 40303)",
+     "meaning": "every channel in one register",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 206"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6052",
+   "vendor": "Advantech",
+   "model": "ADAM-6052",
+   "channels": "8 DI, 8 DO (source type)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:7 (0X 00001-00008, FC 1, read only)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 213"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:23 (0X 00017-00024, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 213"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "hr:0:u32 .. hr:14:u32 (4X 40001-, two words a channel, LOW word first)",
+     "meaning": "counter value in counter mode; frequency = low word / 10 Hz in frequency mode",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 215; 'Counter = (40002) x 65536 + (40001)'"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210 (4X 40211), read",
+     "meaning": "the model as hex, e.g. 0x6050: a cheap identity check",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 208, remark 7"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6060",
+   "vendor": "Advantech",
+   "model": "ADAM-6060",
+   "channels": "6 DI, 6 relay (form A)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:5 (0X 00001-00006, FC 1, read only)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "hr:0:u32 .. hr:10:u32 (4X 40001-, two words a channel, LOW word first)",
+     "meaning": "counter value in counter mode; frequency = low word / 10 Hz in frequency mode",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 218; 'Counter = (40002) x 65536 + (40001)'"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210 (4X 40211), read",
+     "meaning": "the model as hex, e.g. 0x6050: a cheap identity check",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 208, remark 7"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/balluff/bni-eip-104-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-104-105-Z015",
+   "channels": "8 M12 ports, 16 inputs",
+   "enip": {
+    "map": false,
+    "input": {
+     "instance": 100,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 101,
+     "bytes": 2
+    }
+   },
+   "points": [
+    {
+     "name": "inputs I02..I74",
+     "enip": "in:0.0..in:1.7",
+     "meaning": "pin 2 and pin 4 level of ports 0 to 7, 1 = on (bit layout I[port][pin], as the 302)",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+    },
+    {
+     "name": "short circuit S0..S7",
+     "enip": "in:2.0..in:3.7",
+     "meaning": "two bits a port, short circuit between pin 1 and 3 on the reported port",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+    },
+    {
+     "name": "power status PS, PA",
+     "enip": "in:4.0..in:4.1",
+     "meaning": "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 5 reserved",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.5"
+    },
+    {
+     "name": "display control DL, GO, RO",
+     "enip": "out:1.0..out:1.2",
+     "meaning": "bit 2 DL display locked / PLC lock, bit 1 GO green display LED on, bit 0 RO red display LED on; byte 0 reserved",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 24, section 7.6"
+    }
+   ],
+   "sources": [
+    {
+     "title": "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)",
+     "sha256": "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a",
+     "where": "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "8 x M12 A-coded socket; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch); each output takes at most 2 A, module total at most 9 A.",
+    "source": "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-202-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-202-105-Z015",
+   "channels": "8 M12 ports, 8 outputs (pin 4, 2 A each)",
+   "enip": {
+    "map": false,
+    "input": {
+     "instance": 100,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 101,
+     "bytes": 6
+    }
+   },
+   "points": [
+    {
+     "name": "status I04..I74",
+     "enip": "in:0.0..in:1.7",
+     "meaning": "state of the output on pin 4 of ports 0 to 7 (the manual calls byte 0 handshake data): bits 0,2,4,6 of byte 0 are ports 0-3, the same bits of byte 1 ports 4-7; odd bits 0",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3; the manual names byte 0 'Handshakedaten'"
+    },
+    {
+     "name": "overload O04..O74",
+     "enip": "in:2.0..in:3.7",
+     "meaning": "overload status of the output on pin 4 of a port",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3"
+    },
+    {
+     "name": "power status PS, PA",
+     "enip": "in:4.0..in:4.1",
+     "meaning": "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 5 reserved",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.3"
+    },
+    {
+     "name": "outputs O04..O74",
+     "enip": "out:0.0..out:1.7",
+     "meaning": "output command, pin 4 of ports 0 to 7, 1 = on (even bits of each byte; odd bits 0)",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+    },
+    {
+     "name": "restart R04..R74",
+     "enip": "out:2.0..out:3.7",
+     "meaning": "restart the output after a detected short circuit",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+    },
+    {
+     "name": "display control DL, GO, RO",
+     "enip": "out:5.0..out:5.2",
+     "meaning": "bit 2 DL display locked / PLC lock, bit 1 GO green display LED on, bit 0 RO red display LED on",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 23, section 7.4"
+    }
+   ],
+   "sources": [
+    {
+     "title": "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)",
+     "sha256": "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a",
+     "where": "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "8 x M12 A-coded socket; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch); each output takes at most 2 A, module total at most 9 A.",
+    "source": "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+   }
+  },
+  {
+   "folder": "devices/balluff/bni-eip-302-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-302-105-Z015",
+   "channels": "8 M12 ports, 16 channels (pins 2 and 4 each input or 2 A output)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 43,
+     "product_code": 12330,
+     "device_type": 43,
+     "revisions": [
+      "2.6"
+     ],
+     "product_name": "BNI EIP-302-105-Z015"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 8
+    },
+    "output": {
+     "instance": 101,
+     "bytes": 6
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "BNI EIP-302-105-Z015.eds"
+   },
+   "points": [
+    {
+     "name": "inputs I02..I74",
+     "enip": "in:0.0..in:1.7",
+     "meaning": "pin 2 and pin 4 level of ports 0 to 7, 1 = on; byte 0 holds ports 0-3, byte 1 ports 4-7 (bit layout I[port][pin])",
+     "source": "BNI EIP-xxx-105-Z015 user's guide (German, DOK 886816) PDF p. 22, section 7.1"
+    },
+    {
+     "name": "short circuit S0..S7",
+     "enip": "in:2.0..in:3.7",
+     "meaning": "two bits a port, short circuit between pin 1 and 3 on the reported port",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+    },
+    {
+     "name": "overload O02..O74",
+     "enip": "in:4.0..in:5.7",
+     "meaning": "overload status of a pin, only when the port is configured as output",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+    },
+    {
+     "name": "power status PS, PA",
+     "enip": "in:6.0..in:6.1",
+     "meaning": "bit 1 PS sensor supply, bit 0 PA actuator supply; byte 7 reserved",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.1"
+    },
+    {
+     "name": "outputs O02..O74",
+     "enip": "out:0.0..out:1.7",
+     "meaning": "output command for pin 2 and 4 of ports 0 to 7, 1 = on (a pin used as input stays 0)",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.2; used-as-input rule inferred"
+    },
+    {
+     "name": "restart R02..R74",
+     "enip": "out:2.0..out:3.7",
+     "meaning": "restart the output after a detected short circuit",
+     "source": "BNI EIP-xxx-105-Z015 user's guide PDF p. 22, section 7.2"
+    }
+   ],
+   "sources": [
+    {
+     "title": "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015",
+     "sha256": "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "BNI EIP-104/202/302-105-Z015 Bedienungsanleitung (German user's guide)",
+     "sha256": "9824630941285c987aa25b8ccf05f2bb5f88a9c7c1ca82ee4f2553968dff7e2a",
+     "where": "https://assets.balluff.com/WebBinary1/MAN_BNI_EIP_XXX_105_Z015_D_B17_DOK_886816_04_000.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "8 x M12 A-coded socket: pin 1 +24 V 200 mA, pin 2 in/out 2 A, pin 3 GND, pin 4 in/out 2 A, pin 5 FE; module total max 9 A; supply 18..30.2 V DC via 7/8 inch, 2 x M12 D-coded Ethernet 10/100 (two-port switch)",
+    "source": "BNI EIP-xxx-105-Z015 user's guide PDF pp. 8-10 (printed 7-9), sections 3.3 and 4"
+   }
+  },
+  {
+   "folder": "devices/beckhoff/ek9000",
+   "vendor": "Beckhoff",
+   "model": "EK9000",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "inputs",
+     "modbus": "registers 0x0000..0x00FF",
+     "meaning": "process image of the attached input terminals, in terminal order",
+     "source": "EK9000 manual v2.4.0 p. 49; function codes not given on that page"
+    },
+    {
+     "name": "outputs",
+     "modbus": "registers 0x0800..0x08FF",
+     "meaning": "process image of the attached output terminals, in terminal order",
+     "source": "EK9000 manual v2.4.0 p. 49"
+    },
+    {
+     "name": "process image lengths",
+     "modbus": "0x1010 AO, 0x1011 AI, 0x1012 DO, 0x1013 DI (bits)",
+     "meaning": "how many bits each image has with the terminals attached",
+     "source": "EK9000 manual v2.4.0 p. 49"
+    },
+    {
+     "name": "identity",
+     "modbus": "0x6000 (read only) = 9000; 0x6001.. one register per terminal",
+     "meaning": "Bus Coupler detection: the extended interface answers 9000 for an EK9000",
+     "source": "EK9000 manual v2.4.0 p. 49"
+    },
+    {
+     "name": "watchdog",
+     "modbus": "0x1120 time ms (default 1000); 0x1122 type (1 telegram, default; 0 write telegram; 2 off); 0x1123 fallback (0 zero, default; 1 freeze; 2 stop E-bus)",
+     "meaning": "the coupler's own safe state when the client goes quiet: outputs to zero after 1 s by default",
+     "source": "EK9000 manual v2.4.0 p. 49"
+    },
+    {
+     "name": "write lock",
+     "modbus": "0x1124 (1 = a second Modbus client cannot write, default)",
+     "meaning": "one writing client at a time by default",
+     "source": "EK9000 manual v2.4.0 p. 49"
+    }
+   ],
+   "sources": [
+    {
+     "title": "EK9000 Modbus TCP/UDP Bus Coupler, Documentation, Version 2.4.0 (2024-10-16)",
+     "sha256": "cee01984e5e5ebd4e5b6dc6fd7dd099e0fd9707c9a797ea1b32555d0e1eb1434",
+     "where": "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/beckhoff/ek9500",
+   "vendor": "Beckhoff",
+   "model": "EK9500",
+   "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 106,
+     "product_code": 9500,
+     "device_type": 12,
+     "product_name": "EK9500"
+    },
+    "input": {
+     "instance": 129
+    },
+    "output": {
+     "instance": 130
+    },
+    "config": {
+     "instance": 128
+    }
+   },
+   "points": [
+    {
+     "name": "process data",
+     "enip": "in: and out: bytes of assemblies 129 / 130, in terminal order",
+     "meaning": "the attached terminals' process images; the layout follows the terminal set, read it from the EDS the coupler writes",
+     "source": "EK9500 manual v1.7.0 pp. 57, 61; layout inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "EK9500 EtherNet/IP Bus Coupler, Documentation, Version 1.7.0 (2025-10-09)",
+     "sha256": "0daa11f3e4bb1dfab197af92c106775e4a2791dc95a46608f884db52ecb47951",
+     "where": "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9500_en.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/brainboxes/ed-538",
+   "vendor": "Brainboxes",
+   "model": "ED-538",
+   "channels": "8 DI, 4 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "di:0..di:7 (FC 2); also coil:32..coil:39 (FC 1); ir:32 = all eight",
+     "meaning": "digital input state, 1 = on",
+     "source": "Brainboxes Modbus TCP Manual §9.3 p. 7"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:0..coil:3 (FC 1, 5, 15); hr:32 = all 4 as one word (FC 3, 6, 16)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "Brainboxes Modbus TCP Manual §9.3 p. 7; the worked example (p. 8) writes output 1 at coil 0x0001, the table says 0x0000: unresolved"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "ir:0..ir:7 or hr:0..hr:7; clear with coil:512..coil:519",
+     "meaning": "pulse count per input",
+     "source": "Brainboxes Modbus TCP Manual §9.3 p. 7"
+    },
+    {
+     "name": "output overload",
+     "modbus": "di:1024..di:1027 (FC 2); ir:1024 = all",
+     "meaning": "1 = that output is overloaded",
+     "source": "Brainboxes Modbus TCP Manual §9.3 p. 7"
+    }
+   ],
+   "sources": [
+    {
+     "title": "Brainboxes Modbus TCP Manual",
+     "sha256": "7fe3af1bf165f8c2f1fa25df39adcc59ede03364d2a9d3c80eedf8772d4026f8",
+     "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "Brainboxes ED Range Manual",
+     "sha256": "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651",
+     "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/brainboxes/ed-588",
+   "vendor": "Brainboxes",
+   "model": "ED-588",
+   "channels": "8 DI, 8 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "di:0..di:7 (FC 2); also coil:32..coil:39 (FC 1); ir:32 = all eight",
+     "meaning": "digital input state, 1 = on",
+     "source": "Brainboxes Modbus TCP Manual §9.1 p. 7"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:0..coil:7 (FC 1, 5, 15); hr:32 = all 8 as one word (FC 3, 6, 16)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "Brainboxes Modbus TCP Manual §9.1 p. 7; the worked example (p. 8) writes output 1 at coil 0x0001, the table says 0x0000: unresolved"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "ir:0..ir:7 or hr:0..hr:7; clear with coil:512..coil:519",
+     "meaning": "pulse count per input",
+     "source": "Brainboxes Modbus TCP Manual §9.1 p. 7"
+    },
+    {
+     "name": "output overload",
+     "modbus": "di:1024..di:1031 (FC 2); ir:1024 = all",
+     "meaning": "1 = that output is overloaded",
+     "source": "Brainboxes Modbus TCP Manual §9.1 p. 7"
+    }
+   ],
+   "sources": [
+    {
+     "title": "Brainboxes Modbus TCP Manual",
+     "sha256": "7fe3af1bf165f8c2f1fa25df39adcc59ede03364d2a9d3c80eedf8772d4026f8",
+     "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-516/documents/Brainboxes%20Modbus%20TCP%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "Brainboxes ED Range Manual",
+     "sha256": "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651",
+     "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1210",
+   "vendor": "Moxa",
+   "model": "ioLogik E1210",
+   "channels": "16 DI",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DI-00..DI-15",
+     "enip": "di:0..di:15 (input bytes 0-1, bit n = channel n)",
+     "modbus": "di:0..di:15; ir:48 = all of them as one word",
+     "meaning": "digital input state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-2, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "DI counters",
+     "enip": "in:2:u32 .. in:62:u32 (UDINT at byte 2 + 4n, little-endian)",
+     "modbus": "ir:16:u32 .. ir:46:u32 (two words a channel, high word first)",
+     "meaning": "counter mode value; a channel in DI mode (the factory default) does not count",
+     "source": "E1200 manual v15.10 p. A-2, p. B-1, Appendix E; counter n at 16 + 2n and at byte 2 + 4n is inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1210/E1210-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "625cd464f9bc03637781639d7c7d50870a9ef2155c85707eeaf3298ed8c0cc28",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1210-e1210-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1211",
+   "vendor": "Moxa",
+   "model": "ioLogik E1211",
+   "channels": "16 DO",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DO-00..DO-15",
+     "enip": "do:0..do:15 (output bytes 0-1, bit n = channel n); status in input bytes 0-1",
+     "modbus": "coil:0..coil:15; hr:32 = all of them as one word",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-4, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1211/E1211-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "80f8436e7bc45de4538612bbbc8a0142b899d85751eab1370794804d7db848d8",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1211-e1211-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1212",
+   "vendor": "Moxa",
+   "model": "ioLogik E1212",
+   "channels": "8 DI, 8 DIO",
+   "enip": {
+    "map": true,
+    "identity": {
+     "vendor_id": 991,
+     "product_code": 514,
+     "device_type": 12,
+     "revisions": [
+      "2.6"
+     ],
+     "product_name": "E1212"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 67
+    },
+    "output": {
+     "instance": 102,
+     "bytes": 1
+    },
+    "eds": "ioLogik_E1212_EtherNetIP_V1.1_170207.eds"
+   },
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DI-00..DI-15",
+     "enip": "di:0..di:15 (input bytes 0-1, bit n = channel n)",
+     "modbus": "di:0..di:15; ir:48 = all of them as one word",
+     "meaning": "digital input state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-5, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "DI counters",
+     "enip": "in:2:u32 .. in:62:u32 (UDINT at byte 2 + 4n, little-endian)",
+     "modbus": "ir:16:u32 .. ir:46:u32 (two words a channel, high word first)",
+     "meaning": "counter mode value; a channel in DI mode (the factory default) does not count",
+     "source": "E1200 manual v15.10 p. A-5, p. B-1, Appendix E; counter n at 16 + 2n and at byte 2 + 4n is inferred"
+    },
+    {
+     "name": "DO-00..DO-07",
+     "enip": "do:0..do:7 (output byte 0, bit n = channel n); status in input byte 66",
+     "modbus": "coil:0..coil:7; hr:32 = all of them as one word",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-5, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1212/E1212-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "d5eed5bd230dc012d4d47305f5ea22d7b81270bdc03baa71d99b212cc7610dba",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    },
+    {
+     "title": "E1212 EDS V1.1 (EZ-EDS 3.11.1, 02-07-2017, revision 2.6)",
+     "sha256": "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8",
+     "where": "https://marketplace.odva.org/products/1870-iologik-e1212"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1213",
+   "vendor": "Moxa",
+   "model": "ioLogik E1213",
+   "channels": "8 DI, 4 DO, 4 DIO (source type)",
+   "firmware": "V3.1 Build19110615",
+   "checked_on": "2026-11-02",
+   "enip": {
+    "map": true,
+    "identity": {
+     "vendor_id": 991,
+     "product_code": 515,
+     "device_type": 12,
+     "revisions": [
+      "3.1",
+      "4.1"
+     ],
+     "product_name": "ioLogik E1213"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 51
+    },
+    "output": {
+     "instance": 102,
+     "bytes": 1
+    },
+    "eds": "moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds"
+   },
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DI-00..DI-11",
+     "enip": "di:0..di:11 (input bytes 0-1, bit n = channel n)",
+     "modbus": "di:0..di:11",
+     "meaning": "digital input state, 1 = on",
+     "source": "E1200 manual v15.10 p. B-1, p. A-7; bit order confirmed on the bench 2026-11-02"
+    },
+    {
+     "name": "DI counters",
+     "enip": "in:2:u32 .. in:46:u32 (UDINT at byte 2 + 4n, little-endian)",
+     "modbus": "ir:16:u32 .. ir:38:u32 (two words a channel, high word first)",
+     "meaning": "counter mode value; 0 in DI mode",
+     "source": "E1200 manual v15.10 p. B-1, p. A-7; byte order inferred"
+    },
+    {
+     "name": "DO-00..DO-07",
+     "enip": "do:0..do:7 (output byte 0, bit n = channel n); status in:50.0..in:50.7",
+     "modbus": "coil:0..coil:7; hr:32 = all eight as one word",
+     "meaning": "digital output command and state, 1 = on; DO-04..07 are the hybrid DIO channels in DO mode",
+     "source": "E1200 manual v15.10 p. B-2, p. A-7; confirmed on the bench 2026-11-02"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "E1213 EDS v2.0 (EZ-EDS 3.27, revision 1 for firmware 4.0)",
+     "sha256": "3895fbca8bb036c1b31a9d6b68dea69eca6892fe0a6bce7409ab76311cfd470d"
+    }
+   ],
+   "wiring": {
+    "note": "The DO are source type and need EXT field power (12-36 V on the EXT terminals, jumper JP10 default) before an output drives anything; the console's overview says 'No External Power' until then.",
+    "source": "E1200 manual v15.10 p. 2-6, p. 1-4; bench 2026-11-02"
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e1214",
+   "vendor": "Moxa",
+   "model": "ioLogik E1214",
+   "channels": "6 DI, 6 relays",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DI-00..DI-05",
+     "enip": "di:0..di:5 (input byte 0, bit n = channel n)",
+     "modbus": "di:0..di:5; ir:48 = all of them as one word",
+     "meaning": "digital input state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-9, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "DI counters",
+     "enip": "in:1:u32 .. in:21:u32 (UDINT at byte 1 + 4n, little-endian)",
+     "modbus": "ir:16:u32 .. ir:26:u32 (two words a channel, high word first)",
+     "meaning": "counter mode value; a channel in DI mode (the factory default) does not count",
+     "source": "E1200 manual v15.10 p. A-9, p. B-1, Appendix E; counter n at 16 + 2n and at byte 1 + 4n is inferred"
+    },
+    {
+     "name": "RLY-00..RLY-05",
+     "enip": "do:0..do:5 (output byte 0, bit n = channel n); status in input byte 25",
+     "modbus": "coil:0..coil:5; hr:32 = all of them as one word",
+     "meaning": "relay command and state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-9, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "RLY-00..RLY-05 total count",
+     "modbus": "ir:64:u32 .. ir:74:u32 (two words a relay, high word first)",
+     "meaning": "how many times the relay has switched; the EtherNet/IP assemblies do not carry it (Relay Channel Object attribute 8, p. B-3)",
+     "source": "E1200 manual v15.10 p. A-9; relay n at 64 + 2n is inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1214/E1214-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "f50af21903ef61310eac623d887ce080110e361d3076ec5de7c2c92b77f27c72",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1214-e1214-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1240",
+   "vendor": "Moxa",
+   "model": "ioLogik E1240",
+   "channels": "8 AI",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "AI-00..AI-07 raw value",
+     "enip": "in:0:u16 .. in:14:u16 (UINT at byte 0 + 2n, little-endian)",
+     "modbus": "ir:0..ir:7",
+     "meaning": "the converter's raw value, one word a channel; what a count is in volts or mA depends on the channel's mode and jumper",
+     "source": "E1200 manual v15.10 p. A-11, p. B-1; channel n at 0 + n and at byte 0 + 2n is inferred"
+    },
+    {
+     "name": "AI-00..AI-07 status",
+     "modbus": "ir:60..ir:67",
+     "meaning": "0 normal, 1 burnout, 2 over range, 3 under range",
+     "source": "E1200 manual v15.10 p. A-11"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1240/E1240-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "8362136b310a248420c6282ed7bb8a1740b295c2c6a59003d328b40f26152fce",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1240-e1240-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1241",
+   "vendor": "Moxa",
+   "model": "ioLogik E1241",
+   "channels": "4 AO",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "AO-00..AO-03 raw value",
+     "enip": "out:0:u16 .. out:6:u16 (UINT at byte 2n of the output assembly, little-endian); the same 8 bytes read back in the input assembly",
+     "modbus": "hr:1024..hr:1027",
+     "meaning": "the converter's raw value, 0..4095 (the range of the Safe Mode value, p. 3-21); what a count is in volts or mA depends on the channel's mode",
+     "source": "E1200 manual v15.10 p. A-12, p. B-1, p. B-2; channel n at 1024 + n and at byte 2n is inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1241/E1241-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "28c70f0d56345d3617c4c19cd468f49465d31ffad1b9349fcc0e1002f91802da",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1241-e1241-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1242",
+   "vendor": "Moxa",
+   "model": "ioLogik E1242",
+   "channels": "4 AI, 4 DI, 4 DIO",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "DI-00..DI-07",
+     "enip": "di:0..di:7 (input byte 0, bit n = channel n)",
+     "modbus": "di:0..di:7; ir:48 = all of them as one word",
+     "meaning": "digital input state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-14, p. B-1; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "DI counters",
+     "enip": "in:1:u32 .. in:29:u32 (UDINT at byte 1 + 4n, little-endian)",
+     "modbus": "ir:16:u32 .. ir:30:u32 (two words a channel, high word first)",
+     "meaning": "counter mode value; a channel in DI mode (the factory default) does not count",
+     "source": "E1200 manual v15.10 p. A-14, p. B-1, Appendix E; counter n at 16 + 2n and at byte 1 + 4n is inferred"
+    },
+    {
+     "name": "DO-00..DO-03",
+     "enip": "do:0..do:3 (output byte 0, bit n = channel n); status in input byte 33",
+     "modbus": "coil:0..coil:3; hr:32 = all of them as one word",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "E1200 manual v15.10 p. A-15, p. B-1, p. B-2; bit n = channel n as confirmed on the E1213 (bench 2026-11-02), not on this model"
+    },
+    {
+     "name": "AI-00..AI-03 raw value",
+     "enip": "in:34:u16 .. in:40:u16 (UINT at byte 34 + 2n, little-endian)",
+     "modbus": "ir:512..ir:515",
+     "meaning": "the converter's raw value, one word a channel; what a count is in volts or mA depends on the channel's mode and jumper",
+     "source": "E1200 manual v15.10 p. A-14, p. B-1; channel n at 512 + n and at byte 34 + 2n is inferred"
+    },
+    {
+     "name": "AI-00..AI-03 status",
+     "modbus": "ir:576..ir:579",
+     "meaning": "0 normal, 1 burnout, 2 over range, 3 under range",
+     "source": "E1200 manual v15.10 p. A-14"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1242/E1242-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "f024674669f92317a8346cec0a8adbf3b1dd72b9e74205b62885e5f422da9253",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1242-e1242-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1260",
+   "vendor": "Moxa",
+   "model": "ioLogik E1260",
+   "channels": "6 RTD",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "RTD-00..RTD-05 engineering value x 10",
+     "enip": "in:0:u16 .. in:10:u16 (UINT at byte 2n, little-endian)",
+     "modbus": "ir:1536:i16 .. ir:1541:i16",
+     "meaning": "the measured value times ten, in the unit the channel is set to (the manual: 'Unit: 0.1'); one word a channel",
+     "source": "E1200 manual v15.10 p. A-16, p. B-2; channel n at 1536 + n, and a value below zero as two's complement, are inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1260/E1260-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "c175dd5e616c0fd4c4182be34067ff84b418870ff7b194ffde0b4da9cd964ae8",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1260-e1260-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e1262",
+   "vendor": "Moxa",
+   "model": "ioLogik E1262",
+   "channels": "8 TC",
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "TC-00..TC-07 engineering value x 10",
+     "enip": "in:0:u32 .. in:28:u32 (UDINT at byte 4n, little-endian)",
+     "modbus": "ir:2048:i32 .. ir:2062:i32 (two words a channel, high word first)",
+     "meaning": "the measured value times ten in Celsius or Fahrenheit, or in units of 0.0001 mV when the channel measures millivolts",
+     "source": "E1200 manual v15.10 p. A-18, p. B-2; channel n at 2048 + 2n, and a value below zero as two's complement, are inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+     "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+     "where": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+    },
+    {
+     "title": "Firmware for ioLogik E1200 Series (ioLogik E1262/E1262-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
+     "sha256": "f9999a03690521f52eb5df1b654d9ea41a0de3aba9291986a8d8eec437b92427",
+     "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1262-e1262-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI16",
+   "channels": "16 DI (8 on pin 4, 8 on pin 2 of 8 M12 ports)",
+   "enip": {
+    "map": true,
+    "input": {
+     "instance": 100,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 128,
+     "bytes": 0
+    }
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
+    "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-di8-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DI8 DO8",
+   "channels": "8 DI, 8 DO (2 A each)",
+   "enip": {
+    "map": true,
+    "identity": {
+     "vendor_id": 640,
+     "product_code": 55086,
+     "device_type": 7,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "IMPACT67 DI8 DO8"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 128,
+     "bytes": 0
+    },
+    "eds": "55086_Impact67_EIP_DI8DO8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    },
+    {
+     "title": "55086_Impact67_EIP_DI8DO8.eds, EDS revision 1.1 (EZ-EDS 3.11, 2015-04-29)",
+     "sha256": "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e",
+     "where": "Murrelektronik's configuration-file downloads, 55086_IMPACT67_KF5_x_11.zip; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
+    "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-dio8-dio8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DIO8 (DIO8)",
+   "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
+   "enip": {
+    "map": true,
+    "identity": {
+     "vendor_id": 640,
+     "product_code": 55089,
+     "device_type": 7
+    },
+    "input": {
+     "instance": 117,
+     "bytes": 8
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 110,
+     "bytes": 0
+    }
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
+    "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do16",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO16",
+   "channels": "16 DO (0.5 A each)",
+   "enip": {
+    "map": true,
+    "input": {
+     "instance": 100,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 128,
+     "bytes": 0
+    }
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
+    "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/murrelektronik/impact67-e-do8",
+   "vendor": "Murrelektronik",
+   "model": "IMPACT67 E DO8",
+   "channels": "8 DO (2 A each)",
+   "enip": {
+    "map": true,
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 128,
+     "bytes": 0
+    }
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
+    "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-od32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-OD32SLH-1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1106,
+     "device_type": 7,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ERT1-OD32SLH-1"
+    },
+    "input": {
+     "instance": 199,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 36,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "ERT1-OD32SLH-1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet",
+     "sha256": "4c1de6bd123f75fb6391090cf550cea149c96ba5d71620d05abe232c96ad5565",
+     "where": "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+     "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/omron/nx-eic202",
+   "vendor": "Omron",
+   "model": "NX-EIC202",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1660,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "NX-EIC202"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 148
+    },
+    "config": {
+     "instance": 199
+    },
+    "eds": "NX-EIC202.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "NX-EIC202 EDS (ODVA marketplace, product 1170)",
+     "sha256": "c38718b4d004a93cdb63cd75db76f5fd76f9596029b885dcaca79e784c4270c6",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1170/NX-EIC202.eds; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "NX-series EtherNet/IP Coupler Unit User's Manual W536-E1-01 (Omron knowledge base attachment)",
+     "sha256": "7534c445d65d1cbbb934f2a6d2d56b0fa7bcef459a1ab27a9060f79ec43a8a45",
+     "where": "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
+   "vendor": "Phoenix Contact",
+   "model": "AXL F BK EIP EF",
+   "channels": "none of its own: the Axioline F modules behind it (up to 63) set the I/O",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 562,
+     "product_code": 8169,
+     "device_type": 12,
+     "revisions": [
+      "1.10"
+     ],
+     "product_name": "AXL F BK EIP EF"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "AXL_F_BK_EIP_EF.eds"
+   },
+   "points": [
+    {
+     "name": "process data",
+     "enip": "in: and out: words of assemblies 110 / 100, in module order",
+     "meaning": "the attached modules' process data words; the data sheet lists the mapping in its own words as instance 100 output data and 110 input data, but its description text under each instance is the other way round (data sheet p. 19); the EDS has 100 as O->T 'Output Data' and 110 as T->O 'Input Data'. The mapping for the actual station is on the coupler's web page 'EtherNet/IP, I/O Assembly table'",
+     "source": "AXL F BK EIP EF data sheet 107469_en_01 p. 19; layout inferred"
+    }
+   ],
+   "sources": [
+    {
+     "title": "AXL F BK EIP EF data sheet 107469_en_01 (DigiKey mirror)",
+     "sha256": "f20dca065b58f94b8aaebcc368c7801f95b64121845fcb98e8e3e6306801cba1",
+     "where": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/778/2702782_Ds.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "AXL F BK EIP EF EDS (ODVA marketplace 1873)",
+     "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "wiring": {
+    "note": "2 x RJ45 10/100 (switch, DLR beacon-based ring node), 24 V DC logic supply 19.2..30 V, up to 63 Axioline F devices on the local bus, rotary switches set the IP assignment.",
+    "source": "AXL F BK EIP EF data sheet 107469_en_01 pp. 1, 5, 6, 20"
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dip-4dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-4DIP-4DOP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14021,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-4DIP-4DOP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 18
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 10
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "TBEN-S1-4DIP-4DOP_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s1-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S1-4DXP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 20027,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-4DXP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 18
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 10
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 12
+    },
+    "eds": "TBEN-S1-4DXP_R2.7.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14020,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-8DIP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 16
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 6
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "TBEN-S1-8DIP_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dip-d",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DIP-D",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14034,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-8DIP-D"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 16
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 6
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "TBEN-S1-8DIP-D_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dop",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DOP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14022,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-8DOP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 8
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 8
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "TBEN-S1-8DOP_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s1-8dxp",
+   "vendor": "TURCK",
+   "model": "TBEN-S1-8DXP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14023,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S1-8DXP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 20
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 12
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "TBEN-S1-8DXP_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ai",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AI",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14025,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-4AI"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 14
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 12
+    },
+    "eds": "TBEN-S2-4AI_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-4ao",
+   "vendor": "TURCK",
+   "model": "TBEN-S2-4AO",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14028,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-4AO"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 10
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 12
+    },
+    "eds": "TBEN-S2-4AO_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dip",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DIP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14073,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-8DIP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 16
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 8
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 10
+    },
+    "eds": "TBEN-S2-8DIP_R1.1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-8dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-8DXP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14076,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-8DXP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 20
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 14
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 10
+    },
+    "eds": "TBEN-S2-8DXP_R1.1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S2-8DXP data sheet (6814076), English",
+     "sha256": "09910920b828c0cd1656b94ba25815632ca74afc2c8a624cb0f62cc4dd0b7d14",
+     "where": "https://www.turck.us/datasheet/_us/edb_6814076_eng_us.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
+     "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
+     "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/wago/750-363",
+   "vendor": "WAGO",
+   "model": "750-363",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 40,
+     "product_code": 363,
+     "device_type": 12,
+     "revisions": [
+      "1.4"
+     ],
+     "product_name": "WAGO 750-363 EtherNet/IP"
+    },
+    "input": {
+     "instance": 104
+    },
+    "output": {
+     "instance": 101
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "07500363.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)",
+     "sha256": "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  }
+ ]
+}
