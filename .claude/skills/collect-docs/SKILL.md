@@ -90,13 +90,14 @@ has been on the bench (README: Contributing).
 ## 4. Ship
 
 ```sh
-python3 -I scripts/build-index.py
-uvx ruff@0.17.4 check . && uvx ruff@0.17.4 format --check . && python3 -I scripts/build-index.py --check
+python3 -I scripts/build-index.py && python3 -I scripts/build-review.py
+uvx ruff@0.17.4 check . && uvx ruff@0.17.4 format --check .
+python3 -I scripts/build-index.py --check && python3 -I scripts/build-review.py --check
 python3 -I -B -m unittest discover -s tests
 ```
 
-Commit `collect/<vendor>.toml`, `collect/<vendor>.lock.json`, the folders and
-`index.json`; never a file from `cache/`. Open the PR ready, not as a draft (Nick,
+Commit `collect/<vendor>.toml`, `collect/<vendor>.lock.json`, the folders,
+`index.json` and `review.json`; never a file from `cache/`. Open the PR ready, not as a draft (Nick,
 2026-11-14): the auto-merge workflow skips drafts, and a folder from documents
 already says so (no `checked_on`), which the site shows as "from documents". Say
 in the PR body what a unit must settle (a contradiction between documents, a
