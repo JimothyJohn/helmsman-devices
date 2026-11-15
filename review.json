@@ -480,6 +480,12 @@
      "sha256": "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651",
      "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
     }
+   ],
+   "questions": [
+    {
+     "ask": "Which coil switches the first output: 0x0000, as the register table says, or 0x0001, as the worked example writes?",
+     "source": "Brainboxes Modbus TCP Manual §9.3 p. 7 (the table) and p. 8 (the worked example)"
+    }
    ]
   },
   {
@@ -527,6 +533,12 @@
      "title": "Brainboxes ED Range Manual",
      "sha256": "b49ad3eea0963b3acb4874627dea394ab6a0e178e35d5d4d53751bdd99f10651",
      "where": "https://www.brainboxes.com/files/catalog/product/ED/ED-004/documents/ED%20Range%20Manual.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which coil switches the first output: 0x0000, as the register table says, or 0x0001, as the worked example writes?",
+     "source": "Brainboxes Modbus TCP Manual §9.1 p. 7 (the table) and p. 8 (the worked example)"
     }
    ]
   },
@@ -1256,6 +1268,12 @@
      "sha256": "7534c445d65d1cbbb934f2a6d2d56b0fa7bcef459a1ab27a9060f79ec43a8a45",
      "where": "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414; retrieved 2026-11-14; not redistributed here"
     }
+   ],
+   "questions": [
+    {
+     "ask": "Which output assembly does a unit accept: 148, where the EDS's Connection1 path ends, or 150, which the EDS lists as 'NX Output area'?",
+     "source": "NX-EIC202.eds: Connection1 path '20 04 24 C7 2C 94 2C 64' against Assem150"
+    }
    ]
   },
   {
@@ -1303,6 +1321,12 @@
      "title": "AXL F BK EIP EF EDS (ODVA marketplace 1873)",
      "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1873/AXL_F_BK_EIP_EF.eds; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which way round does a unit connect: instance 100 as output data and 110 as input data, as the data sheet's table and the EDS say, or the reverse, as the data sheet's text under each instance says?",
+     "source": "AXL F BK EIP EF data sheet 107469_en_01 p. 19; the EDS's Connection entries"
     }
    ],
    "wiring": {

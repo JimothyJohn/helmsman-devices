@@ -36,3 +36,7 @@ where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/ed
 title = "NX-series EtherNet/IP Coupler Unit User's Manual W536-E1-01 (Omron knowledge base attachment)"
 sha256 = "7534c445d65d1cbbb934f2a6d2d56b0fa7bcef459a1ab27a9060f79ec43a8a45"
 where = "https://automation-knowledge-base.omron.eu/helpdesk/attachments/103252089414; retrieved 2026-11-14; not redistributed here"
+
+[[questions]]
+ask = "Which output assembly does a unit accept: 148, where the EDS's Connection1 path ends, or 150, which the EDS lists as 'NX Output area'?"
+source = "NX-EIC202.eds: Connection1 path '20 04 24 C7 2C 94 2C 64' against Assem150"

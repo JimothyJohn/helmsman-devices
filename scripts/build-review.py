@@ -4,7 +4,7 @@
 index.json is what a controller looks a device up in, and stays small.
 review.json is what a person reads: the identity and assemblies, each
 point with its meaning and the page it came from, the documents, the
-wiring note. A page renders it, so every text is bounded and printable
+wiring note, and the questions the documents leave open. A page renders it, so every text is bounded and printable
 and every number is a number; a folder that breaks that fails the build.
 Format "helmsman-devices-review 1".
 
@@ -146,6 +146,14 @@ def entry(folder: pathlib.Path) -> dict:
         optional(rec, s, ("where",), what, LONG)
         sources.append(rec)
     out["sources"] = sources
+    questions = []
+    for i, q in enumerate(rows(t.get("questions", []), f"{rel}: questions")):
+        what = f"{rel}: questions[{i}]"
+        rec = {"ask": text(q.get("ask"), f"{what}.ask", LONG)}
+        optional(rec, q, ("source",), what, LONG)
+        questions.append(rec)
+    if questions:
+        out["questions"] = questions
     if "wiring" in t:
         w = table(t["wiring"], f"{rel}: wiring")
         rec = {"note": text(w.get("note"), f"{rel}: wiring.note", LONG)}
