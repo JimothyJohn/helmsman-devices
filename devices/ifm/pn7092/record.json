@@ -1,0 +1,309 @@
+{
+ "format": "helmsman-device-record 1",
+ "folder": "devices/ifm/pn7092",
+ "vendor": "ifm",
+ "model": "(PN7072, PN7092, PN7572, PN7592) Status B",
+ "kind": "sensor",
+ "draft": true,
+ "family": "PN7",
+ "vendor_url": "www.ifm.com/gb/en/downloadarea/IOContent",
+ "iolink": {
+  "vendor_id": 310,
+  "device_id": 599
+ },
+ "variants": [
+  {
+   "product_id": "PN7072",
+   "name": "PN7072 Status B",
+   "description": "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4I"
+  },
+  {
+   "product_id": "PN7092",
+   "name": "PN7092 Status B",
+   "description": "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4I"
+  },
+  {
+   "product_id": "PN7572",
+   "name": "PN7572 Status B",
+   "description": "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4A"
+  },
+  {
+   "product_id": "PN7592",
+   "name": "PN7592 Status B",
+   "description": "Electronic pressure sensor, 0.0...100.0 bar, ISO228 - G1/4A"
+  }
+ ],
+ "wired": {
+  "sio": true,
+  "connections": [
+   {
+    "type": "M12-4",
+    "products": [
+     "PN7072"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "PN7092"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "PN7572"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   },
+   {
+    "type": "M12-4",
+    "products": [
+     "PN7592"
+    ],
+    "wires": [
+     {
+      "n": 1,
+      "function": "L+",
+      "color": "BN"
+     },
+     {
+      "n": 2,
+      "function": "Other",
+      "color": "WH"
+     },
+     {
+      "n": 3,
+      "function": "L-",
+      "color": "BU"
+     },
+     {
+      "n": 4,
+      "function": "C/Q",
+      "color": "BK"
+     }
+    ]
+   }
+  ]
+ },
+ "signals": [
+  {
+   "dir": "in",
+   "name": "Pressure",
+   "type": "int",
+   "bits": "16..31",
+   "description": "Current pressure",
+   "values": {
+    "32760": "OL",
+    "32764": "NoData"
+   }
+  },
+  {
+   "dir": "in",
+   "name": "Device status",
+   "type": "uint",
+   "bits": "4..7",
+   "description": "Current device status, a copy of the parameter [Device Status, Index 36] in the process data channel",
+   "values": {
+    "0": "Device is OK",
+    "1": "Maintenance required",
+    "2": "Out of specification",
+    "3": "Functional check",
+    "4": "Failure"
+   }
+  },
+  {
+   "dir": "in",
+   "name": "OUT2",
+   "type": "bool",
+   "bits": "1",
+   "on": "On",
+   "off": "OFF",
+   "description": "Current status of the digital signal [OUT2]"
+  },
+  {
+   "dir": "in",
+   "name": "OUT1",
+   "type": "bool",
+   "bits": "0",
+   "on": "On",
+   "off": "OFF",
+   "description": "Current status of the digital signal [OUT1]"
+  }
+ ],
+ "settings": [
+  {
+   "name": "P-n",
+   "index": 500,
+   "default": "0",
+   "default_name": "PnP",
+   "values": {
+    "0": "PnP",
+    "1": "nPn"
+   }
+  },
+  {
+   "name": "Loc",
+   "index": 550,
+   "default": "1",
+   "default_name": "uLoc",
+   "values": {
+    "0": "Loc",
+    "1": "uLoc"
+   }
+  },
+  {
+   "name": "uni",
+   "index": 551,
+   "default": "1",
+   "default_name": "bar",
+   "values": {
+    "0": "MPa",
+    "1": "bar",
+    "2": "psi"
+   }
+  },
+  {
+   "name": "diS: Display On / OFF",
+   "index": 552,
+   "subindex": 1,
+   "default": "false",
+   "default_name": "On",
+   "values": {
+    "false": "On",
+    "true": "OFF"
+   }
+  },
+  {
+   "name": "diS: Display orientation",
+   "index": 552,
+   "subindex": 2,
+   "default": "false",
+   "default_name": "Not rotated",
+   "values": {
+    "false": "Not rotated",
+    "true": "Rotated 180°"
+   }
+  },
+  {
+   "name": "diS: Update rate",
+   "index": 552,
+   "subindex": 3,
+   "default": "2",
+   "default_name": "d2 / medium",
+   "values": {
+    "1": "d1 / fast",
+    "2": "d2 / medium",
+    "4": "d3 / slow"
+   }
+  },
+  {
+   "name": "coLr",
+   "index": 554,
+   "default": "2",
+   "default_name": "rEd / Displayed value red",
+   "values": {
+    "2": "rEd / Displayed value red",
+    "3": "GrEn / Displayed value green",
+    "4": "r1ou / Displayed value red when OUT1 switches",
+    "5": "G1ou / Displayed value green when OUT1 switches",
+    "6": "r2ou / Displayed value red when OUT2 switches",
+    "7": "G2ou / Displayed value green when OUT2 switches",
+    "8": "r-12 / Displayed value red when the measured value is inside the limits of OUT1 and OUT2",
+    "9": "G-12 / Displayed value green when the measured value is inside the limits of OUT1 and OUT2",
+    "10": "r-cF / Displayed value red when the measured value is inside the limits of [cFL] and [cFH]",
+    "11": "G-cF / Displayed value green when the measured value is inside the limits of [cFL] and [cFH]"
+   }
+  },
+  {
+   "name": "ou1",
+   "index": 580,
+   "default": "3",
+   "default_name": "Hno / Hysteresis fct normally open",
+   "values": {
+    "3": "Hno / Hysteresis fct normally open",
+    "4": "Hnc / Hysteresis fct normally closed",
+    "5": "Fno / Window fct normally open",
+    "6": "Fnc / Window fct normally closed",
+    "16": "OFF / Output Off"
+   }
+  },
+  {
+   "name": "ou2",
+   "index": 590,
+   "default": "3",
+   "default_name": "Hno / Hysteresis fct normally open",
+   "values": {
+    "3": "Hno / Hysteresis fct normally open",
+    "4": "Hnc / Hysteresis fct normally closed",
+    "5": "Fno / Window fct normally open",
+    "6": "Fnc / Window fct normally closed",
+    "16": "OFF / Output Off"
+   }
+  }
+ ]
+}

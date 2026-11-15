@@ -13,6 +13,7 @@ devices/<vendor>/<model>/
   enip.map        the I/O map lines for EtherNet/IP (if the device speaks it)
   modbus.map      the I/O map lines for Modbus TCP (if it does)
   README.md       the device in words, with the manual's page for each claim
+  record.json     a wired sensor's or actuator's facts as JSON, built from device.toml
 ```
 
 A family that shares a manual and a firmware line gets a page beside its
