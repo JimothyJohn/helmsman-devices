@@ -40,7 +40,11 @@ and what was fetched: `scripts/docs-fetch.py` downloads the files a
 `collect/<vendor>.toml` names (https only, public addresses only,
 robots.txt honoured, every file's type and hash checked) into an ignored
 `cache/`, and `scripts/eds-draft.py` drafts a folder's `device.toml` from
-an EDS. In Claude Code, the `collect-docs` skill runs the whole loop,
+an EDS. `scripts/iodd-draft.py` does the same for a sensor or an actuator
+from its IODD (the description file every IO-Link device has): who makes
+it, its variants, how each connector is wired and what its signals are
+called, for a device that sits on a plain digital channel
+([`docs/device-toml.md`](docs/device-toml.md)). In Claude Code, the `collect-docs` skill runs the whole loop,
 searching for the files included.
 
 ## Contributing
