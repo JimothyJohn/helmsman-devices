@@ -7,6 +7,11 @@ model = "TBEN-S2-4AI"
 kind = "remote-io"
 article = "6814025"
 
+[device.photo]
+url = "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png"
+page = "https://www.turck.us/en/product/6814025"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 48
 product_code = 14025

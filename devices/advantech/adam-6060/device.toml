@@ -6,6 +6,11 @@ model = "ADAM-6060"
 kind = "remote-io"
 channels = "6 DI, 6 relay (form A)"
 
+[device.photo]
+url = "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg"
+page = "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
+seen = 2026-11-16
+
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502
