@@ -499,6 +499,28 @@
    }
   },
   {
+   "folder": "devices/novanta/lexium-mdrive-ethernet",
+   "vendor": "Novanta IMS",
+   "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 15362
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SEM_MDrivever1_2.eds",
+      "size": 24813,
+      "sha256": "b14f0fe268df5b37e9dcee6bd0288a88e59d428dbe6044b49dba8beaaeb86041"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
