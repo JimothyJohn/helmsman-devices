@@ -1393,11 +1393,11 @@
      "source": "EDS Assem100 Param4; Fieldbus manual p. 20"
     },
     {
-     "ask": "What is the output assembly's layout on a unit as delivered? On the bench unit bytes 0-3 set the position counter, bytes 4-7 started a move, byte 17 enabled and disabled the drive, byte 18 set the run current and bytes 20-23 were SL; the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) fits only SL. The manual says the mapping can be changed in the TCP/IP Configuration Utility, and this unit's had been (its owner, 2026-11-17), so what it did says nothing about a unit as delivered: the documents' layout is still unchecked.",
-     "source": "Fieldbus manual p. 20 (the table and its note); a unit 2026-11-16, one field changed at a time and read back over MCode/TCP"
+     "ask": "Does a unit as delivered follow the documents' layout for output assembly 112? The bench unit's mapping had been changed in the TCP/IP Configuration Utility to P, MF, VM, ER, CF, DE, RC, pad, SL, LG, MA, RD, AS, toggle bits (the utility's E.I.P. page, its owner's photo 2026-11-17), and every field the bench exercised agreed with that page (P, DE, RC, SL, and the whole input assembly as DE, MV, IN, P, ER, LL). So the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) has not been checked on any unit.",
+     "source": "Fieldbus manual p. 20 (the table and its note); a unit 2026-11-16, one field changed at a time and read back over MCode/TCP; the Configuration Utility's E.I.P. page for that unit, 2026-11-17"
     },
     {
-     "ask": "Is there a setting that stops the motor when the I/O connection is lost? On the bench unit a slew went on for more than 10 s after the controller stopped sending (it stopped on a Forward_Close and on the run/idle header going to idle).",
+     "ask": "What stops the motor when the I/O connection is lost? On the bench unit a slew went on for more than 10 s after the controller stopped sending (it stopped on a Forward_Close and on the run/idle header going to idle), although the Configuration Utility's E.I.P. page showed 'I/O Implicit connection tests: Halt Motion On' for it. Whether that value had been read from the drive, and what the setting covers, is not known.",
      "source": "Fieldbus manual p. 44 (the NS LED only); a unit 2026-11-16"
     }
    ],

@@ -83,15 +83,20 @@ product_name = 'MDrive'
 - Input 100: bit 1 of byte 0 is MV; bit 0 followed the drive enable while `PR EF` read 0; byte 1
   is IN; bytes 4..7 are the position; bytes 8..9 held the error code (`PR ER`), not an encoder
   count.
-- Output 112 did not follow the table above: the unit's mapping was not the default (its owner
-  said so afterwards, 2026-11-17), which the drive gives no sign of over EtherNet/IP. One field changed at a time, drive disabled, read
+- Output 112 did not follow the table above: the unit's mapping was not the default, which the
+  drive gives no sign of over EtherNet/IP. The E.I.P. page of the Configuration Utility showed
+  it afterwards (its owner's photo, 2026-11-17): input DE, MV, IN, P, ER, LL; output P, MF, VM,
+  ER, CF, DE, RC, pad, SL, LG, MA, RD, AS, toggle bits. Everything below agrees with that page. One field changed at a time, drive disabled, read
   back over MCode: bytes 0..3 set the position counter; byte 17 non-zero enabled the drive and
   zero disabled it; byte 18 set the run current; bytes 20..23 are SL (5000 gave exactly 5000
-  steps/s, 0 stopped). Bytes 4..7 started a move once the drive was enabled.
+  steps/s, 0 stopped).
 - **A field acts when it changes** from the last image the drive saw, across connections: the
   same image sent again on a new connection does nothing.
 - **The first image built from the manual's table started a move at the `Forward_Open`** that
-  reached about 1.1 million steps/s (some 1300 rpm) before SL brought it down. A drive whose history is
+  reached about 1.1 million steps/s (some 1300 rpm) before SL brought it down: it carried
+  2 500 000, meant as the maximum velocity, in bytes 28..31, which this unit reads as MA, and an
+  enable in byte 17. (A small MA through the same bytes the next day did not move the drive and
+  left errors 25 and 30; not explained.) A drive whose history is
   not known may be mapped differently too: read its mapping in the Configuration Utility, or try
   one field at a time with the drive disabled, before sending it an image from the table.
 
