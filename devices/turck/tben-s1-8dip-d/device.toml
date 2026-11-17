@@ -7,6 +7,11 @@ model = "TBEN-S1-8DIP-D"
 kind = "remote-io"
 article = "6814034"
 
+[device.photo]
+url = "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png"
+page = "https://www.turck.us/en/product/6814034"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 48
 product_code = 14034

@@ -7,6 +7,11 @@ model = "NX-EIC202"
 kind = "remote-io"
 article = "NX-EIC202"
 
+[device.photo]
+url = "https://8z1xg04k.tinifycdn.com/images/NX-EIC202.jpg?resize.method=fit&resize.width=400&resize.height=400"
+page = "https://industrial.omron.co.uk/en/products/NX-EIC202"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 47
 product_code = 1660

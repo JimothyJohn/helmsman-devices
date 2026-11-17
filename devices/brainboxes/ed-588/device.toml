@@ -6,6 +6,11 @@ model = "ED-588"
 kind = "remote-io"
 channels = "8 DI, 8 DO"
 
+[device.photo]
+url = "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-588-8-digital-inputs-8-digital-outputs-and-an-ascii-gateway.jpg"
+page = "https://www.brainboxes.com/product/remote-io/digital/ed-588"
+seen = 2026-11-16
+
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502
