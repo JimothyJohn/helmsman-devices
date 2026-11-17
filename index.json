@@ -552,7 +552,12 @@
    "protocols": {
     "enip": {
      "driver": "enip-io",
-     "map": "enip.map"
+     "map": "enip.map",
+     "eds": {
+      "name": "55089_Impact67_E_DIO16.eds",
+      "size": 43388,
+      "sha256": "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d"
+     }
     }
    }
   },

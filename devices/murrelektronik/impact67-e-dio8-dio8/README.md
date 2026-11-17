@@ -13,6 +13,29 @@ unit, so no channel was seen switching. What the five articles share is in
 *Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)*, 9631751 bytes, SHA-256 `f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f`. "p. N" is the handbook's page number. Nick's
 copy; Murrelektronik's terms ("Copyright", p. 104) do not allow redistributing it here.
 
+## The EDS
+
+`55089_Impact67_E_DIO16.eds`, EDS revision 1.3 (modified 09-18-2017), 43 388 bytes, SHA-256
+`6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d`, from Murrelektronik's shop page for the article (a browser download; the page does not answer
+a fetch). Not in this repository. It agrees with the unit and the handbook:
+
+- Identity: vendor 640, device type 7 "General Purpose Discrete I/O", product code 55089, revision
+  1.2, `IMPACT67 E DIO8 (DIO8)`: what the unit answered.
+- Assemblies 5, 35, 105, 135 (2 bytes), 117 and 118 (8), 109 (3), 110 (0). It does not list 100 and
+  101, which the unit also answers.
+- Six connections: exclusive owner without and with diagnosis, each once with configuration
+  instance 109 ("Config over EDS") and once with 110 ("Config over Web Server"), and two listen-only
+  connections. Every owner is O->T run/idle, T->O modeless, point-to-point; no RPI is given.
+- The three configuration parameters default to 0: pin mode, every channel an input.
+
+There is a second file on the same page, `55089_Impact67_E_DIO16_Omron.eds` (regenerated 07-09-2019,
+43 416 bytes, SHA-256 `2320dbc1dded11586c969412e8e0e11182c010325a598af4bd823fc4c1c1f225`). It differs in two things: assembly 109 has a fourth, reserved byte (the
+unit reports 4 bytes for that instance), and the two channel parameters are USINT instead of BYTE.
+Helmsman connected to the unit from either file (2026-11-17), with the file's defaults and with the
+channel setup given as `config_data=` (3 bytes for the first file, 4 for the second). From an EDS
+Helmsman opens the first exclusive owner, which is the one without diagnosis; the profile in this
+folder opens the one with.
+
 ## The connection (pp. 73-75, 101)
 
 | | instance | bytes |
@@ -117,6 +140,5 @@ same ports. Bit 0 of a byte is the lowest channel of that byte.
 
 ## Still to check on a unit
 
-- Murrelektronik's EDS for the article (p. 45): its RPI range, and whether it says 3 or 4 bytes for instance 109.
 - Every channel once, with something wired: an input bridged, an output watched.
 - A pulled cable and a closed connection, to see what the outputs do.
