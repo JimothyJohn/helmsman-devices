@@ -1,6 +1,7 @@
 helmsman-device 1
 # Murrelektronik IMPACT67 E DIO8 (DIO8) (art. no. 55089): 16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A).
-# EtherNet/IP only. Not checked on a unit; where each bit comes from is in README.md.
+# EtherNet/IP only. The connection was opened on a unit (2026-11-16); no channel was seen
+# switching. Where each bit comes from is in README.md.
 vendor Murrelektronik
 model  IMPACT67 E DIO8 (DIO8)
 kind   remote-io
@@ -8,7 +9,10 @@ kind   remote-io
 # One Class 1 exclusive owner, written out from the handbook (no EDS read).
 # RPI: 5 ms at least, 10 ms by default, tested below 10 ms only (pp. 21, 58);
 # the 1 s ceiling is ours, the handbook gives none.
-transport enip-io config=110 o2t=35:2 t2o=117:8 rpi_ms=10 cycle_ms=10..1000
+# Configuration instance 109: a block as delivered takes its channel setup from
+# the controller, and with no setup sent every channel stays an input. Outputs
+# need config_data= on the device line (README.md).
+transport enip-io config=109 o2t=35:2 t2o=117:8 rpi_ms=10 cycle_ms=10..1000
 
 # inputs, input byte 0 (pin 4) and 1 (pin 2): a channel set to input
 in  DI-00               bool enip-io=in:0.0
