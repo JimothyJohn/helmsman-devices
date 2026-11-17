@@ -1,8 +1,9 @@
 # Murrelektronik IMPACT67 E series (EtherNet/IP)
 
-Five IP67 I/O blocks under one handbook. Each has a folder; none has been
-on the bench yet. **The bench block is a 55086 (DI8 DO8)**: Nick has its
-EDS (2026-11-12), and its folder carries what the EDS says.
+Five IP67 I/O blocks under one handbook. Each has a folder. **The block
+on the bench is a 55089 (DIO8)**, checked on 2026-11-16 for its identity
+and its connection (its folder, "On the bench"). The 55086's folder
+carries what its EDS says (2026-11-12); no 55086 has been on the bench.
 
 | article | model | channels | input / output / config instance, bytes | folder |
 | --- | --- | --- | --- | --- |
@@ -10,7 +11,7 @@ EDS (2026-11-12), and its folder carries what the EDS says.
 | 55086 | IMPACT67 E DI8 DO8 | 8 DI, 8 DO (2 A) | 100: 4, 112: 2, 128: 0 | [impact67-e-di8-do8](impact67-e-di8-do8/README.md) |
 | 55087 | IMPACT67 E DO8 | 8 DO (2 A) | 100: 2, 112: 2, 128: 0 | [impact67-e-do8](impact67-e-do8/README.md) |
 | 55088 | IMPACT67 E DO16 | 16 DO (0.5 A) | 100: 4, 112: 2, 128: 0 | [impact67-e-do16](impact67-e-do16/README.md) |
-| 55089 | IMPACT67 E DIO8 (DIO8) | 16 DIO (1.6 A) | 117: 8, 35: 2, 110: 0 | [impact67-e-dio8-dio8](impact67-e-dio8-dio8/README.md) |
+| 55089 | IMPACT67 E DIO8 (DIO8) | 16 DIO (1.6 A) | 117: 8, 35: 2, 109: 3 as delivered | [impact67-e-dio8-dio8](impact67-e-dio8-dio8/README.md) |
 
 Sizes are the "Always Even I/O Length" mode for 55085..55088 (each folder
 says why).
@@ -28,8 +29,9 @@ this repository ("Copyright", p. 104).
   in the handbook. The 55089's EDS file is named `02800007D7310101.eds`
   (p. 45), which reads as vendor 0x0280 = 640, device type 7, product code
   0xD731 = 55089, revision 1.1. The 55086's EDS says it outright:
-  `ProdCode = 55086`, type 7. So the product code is the article number on
-  two of the five. The 55085, 55087 and 55088 folders still leave it out
+  `ProdCode = 55086`, type 7. A 55089 unit answered `ListIdentity` with
+  product code 55089, type 7, revision 1.2 (2026-11-16). So the product
+  code is the article number on two of the five. The 55085, 55087 and 55088 folders still leave it out
   until their EDS or a unit says so.
 - **EtherNet/IP only.** Two M12 D-coded ports through an internal switch;
   power over 7/8" (US for the module and sensors, UA for the actuators,

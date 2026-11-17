@@ -540,6 +540,8 @@
    "model": "IMPACT67 E DIO8 (DIO8)",
    "kind": "remote-io",
    "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
+   "firmware": "revision 1.2 (ListIdentity)",
+   "checked_on": "2026-11-16",
    "profile": "murrelektronik-impact67-e-dio8-dio8.device",
    "identity": {
     "enip": {
@@ -579,6 +581,30 @@
     "enip": {
      "driver": "enip-io",
      "map": "enip.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/novanta/lexium-mdrive-ethernet",
+   "vendor": "Novanta IMS",
+   "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
+   "kind": "drive",
+   "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
+   "checked_on": "2026-11-16",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 15362
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SEM_MDrivever1_2.eds",
+      "size": 24813,
+      "sha256": "b14f0fe268df5b37e9dcee6bd0288a88e59d428dbe6044b49dba8beaaeb86041"
+     }
     }
    }
   },

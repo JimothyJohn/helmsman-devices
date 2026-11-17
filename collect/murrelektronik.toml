@@ -1,0 +1,17 @@
+format = "helmsman-devices-collect 1"
+vendor = "Murrelektronik"
+
+# IMPACT67 E DIO8 (DIO8), article 55089: no document is collected yet.
+#
+# behind JS wall: the EDS for article 55089 is offered on Murrelektronik's shop
+# page https://shop.murrelektronik.com/en/I-O-Systems/Impact67/Modules/IMPACT67-compact-module-plastic-7-8-55089.html
+# (also https://shop.murrelektronik.com/55089 and shop.murrinc.com). Every fetch of
+# those pages (2026-11-16) returns only a "Please wait..." script page, so no
+# download link could be read and none is guessed. Someone with a browser can
+# open the page, copy the EDS link and add it here as kind = "eds".
+#
+# Not a source for 55089: the ODVA marketplace listing
+# https://marketplace.odva.org/products/874-murrelektronik-s-impact67-and-mvk-e-ip-module
+# (device profile 0x07, DOC 10817 of 2011) packages EDS files for 55085, 55086,
+# 55087 and 55088 only, in the older generation. Listing 2508 (IMPACT67 Pro E
+# DIO8 IOL8) is another product.
