@@ -1,7 +1,8 @@
 # Drafted from the EDS and the manuals, then held against one unit (README.md,
 # "On the bench"): the identity, the assemblies' sizes and the connection are
-# what that unit did. Its output assembly did NOT follow the documents' layout,
-# so the output points below are the documents' and are marked as such.
+# what that unit did. Its assembly mapping had been changed from the default
+# (its owner, 2026-11-17), so its output bytes did not follow the documents'
+# layout; the output points below are the documents' and are marked as such.
 [device]
 vendor = "Novanta IMS"
 model = "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP"
@@ -129,7 +130,7 @@ ask = "Do bytes 12-15 of input assembly 100 hold V (velocity, EDS) or LL (lead/l
 source = "EDS Assem100 Param4; Fieldbus manual p. 20"
 
 [[questions]]
-ask = "What is the output assembly's layout on a unit as delivered? On the bench unit bytes 0-3 set the position counter, bytes 4-7 started a move, byte 17 enabled and disabled the drive, byte 18 set the run current and bytes 20-23 were SL; the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) fits only SL. The manual says the mapping can be changed in the TCP/IP Configuration Utility, and whether this unit's had been is not known."
+ask = "What is the output assembly's layout on a unit as delivered? On the bench unit bytes 0-3 set the position counter, bytes 4-7 started a move, byte 17 enabled and disabled the drive, byte 18 set the run current and bytes 20-23 were SL; the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) fits only SL. The manual says the mapping can be changed in the TCP/IP Configuration Utility, and this unit's had been (its owner, 2026-11-17), so what it did says nothing about a unit as delivered: the documents' layout is still unchecked."
 source = "Fieldbus manual p. 20 (the table and its note); a unit 2026-11-16, one field changed at a time and read back over MCode/TCP"
 
 [[questions]]

@@ -21,21 +21,33 @@ product_name = "IMPACT67 E DIO8 (DIO8)"
 [protocols.enip]
 driver = "enip-io"
 map = "enip.map"
-rpi_ms = { min = 5, default = 10 }   # the handbook gives no maximum
+rpi_ms = { min = 5, default = 10 }   # the handbook's; it gives no maximum, and the EDS gives no RPI at all
 input_assembly = { instance = 117, bytes = 8 }
 output_assembly = { instance = 35, bytes = 2 }
 # Out of its box the block takes its channel setup from the controller
 # ("Over EDS File"): configuration instance 109, three bytes the handbook
-# describes (pp. 62-63, 70); the unit reports the instance as 4 bytes and
-# takes 3 padded to 4. Instance 110 (0 bytes) is for a block set to "Over
-# Web Server", and is refused 0x0119 otherwise.
+# describes (pp. 62-63, 70) and the EDS declares; the unit reports the
+# instance as 4 bytes and takes 3 padded to 4. The EDS variant for Omron's
+# tools declares 4, the last one reserved. Instance 110 (0 bytes) is for a
+# block set to "Over Web Server", and is refused 0x0119 otherwise.
 config_assembly = { instance = 109, bytes = 3 }
+eds = { name = "55089_Impact67_E_DIO16.eds", size = 43388, sha256 = "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d", url = "https://shop.murrelektronik.com/55089", terms = "none stated in the file; not redistributed here" }
 # It sends its inputs to UDP 2222 whatever port the Forward_Open names
 # (a T->O socket-address item is ignored; unit, 2026-11-16).
 
 [wiring]
 note = "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1."
 source = "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+
+[[sources]]
+title = "55089_Impact67_E_DIO16.eds, EDS revision 1.3 (09-18-2017)"
+sha256 = "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d"
+where = "Murrelektronik's shop page for article 55089, downloaded in a browser 2026-11-17 (the page does not answer a fetch); not redistributed here"
+
+[[sources]]
+title = "55089_Impact67_E_DIO16_Omron.eds, the same EDS regenerated 07-09-2019 with a 4-byte configuration assembly"
+sha256 = "2320dbc1dded11586c969412e8e0e11182c010325a598af4bd823fc4c1c1f225"
+where = "the same page, the same day; not redistributed here"
 
 [[sources]]
 title = "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)"
@@ -45,7 +57,3 @@ where = "Murrelektronik's download area, article 55368; not redistributed here"
 [[questions]]
 ask = "What do the outputs do when the controller's connection times out or is closed? After a Forward_Close the output assembly still read the last values written (unit, 2026-11-16); nobody was watching the channel LEDs."
 source = "IMPACT67 E handbook ed. 1.8 p. 83 (the NS LED only); a unit 2026-11-16"
-
-[[questions]]
-ask = "Does the article's EDS agree with the unit: configuration instance 109 at 3 or 4 bytes, the RPI range, the real-time formats? The EDS could not be fetched (collect/murrelektronik.toml)."
-source = "IMPACT67 E handbook ed. 1.8 p. 70 (3 bytes); a unit 2026-11-16 (Get_Attribute_Single: 4 bytes)"

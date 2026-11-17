@@ -1165,10 +1165,21 @@
     "config": {
      "instance": 109,
      "bytes": 3
-    }
+    },
+    "eds": "55089_Impact67_E_DIO16.eds"
    },
    "points": [],
    "sources": [
+    {
+     "title": "55089_Impact67_E_DIO16.eds, EDS revision 1.3 (09-18-2017)",
+     "sha256": "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d",
+     "where": "Murrelektronik's shop page for article 55089, downloaded in a browser 2026-11-17 (the page does not answer a fetch); not redistributed here"
+    },
+    {
+     "title": "55089_Impact67_E_DIO16_Omron.eds, the same EDS regenerated 07-09-2019 with a 4-byte configuration assembly",
+     "sha256": "2320dbc1dded11586c969412e8e0e11182c010325a598af4bd823fc4c1c1f225",
+     "where": "the same page, the same day; not redistributed here"
+    },
     {
      "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
      "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
@@ -1179,10 +1190,6 @@
     {
      "ask": "What do the outputs do when the controller's connection times out or is closed? After a Forward_Close the output assembly still read the last values written (unit, 2026-11-16); nobody was watching the channel LEDs.",
      "source": "IMPACT67 E handbook ed. 1.8 p. 83 (the NS LED only); a unit 2026-11-16"
-    },
-    {
-     "ask": "Does the article's EDS agree with the unit: configuration instance 109 at 3 or 4 bytes, the RPI range, the real-time formats? The EDS could not be fetched (collect/murrelektronik.toml).",
-     "source": "IMPACT67 E handbook ed. 1.8 p. 70 (3 bytes); a unit 2026-11-16 (Get_Attribute_Single: 4 bytes)"
     }
    ],
    "wiring": {
@@ -1386,7 +1393,7 @@
      "source": "EDS Assem100 Param4; Fieldbus manual p. 20"
     },
     {
-     "ask": "What is the output assembly's layout on a unit as delivered? On the bench unit bytes 0-3 set the position counter, bytes 4-7 started a move, byte 17 enabled and disabled the drive, byte 18 set the run current and bytes 20-23 were SL; the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) fits only SL. The manual says the mapping can be changed in the TCP/IP Configuration Utility, and whether this unit's had been is not known.",
+     "ask": "What is the output assembly's layout on a unit as delivered? On the bench unit bytes 0-3 set the position counter, bytes 4-7 started a move, byte 17 enabled and disabled the drive, byte 18 set the run current and bytes 20-23 were SL; the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) fits only SL. The manual says the mapping can be changed in the TCP/IP Configuration Utility, and this unit's had been (its owner, 2026-11-17), so what it did says nothing about a unit as delivered: the documents' layout is still unchecked.",
      "source": "Fieldbus manual p. 20 (the table and its note); a unit 2026-11-16, one field changed at a time and read back over MCode/TCP"
     },
     {

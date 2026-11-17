@@ -1,6 +1,7 @@
-> **Held against one unit on 2026-11-16** for its identity and its connection. Its output
-> assembly did not follow the documents' layout, and a lost connection did not stop a move:
-> read "On the bench" before sending this drive anything.
+> **Held against one unit on 2026-11-16** for its identity and its connection. That unit's
+> assembly mapping had been changed from the default, so its output bytes were not the
+> documents', and a lost connection did not stop a move: read "On the bench" before sending
+> this drive anything.
 
 # Novanta IMS Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP
 
@@ -82,15 +83,17 @@ product_name = 'MDrive'
 - Input 100: bit 1 of byte 0 is MV; bit 0 followed the drive enable while `PR EF` read 0; byte 1
   is IN; bytes 4..7 are the position; bytes 8..9 held the error code (`PR ER`), not an encoder
   count.
-- Output 112 did not follow the table above. One field changed at a time, drive disabled, read
+- Output 112 did not follow the table above: the unit's mapping was not the default (its owner
+  said so afterwards, 2026-11-17), which the drive gives no sign of over EtherNet/IP. One field changed at a time, drive disabled, read
   back over MCode: bytes 0..3 set the position counter; byte 17 non-zero enabled the drive and
   zero disabled it; byte 18 set the run current; bytes 20..23 are SL (5000 gave exactly 5000
   steps/s, 0 stopped). Bytes 4..7 started a move once the drive was enabled.
 - **A field acts when it changes** from the last image the drive saw, across connections: the
   same image sent again on a new connection does nothing.
 - **The first image built from the manual's table started a move at the `Forward_Open`** that
-  reached about 1.1 million steps/s (some 1300 rpm) before SL brought it down. Do not send this
-  drive an image from the table until its mapping has been read from the Configuration Utility.
+  reached about 1.1 million steps/s (some 1300 rpm) before SL brought it down. A drive whose history is
+  not known may be mapped differently too: read its mapping in the Configuration Utility, or try
+  one field at a time with the drive disabled, before sending it an image from the table.
 
 **When the controller goes away** (slewing at 5000 steps/s, RPI 20 ms)
 
