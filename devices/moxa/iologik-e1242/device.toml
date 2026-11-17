@@ -4,6 +4,11 @@ model = "ioLogik E1242"
 kind = "remote-io"
 channels = "4 AI, 4 DI, 4 DIO"
 profile = "moxa-iologik-e1242.device"   # the device profile a controller copies into a project (helmsman-device 1)
+
+[device.photo]
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/9f8f7cd6-a7cd-4add-98ea-439d09468561/moxa-iologik-e1242-image.jpg"
+page = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1242"
+seen = 2026-11-16
 # No unit of this model has been checked: checked_on, firmware and checked_by are
 # left out until one has. Every fact here is from the documents under [[sources]].
 

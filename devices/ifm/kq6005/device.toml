@@ -9,6 +9,11 @@ kind = "sensor"
 family = "KQ"
 vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
 
+[device.photo]
+url = "https://media.ifm.com/dam/019ef139-0207-7a00-810e-f81967f41ce6/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/KQ6005.avif"
+page = "https://www.ifm.com/us/en/product/KQ6005"
+seen = 2026-11-16
+
 # What the device answers on an IO-Link port. Not needed to use it on a digital channel;
 # it is how this record is found again from the device's IODD.
 [identity.iolink]

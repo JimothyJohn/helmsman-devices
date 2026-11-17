@@ -8,6 +8,11 @@ firmware = "V3.1 Build19110615"
 checked_by = "helmsman bench, serial TAIGB1106222"
 profile = "moxa-iologik-e1213.device"   # the device profile a controller copies into a project (helmsman-device 1)
 
+[device.photo]
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/947d2b50-fe26-4233-be15-93ffe9c36c36/moxa-iologik-e1213-image.jpg"
+page = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1213"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 991
 product_code = 515

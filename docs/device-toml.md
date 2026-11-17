@@ -11,6 +11,11 @@ checked_on = "2026-11-02"       # the date the facts were last checked on a unit
 firmware = "V3.1 Build19110615" # the firmware they were checked against
 profile = "moxa-iologik-e1213.device"  # the device profile in this folder (helmsman-device 1): a controller copies it into a project when the device is added
 
+[device.photo]                  # optional: the vendor's own picture of the unit, for a gallery page
+url = "https://..."             # the image, linked from the vendor's server and never stored here
+page = "https://..."            # the page it was seen on; the gallery credits the photo to it
+seen = 2026-11-16               # the date it was seen there
+
 [identity.enip]                 # ListIdentity, the first key a lookup tries
 vendor_id = 991
 product_code = 515

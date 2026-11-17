@@ -6,6 +6,11 @@ model = "EK9000"
 kind = "remote-io"
 channels = "none of its own: the EtherCAT terminals behind it set the I/O"
 
+[device.photo]
+url = "https://multimedia.beckhoff.com/media/ek9000__web_preview.png"
+page = "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9000.html"
+seen = 2026-11-16
+
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502

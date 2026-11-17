@@ -21,6 +21,10 @@ import tomllib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FORMAT = "helmsman-devices-index 1"
 TEXT_MAX = 120
+URL_MAX = 400
+# Characters a photo link never needs and an attribute must not see. A page sets
+# it as img.src, never inside CSS url(), so a vendor's "Photo(Main)" path stays.
+URL_BANNED = set(" \"'<>\\`{}|^")
 
 
 def text(v, what):
@@ -41,6 +45,32 @@ def date(v, what):
     raise SystemExit(f"{what}: a date YYYY-MM-DD, got {v!r}")
 
 
+def link(v, what):
+    """An https link a page puts in an attribute: no spaces, quotes or brackets."""
+    if (
+        not isinstance(v, str)
+        or not v.startswith("https://")
+        or len(v) > URL_MAX
+        or any(ord(c) < 33 or ord(c) > 126 or c in URL_BANNED for c in v)
+        or not v[len("https://") :].split("/", 1)[0]
+    ):
+        raise SystemExit(
+            f"{what}: an https:// link of at most {URL_MAX} printable ASCII characters, got {v!r}"
+        )
+    return v
+
+
+def photo(v, rel):
+    """[device.photo]: the vendor's own picture, linked and never stored here."""
+    if not isinstance(v, dict):
+        raise SystemExit(f"{rel}: device.photo: a table with url, page and seen")
+    date(v.get("seen"), f"{rel}: device.photo.seen")
+    return {
+        "url": link(v.get("url"), f"{rel}: device.photo.url"),
+        "page": link(v.get("page"), f"{rel}: device.photo.page"),
+    }
+
+
 def entry(folder: pathlib.Path) -> dict:
     t = tomllib.loads((folder / "device.toml").read_text())
     dev = t.get("device", {})
@@ -57,6 +87,8 @@ def entry(folder: pathlib.Path) -> dict:
             out[key] = text(dev[key], f"{rel}: device.{key}")
     if "checked_on" in dev:
         out["checked_on"] = date(dev["checked_on"], f"{rel}: device.checked_on")
+    if "photo" in dev:
+        out["photo"] = photo(dev["photo"], rel)
     profile = dev.get("profile")
     if profile is not None:
         profile = text(profile, f"{rel}: device.profile")
