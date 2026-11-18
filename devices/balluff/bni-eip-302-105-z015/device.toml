@@ -21,7 +21,7 @@ driver = "enip-io"
 input_assembly = { instance = 100, bytes = 8 }
 output_assembly = { instance = 101, bytes = 6 }
 config_assembly = { instance = 1 }   # the EDS gives no size
-eds = { name = "BNI EIP-302-105-Z015.eds", size = 16559, sha256 = "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip (member of 10943.03-EDSFiles.zip)", terms = "none stated" }
+eds = { name = "BNI_EIP-302-105-Z015.eds", size = 16559, sha256 = "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip (member of 10943.03-EDSFiles.zip)", terms = "none stated" }
 
 [[points]]
 name = "inputs I02..I74"

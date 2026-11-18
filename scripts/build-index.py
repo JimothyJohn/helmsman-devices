@@ -15,6 +15,7 @@ Standard library only (tomllib needs Python 3.11).
 import datetime
 import json
 import pathlib
+import re
 import sys
 import tomllib
 
@@ -31,6 +32,23 @@ def text(v, what):
     if not isinstance(v, str) or not v or len(v) > TEXT_MAX or any(ord(c) < 32 for c in v):
         raise SystemExit(f"{what}: text of 1..{TEXT_MAX} printable characters, got {v!r}")
     return v
+
+
+# The file names a box takes (helmsman-project devlib `file_ok`, at most
+# MAX_TEXT = 120 bytes): one it refuses takes the whole index off every box,
+# as an EDS named with spaces did on 2026-11-18. Spaces become underscores
+# (scripts/eds-draft.py does that for a vendor's name).
+FILE_NAME = re.compile(r"[A-Za-z0-9._-]{1,120}")
+
+
+def file_name(v, what):
+    s = text(v, what)
+    if not FILE_NAME.fullmatch(s) or s in (".", ".."):
+        raise SystemExit(
+            f"{what}: {s!r} is not a file name a box reads (letters, digits, '.', '_' and '-'; "
+            "use _ for a space)"
+        )
+    return s
 
 
 def date(v, what):
@@ -152,7 +170,7 @@ def entry(folder: pathlib.Path) -> dict:
         rec = {"driver": driver}
         for key in ("map", "profile"):
             if key in p:
-                rec[key] = text(p[key], f"{rel}: protocols.{name}.{key}")
+                rec[key] = file_name(p[key], f"{rel}: protocols.{name}.{key}")
                 if key == "map" and not (folder / rec[key]).is_file():
                     raise SystemExit(
                         f"{rel}: protocols.{name}.map names {rec[key]}, which is not in the folder"
@@ -163,7 +181,7 @@ def entry(folder: pathlib.Path) -> dict:
             if len(sha) != 64 or any(c not in "0123456789abcdefABCDEF" for c in sha):
                 raise SystemExit(f"{rel}: protocols.{name}.eds.sha256: 64 hex digits")
             rec["eds"] = {
-                "name": text(eds.get("name"), f"{rel}: eds.name"),
+                "name": file_name(eds.get("name"), f"{rel}: eds.name"),
                 "size": int(eds.get("size", 0)),
                 "sha256": sha.lower(),
             }

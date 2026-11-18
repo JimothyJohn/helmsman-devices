@@ -283,7 +283,7 @@
     "config": {
      "instance": 1
     },
-    "eds": "BNI EIP-302-105-Z015.eds"
+    "eds": "BNI_EIP-302-105-Z015.eds"
    },
    "points": [
     {

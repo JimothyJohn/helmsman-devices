@@ -89,7 +89,7 @@
     "enip": {
      "driver": "enip-io",
      "eds": {
-      "name": "BNI EIP-302-105-Z015.eds",
+      "name": "BNI_EIP-302-105-Z015.eds",
       "size": 16559,
       "sha256": "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
      }
