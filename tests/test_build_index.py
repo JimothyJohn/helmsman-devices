@@ -134,3 +134,36 @@ class Photo(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+SHA = "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
+
+
+def with_eds(name: str) -> dict:
+    return entry(
+        '[protocols.enip]\ndriver = "enip-io"\n'
+        f'eds = {{ name = {name!r}, size = 1, sha256 = "{SHA}" }}\n'.replace("'", '"')
+    )
+
+
+class FileNames(unittest.TestCase):
+    """A box takes a file name of letters, digits, `.`, `_` and `-` only
+    (helmsman-project devlib `file_ok`) and refuses the whole index for one
+    that is not: one EDS named with spaces took the library off every box
+    (2026-11-18). The index never carries such a name."""
+
+    def test_a_name_with_a_space_is_refused(self):
+        with self.assertRaises(SystemExit) as e:
+            with_eds("BNI EIP-302-105-Z015.eds")
+        self.assertIn("not a file name", str(e.exception))
+
+    def test_other_names_a_box_refuses_are_refused(self):
+        for bad in ("../x.eds", "a/b.eds", "..", "xé.eds", "a+b.eds", "x" * 121 + ".eds"):
+            with self.subTest(bad=bad), self.assertRaises(SystemExit):
+                with_eds(bad)
+
+    def test_an_underscored_name_is_taken(self):
+        self.assertEqual(
+            with_eds("BNI_EIP-302-105-Z015.eds")["protocols"]["enip"]["eds"]["name"],
+            "BNI_EIP-302-105-Z015.eds",
+        )

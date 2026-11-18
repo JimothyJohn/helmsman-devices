@@ -411,6 +411,16 @@ Vendor files are not in this repository; fetch them with
 """
 
 
+def file_name(vendor_name: str) -> str:
+    """The vendor's file name as one a box reads (helmsman-project devlib
+    `file_ok`: letters, digits, `.`, `_`, `-`): each run of anything else,
+    spaces first, becomes one `_`. The sha256 still names the vendor's file."""
+    name = re.sub(r"[^A-Za-z0-9._-]+", "_", vendor_name).strip("_")[:120]
+    if not name or name in (".", ".."):
+        raise SystemExit(f"{vendor_name!r}: nothing of it is a file name")
+    return name
+
+
 def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path, choose: str | None = None):
     """(EDS bytes, its file record, the folder's sources) from the lock and the store.
 
@@ -445,7 +455,7 @@ def eds_from_lock(lock: dict, folder: str, store_dir: pathlib.Path, choose: str 
     data = p.read_bytes()
     if hashlib.sha256(data).hexdigest() != sha:
         raise SystemExit(f"{p}: does not match its hash")
-    eds_file = {"name": name, "size": size, "sha256": sha, "url": url}
+    eds_file = {"name": file_name(name), "size": size, "sha256": sha, "url": url}
     if d.get("members"):
         eds_file["url"] = f"{url} (member of {d['name']})"
     eds_file["terms"] = d.get("terms", "none stated; not redistributed here")
