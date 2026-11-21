@@ -965,6 +965,34 @@
    }
   },
   {
+   "folder": "devices/universal-robots/e-series",
+   "vendor": "Universal Robots",
+   "model": "e-Series",
+   "kind": "other",
+   "channels": "robot state, joints, TCP, control box and tool I/O, general purpose registers",
+   "profile": "universal-robots-e-series.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 1399,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "UniversalRobot.eds",
+      "size": 0,
+      "sha256": "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
    "folder": "devices/wago/750-363",
    "vendor": "WAGO",
    "model": "750-363",

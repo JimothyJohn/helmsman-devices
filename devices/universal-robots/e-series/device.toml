@@ -1,0 +1,84 @@
+[device]
+vendor = "Universal Robots"
+model = "e-Series"
+kind = "other"
+channels = "robot state, joints, TCP, control box and tool I/O, general purpose registers"
+profile = "universal-robots-e-series.device"   # Modbus TCP only until EtherNet/IP has been tried
+# No checked_on: only UR's simulators have answered (README "Simulators").
+
+# From UniversalRobot.eds (VendCode 1399, ProdType 43, ProdCode 1); no
+# robot has answered ListIdentity yet.
+[identity.enip]
+vendor_id = 1399
+product_code = 1
+device_type = 43
+
+[protocols.enip]
+driver = "enip-io"
+input_assembly = { instance = 100, bytes = 480 }
+output_assembly = { instance = 112, bytes = 224 }
+eds = { name = "UniversalRobot.eds", sha256 = "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62", url = "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds", terms = "not redistributed here" }
+
+[protocols.modbus]
+driver = "modbus-tcp"
+map = "modbus.map"
+port = 502
+unit = 1   # ignored by the robot
+
+[[points]]
+name = "robot state"
+modbus = "ir:256 version major, ir:257 minor, ir:258 robot mode, ir:266 safety mode; di:260..265 powered, protective, e-stop, teach, power button, safety stop"
+meaning = "robot mode 3 power off, 4 power on, 5 idle, 7 running"
+source = "ModBus Server Data.pdf p. 3; URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 (version 5.26 / 10.13, mode 3, safety mode 1)"
+
+[[points]]
+name = "joint angles"
+modbus = "ir:270..ir:275 angle in one turn, ir:320:i16..ir:325:i16 turns"
+meaning = "joint angle in mrad = turns * 2 pi * 1000 + angle; the angle register is 0..6283"
+source = "ModBus Server Data.pdf p. 3-4 (\"in mrad\", revolution count); the split seen on URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 against the realtime interface's q_actual, all six joints"
+
+[[points]]
+name = "joint speed, current, temperature, mode"
+modbus = "ir:280:i16.. mrad/s, ir:290:i16.. mA, ir:300.. degC, ir:310.. mode"
+meaning = "per joint, base first; mode 253 running, 255 idle, 239 power off"
+source = "ModBus Server Data.pdf p. 3-4; the sign of speed and current inferred (the arm did not move on the simulators)"
+
+[[points]]
+name = "TCP pose"
+modbus = "ir:400:i16..ir:402:i16 x, y, z in 0.1 mm; ir:403:i16..ir:405:i16 rx, ry, rz in mrad (base frame)"
+meaning = "two's complement, though the table says all values are unsigned"
+source = "ModBus Server Data.pdf p. 4; signs seen on URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 against the realtime interface"
+
+[[points]]
+name = "control box and tool I/O"
+modbus = "di:0..7 box inputs, di:8..9 tool inputs, coil:16..23 box outputs, coil:24..25 tool outputs, di:128..135 / coil:136..143 configurable"
+meaning = "1 = on; bits 10..15 of each word do not exist and a read that reaches them is refused"
+source = "ModBus Server Data.pdf p. 5 (COIL ADDRESS); the refusal seen on both simulators"
+
+[[points]]
+name = "general purpose registers"
+modbus = "hr:128..hr:255 (read and write); coil:300..427 booleans the robot reads, di:500..627 booleans it writes"
+meaning = "a robot program reads 128..255 with read_port_register; the booleans are shared with RTDE"
+source = "ModBus Server Data.pdf p. 1, p. 5; writes to 130..132 read back on both simulators 2026-11-20"
+
+[[sources]]
+title = "Universal Robots, ModBus Server Data (register table, 8 pages)"
+sha256 = "6a2fbe54d36fb03811e6a371f033006e5b888a06119486f153c461eb8de0555e"
+where = "https://s3-eu-west-1.amazonaws.com/ur-support-site/16377/ModBus%20Server%20Data.pdf, linked from https://www.universal-robots.com/articles/ur/interface-communication/modbus-server/"
+
+[[sources]]
+title = "Universal Robots, UniversalRobot.eds"
+sha256 = "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62"
+where = "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds"
+
+[[questions]]
+ask = "Does a robot split a joint angle into 0..6283 mrad and a turns count, as both simulators do, or give the signed angle in one register?"
+source = "ModBus Server Data.pdf p. 3 says \"in mrad\"; URSim 5.26.0 and PolyScope X 10.13.0 split it"
+
+[[questions]]
+ask = "Are joint speed and current two's complement, like the TCP pose?"
+source = "the table says all values are unsigned; the simulators' arm never moved"
+
+[[questions]]
+ask = "What do the EtherNet/IP assemblies 100 and 112 hold on a robot, and does its Forward_Open take the EDS's 2 ms RPI?"
+source = "UniversalRobot.eds; the PolyScope X simulator lacks the ur-ethernetip URCap"
