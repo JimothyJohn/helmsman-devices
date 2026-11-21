@@ -8,6 +8,12 @@ profile = "murrelektronik-impact67-e-di8-do8.device"   # the device profile a co
 # No unit of this article has been checked: checked_on, firmware and checked_by are
 # left out until one has.
 
+[device.photo]
+# the shop shows one family picture for every IMPACT67 E article
+url = "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png"
+page = "https://shop.murrelektronik.com/55086/"
+seen = 2026-11-21
+
 [identity.enip]                     # the EDS's [Device]; no unit has answered ListIdentity here yet
 vendor_id = 640
 product_code = 55086
