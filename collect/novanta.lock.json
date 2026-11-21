@@ -1,0 +1,109 @@
+{
+ "docs": {
+  "https://novanta.com/robotics-automation/wp-content/uploads/sites/3/2015/04/LMDxE57-85C.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://novanta.com/robotics-automation/wp-content/uploads/sites/3/2015/04/LMDxE57-85C.pdf",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "manual",
+   "name": "LMDxE57-85C.pdf",
+   "retrieved": "2026-11-17T03:39:00Z",
+   "sha256": "1c90c18f9a1c4b09e29fc773fabbd4082237917b135b4be6ab056a2aeb89b2d3",
+   "size": 6208965,
+   "terms": "none stated",
+   "title": "Lexium MDrive Ethernet, LMDxE57C and LMDxE85C product manual (03.2015)",
+   "type": "pdf"
+  },
+  "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334-ip65/?wpdmdl=6719&refresh=6afbcc022b7b31794886658": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334-ip65/?wpdmdl=6719&refresh=6afbcc022b7b31794886658",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "manual",
+   "name": "liberty-mdrive-ethernet-nema-2334-ip65",
+   "retrieved": "2026-11-17T03:39:00Z",
+   "sha256": "750e8e1baf96fa67537e116daaeee786d08f3aead80ff5f65ac3ec861f43218d",
+   "size": 6377521,
+   "terms": "none stated",
+   "title": "LM57/LM85 Ethernet TCP/IP with M12 circular connectors (LMDE57-85IP hardware manual)",
+   "type": "pdf"
+  },
+  "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334/?wpdmdl=6713&refresh=6afbcc028ff621794886658": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334/?wpdmdl=6713&refresh=6afbcc028ff621794886658",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "manual",
+   "name": "liberty-mdrive-ethernet-nema-2334",
+   "retrieved": "2026-11-17T03:39:00Z",
+   "sha256": "dc3bb12d1b298678009e054ebd5b54463ca04c48dd12997cba38e78d612bb54c",
+   "size": 5606268,
+   "terms": "none stated",
+   "title": "LM57/LM85 Ethernet TCP/IP with pluggable connectors (LMDE57-85 hardware manual)",
+   "type": "pdf"
+  },
+  "https://www.novantaims.com/download/liberty-mdrive-ethernetip/?wpdmdl=6728&refresh=6afbcc0fb6ea01794886671": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.novantaims.com/download/liberty-mdrive-ethernetip/?wpdmdl=6728&refresh=6afbcc0fb6ea01794886671",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "manual",
+   "name": "liberty-mdrive-ethernetip",
+   "retrieved": "2026-11-17T03:37:59Z",
+   "sha256": "2a5a6f726b2a5b2fa7220215568829345872257623b80dcd68fc6766a56efdd3",
+   "size": 3554178,
+   "terms": "none stated",
+   "title": "LMD EtherNet/IP Protocol Implementation",
+   "type": "pdf"
+  },
+  "https://www.novantaims.com/download/lmd-ethernet-tcp-ip-application-2-4-0-9/?wpdmdl=33950&refresh=6afbcc0d386a61794886669": {
+   "content_type": "application/zip",
+   "final_url": "https://www.novantaims.com/download/lmd-ethernet-tcp-ip-application-2-4-0-9/?wpdmdl=33950&refresh=6afbcc0d386a61794886669",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "GSDML-V2.2-mdrive-SchneiderElectic-20130530.xml",
+     "sha256": "3271ffc6dddf37bf4578e6da91a9096ac90841cab54c041a816f0899fb3070c1",
+     "size": 6940,
+     "type": "xml"
+    },
+    {
+     "name": "SEM_MDrivever1_2.eds",
+     "sha256": "b14f0fe268df5b37e9dcee6bd0288a88e59d428dbe6044b49dba8beaaeb86041",
+     "size": 24813,
+     "type": "eds"
+    }
+   ],
+   "name": "lmd-ethernet-tcp-ip-application-2-4-0-9",
+   "retrieved": "2026-11-17T03:37:59Z",
+   "sha256": "1bb0038ceae46daf9cd0f42ec92b12fee0181cff4a4209e69335d9d0a2475828",
+   "size": 367630,
+   "terms": "none stated",
+   "title": "LMD Ethernet TCP/IP Application 2.4.0.9 (firmware package; carries the EDS)",
+   "type": "zip"
+  },
+  "https://www.novantaims.com/download/lmd-mcode-os-programming-and-reference/?wpdmdl=29637&refresh=6afbcc01dcbd91794886657": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.novantaims.com/download/lmd-mcode-os-programming-and-reference/?wpdmdl=29637&refresh=6afbcc01dcbd91794886657",
+   "folders": [
+    "devices/novanta/lexium-mdrive-ethernet"
+   ],
+   "kind": "manual",
+   "name": "lmd-mcode-os-programming-and-reference",
+   "retrieved": "2026-11-17T03:39:00Z",
+   "sha256": "3945e47f63d497529d7f6c21d518a9d7d6c8b57689932b27179e2db1f9475e81",
+   "size": 15852906,
+   "terms": "none stated",
+   "title": "LMD MCode OS Programming and Reference",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

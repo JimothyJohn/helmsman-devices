@@ -66,5 +66,104 @@ class Catalog(unittest.TestCase):
         self.assertEqual(entry('channels = "<b>8</b> DI"\n')["channels"], "<b>8</b> DI")
 
 
+PHOTO = '[device.photo]\nurl = "{url}"\npage = "{page}"\nseen = {seen}\n'
+GOOD = {
+    "url": "https://vendor.example/img/m.png",
+    "page": "https://vendor.example/product/m",
+    "seen": "2026-11-16",
+}
+
+
+def with_photo(**kw) -> dict:
+    return entry(PHOTO.format(**{**GOOD, **kw}))
+
+
+class Photo(unittest.TestCase):
+    """A page puts photo.url in an <img src> and photo.page in an <a href>."""
+
+    def test_photo_carries_link_and_credit(self):
+        self.assertEqual(
+            with_photo()["photo"],
+            {"url": GOOD["url"], "page": GOOD["page"]},
+        )
+
+    def test_vendor_paths_with_brackets_and_queries_kept(self):
+        url = "https://cdn.example/PIS/ADAM-6050/Product%20-%20Photo(Main)/a.png?w=576&h=576"
+        self.assertEqual(with_photo(url=url)["photo"]["url"], url)
+
+    def test_no_photo_no_key(self):
+        self.assertNotIn("photo", entry(""))
+
+    def test_hostile_links_refused(self):
+        for bad in (
+            "http://vendor.example/m.png",
+            "javascript:alert(1)",
+            "data:image/png;base64,AAAA",
+            "//vendor.example/m.png",
+            "https://",
+            "https:///m.png",
+            'https://v.example/a\\" onerror=\\"alert(1)',  # TOML \\" is a quote
+            "https://v.example/a'b",
+            "https://v.example/<svg>",
+            "https://v.example/a b.png",
+            "https://v.example/a\\u0000b",
+            "https://v.example/a\\nb",
+            "https://v.example/a{b}",
+            "https://v.example/caf\u00e9.png",
+            "https://v.example/" + "a" * 400,
+        ):
+            for field in ("url", "page"):
+                with self.subTest(field=field, bad=bad), self.assertRaises(SystemExit):
+                    with_photo(**{field: bad})
+
+    def test_seen_is_a_date(self):
+        for bad in ('"last week"', '"2026-02-30"', "2026"):
+            with self.subTest(seen=bad), self.assertRaises(SystemExit):
+                entry(PHOTO.format(**{**GOOD, "seen": bad}))
+
+    def test_missing_parts_refused(self):
+        for toml in (
+            '[device.photo]\nurl = "https://v.example/m.png"\nseen = 2026-11-16\n',
+            '[device.photo]\npage = "https://v.example/m"\nseen = 2026-11-16\n',
+            '[device.photo]\nurl = "https://v.example/m.png"\npage = "https://v.example/m"\n',
+            'photo = "https://v.example/m.png"\n',
+        ):
+            with self.subTest(toml=toml), self.assertRaises(SystemExit):
+                entry(toml)
+
+
 if __name__ == "__main__":
     unittest.main()
+
+
+SHA = "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
+
+
+def with_eds(name: str) -> dict:
+    return entry(
+        '[protocols.enip]\ndriver = "enip-io"\n'
+        f'eds = {{ name = {name!r}, size = 1, sha256 = "{SHA}" }}\n'.replace("'", '"')
+    )
+
+
+class FileNames(unittest.TestCase):
+    """A box takes a file name of letters, digits, `.`, `_` and `-` only
+    (helmsman-project devlib `file_ok`) and refuses the whole index for one
+    that is not: one EDS named with spaces took the library off every box
+    (2026-11-18). The index never carries such a name."""
+
+    def test_a_name_with_a_space_is_refused(self):
+        with self.assertRaises(SystemExit) as e:
+            with_eds("BNI EIP-302-105-Z015.eds")
+        self.assertIn("not a file name", str(e.exception))
+
+    def test_other_names_a_box_refuses_are_refused(self):
+        for bad in ("../x.eds", "a/b.eds", "..", "xé.eds", "a+b.eds", "x" * 121 + ".eds"):
+            with self.subTest(bad=bad), self.assertRaises(SystemExit):
+                with_eds(bad)
+
+    def test_an_underscored_name_is_taken(self):
+        self.assertEqual(
+            with_eds("BNI_EIP-302-105-Z015.eds")["protocols"]["enip"]["eds"]["name"],
+            "BNI_EIP-302-105-Z015.eds",
+        )

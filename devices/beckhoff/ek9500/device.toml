@@ -7,6 +7,11 @@ model = "EK9500"
 kind = "remote-io"
 channels = "none of its own: the EtherCAT terminals behind it set the I/O"
 
+[device.photo]
+url = "https://multimedia.beckhoff.com/media/ek9500__web_preview.png"
+page = "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9500.html"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 106
 product_code = 9500

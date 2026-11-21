@@ -346,6 +346,28 @@ class FromLock(unittest.TestCase):
         )
         self.assertEqual(f["sha256"], self.members[0]["sha256"])
 
+    def test_a_vendor_name_with_spaces_is_written_with_underscores(self):
+        # Balluff's zip names its EDS "BNI EIP-302-105-Z015.eds"; a box
+        # refuses the whole index over a space (2026-11-18). The vendor's
+        # name still picks the member, the drafted name has none.
+        self.members[1]["name"] = "pkg/BNI EIP-302-105-Z015.eds"
+        _, f, _ = ed.eds_from_lock(
+            self.lock, "devices/turck/tben-s2-8dxp", self.store, "BNI EIP-302-105-Z015.eds"
+        )
+        self.assertEqual(f["name"], "BNI_EIP-302-105-Z015.eds")
+        self.assertEqual(f["sha256"], self.members[1]["sha256"])
+        bi.file_name(f["name"], "drafted name")
+
+    def test_names_keep_only_what_a_box_reads(self):
+        for vendor, ours in (
+            ("A  B.eds", "A_B.eds"),
+            ("Ünïcode (v2).EDS", "n_code_v2_.EDS"),
+            ("plain-name_1.2.eds", "plain-name_1.2.eds"),
+        ):
+            with self.subTest(vendor=vendor):
+                self.assertEqual(ed.file_name(vendor), ours)
+                bi.file_name(ed.file_name(vendor), "x")
+
     def test_unknown_name_refused(self):
         with self.assertRaises(SystemExit):
             ed.eds_from_lock(self.lock, "devices/turck/tben-s2-8dxp", self.store, "nope.eds")

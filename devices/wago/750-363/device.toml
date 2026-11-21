@@ -7,6 +7,11 @@ model = "750-363"
 kind = "remote-io"
 article = "750-363"
 
+[device.photo]
+url = "https://www.wago.com/medias/200-1362992-DE.jpg?context=bWFzdGVyfGltYWdlc3wzMTUzfGltYWdlL2pwZWd8YUdNMEwyZ3pNaTh4TmpVMU5EYzFPRGc1TnpZNU5DOHlNREJmTVRNMk1qazVNbDlFUlM1cWNHY3w2YjA2NGExODYzMTE5ZWEyOTc1ZDM0OGY0NGFiYjJkOWY5MjZmNWY5NWQ0NmZlMjY2ZWNiZTg5ZTdmMzZmMDEw"
+page = "https://www.wago.com/us/controllers-bus-couplers-i-o/fieldbus-coupler-ethernet-ip/p/750-363"
+seen = 2026-11-16
+
 [identity.enip]
 vendor_id = 40
 product_code = 363

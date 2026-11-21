@@ -1,0 +1,25 @@
+format = "helmsman-devices-collect 1"
+vendor = "Murrelektronik"
+
+# IMPACT67 E DIO8 (DIO8), article 55089: two EDS files, held by hash, with no
+# [[doc]] entry because no download link was ever read by a fetch.
+#
+# behind a script wall: Murrelektronik's shop page for the article
+# (https://shop.murrelektronik.com/55089) answers every fetch with a "Please
+# wait..." script page. The owner of the bench unit downloaded both files there
+# in a browser on 2026-11-17:
+#   55089_Impact67_E_DIO16.eds        43388 bytes  sha256 6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d
+#     EDS revision 1.3, modified 09-18-2017 (EZ-EDS 3.21). Configuration
+#     assembly 109: 3 bytes.
+#   55089_Impact67_E_DIO16_Omron.eds  43416 bytes  sha256 2320dbc1dded11586c969412e8e0e11182c010325a598af4bd823fc4c1c1f225
+#     the same file regenerated 07-09-2019 (EZ-EDS 3.25) for Omron's tools:
+#     assembly 109 has a fourth, reserved byte, and the two channel parameters
+#     are USINT instead of BYTE. Nothing else differs.
+# Both are in cache/sha256/ on the machine that has them. Someone who reads the
+# download links off the page in a browser can add them here as kind = "eds".
+#
+# Not a source for 55089: the ODVA marketplace listing
+# https://marketplace.odva.org/products/874-murrelektronik-s-impact67-and-mvk-e-ip-module
+# (device profile 0x07, DOC 10817 of 2011) packages EDS files for 55085, 55086,
+# 55087 and 55088 only, in the older generation. Listing 2508 (IMPACT67 Pro E
+# DIO8 IOL8) is another product.

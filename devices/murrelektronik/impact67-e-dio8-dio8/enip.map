@@ -1,8 +1,11 @@
 # Murrelektronik IMPACT67 E DIO8 (DIO8) (art. no. 55089) over EtherNet/IP (enip-io, one
 # Class 1 exclusive-owner connection at 10 ms): every channel of the profile.
 # Assemblies and bits from the IMPACT67 E handbook, edition 1.8, pp. 73-75.
-# Not checked on a unit.
-device i67 enip-io ADDR config=110 o2t=35:2 t2o=117:8 rpi_ms=10
+# The connection was opened on a unit (2026-11-16); no channel was seen switching.
+# As it leaves the factory every channel is an input. To make channels outputs,
+# add config_data=MMP4P2 (hex; README.md): config_data=00ff00 is pin mode, pin 4
+# of every port an output, pin 2 an input.
+device i67 enip-io ADDR config=109 o2t=35:2 t2o=117:8 rpi_ms=10
 
 # inputs, input byte 0 (pin 4) and 1 (pin 2): a channel set to input
 in  i67_di_00               bool i67 in:0.0

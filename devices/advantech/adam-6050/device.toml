@@ -6,6 +6,11 @@ model = "ADAM-6050"
 kind = "remote-io"
 channels = "12 DI, 6 DO (isolated)"
 
+[device.photo]
+url = "https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(Main)/ADAM-6050_03_Ori-(1)-(1)20220418173324.png"
+page = "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6050-D1.htm"
+seen = 2026-11-16
+
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502

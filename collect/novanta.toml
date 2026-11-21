@@ -1,0 +1,58 @@
+format = "helmsman-devices-collect 1"
+vendor = "Novanta IMS"
+
+# Liberty / Lexium MDrive (LMD) Ethernet TCP/IP, EtherNet/IP mode. Novanta IMS
+# was Schneider Electric Motion USA. Links are the ones on
+# https://www.novantaims.com/dloads/firmware/ and /dloads/manuals-3/ (read
+# 2026-11-16). The download links carry a `refresh` value the site issues per
+# page view; if one is refused, re-read the page for a current one.
+# No standalone EDS was found on the downloads pages: the EDS is inside the
+# LMD Ethernet TCP/IP Application zip (checked on fetch).
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "eds"
+url = "https://www.novantaims.com/download/lmd-ethernet-tcp-ip-application-2-4-0-9/?wpdmdl=33950&refresh=6afbcc0d386a61794886669"
+title = "LMD Ethernet TCP/IP Application 2.4.0.9 (firmware package; carries the EDS)"
+found = "2026-11-16 https://www.novantaims.com/dloads/firmware/ Released Firmware, download page https://www.novantaims.com/download/lmd-ethernet-tcp-ip-application-2-4-0-9/ (370 KB, updated 2025-10-14)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "manual"
+url = "https://www.novantaims.com/download/liberty-mdrive-ethernetip/?wpdmdl=6728&refresh=6afbcc0fb6ea01794886671"
+title = "LMD EtherNet/IP Protocol Implementation"
+found = "2026-11-16 https://www.novantaims.com/dloads/manuals-3/ list, download page https://www.novantaims.com/download/liberty-mdrive-ethernetip/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "manual"
+url = "https://novanta.com/robotics-automation/wp-content/uploads/sites/3/2015/04/LMDxE57-85C.pdf"
+title = "Lexium MDrive Ethernet, LMDxE57C and LMDxE85C product manual (03.2015)"
+found = "2026-11-16 search: novanta ims lexium mdrive ethernet/ip fieldbus manual pdf; result list entry LMDxE57 85C"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "manual"
+url = "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334/?wpdmdl=6713&refresh=6afbcc028ff621794886658"
+title = "LM57/LM85 Ethernet TCP/IP with pluggable connectors (LMDE57-85 hardware manual)"
+found = "2026-11-16 https://www.novantaims.com/dloads/manuals-3/ list, download page https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "manual"
+url = "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334-ip65/?wpdmdl=6719&refresh=6afbcc022b7b31794886658"
+title = "LM57/LM85 Ethernet TCP/IP with M12 circular connectors (LMDE57-85IP hardware manual)"
+found = "2026-11-16 https://www.novantaims.com/dloads/manuals-3/ list, download page https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334-ip65/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/novanta/lexium-mdrive-ethernet"
+kind = "manual"
+url = "https://www.novantaims.com/download/lmd-mcode-os-programming-and-reference/?wpdmdl=29637&refresh=6afbcc01dcbd91794886657"
+title = "LMD MCode OS Programming and Reference"
+found = "2026-11-16 https://www.novantaims.com/dloads/manuals-3/ list, download page https://www.novantaims.com/download/lmd-mcode-os-programming-and-reference/"
+terms = "none stated"

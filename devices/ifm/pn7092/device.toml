@@ -9,6 +9,11 @@ kind = "sensor"
 family = "PN7"
 vendor_url = "www.ifm.com/gb/en/downloadarea/IOContent"
 
+[device.photo]
+url = "https://media.ifm.com/dam/019ef10f-3f5c-7041-926c-b4f5ba471e6f/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/PN7092.avif"
+page = "https://www.ifm.com/us/en/product/PN7092"
+seen = 2026-11-16
+
 # What the device answers on an IO-Link port. Not needed to use it on a digital channel;
 # it is how this record is found again from the device's IODD.
 [identity.iolink]

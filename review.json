@@ -283,7 +283,7 @@
     "config": {
      "instance": 1
     },
-    "eds": "BNI EIP-302-105-Z015.eds"
+    "eds": "BNI_EIP-302-105-Z015.eds"
    },
    "points": [
     {
@@ -1141,12 +1141,18 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DIO8 (DIO8)",
    "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
+   "firmware": "revision 1.2 (ListIdentity)",
+   "checked_on": "2026-11-16",
    "enip": {
     "map": true,
     "identity": {
      "vendor_id": 640,
      "product_code": 55089,
-     "device_type": 7
+     "device_type": 7,
+     "revisions": [
+      "1.2"
+     ],
+     "product_name": "IMPACT67 E DIO8 (DIO8)"
     },
     "input": {
      "instance": 117,
@@ -1157,16 +1163,33 @@
      "bytes": 2
     },
     "config": {
-     "instance": 110,
-     "bytes": 0
-    }
+     "instance": 109,
+     "bytes": 3
+    },
+    "eds": "55089_Impact67_E_DIO16.eds"
    },
    "points": [],
    "sources": [
     {
+     "title": "55089_Impact67_E_DIO16.eds, EDS revision 1.3 (09-18-2017)",
+     "sha256": "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d",
+     "where": "Murrelektronik's shop page for article 55089, downloaded in a browser 2026-11-17 (the page does not answer a fetch); not redistributed here"
+    },
+    {
+     "title": "55089_Impact67_E_DIO16_Omron.eds, the same EDS regenerated 07-09-2019 with a 4-byte configuration assembly",
+     "sha256": "2320dbc1dded11586c969412e8e0e11182c010325a598af4bd823fc4c1c1f225",
+     "where": "the same page, the same day; not redistributed here"
+    },
+    {
      "title": "Manual for the Devices of the IMPACT67 E Series, art. no. 55368, edition 1.8 (2019-06)",
      "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
      "where": "Murrelektronik's download area, article 55368; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "What do the outputs do when the controller's connection times out or is closed? After a Forward_Close the output assembly still read the last values written (unit, 2026-11-16); nobody was watching the channel LEDs.",
+     "source": "IMPACT67 E handbook ed. 1.8 p. 83 (the NS LED only); a unit 2026-11-16"
     }
    ],
    "wiring": {
@@ -1238,6 +1261,149 @@
    "wiring": {
     "note": "Bus over M12 D-coded; power over 7/8\": US 24 V (18-30 V) for the module and sensors, UA 24 V for the actuators, 9 A at most per connector. An output that overloads shuts down and stays off until the controller writes it 0 and then 1.",
     "source": "IMPACT67 E handbook ed. 1.8 pp. 24-26, 33, 91"
+   }
+  },
+  {
+   "folder": "devices/novanta/lexium-mdrive-ethernet",
+   "vendor": "Novanta IMS",
+   "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
+   "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
+   "checked_on": "2026-11-16",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 15362,
+     "device_type": 43,
+     "revisions": [
+      "2.22",
+      "2.36"
+     ],
+     "product_name": "MDrive"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 16
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 36
+    },
+    "config": {
+     "instance": 1,
+     "bytes": 0
+    },
+    "eds": "SEM_MDrivever1_2.eds"
+   },
+   "points": [
+    {
+     "name": "Input assembly 100, moving flag",
+     "enip": "in:0.1",
+     "meaning": "byte 0 bit 1 MV, 1 while the axis moves",
+     "source": "EDS Param1 enum (MV bit 1); Fieldbus manual p. 20; confirmed on a unit 2026-11-16 (it followed PR MV through a slew and a stop)"
+    },
+    {
+     "name": "Input assembly 100, bit 0 and the inputs",
+     "enip": "in:0.0, in:1:u8",
+     "meaning": "byte 0 bit 0 EF (error flag) by the documents; byte 1 IN (the digital inputs as a group, bit 0 = input 1). On the bench unit bit 0 followed the drive enable (1 with DE=1) while PR EF read 0, and byte 1 read 0x0F like PR IN (15)",
+     "source": "EDS Param1 enum (EF bit 0, Input0..7 bits 8-15 of a 32-bit word); Fieldbus manual p. 20; a unit 2026-11-16"
+    },
+    {
+     "name": "Input assembly 100, position",
+     "enip": "in:4:i32",
+     "meaning": "bytes 4-7 C1 position counter (DINT, motor steps, little-endian)",
+     "source": "EDS Assem100 (Param2); Fieldbus manual p. 20; MCode reference C1 p. 44; confirmed on a unit 2026-11-16 (equal to PR P at rest and through a slew at 5000 steps/s)"
+    },
+    {
+     "name": "Input assembly 100, bytes 8-11",
+     "enip": "in:8:i32",
+     "meaning": "C2 encoder counter (DINT) by the documents. On the bench unit these bytes held the error code instead: 30, 94, 107 and 25 were read there, each equal to PR ER at the time, while PR C2 read 111798",
+     "source": "EDS Assem100 (Param3); Fieldbus manual p. 20; MCode reference C2 p. 45; a unit 2026-11-16"
+    },
+    {
+     "name": "Input assembly 100, bytes 12-15",
+     "enip": "in:0.12..in:0.15",
+     "meaning": "EDS: V, velocity (DINT). Fieldbus manual: LL, lead/lag (DINT). The two documents disagree, see questions",
+     "source": "EDS Param4; Fieldbus manual p. 20"
+    },
+    {
+     "name": "Output assembly 112, motion setup (documents only; a unit did otherwise)",
+     "enip": "out:0.0..out:0.15",
+     "meaning": "A acceleration (UDINT, steps/s^2, default 1000000), D deceleration (UDINT), MA move to absolute position (DINT, steps), MR move by relative position (DINT, steps), in that order, 4 bytes each",
+     "source": "EDS Assem112 and Fieldbus manual p. 20; defaults MCode reference A p. 33, D p. 50"
+    },
+    {
+     "name": "Output assembly 112, currents and outputs (documents only; a unit did otherwise)",
+     "enip": "out:0.16..out:0.19",
+     "meaning": "byte 16 RC run current percent, byte 17 HC hold current percent, byte 18 OT digital outputs, byte 19 pad",
+     "source": "EDS Assem112 and Fieldbus manual p. 20"
+    },
+    {
+     "name": "Output assembly 112, slew",
+     "enip": "out:20:i32",
+     "meaning": "SL slew (DINT, steps/s): a change of the value starts a constant-velocity move, 0 stops it",
+     "source": "EDS Assem112 and Fieldbus manual p. 20; the slew and stop example Fieldbus manual p. 39-40; confirmed on a unit 2026-11-16 (5000 gave PR V 5000 and 5000 steps/s of position, 0 stopped; the drive had to be enabled)"
+    },
+    {
+     "name": "Output assembly 112, initial and maximum velocity (documents only)",
+     "enip": "out:24:u32, out:28:u32",
+     "meaning": "VI initial velocity (UDINT, default 1000), VM maximum velocity (UDINT, default 768000)",
+     "source": "EDS Assem112 and Fieldbus manual p. 20; defaults MCode reference MS p. 88, VM p. 119"
+    }
+   ],
+   "sources": [
+    {
+     "title": "LMD Ethernet TCP/IP Application 2.4.0.9 (firmware package; carries the EDS)",
+     "sha256": "1bb0038ceae46daf9cd0f42ec92b12fee0181cff4a4209e69335d9d0a2475828",
+     "where": "https://www.novantaims.com/download/lmd-ethernet-tcp-ip-application-2-4-0-9/?wpdmdl=33950&refresh=6afbcc0d386a61794886669; retrieved 2026-11-17; not redistributed here"
+    },
+    {
+     "title": "Lexium MDrive Ethernet, LMDxE57C and LMDxE85C product manual (03.2015)",
+     "sha256": "1c90c18f9a1c4b09e29fc773fabbd4082237917b135b4be6ab056a2aeb89b2d3",
+     "where": "https://novanta.com/robotics-automation/wp-content/uploads/sites/3/2015/04/LMDxE57-85C.pdf; retrieved 2026-11-17; not redistributed here"
+    },
+    {
+     "title": "LM57/LM85 Ethernet TCP/IP with M12 circular connectors (LMDE57-85IP hardware manual)",
+     "sha256": "750e8e1baf96fa67537e116daaeee786d08f3aead80ff5f65ac3ec861f43218d",
+     "where": "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334-ip65/?wpdmdl=6719&refresh=6afbcc022b7b31794886658; retrieved 2026-11-17; not redistributed here"
+    },
+    {
+     "title": "LM57/LM85 Ethernet TCP/IP with pluggable connectors (LMDE57-85 hardware manual)",
+     "sha256": "dc3bb12d1b298678009e054ebd5b54463ca04c48dd12997cba38e78d612bb54c",
+     "where": "https://www.novantaims.com/download/liberty-mdrive-ethernet-nema-2334/?wpdmdl=6713&refresh=6afbcc028ff621794886658; retrieved 2026-11-17; not redistributed here"
+    },
+    {
+     "title": "LMD EtherNet/IP Protocol Implementation",
+     "sha256": "2a5a6f726b2a5b2fa7220215568829345872257623b80dcd68fc6766a56efdd3",
+     "where": "https://www.novantaims.com/download/liberty-mdrive-ethernetip/?wpdmdl=6728&refresh=6afbcc0fb6ea01794886671; retrieved 2026-11-17; not redistributed here"
+    },
+    {
+     "title": "LMD MCode OS Programming and Reference",
+     "sha256": "3945e47f63d497529d7f6c21d518a9d7d6c8b57689932b27179e2db1f9475e81",
+     "where": "https://www.novantaims.com/download/lmd-mcode-os-programming-and-reference/?wpdmdl=29637&refresh=6afbcc01dcbd91794886657; retrieved 2026-11-17; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "How many bytes does output assembly 112 have on a unit, 36 (EDS, RSLogix example) or 34 (the sum of the manual's table, which ends TQ, EF as one byte each where the EDS has TE as 4 bytes)? What are bytes 32-35?",
+     "source": "Fieldbus manual p. 20 (table) and p. 33, 38 (36 bytes); EDS Assem112"
+    },
+    {
+     "ask": "Do bytes 12-15 of input assembly 100 hold V (velocity, EDS) or LL (lead/lag, manual p. 20)?",
+     "source": "EDS Assem100 Param4; Fieldbus manual p. 20"
+    },
+    {
+     "ask": "Does a unit as delivered follow the documents' layout for output assembly 112? The bench unit's mapping had been changed in the TCP/IP Configuration Utility to P, MF, VM, ER, CF, DE, RC, pad, SL, LG, MA, RD, AS, toggle bits (the utility's E.I.P. page, its owner's photo 2026-11-17), and every field the bench exercised agreed with that page (P, DE, RC, SL, and the whole input assembly as DE, MV, IN, P, ER, LL). So the manual's table (A, D, MA, MR, RC, HC, OT, pad, SL, VI, VM) has not been checked on any unit.",
+     "source": "Fieldbus manual p. 20 (the table and its note); a unit 2026-11-16, one field changed at a time and read back over MCode/TCP; the Configuration Utility's E.I.P. page for that unit, 2026-11-17"
+    },
+    {
+     "ask": "What stops the motor when the I/O connection is lost? On the bench unit a slew went on for more than 10 s after the controller stopped sending (it stopped on a Forward_Close and on the run/idle header going to idle), although the Configuration Utility's E.I.P. page showed 'I/O Implicit connection tests: Halt Motion On' for it. Whether that value had been read from the drive, and what the setting covers, is not known.",
+     "source": "Fieldbus manual p. 44 (the NS LED only); a unit 2026-11-16"
+    }
+   ],
+   "wiring": {
+    "note": "Default IP 192.168.33.1. Application protocol must be set to EtherNet/IP before the device is put on a network (factory default is MODBUS/TCP), with the LMD Software Suite's TCP/IP Configuration Utility.",
+    "source": "LMDxE57-85C product manual V1.00 p. 63 (7.1); Fieldbus manual pp. 16, 33"
    }
   },
   {
@@ -1876,6 +2042,98 @@
      "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
      "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
      "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/universal-robots/e-series",
+   "vendor": "Universal Robots",
+   "model": "e-Series",
+   "channels": "robot state, joints, TCP, control box and tool I/O, general purpose registers",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1399,
+     "product_code": 1,
+     "device_type": 43
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 480
+    },
+    "output": {
+     "instance": 112,
+     "bytes": 224
+    },
+    "eds": "UniversalRobot.eds"
+   },
+   "modbus": {
+    "map": true,
+    "port": 502,
+    "unit": 1
+   },
+   "points": [
+    {
+     "name": "robot state",
+     "modbus": "ir:256 version major, ir:257 minor, ir:258 robot mode, ir:266 safety mode; di:260..265 powered, protective, e-stop, teach, power button, safety stop",
+     "meaning": "robot mode 3 power off, 4 power on, 5 idle, 7 running",
+     "source": "ModBus Server Data.pdf p. 3; URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 (version 5.26 / 10.13, mode 3, safety mode 1)"
+    },
+    {
+     "name": "joint angles",
+     "modbus": "ir:270..ir:275 angle in one turn, ir:320:i16..ir:325:i16 turns",
+     "meaning": "joint angle in mrad = turns * 2 pi * 1000 + angle; the angle register is 0..6283",
+     "source": "ModBus Server Data.pdf p. 3-4 (\"in mrad\", revolution count); the split seen on URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 against the realtime interface's q_actual, all six joints"
+    },
+    {
+     "name": "joint speed, current, temperature, mode",
+     "modbus": "ir:280:i16.. mrad/s, ir:290:i16.. mA, ir:300.. degC, ir:310.. mode",
+     "meaning": "per joint, base first; mode 253 running, 255 idle, 239 power off",
+     "source": "ModBus Server Data.pdf p. 3-4; the sign of speed and current inferred (the arm did not move on the simulators)"
+    },
+    {
+     "name": "TCP pose",
+     "modbus": "ir:400:i16..ir:402:i16 x, y, z in 0.1 mm; ir:403:i16..ir:405:i16 rx, ry, rz in mrad (base frame)",
+     "meaning": "two's complement, though the table says all values are unsigned",
+     "source": "ModBus Server Data.pdf p. 4; signs seen on URSim 5.26.0 and PolyScope X 10.13.0 2026-11-20 against the realtime interface"
+    },
+    {
+     "name": "control box and tool I/O",
+     "modbus": "di:0..7 box inputs, di:8..9 tool inputs, coil:16..23 box outputs, coil:24..25 tool outputs, di:128..135 / coil:136..143 configurable",
+     "meaning": "1 = on; bits 10..15 of each word do not exist and a read that reaches them is refused",
+     "source": "ModBus Server Data.pdf p. 5 (COIL ADDRESS); the refusal seen on both simulators"
+    },
+    {
+     "name": "general purpose registers",
+     "modbus": "hr:128..hr:255 (read and write); coil:300..427 booleans the robot reads, di:500..627 booleans it writes",
+     "meaning": "a robot program reads 128..255 with read_port_register; the booleans are shared with RTDE",
+     "source": "ModBus Server Data.pdf p. 1, p. 5; writes to 130..132 read back on both simulators 2026-11-20"
+    }
+   ],
+   "sources": [
+    {
+     "title": "Universal Robots, ModBus Server Data (register table, 8 pages)",
+     "sha256": "6a2fbe54d36fb03811e6a371f033006e5b888a06119486f153c461eb8de0555e",
+     "where": "https://s3-eu-west-1.amazonaws.com/ur-support-site/16377/ModBus%20Server%20Data.pdf, linked from https://www.universal-robots.com/articles/ur/interface-communication/modbus-server/"
+    },
+    {
+     "title": "Universal Robots, UniversalRobot.eds",
+     "sha256": "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62",
+     "where": "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Does a robot split a joint angle into 0..6283 mrad and a turns count, as both simulators do, or give the signed angle in one register?",
+     "source": "ModBus Server Data.pdf p. 3 says \"in mrad\"; URSim 5.26.0 and PolyScope X 10.13.0 split it"
+    },
+    {
+     "ask": "Are joint speed and current two's complement, like the TCP pose?",
+     "source": "the table says all values are unsigned; the simulators' arm never moved"
+    },
+    {
+     "ask": "What do the EtherNet/IP assemblies 100 and 112 hold on a robot, and does its Forward_Open take the EDS's 2 ms RPI?",
+     "source": "UniversalRobot.eds; the PolyScope X simulator lacks the ur-ethernetip URCap"
     }
    ]
   },

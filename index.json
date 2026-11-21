@@ -7,6 +7,10 @@
    "model": "ADAM-6050",
    "kind": "remote-io",
    "channels": "12 DI, 6 DO (isolated)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(Main)/ADAM-6050_03_Ori-(1)-(1)20220418173324.png",
+    "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6050-D1.htm"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -19,6 +23,10 @@
    "model": "ADAM-6052",
    "kind": "remote-io",
    "channels": "8 DI, 8 DO (source type)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6052/Product%20-%20Photo(Main)/ADAM-6052_03_S20190725161934.jpg",
+    "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-EtherNet-IP-Modules/model-ADAM-6052-D.htm"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -31,6 +39,10 @@
    "model": "ADAM-6060",
    "kind": "remote-io",
    "channels": "6 DI, 6 relay (form A)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg",
+    "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -77,7 +89,7 @@
     "enip": {
      "driver": "enip-io",
      "eds": {
-      "name": "BNI EIP-302-105-Z015.eds",
+      "name": "BNI_EIP-302-105-Z015.eds",
       "size": 16559,
       "sha256": "5f0ffe695186c8d23c55f6435b9a9021bc0fa0b06678a1b22111da485d093b38"
      }
@@ -90,6 +102,10 @@
    "model": "EK9000",
    "kind": "remote-io",
    "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "photo": {
+    "url": "https://multimedia.beckhoff.com/media/ek9000__web_preview.png",
+    "page": "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9000.html"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -102,6 +118,10 @@
    "model": "EK9500",
    "kind": "remote-io",
    "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
+   "photo": {
+    "url": "https://multimedia.beckhoff.com/media/ek9500__web_preview.png",
+    "page": "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9500.html"
+   },
    "identity": {
     "enip": {
      "vendor_id": 106,
@@ -120,6 +140,10 @@
    "model": "ED-538",
    "kind": "remote-io",
    "channels": "8 DI, 4 DO",
+   "photo": {
+    "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-538-4-form-a-relays-8-digital-inputs-and-an-ascii-gateway.jpg",
+    "page": "https://www.brainboxes.com/product/remote-io/digital/ed-538"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -132,6 +156,10 @@
    "model": "ED-588",
    "kind": "remote-io",
    "channels": "8 DI, 8 DO",
+   "photo": {
+    "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-588-8-digital-inputs-8-digital-outputs-and-an-ascii-gateway.jpg",
+    "page": "https://www.brainboxes.com/product/remote-io/digital/ed-588"
+   },
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -143,6 +171,10 @@
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
    "kind": "sensor",
+   "photo": {
+    "url": "https://media.ifm.com/dam/019ef0d0-b9cc-7e41-bc6b-741412a185c3/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/IF6123.avif",
+    "page": "https://www.ifm.com/us/en/product/IF6123"
+   },
    "identity": {
     "iolink": {
      "vendor_id": 310,
@@ -166,6 +198,10 @@
    "vendor": "ifm",
    "model": "KQxxxx",
    "kind": "sensor",
+   "photo": {
+    "url": "https://media.ifm.com/dam/019ef139-0207-7a00-810e-f81967f41ce6/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/KQ6005.avif",
+    "page": "https://www.ifm.com/us/en/product/KQ6005"
+   },
    "identity": {
     "iolink": {
      "vendor_id": 310,
@@ -204,6 +240,10 @@
    "vendor": "ifm",
    "model": "O5D100/O5D102/O5D150/O5D152/O5D159",
    "kind": "sensor",
+   "photo": {
+    "url": "https://media.ifm.com/dam/019ef104-42f1-7b99-a5ba-8591952b7b60/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/O5D100.avif",
+    "page": "https://www.ifm.com/de/en/product/O5D100"
+   },
    "identity": {
     "iolink": {
      "vendor_id": 310,
@@ -224,6 +264,10 @@
    "vendor": "ifm",
    "model": "(PN7072, PN7092, PN7572, PN7592) Status B",
    "kind": "sensor",
+   "photo": {
+    "url": "https://media.ifm.com/dam/019ef10f-3f5c-7041-926c-b4f5ba471e6f/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/PN7092.avif",
+    "page": "https://www.ifm.com/us/en/product/PN7092"
+   },
    "identity": {
     "iolink": {
      "vendor_id": 310,
@@ -244,6 +288,10 @@
    "model": "ioLogik E1210",
    "kind": "remote-io",
    "channels": "16 DI",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/1bc19544-9f6e-4eda-9b53-47d7d7314a95/moxa-iologik-e1210-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1210"
+   },
    "profile": "moxa-iologik-e1210.device",
    "protocols": {
     "modbus": {
@@ -258,6 +306,10 @@
    "model": "ioLogik E1211",
    "kind": "remote-io",
    "channels": "16 DO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/ad981e2f-1ac1-466d-bd4c-bed062652f8b/moxa-iologik-e1211-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1211"
+   },
    "profile": "moxa-iologik-e1211.device",
    "protocols": {
     "modbus": {
@@ -272,6 +324,10 @@
    "model": "ioLogik E1212",
    "kind": "remote-io",
    "channels": "8 DI, 8 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/3ec4b6c0-0d49-440d-bc81-928fe89ec711/moxa-iologik-e1212-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1212"
+   },
    "profile": "moxa-iologik-e1212.device",
    "identity": {
     "enip": {
@@ -303,6 +359,10 @@
    "channels": "8 DI, 4 DO, 4 DIO (source type)",
    "firmware": "V3.1 Build19110615",
    "checked_on": "2026-11-02",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/947d2b50-fe26-4233-be15-93ffe9c36c36/moxa-iologik-e1213-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1213"
+   },
    "profile": "moxa-iologik-e1213.device",
    "identity": {
     "enip": {
@@ -333,6 +393,10 @@
    "model": "ioLogik E1214",
    "kind": "remote-io",
    "channels": "6 DI, 6 relays",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/c8feb1c2-a50f-43ed-95b9-b0415b537278/moxa-iologik-e1214-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1214"
+   },
    "profile": "moxa-iologik-e1214.device",
    "protocols": {
     "modbus": {
@@ -347,6 +411,10 @@
    "model": "ioLogik E1240",
    "kind": "remote-io",
    "channels": "8 AI",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/aa9f3f9a-3d69-4ed3-bc33-364b877f2540/moxa-iologik-e1240-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1240"
+   },
    "profile": "moxa-iologik-e1240.device",
    "protocols": {
     "modbus": {
@@ -361,6 +429,10 @@
    "model": "ioLogik E1241",
    "kind": "remote-io",
    "channels": "4 AO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/76744c12-450a-4fac-b391-9fb5d68e53e8/moxa-iologik-e1241-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1241"
+   },
    "profile": "moxa-iologik-e1241.device",
    "protocols": {
     "modbus": {
@@ -375,6 +447,10 @@
    "model": "ioLogik E1242",
    "kind": "remote-io",
    "channels": "4 AI, 4 DI, 4 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/9f8f7cd6-a7cd-4add-98ea-439d09468561/moxa-iologik-e1242-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1242"
+   },
    "profile": "moxa-iologik-e1242.device",
    "protocols": {
     "modbus": {
@@ -389,6 +465,10 @@
    "model": "ioLogik E1260",
    "kind": "remote-io",
    "channels": "6 RTD",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/16b63dc7-a505-46e9-99fa-61ae71d9df19/moxa-iologik-e1260-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1260"
+   },
    "profile": "moxa-iologik-e1260.device",
    "protocols": {
     "modbus": {
@@ -403,6 +483,10 @@
    "model": "ioLogik E1262",
    "kind": "remote-io",
    "channels": "8 TC",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/260f103a-6041-4895-8e8f-e1bcee583b96/moxa-iologik-e1262-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1262"
+   },
    "profile": "moxa-iologik-e1262.device",
    "protocols": {
     "modbus": {
@@ -456,6 +540,8 @@
    "model": "IMPACT67 E DIO8 (DIO8)",
    "kind": "remote-io",
    "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
+   "firmware": "revision 1.2 (ListIdentity)",
+   "checked_on": "2026-11-16",
    "profile": "murrelektronik-impact67-e-dio8-dio8.device",
    "identity": {
     "enip": {
@@ -466,7 +552,12 @@
    "protocols": {
     "enip": {
      "driver": "enip-io",
-     "map": "enip.map"
+     "map": "enip.map",
+     "eds": {
+      "name": "55089_Impact67_E_DIO16.eds",
+      "size": 43388,
+      "sha256": "6eb94568f8b5fc73420611ac1633073da2c6e8cda75d81593bd73631807bef3d"
+     }
     }
    }
   },
@@ -499,6 +590,30 @@
    }
   },
   {
+   "folder": "devices/novanta/lexium-mdrive-ethernet",
+   "vendor": "Novanta IMS",
+   "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
+   "kind": "drive",
+   "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
+   "checked_on": "2026-11-16",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 15362
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SEM_MDrivever1_2.eds",
+      "size": 24813,
+      "sha256": "b14f0fe268df5b37e9dcee6bd0288a88e59d428dbe6044b49dba8beaaeb86041"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
@@ -525,6 +640,10 @@
    "vendor": "Omron",
    "model": "NX-EIC202",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://8z1xg04k.tinifycdn.com/images/NX-EIC202.jpg?resize.method=fit&resize.width=400&resize.height=400",
+    "page": "https://industrial.omron.co.uk/en/products/NX-EIC202"
+   },
    "identity": {
     "enip": {
      "vendor_id": 47,
@@ -590,6 +709,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S1-4DIP-4DOP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
+    "page": "https://www.turck.us/en/product/6814021"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -612,6 +735,10 @@
    "vendor": "Turck",
    "model": "TBEN-S1-4DXP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic9/00508082_0.png",
+    "page": "https://www.turck.us/en/product/100006468"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -634,6 +761,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S1-8DIP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
+    "page": "https://www.turck.us/en/product/6814020"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -656,6 +787,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S1-8DIP-D",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
+    "page": "https://www.turck.us/en/product/6814034"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -678,6 +813,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S1-8DOP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
+    "page": "https://www.turck.us/en/product/6814022"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -700,6 +839,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S1-8DXP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
+    "page": "https://www.turck.us/en/product/6814023"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -722,6 +865,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S2-4AI",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
+    "page": "https://www.turck.us/en/product/6814025"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -744,6 +891,10 @@
    "vendor": "TURCK",
    "model": "TBEN-S2-4AO",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
+    "page": "https://www.turck.us/en/product/6814028"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -766,6 +917,10 @@
    "vendor": "Turck",
    "model": "TBEN-S2-8DIP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
+    "page": "https://www.turck.us/en/product/6814073"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -788,6 +943,10 @@
    "vendor": "Turck",
    "model": "TBEN-S2-8DXP",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
+    "page": "https://www.turck.us/en/product/6814076"
+   },
    "identity": {
     "enip": {
      "vendor_id": 48,
@@ -806,10 +965,42 @@
    }
   },
   {
+   "folder": "devices/universal-robots/e-series",
+   "vendor": "Universal Robots",
+   "model": "e-Series",
+   "kind": "other",
+   "channels": "robot state, joints, TCP, control box and tool I/O, general purpose registers",
+   "profile": "universal-robots-e-series.device",
+   "identity": {
+    "enip": {
+     "vendor_id": 1399,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "UniversalRobot.eds",
+      "size": 0,
+      "sha256": "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp",
+     "map": "modbus.map"
+    }
+   }
+  },
+  {
    "folder": "devices/wago/750-363",
    "vendor": "WAGO",
    "model": "750-363",
    "kind": "remote-io",
+   "photo": {
+    "url": "https://www.wago.com/medias/200-1362992-DE.jpg?context=bWFzdGVyfGltYWdlc3wzMTUzfGltYWdlL2pwZWd8YUdNMEwyZ3pNaTh4TmpVMU5EYzFPRGc1TnpZNU5DOHlNREJmTVRNMk1qazVNbDlFUlM1cWNHY3w2YjA2NGExODYzMTE5ZWEyOTc1ZDM0OGY0NGFiYjJkOWY5MjZmNWY5NWQ0NmZlMjY2ZWNiZTg5ZTdmMzZmMDEw",
+    "page": "https://www.wago.com/us/controllers-bus-couplers-i-o/fieldbus-coupler-ethernet-ip/p/750-363"
+   },
    "identity": {
     "enip": {
      "vendor_id": 40,

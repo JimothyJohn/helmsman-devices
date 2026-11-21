@@ -1,0 +1,20 @@
+# Universal Robots e-Series over Modbus TCP (port 502; the robot ignores the
+# unit id). Addresses are 0-based, from UR's register table; every value is
+# a 16-bit word. Only the registers and bits listed in README.md exist: a
+# request that touches any other address is refused whole (exception 2).
+device ur modbus-tcp ADDR:502 unit=1 timeout_ms=500 poll_ms=50
+
+in  robot_mode   int  ur ir:258
+in  powered      bool ur di:260
+in  protective   bool ur di:261
+in  estop        bool ur di:262
+# a joint's angle is these two: 0..6283 mrad inside one turn, and the
+# turns, signed (turns * 2 pi + angle)
+in  base_angle   int  ur ir:270
+in  base_turns   int  ur ir:320:i16
+in  tcp_x        int  ur ir:400:i16
+in  tcp_y        int  ur ir:401:i16
+in  tcp_z        int  ur ir:402:i16
+
+# a general purpose register the robot's program reads with read_port_register(130)
+out handshake    int  ur hr:130 safe=0

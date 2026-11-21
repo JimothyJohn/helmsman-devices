@@ -15,18 +15,40 @@ Standard library only (tomllib needs Python 3.11).
 import datetime
 import json
 import pathlib
+import re
 import sys
 import tomllib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FORMAT = "helmsman-devices-index 1"
 TEXT_MAX = 120
+URL_MAX = 400
+# Characters a photo link never needs and an attribute must not see. A page sets
+# it as img.src, never inside CSS url(), so a vendor's "Photo(Main)" path stays.
+URL_BANNED = set(" \"'<>\\`{}|^")
 
 
 def text(v, what):
     if not isinstance(v, str) or not v or len(v) > TEXT_MAX or any(ord(c) < 32 for c in v):
         raise SystemExit(f"{what}: text of 1..{TEXT_MAX} printable characters, got {v!r}")
     return v
+
+
+# The file names a box takes (helmsman-project devlib `file_ok`, at most
+# MAX_TEXT = 120 bytes): one it refuses takes the whole index off every box,
+# as an EDS named with spaces did on 2026-11-18. Spaces become underscores
+# (scripts/eds-draft.py does that for a vendor's name).
+FILE_NAME = re.compile(r"[A-Za-z0-9._-]{1,120}")
+
+
+def file_name(v, what):
+    s = text(v, what)
+    if not FILE_NAME.fullmatch(s) or s in (".", ".."):
+        raise SystemExit(
+            f"{what}: {s!r} is not a file name a box reads (letters, digits, '.', '_' and '-'; "
+            "use _ for a space)"
+        )
+    return s
 
 
 def date(v, what):
@@ -39,6 +61,32 @@ def date(v, what):
         except ValueError:
             pass
     raise SystemExit(f"{what}: a date YYYY-MM-DD, got {v!r}")
+
+
+def link(v, what):
+    """An https link a page puts in an attribute: no spaces, quotes or brackets."""
+    if (
+        not isinstance(v, str)
+        or not v.startswith("https://")
+        or len(v) > URL_MAX
+        or any(ord(c) < 33 or ord(c) > 126 or c in URL_BANNED for c in v)
+        or not v[len("https://") :].split("/", 1)[0]
+    ):
+        raise SystemExit(
+            f"{what}: an https:// link of at most {URL_MAX} printable ASCII characters, got {v!r}"
+        )
+    return v
+
+
+def photo(v, rel):
+    """[device.photo]: the vendor's own picture, linked and never stored here."""
+    if not isinstance(v, dict):
+        raise SystemExit(f"{rel}: device.photo: a table with url, page and seen")
+    date(v.get("seen"), f"{rel}: device.photo.seen")
+    return {
+        "url": link(v.get("url"), f"{rel}: device.photo.url"),
+        "page": link(v.get("page"), f"{rel}: device.photo.page"),
+    }
 
 
 def entry(folder: pathlib.Path) -> dict:
@@ -57,6 +105,8 @@ def entry(folder: pathlib.Path) -> dict:
             out[key] = text(dev[key], f"{rel}: device.{key}")
     if "checked_on" in dev:
         out["checked_on"] = date(dev["checked_on"], f"{rel}: device.checked_on")
+    if "photo" in dev:
+        out["photo"] = photo(dev["photo"], rel)
     profile = dev.get("profile")
     if profile is not None:
         profile = text(profile, f"{rel}: device.profile")
@@ -120,7 +170,7 @@ def entry(folder: pathlib.Path) -> dict:
         rec = {"driver": driver}
         for key in ("map", "profile"):
             if key in p:
-                rec[key] = text(p[key], f"{rel}: protocols.{name}.{key}")
+                rec[key] = file_name(p[key], f"{rel}: protocols.{name}.{key}")
                 if key == "map" and not (folder / rec[key]).is_file():
                     raise SystemExit(
                         f"{rel}: protocols.{name}.map names {rec[key]}, which is not in the folder"
@@ -131,7 +181,7 @@ def entry(folder: pathlib.Path) -> dict:
             if len(sha) != 64 or any(c not in "0123456789abcdefABCDEF" for c in sha):
                 raise SystemExit(f"{rel}: protocols.{name}.eds.sha256: 64 hex digits")
             rec["eds"] = {
-                "name": text(eds.get("name"), f"{rel}: eds.name"),
+                "name": file_name(eds.get("name"), f"{rel}: eds.name"),
                 "size": int(eds.get("size", 0)),
                 "sha256": sha.lower(),
             }

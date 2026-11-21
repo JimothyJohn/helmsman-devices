@@ -6,6 +6,11 @@ model = "ADAM-6052"
 kind = "remote-io"
 channels = "8 DI, 8 DO (source type)"
 
+[device.photo]
+url = "https://advdownload.advantech.com/productfile/PIS/ADAM-6052/Product%20-%20Photo(Main)/ADAM-6052_03_S20190725161934.jpg"
+page = "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-EtherNet-IP-Modules/model-ADAM-6052-D.htm"
+seen = 2026-11-16
+
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502
