@@ -9,6 +9,12 @@ kind = "sensor"
 family = "Photoelectric sensors"
 vendor_url = "https://www.sick.com"
 
+[device.photo]
+# variant WTB4FP-22161120A00 (1222998); the page names it "W4F, NextGen, WTB4FP, M8 plug"
+url = "https://www.sick.com/media/pim/7/07/707/IM0085707.png?im=Resize,width=1020"
+page = "https://www.sick.com/us/en/catalog/products/detection-sensors/photoelectric-sensors/w4/wtb4fp-22161120a00/p/p661408"
+seen = 2026-11-21
+
 # What the device answers on an IO-Link port. Not needed to use it on a digital channel;
 # it is how this record is found again from the device's IODD.
 [identity.iolink]

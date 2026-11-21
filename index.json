@@ -501,6 +501,10 @@
    "model": "IMPACT67 E DI16",
    "kind": "remote-io",
    "channels": "16 DI (8 on pin 4, 8 on pin 2 of 8 M12 ports)",
+   "photo": {
+    "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
+    "page": "https://shop.murrelektronik.com/55085/"
+   },
    "profile": "murrelektronik-impact67-e-di16.device",
    "protocols": {
     "enip": {
@@ -515,6 +519,10 @@
    "model": "IMPACT67 E DI8 DO8",
    "kind": "remote-io",
    "channels": "8 DI, 8 DO (2 A each)",
+   "photo": {
+    "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
+    "page": "https://shop.murrelektronik.com/55086/"
+   },
    "profile": "murrelektronik-impact67-e-di8-do8.device",
    "identity": {
     "enip": {
@@ -542,6 +550,10 @@
    "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
    "firmware": "revision 1.2 (ListIdentity)",
    "checked_on": "2026-11-16",
+   "photo": {
+    "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
+    "page": "https://shop.murrelektronik.com/55089/"
+   },
    "profile": "murrelektronik-impact67-e-dio8-dio8.device",
    "identity": {
     "enip": {
@@ -567,6 +579,10 @@
    "model": "IMPACT67 E DO16",
    "kind": "remote-io",
    "channels": "16 DO (0.5 A each)",
+   "photo": {
+    "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
+    "page": "https://shop.murrelektronik.com/55088/"
+   },
    "profile": "murrelektronik-impact67-e-do16.device",
    "protocols": {
     "enip": {
@@ -581,6 +597,10 @@
    "model": "IMPACT67 E DO8",
    "kind": "remote-io",
    "channels": "8 DO (2 A each)",
+   "photo": {
+    "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
+    "page": "https://shop.murrelektronik.com/55087/"
+   },
    "profile": "murrelektronik-impact67-e-do8.device",
    "protocols": {
     "enip": {
@@ -596,6 +616,10 @@
    "kind": "drive",
    "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
    "checked_on": "2026-11-16",
+   "photo": {
+    "url": "https://www.novantaims.com/wp-content/uploads/2017/01/lmd23_right_facing_hirez-738x1024.jpg",
+    "page": "https://www.novantaims.com/liberty-mdrives/lm57-nema-23-ethernet-tcpip-ip20-lmoe57/"
+   },
    "identity": {
     "enip": {
      "vendor_id": 243,
@@ -667,6 +691,10 @@
    "model": "AXL F BK EIP EF",
    "kind": "remote-io",
    "channels": "none of its own: the Axioline F modules behind it (up to 63) set the I/O",
+   "photo": {
+    "url": "https://caas.phoenixcontact.com/caas/v1/stable/media/257490/full/b408?format=jpg",
+    "page": "https://www.phoenixcontact.com/en-us/products/io-component-axl-f-bk-eip-ef-2702782"
+   },
    "identity": {
     "enip": {
      "vendor_id": 562,
@@ -689,6 +717,10 @@
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
    "kind": "sensor",
+   "photo": {
+    "url": "https://www.sick.com/media/pim/7/07/707/IM0085707.png?im=Resize,width=1020",
+    "page": "https://www.sick.com/us/en/catalog/products/detection-sensors/photoelectric-sensors/w4/wtb4fp-22161120a00/p/p661408"
+   },
    "identity": {
     "iolink": {
      "vendor_id": 26,
@@ -970,6 +1002,10 @@
    "model": "e-Series",
    "kind": "other",
    "channels": "robot state, joints, TCP, control box and tool I/O, general purpose registers",
+   "photo": {
+    "url": "https://a.storyblok.com/f/169662/1072x1364/0330f92e8d/ur12e_product_4-3.png/m/fit-in/960x960",
+    "page": "https://www.universal-robots.com/products/e-series/"
+   },
    "profile": "universal-robots-e-series.device",
    "identity": {
     "enip": {

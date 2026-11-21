@@ -11,6 +11,12 @@ profile = "murrelektronik-impact67-e-dio8-dio8.device"   # the device profile a 
 # The unit confirmed the identity, the assemblies and the connection (README.md,
 # "On the bench"). No channel was seen switching: nothing was wired to it.
 
+[device.photo]
+# the shop shows one family picture for every IMPACT67 E article
+url = "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png"
+page = "https://shop.murrelektronik.com/55089/"
+seen = 2026-11-21
+
 [identity.enip]
 vendor_id = 640                  # handbook p. 101; a unit 2026-11-16
 product_code = 55089             # a unit 2026-11-16

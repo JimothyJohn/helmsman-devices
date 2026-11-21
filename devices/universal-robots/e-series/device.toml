@@ -6,6 +6,12 @@ channels = "robot state, joints, TCP, control box and tool I/O, general purpose 
 profile = "universal-robots-e-series.device"   # Modbus TCP only until EtherNet/IP has been tried
 # No checked_on: only UR's simulators have answered (README "Simulators").
 
+[device.photo]
+# a UR12e, the page's "e-Series features" picture
+url = "https://a.storyblok.com/f/169662/1072x1364/0330f92e8d/ur12e_product_4-3.png/m/fit-in/960x960"
+page = "https://www.universal-robots.com/products/e-series/"
+seen = 2026-11-21
+
 # From UniversalRobot.eds (VendCode 1399, ProdType 43, ProdCode 1); no
 # robot has answered ListIdentity yet.
 [identity.enip]

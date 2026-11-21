@@ -8,6 +8,12 @@ profile = "murrelektronik-impact67-e-do16.device"   # the device profile a contr
 # No unit of this article has been checked: checked_on, firmware and checked_by are
 # left out until one has.
 
+[device.photo]
+# the shop shows one family picture for every IMPACT67 E article
+url = "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png"
+page = "https://shop.murrelektronik.com/55088/"
+seen = 2026-11-21
+
 [protocols.enip]
 driver = "enip-io"
 map = "enip.map"
