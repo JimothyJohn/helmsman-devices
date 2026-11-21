@@ -11,6 +11,12 @@ checked_on = "2026-11-16"
 firmware = "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)"
 checked_by = "helmsman bench"
 
+[device.photo]
+# a NEMA 23 (LM57) unit: Novanta has no NEMA 34 page; the bench unit is an LMDCE853C
+url = "https://www.novantaims.com/wp-content/uploads/2017/01/lmd23_right_facing_hirez-738x1024.jpg"
+page = "https://www.novantaims.com/liberty-mdrives/lm57-nema-23-ethernet-tcpip-ip20-lmoe57/"
+seen = 2026-11-21
+
 [identity.enip]
 vendor_id = 243
 product_code = 15362

@@ -8,6 +8,11 @@ kind = "remote-io"
 channels = "none of its own: the Axioline F modules behind it (up to 63) set the I/O"
 article = "2702782"
 
+[device.photo]
+url = "https://caas.phoenixcontact.com/caas/v1/stable/media/257490/full/b408?format=jpg"
+page = "https://www.phoenixcontact.com/en-us/products/io-component-axl-f-bk-eip-ef-2702782"
+seen = 2026-11-21
+
 [identity.enip]
 vendor_id = 562
 product_code = 8169
