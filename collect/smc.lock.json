@@ -104,6 +104,69 @@
    "terms": "none stated",
    "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
    "type": "zip"
+  },
+  "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf",
+   "folders": [
+    "devices/smc/ex600-sen1"
+   ],
+   "kind": "manual",
+   "name": "EXxx-OMN0032.pdf",
+   "retrieved": "2026-11-23T14:33:09Z",
+   "sha256": "0b46ecb7ddc6de35b6818aeb8041827e4e2d59c1840e9ec74587e74eed37d9f3",
+   "size": 2415239,
+   "terms": "none stated",
+   "title": "SMC EtherNet/IP compatible SI unit EX600-SEN#, manual EX*-OMN0032-D",
+   "type": "pdf"
+  },
+  "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf",
+   "folders": [
+    "devices/smc/ex260-sen1",
+    "devices/smc/ex260-sen2",
+    "devices/smc/ex260-sen3",
+    "devices/smc/ex260-sen4"
+   ],
+   "kind": "manual",
+   "name": "EXxx-OMP0013.pdf",
+   "retrieved": "2026-11-23T14:33:09Z",
+   "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+   "size": 1193006,
+   "terms": "none stated",
+   "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+   "type": "pdf"
+  },
+  "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf",
+   "folders": [
+    "devices/smc/ex600-sen3"
+   ],
+   "kind": "manual",
+   "name": "EXxx-OMS0027.pdf",
+   "retrieved": "2026-11-23T14:33:09Z",
+   "sha256": "c5ecfbc661d38da7c2e7a42e876d8360f5d6b811b3cdecbb340aebe166df0681",
+   "size": 2915960,
+   "terms": "none stated",
+   "title": "SMC EX600-SEN3/SEN4 manual EX*-OMS0027",
+   "type": "pdf"
+  },
+  "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf",
+   "folders": [
+    "devices/smc/ex600-sen7"
+   ],
+   "kind": "manual",
+   "name": "EXxx-OMZ0024.pdf",
+   "retrieved": "2026-11-23T14:33:09Z",
+   "sha256": "bc26e10c748731dde6bbddc2ee469a529cbf7cfcbf2f29110d381aa5b4d8b2dc",
+   "size": 5542043,
+   "terms": "none stated",
+   "title": "SMC EX600-SEN7/SEN8 manual EX*-OMZ0024",
+   "type": "pdf"
   }
  },
  "format": "helmsman-devices-collect-lock 1"

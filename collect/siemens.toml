@@ -57,3 +57,11 @@ terms = "none stated"
 # Fieldbus Function Manual section 4.2); it redirects to a JavaScript portal search page, 2026-11-22.
 # ET 200SP IM 155-6 MF HF: EDS and UDT are exported by Siemens' MFCT (webinar p. 15), no file to collect;
 # the equipment manual and GSDML stay refused (see above); the webinar slides are the only document held.
+
+[[doc]]
+folder = "devices/siemens/sinamics-g120-cu240e-2-pn"
+kind = "manual"
+url = "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf"
+title = "SINAMICS G120 Control Units CU240B-2 / CU240E-2 Operating Instructions 04/2018 (A5E34259001B AF)"
+found = "2026-11-23 search: SINAMICS G120 CU240B-2 CU240E-2 Operating Instructions 04/2018 A5E34259001B AF pdf; result on cache.industry.siemens.com"
+terms = "none stated"
