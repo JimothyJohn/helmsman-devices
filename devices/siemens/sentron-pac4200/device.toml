@@ -4,6 +4,7 @@
 vendor = "Siemens"
 model = "SENTRON PAC4200"
 kind = "other"
+category = "power-meter"
 article = "7KM4200"
 
 [protocols.modbus]

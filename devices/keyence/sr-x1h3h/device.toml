@@ -5,6 +5,7 @@
 vendor = "Keyence"
 model = "SR-X1H3H Series"
 kind = "sensor"
+category = "vision"
 article = "SR-X1H3H"
 
 [identity.enip]

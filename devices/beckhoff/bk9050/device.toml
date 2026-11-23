@@ -4,6 +4,7 @@
 vendor = "Beckhoff"
 model = "BK9050"
 kind = "remote-io"
+category = "io-coupler"
 channels = "up to 64 Bus Terminals, 512 bytes in and 512 bytes out"
 
 [protocols.modbus]

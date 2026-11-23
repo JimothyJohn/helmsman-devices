@@ -4,6 +4,7 @@
 vendor = "Siemens"
 model = "SINAMICS G120 CU240E-2 PN (EtherNet/IP)"
 kind = "drive"
+category = "drive"
 article = "CU240E-2 PN"
 
 [protocols.enip]

@@ -5,6 +5,7 @@
 vendor = "IMI Norgren"
 model = "VR1X-EP"
 kind = "remote-io"
+category = "valve-terminal"
 article = "Ethernet Valve Island VR series"
 
 [identity.enip]

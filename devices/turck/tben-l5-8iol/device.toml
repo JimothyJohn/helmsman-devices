@@ -5,6 +5,7 @@
 vendor = "Turck"
 model = "TBEN-L5-8IOL"
 kind = "remote-io"
+category = "iolink-master"
 article = "6814017"
 
 [identity.enip]

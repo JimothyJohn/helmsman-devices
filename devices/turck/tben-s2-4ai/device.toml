@@ -5,6 +5,7 @@
 vendor = "Turck"
 model = "TBEN-S2-4AI"
 kind = "remote-io"
+category = "io-block"
 article = "6814025"
 
 [device.photo]

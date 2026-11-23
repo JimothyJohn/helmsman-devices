@@ -2,6 +2,7 @@
 vendor = "Moxa"
 model = "ioLogik E1213"
 kind = "remote-io"
+category = "panel-io"
 channels = "8 DI, 4 DO, 4 DIO (source type)"
 checked_on = "2026-11-02"
 firmware = "V3.1 Build19110615"

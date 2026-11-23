@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "ArmorStart LT 290E/291E/294E (EtherNet/IP)"
 kind = "other"
+category = "motor-starter"
 article = "290E-FAZ-Gx"
 
 [identity.enip]

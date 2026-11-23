@@ -5,6 +5,7 @@
 vendor = "WEG"
 model = "CFW320"
 kind = "drive"
+category = "drive"
 article = "CFW320-CETH"
 
 [identity.enip]

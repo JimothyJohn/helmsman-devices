@@ -5,6 +5,7 @@
 vendor = "Schneider Electric"
 model = "Altivar Machine ATV320 with VW3A3616"
 kind = "drive"
+category = "drive"
 
 [identity.enip]
 vendor_id = 243

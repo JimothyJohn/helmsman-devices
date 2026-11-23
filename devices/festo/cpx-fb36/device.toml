@@ -5,6 +5,7 @@
 vendor = "Festo"
 model = "CPX-FB36"
 kind = "remote-io"
+category = "io-coupler"
 article = "CPX-FB36"
 
 [identity.enip]

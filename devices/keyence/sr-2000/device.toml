@@ -5,6 +5,7 @@
 vendor = "Keyence"
 model = "SR-2000 Series"
 kind = "sensor"
+category = "vision"
 article = "SR-2000"
 
 [identity.enip]

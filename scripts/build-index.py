@@ -1,13 +1,17 @@
 #!/usr/bin/env python3 -I
-"""Build index.json from every devices/<vendor>/<model>/device.toml.
+"""Build index.json and CATALOG.md from every devices/<vendor>/<model>/device.toml.
 
 The index is what a Helmsman controller (or its canvas) fetches to look a
 device up before anything is generated: identity first (ListIdentity's
 vendor id and product code), then vendor and model text. Format
 "helmsman-devices-index 1"; a controller refuses anything else.
 
+CATALOG.md is the same devices as a list a person or an agent reads: one
+table per category, each row with what the folder gives a project. It is
+written here so that one command keeps both files true.
+
 Usage: python3 -I scripts/build-index.py [--check]
-  --check   exit 1 if index.json differs from what the folders say (CI)
+  --check   exit 1 if index.json or CATALOG.md differs from what the folders say (CI)
 
 Standard library only (tomllib needs Python 3.11).
 """
@@ -26,6 +30,49 @@ URL_MAX = 400
 # Characters a photo link never needs and an attribute must not see. A page sets
 # it as img.src, never inside CSS url(), so a vendor's "Photo(Main)" path stays.
 URL_BANNED = set(" \"'<>\\`{}|^")
+
+# [device] category: the shelf a device is listed on in CATALOG.md and what
+# scripts/find.py and a page filter by. Finer than kind, which is what a box
+# reads: most of the library is kind "remote-io". Id, heading, what is in it.
+CATEGORIES = (
+    ("io-block", "I/O blocks (on the machine)", "Fixed channels in one sealed housing with M12 ports."),
+    (
+        "panel-io",
+        "I/O modules (in the cabinet)",
+        "Fixed channels in one module with terminals, on a DIN rail.",
+    ),
+    (
+        "io-coupler",
+        "Modular I/O couplers",
+        "The head of a row of I/O slices or modules; the channels depend on what is fitted.",
+    ),
+    ("iolink-master", "IO-Link masters", "Ports that speak IO-Link to sensors and actuators."),
+    (
+        "valve-terminal",
+        "Valve terminals",
+        "Pneumatic valve manifolds and their bus nodes; an output switches a solenoid.",
+    ),
+    ("drive", "Drives", "Frequency inverters, servo drives and their network option cards."),
+    (
+        "motor-starter",
+        "Motor starters and protection",
+        "Starters, soft starters and motor management relays.",
+    ),
+    ("power-meter", "Power meters", "Meters that give voltage, current, power and energy."),
+    ("vision", "Vision sensors and code readers", "Cameras that inspect, and readers of 1D and 2D codes."),
+    ("robot", "Robots", "Robot controllers, as a device another controller reads and commands."),
+    ("controller", "Controllers", "Programmable controllers that also answer as a device."),
+    (
+        "sensor",
+        "Sensors and actuators on a digital channel",
+        "Wired to a point of an I/O block, not on the network; described from the IODD.",
+    ),
+    ("other", "Other", "On the network, and none of the above."),
+)
+# A folder that names no category: drafts start here, so the list shows what is left to sort.
+UNSORTED = ("unsorted", "Not yet sorted", "A draft with no category in its device.toml yet.")
+CATEGORY_IDS = {c[0] for c in CATEGORIES}
+PROTOCOL_NAMES = {"enip": "EtherNet/IP", "modbus": "Modbus TCP"}
 
 
 def text(v, what):
@@ -89,6 +136,98 @@ def photo(v, rel):
     }
 
 
+def category(dev, t, rel):
+    """[device] category, one of CATEGORIES. A folder without one is a wired
+    sensor or actuator (no protocols, kind says so) or not yet sorted."""
+    cat = dev.get("category")
+    if cat is None:
+        wired = not t.get("protocols") and dev.get("kind") in ("sensor", "actuator")
+        return "sensor" if wired else UNSORTED[0]
+    if cat not in CATEGORY_IDS:
+        raise SystemExit(f"{rel}: device.category: one of {', '.join(c[0] for c in CATEGORIES)}; got {cat!r}")
+    return cat
+
+
+def gives(folder: pathlib.Path, e: dict) -> str:
+    """What the folder gives a project, best first: the catalog's "to use it" column."""
+    t = tomllib.loads((folder / "device.toml").read_text())
+    has = []
+    if "profile" in e:
+        has.append("profile")
+    protocols = t.get("protocols", {})
+    if any("map" in p for p in protocols.values()):
+        has.append("map")
+    enip = protocols.get("enip", {})
+    if "eds" in enip or "input_assembly" in enip:
+        has.append("EDS connection")
+    if "record" in e:
+        has.append("record")
+    points = t.get("points", [])
+    if points:
+        has.append(f"{len(points)} point{'s' if len(points) != 1 else ''}")
+    return ", ".join(has) or "identity and sources"
+
+
+def cell(v: str) -> str:
+    """Text inside a Markdown table cell: no pipe ends it, no markup starts in it."""
+    entities = {"&": "&amp;", "<": "&lt;", ">": "&gt;"}
+    return "".join(entities.get(c) or ("\\" + c if c in "\\|[]*_`~" else c) for c in v)
+
+
+def catalog(index: dict) -> str:
+    """CATALOG.md: every device under its category, with what its folder gives."""
+    by = {}
+    for e in index["devices"]:
+        by.setdefault(e["category"], []).append(e)
+    used = [c for c in (*CATEGORIES, UNSORTED) if c[0] in by]
+    n = len(index["devices"])
+    lines = [
+        "# Catalog",
+        "",
+        "<!-- Written by scripts/build-index.py from every device.toml. Do not edit: run the script. -->",
+        "",
+        f"{n} device{'s' if n != 1 else ''} in {len(used)} categor{'ies' if len(used) != 1 else 'y'}.",
+        "Pick a category, pick a row, then",
+        "`python3 -I scripts/use.py <folder>` prints what goes into a Helmsman project",
+        "([AGENTS.md](AGENTS.md), Using a device). The same list from a shell:",
+        "`python3 -I scripts/find.py [category] [words]`.",
+        "",
+        "| category | devices | what is in it |",
+        "| --- | --- | --- |",
+    ]
+    lines += [f"| [{cell(label)}](#{cid}) | {len(by[cid])} | {cell(what)} |" for cid, label, what in used]
+    lines += [
+        "",
+        "In each table, **to use it** is what the folder gives, best first: a `profile`",
+        "(channels by name, the box picks the protocol), a `map` (I/O map lines to copy),",
+        "an `EDS connection` (the assembly instances and sizes of the vendor's file),",
+        "a `record` (a wired sensor's signals), and the number of documented points.",
+        "**checked** is the date a unit confirmed the entry; `documents` means none has.",
+    ]
+    for cid, label, what in used:
+        lines += [
+            "",
+            f'<a name="{cid}"></a>',
+            "",
+            f"## {label}",
+            "",
+            f"{what} `find.py {cid}`",
+            "",
+            "| model | vendor | speaks | channels | to use it | checked |",
+            "| --- | --- | --- | --- | --- | --- |",
+        ]
+        for e in sorted(by[cid], key=lambda e: (e["vendor"].casefold(), e["model"].casefold(), e["folder"])):
+            speaks = ", ".join(PROTOCOL_NAMES.get(k, k) for k in e.get("protocols", {}))
+            if not speaks and "iolink" in e.get("identity", {}):
+                speaks = "IO-Link, or a plain switching wire"
+            lines.append(
+                f"| [{cell(e['model'])}]({e['folder']}/) | {cell(e['vendor'])} | {cell(speaks)} "
+                f"| {cell(e.get('channels', ''))} | {cell(gives(ROOT / e['folder'], e))} "
+                f"| {e.get('checked_on', 'documents')} |"
+            )
+    return "\n".join(lines) + "\n"
+
+
 def entry(folder: pathlib.Path) -> dict:
     t = tomllib.loads((folder / "device.toml").read_text())
     dev = t.get("device", {})
@@ -98,6 +237,7 @@ def entry(folder: pathlib.Path) -> dict:
         "vendor": text(dev.get("vendor"), f"{rel}: device.vendor"),
         "model": text(dev.get("model"), f"{rel}: device.model"),
         "kind": text(dev.get("kind", "other"), f"{rel}: device.kind"),
+        "category": category(dev, t, rel),
     }
     # Catalog fields: what a page shows. A box ignores keys it does not read.
     for key in ("channels", "firmware"):
@@ -162,6 +302,12 @@ def entry(folder: pathlib.Path) -> dict:
     # device.toml (scripts/build-records.py): say that it is there.
     if "wired" in t:
         out["record"] = "record.json"
+    # How many [[points]] the documents gave: a list says which entries name their channels.
+    points = t.get("points", [])
+    if not isinstance(points, list) or len(points) > 4096:
+        raise SystemExit(f"{rel}: points: at most 4096 tables")
+    if points:
+        out["points"] = len(points)
     protocols = {}
     for name, p in t.get("protocols", {}).items():
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")
@@ -193,24 +339,47 @@ def entry(folder: pathlib.Path) -> dict:
 
 def main() -> int:
     folders = sorted(p.parent for p in (ROOT / "devices").glob("*/*/device.toml"))
-    index = {"format": FORMAT, "devices": [entry(f) for f in folders]}
+    devices = [entry(f) for f in folders]
+    used = {d["category"] for d in devices}
+    index = {
+        "format": FORMAT,
+        # A box reads "format" and "devices" and ignores the rest; a page and
+        # scripts/find.py take the categories' names from here.
+        "categories": [
+            {"id": cid, "label": label, "what": what}
+            for cid, label, what in (*CATEGORIES, UNSORTED)
+            if cid in used
+        ],
+        "devices": devices,
+    }
     seen = set()
     for d in index["devices"]:
         key = json.dumps(d.get("identity"), sort_keys=True)
         if d.get("identity") and key in seen:
             raise SystemExit(f"{d['folder']}: the same identity as another folder")
         seen.add(key)
-    text_out = json.dumps(index, indent=1, ensure_ascii=False) + "\n"
-    target = ROOT / "index.json"
+    outputs = {
+        "index.json": json.dumps(index, indent=1, ensure_ascii=False) + "\n",
+        "CATALOG.md": catalog(index),
+    }
+    unsorted = [d["folder"] for d in devices if d["category"] == UNSORTED[0]]
     if "--check" in sys.argv[1:]:
-        current = target.read_text() if target.exists() else ""
-        if current != text_out:
-            print("index.json is out of date: run scripts/build-index.py", file=sys.stderr)
+        stale = [
+            n for n, want in outputs.items() if not (ROOT / n).exists() or (ROOT / n).read_text() != want
+        ]
+        if stale:
+            print(f"{' and '.join(stale)} out of date: run scripts/build-index.py", file=sys.stderr)
             return 1
-        print(f"index.json is current ({len(index['devices'])} device(s))")
+        print(f"index.json and CATALOG.md are current ({len(devices)} device(s))")
         return 0
-    target.write_text(text_out)
-    print(f"wrote index.json: {len(index['devices'])} device(s)")
+    for name, want in outputs.items():
+        (ROOT / name).write_text(want)
+    print(f"wrote index.json and CATALOG.md: {len(devices)} device(s)")
+    if unsorted:
+        ids = ", ".join(c[0] for c in CATEGORIES)
+        print(f"no [device] category yet (one of {ids}):", file=sys.stderr)
+        for f in unsorted:
+            print(f"  {f}", file=sys.stderr)
     return 0
 
 

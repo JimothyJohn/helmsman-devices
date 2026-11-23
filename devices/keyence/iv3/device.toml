@@ -5,6 +5,7 @@
 vendor = "Keyence"
 model = "IV3 Series"
 kind = "sensor"
+category = "vision"
 article = "IV3 Series"
 
 [identity.enip]

@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 753TS"
 kind = "drive"
+category = "drive"
 article = "20F1D.../20F1E..."
 
 [identity.enip]

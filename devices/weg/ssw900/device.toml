@@ -5,6 +5,7 @@
 vendor = "WEG"
 model = "SSW900"
 kind = "other"
+category = "motor-starter"
 article = "SSW900-CETH-W"
 
 [identity.enip]

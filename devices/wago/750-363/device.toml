@@ -5,6 +5,7 @@
 vendor = "WAGO"
 model = "750-363"
 kind = "remote-io"
+category = "io-coupler"
 article = "750-363"
 
 [device.photo]

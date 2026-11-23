@@ -5,6 +5,7 @@
 vendor = "Festo"
 model = "CMMT-AS-EP"
 kind = "drive"
+category = "drive"
 article = "CMMT-AS"
 
 [identity.enip]

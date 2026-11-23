@@ -9,6 +9,7 @@ import importlib.util
 import pathlib
 import tempfile
 import unittest
+from types import MappingProxyType
 
 SCRIPT = pathlib.Path(__file__).resolve().parent.parent / "scripts" / "build-index.py"
 spec = importlib.util.spec_from_file_location("build_index", SCRIPT)
@@ -167,3 +168,156 @@ class FileNames(unittest.TestCase):
             with_eds("BNI_EIP-302-105-Z015.eds")["protocols"]["enip"]["eds"]["name"],
             "BNI_EIP-302-105-Z015.eds",
         )
+
+
+def build(folders: dict, *argv) -> tuple:
+    """Run main() over a scratch library; (exit code, index, CATALOG.md text)."""
+    import contextlib
+    import io
+    import json
+    import sys
+
+    root = pathlib.Path(tempfile.mkdtemp())
+    for rel, toml in folders.items():
+        f = root / "devices" / rel
+        f.mkdir(parents=True)
+        (f / "device.toml").write_text(toml)
+    old_root, old_argv = bi.ROOT, sys.argv
+    bi.ROOT, sys.argv = root, ["build-index.py"]
+    try:
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()) as err:
+            bi.main()
+            sys.argv = ["build-index.py", *argv]
+            code = bi.main() if argv else 0
+        return (
+            code,
+            json.loads((root / "index.json").read_text()),
+            (root / "CATALOG.md").read_text(),
+            root,
+            err,
+        )
+    finally:
+        bi.ROOT, sys.argv = old_root, old_argv
+
+
+def device(model: str, extra: str = "", kind: str = "remote-io") -> str:
+    return f'[device]\nvendor = "V"\nmodel = "{model}"\nkind = "{kind}"\n{extra}'
+
+
+class Categories(unittest.TestCase):
+    """[device] category: the shelf in CATALOG.md and what find.py filters by."""
+
+    def test_a_category_is_carried(self):
+        self.assertEqual(entry('category = "io-block"\n')["category"], "io-block")
+
+    def test_an_unknown_category_is_refused(self):
+        for extra in (
+            'category = "blocks"\n',
+            'category = ""\n',
+            "category = 3\n",
+            'category = "unsorted"\n',
+        ):
+            with self.subTest(extra=extra), self.assertRaises(SystemExit):
+                entry(extra)
+
+    def test_a_draft_without_one_is_unsorted_not_guessed(self):
+        self.assertEqual(entry("")["category"], "unsorted")
+        self.assertEqual(entry('[protocols.enip]\ndriver = "enip-io"\n')["category"], "unsorted")
+
+    def test_a_wired_sensor_without_one_is_a_sensor(self):
+        root = pathlib.Path(tempfile.mkdtemp())
+        f = root / "devices" / "v" / "m"
+        f.mkdir(parents=True)
+        (f / "device.toml").write_text(
+            '[device]\nvendor = "V"\nmodel = "M"\nkind = "sensor"\n[wired]\nsio = true\n'
+        )
+        old, bi.ROOT = bi.ROOT, root
+        try:
+            self.assertEqual(bi.entry(f)["category"], "sensor")
+        finally:
+            bi.ROOT = old
+
+    def test_the_index_names_only_the_categories_in_use_in_their_order(self):
+        _, index, _, _, _ = build(
+            {
+                "v/a": device("A", 'category = "drive"\n', "drive"),
+                "v/b": device("B", 'category = "io-block"\n'),
+                "v/c": device("C"),
+            }
+        )
+        self.assertEqual([c["id"] for c in index["categories"]], ["io-block", "drive", "unsorted"])
+        self.assertEqual(index["format"], "helmsman-devices-index 1")
+        self.assertEqual([d["category"] for d in index["devices"]], ["drive", "io-block", "unsorted"])
+
+    def test_writing_names_the_folders_left_to_sort(self):
+        *_, err = build({"v/a": device("A", 'category = "drive"\n', "drive"), "v/c": device("C")})
+        self.assertIn("devices/v/c", err.getvalue())
+        self.assertNotIn("devices/v/a", err.getvalue())
+
+
+class CatalogFile(unittest.TestCase):
+    """CATALOG.md: the same devices as a list, written and checked with the index."""
+
+    FOLDERS = MappingProxyType(
+        {
+            "v/a": device("A", 'category = "drive"\nchannels = "none"\n', "drive")
+            + '[protocols.enip]\ndriver = "enip-io"\ninput_assembly = { instance = 1, bytes = 2 }\n'
+            + '[[points]]\nname = "x"\n[[points]]\nname = "y"\n',
+            "v/b": device("B", 'category = "io-block"\nchecked_on = "2026-11-02"\n')
+            + '[protocols.modbus]\ndriver = "modbus-tcp"\n',
+            "w/c": device("C", 'category = "io-block"\n'),
+        }
+    )
+
+    def test_every_device_is_under_its_category_with_what_it_gives(self):
+        _, _, text, _, _ = build(self.FOLDERS)
+        self.assertIn("3 devices in 2 categories.", text)
+        self.assertIn("| [Drives](#drive) | 1 |", text)
+        self.assertIn("| [I/O blocks (on the machine)](#io-block) | 2 |", text)
+        drives = text.split('<a name="drive"></a>')[1]
+        self.assertIn(
+            "| [A](devices/v/a/) | V | EtherNet/IP | none | EDS connection, 2 points | documents |", drives
+        )
+        blocks = text.split('<a name="io-block"></a>')[1].split('<a name="drive"></a>')[0]
+        self.assertIn("| [B](devices/v/b/) | V | Modbus TCP |  | identity and sources | 2026-11-02 |", blocks)
+        self.assertIn("| [C](devices/w/c/) | V |  |  | identity and sources | documents |", blocks)
+        self.assertLess(blocks.index("[B]"), blocks.index("[C]"))
+
+    def test_the_index_counts_the_documented_points(self):
+        _, index, _, _, _ = build(self.FOLDERS)
+        by = {d["folder"]: d.get("points") for d in index["devices"]}
+        self.assertEqual(by, {"devices/v/a": 2, "devices/v/b": None, "devices/w/c": None})
+
+    def test_a_model_cannot_break_the_table_or_start_markup(self):
+        _, _, text, _, _ = build(
+            {"v/a": device("A | B <img src=x> [l](http://e) *b* `c` &amp;", 'category = "drive"\n')}
+        )
+        row = next(line for line in text.splitlines() if "devices/v/a/" in line)
+        self.assertEqual(row.count(" | "), 5)
+        self.assertNotIn("<img", row)
+        self.assertNotIn("[l](", row)
+        self.assertIn("&amp;amp;", row)
+
+    def test_check_passes_when_current_and_fails_when_either_file_is_stale(self):
+        code, _, _, root, _ = build(self.FOLDERS, "--check")
+        self.assertEqual(code, 0)
+        import sys
+
+        old_root, old_argv = bi.ROOT, sys.argv
+        bi.ROOT, sys.argv = root, ["build-index.py", "--check"]
+        try:
+            import contextlib
+            import io
+
+            for name in ("CATALOG.md", "index.json"):
+                good = (root / name).read_text()
+                (root / name).write_text(good + "\n")
+                with contextlib.redirect_stderr(io.StringIO()) as err:
+                    self.assertEqual(bi.main(), 1)
+                self.assertIn(name, err.getvalue())
+                (root / name).write_text(good)
+            (root / "CATALOG.md").unlink()
+            with contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(bi.main(), 1)
+        finally:
+            bi.ROOT, sys.argv = old_root, old_argv

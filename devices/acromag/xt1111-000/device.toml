@@ -4,6 +4,7 @@
 vendor = "Acromag"
 model = "XT1111-000"
 kind = "remote-io"
+category = "panel-io"
 channels = "16 DI (active-low), 16 DO (low-side, sinking)"
 
 [protocols.modbus]

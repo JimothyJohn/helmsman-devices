@@ -5,6 +5,7 @@
 vendor = "Schneider Electric"
 model = "Altivar Process ATV630 / ATV930 (embedded Ethernet)"
 kind = "drive"
+category = "drive"
 
 [identity.enip]
 vendor_id = 243

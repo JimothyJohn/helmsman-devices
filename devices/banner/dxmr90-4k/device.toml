@@ -5,6 +5,7 @@
 vendor = "Banner"
 model = "DXMR90-4K"
 kind = "remote-io"
+category = "iolink-master"
 
 [identity.enip]
 vendor_id = 12

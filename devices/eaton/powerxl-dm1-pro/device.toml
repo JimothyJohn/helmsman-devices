@@ -5,6 +5,7 @@
 vendor = "Eaton"
 model = "PowerXL DM1 PRO"
 kind = "drive"
+category = "drive"
 article = "DM1 PRO"
 
 [identity.enip]

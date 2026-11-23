@@ -5,6 +5,7 @@
 vendor = "Turck"
 model = "TBEN-S2-2RFID-4DXP"
 kind = "remote-io"
+category = "io-block"
 article = "6814029"
 
 [identity.enip]

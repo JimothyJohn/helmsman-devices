@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "1732E-OB16M12R"
 kind = "remote-io"
+category = "io-block"
 article = "1732E-OB16M12R"
 
 [identity.enip]

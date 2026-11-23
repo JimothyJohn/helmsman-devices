@@ -5,6 +5,7 @@
 vendor = "Delta Electronics"
 model = "CMM-EIP01"
 kind = "drive"
+category = "drive"
 article = "CMM-EIP01"
 
 [identity.enip]

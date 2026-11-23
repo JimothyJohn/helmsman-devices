@@ -5,6 +5,7 @@
 vendor = "Pepperl+Fuchs"
 model = "ICE21-8IOL2-G70L-V1D"
 kind = "remote-io"
+category = "iolink-master"
 article = "70148669"
 
 [identity.enip]

@@ -4,6 +4,7 @@
 vendor = "Advantech"
 model = "ADAM-6260"
 kind = "remote-io"
+category = "panel-io"
 channels = "6 relay DO (5 Form C, 1 Form A)"
 
 [protocols.modbus]

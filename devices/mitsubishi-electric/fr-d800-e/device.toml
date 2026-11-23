@@ -5,6 +5,7 @@
 vendor = "Mitsubishi Electric"
 model = "FR-D800-E"
 kind = "drive"
+category = "drive"
 article = "FR-D800-E"
 
 [identity.enip]

@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "1794-AENT"
 kind = "remote-io"
+category = "io-coupler"
 article = "1794-AENT"
 
 [identity.enip]

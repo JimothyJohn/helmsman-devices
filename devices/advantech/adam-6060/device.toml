@@ -4,6 +4,7 @@
 vendor = "Advantech"
 model = "ADAM-6060"
 kind = "remote-io"
+category = "panel-io"
 channels = "6 DI, 6 relay (form A)"
 
 [device.photo]

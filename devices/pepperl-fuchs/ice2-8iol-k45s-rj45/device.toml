@@ -5,6 +5,7 @@
 vendor = "Pepperl+Fuchs"
 model = "ICE2-8IOL-K45S-RJ45"
 kind = "remote-io"
+category = "iolink-master"
 article = "70104879"
 
 [identity.enip]

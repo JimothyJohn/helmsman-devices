@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 70 (EtherNet/IP adapter)"
 kind = "drive"
+category = "drive"
 article = "20A"
 
 [identity.enip]

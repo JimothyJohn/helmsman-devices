@@ -5,6 +5,7 @@
 vendor = "Schneider Electric"
 model = "Altivar Machine ATV340 (embedded Ethernet)"
 kind = "drive"
+category = "drive"
 
 [identity.enip]
 vendor_id = 243

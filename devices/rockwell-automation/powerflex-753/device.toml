@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 753 with 20-750-ENETR"
 kind = "drive"
+category = "drive"
 article = "20G..."
 
 [identity.enip]

@@ -2,6 +2,7 @@
 vendor = "Moxa"
 model = "ioLogik E1241"
 kind = "remote-io"
+category = "panel-io"
 channels = "4 AO"
 profile = "moxa-iologik-e1241.device"   # the device profile a controller copies into a project (helmsman-device 1)
 

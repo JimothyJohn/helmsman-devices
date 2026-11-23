@@ -5,6 +5,7 @@
 vendor = "Cognex"
 model = "DataMan 300 Series Reader"
 kind = "sensor"
+category = "vision"
 article = "DMR-3XX-00"
 
 [identity.enip]

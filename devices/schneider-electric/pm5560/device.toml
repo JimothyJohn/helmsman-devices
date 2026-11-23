@@ -4,6 +4,7 @@
 vendor = "Schneider Electric"
 model = "PowerLogic PM5560"
 kind = "other"
+category = "power-meter"
 article = "METSEPM5560"
 
 [protocols.modbus]
