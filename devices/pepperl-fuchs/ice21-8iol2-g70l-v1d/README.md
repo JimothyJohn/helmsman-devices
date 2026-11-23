@@ -16,6 +16,10 @@ revision 1.7; EDS file revision
 | Connection1 | Read/Write All Ports | 101 / 2..499 (Param4) | 117 / 2..499 (Param6) | 1 |
 | Connection2 | Read Only - All Ports | 101 / 2..499 (Param4) | 254 / 0 | 1 |
 
+## Channels
+
+No `channels` line: searched 2026-11-23 (web search on the full model number, the article number 70148669 and the family name ICE21; the ODVA Marketplace product page; the Pepperl+Fuchs IO-Link master page `/en/gp32668`) and found no Pepperl+Fuchs data sheet or manual for this model, and the EDS states no port count. The "8IOL" in the model number is not a source.
+
 ## Sources
 
 | what | SHA-256 | where |
