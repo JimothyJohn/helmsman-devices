@@ -2,6 +2,274 @@
  "format": "helmsman-devices-review 1",
  "devices": [
   {
+   "folder": "devices/advantech/adam-6015",
+   "vendor": "Advantech",
+   "model": "ADAM-6015",
+   "channels": "7 RTD AI",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:6 (4X 40001-40007); average of ch0-6 at hr:8 (40009)",
+     "meaning": "RTD input in engineering units (degC) as an integer word",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 191-192"
+    },
+    {
+     "name": "AI float value",
+     "modbus": "hr:30..hr:43 (4X 40031~40044, two words a channel, IEEE754)",
+     "meaning": "RTD input as a 32-bit float",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 193"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:100..hr:113 (4X 40101~40114, two words a channel)",
+     "meaning": "status bits: 0 = normal, bit 3 = open circuit/burnout",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194-195"
+    },
+    {
+     "name": "burnout flag",
+     "modbus": "coil:120..coil:126 (0X 00121-00127, read)",
+     "meaning": "1 = no RTD signal detected on the channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 192, remark 1 p. 194"
+    },
+    {
+     "name": "high alarm flag",
+     "modbus": "coil:130..coil:136 (0X 00131-00137, read)",
+     "meaning": "1 = input above the high alarm value set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 192, remark 2 p. 194"
+    },
+    {
+     "name": "low alarm flag",
+     "modbus": "coil:140..coil:146 (0X 00141-00147, read)",
+     "meaning": "1 = input below the low alarm value",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 193, remark 3 p. 194"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:206 (4X 40201-40207, R/W)",
+     "meaning": "input range, e.g. 0x03A4 = PT100(385) -50~150 degC; table of 14 codes",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194-195"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210..hr:211 (4X 40211-40212, read)",
+     "meaning": "the model as hex, a cheap identity check",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194, remark 6 p. 195"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which of the ADAM-6015 Modbus addresses does the manual mark as supported only by the ADAM-6015-DE (high-speed) version?",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194, note under the 6015 table (the marked addresses are shown by colour)"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6017",
+   "vendor": "Advantech",
+   "model": "ADAM-6017",
+   "channels": "8 AI, 2 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)",
+     "meaning": "analog input in engineering units, one word a channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 197"
+    },
+    {
+     "name": "AI float value",
+     "modbus": "hr:30..hr:45 (4X 40031~40046, two words a channel, IEEE754)",
+     "meaning": "analog input as a 32-bit float",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 198"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:100..hr:114 (4X 40101, 40103, ..., 40115, one word a channel at every second address)",
+     "meaning": "status bits: 0 fail, 1 over range, 2 under range, 3 open circuit/burnout, 7 ADC init error, 9 zero/span calibration error",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 198, remark 4 p. 199-200"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:17 (0X 00017-00018, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 195"
+    },
+    {
+     "name": "open-circuit flag",
+     "modbus": "coil:120..coil:127 (0X 00121-00128, read)",
+     "meaning": "1 = no signal in the 4~20 mA range",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 196, remark 1 p. 199"
+    },
+    {
+     "name": "high / low alarm flags",
+     "modbus": "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)",
+     "meaning": "1 = alarm active against the limits set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 196, remarks 2-3 p. 199"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:207 (4X 40201-40208, R/W)",
+     "meaning": "input range, e.g. 0x0143 = +/-10 V, 0x0180 = 4~20 mA; 13 codes",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199-200"
+    },
+    {
+     "name": "AI channel enable",
+     "modbus": "hr:220 (4X 40221, R/W)",
+     "meaning": "which channels are scanned; only on the CE or D version",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210..hr:211 (4X 40211-40212, read)",
+     "meaning": "the model as hex",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6018",
+   "vendor": "Advantech",
+   "model": "ADAM-6018",
+   "channels": "8 TC AI, 8 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)",
+     "meaning": "thermocouple input in engineering units, one word a channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 202"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:23 (0X 00017-00024, R/W)",
+     "meaning": "digital output command and state, 1 = on (ADAM-6018 only; the 6018+ has no outputs)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 200"
+    },
+    {
+     "name": "burnout flag",
+     "modbus": "coil:120..coil:127 (0X 00121-00128, read)",
+     "meaning": "1 = no thermocouple signal on the channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201, remark 1 p. 203"
+    },
+    {
+     "name": "high / low alarm flags",
+     "modbus": "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)",
+     "meaning": "1 = alarm active against the limits set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201-202, remarks 2-3 p. 203"
+    },
+    {
+     "name": "historical max / min AI value",
+     "modbus": "hr:10..hr:18 and hr:20..hr:28 (4X 40011-40019, 40021-40029, read)",
+     "meaning": "highest and lowest value seen per channel, cleared by coil:100.. / coil:110.. (0X 00101-00109, 00111-00119)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201-203"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6024",
+   "vendor": "Advantech",
+   "model": "ADAM-6024",
+   "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:1 (0X 00001-00002, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:17 (0X 00017-00018, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:5 (4X 40001-40006, read)",
+     "meaning": "analog input value in engineering units",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AO value",
+     "modbus": "hr:10..hr:11 (4X 40011-40012, R/W)",
+     "meaning": "analog output value",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:20..hr:25 (4X 40021-40026, read)",
+     "meaning": "0 normal, 1 over high, 2 over low (the table's last row repeats 0, read as invalid calibration)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:205 (4X 40201-40206, R/W)",
+     "meaning": "7 = 4~20 mA, 8 = +/-10 V, D = 0~20 mA",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "AO type code",
+     "modbus": "hr:208..hr:209 (4X 40209-40210, R/W)",
+     "meaning": "0 = 0~20 mA, 1 = 4~20 mA, 2 = 0~10 V",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210 (4X 40211, read)",
+     "meaning": "the model as hex",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "In the ADAM-6024 AI status remark, the bit-value list reads 0 normal, 1 over high, 2 over low and then 0 invalid calibration: is the last value 3, and is the over-high / over-low order right?",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204, remark 1 (the list repeats the value 0)"
+    }
+   ]
+  },
+  {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
@@ -133,6 +401,227 @@
      "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
      "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
      "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6066",
+   "vendor": "Advantech",
+   "model": "ADAM-6066",
+   "channels": "6 DI, 6 relay DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:5 (0X 00001-00006, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "relay DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "relay output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:55 (0X 00033-00056, four coils a channel)",
+     "meaning": "per channel: counter start (1) / stop (0), clear counter, clear overflow, DI latch status",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:11 (4X 40001-40012, two words a channel)",
+     "meaning": "counter value, or frequency in frequency mode",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 218"
+    },
+    {
+     "name": "pulse output widths",
+     "modbus": "hr:12..hr:35 (4X 40013-40036, two words a channel: low-level width then high-level width)",
+     "meaning": "pulse output timing per relay channel; absolute and incremental pulse registers follow (4X 40037-, not listed here)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 218"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6250",
+   "vendor": "Advantech",
+   "model": "ADAM-6250",
+   "channels": "8 DI, 7 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:7 (0X 00001-00008, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:22 (0X 00017-00023, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:63 (0X 00033-00064: start/stop, clear counter, clear overflow, DI latch, eight each)",
+     "meaning": "per DI channel counter and latch control",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137-138"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:15 (4X 40001-40016, two words a channel)",
+     "meaning": "counter value or frequency",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 138"
+    },
+    {
+     "name": "DI / DO as words",
+     "modbus": "hr:300 all DI, hr:302 all DO (4X 40301, 40303)",
+     "meaning": "every channel in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 139"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6251",
+   "vendor": "Advantech",
+   "model": "ADAM-6251",
+   "channels": "16 DI",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:15 (0X 00001-00016, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 140"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:95 (0X 00033-00096: start/stop, clear counter, clear overflow, DI latch, sixteen each)",
+     "meaning": "per DI channel counter and latch control",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 140-142"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:31 (4X 40001-40032, two words a channel)",
+     "meaning": "counter value or frequency",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 142"
+    },
+    {
+     "name": "DI as one word",
+     "modbus": "hr:300 (4X 40301)",
+     "meaning": "all 16 DI in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 142"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6256",
+   "vendor": "Advantech",
+   "model": "ADAM-6256",
+   "channels": "16 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:31 (0X 00017-00032, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 143"
+    },
+    {
+     "name": "pulse output widths and counts",
+     "modbus": "hr:0..hr:127 (4X 40001-40128: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)",
+     "meaning": "pulse output timing and count per output",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 143-145"
+    },
+    {
+     "name": "DO as one word",
+     "modbus": "hr:302 (4X 40303, R/W)",
+     "meaning": "all 16 DO in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 145"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "The ADAM-6256 table prints the absolute-pulse registers of channels 13 and 14 as 40091 - 40091 and 40093 - 40092: are they 40091-40092 and 40093-40094?",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 144"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6260",
+   "vendor": "Advantech",
+   "model": "ADAM-6260",
+   "channels": "6 relay DO (5 Form C, 1 Form A)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "relay DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "relay output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 146"
+    },
+    {
+     "name": "pulse output widths and counts",
+     "modbus": "hr:0..hr:47 (4X 40001-40048: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)",
+     "meaning": "pulse output timing and count per relay",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 146-147"
+    },
+    {
+     "name": "DO as one word",
+     "modbus": "hr:302 (4X 40303, R/W)",
+     "meaning": "all relays in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 147"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
     }
    ]
   },

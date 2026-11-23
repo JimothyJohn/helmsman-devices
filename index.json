@@ -2,6 +2,54 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/advantech/adam-6015",
+   "vendor": "Advantech",
+   "model": "ADAM-6015",
+   "kind": "remote-io",
+   "channels": "7 RTD AI",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6017",
+   "vendor": "Advantech",
+   "model": "ADAM-6017",
+   "kind": "remote-io",
+   "channels": "8 AI, 2 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6018",
+   "vendor": "Advantech",
+   "model": "ADAM-6018",
+   "kind": "remote-io",
+   "channels": "8 TC AI, 8 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6024",
+   "vendor": "Advantech",
+   "model": "ADAM-6024",
+   "kind": "remote-io",
+   "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
@@ -43,6 +91,70 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
    },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6066",
+   "vendor": "Advantech",
+   "model": "ADAM-6066",
+   "kind": "remote-io",
+   "channels": "6 DI, 6 relay DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6250",
+   "vendor": "Advantech",
+   "model": "ADAM-6250",
+   "kind": "remote-io",
+   "channels": "8 DI, 7 DO (sink)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6250/Product%20-%20Photo(Main)/ADAM-6250_03_S20190730122849.jpg",
+    "page": "https://www.advantech.com/en/products/7447e150-338d-402d-b5a1-c9ce6d98816e/adam-6250/mod_da940b26-501f-413e-bfbc-732fd7496782"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6251",
+   "vendor": "Advantech",
+   "model": "ADAM-6251",
+   "kind": "remote-io",
+   "channels": "16 DI",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6256",
+   "vendor": "Advantech",
+   "model": "ADAM-6256",
+   "kind": "remote-io",
+   "channels": "16 DO (sink)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6260",
+   "vendor": "Advantech",
+   "model": "ADAM-6260",
+   "kind": "remote-io",
+   "channels": "6 relay DO (5 Form C, 1 Form A)",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
