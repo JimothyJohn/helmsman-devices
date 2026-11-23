@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SMC Corporation"
+model = "EX600-SEN3/SEN4"
+kind = "remote-io"
+article = "EX600-SEN3/4"
+
+[identity.enip]
+vendor_id = 7
+product_code = 203
+device_type = 12
+revisions = ["1.2"]   # the EDS's MajRev.MinRev
+product_name = "EX600-SEN3/4"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..220 bytes, default 0
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param1: 0..220 bytes, default 0
+output_assembly = { instance = 150 }
+config_assembly = { instance = 105, bytes = 0 }
+eds = { name = "ex600_sen3_4_v11.eds", size = 17866, sha256 = "dc93058747800c178b5b456840bf753c0c11e9e3c06e8d0961bd03bec6f7a553", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip (member of 11319.02-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)"
+sha256 = "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"

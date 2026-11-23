@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo AG & Co. KG"
+model = "CPX-FB36"
+kind = "remote-io"
+article = "CPX-FB36"
+
+[identity.enip]
+vendor_id = 26
+product_code = 14026
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CPX-FB36 EtherNet/IP 2-Port Remote I/O"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "I/O Connection (SINT-Format)"
+# input_assembly: the size is set by Param1: 0..64 bytes, default 4
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param2: 0..64 bytes, default 4
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102 }
+eds = { name = "CPX-FB36.eds", size = 33526, sha256 = "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds", terms = "none stated" }
+
+[[sources]]
+title = "CPX-FB36 EDS (ODVA marketplace, product 1773)"
+sha256 = "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds; retrieved 2026-11-23; not redistributed here"

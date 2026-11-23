@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "CPX-AP-I-EP-M12"
+kind = "remote-io"
+article = "CPX-AP-I-EP"
+
+[identity.enip]
+vendor_id = 26
+product_code = 14057
+device_type = 12
+revisions = ["1.3"]   # the EDS's MajRev.MinRev
+product_name = "CPX-AP-I-EP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "I/O Con. Fixed SINT 16"
+# input_assembly: the size is set by Param3: 16..18 bytes, default 16
+input_assembly = { instance = 110 }
+# output_assembly: the size is set by Param4: 16..16 bytes, default 16
+output_assembly = { instance = 111 }
+config_assembly = { instance = 140 }
+eds = { name = "CPX-AP-I-EP_NoConfig.eds", size = 54219, sha256 = "271a251efdbc18c7d0ce4dd9fe245f057bb96437e3dc6e0b13f32cb90221c575", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip (member of 12178.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)"
+sha256 = "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)"
+sha256 = "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,110 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds",
+   "folders": [
+    "devices/smc/ex600-sen1"
+   ],
+   "kind": "eds",
+   "name": "EX600_SEN_.eds",
+   "retrieved": "2026-11-23T03:38:03Z",
+   "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e",
+   "size": 10860,
+   "terms": "none stated",
+   "title": "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip",
+   "folders": [
+    "devices/smc/ex600-sen3"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ex600_sen3_4_v11.eds",
+     "sha256": "dc93058747800c178b5b456840bf753c0c11e9e3c06e8d0961bd03bec6f7a553",
+     "size": 17866,
+     "type": "eds"
+    }
+   ],
+   "name": "11319.02-EDS.zip",
+   "retrieved": "2026-11-23T03:38:03Z",
+   "sha256": "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e",
+   "size": 3479,
+   "terms": "none stated",
+   "title": "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip",
+   "folders": [
+    "devices/smc/ex260-sen1",
+    "devices/smc/ex260-sen2",
+    "devices/smc/ex260-sen3",
+    "devices/smc/ex260-sen4"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS_file/ex260_sen1_24_v22.eds",
+     "sha256": "5ba9793175e7a8479ae97db56cd89faf535ba46f85fd3b55098f60b3dfe4f78b",
+     "size": 15092,
+     "type": "eds"
+    },
+    {
+     "name": "EDS_file/ex260_sen2_24_v22.eds",
+     "sha256": "48688b7c007affabb7cab673d682ddcdedc64eadb524a26c4aed0dc096493c3d",
+     "size": 15092,
+     "type": "eds"
+    },
+    {
+     "name": "EDS_file/ex260_sen3_24_v22.eds",
+     "sha256": "7491b14ee137e0f8752287fe5ef1670daa217ede7696cbcee4d3e6d8c600ea88",
+     "size": 15092,
+     "type": "eds"
+    },
+    {
+     "name": "EDS_file/ex260_sen4_24_v22.eds",
+     "sha256": "2692aaa3aba57bea855e4145f6eefd76bd0b034c4cca87db5290c163e28e96ba",
+     "size": 15092,
+     "type": "eds"
+    }
+   ],
+   "name": "11007_EDS_file.zip",
+   "retrieved": "2026-11-23T03:38:03Z",
+   "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+   "size": 8454,
+   "terms": "none stated",
+   "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip",
+   "folders": [
+    "devices/smc/ex600-sen7"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ex600_sen7_8_v10.eds",
+     "sha256": "3de03eb923764bae8e31612d2c5f7323fd709ca178c97f0f5ea9bb45ce706140",
+     "size": 18775,
+     "type": "eds"
+    }
+   ],
+   "name": "12174.01-EDS.zip",
+   "retrieved": "2026-11-23T03:38:03Z",
+   "sha256": "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b",
+   "size": 2259,
+   "terms": "none stated",
+   "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

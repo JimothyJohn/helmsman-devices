@@ -1,0 +1,38 @@
+format = "helmsman-devices-collect 1"
+vendor = "SMC"
+
+# EDS files from the ODVA marketplace pages SMC submitted for conformance (https://marketplace.odva.org/organizations/221-smc-corporation); read 2026-11-22.
+
+[[doc]]
+folders = ["devices/smc/ex260-sen1", "devices/smc/ex260-sen2", "devices/smc/ex260-sen3", "devices/smc/ex260-sen4"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip"
+title = "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)"
+found = "2026-11-22 search: smc ex260-sen eds; https://marketplace.odva.org/products/1560-ex260-sen1-ex260-sen2-ex260-sen3-ex260-sen4, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen3"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip"
+title = "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)"
+found = "2026-11-22 search: smc ex600-sen3 eds; https://marketplace.odva.org/products/1176-ex600-sen3-4, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen1"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds"
+title = "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)"
+found = "2026-11-22 search: smc ex600-sen eds; https://marketplace.odva.org/products/1049-ex600-sen, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen7"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip"
+title = "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)"
+found = "2026-11-22 search: smc ex600-sen7 eds; https://marketplace.odva.org/products/2421-ex600-sen7-8, Download the EDS File"
+terms = "none stated"
+
+# One EDS (one product code) covers EX600-SEN3 and SEN4, SEN1 and SEN2, SEN7 and SEN8, so each pair is one folder.
