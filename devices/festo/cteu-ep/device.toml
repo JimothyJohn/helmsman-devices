@@ -30,3 +30,79 @@ eds = { name = "CTEU-EP.eds", size = 57519, sha256 = "ca6bf7b5be775efd584120b224
 title = "CTEU-EP EDS (ODVA marketplace, product 1771)"
 sha256 = "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds; retrieved 2026-11-23; not redistributed here"
+
+# The CTEU-EP carries the bytes of whatever I-Port device sits behind it (a valve
+# terminal, a CAPC connection box). The documents in the store give the sizes and
+# instances, not which bit switches which solenoid coil: that belongs to the
+# I-Port device. No point below names a coil.
+[[points]]
+name = "outputs, single port"
+enip = "out:0.0..out:7.7"
+meaning = "8 bytes of output data for the I-Port device on the single port (assembly 110); what each bit does, for example which solenoid coil it switches, is set by the connected I-Port device and is not given in this manual"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Single Port Outputs', instance 110, column Size = 8; size in bytes, no byte or bit labels in the table"
+
+[[points]]
+name = "inputs, single port"
+enip = "in:0.0..in:7.7"
+meaning = "8 bytes of input data from the I-Port device on the single port (assembly 111); the bits mean what the connected I-Port device reports. With DIL switch 2.5 ON two status bytes are prefixed (see 'status bytes'), which moves these bytes up by two and makes the image 10 bytes (inferred from 'prefixed')"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Single Port Inputs', instance 111, column Size = 8, footnote 3; PDF p. 1, section 5.2 DIL switch table, switch 2.5; size in bytes, no byte or bit labels in the table"
+
+[[points]]
+name = "status bytes"
+enip = "in:0.0..in:1.7"
+meaning = "2 status bytes: prefixed to the input image when DIL switch 2.5 is ON (so at in bytes 0 and 1 of assembly 111, inferred from 'prefixed'), otherwise absent; on a separate connection they are assembly 103, 2 bytes. Their bits are not given in this manual (it points to the Appendix to the operating instructions)"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 1, section 5.2 DIL switch table, switch 2.5 'Status bytes'; PDF p. 2, section 5.5 table 'Connection Parameters' footnote 3 and row 'Status Input', instance 103, Size 2"
+
+[[points]]
+name = "outputs, dual port 16 bytes"
+enip = "out:0.0..out:15.7"
+meaning = "16 bytes of output data for the two I-Port devices (assembly 120); how the bytes split between port 1 and port 2 is not stated"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Outputs', instance 120, column Size = 16"
+
+[[points]]
+name = "inputs, dual port 16 bytes"
+enip = "in:0.0..in:15.7"
+meaning = "16 bytes of input data from the two I-Port devices (assembly 121); 2 status bytes are prefixed when DIL switch 2.5 is ON (inferred from 'prefixed')"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Inputs', instance 121, column Size = 16, footnote 3"
+
+[[points]]
+name = "outputs, dual port 32 bytes"
+enip = "out:0.0..out:31.7"
+meaning = "32 bytes of output data for the two I-Port devices (assembly 130); how the bytes split between the ports is not stated"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Outputs', instance 130, column Size = 32"
+
+[[points]]
+name = "inputs, dual port 32 bytes"
+enip = "in:0.0..in:31.7"
+meaning = "32 bytes of input data from the two I-Port devices (assembly 131); 2 status bytes are prefixed when DIL switch 2.5 is ON (inferred from 'prefixed')"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Inputs', instance 131, column Size = 32, footnote 3"
+
+[[points]]
+name = "outputs, dual port 64 bytes"
+enip = "out:0.0..out:63.7"
+meaning = "64 bytes of output data for the two I-Port devices (assembly 140); how the bytes split between the ports is not stated"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Outputs', instance 140, column Size = 64"
+
+[[points]]
+name = "inputs, dual port 64 bytes"
+enip = "in:0.0..in:63.7"
+meaning = "64 bytes of input data from the two I-Port devices (assembly 141); 2 status bytes are prefixed when DIL switch 2.5 is ON (inferred from 'prefixed')"
+source = "Operating instructions CTEU-EP (2017-02a) PDF p. 2, section 5.5 table 'Connection Parameters', row 'Dual Port Inputs', instance 141, column Size = 64, footnote 3"
+
+[[sources]]
+title = "Operating instructions CTEU-EP, bus node EtherNet/IP (CTEU-EP_2017-02a_8067819g1), 2 pages"
+sha256 = "de54e31c2882b1c88172c3385a58d5f8b8c7dfc9499c21109a838febaf91f9a4"
+where = "https://www.festo.com/assets/attachment/en/661102, downloaded in a browser 2026-11-23 (festo.com does not answer a fetch); kept in the private document store; not redistributed here"
+
+[[sources]]
+title = "CTEU-EP / CTEU-VN additional information (CTEU-EP_CTEU-VN_additional_2024-07_8218501g1), 6 pages, cyber security addendum"
+sha256 = "e50154d290627a0ba68aa666da0f0ffb3069de2be88326a6f49dc5cf56850fe0"
+where = "https://www.festo.com/assets/attachment/en/700368, downloaded in a browser 2026-11-23 (festo.com does not answer a fetch); kept in the private document store; not redistributed here. Gives ports and cyber security measures; no process data"
+
+[[questions]]
+ask = "Which bit of the output image switches which solenoid coil, and which bits do the two status bytes carry? The operating instructions say the I-Port device sets the data and refer to an 'Appendix to operating instructions' (the CTEU-EP EtherNet/IP objects) that is not in the store."
+source = "Operating instructions CTEU-EP PDF p. 2, section 6 (EtherNet/IP Objects): 'For detailed information on the objects ... Appendix to operating instructions'"
+
+[[questions]]
+ask = "The manual's connection table says to enter Configuration assembly instance 102 with size 0 in a Generic Ethernet Module; the EDS gives assembly 102 as 38 bytes. Which does a unit accept?"
+source = "Operating instructions CTEU-EP PDF p. 2, section 5.5 step 9; EDS Assem102 (config_assembly bytes = 38 in this entry)"
