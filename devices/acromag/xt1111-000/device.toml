@@ -1,0 +1,45 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Acromag"
+model = "XT1111-000"
+kind = "remote-io"
+channels = "16 DI (active-low), 16 DO (low-side, sinking)"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# Unit ID: the manual says a slave ignores it and echoes it back (p. 28, the Modbus TCP frame note).
+
+[[points]]
+name = "DI group 0..3"
+modbus = "ir:0..ir:3 (3x 30001-30004, FC 4; one word a group of 4 channels, bit n = channel n of the group)"
+meaning = "input state, 1 = on (active-low input asserted below 0.8 V)"
+source = "XT1111-000 User's Manual 8500949 p. 33-34"
+
+[[points]]
+name = "heart beat"
+modbus = "ir:4 (3x 30005, FC 4)"
+meaning = "counter that increments by 1 for each host-to-network transfer, 0 to 65535; shows whether the data is fresh"
+source = "XT1111-000 User's Manual 8500949 p. 34"
+
+[[points]]
+name = "DO group 0..3"
+modbus = "hr:0..hr:3 (4x 40001-40004, FC 3, 6, 16; bit n = output channel n of the group)"
+meaning = "output state command, 1 = on (output closed), 0 = off (open)"
+source = "XT1111-000 User's Manual 8500949 p. 34-35"
+
+[[points]]
+name = "module identity"
+modbus = "FC 17 Report Slave ID (hidden function)"
+meaning = "a string such as Acromag,XT1121-xxx,9300-217 in the manual's example"
+source = "XT1111-000 User's Manual 8500949 p. 32"
+
+[[questions]]
+ask = "Are the XT1111 holding registers kept in flash across a power cycle? The XT1111 manual says they are maintained in non-volatile flash, the sister XT1121 manual says they are not."
+source = "XT1111-000 manual 8500949 p. 33 and XT1121-000 manual 8500950 p. 33"
+
+[[sources]]
+title = "8500949 XT1111-000 User's Manual"
+sha256 = "096903b0ddf79b0ad8f706233b19e2a428a2feabeab9d5be6f7be67088377faf"
+where = "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf; retrieved 2026-11-22; not redistributed here"

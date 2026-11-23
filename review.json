@@ -2,6 +2,372 @@
  "format": "helmsman-devices-review 1",
  "devices": [
   {
+   "folder": "devices/acromag/xt1111-000",
+   "vendor": "Acromag",
+   "model": "XT1111-000",
+   "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI group 0..3",
+     "modbus": "ir:0..ir:3 (3x 30001-30004, FC 4; one word a group of 4 channels, bit n = channel n of the group)",
+     "meaning": "input state, 1 = on (active-low input asserted below 0.8 V)",
+     "source": "XT1111-000 User's Manual 8500949 p. 33-34"
+    },
+    {
+     "name": "heart beat",
+     "modbus": "ir:4 (3x 30005, FC 4)",
+     "meaning": "counter that increments by 1 for each host-to-network transfer, 0 to 65535; shows whether the data is fresh",
+     "source": "XT1111-000 User's Manual 8500949 p. 34"
+    },
+    {
+     "name": "DO group 0..3",
+     "modbus": "hr:0..hr:3 (4x 40001-40004, FC 3, 6, 16; bit n = output channel n of the group)",
+     "meaning": "output state command, 1 = on (output closed), 0 = off (open)",
+     "source": "XT1111-000 User's Manual 8500949 p. 34-35"
+    },
+    {
+     "name": "module identity",
+     "modbus": "FC 17 Report Slave ID (hidden function)",
+     "meaning": "a string such as Acromag,XT1121-xxx,9300-217 in the manual's example",
+     "source": "XT1111-000 User's Manual 8500949 p. 32"
+    }
+   ],
+   "sources": [
+    {
+     "title": "8500949 XT1111-000 User's Manual",
+     "sha256": "096903b0ddf79b0ad8f706233b19e2a428a2feabeab9d5be6f7be67088377faf",
+     "where": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Are the XT1111 holding registers kept in flash across a power cycle? The XT1111 manual says they are maintained in non-volatile flash, the sister XT1121 manual says they are not.",
+     "source": "XT1111-000 manual 8500949 p. 33 and XT1121-000 manual 8500950 p. 33"
+    }
+   ]
+  },
+  {
+   "folder": "devices/acromag/xt1121-000",
+   "vendor": "Acromag",
+   "model": "XT1121-000",
+   "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI group 0..3",
+     "modbus": "ir:0..ir:3 (3x 30001-30004, FC 4; one word a group of 4 channels, bit n = channel n of the group)",
+     "meaning": "input state, 1 = on (active-high input asserted above 2.0 V)",
+     "source": "XT1121-000 User's Manual 8500950 p. 33-34"
+    },
+    {
+     "name": "heart beat",
+     "modbus": "ir:4 (3x 30005, FC 4)",
+     "meaning": "counter that increments by 1 for each host-to-network transfer, 0 to 65535; shows whether the data is fresh",
+     "source": "XT1121-000 User's Manual 8500950 p. 34"
+    },
+    {
+     "name": "DO group 0..3",
+     "modbus": "hr:0..hr:3 (4x 40001-40004, FC 3, 6, 16; bit n = output channel n of the group)",
+     "meaning": "output state command, 1 = on (output closed), 0 = off (open)",
+     "source": "XT1121-000 User's Manual 8500950 p. 34-35"
+    },
+    {
+     "name": "module identity",
+     "modbus": "FC 17 Report Slave ID (hidden function)",
+     "meaning": "a string such as Acromag,XT1121-xxx,9300-217 in the manual's example",
+     "source": "XT1121-000 User's Manual 8500950 p. 32"
+    }
+   ],
+   "sources": [
+    {
+     "title": "8500950 XT1121-000 User's Manual",
+     "sha256": "6df1f36f3bca3ca137133676b05e44b534e0fc50b1460eff8f0c3cd927bf701b",
+     "where": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1121_950P-User-Manual.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Are the XT1121-000 holding registers kept in flash across a power cycle? The XT1121 manual says holding register values are not maintained in non-volatile flash, the sister XT1111 manual says they are.",
+     "source": "XT1121-000 manual 8500950 p. 33 (not maintained) and XT1111-000 manual 8500949 p. 33 (maintained)"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6015",
+   "vendor": "Advantech",
+   "model": "ADAM-6015",
+   "channels": "7 RTD AI",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:6 (4X 40001-40007); average of ch0-6 at hr:8 (40009)",
+     "meaning": "RTD input in engineering units (degC) as an integer word",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 191-192"
+    },
+    {
+     "name": "AI float value",
+     "modbus": "hr:30..hr:43 (4X 40031~40044, two words a channel, IEEE754)",
+     "meaning": "RTD input as a 32-bit float",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 193"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:100..hr:113 (4X 40101~40114, two words a channel)",
+     "meaning": "status bits: 0 = normal, bit 3 = open circuit/burnout",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194-195"
+    },
+    {
+     "name": "burnout flag",
+     "modbus": "coil:120..coil:126 (0X 00121-00127, read)",
+     "meaning": "1 = no RTD signal detected on the channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 192, remark 1 p. 194"
+    },
+    {
+     "name": "high alarm flag",
+     "modbus": "coil:130..coil:136 (0X 00131-00137, read)",
+     "meaning": "1 = input above the high alarm value set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 192, remark 2 p. 194"
+    },
+    {
+     "name": "low alarm flag",
+     "modbus": "coil:140..coil:146 (0X 00141-00147, read)",
+     "meaning": "1 = input below the low alarm value",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 193, remark 3 p. 194"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:206 (4X 40201-40207, R/W)",
+     "meaning": "input range, e.g. 0x03A4 = PT100(385) -50~150 degC; table of 14 codes",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194-195"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210..hr:211 (4X 40211-40212, read)",
+     "meaning": "the model as hex, a cheap identity check",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194, remark 6 p. 195"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which of the ADAM-6015 Modbus addresses does the manual mark as supported only by the ADAM-6015-DE (high-speed) version?",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 194, note under the 6015 table (the marked addresses are shown by colour)"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6017",
+   "vendor": "Advantech",
+   "model": "ADAM-6017",
+   "channels": "8 AI, 2 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)",
+     "meaning": "analog input in engineering units, one word a channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 197"
+    },
+    {
+     "name": "AI float value",
+     "modbus": "hr:30..hr:45 (4X 40031~40046, two words a channel, IEEE754)",
+     "meaning": "analog input as a 32-bit float",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 198"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:100..hr:114 (4X 40101, 40103, ..., 40115, one word a channel at every second address)",
+     "meaning": "status bits: 0 fail, 1 over range, 2 under range, 3 open circuit/burnout, 7 ADC init error, 9 zero/span calibration error",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 198, remark 4 p. 199-200"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:17 (0X 00017-00018, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 195"
+    },
+    {
+     "name": "open-circuit flag",
+     "modbus": "coil:120..coil:127 (0X 00121-00128, read)",
+     "meaning": "1 = no signal in the 4~20 mA range",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 196, remark 1 p. 199"
+    },
+    {
+     "name": "high / low alarm flags",
+     "modbus": "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)",
+     "meaning": "1 = alarm active against the limits set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 196, remarks 2-3 p. 199"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:207 (4X 40201-40208, R/W)",
+     "meaning": "input range, e.g. 0x0143 = +/-10 V, 0x0180 = 4~20 mA; 13 codes",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199-200"
+    },
+    {
+     "name": "AI channel enable",
+     "modbus": "hr:220 (4X 40221, R/W)",
+     "meaning": "which channels are scanned; only on the CE or D version",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210..hr:211 (4X 40211-40212, read)",
+     "meaning": "the model as hex",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 199"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6018",
+   "vendor": "Advantech",
+   "model": "ADAM-6018",
+   "channels": "8 TC AI, 8 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)",
+     "meaning": "thermocouple input in engineering units, one word a channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 202"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:23 (0X 00017-00024, R/W)",
+     "meaning": "digital output command and state, 1 = on (ADAM-6018 only; the 6018+ has no outputs)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 200"
+    },
+    {
+     "name": "burnout flag",
+     "modbus": "coil:120..coil:127 (0X 00121-00128, read)",
+     "meaning": "1 = no thermocouple signal on the channel",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201, remark 1 p. 203"
+    },
+    {
+     "name": "high / low alarm flags",
+     "modbus": "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)",
+     "meaning": "1 = alarm active against the limits set in the Adam/Apax .NET Utility",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201-202, remarks 2-3 p. 203"
+    },
+    {
+     "name": "historical max / min AI value",
+     "modbus": "hr:10..hr:18 and hr:20..hr:28 (4X 40011-40019, 40021-40029, read)",
+     "meaning": "highest and lowest value seen per channel, cleared by coil:100.. / coil:110.. (0X 00101-00109, 00111-00119)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 201-203"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6024",
+   "vendor": "Advantech",
+   "model": "ADAM-6024",
+   "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:1 (0X 00001-00002, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:17 (0X 00017-00018, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AI value",
+     "modbus": "hr:0..hr:5 (4X 40001-40006, read)",
+     "meaning": "analog input value in engineering units",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AO value",
+     "modbus": "hr:10..hr:11 (4X 40011-40012, R/W)",
+     "meaning": "analog output value",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 203"
+    },
+    {
+     "name": "AI status",
+     "modbus": "hr:20..hr:25 (4X 40021-40026, read)",
+     "meaning": "0 normal, 1 over high, 2 over low (the table's last row repeats 0, read as invalid calibration)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "AI type code",
+     "modbus": "hr:200..hr:205 (4X 40201-40206, R/W)",
+     "meaning": "7 = 4~20 mA, 8 = +/-10 V, D = 0~20 mA",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "AO type code",
+     "modbus": "hr:208..hr:209 (4X 40209-40210, R/W)",
+     "meaning": "0 = 0~20 mA, 1 = 4~20 mA, 2 = 0~10 V",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    },
+    {
+     "name": "module name",
+     "modbus": "hr:210 (4X 40211, read)",
+     "meaning": "the model as hex",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "In the ADAM-6024 AI status remark, the bit-value list reads 0 normal, 1 over high, 2 over low and then 0 invalid calibration: is the last value 3, and is the over-high / over-low order right?",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 204, remark 1 (the list repeats the value 0)"
+    }
+   ]
+  },
+  {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
@@ -133,6 +499,227 @@
      "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
      "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
      "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6066",
+   "vendor": "Advantech",
+   "model": "ADAM-6066",
+   "channels": "6 DI, 6 relay DO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:5 (0X 00001-00006, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "relay DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "relay output command and state, 1 = on",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:55 (0X 00033-00056, four coils a channel)",
+     "meaning": "per channel: counter start (1) / stop (0), clear counter, clear overflow, DI latch status",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 217"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:11 (4X 40001-40012, two words a channel)",
+     "meaning": "counter value, or frequency in frequency mode",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 218"
+    },
+    {
+     "name": "pulse output widths",
+     "modbus": "hr:12..hr:35 (4X 40013-40036, two words a channel: low-level width then high-level width)",
+     "meaning": "pulse output timing per relay channel; absolute and incremental pulse registers follow (4X 40037-, not listed here)",
+     "source": "ADAM-6000 User Manual Ed. 12 p. 218"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)",
+     "sha256": "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6250",
+   "vendor": "Advantech",
+   "model": "ADAM-6250",
+   "channels": "8 DI, 7 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:7 (0X 00001-00008, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137"
+    },
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:22 (0X 00017-00023, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:63 (0X 00033-00064: start/stop, clear counter, clear overflow, DI latch, eight each)",
+     "meaning": "per DI channel counter and latch control",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 137-138"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:15 (4X 40001-40016, two words a channel)",
+     "meaning": "counter value or frequency",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 138"
+    },
+    {
+     "name": "DI / DO as words",
+     "modbus": "hr:300 all DI, hr:302 all DO (4X 40301, 40303)",
+     "meaning": "every channel in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 139"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6251",
+   "vendor": "Advantech",
+   "model": "ADAM-6251",
+   "channels": "16 DI",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI",
+     "modbus": "coil:0..coil:15 (0X 00001-00016, read)",
+     "meaning": "digital input state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 140"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:32..coil:95 (0X 00033-00096: start/stop, clear counter, clear overflow, DI latch, sixteen each)",
+     "meaning": "per DI channel counter and latch control",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 140-142"
+    },
+    {
+     "name": "DI counter / frequency value",
+     "modbus": "hr:0..hr:31 (4X 40001-40032, two words a channel)",
+     "meaning": "counter value or frequency",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 142"
+    },
+    {
+     "name": "DI as one word",
+     "modbus": "hr:300 (4X 40301)",
+     "meaning": "all 16 DI in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 142"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6256",
+   "vendor": "Advantech",
+   "model": "ADAM-6256",
+   "channels": "16 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DO",
+     "modbus": "coil:16..coil:31 (0X 00017-00032, R/W)",
+     "meaning": "digital output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 143"
+    },
+    {
+     "name": "pulse output widths and counts",
+     "modbus": "hr:0..hr:127 (4X 40001-40128: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)",
+     "meaning": "pulse output timing and count per output",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 143-145"
+    },
+    {
+     "name": "DO as one word",
+     "modbus": "hr:302 (4X 40303, R/W)",
+     "meaning": "all 16 DO in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 145"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "The ADAM-6256 table prints the absolute-pulse registers of channels 13 and 14 as 40091 - 40091 and 40093 - 40092: are they 40091-40092 and 40093-40094?",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 144"
+    }
+   ]
+  },
+  {
+   "folder": "devices/advantech/adam-6260",
+   "vendor": "Advantech",
+   "model": "ADAM-6260",
+   "channels": "6 relay DO (5 Form C, 1 Form A)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "relay DO",
+     "modbus": "coil:16..coil:21 (0X 00017-00022, R/W)",
+     "meaning": "relay output command and state, 1 = on",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 146"
+    },
+    {
+     "name": "pulse output widths and counts",
+     "modbus": "hr:0..hr:47 (4X 40001-40048: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)",
+     "meaning": "pulse output timing and count per relay",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 146-147"
+    },
+    {
+     "name": "DO as one word",
+     "modbus": "hr:302 (4X 40303, R/W)",
+     "meaning": "all relays in one register",
+     "source": "ADAM-6200 User Manual Ed. 5 p. 147"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)",
+     "sha256": "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f",
+     "where": "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
     }
    ]
   },
@@ -543,6 +1130,404 @@
    ]
   },
   {
+   "folder": "devices/emerson/numatics-580-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 580,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics 580 Ethernet/IP"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "NUMATICS-580.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics 580 EtherNet/IP EDS (ODVA marketplace, product 1165)",
+     "sha256": "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP DLR+QC",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 5800,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics 580 Ethernet/IP DLR+QC"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "NUMATICS-5800.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics 580 EtherNet/IP DLR/QuickConnect EDS (ODVA marketplace, product 1166)",
+     "sha256": "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/emerson/numatics-g3-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics G3 EtherNet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 101,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics G3 Ethernet/IP DLR+QC"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "G3EP0102s-2013-03-01.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics G3 EtherNet/IP node EDS (ODVA marketplace, product 516)",
+     "sha256": "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cmmt-as",
+   "vendor": "Festo",
+   "model": "CMMT-AS-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 65282,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CMMT-AS"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CMMT-AS-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)",
+     "sha256": "49a30233e0d5ee3c8f03c8ecea9f8e11bed747a3988da0f3674b79ce09c0c968",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-ap-a-ep",
+   "vendor": "Festo",
+   "model": "CPX-AP-A-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14064,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "CPX-AP-A-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "CPX-AP-A-EP_NoConfig.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)",
+     "sha256": "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)",
+     "sha256": "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-ap-i-ep-m12",
+   "vendor": "Festo",
+   "model": "CPX-AP-I-EP-M12",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14057,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "CPX-AP-I-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "CPX-AP-I-EP_NoConfig.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)",
+     "sha256": "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)",
+     "sha256": "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-e-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-E-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14040,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-E-EP EtherNet/IP 2-Port Remote I/O"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "CPX-E-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-E-EP EDS (ODVA marketplace, product 1883)",
+     "sha256": "6f8a0156a2f41f70dece568a53e325b826cc7cd545ba3f5428cd7a62a207bbc8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-fb32",
+   "vendor": "Festo Corporation",
+   "model": "CPX-FB32",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 13002,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-FB32 Remote I/O"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 13
+    },
+    "output": {
+     "instance": 100,
+     "bytes": 11
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CPX-FB32.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-FB32 EDS (ODVA marketplace, product 981)",
+     "sha256": "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-fb36",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-FB36",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14026,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-FB36 EtherNet/IP 2-Port Remote I/O"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CPX-FB36.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-FB36 EDS (ODVA marketplace, product 1773)",
+     "sha256": "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cteu-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CTEU-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 6001,
+     "device_type": 12,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "CTEU-EP EtherNet/IP bus node"
+    },
+    "input": {
+     "instance": 111
+    },
+    "output": {
+     "instance": 110
+    },
+    "config": {
+     "instance": 102,
+     "bytes": 38
+    },
+    "eds": "CTEU-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CTEU-EP EDS (ODVA marketplace, product 1771)",
+     "sha256": "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/vabx-a-cted-ep",
+   "vendor": "Festo",
+   "model": "VABX-A-S-EL-E12-CTED-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14065,
+     "device_type": 12,
+     "revisions": [
+      "1.2"
+     ],
+     "product_name": "VABX-A-S-EL-E12-CTED-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "VABX_A_S_EL_E12-CTED_EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)",
+     "sha256": "6893130fd051baab752a19aef9f45ffc3cdaa119756076ab77de5846198035e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
@@ -591,6 +1576,70 @@
      "title": "IODD ifm-000257-20190307-IODD1.1.xml",
      "sha256": "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831",
      "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/imi-norgren/vr1x-ep",
+   "vendor": "Norgren Manufacturing Co., Ltd.",
+   "model": "VR1X-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1609,
+     "product_code": 1,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "VR1X-EP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 10
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 3
+    },
+    "config": {
+     "instance": 151,
+     "bytes": 102
+    },
+    "eds": "NORGREN-VR1X-EP-24-V1.2.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VR1X-EP EtherNet/IP EDS (ODVA marketplace, product 2241)",
+     "sha256": "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/imi-norgren/vs18-vs26",
+   "vendor": "IMI Norgren Limited",
+   "model": "VS18/VS26",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 42,
+     "product_code": 332,
+     "device_type": 27,
+     "revisions": [
+      "2.8"
+     ],
+     "product_name": "NORGREN VSxx 32"
+    },
+    "eds": "VS_32.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)",
+     "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -1056,6 +2105,109 @@
    ]
   },
   {
+   "folder": "devices/moxa/iologik-e2210",
+   "vendor": "Moxa",
+   "model": "ioLogik E2210",
+   "channels": "12 DI, 8 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e2212",
+   "vendor": "Moxa",
+   "model": "ioLogik E2212",
+   "channels": "8 DI, 8 DO, 4 DIO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e2242",
+   "vendor": "Moxa",
+   "model": "ioLogik E2242",
+   "channels": "4 AI, 12 DIO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iothinx-4510",
+   "vendor": "Moxa",
+   "model": "ioThinx 4510",
+   "channels": "modular, up to 32 I/O modules",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "BIR internal bits",
+     "modbus": "coil (0xxxx), 48 bits, parameter boolInternalRegister",
+     "meaning": "BOOL internal register, read/write",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "watchdog alarm flag",
+     "modbus": "input status (1xxxx), 1 bit, parameter watchdogAlarmFlag",
+     "meaning": "0 normal, 1 watchdog alarm",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "WORD / DWORD / FLOAT internal registers",
+     "modbus": "holding register (4xxxx), parameters wirValue (48 words), dirValue (96), firValue (96)",
+     "meaning": "internal registers holding values from the Modbus RTU master or other sources",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "device identity",
+     "modbus": "input register (3xxxx), parameters deviceName (8 bytes), firmwareVersion (4), firmwareBuildDate (4), serialNumber (6), systemError (1 word)",
+     "meaning": "name, firmware, build date and error word as ASCII bytes",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 112"
+    },
+    {
+     "name": "45MR-1600 / 1601 DI module",
+     "modbus": "input status diStatus (16 bits), diMode (16); holding diCounterValue (8 DWORD); input register diStatusAll (1 word)",
+     "meaning": "16 DI channels, DI or counter mode; the module's base address depends on its slot",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 112"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioThinx 4510 Series User's Manual, v6.2",
+     "sha256": "c70d5cd9a76772ff5237ee923ef0be86c4a5f3de8be5074f3b25580147b6a6bc",
+     "where": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/murrelektronik/impact67-e-di16",
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DI16",
@@ -1491,6 +2643,117 @@
     {
      "ask": "Which output assembly does a unit accept: 148, where the EDS's Connection1 path ends, or 150, which the EDS lists as 'NX Output area'?",
      "source": "NX-EIC202.eds: Connection1 path '20 04 24 C7 2C 94 2C 64' against Assem150"
+    }
+   ]
+  },
+  {
+   "folder": "devices/parker/p2h-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2H Node 32DO EtherNet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53296,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2H Node 32DO EtherNet/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 8
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 5
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "P2H_Ethernet_IP.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2H node EtherNet/IP EDS (ODVA marketplace, product 2381)",
+     "sha256": "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/parker/p2m-lite-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Lite Node 24DO ETHERNET/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53505,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2M Lite Node 24DO ETHERNET/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 7
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "Parker_Lite.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2M Lite node EtherNet/IP EDS (ODVA marketplace, product 2292)",
+     "sha256": "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/parker/p2m-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Node 24DO ETHERNET/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53504,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2M Node 24DO ETHERNET/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 7
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "0004002BD1000100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2M node EtherNet/IP EDS (ODVA marketplace, product 2090)",
+     "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2090/0004002BD1000100.eds; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -1985,6 +3248,265 @@
     {
      "ask": "Which vendor id, product code and revision does a CU240E-2 PN report on EtherNet/IP, and is the Siemens EDS the one to use? The manual names an EDS at a Siemens portal entry (48351511), which redirects to a JavaScript search page and could not be collected.",
      "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.2, p. 67"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 156,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN1"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen1_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen2",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN2",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 157,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN2"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen2_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN3",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 158,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN3"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen3_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen4",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN4",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 159,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN4"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen4_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN1/SEN2",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 126,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "EX600-SEN#"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 5
+    },
+    "eds": "EX600_SEN_.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)",
+     "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN3/SEN4",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 203,
+     "device_type": 12,
+     "revisions": [
+      "1.2"
+     ],
+     "product_name": "EX600-SEN3/4"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 0
+    },
+    "eds": "ex600_sen3_4_v11.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)",
+     "sha256": "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen7",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN7/SEN8",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 258,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "EX600-SEN7/8"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 0
+    },
+    "eds": "ex600_sen7_8_v10.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
+     "sha256": "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },

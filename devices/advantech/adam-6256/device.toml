@@ -1,0 +1,39 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6256"
+kind = "remote-io"
+channels = "16 DO (sink)"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:31 (0X 00017-00032, R/W)"
+meaning = "digital output command and state, 1 = on"
+source = "ADAM-6200 User Manual Ed. 5 p. 143"
+
+[[points]]
+name = "pulse output widths and counts"
+modbus = "hr:0..hr:127 (4X 40001-40128: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)"
+meaning = "pulse output timing and count per output"
+source = "ADAM-6200 User Manual Ed. 5 p. 143-145"
+
+[[points]]
+name = "DO as one word"
+modbus = "hr:302 (4X 40303, R/W)"
+meaning = "all 16 DO in one register"
+source = "ADAM-6200 User Manual Ed. 5 p. 145"
+
+[[questions]]
+ask = "The ADAM-6256 table prints the absolute-pulse registers of channels 13 and 14 as 40091 - 40091 and 40093 - 40092: are they 40091-40092 and 40093-40094?"
+source = "ADAM-6200 User Manual Ed. 5 p. 144"
+
+[[sources]]
+title = "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)"
+sha256 = "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"
