@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# SICK AG IOLG2EI-03208R01
+# SICK IOLG2EI-03208R01
 
 EDS identity: vendor 808 SICK AG, product code
 20618, device type 43 Generic Device,

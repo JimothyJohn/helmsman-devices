@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# BALLUFF GmbH BNI EIP-508-105-Z015
+# Balluff BNI EIP-508-105-Z015
 
 EDS identity: vendor 43 BALLUFF GmbH, product code
 20618, device type 43 Generic Device,
