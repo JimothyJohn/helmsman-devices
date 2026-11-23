@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "VABX-A-S-EL-E12-CTED-EP"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "process data only: up to 488 bytes in, 496 bytes out, no channel names in the EDS"   # from: EDS VABX_A_S_EL_E12-CTED_EP.eds: Params Input Size Exact I/O 1-488, Output Size Exact I/O 1-496; assemblies 100-125 fixed sizes up to 488/496 bytes
 article = "VABX-A-S-EL-E12-CTED-EP"
 
 [identity.enip]

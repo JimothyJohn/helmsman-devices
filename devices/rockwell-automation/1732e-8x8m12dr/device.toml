@@ -6,7 +6,7 @@ vendor = "Rockwell Automation"
 model = "1732E-8X8M12DR"
 kind = "remote-io"
 category = "io-block"
-channels = "8 DIO, DC in/out (8 input bits, 8 output bits, M12)"   # from: EDS ProdName '1732E-8X8M12DR 8 DC In/Out M12'; connection help: 8 bits of Input Data, 8 output bits
+channels = "8 DC in/out points (8 input bits, 8 output bits, M12)"   # from: EDS ProdName '1732E-8X8M12DR 8 DC In/Out M12'; connection help: 8 bits of Input Data, 8 output bits. Whether the points are shared is not in the EDS
 article = "1732E-8X8M12DR"
 
 [identity.enip]

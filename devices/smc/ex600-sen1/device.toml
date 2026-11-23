@@ -6,6 +6,7 @@ vendor = "SMC"
 model = "EX600-SEN1/SEN2"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual No.EX*-OMN0032-D 'EtherNet/IP compatible SI unit EX600-SEN#' (smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf), System Outline and Assembly, PDF pp.13 and 25, opened 2026-11-22
 article = "EX600-SEN#"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Balluff"
 model = "BNI EIP-508-105-Z015"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports"   # from: BNI_EIP-508-105-Z015.eds config assembly (IOL Port 1..8 parameters)
 article = "BNI006A"
 
 [identity.enip]

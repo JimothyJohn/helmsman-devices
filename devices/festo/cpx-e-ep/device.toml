@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "CPX-E-EP"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the CPX-E modules behind it set the I/O (Input/Output Size 0-64, default 4)"   # from: EDS CPX-E-EP.eds: ProdName 'CPX-E-EP EtherNet/IP 2-Port Remote I/O', Params Input Size / Output Size min 0 max 64 default 4
 article = "CPX-E-EP"
 
 [identity.enip]

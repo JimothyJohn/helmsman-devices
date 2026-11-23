@@ -37,21 +37,22 @@ title = "PowerFlex 527-STO CIP Safety: ODVA Declaration of Conformity"
 found = "2026-11-22 ODVA marketplace page 1966, Download the Declaration of Conformity"
 terms = "none stated"
 
-[[doc]]
-folders = ["devices/rockwell-automation/powerflex-753"]
-kind = "eds"
-url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip"
-title = "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): EDS (ODVA marketplace)"
-found = "2026-11-22 ODVA marketplace page 581, Download the EDS File"
-terms = "none stated"
+# PowerFlex 753: no EtherNet/IP EDS in reach. ODVA listing 854 (10788_EDS.zip) holds six files, all
+# "PowerFlex 750-Series via ControlNet" (Class ControlNet); listing 581 (11061-EDS.zip, 20-750-ENETR) holds
+# the PowerFlex 755's "DPI to EtherNet/IP" file and the bare module's. A folder was drafted from the
+# ControlNet file on 2026-11-22 and removed on 2026-11-23 when the files were read.
 
-[[doc]]
-folders = ["devices/rockwell-automation/powerflex-753"]
-kind = "datasheet"
-url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf"
-title = "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): ODVA Declaration of Conformity"
-found = "2026-11-22 ODVA marketplace page 581, Download the Declaration of Conformity"
-terms = "none stated"
+# Dropped: E300 (193-ECM-ETR). ODVA's E300 listings (products 882, 1783, 1952) carry DeviceNet EDS only
+# (1952: Catalog 193-ECM-DNT, HomeURL .../eds/DN/); no EtherNet/IP EDS was found.
+# Dropped: SMC-50, PowerFlex 40 / 4M with 22-COMM-E: no ODVA listing found, and Rockwell's PCDC and literature
+# hosts refuse automated clients (behind a bot wall: https://compatibility.rockwellautomation.com).
+# Dropped: Kinetix 5100 (2198-C..-ERS, ODVA product 2226): its "EDS file" link serves the conformity PDF, not an EDS.
+# Manuals found by search, all refused HTTP 403 to docs-fetch (Rockwell's literature host
+# blocks automated clients; behind login / bot wall: https://literature.rockwellautomation.com).
+# Not listed as documents, so no folder below cites them; the next person need not search again:
+#   520COM-UM001 (525) .../um/520com-um001_-en-e.pdf   520-UM002 (527) .../um/520-um002_-en-e.pdf
+#   750COM-UM008 (20-750-ENETR) .../um/750com-um008_-en-p.pdf   750COM-UM009 (755T, 6000T) .../um/750com-um009_-en-p.pdf
+#   193-UM015 (E300) .../um/193-um015_-en-p.pdf   280E-UM001 (ArmorStart) .../um/280e-um001_-en-p.pdf
 
 [[doc]]
 folders = ["devices/rockwell-automation/powerflex-755"]
@@ -197,31 +198,3 @@ title = "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity
 found = "2026-11-22 ODVA marketplace page 1639, Download the Declaration of Conformity"
 terms = "none stated"
 
-[[doc]]
-folders = ["devices/rockwell-automation/powerflex-753"]
-kind = "eds"
-url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip"
-title = "PowerFlex 753 and 755 family (ODVA listing 854): EDS (ODVA marketplace)"
-found = "2026-11-22 ODVA marketplace page 854, Download the EDS File"
-terms = "none stated"
-
-[[doc]]
-folders = ["devices/rockwell-automation/powerflex-753"]
-kind = "datasheet"
-url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf"
-title = "PowerFlex 753 and 755 family (ODVA listing 854): ODVA Declaration of Conformity"
-found = "2026-11-22 ODVA marketplace page 854, Download the Declaration of Conformity"
-terms = "none stated"
-
-# Dropped: E300 (193-ECM-ETR). ODVA's E300 listings (products 882, 1783, 1952) carry DeviceNet EDS only
-# (1952: Catalog 193-ECM-DNT, HomeURL .../eds/DN/); no EtherNet/IP EDS was found.
-# Dropped: SMC-50, PowerFlex 40 / 4M with 22-COMM-E: no ODVA listing found, and Rockwell's PCDC and literature
-# hosts refuse automated clients (behind a bot wall: https://compatibility.rockwellautomation.com).
-# Dropped: Kinetix 5100 (2198-C..-ERS, ODVA product 2226): its "EDS file" link serves the conformity PDF, not an EDS.
-
-# Manuals found by search, all refused HTTP 403 to docs-fetch (Rockwell's literature host
-# blocks automated clients; behind login / bot wall: https://literature.rockwellautomation.com).
-# Not listed as documents, so no folder below cites them; the next person need not search again:
-#   520COM-UM001 (525) .../um/520com-um001_-en-e.pdf   520-UM002 (527) .../um/520-um002_-en-e.pdf
-#   750COM-UM008 (20-750-ENETR) .../um/750com-um008_-en-p.pdf   750COM-UM009 (755T, 6000T) .../um/750com-um009_-en-p.pdf
-#   193-UM015 (E300) .../um/193-um015_-en-p.pdf   280E-UM001 (ArmorStart) .../um/280e-um001_-en-p.pdf

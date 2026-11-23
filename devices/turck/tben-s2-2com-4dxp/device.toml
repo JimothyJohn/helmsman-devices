@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-2COM-4DXP"
 kind = "remote-io"
 category = "io-block"
+channels = "2 serial ports (RS485 or RS232), 4 DIO (PNP, 0.5 A per output)"   # from: Turck product page https://www.turck.us/en/product/6814031, 2026-11-22
 article = "6814031"
 
 [identity.enip]

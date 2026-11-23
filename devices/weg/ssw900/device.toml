@@ -6,6 +6,7 @@ vendor = "WEG"
 model = "SSW900"
 kind = "other"
 category = "motor-starter"
+channels = "1 motor starter: control word, parameter writes out; status word, parameter reads in"   # from: EDS EIP_SSW900_V13X.eds: Assem110, Assem160
 article = "SSW900-CETH-W"
 
 [identity.enip]

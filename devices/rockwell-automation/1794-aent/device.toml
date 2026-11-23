@@ -6,7 +6,7 @@ vendor = "Rockwell Automation"
 model = "1794-AENT"
 kind = "remote-io"
 category = "io-coupler"
-channels = "none of its own: the FLEX I/O modules behind it (up to 8) set the I/O"   # from: EDS (1794-AENT) ProdName 'FLEX I/O Ethernet Adapter'; per-slot parameters Slot 0 to Slot 7 only
+channels = "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)"   # from: EDS (1794-AENT) ProdName 'FLEX I/O Ethernet Adapter'; per-slot parameters Slot 0 to Slot 7 only
 article = "1794-AENT"
 
 [identity.enip]

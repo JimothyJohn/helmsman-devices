@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "CPX-AP-I-EP-M12"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the CPX-AP modules behind it set the I/O"   # from: EDS CPX-AP-I-EP_NoConfig.eds: ProdName CPX-AP-I-EP, Communications Adapter, Param 'IO Size Diagnosis And Modules', size-only assemblies with no point names
 article = "CPX-AP-I-EP"
 
 [identity.enip]

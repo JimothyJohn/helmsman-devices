@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-8DIP"
 kind = "remote-io"
 category = "io-block"
+channels = "8 DI (PNP, 4 M12 ports)"   # from: TBEN-S Analog and Digital I/O Instructions for Use V06.00, sec. 14.4; connectors C0...C3 sec. 8 pin assignment
 article = "6814073"
 
 [device.photo]

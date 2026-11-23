@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "CPX-FB32"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the CPX modules behind it set the I/O (11 bytes of outputs, 13 bytes of inputs)"   # from: EDS CPX-FB32.eds: ProdName 'CPX-FB32 Remote I/O', Assem2 Output 11 bytes, Assem1 Input 13 bytes
 article = "CPX Ethernet/IP Node"
 
 [identity.enip]

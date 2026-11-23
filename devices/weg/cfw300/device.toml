@@ -6,6 +6,7 @@ vendor = "WEG"
 model = "CFW300"
 kind = "drive"
 category = "drive"
+channels = "1 drive: control word, speed reference, parameter writes out; status word, motor speed, parameter reads in"   # from: EDS EIP_CFW300_V30X.eds: Assem100/120/121, 150/170/171 member names
 article = "CFW300-CETH"
 
 [identity.enip]

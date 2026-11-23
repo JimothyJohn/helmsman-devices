@@ -6,6 +6,7 @@ vendor = "Parker"
 model = "P2H Node 32DO EtherNet/IP"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "32 solenoid outputs"   # from: EDS P2H_Ethernet_IP.EDS ProdName 'P2H Node 32DO EtherNet/IP', Params Solenoids_1_to_8 .. Solenoids_25_to_32 in output assembly 150, 5 bytes
 article = "P2H Node 32DO EtherNet/IP"
 
 [identity.enip]

@@ -5,6 +5,7 @@ vendor = "Schneider Electric"
 model = "Modicon TM3 bus coupler TM3BCEIP"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the TM3 and TM2 expansion modules behind it set the I/O"   # from: Machine Expert help 'TM3 Ethernet Bus Coupler Presentation' EIO0000003635.00 (product-help.se.com V1.1), opened 2026-11-23
 article = "TM3BCEIP"
 
 [protocols.modbus]

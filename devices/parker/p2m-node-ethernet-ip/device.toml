@@ -6,6 +6,7 @@ vendor = "Parker"
 model = "P2M Node 24DO ETHERNET/IP"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "24 solenoid outputs"   # from: EDS 0004002BD1000100.eds ProdName 'P2M Node 24DO ETHERNET/IP', Params Solenoids_1_to_8 .. Solenoids_17_to_24 in output assembly 150, 4 bytes
 article = "P2M Node 24DO ETHERNET/IP"
 
 [identity.enip]

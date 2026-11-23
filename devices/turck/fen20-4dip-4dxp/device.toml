@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "FEN20-4DIP-4DXP"
 kind = "remote-io"
 category = "panel-io"
+channels = "4 DI, 4 DIO (PNP)"   # from: FEN20-4DIP-4DXP data sheet 6931090, https://www.turck.us/datasheet/_us/edb_6931090_eng_us.pdf, p. 1, 2026-11-22
 article = "6931090"
 
 [identity.enip]

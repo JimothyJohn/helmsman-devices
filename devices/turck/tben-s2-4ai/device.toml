@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-4AI"
 kind = "remote-io"
 category = "io-block"
+channels = "4 AI (voltage, current, RTD, resistance, thermocouple)"   # from: TBEN-S Analog and Digital I/O Instructions for Use V06.00, sec. 14.10
 article = "6814025"
 
 [device.photo]

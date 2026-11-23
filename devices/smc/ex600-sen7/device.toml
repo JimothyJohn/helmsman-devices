@@ -6,6 +6,7 @@ vendor = "SMC"
 model = "EX600-SEN7/SEN8"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual EX*-OMZ0024 (EX600-SEN7/8), Assembly p.12 and Specifications 'Number of solenoid valves 32 outputs' p.26; smcworld.com EXxx-OMZ0024.pdf, 2026-11-22
 article = "EX600-SEN7/8"
 
 [identity.enip]

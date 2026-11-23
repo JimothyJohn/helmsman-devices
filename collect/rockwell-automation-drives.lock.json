@@ -166,36 +166,6 @@
    "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
    "type": "pdf"
   },
-  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf": {
-   "content_type": "application/pdf",
-   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf",
-   "folders": [
-    "devices/rockwell-automation/powerflex-753"
-   ],
-   "kind": "datasheet",
-   "name": "11061_DOC_061812.pdf",
-   "retrieved": "2026-11-23T03:51:20Z",
-   "sha256": "b5307d5e9b42975144a965767a67c1a1e1bbc0575d91ba7276fdbefad026bffc",
-   "size": 59239,
-   "terms": "none stated",
-   "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): ODVA Declaration of Conformity",
-   "type": "pdf"
-  },
-  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf": {
-   "content_type": "application/pdf",
-   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf",
-   "folders": [
-    "devices/rockwell-automation/powerflex-753"
-   ],
-   "kind": "datasheet",
-   "name": "10788_DOC_082409.pdf",
-   "retrieved": "2026-11-23T03:51:20Z",
-   "sha256": "98c533cad64c898058e2d4a10cfd50bc6d29fa7d1d81771eabc86596604bdc4c",
-   "size": 44534,
-   "terms": "none stated",
-   "title": "PowerFlex 753 and 755 family (ODVA listing 854): ODVA Declaration of Conformity",
-   "type": "pdf"
-  },
   "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip": {
    "content_type": "application/zip",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip",
@@ -770,88 +740,6 @@
    "size": 4911,
    "terms": "none stated",
    "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
-   "type": "zip"
-  },
-  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip": {
-   "content_type": "application/zip",
-   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip",
-   "folders": [
-    "devices/rockwell-automation/powerflex-753"
-   ],
-   "kind": "eds",
-   "members": [
-    {
-     "name": "0001008E08900500.eds",
-     "sha256": "d0199eefa72a760a25f2ef63daf0138c31653c25f2c1481091dc43101643457e",
-     "size": 36692,
-     "type": "eds"
-    },
-    {
-     "name": "0001008EE2A00100.eds",
-     "sha256": "fb6c2c12bc8bef69d478fe53514d3d3143f9666de4d82502af3bb10a3e3c95a7",
-     "size": 2175,
-     "type": "eds"
-    }
-   ],
-   "name": "11061-EDS.zip",
-   "retrieved": "2026-11-23T03:51:20Z",
-   "sha256": "fe78ee688ac471b6f4da955407e9528e5a5a99ef3435e55bf163d0b96dc52042",
-   "size": 3738,
-   "terms": "none stated",
-   "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): EDS (ODVA marketplace)",
-   "type": "zip"
-  },
-  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip": {
-   "content_type": "application/zip",
-   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip",
-   "folders": [
-    "devices/rockwell-automation/powerflex-753"
-   ],
-   "kind": "eds",
-   "members": [
-    {
-     "name": "0001008C04900100.eds",
-     "sha256": "14d8734a3d758f338b57e16c479fcf3c8b0cb3a6b97cbf1101b0160f035a9340",
-     "size": 14087,
-     "type": "eds"
-    },
-    {
-     "name": "0001008C05900100.eds",
-     "sha256": "705652a432fba60144522ee38ceb13cf52de15bb3d0a7809c44c273633cc28bd",
-     "size": 14100,
-     "type": "eds"
-    },
-    {
-     "name": "0001008C06900100.eds",
-     "sha256": "cdb035de5ed38ab42b3b1a58de47dac9e73368387857db2c42671e2816d8ed40",
-     "size": 14116,
-     "type": "eds"
-    },
-    {
-     "name": "0001008C08900100.eds",
-     "sha256": "0daae777109b0d4c23fc05034f353f5a8ff0ee0cdbb9d4696a5a9877e1ffe1b5",
-     "size": 14087,
-     "type": "eds"
-    },
-    {
-     "name": "0001008C09900100.eds",
-     "sha256": "f9417606b9c53f4b42e1f3a6278f796c3a80d22dd2fdf9dd4b5d766015dbbae4",
-     "size": 14100,
-     "type": "eds"
-    },
-    {
-     "name": "0001008C0A900100.eds",
-     "sha256": "88457f9d0b150aed44f6a3e7b942394e4e2337af8890b8a0d45cd6d8593d4bfc",
-     "size": 14116,
-     "type": "eds"
-    }
-   ],
-   "name": "10788_EDS.zip",
-   "retrieved": "2026-11-23T03:51:20Z",
-   "sha256": "1aeef508465e71acd6ddbf23a65837224d4d1ec31ad44ed9f7e160ba26a25300",
-   "size": 12141,
-   "terms": "none stated",
-   "title": "PowerFlex 753 and 755 family (ODVA listing 854): EDS (ODVA marketplace)",
    "type": "zip"
   }
  },

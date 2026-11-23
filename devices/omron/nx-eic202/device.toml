@@ -6,6 +6,7 @@ vendor = "Omron"
 model = "NX-EIC202"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the NX Units behind it (up to 63) set the I/O"   # from: NX-series EtherNet/IP Coupler Unit User's Manual W536, sec. 3-1-2 p. 3-3
 article = "NX-EIC202"
 
 [device.photo]

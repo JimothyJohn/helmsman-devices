@@ -6,6 +6,7 @@ vendor = "Emerson"
 model = "Numatics 580 Ethernet/IP DLR+QC"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count"   # from: EDS NUMATICS-5800.eds, Params Output Size / Input Size (min 0, max 504, default 16), assemblies 101/110/150 of 1216 bits
 article = "Numatics 580 P580AEED1010"
 
 [identity.enip]
