@@ -176,7 +176,7 @@ Pneumatic valve manifolds and their bus nodes; an output switches a solenoid. `f
 | [Numatics 580 Ethernet/IP](devices/emerson/numatics-580-ethernet-ip/) | Emerson | EtherNet/IP | variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count | EDS connection | documents |
 | [Numatics 580 Ethernet/IP DLR+QC](devices/emerson/numatics-580-ethernet-ip-dlr/) | Emerson | EtherNet/IP | variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count | EDS connection | documents |
 | [Numatics G3 EtherNet/IP](devices/emerson/numatics-g3-ethernet-ip/) | Emerson | EtherNet/IP | variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count | EDS connection | documents |
-| [CTEU-EP](devices/festo/cteu-ep/) | Festo | EtherNet/IP | I-Port bus node: 8, 16, 32 or 64 bytes of outputs and inputs (single or dual port assemblies) | EDS connection | documents |
+| [CTEU-EP](devices/festo/cteu-ep/) | Festo | EtherNet/IP | I-Port bus node: 8, 16, 32 or 64 bytes of outputs and inputs (single or dual port assemblies) | EDS connection, 9 points | documents |
 | [VABX-A-S-EL-E12-CTED-EP](devices/festo/vabx-a-cted-ep/) | Festo | EtherNet/IP | process data only: up to 488 bytes in, 496 bytes out, no channel names in the EDS | EDS connection | documents |
 | [VR1X-EP](devices/imi-norgren/vr1x-ep/) | IMI Norgren | EtherNet/IP | 24 solenoid outputs | EDS connection | documents |
 | [P2H Node 32DO EtherNet/IP](devices/parker/p2h-node-ethernet-ip/) | Parker | EtherNet/IP | 32 solenoid outputs | EDS connection | documents |
@@ -203,7 +203,7 @@ Frequency inverters, servo drives and their network option cards. `find.py drive
 | [PowerXL DG1](devices/eaton/powerxl-dg1/) | Eaton | EtherNet/IP | 1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in | EDS connection | documents |
 | [PowerXL DM1 PRO](devices/eaton/powerxl-dm1-pro/) | Eaton | EtherNet/IP | 1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in | EDS connection | documents |
 | [PowerXL VFD EIP Comm. Card](devices/eaton/powerxl-vfd-eip-comm-card/) | Eaton | EtherNet/IP | 1 drive: motor control word, speed ref, process data, position control out; status word, speed, torque, process data in | EDS connection | documents |
-| [CMMT-AS-EP](devices/festo/cmmt-as/) | Festo | EtherNet/IP | drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way | EDS connection | documents |
+| [CMMT-AS-EP](devices/festo/cmmt-as/) | Festo | EtherNet/IP | drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way | EDS connection, 26 points | documents |
 | [i550 cabinet](devices/lenze/i550/) | Lenze | EtherNet/IP | 1 drive: drive control word, speed (and torque) setpoint out; drive status word, actual speed (and torque) in | EDS connection | documents |
 | [FR-D800-E](devices/mitsubishi-electric/fr-d800-e/) | Mitsubishi Electric | EtherNet/IP | 1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in | EDS connection | documents |
 | [FR-E800-E](devices/mitsubishi-electric/fr-e800-e/) | Mitsubishi Electric | EtherNet/IP | 1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in | EDS connection | documents |
