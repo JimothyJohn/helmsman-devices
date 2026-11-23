@@ -891,6 +891,45 @@
    "record": "record.json"
   },
   {
+   "folder": "devices/siemens/im-155-6-mf-hf",
+   "vendor": "Siemens",
+   "model": "SIMATIC ET 200SP IM 155-6 MF HF",
+   "kind": "remote-io"
+  },
+  {
+   "folder": "devices/siemens/sentron-pac3200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC3200",
+   "kind": "other",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sentron-pac4200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC4200",
+   "kind": "other",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sinamics-g120-cu240e-2-pn",
+   "vendor": "Siemens",
+   "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
+   "kind": "drive",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s1-4dip-4dop",
    "vendor": "TURCK",
    "model": "TBEN-S1-4DIP-4DOP",

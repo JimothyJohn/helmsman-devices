@@ -1855,6 +1855,140 @@
    ]
   },
   {
+   "folder": "devices/siemens/im-155-6-mf-hf",
+   "vendor": "Siemens",
+   "model": "SIMATIC ET 200SP IM 155-6 MF HF",
+   "points": [],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Which EtherNet/IP identity and Modbus TCP map does the interface module report? Its EDS is exported by the MultiFieldbus Configuration Tool (MFCT) and is the same whatever the station's configuration, so there is none to collect; the Modbus register layout is exported as a CSV per project.",
+     "source": "Siemens MultiFieldbus devices webinar (20 Aug 2020), pp. 15 and 26"
+    }
+   ]
+  },
+  {
+   "folder": "devices/siemens/sentron-pac3200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC3200",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "Voltage Va-n",
+     "modbus": "hr:0:f32 (offset 1, 2 registers, FC 0x03/0x04)",
+     "meaning": "phase voltage a to neutral, float, V, read only",
+     "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 40; the zero-based address is inferred from offset 1, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Current a",
+     "modbus": "hr:12:f32 (offset 13, 2 registers, FC 0x03/0x04)",
+     "meaning": "phase current a, float, A, read only",
+     "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 40; the zero-based address is inferred from offset 13, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Frequency",
+     "modbus": "hr:54:f32 (offset 55, 2 registers, FC 0x03/0x04)",
+     "meaning": "line frequency, float, Hz, read only",
+     "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 41; the zero-based address is inferred from offset 55, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Total Active Power",
+     "modbus": "hr:64:f32 (offset 65, 2 registers, FC 0x03/0x04)",
+     "meaning": "total active power, float, W, read only",
+     "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 41; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
+    }
+   ],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Is the offset in Table 3-6 one-based (offset 1 is Modbus address 0, as 4X 40001 would be) and is the high or low word of a float first?",
+     "source": "SENTRON PAC3200 Manual A5E01168664B-04 p. 40 (the table) and p. 38 (port 502): the pages read give neither"
+    }
+   ]
+  },
+  {
+   "folder": "devices/siemens/sentron-pac4200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC4200",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "Voltage L1-N",
+     "modbus": "hr:0:f32 (offset 1, 2 registers, FC 0x03/0x04)",
+     "meaning": "phase voltage L1 to neutral, float, V, read only",
+     "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 1, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Current L1",
+     "modbus": "hr:12:f32 (offset 13, 2 registers, FC 0x03/0x04)",
+     "meaning": "phase current L1, float, A, read only",
+     "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 13, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Line Frequency",
+     "modbus": "hr:54:f32 (offset 55, 2 registers, FC 0x03/0x04)",
+     "meaning": "line frequency, float, Hz, read only",
+     "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 55, and so is the word order, which the pages read do not state"
+    },
+    {
+     "name": "Total Active Power",
+     "modbus": "hr:64:f32 (offset 65, 2 registers, FC 0x03/0x04)",
+     "meaning": "total active power, float, W, read only",
+     "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
+    }
+   ],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Is the offset in Table A-1 one-based (offset 1 is Modbus address 0) and is the high or low word of a float first?",
+     "source": "SENTRON PAC4200 System Manual A5E02316180B-05 p. 146: the pages read give neither"
+    }
+   ]
+  },
+  {
+   "folder": "devices/siemens/sinamics-g120-cu240e-2-pn",
+   "vendor": "Siemens",
+   "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
+   "enip": {
+    "map": false,
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    }
+   },
+   "points": [
+    {
+     "name": "Basic Speed Control output (assembly 20)",
+     "enip": "out assembly 20, 4 bytes: byte 0 bit 0 RUN Forward, bit 2 Fault Reset, bytes 2-3 Speed Reference (low byte first)",
+     "meaning": "command and speed setpoint of the ODVA AC/DC drive profile",
+     "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68; used with p8980 = 1 (ODVA AC/DC profile) and p0922 = 1 (p. 66)"
+    },
+    {
+     "name": "Basic Speed Control input (assembly 70)",
+     "enip": "in assembly 70, 4 bytes: byte 0 bit 0 Faulted, bit 2 Running Forward, bytes 2-3 Speed Actual (low byte first)",
+     "meaning": "status and actual speed of the ODVA AC/DC drive profile",
+     "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68"
+    }
+   ],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Which vendor id, product code and revision does a CU240E-2 PN report on EtherNet/IP, and is the Siemens EDS the one to use? The manual names an EDS at a Siemens portal entry (48351511), which redirects to a JavaScript search page and could not be collected.",
+     "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.2, p. 67"
+    }
+   ]
+  },
+  {
    "folder": "devices/turck/tben-s1-4dip-4dop",
    "vendor": "TURCK",
    "model": "TBEN-S1-4DIP-4DOP",

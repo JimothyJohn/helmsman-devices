@@ -1,0 +1,41 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Siemens"
+model = "SENTRON PAC4200"
+kind = "other"
+article = "7KM4200"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# Port 502 is the default and configurable; "0" switches Modbus TCP off (System Manual p. 119).
+# Device identification: FC 0x2B (System Manual A.2.19, p. 212).
+
+[[points]]
+name = "Voltage L1-N"
+modbus = "hr:0:f32 (offset 1, 2 registers, FC 0x03/0x04)"
+meaning = "phase voltage L1 to neutral, float, V, read only"
+source = "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 1, and so is the word order, which the pages read do not state"
+
+[[points]]
+name = "Current L1"
+modbus = "hr:12:f32 (offset 13, 2 registers, FC 0x03/0x04)"
+meaning = "phase current L1, float, A, read only"
+source = "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 13, and so is the word order, which the pages read do not state"
+
+[[points]]
+name = "Line Frequency"
+modbus = "hr:54:f32 (offset 55, 2 registers, FC 0x03/0x04)"
+meaning = "line frequency, float, Hz, read only"
+source = "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 55, and so is the word order, which the pages read do not state"
+
+[[points]]
+name = "Total Active Power"
+modbus = "hr:64:f32 (offset 65, 2 registers, FC 0x03/0x04)"
+meaning = "total active power, float, W, read only"
+source = "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
+
+[[questions]]
+ask = "Is the offset in Table A-1 one-based (offset 1 is Modbus address 0) and is the high or low word of a float first?"
+source = "SENTRON PAC4200 System Manual A5E02316180B-05 p. 146: the pages read give neither"
