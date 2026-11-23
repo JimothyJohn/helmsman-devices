@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Eaton Corporation"
+model = "PowerXL DG1"
+kind = "drive"
+article = "DG1"
+
+[identity.enip]
+vendor_id = 68
+product_code = 12288
+device_type = 2
+revisions = ["2.2"]   # the EDS's MajRev.MinRev
+product_name = "PowerXL DG1"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Use Only 1 Connection"
+input_assembly = { instance = 11, bytes = 0 }
+output_assembly = { instance = 10, bytes = 0 }
+config_assembly = { instance = 1 }
+eds = { name = "PowerXL_EIP_v2.8.eds", size = 233100, sha256 = "bdea15cd765ecb14091c0b3850ddc89e46eaa5d97e572e1e0ce01d55c1795e1f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip (member of 11482.03-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Eaton PowerXL DG1: declaration of conformity (ODVA), ODVA marketplace product 1777"
+sha256 = "812c0e0a2ed3db2e2c06ef588a3e1397f303714724a9f565e997a1b1e91d4c51"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Eaton PowerXL DG1: EDS, ODVA marketplace product 1777"
+sha256 = "f0ab6f2304ec7edc35723bc495a26dda76971213ef0fab150f09e98e560fdbc8"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,19 @@
+format = "helmsman-devices-collect 1"
+vendor = "lenze"
+
+[[doc]]
+folder = "devices/lenze/i550"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf"
+title = "Lenze i550 / i650: declaration of conformity (ODVA), ODVA marketplace product 2570"
+found = "2026-11-22 https://marketplace.odva.org/products/2570-i550-motec-i550-cabinet-i550-protec-i650-motec (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/lenze/i550"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip"
+title = "Lenze i550 / i650: EDS, ODVA marketplace product 2570"
+found = "2026-11-22 https://marketplace.odva.org/products/2570-i550-motec-i550-cabinet-i550-protec-i650-motec (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

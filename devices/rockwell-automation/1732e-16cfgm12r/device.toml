@@ -1,0 +1,28 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1732E-16CFGM12R"
+kind = "remote-io"
+article = "1732E-16CFGM12R"
+
+[identity.enip]
+vendor_id = 1
+product_code = 357
+device_type = 7
+revisions = ["3.12"]   # the EDS's MajRev.MinRev
+product_name = "1732E-16CFGM12R 16 DC In/Out M12"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Logix - Exclusive Owner"
+input_assembly = { instance = 105, bytes = 6 }
+output_assembly = { instance = 35, bytes = 2 }
+config_assembly = { instance = 102, bytes = 6 }
+eds = { name = "0001000701650300.eds", size = 29825, sha256 = "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip (member of 11894.05-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorBlock 1732E 16-point M12 EDS package 11894.05"
+sha256 = "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"

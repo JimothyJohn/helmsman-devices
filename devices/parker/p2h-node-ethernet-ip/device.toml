@@ -1,0 +1,28 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Parker Hannifin Corporation"
+model = "P2H Node 32DO EtherNet/IP"
+kind = "remote-io"
+article = "P2H Node 32DO EtherNet/IP"
+
+[identity.enip]
+vendor_id = 4
+product_code = 53296
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "P2H Node 32DO EtherNet/IP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive owner"
+input_assembly = { instance = 100, bytes = 8 }
+output_assembly = { instance = 150, bytes = 5 }
+config_assembly = { instance = 0 }
+eds = { name = "P2H_Ethernet_IP.EDS", size = 71874, sha256 = "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS", terms = "none stated" }
+
+[[sources]]
+title = "P2H node EtherNet/IP EDS (ODVA marketplace, product 2381)"
+sha256 = "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS; retrieved 2026-11-23; not redistributed here"

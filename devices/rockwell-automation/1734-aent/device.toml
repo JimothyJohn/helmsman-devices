@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1734-AENT"
+kind = "remote-io"
+article = "1734-AENT"
+
+[identity.enip]
+vendor_id = 1
+product_code = 108
+device_type = 12
+revisions = ["7.15"]   # the EDS's MajRev.MinRev
+product_name = "1734-AENT/C Ethernet Adapter"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Assembly Exclusive Owner"
+# input_assembly: the size is set by Param3: 8..509 bytes, default 8
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param2: 0..505 bytes, default 0
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102 }
+eds = { name = "0001000C006C070B_1734_AENT.eds", size = 48519, sha256 = "76a23243b7fbf2df4b2c83b048349bbe25bf1172c55d88812697f0c8c8d6efdb", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip (member of 11808.09-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09"
+sha256 = "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip; retrieved 2026-11-23; not redistributed here"
