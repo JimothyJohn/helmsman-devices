@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "WEG"
+model = "CFW300"
+kind = "drive"
+article = "CFW300-CETH"
+
+[identity.enip]
+vendor_id = 853
+product_code = 5376
+device_type = 43
+revisions = ["3.1"]   # the EDS's MajRev.MinRev
+product_name = "CFW300"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "100/150 Manufacturer Speed and Drive Parameters"
+# input_assembly: the size is set by Param6: 4..16 bytes, default 4
+input_assembly = { instance = 150 }
+# output_assembly: the size is set by Param5: 4..16 bytes, default 4
+output_assembly = { instance = 100 }
+config_assembly = { instance = 1 }
+eds = { name = "EIP_CFW300_V30X.eds", size = 23862, sha256 = "8afd16f58d765ce02c83ed36a73f1dc58ba23daa1c7e6ec41a22d084610f6069", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip (member of 11954.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "WEG CFW300: declaration of conformity (ODVA), ODVA marketplace product 2202"
+sha256 = "a3c5162fa2aab6cc141f373af2d8aeb4a005f73fb63094f7450f55ce6764f776"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "WEG CFW300: EDS, ODVA marketplace product 2202"
+sha256 = "c45ab18f67fb60bc30deb8bedc44939a484c6904842913b9c073e9e19013e616"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,19 @@
+format = "helmsman-devices-collect 1"
+vendor = "delta-electronics"
+
+[[doc]]
+folder = "devices/delta-electronics/cmm-eip01"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf"
+title = "Delta CMM-EIP01: declaration of conformity (ODVA), ODVA marketplace product 1924"
+found = "2026-11-22 https://marketplace.odva.org/products/1924-cmm-eip01 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/delta-electronics/cmm-eip01"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip"
+title = "Delta CMM-EIP01: EDS, ODVA marketplace product 1924"
+found = "2026-11-22 https://marketplace.odva.org/products/1924-cmm-eip01 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Eaton Electrical"
+model = "PowerXL VFD EIP Comm. Card"
+kind = "drive"
+article = "DXX-NET-EIP"
+
+[identity.enip]
+vendor_id = 68
+product_code = 12338
+device_type = 2
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerXL VFD EIP Comm. Card"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Asm 20 OT - 70 TO"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+config_assembly = { instance = 1 }
+eds = { name = "PowerXL_VFD_EIP_Comm_Card_v1.9.eds", size = 141156, sha256 = "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds", terms = "none stated" }
+
+[[sources]]
+title = "Eaton PowerXL EtherNet/IP comm card: declaration of conformity (ODVA), ODVA marketplace product 2764"
+sha256 = "ac8a66900ee14a4d966d3c6e2447cd8fcbd51e416f214adc29db86056c7e0ff7"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Eaton PowerXL EtherNet/IP comm card: EDS, ODVA marketplace product 2764"
+sha256 = "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds; retrieved 2026-11-23; not redistributed here"

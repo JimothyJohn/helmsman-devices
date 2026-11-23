@@ -2,6 +2,49 @@
  "format": "helmsman-devices-review 1",
  "devices": [
   {
+   "folder": "devices/abb/feip-21",
+   "vendor": "ABB, Inc.",
+   "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 46,
+     "product_code": 1,
+     "device_type": 103,
+     "revisions": [
+      "1.64"
+     ],
+     "product_name": "ABB Drive via Ethernet/IP FEIP-21"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1,
+     "bytes": 4
+    },
+    "eds": "FEIP21_filerev1_2.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ABB FEIP-21 EtherNet/IP adapter module: declaration of conformity (ODVA), ODVA marketplace product 2829",
+     "sha256": "d6ec1bc5d20db9ba9827e04665423ed2b2ab351f529dfab43c378606ed430c6a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ABB FEIP-21 EtherNet/IP adapter module: EDS, ODVA marketplace product 2829",
+     "sha256": "42bf024b5ecb8a0ce980827af62bfbb3c35162ae1e929f27013eab78cb18ce64",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/acromag/xt1111-000",
    "vendor": "Acromag",
    "model": "XT1111-000",
@@ -1130,6 +1173,172 @@
    ]
   },
   {
+   "folder": "devices/delta-electronics/cmm-eip01",
+   "vendor": "Delta electronics, inc.",
+   "model": "CMM-EIP01",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 799,
+     "product_code": 260,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CMM-EIP01"
+    },
+    "input": {
+     "instance": 105
+    },
+    "output": {
+     "instance": 104
+    },
+    "config": {
+     "instance": 128
+    },
+    "eds": "031F000C010400010001.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Delta CMM-EIP01: declaration of conformity (ODVA), ODVA marketplace product 1924",
+     "sha256": "87f27de8f6ca5f4ff376c2d90361778ad4e5ad989194f291888df2006f232f15",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Delta CMM-EIP01: EDS, ODVA marketplace product 1924",
+     "sha256": "4dcd355ef630c29221a334e501c698507da571e81032e435bd712ed48111aa26",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-dg1",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DG1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12288,
+     "device_type": 2,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "PowerXL DG1"
+    },
+    "input": {
+     "instance": 11,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 10,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXL_EIP_v2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL DG1: declaration of conformity (ODVA), ODVA marketplace product 1777",
+     "sha256": "812c0e0a2ed3db2e2c06ef588a3e1397f303714724a9f565e997a1b1e91d4c51",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL DG1: EDS, ODVA marketplace product 1777",
+     "sha256": "f0ab6f2304ec7edc35723bc495a26dda76971213ef0fab150f09e98e560fdbc8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-dm1-pro",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DM1 PRO",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12329,
+     "device_type": 2,
+     "revisions": [
+      "2.4"
+     ],
+     "product_name": "PowerXL DM1 PRO"
+    },
+    "input": {
+     "instance": 11,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 10,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXLDM1_EIP_V1.06.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL DM1 Pro: declaration of conformity (ODVA), ODVA marketplace product 2297",
+     "sha256": "040e532cb2d479eb1fda78fd79dcbe35d38572ce7113166ef64f64065f257d2d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2297/11952_DOC_011623.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL DM1 Pro: EDS, ODVA marketplace product 2297",
+     "sha256": "e7490fc282e8b579f4847309d1310d587b5d79c26a841a8fe9a1917f27cbc2be",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2297/11952.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
+   "vendor": "Eaton Electrical",
+   "model": "PowerXL VFD EIP Comm. Card",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12338,
+     "device_type": 2,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "PowerXL VFD EIP Comm. Card"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL EtherNet/IP comm card: declaration of conformity (ODVA), ODVA marketplace product 2764",
+     "sha256": "ac8a66900ee14a4d966d3c6e2447cd8fcbd51e416f214adc29db86056c7e0ff7",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL EtherNet/IP comm card: EDS, ODVA marketplace product 2764",
+     "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/emerson/numatics-580-ethernet-ip",
    "vendor": "Numatics, Inc",
    "model": "Numatics 580 Ethernet/IP",
@@ -1640,6 +1849,166 @@
      "title": "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)",
      "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/lenze/i550",
+   "vendor": "Lenze",
+   "model": "i550 cabinet",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 587,
+     "product_code": 550,
+     "device_type": 2,
+     "revisions": [
+      "7.1"
+     ],
+     "product_name": "i550 cabinet"
+    },
+    "input": {
+     "instance": 71,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 21,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 130,
+     "bytes": 68
+    },
+    "eds": "Lenze_i550-cabinet_V07.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Lenze i550 / i650: declaration of conformity (ODVA), ODVA marketplace product 2570",
+     "sha256": "79d08c9f63de375a9043b52501ed2da33aacfebf45ad2c12453e92366f44d518",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Lenze i550 / i650: EDS, ODVA marketplace product 2570",
+     "sha256": "7c2cd850def387b2c0ae6ccf55d4732ccc6807a8dc8459f1343ef169fe9bcbe8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-d800-e",
+   "vendor": "Mitsubishi Electric Corporation",
+   "model": "FR-D800-E",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 112,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-D800-E"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A1000200700102.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-D800-E: declaration of conformity (ODVA), ODVA marketplace product 2787",
+     "sha256": "0a5fd017960cf765dfd199e4c26f96444e4396d659ab072e4f8d1f5af7549a8a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-D800-E: EDS, ODVA marketplace product 2787",
+     "sha256": "c90227479e640e11e53df19a099b6f9e5ed8e0ce4566314b814de4f80b55bcb6",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-E",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 62,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-E800-E"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A10002003E0101.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-E800-E: declaration of conformity (ODVA), ODVA marketplace product 2156",
+     "sha256": "a326fab9a1b6425133f71aa1eea635a24612b114de4663f4b2266c42b538ff98",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-E800-E: EDS, ODVA marketplace product 2156",
+     "sha256": "85de70997bd9c67e731270eb542d506798c500d05d481c511809feb0e4e6c5c3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-sce",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-SCE",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 63,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-E800-SCE"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A10002003F0100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-E800-SCE: declaration of conformity (ODVA), ODVA marketplace product 2231",
+     "sha256": "75334048f965586f3dc5193f57585624b4c130b2e394ae62f690a11df12877c2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-E800-SCE: EDS, ODVA marketplace product 2231",
+     "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -2814,6 +3183,1009 @@
     "note": "2 x RJ45 10/100 (switch, DLR beacon-based ring node), 24 V DC logic supply 19.2..30 V, up to 63 Axioline F devices on the local bus, rotary switches set the IP assignment.",
     "source": "AXL F BK EIP EF data sheet 107469_en_01 pp. 1, 5, 6, 20"
    }
+  },
+  {
+   "folder": "devices/rockwell-automation/1719-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1719-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 315,
+     "device_type": 12,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1719-AENTR Ex I/O EtherNet/IP Adapter"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 48
+    },
+    "output": {
+     "instance": 198,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "1719_AENTR.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "1719-AENTR EtherNet/IP adapter EDS package 11554.05",
+     "sha256": "d0264b0694e663237f0b2725309934385d3a5b2be2f32298a6fedac07b74ee28",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-16cfgm12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-16CFGM12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 357,
+     "device_type": 7,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1732E-16CFGM12R 16 DC In/Out M12"
+    },
+    "input": {
+     "instance": 105,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 102,
+     "bytes": 6
+    },
+    "eds": "0001000701650300.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
+     "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-8x8m12dr",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-8X8M12DR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 358,
+     "device_type": 7,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1732E-8X8M12DR 8 DC In/Out M12"
+    },
+    "input": {
+     "instance": 114,
+     "bytes": 9
+    },
+    "output": {
+     "instance": 34,
+     "bytes": 1
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 8
+    },
+    "eds": "0001000701660300.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
+     "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ib16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-IB16M12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 369,
+     "device_type": 7,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "1732E-IB16M12R 16 DC In M12"
+    },
+    "input": {
+     "instance": 105,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 190,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 101,
+     "bytes": 4
+    },
+    "eds": "1732E_16InBlock2Port.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
+     "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ob16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-OB16M12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 370,
+     "device_type": 7,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "1732E-OB16M12R 16 DC Out M12"
+    },
+    "input": {
+     "instance": 192,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "eds": "1732E_16OutBlock2Port.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
+     "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 108,
+     "device_type": 12,
+     "revisions": [
+      "7.15"
+     ],
+     "product_name": "1734-AENT/C Ethernet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C006C070B_1734_AENT.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09",
+     "sha256": "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 196,
+     "device_type": 12,
+     "revisions": [
+      "7.15"
+     ],
+     "product_name": "1734-AENTR/C EtherNet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C00C4070B_1734_AENTR.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09",
+     "sha256": "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1738-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1738-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 132,
+     "device_type": 12,
+     "revisions": [
+      "6.13"
+     ],
+     "product_name": "1738-AENT/B Ethernet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C0084060C_1738_AENT_SerB.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorPOINT EtherNet/IP adapters EDS package 10401.33 (1738-AENT, 1738-AENTR)",
+     "sha256": "385800c349a5560fa3f59bc3527b729c22e0c26fb035239320cfe1356890817d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1769-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1769-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 298,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "1769-AENTR"
+    },
+    "eds": "0001000C012A0100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CompactLogix 1769-AENTR EDS package 11237.04",
+     "sha256": "5d0a1249479d0e23e2f6be9cca005bca9a6c0c7e66cd7ffe2f2c2a7c554ef8ce",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1162/11237.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 90,
+     "device_type": 12,
+     "revisions": [
+      "4.1"
+     ],
+     "product_name": "1794-AENT FLEX I/O Ethernet Adapter"
+    },
+    "eds": "0001000C005A0400.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX I/O 1794-AENT/B EDS package 10585.05",
+     "sha256": "4e723f2d1210738af0528eb488ba573a04de82f89bc8d470bdebf6569361ace8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 261,
+     "device_type": 12,
+     "revisions": [
+      "2.12"
+     ],
+     "product_name": "1794-AENTR FLEX Ethernet Adapter"
+    },
+    "eds": "0001000C01050200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX I/O 1794-AENTR EDS package 10989.14",
+     "sha256": "4a95df7cee1fec8d6e40cc17a424c4f90e8206d9c6ceb2024bce137a7b185b85",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5069-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5069-AEN2TR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 252,
+     "device_type": 12,
+     "revisions": [
+      "3.1"
+     ],
+     "product_name": "5069-AEN2TR"
+    },
+    "eds": "0001000C00FC0300_as_uploaded_from_3.011.44.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Compact 5000 5069-AEN2TR EDS (uploaded from firmware 3.011.44)",
+     "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AEN2TR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 322,
+     "device_type": 12,
+     "revisions": [
+      "6.12"
+     ],
+     "product_name": "5094 Adapter 16 Modules RJ45"
+    },
+    "eds": "0001000C01420600.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)",
+     "sha256": "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 253,
+     "device_type": 12,
+     "revisions": [
+      "6.12"
+     ],
+     "product_name": "5094 Adapter 8 Modules RJ45"
+    },
+    "eds": "0001000C00FD0600.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)",
+     "sha256": "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/armor-powerflex-35e",
+   "vendor": "Rockwell Automation",
+   "model": "Armor PowerFlex 35E",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 3,
+     "device_type": 170,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Armor PowerFlex"
+    },
+    "input": {
+     "instance": 1025,
+     "bytes": 76
+    },
+    "output": {
+     "instance": 769,
+     "bytes": 28
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "000100AA00030200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Armor PowerFlex 35E: ODVA Declaration of Conformity",
+     "sha256": "765503f461db543875b0d4e8618888a6091b5534bb7fc905e52d1ff7614b7987",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2432/12191_DOC_090125.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Armor PowerFlex 35E: EDS (ODVA marketplace)",
+     "sha256": "2af95303f1d98eec8bc949f666141127904675de8a049722f9c3441b4c4431ca",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-280e-281e",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart 280E/281E (EtherNet/IP)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 145,
+     "device_type": 22,
+     "revisions": [
+      "2.3"
+     ],
+     "product_name": "ArmorStart 280E 0.5-2.5A 24VDC"
+    },
+    "input": {
+     "instance": 150,
+     "bytes": 16
+    },
+    "output": {
+     "instance": 162,
+     "bytes": 3
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "0001001600910200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity",
+     "sha256": "1836745b0fb1d49b695a04a7f149c321359862de189f3214caf104dbff95b446",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)",
+     "sha256": "247261c77de331506ff9795d80fa96979b701913d0f272e9c2f8de943879acc0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-lt",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart LT 290E/291E/294E (EtherNet/IP)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 769,
+     "device_type": 22,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ArmorStart 290E 0.24-3.5A"
+    },
+    "input": {
+     "instance": 152,
+     "bytes": 30
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 6
+    },
+    "config": {
+     "instance": 100,
+     "bytes": 84
+    },
+    "eds": "0001001603010200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity",
+     "sha256": "8155a32a7c606b7745a77640832031e7b29edcbda8f920678fd094e5bb459843",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)",
+     "sha256": "07c2f541dc2a416f0e07d85d6774543015dbc353942233ec83c1d8c5366a9445",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 523 with 25-COMM-E2P",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 1822,
+     "device_type": 151,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "25-COMM-E2P     "
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "00010097071E0100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
+     "sha256": "8e85ae6dc580a772342bb87ba02a33cb991629d65d80b34e0b664188c9cb453d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
+     "sha256": "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Does a PowerFlex 523 with a 25-COMM-E2P answer ListIdentity with this adapter EDS's product code (1822) and device type 151, or with the drive's own?",
+     "source": "ODVA marketplace product 580, EDS member 00010097071E0100.eds (an adapter EDS, not a 523 EDS)"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-525",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 525 (embedded EtherNet/IP)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 9,
+     "device_type": 151,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "PowerFlex 525"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "0001009700090100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
+     "sha256": "8e85ae6dc580a772342bb87ba02a33cb991629d65d80b34e0b664188c9cb453d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
+     "sha256": "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-527",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 15,
+     "device_type": 45,
+     "revisions": [
+      "2.3"
+     ],
+     "product_name": "PowerFlex 527"
+    },
+    "input": {
+     "instance": 2,
+     "bytes": 500
+    },
+    "output": {
+     "instance": 81,
+     "bytes": 500
+    },
+    "eds": "0001002D000F0200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 527-STO CIP Safety: ODVA Declaration of Conformity",
+     "sha256": "e7cf75e9a25ea6881b03a8e2a07d471fe47f02265ec74a56f5b6edd3e0951dd4",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1966/11388_DOC_052522.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 527-STO CIP Safety: EDS (ODVA marketplace)",
+     "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Does a PowerFlex 527 without the STO option answer with the same product code (15) and the same connection, or does it need a different EDS?",
+     "source": "ODVA marketplace product 1966 lists only the 527-STO CIP Safety drive"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-6000t",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 6000T",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 10640,
+     "device_type": 143,
+     "revisions": [
+      "11.1"
+     ],
+     "product_name": "PowerFlex 6000T MV AC Drive"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "12040.08_EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity",
+     "sha256": "66cbf2811650eb129197543205774ac4163842e274d65563e30bc9069c15f582",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2255/12040_DOC_082126.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)",
+     "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70 (EtherNet/IP adapter)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 48,
+     "device_type": 123,
+     "revisions": [
+      "2.9"
+     ],
+     "product_name": "PowerFlex 70"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "0001007B00300200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity",
+     "sha256": "b5629f7a3d40358e860c331d65cbf80ec9dfd9bde77d3132d0a7b0e709d6e531",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1639/10702_DOC_110308.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 70 family (ODVA listing 1639): EDS (ODVA marketplace)",
+     "sha256": "c76a77ae3a5b27591c1607286f0c41cfea8bdabd7288fdfd952e4771b66f0930",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Is this EDS the one for a 20-COMM-E, a 20-COMM-ER, or both?",
+     "source": "ODVA marketplace product 1639; the EDS names no adapter"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70ec",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70EC",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 50,
+     "device_type": 152,
+     "revisions": [
+      "5.1"
+     ],
+     "product_name": "PowerFlex 70 EC"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "0001009800320500.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 70EC: ODVA Declaration of Conformity",
+     "sha256": "30fbc80109947ec26fbb98998eac2cc41e03774103c7489fb507edd925a3dbb1",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 70EC: EDS (ODVA marketplace)",
+     "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753 with 20-750-ENETR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 1168,
+     "device_type": 140,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "PowerFlex 753"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "0001008C04900100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): ODVA Declaration of Conformity",
+     "sha256": "b5307d5e9b42975144a965767a67c1a1e1bbc0575d91ba7276fdbefad026bffc",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 753 and 755 family (ODVA listing 854): ODVA Declaration of Conformity",
+     "sha256": "98c533cad64c898058e2d4a10cfd50bc6d29fa7d1d81771eabc86596604bdc4c",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): EDS (ODVA marketplace)",
+     "sha256": "fe78ee688ac471b6f4da955407e9528e5a5a99ef3435e55bf163d0b96dc52042",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 753 and 755 family (ODVA listing 854): EDS (ODVA marketplace)",
+     "sha256": "1aeef508465e71acd6ddbf23a65837224d4d1ec31ad44ed9f7e160ba26a25300",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753TS",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 7056,
+     "device_type": 143,
+     "revisions": [
+      "13.1"
+     ],
+     "product_name": "PowerFlex 753TS "
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "EDS_753TS.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 753TS: ODVA Declaration of Conformity",
+     "sha256": "24c1238364e3154595c880bf8f3490256def9a81fb11a8dcedc23e5accce8e08",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2691/12345_DOC_022724.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 753TS: EDS (ODVA marketplace)",
+     "sha256": "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755 (embedded EtherNet/IP)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 2192,
+     "device_type": 143,
+     "revisions": [
+      "16.1"
+     ],
+     "product_name": "PowerFlex 755"
+    },
+    "input": {
+     "instance": 1
+    },
+    "output": {
+     "instance": 2
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "0001008F08901000.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 755, 755HiP: ODVA Declaration of Conformity",
+     "sha256": "58bf5c53762a6e4e55ee2046eec36614844508b9d8b6afbdb1c9791c46fe097b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1644/10875_DOC_042225.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 755, 755HiP: EDS (ODVA marketplace)",
+     "sha256": "58ffcda61a8f3c1fd2e94969d5a0abcaf72d980162362937786bee0d11c597b3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755TS",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 85,
+     "device_type": 37,
+     "revisions": [
+      "14.2"
+     ],
+     "product_name": "PowerFlex 755TS "
+    },
+    "input": {
+     "instance": 2,
+     "bytes": 500
+    },
+    "output": {
+     "instance": 81,
+     "bytes": 500
+    },
+    "eds": "EDS_PowerFlex_755TS_85_R14.2.12001_CIP_Motion.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "PowerFlex 755TS: ODVA Declaration of Conformity",
+     "sha256": "0721e8e87635607b795fd44e3d5288acbd40fa6f44e775d923137258ddeeda2b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2690/12346_DOC_031726.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 755TS: EDS (ODVA marketplace)",
+     "sha256": "29d448ab91ceea1859aa0228a09193e8425b7c7c8a133658a074613687348449",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2690/12346.06_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
   },
   {
    "folder": "devices/schneider-electric/atv320-vw3a3616",
@@ -4114,6 +5486,250 @@
      "title": "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)",
      "sha256": "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw300",
+   "vendor": "WEG",
+   "model": "CFW300",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 5376,
+     "device_type": 43,
+     "revisions": [
+      "3.1"
+     ],
+     "product_name": "CFW300"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW300_V30X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW300: declaration of conformity (ODVA), ODVA marketplace product 2202",
+     "sha256": "a3c5162fa2aab6cc141f373af2d8aeb4a005f73fb63094f7450f55ce6764f776",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW300: EDS, ODVA marketplace product 2202",
+     "sha256": "c45ab18f67fb60bc30deb8bedc44939a484c6904842913b9c073e9e19013e616",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw320",
+   "vendor": "WEG",
+   "model": "CFW320",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 6400,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CFW320"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW320_V10X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW320: declaration of conformity (ODVA), ODVA marketplace product 2462",
+     "sha256": "a86c874dd3907f3091e17aaa28c6a3ececc2b30f641b55c6e51d6a459a057337",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2462/12226_DOC_021622.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW320: EDS, ODVA marketplace product 2462",
+     "sha256": "e1125ca528c718fe2f449a6e24196e596c2002e71964bd567a637799e440563f",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2462/12226.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw500",
+   "vendor": "WEG",
+   "model": "CFW500",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 6656,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CFW500"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW500_CETH2_V10X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW500: declaration of conformity (ODVA), ODVA marketplace product 2768",
+     "sha256": "7809fda67ec0bf33cf93f5ae48f56119c5c84c873283b51220d6adfa79608b37",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW500: EDS, ODVA marketplace product 2768",
+     "sha256": "11acd09b50d3e720b5150eda5aabef8a5b584ee2d6b8961625de1580013ff9e9",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/ssw900",
+   "vendor": "WEG",
+   "model": "SSW900",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 5888,
+     "device_type": 43,
+     "revisions": [
+      "1.30"
+     ],
+     "product_name": "SSW900"
+    },
+    "input": {
+     "instance": 160
+    },
+    "output": {
+     "instance": 110
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_SSW900_V13X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG SSW900: declaration of conformity (ODVA), ODVA marketplace product 2394",
+     "sha256": "6b22e25567968fc15fbfe6a543b7d0e74e907ae2e4f1dd59fb2c9b674b31ed2d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG SSW900: EDS, ODVA marketplace product 2394",
+     "sha256": "8ed475238b4c7fa6f5c2e03979d0fd141b9f4a597823e7f992147fd895719b6f",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/yaskawa/ga500-ga501",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa GA501",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 44,
+     "product_code": 24063,
+     "device_type": 2,
+     "revisions": [
+      "1.5"
+     ],
+     "product_name": "Yaskawa GA501"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "GA501_v1.005.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Yaskawa GA500 / GA501 EtherNet/IP: declaration of conformity (ODVA), ODVA marketplace product 2770",
+     "sha256": "0b341fd56f7767f83e8e4a07dc020da27a5de238d7dacea811e14449451710a2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Yaskawa GA500 / GA501 EtherNet/IP: EDS, ODVA marketplace product 2770",
+     "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/yaskawa/ga800-si-en3d",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 44,
+     "product_code": 24192,
+     "device_type": 2,
+     "revisions": [
+      "2.8"
+     ],
+     "product_name": "Yaskawa SI-EN3D for CIPR-GA80U2004"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "CIPR-GA80U2004_SI-EN3D_v2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Yaskawa 1740 listing: declaration of conformity (ODVA), ODVA marketplace product 1740",
+     "sha256": "f22fff86a4ab1ca43ef3e2352db68d54c8dc35de523f97e1f8c60c6365fc1d70",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Yaskawa 1740 listing: EDS, ODVA marketplace product 1740",
+     "sha256": "c5a10ca71a76cbd19ebc51f8423a34504ec0ad677a25af4dba333370a7ab3598",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   }

@@ -1,0 +1,113 @@
+format = "helmsman-devices-collect 1"
+vendor = "Rockwell Automation"
+
+# Remote I/O adapters and blocks. rockwellautomation.com and
+# literature.rockwellautomation.com answer a plain curl with 403 Access Denied
+# (Akamai), so no manual could be opened; every EDS here is the one the vendor
+# submitted for ODVA conformance, linked from the ODVA marketplace product page
+# named in `found` (read 2026-11-22). Manuals: # behind login/blocked:
+# https://www.rockwellautomation.com/en-us/support/documentation/literature-library.html
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1738-aent",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip"
+title = "ArmorPOINT EtherNet/IP adapters EDS package 10401.33 (1738-AENT, 1738-AENTR)"
+found = "2026-11-22 search: rockwell 1734-aent eds; ODVA marketplace page https://marketplace.odva.org/products/540-1738-aent-armorpoint-ethernet-ip-adapter"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1794-aentr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip"
+title = "FLEX I/O 1794-AENTR EDS package 10989.14"
+found = "2026-11-22 search: rockwell 1794-aent eds; ODVA marketplace page https://marketplace.odva.org/products/552-1794-flex-i-o-ethernet-ip-adapter"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/5094-aentr",
+  "devices/rockwell-automation/5094-aen2tr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip"
+title = "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)"
+found = "2026-11-22 search: rockwell 5094-aentr eds; ODVA marketplace page https://marketplace.odva.org/products/1968-5094-aentr-a-5094-aen2tr-a-5094-aentrxt-a-5094-aen2trxt-a-5094-aensfprxt-a-5094-aen2sfprxt-a-5094-aensfpr-a-5094-aen2sfprxx-a-5094xx-adapter-8-16-modules-rj45-5094xt-adapter-8-16-modules-sfp"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1732e-16cfgm12r",
+  "devices/rockwell-automation/1732e-8x8m12dr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip"
+title = "ArmorBlock 1732E 16-point M12 EDS package 11894.05"
+found = "2026-11-22 search: rockwell 1732e-ib16m12r eds; ODVA marketplace page https://marketplace.odva.org/products/2159-1732e-8x8m12dr-8-dc-in-out-m12-1732e-16cfgm12r-16-dc-in-out-m12-1732e-ib16m12xr-16-dc-in-m12-1732e-ob16m12xr-16-dc-out-m12"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1769-aentr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1162/11237.04-EDS.zip"
+title = "CompactLogix 1769-AENTR EDS package 11237.04"
+found = "2026-11-22 search: rockwell 1769-aentr eds; ODVA marketplace page https://marketplace.odva.org/products/1162-1769-aentr"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/5069-aen2tr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds"
+title = "Compact 5000 5069-AEN2TR EDS (uploaded from firmware 3.011.44)"
+found = "2026-11-22 search: rockwell 5069-aen2tr eds; ODVA marketplace page https://marketplace.odva.org/products/1185-5069-aen2tr-a"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1719-aentr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip"
+title = "1719-AENTR EtherNet/IP adapter EDS package 11554.05"
+found = "2026-11-22 search: rockwell 1719-aentr eds; ODVA marketplace page https://marketplace.odva.org/products/1813-1719-aentr-ethernet-ip-adapter-1718-aentr-ethernet-ip-adapter"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1734-aent",
+  "devices/rockwell-automation/1734-aentr",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip"
+title = "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09"
+found = "2026-11-22 search: rockwell 1734-aent eds; ODVA marketplace page https://marketplace.odva.org/products/2050-1734-aent-c-ethernet-adapter-1734-aentr-c-ethernet-adapter"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1794-aent",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip"
+title = "FLEX I/O 1794-AENT/B EDS package 10585.05"
+found = "2026-11-22 search: rockwell 1794-aent eds; ODVA marketplace page https://marketplace.odva.org/products/1019-1794-aent-b"
+terms = "none stated"
+
+[[doc]]
+folders = [
+  "devices/rockwell-automation/1732e-ib16m12r",
+  "devices/rockwell-automation/1732e-ob16m12r",
+]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip"
+title = "ArmorBlock 1732E 16-point EDS package 10748.04"
+found = "2026-11-22 search: rockwell 1732e-ib16m12r eds; ODVA marketplace page https://marketplace.odva.org/products/1240-1732e-xx16m12dr-1732e-16cfgm12r-1732e-xxxxm12xr-or-1732e-ib16m12soedr"
+terms = "none stated"

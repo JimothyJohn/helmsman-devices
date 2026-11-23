@@ -1,0 +1,163 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf",
+   "folders": [
+    "devices/weg/cfw300"
+   ],
+   "kind": "datasheet",
+   "name": "11954_DOC_122019.pdf",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "a3c5162fa2aab6cc141f373af2d8aeb4a005f73fb63094f7450f55ce6764f776",
+   "size": 38207,
+   "terms": "none stated",
+   "title": "WEG CFW300: declaration of conformity (ODVA), ODVA marketplace product 2202",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf",
+   "folders": [
+    "devices/weg/ssw900"
+   ],
+   "kind": "datasheet",
+   "name": "12119_DOC_070121.pdf",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "6b22e25567968fc15fbfe6a543b7d0e74e907ae2e4f1dd59fb2c9b674b31ed2d",
+   "size": 151162,
+   "terms": "none stated",
+   "title": "WEG SSW900: declaration of conformity (ODVA), ODVA marketplace product 2394",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2462/12226_DOC_021622.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2462/12226_DOC_021622.pdf",
+   "folders": [
+    "devices/weg/cfw320"
+   ],
+   "kind": "datasheet",
+   "name": "12226_DOC_021622.pdf",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "a86c874dd3907f3091e17aaa28c6a3ececc2b30f641b55c6e51d6a459a057337",
+   "size": 130858,
+   "terms": "none stated",
+   "title": "WEG CFW320: declaration of conformity (ODVA), ODVA marketplace product 2462",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf",
+   "folders": [
+    "devices/weg/cfw500"
+   ],
+   "kind": "datasheet",
+   "name": "12524_DOC_091124.pdf",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "7809fda67ec0bf33cf93f5ae48f56119c5c84c873283b51220d6adfa79608b37",
+   "size": 136003,
+   "terms": "none stated",
+   "title": "WEG CFW500: declaration of conformity (ODVA), ODVA marketplace product 2768",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip",
+   "folders": [
+    "devices/weg/cfw300"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EIP_CFW300_V30X.eds",
+     "sha256": "8afd16f58d765ce02c83ed36a73f1dc58ba23daa1c7e6ec41a22d084610f6069",
+     "size": 23862,
+     "type": "eds"
+    }
+   ],
+   "name": "11954.01-EDS.zip",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "c45ab18f67fb60bc30deb8bedc44939a484c6904842913b9c073e9e19013e616",
+   "size": 3350,
+   "terms": "none stated",
+   "title": "WEG CFW300: EDS, ODVA marketplace product 2202",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip",
+   "folders": [
+    "devices/weg/ssw900"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EIP_SSW900_V13X.eds",
+     "sha256": "2d08f8afa0a57dc04a2793d4f0647df3916083d530fbde71155b5405cf7f6611",
+     "size": 25640,
+     "type": "eds"
+    }
+   ],
+   "name": "12119.01-EDS.zip",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "8ed475238b4c7fa6f5c2e03979d0fd141b9f4a597823e7f992147fd895719b6f",
+   "size": 5288,
+   "terms": "none stated",
+   "title": "WEG SSW900: EDS, ODVA marketplace product 2394",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2462/12226.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2462/12226.01-EDS.zip",
+   "folders": [
+    "devices/weg/cfw320"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EIP_CFW320_V10X.eds",
+     "sha256": "498095c732e801d29d180da7c5a19a9dfeefe2ea76be0c73d2bd5219edca9131",
+     "size": 23862,
+     "type": "eds"
+    }
+   ],
+   "name": "12226.01-EDS.zip",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "e1125ca528c718fe2f449a6e24196e596c2002e71964bd567a637799e440563f",
+   "size": 3355,
+   "terms": "none stated",
+   "title": "WEG CFW320: EDS, ODVA marketplace product 2462",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip",
+   "folders": [
+    "devices/weg/cfw500"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EIP_CFW500_CETH2_V10X.eds",
+     "sha256": "5b174b3564c3310d426ef1f4879635f2079a89681a7938c5da77c847137ab51a",
+     "size": 31045,
+     "type": "eds"
+    },
+    {
+     "name": "EIP_MW500_CETH2_V10X.eds",
+     "sha256": "ade2824b10a36cf8466ca51835078f2b071afc8ffafe012d6f6fe8a6cb7b372c",
+     "size": 31041,
+     "type": "eds"
+    }
+   ],
+   "name": "12524.01.zip",
+   "retrieved": "2026-11-23T03:41:35Z",
+   "sha256": "11acd09b50d3e720b5150eda5aabef8a5b584ee2d6b8961625de1580013ff9e9",
+   "size": 7217,
+   "terms": "none stated",
+   "title": "WEG CFW500: EDS, ODVA marketplace product 2768",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

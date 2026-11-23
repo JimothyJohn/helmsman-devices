@@ -1,0 +1,39 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 70 (EtherNet/IP adapter)"
+kind = "drive"
+article = "20A"
+
+[identity.enip]
+vendor_id = 1
+product_code = 48
+device_type = 123
+revisions = ["2.9"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 70"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param2: 4..24 bytes, default 8
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param1: 0..20 bytes, default 4
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "0001007B00300200.eds", size = 5593, sha256 = "7c31097c75b1a0f7a47f91e69c9b6761d2e51607e78ab5b1b47e193128f3779f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip (member of 10702-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity"
+sha256 = "b5629f7a3d40358e860c331d65cbf80ec9dfd9bde77d3132d0a7b0e709d6e531"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1639/10702_DOC_110308.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 70 family (ODVA listing 1639): EDS (ODVA marketplace)"
+sha256 = "c76a77ae3a5b27591c1607286f0c41cfea8bdabd7288fdfd952e4771b66f0930"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[questions]]
+ask = "Is this EDS the one for a 20-COMM-E, a 20-COMM-ER, or both?"
+source = "ODVA marketplace product 1639; the EDS names no adapter"

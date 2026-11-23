@@ -2,6 +2,28 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/abb/feip-21",
+   "vendor": "ABB, Inc.",
+   "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 46,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "FEIP21_filerev1_2.EDS",
+      "size": 115812,
+      "sha256": "c67b3dfdce91d48f4a88166576d8d8c723297a8325098d5e8a7709ffa49684ff"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/acromag/xt1111-000",
    "vendor": "Acromag",
    "model": "XT1111-000",
@@ -299,6 +321,94 @@
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/delta-electronics/cmm-eip01",
+   "vendor": "Delta electronics, inc.",
+   "model": "CMM-EIP01",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 799,
+     "product_code": 260
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "031F000C010400010001.eds",
+      "size": 1177149,
+      "sha256": "f90f682a2dec3fe1db4ae4e959fc97e9578684b043b1a1a74633126ff29bce7e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dg1",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DG1",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12288
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_EIP_v2.8.eds",
+      "size": 233100,
+      "sha256": "bdea15cd765ecb14091c0b3850ddc89e46eaa5d97e572e1e0ce01d55c1795e1f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dm1-pro",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DM1 PRO",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12329
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXLDM1_EIP_V1.06.eds",
+      "size": 262169,
+      "sha256": "479e24e490e2b74aedb17f5706ad80284bf7e42774ff528dea9ce7a7e880492b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
+   "vendor": "Eaton Electrical",
+   "model": "PowerXL VFD EIP Comm. Card",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12338
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds",
+      "size": 141156,
+      "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4"
+     }
     }
    }
   },
@@ -700,6 +810,94 @@
       "name": "VS_32.eds",
       "size": 7817,
       "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/lenze/i550",
+   "vendor": "Lenze",
+   "model": "i550 cabinet",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 587,
+     "product_code": 550
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Lenze_i550-cabinet_V07.eds",
+      "size": 198396,
+      "sha256": "5dd7abf7c3860b0e6a80dce919f6dda43e0b68190910ebaca1d3fbab0ebb975d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-d800-e",
+   "vendor": "Mitsubishi Electric Corporation",
+   "model": "FR-D800-E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 112
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A1000200700102.eds",
+      "size": 278023,
+      "sha256": "4fe0e69aaf2c0236773ef9da6d2d2b9ea03fcfc12f9a1795465a85b9f2b71338"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 62
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003E0101.eds",
+      "size": 74537,
+      "sha256": "e0040f44b581fbea0c30adb3e8652add6ef28d1e1399eb32cc90ca96686cbc92"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-sce",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-SCE",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 63
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003F0100.eds",
+      "size": 245163,
+      "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28"
      }
     }
    }
@@ -1260,6 +1458,600 @@
       "name": "AXL_F_BK_EIP_EF.eds",
       "size": 22806,
       "sha256": "a77166694c46c26fa26b72cb5a3196bdbeb6e5b7486638d878988f43f1afb592"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1719-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1719-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 315
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1719_AENTR.eds",
+      "size": 7966,
+      "sha256": "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-16cfgm12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-16CFGM12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 357
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701650300.eds",
+      "size": 29825,
+      "sha256": "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-8x8m12dr",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-8X8M12DR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 358
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701660300.eds",
+      "size": 55643,
+      "sha256": "b3f3b8397d8922a81fc2655ce72874f9c798b672abe9a5dad1242cb3060c566a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ib16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-IB16M12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 369
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16InBlock2Port.eds",
+      "size": 23963,
+      "sha256": "96657dd7152d74f77722c4a7a39b3a929ec5cfb4a5f1506e654d80ce395856ec"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ob16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-OB16M12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 370
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16OutBlock2Port.eds",
+      "size": 13675,
+      "sha256": "4ec0530cbf3c9474dc764b4e7171209c2be0c09e2616f9da0ea26292b36d1d32"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 108
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C006C070B_1734_AENT.eds",
+      "size": 48519,
+      "sha256": "76a23243b7fbf2df4b2c83b048349bbe25bf1172c55d88812697f0c8c8d6efdb"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 196
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00C4070B_1734_AENTR.eds",
+      "size": 48986,
+      "sha256": "34e8304305f4d7bb7b7bfc84359495f3e9165ca87e11086bf65071d4fbfe1f84"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1738-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1738-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 132
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C0084060C_1738_AENT_SerB.eds",
+      "size": 48466,
+      "sha256": "c328fd321b48e5c3b89890a693eb35afabeba536bdf0b629682d3eb473e6182a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1769-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1769-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 298
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C012A0100.eds",
+      "size": 4229,
+      "sha256": "aa2345723785b71f7c40a51dba4854e8cab8937a4eec20d747503c9109b9ffb5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 90
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C005A0400.EDS",
+      "size": 79801,
+      "sha256": "97b40eec9bf440faa340cb59ffb17a341e2c5b543d1d222928696ea7def8fa89"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 261
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01050200.eds",
+      "size": 136799,
+      "sha256": "45dafe6e13b170a11327785d9cafe6e3f7ae35eb29901d8d9be5110623ecb18c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5069-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5069-AEN2TR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 252
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FC0300_as_uploaded_from_3.011.44.eds",
+      "size": 14648,
+      "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AEN2TR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 322
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01420600.eds",
+      "size": 18440,
+      "sha256": "90ca83cf7c596e7bbffc56be436332727527b4812f08fe2c158dda080ffe2e99"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 253
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FD0600.eds",
+      "size": 17323,
+      "sha256": "c7c3d7e5283ae82dab20f07111a21d682e77023aad994ccb2df09a757b9646ab"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armor-powerflex-35e",
+   "vendor": "Rockwell Automation",
+   "model": "Armor PowerFlex 35E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 3
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "000100AA00030200.eds",
+      "size": 41809,
+      "sha256": "c84392f3c1a108a65180ea1b3658eb93f91c76cf8dfe7cf380224b7076f3356a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-280e-281e",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart 280E/281E (EtherNet/IP)",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 145
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001600910200.eds",
+      "size": 64224,
+      "sha256": "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-lt",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart LT 290E/291E/294E (EtherNet/IP)",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 769
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001603010200.eds",
+      "size": 142693,
+      "sha256": "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 523 with 25-COMM-E2P",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 1822
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00010097071E0100.eds",
+      "size": 24819,
+      "sha256": "d31bd29649028349734f5b815cd6650138dc796647a6502b8b9bac99d3cb8d6d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-525",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 525 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 9
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009700090100.eds",
+      "size": 18530,
+      "sha256": "a02b3ea15a13f64b3c94a7c48de37877d2804eb5f09dc47225e57e68ba9bcab7"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-527",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 15
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001002D000F0200.eds",
+      "size": 22378,
+      "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-6000t",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 6000T",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 10640
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "12040.08_EDS",
+      "size": 40833,
+      "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70 (EtherNet/IP adapter)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 48
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001007B00300200.eds",
+      "size": 5593,
+      "sha256": "7c31097c75b1a0f7a47f91e69c9b6761d2e51607e78ab5b1b47e193128f3779f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70ec",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70EC",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 50
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009800320500.eds",
+      "size": 11068,
+      "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753 with 20-750-ENETR",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 1168
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001008C04900100.eds",
+      "size": 14087,
+      "sha256": "14d8734a3d758f338b57e16c479fcf3c8b0cb3a6b97cbf1101b0160f035a9340"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753TS",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 7056
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_753TS.eds",
+      "size": 39871,
+      "sha256": "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 2192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001008F08901000.eds",
+      "size": 6563,
+      "sha256": "521e5178f12075fb7125af9d8a0558b7deb2c7c84d145d3772e9ce5242dda67c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755TS",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 85
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_PowerFlex_755TS_85_R14.2.12001_CIP_Motion.eds",
+      "size": 9399,
+      "sha256": "173152a00e1b5ee7aaab6a6be219b27814e6f466650ba11ba44b23afaf8b943a"
      }
     }
    }
@@ -1949,6 +2741,138 @@
       "name": "07500363.eds",
       "size": 20821,
       "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw300",
+   "vendor": "WEG",
+   "model": "CFW300",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5376
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW300_V30X.eds",
+      "size": 23862,
+      "sha256": "8afd16f58d765ce02c83ed36a73f1dc58ba23daa1c7e6ec41a22d084610f6069"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw320",
+   "vendor": "WEG",
+   "model": "CFW320",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6400
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW320_V10X.eds",
+      "size": 23862,
+      "sha256": "498095c732e801d29d180da7c5a19a9dfeefe2ea76be0c73d2bd5219edca9131"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw500",
+   "vendor": "WEG",
+   "model": "CFW500",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6656
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW500_CETH2_V10X.eds",
+      "size": 31045,
+      "sha256": "5b174b3564c3310d426ef1f4879635f2079a89681a7938c5da77c847137ab51a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/ssw900",
+   "vendor": "WEG",
+   "model": "SSW900",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5888
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_SSW900_V13X.eds",
+      "size": 25640,
+      "sha256": "2d08f8afa0a57dc04a2793d4f0647df3916083d530fbde71155b5405cf7f6611"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga500-ga501",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa GA501",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24063
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "GA501_v1.005.eds",
+      "size": 50957,
+      "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga800-si-en3d",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CIPR-GA80U2004_SI-EN3D_v2.8.eds",
+      "size": 51252,
+      "sha256": "e57045ccd15e2067b800e6e2dad04d63b4e4d578e8bc3acca119cbce25b14cc1"
      }
     }
    }

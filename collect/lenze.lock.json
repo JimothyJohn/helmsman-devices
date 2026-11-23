@@ -1,0 +1,61 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf",
+   "folders": [
+    "devices/lenze/i550"
+   ],
+   "kind": "datasheet",
+   "name": "12334_DOC_090926.pdf",
+   "retrieved": "2026-11-23T03:41:14Z",
+   "sha256": "79d08c9f63de375a9043b52501ed2da33aacfebf45ad2c12453e92366f44d518",
+   "size": 123899,
+   "terms": "none stated",
+   "title": "Lenze i550 / i650: declaration of conformity (ODVA), ODVA marketplace product 2570",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip",
+   "folders": [
+    "devices/lenze/i550"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "Lenze_i550-cabinet_V07.eds",
+     "sha256": "5dd7abf7c3860b0e6a80dce919f6dda43e0b68190910ebaca1d3fbab0ebb975d",
+     "size": 198396,
+     "type": "eds"
+    },
+    {
+     "name": "Lenze_i550-motec_V07.eds",
+     "sha256": "8a95744fb74f7b34cbef055c998cb3f8480a9658954b7c6fd86eccbcda120078",
+     "size": 214145,
+     "type": "eds"
+    },
+    {
+     "name": "Lenze_i550-protec_V07.eds",
+     "sha256": "3dd079ccf3f593ae99f00b0055975b44a2f154dc6a41beb5be4a5df49d568945",
+     "size": 198392,
+     "type": "eds"
+    },
+    {
+     "name": "Lenze_i650-motec_V07.eds",
+     "sha256": "04d3e5d3ad6563f619f52cd6ade201ecff6e40d9600269e90d86b97e036d24c3",
+     "size": 214145,
+     "type": "eds"
+    }
+   ],
+   "name": "12334.03_EDS.zip",
+   "retrieved": "2026-11-23T03:41:14Z",
+   "sha256": "7c2cd850def387b2c0ae6ccf55d4732ccc6807a8dc8459f1343ef169fe9bcbe8",
+   "size": 47505,
+   "terms": "none stated",
+   "title": "Lenze i550 / i650: EDS, ODVA marketplace product 2570",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
