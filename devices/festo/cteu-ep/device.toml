@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo AG & Co. KG"
+model = "CTEU-EP"
+kind = "remote-io"
+article = "CTEU-EP"
+
+[identity.enip]
+vendor_id = 26
+product_code = 6001
+device_type = 12
+revisions = ["2.2"]   # the EDS's MajRev.MinRev
+product_name = "CTEU-EP EtherNet/IP bus node"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "I/O Con. Single Port"
+# input_assembly: the size is set by Param1: 8..10 bytes, default 8
+input_assembly = { instance = 111 }
+# output_assembly: the size is set by Param2: 8..8 bytes, default 8
+output_assembly = { instance = 110 }
+config_assembly = { instance = 102, bytes = 38 }
+eds = { name = "CTEU-EP.eds", size = 57519, sha256 = "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds", terms = "none stated" }
+
+[[sources]]
+title = "CTEU-EP EDS (ODVA marketplace, product 1771)"
+sha256 = "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds; retrieved 2026-11-23; not redistributed here"

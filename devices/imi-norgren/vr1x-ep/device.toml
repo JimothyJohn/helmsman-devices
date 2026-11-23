@@ -1,0 +1,28 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Norgren Manufacturing Co., Ltd."
+model = "VR1X-EP"
+kind = "remote-io"
+article = "Ethernet Valve Island VR series"
+
+[identity.enip]
+vendor_id = 1609
+product_code = 1
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "VR1X-EP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 100, bytes = 10 }
+output_assembly = { instance = 150, bytes = 3 }
+config_assembly = { instance = 151, bytes = 102 }
+eds = { name = "NORGREN-VR1X-EP-24-V1.2.eds", size = 60935, sha256 = "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds", terms = "none stated" }
+
+[[sources]]
+title = "VR1X-EP EtherNet/IP EDS (ODVA marketplace, product 2241)"
+sha256 = "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds; retrieved 2026-11-23; not redistributed here"

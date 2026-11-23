@@ -1,0 +1,28 @@
+format = "helmsman-devices-collect 1"
+vendor = "Parker"
+
+# EDS files from the ODVA marketplace pages Parker submitted (https://marketplace.odva.org/organizations/162-parker-hannifin-corporation); read 2026-11-22.
+
+[[doc]]
+folders = ["devices/parker/p2m-node-ethernet-ip"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2090/0004002BD1000100.eds"
+title = "P2M node EtherNet/IP EDS (ODVA marketplace, product 2090)"
+found = "2026-11-22 search: parker p2m ethernet node eds; https://marketplace.odva.org/products/2090-p2m-node-24do-ethernet-ip, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/parker/p2m-lite-node-ethernet-ip"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds"
+title = "P2M Lite node EtherNet/IP EDS (ODVA marketplace, product 2292)"
+found = "2026-11-22 search: parker p2m lite eds; https://marketplace.odva.org/products/2292-p2m-lite-node-24do-ethernet-ip, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/parker/p2h-node-ethernet-ip"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS"
+title = "P2H node EtherNet/IP EDS (ODVA marketplace, product 2381)"
+found = "2026-11-22 search: parker p2h ethernet node eds; https://marketplace.odva.org/products/2381-p2h-node-32do-ethernet-ip, Download the EDS File"
+terms = "none stated"

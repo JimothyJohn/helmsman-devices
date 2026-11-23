@@ -1,0 +1,28 @@
+format = "helmsman-devices-collect 1"
+vendor = "Emerson"
+
+# EDS files from the ODVA marketplace pages ASCO Numatics (now Emerson) submitted (https://marketplace.odva.org/organizations/159-asco-numatics); read 2026-11-22.
+
+[[doc]]
+folders = ["devices/emerson/numatics-g3-ethernet-ip"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds"
+title = "Numatics G3 EtherNet/IP node EDS (ODVA marketplace, product 516)"
+found = "2026-11-22 search: asco numatics g3 ethernet/ip eds; https://marketplace.odva.org/products/516-501-502-503-2002-2005-2012-2035-iso-15407-2-iso-5599-2-series-valve-manifolds-g3, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/emerson/numatics-580-ethernet-ip"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds"
+title = "Numatics 580 EtherNet/IP EDS (ODVA marketplace, product 1165)"
+found = "2026-11-22 search: numatics 580 ethernet/ip eds; https://marketplace.odva.org/products/1165-numatics-580-ethernet-ip, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/emerson/numatics-580-ethernet-ip-dlr"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds"
+title = "Numatics 580 EtherNet/IP DLR/QuickConnect EDS (ODVA marketplace, product 1166)"
+found = "2026-11-22 search: numatics 580 dlr eds; https://marketplace.odva.org/products/1166-numatics-580-ethernet-ip-dlr-qc, Download the EDS File"
+terms = "none stated"
