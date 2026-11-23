@@ -253,7 +253,7 @@ which is right. A contradiction written down is worth more than a guess.
 
 ```sh
 python3 -I scripts/build-index.py && python3 -I scripts/build-review.py && python3 -I scripts/build-records.py
-uvx ruff@0.17.5 check . && uvx ruff@0.17.5 format --check .
+uvx ruff@0.17.6 check . && uvx ruff@0.17.6 format --check .
 python3 -I scripts/build-index.py --check && python3 -I scripts/build-review.py --check && python3 -I scripts/build-records.py --check
 python3 -I -B -m unittest discover -s tests
 python3 -I scripts/use.py <your folder>      # read it as the next person will
