@@ -2,7 +2,7 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "Numatics, Inc"
+vendor = "Emerson"
 model = "Numatics G3 EtherNet/IP"
 kind = "remote-io"
 article = "Numatics G3 240-325"

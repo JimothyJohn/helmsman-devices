@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Delta electronics, inc. CMM-EIP01
+# Delta Electronics CMM-EIP01
 
 EDS identity: vendor 799 Delta electronics, inc., product code
 260, device type 12 Communications Adapter,

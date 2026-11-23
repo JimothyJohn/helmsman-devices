@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Festo AG & Co. KG CTEU-EP
+# Festo CTEU-EP
 
 EDS identity: vendor 26 Festo AG & Co. KG, product code
 6001, device type 12 Communications Adapter,

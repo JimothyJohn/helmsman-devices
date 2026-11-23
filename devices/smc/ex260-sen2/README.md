@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# SMC Corporation EX260-SEN2
+# SMC EX260-SEN2
 
 EDS identity: vendor 7 SMC Corporation, product code
 157, device type 27 Pneumatic Valve(s),

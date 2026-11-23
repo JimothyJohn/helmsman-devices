@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Norgren Manufacturing Co., Ltd. VR1X-EP
+# IMI Norgren VR1X-EP
 
 EDS identity: vendor 1609 Norgren Manufacturing Co., Ltd., product code
 1, device type 43 Generic Device,

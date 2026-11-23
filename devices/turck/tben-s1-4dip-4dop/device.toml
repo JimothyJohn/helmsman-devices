@@ -2,7 +2,7 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "TURCK"
+vendor = "Turck"
 model = "TBEN-S1-4DIP-4DOP"
 kind = "remote-io"
 article = "6814021"

@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# IMI Norgren Limited NORGREN VSxx 32
+# IMI Norgren NORGREN VSxx 32
 
 EDS identity: vendor 42 IMI Norgren Limited, product code
 332, device type 27 Pneumatic Valve(s),

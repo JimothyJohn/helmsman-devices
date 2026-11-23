@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Numatics, Inc Numatics G3 EtherNet/IP
+# Emerson Numatics G3 EtherNet/IP
 
 EDS identity: vendor 52 Numatics, Inc, product code
 101, device type 12 Communications Adapter,

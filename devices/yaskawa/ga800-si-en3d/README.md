@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Yaskawa America, Inc. Yaskawa SI-EN3D for CIPR-GA80U2004
+# Yaskawa Yaskawa SI-EN3D for CIPR-GA80U2004
 
 EDS identity: vendor 44 Yaskawa America, Inc., product code
 24192, device type 2 AC Drive Device,

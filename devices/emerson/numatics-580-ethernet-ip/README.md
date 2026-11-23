@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Numatics, Inc Numatics 580 Ethernet/IP
+# Emerson Numatics 580 Ethernet/IP
 
 EDS identity: vendor 52 Numatics, Inc, product code
 580, device type 12 Communications Adapter,

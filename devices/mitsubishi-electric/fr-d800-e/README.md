@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Mitsubishi Electric Corporation FR-D800-E
+# Mitsubishi Electric FR-D800-E
 
 EDS identity: vendor 161 Mitsubishi Electric Corporation, product code
 112, device type 2 AC Drive,

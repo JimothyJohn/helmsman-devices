@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Eaton Corporation PowerXL DM1 PRO
+# Eaton PowerXL DM1 PRO
 
 EDS identity: vendor 68 Eaton Corporation, product code
 12329, device type 2 AC Drive Device,

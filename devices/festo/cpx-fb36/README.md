@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Festo AG & Co. KG CPX-FB36
+# Festo CPX-FB36
 
 EDS identity: vendor 26 Festo AG & Co. KG, product code
 14026, device type 12 Communications Adapter,

@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Parker Hannifin Corporation P2H Node 32DO EtherNet/IP
+# Parker P2H Node 32DO EtherNet/IP
 
 EDS identity: vendor 4 Parker Hannifin Corporation, product code
 53296, device type 43 Generic Device,

@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Festo Corporation CPX-FB32
+# Festo CPX-FB32
 
 EDS identity: vendor 26 Festo Corporation, product code
 13002, device type 12 Communications Adapter,
