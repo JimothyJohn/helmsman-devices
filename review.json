@@ -5858,7 +5858,272 @@
     },
     "eds": "12040.08_EDS"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "Normal Stop",
+     "enip": "out:0.0",
+     "meaning": "Logic Command bit 0: 1 = Normal Stop. A 0 must be present before Start, Jog or Run is accepted",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2) (4)"
+    },
+    {
+     "name": "Start",
+     "enip": "out:0.1",
+     "meaning": "Logic Command bit 1: 1 = Start, momentary",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (1)"
+    },
+    {
+     "name": "Jog 1",
+     "enip": "out:0.2",
+     "meaning": "Logic Command bit 2: 1 = Jog 1 (speed set in 10:1894). A transition to 0 stops the drive",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+    },
+    {
+     "name": "Clear Fault",
+     "enip": "out:0.3",
+     "meaning": "Logic Command bit 3: 1 = Clear Fault; the value must switch from 0 to 1",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (3)"
+    },
+    {
+     "name": "Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "Logic Command bits 4-5 (the table names both Unipolar Direction): 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Manual",
+     "enip": "out:0.6",
+     "meaning": "Logic Command bit 6: 1 = Manual",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accel Time",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "Logic Command bits 8-9: 00 = no command, 01 = Accel Time 1 (10:1915), 10 = Accel Time 2 (10:1916), 11 = use present time",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decel Time",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "Logic Command bits 10-11: 00 = no command, 01 = Decel Time 1 (10:1917), 10 = Decel Time 2 (10:1918), 11 = use present time",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Ref Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "Logic Command bits 12-14: 000 = no command, 001 = Ref A (10:1800), 010 = Ref B (10:1801), 011..111 = Preset 3..7 (10:1816..10:1820)",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Coast Stop",
+     "enip": "out:2.0",
+     "meaning": "Logic Command bit 16: 1 = Coast to Stop",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Current Limit Stop",
+     "enip": "out:2.1",
+     "meaning": "Logic Command bit 17: 1 = Current Limit Stop",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Run",
+     "enip": "out:2.2",
+     "meaning": "Logic Command bit 18: 1 = Run. A 0 must be present on bit 0 first; a transition to 0 stops the drive",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (4)"
+    },
+    {
+     "name": "Jog 2",
+     "enip": "out:2.3",
+     "meaning": "Logic Command bit 19: 1 = Jog 2 (speed set in 10:1895). A transition to 0 stops the drive",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+    },
+    {
+     "name": "Reference",
+     "enip": "out:4:f32",
+     "meaning": "Velocity reference, 32-bit REAL in Hz or RPM as set by drive 10:1891 (Velocity Units): 30.0 = 30.0 Hz. The commanded maximum cannot exceed 10:1392 (Max Speed Fwd). A negative value is a reverse command only in a bipolar direction mode",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 1; scaling PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56-57 (printed 56-57), Table 7"
+    },
+    {
+     "name": "DL From Net 01..16",
+     "enip": "out:8:u32 .. out:68:u32",
+     "meaning": "sixteen 32-bit words that write the drive parameters assigned in 0:321..0:336 (DL From Net 01..16); word n is out byte 8 + 4n. Each target is a DINT or a REAL as its own parameter says. Only as many as the output size covers (8 bytes = none, 72 = all 16). Not saved to nonvolatile memory",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 2-17; PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 57 (printed 57) Using Datalinks, PDF p. 55 (printed 55) for one 32-bit word per datalink"
+    },
+    {
+     "name": "Run Ready",
+     "enip": "in:4.0",
+     "meaning": "Logic Status bit 0: 1 = ready to run",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Active",
+     "enip": "in:4.1",
+     "meaning": "Logic Status bit 1: 1 = active",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Command Direction",
+     "enip": "in:4.2",
+     "meaning": "Logic Status bit 2: 1 = forward, 0 = reverse",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "Logic Status bit 3: 1 = forward, 0 = reverse",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accelerating",
+     "enip": "in:4.4",
+     "meaning": "Logic Status bit 4: 1 = accelerating",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decelerating",
+     "enip": "in:4.5",
+     "meaning": "Logic Status bit 5: 1 = decelerating",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Alarm",
+     "enip": "in:4.6",
+     "meaning": "Logic Status bit 6: 1 = alarm (10:465..467)",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Fault",
+     "enip": "in:4.7",
+     "meaning": "Logic Status bit 7: 1 = fault (10:461 and 10:462)",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Setpoint Speed",
+     "enip": "in:5.0",
+     "meaning": "Logic Status bit 8: 1 = at setpoint speed",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Manual Mode",
+     "enip": "in:5.1",
+     "meaning": "Logic Status bit 9: 1 = manual mode active",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Speed Ref ID",
+     "enip": "in:5.2..in:5.6",
+     "meaning": "Logic Status bits 10-14: 00001 = auto Ref A (10:1800), 00010 = auto Ref B (10:1801), 00011..00111 = auto Preset 3..7 (10:1816..10:1820), 10000..10110 = manual port 0..6, 11101 = built-in ENET (0:211), 11111 = alternate manual ref select (10:1835); other values reserved",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Running",
+     "enip": "in:6.0",
+     "meaning": "Logic Status bit 16: 1 = running",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Jogging",
+     "enip": "in:6.1",
+     "meaning": "Logic Status bit 17: 1 = jogging",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Stopping",
+     "enip": "in:6.2",
+     "meaning": "Logic Status bit 18: 1 = stopping",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "DC Brake",
+     "enip": "in:6.3",
+     "meaning": "Logic Status bit 19: 1 = DC brake",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Dynamic Brake Active",
+     "enip": "in:6.4",
+     "meaning": "Logic Status bit 20: 1 = dynamic brake active",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Speed Mode",
+     "enip": "in:6.5",
+     "meaning": "Logic Status bit 21: 1 = speed mode",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Position Mode",
+     "enip": "in:6.6",
+     "meaning": "Logic Status bit 22: 1 = position mode",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Torque Mode",
+     "enip": "in:6.7",
+     "meaning": "Logic Status bit 23: 1 = torque mode",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Zero Speed",
+     "enip": "in:7.0",
+     "meaning": "Logic Status bit 24: 1 = at zero speed",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Home",
+     "enip": "in:7.1",
+     "meaning": "Logic Status bit 25: 1 = at home",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Limit",
+     "enip": "in:7.2",
+     "meaning": "Logic Status bit 26: 1 = at limit",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Current Limit",
+     "enip": "in:7.3",
+     "meaning": "Logic Status bit 27: 1 = at current limit",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Bus Freq Reg",
+     "enip": "in:7.4",
+     "meaning": "Logic Status bit 28: 1 = bus frequency regulation",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Enable On",
+     "enip": "in:7.5",
+     "meaning": "Logic Status bit 29: 1 = enable on",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Motor Overload",
+     "enip": "in:7.6",
+     "meaning": "Logic Status bit 30: 1 = motor overload",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Regen",
+     "enip": "in:7.7",
+     "meaning": "Logic Status bit 31: 1 = regenerating",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Feedback",
+     "enip": "in:8:f32",
+     "meaning": "Velocity feedback, 32-bit REAL in Hz or RPM as set by drive 10:1891 (Velocity Units), same unit as the Reference",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 1 of Table 6 (DINT 2 with the pad word); PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56); type REAL from the EDS Param102"
+    },
+    {
+     "name": "DL To Net 01..16",
+     "enip": "in:12:u32 .. in:72:u32",
+     "meaning": "sixteen 32-bit words that read the drive parameters assigned in 0:340..0:355 (DL To Net 01..16); word n is in byte 12 + 4n. Each source is a DINT or a REAL as its own parameter says (the EDS types them all REAL). Only as many as the input size covers (12 bytes = none, 76 = all 16)",
+     "source": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 2-17 of Table 6 (3-18 with the pad word); PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 57 (printed 57) Using Datalinks"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity",
@@ -5869,6 +6134,11 @@
      "title": "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)",
      "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual, 750COM-UM009 (publication 750COM-UM009B-EN-P, April 2021)",
+     "sha256": "3df2899e8f852582b26b72679b48c7078bcd02d2216aa4fb2025ef234bc4f279",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
@@ -5899,7 +6169,164 @@
     },
     "eds": "0001007B00300200.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "Stop",
+     "enip": "out:0.0",
+     "meaning": "Logic Command bit 0: 1 = Stop. A 0 must be present before a Start is accepted",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (1)"
+    },
+    {
+     "name": "Start",
+     "enip": "out:0.1",
+     "meaning": "Logic Command bit 1: 1 = Start, momentary: returning to 0 does not stop the drive. Does not work when a digital input is set to 2-wire control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2)"
+    },
+    {
+     "name": "Jog",
+     "enip": "out:0.2",
+     "meaning": "Logic Command bit 2: 1 = Jog (speed from drive parameter 100)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Clear Faults",
+     "enip": "out:0.3",
+     "meaning": "Logic Command bit 3: 1 = Clear Faults",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "Logic Command bits 4-5: 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Local Control",
+     "enip": "out:0.6",
+     "meaning": "Logic Command bit 6: 1 = Local Control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "MOP Increment",
+     "enip": "out:0.7",
+     "meaning": "Logic Command bit 7: 1 = increment the MOP reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accel Rate",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "Logic Command bits 8-9: 00 = no command, 01 = accel rate 1 (parameter 140), 10 = accel rate 2 (parameter 141), 11 = hold",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decel Rate",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "Logic Command bits 10-11: 00 = no command, 01 = decel rate 1 (parameter 142), 10 = decel rate 2 (parameter 143), 11 = hold",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Reference Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "Logic Command bits 12-14: 000 = no command, 001 = Ref A (parameter 90), 010 = Ref B (parameter 93), 011..111 = Preset 3..7 (parameters 103..107). Exclusive ownership, see the drive manual",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (3)"
+    },
+    {
+     "name": "MOP Decrement",
+     "enip": "out:1.7",
+     "meaning": "Logic Command bit 15: 1 = decrement the MOP reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Reference",
+     "enip": "out:2:i16",
+     "meaning": "Speed reference, signed 16-bit (-32768 to 32767), a scaled value and not Hz: 32767 = drive parameter 55 (Maximum Freq, default 130 Hz). Scaling = (parameter 82 Maximum Speed / parameter 55) x 32767, so 0..15123 = 0..60.0 Hz at the defaults. With parameter 298 (DPI Ref Select) = 1 (Max Speed) on a drive with enhanced control firmware 2.xxx or later, 32767 = parameter 82 instead",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output word 1; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7), PowerFlex 70/700/700H section"
+    },
+    {
+     "name": "Datalink In A1..D2",
+     "enip": "out:4:u16 .. out:18:u16",
+     "meaning": "eight 16-bit words that write the drive parameters assigned to Data In A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 300..307); word n is out byte 4 + 2n. A datalink set (A to D) is two words and is enabled by adapter parameter 23 (DPI I/O Cfg) bits 1-4. Whole numbers: a parameter with 0.1 resolution is multiplied by 10. Not saved to nonvolatile memory",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output words 2-9; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 227 (printed B-3) parameter 23, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers"
+    },
+    {
+     "name": "Ready",
+     "enip": "in:4.0",
+     "meaning": "Logic Status bit 0: 1 = Ready (parameter 214)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Active",
+     "enip": "in:4.1",
+     "meaning": "Logic Status bit 1: 1 = Active (running)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Command Direction",
+     "enip": "in:4.2",
+     "meaning": "Logic Status bit 2: 1 = forward, 0 = reverse",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "Logic Status bit 3: 1 = forward, 0 = reverse",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accelerating",
+     "enip": "in:4.4",
+     "meaning": "Logic Status bit 4: 1 = accelerating",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decelerating",
+     "enip": "in:4.5",
+     "meaning": "Logic Status bit 5: 1 = decelerating",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Alarm",
+     "enip": "in:4.6",
+     "meaning": "Logic Status bit 6: 1 = alarm (parameters 211 and 212)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Fault",
+     "enip": "in:4.7",
+     "meaning": "Logic Status bit 7: 1 = fault (parameter 243)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Speed",
+     "enip": "in:5.0",
+     "meaning": "Logic Status bit 8: 1 = at reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Local Control",
+     "enip": "in:5.1..in:5.3",
+     "meaning": "Logic Status bits 9-11: which port has local control, 000 = port 0 (terminal block) to 110 = port 6, 111 = no local",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Reference Source",
+     "enip": "in:5.4..in:5.7",
+     "meaning": "Logic Status bits 12-15: 0000 = Ref A auto (parameter 90), 0001 = Ref B auto, 0010..0111 = Preset 2..7 auto, 1000 = terminal block manual, 1001..1110 = DPI port 1..6 manual, 1111 = jog ref",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Feedback",
+     "enip": "in:6:i16",
+     "meaning": "Speed feedback, signed 16-bit, same scaling as the Reference (0..15123 = 0..60.0 Hz at the defaults)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input word 3; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7): speed Feedback uses the same scaling as the speed Reference"
+    },
+    {
+     "name": "Datalink Out A1..D2",
+     "enip": "in:8:u16 .. in:22:u16",
+     "meaning": "eight 16-bit words that read the drive parameters assigned to Data Out A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 310..317); word n is in byte 8 + 2n. Whole numbers: a parameter with 0.1 resolution is multiplied by 10",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input words 4-11; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity",
@@ -5910,6 +6337,11 @@
      "title": "PowerFlex 70 family (ODVA listing 1639): EDS (ODVA marketplace)",
      "sha256": "c76a77ae3a5b27591c1607286f0c41cfea8bdabd7288fdfd952e4771b66f0930",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 20-COMM-E EtherNet/IP Adapter User Manual, 20COMM-UM010 (publication 20COMM-UM010H-EN-P)",
+     "sha256": "e707376542b3a411391039d3e5488ee8a6e963100b2935e9b391eac1d760e9ba",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/20comm-um010_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ],
    "questions": [
@@ -5946,7 +6378,164 @@
     },
     "eds": "0001009800320500.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "Stop",
+     "enip": "out:0.0",
+     "meaning": "Logic Command bit 0: 1 = Stop. A 0 must be present before a Start is accepted",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (1); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Start",
+     "enip": "out:0.1",
+     "meaning": "Logic Command bit 1: 1 = Start, momentary: returning to 0 does not stop the drive. Does not work when a digital input is set to 2-wire control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Jog",
+     "enip": "out:0.2",
+     "meaning": "Logic Command bit 2: 1 = Jog (speed from drive parameter 100)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Clear Faults",
+     "enip": "out:0.3",
+     "meaning": "Logic Command bit 3: 1 = Clear Faults",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "Logic Command bits 4-5: 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Local Control",
+     "enip": "out:0.6",
+     "meaning": "Logic Command bit 6: 1 = Local Control",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "MOP Increment",
+     "enip": "out:0.7",
+     "meaning": "Logic Command bit 7: 1 = increment the MOP reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Accel Rate",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "Logic Command bits 8-9: 00 = no command, 01 = accel rate 1 (parameter 140), 10 = accel rate 2 (parameter 141), 11 = hold",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Decel Rate",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "Logic Command bits 10-11: 00 = no command, 01 = decel rate 1 (parameter 142), 10 = decel rate 2 (parameter 143), 11 = hold",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Reference Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "Logic Command bits 12-14: 000 = no command, 001 = Ref A (parameter 90), 010 = Ref B (parameter 93), 011..111 = Preset 3..7 (parameters 103..107). Exclusive ownership, see the drive manual",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (3); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "MOP Decrement",
+     "enip": "out:1.7",
+     "meaning": "Logic Command bit 15: 1 = decrement the MOP reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Reference",
+     "enip": "out:2:i16",
+     "meaning": "Speed reference, signed 16-bit (-32768 to 32767), a scaled value and not Hz: 32767 = drive parameter 55 (Maximum Freq, default 130 Hz). Scaling = (parameter 82 Maximum Speed / parameter 55) x 32767, so 0..15123 = 0..60.0 Hz at the defaults. With parameter 298 (DPI Ref Select) = 1 (Max Speed) on a drive with enhanced control firmware 2.xxx or later, 32767 = parameter 82 instead",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output word 1; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7), PowerFlex 70/700/700H section; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Datalink In A1..D2",
+     "enip": "out:4:u16 .. out:18:u16",
+     "meaning": "eight 16-bit words that write the drive parameters assigned to Data In A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 300..307); word n is out byte 4 + 2n. A datalink set (A to D) is two words and is enabled by adapter parameter 23 (DPI I/O Cfg) bits 1-4. Whole numbers: a parameter with 0.1 resolution is multiplied by 10. Not saved to nonvolatile memory",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output words 2-9; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 227 (printed B-3) parameter 23, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Ready",
+     "enip": "in:4.0",
+     "meaning": "Logic Status bit 0: 1 = Ready (parameter 214)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Active",
+     "enip": "in:4.1",
+     "meaning": "Logic Status bit 1: 1 = Active (running)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Command Direction",
+     "enip": "in:4.2",
+     "meaning": "Logic Status bit 2: 1 = forward, 0 = reverse",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "Logic Status bit 3: 1 = forward, 0 = reverse",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Accelerating",
+     "enip": "in:4.4",
+     "meaning": "Logic Status bit 4: 1 = accelerating",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Decelerating",
+     "enip": "in:4.5",
+     "meaning": "Logic Status bit 5: 1 = decelerating",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Alarm",
+     "enip": "in:4.6",
+     "meaning": "Logic Status bit 6: 1 = alarm (parameters 211 and 212)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Fault",
+     "enip": "in:4.7",
+     "meaning": "Logic Status bit 7: 1 = fault (parameter 243)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "At Speed",
+     "enip": "in:5.0",
+     "meaning": "Logic Status bit 8: 1 = at reference",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Local Control",
+     "enip": "in:5.1..in:5.3",
+     "meaning": "Logic Status bits 9-11: which port has local control, 000 = port 0 (terminal block) to 110 = port 6, 111 = no local",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Reference Source",
+     "enip": "in:5.4..in:5.7",
+     "meaning": "Logic Status bits 12-15: 0000 = Ref A auto (parameter 90), 0001 = Ref B auto, 0010..0111 = Preset 2..7 auto, 1000 = terminal block manual, 1001..1110 = DPI port 1..6 manual, 1111 = jog ref",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Feedback",
+     "enip": "in:6:i16",
+     "meaning": "Speed feedback, signed 16-bit, same scaling as the Reference (0..15123 = 0..60.0 Hz at the defaults)",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input word 3; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7): speed Feedback uses the same scaling as the speed Reference; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    },
+    {
+     "name": "Datalink Out A1..D2",
+     "enip": "in:8:u16 .. in:22:u16",
+     "meaning": "eight 16-bit words that read the drive parameters assigned to Data Out A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 310..317); word n is in byte 8 + 2n. Whole numbers: a parameter with 0.1 resolution is multiplied by 10",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input words 4-11; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 70EC: ODVA Declaration of Conformity",
@@ -5957,6 +6546,17 @@
      "title": "PowerFlex 70EC: EDS (ODVA marketplace)",
      "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 20-COMM-E EtherNet/IP Adapter User Manual, 20COMM-UM010 (publication 20COMM-UM010H-EN-P)",
+     "sha256": "e707376542b3a411391039d3e5488ee8a6e963100b2935e9b391eac1d760e9ba",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/20comm-um010_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Is the 70EC entry's adapter (EDS device type 152, DPI to DLR EtherNet/IP) the same I/O image as the 20-COMM-E's? The manual used for the points covers the 20-COMM-E only and says nothing of DLR or of a 20-COMM-ER; its Identity Object reports device type 123, which the PowerFlex 70 entry carries, and its web-page example calls 123 'PowerFlex 70 EC'.",
+     "source": "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 215 (printed 8-9, Device Type row) and PDF p. 234 (printed C-2), Identity Object; EDS 0001009800320500.eds ProdType"
     }
    ]
   },
@@ -6028,7 +6628,272 @@
     },
     "eds": "0001008F08901000.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "Normal Stop",
+     "enip": "out:0.0",
+     "meaning": "Logic Command bit 0: 1 = Normal Stop. A 0 must be present before Start, Jog or Run is accepted",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2) (4)"
+    },
+    {
+     "name": "Start",
+     "enip": "out:0.1",
+     "meaning": "Logic Command bit 1: 1 = Start, momentary",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (1)"
+    },
+    {
+     "name": "Jog 1",
+     "enip": "out:0.2",
+     "meaning": "Logic Command bit 2: 1 = Jog 1 (speed set in parameter 556). A transition to 0 stops the drive",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+    },
+    {
+     "name": "Clear Fault",
+     "enip": "out:0.3",
+     "meaning": "Logic Command bit 3: 1 = Clear Fault; the value must switch from 0 to 1",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (3)"
+    },
+    {
+     "name": "Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "Logic Command bits 4-5 (the table names both Unipolar Direction): 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Manual",
+     "enip": "out:0.6",
+     "meaning": "Logic Command bit 6: 1 = Manual",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accel Time",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "Logic Command bits 8-9: 00 = no command, 01 = Accel Time 1 (parameter 535), 10 = Accel Time 2 (parameter 536), 11 = use present time",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decel Time",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "Logic Command bits 10-11: 00 = no command, 01 = Decel Time 1 (parameter 537), 10 = Decel Time 2 (parameter 538), 11 = use present time",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Ref Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "Logic Command bits 12-14: 000 = no command, 001 = Ref A (parameter 545), 010 = Ref B (parameter 550), 011..111 = Preset 3..7 (parameters 573..577)",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Coast Stop",
+     "enip": "out:2.0",
+     "meaning": "Logic Command bit 16: 1 = Coast to Stop",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Current Limit Stop",
+     "enip": "out:2.1",
+     "meaning": "Logic Command bit 17: 1 = Current Limit Stop",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Run",
+     "enip": "out:2.2",
+     "meaning": "Logic Command bit 18: 1 = Run. A 0 must be present on bit 0 first; a transition to 0 stops the drive",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (4)"
+    },
+    {
+     "name": "Jog 2",
+     "enip": "out:2.3",
+     "meaning": "Logic Command bit 19: 1 = Jog 2 (speed set in parameter 557). A transition to 0 stops the drive",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 195-196 (printed 195-196), Table 20, Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+    },
+    {
+     "name": "Reference",
+     "enip": "out:4:f32",
+     "meaning": "Speed reference, 32-bit REAL in Hz or RPM as set by drive parameter 300 (Speed Units): 30.0 = 30.0 Hz. The commanded maximum cannot exceed parameter 520 (Max Fwd Speed). A negative value is a reverse command only in a bipolar direction mode",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 100 (printed 100), Table 4, Generic Profile Input column and Output column, DINT column (0-based): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 1; scaling PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 101-102 (printed 101-102), Table 5"
+    },
+    {
+     "name": "DL From Net 01..16",
+     "enip": "out:8:u32 .. out:68:u32",
+     "meaning": "sixteen 32-bit words that write the drive parameters assigned in Parameters 01..16 (DL From Net 01..16); word n is out byte 8 + 4n. Each target is a DINT or a REAL as its own parameter says. Only as many as the output size covers (8 bytes = none, 72 = all 16). Not saved to nonvolatile memory",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 100 (printed 100), Table 4, Generic Profile Input column and Output column, DINT column (0-based): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 2-17; PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 94-95 (printed 94-95) for the size rule, PDF p. 102 (printed 102) Using Datalinks"
+    },
+    {
+     "name": "Run Ready",
+     "enip": "in:4.0",
+     "meaning": "Logic Status bit 0: 1 = ready to run",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Active",
+     "enip": "in:4.1",
+     "meaning": "Logic Status bit 1: 1 = active",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Command Direction",
+     "enip": "in:4.2",
+     "meaning": "Logic Status bit 2: 1 = forward, 0 = reverse",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "Logic Status bit 3: 1 = forward, 0 = reverse",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Accelerating",
+     "enip": "in:4.4",
+     "meaning": "Logic Status bit 4: 1 = accelerating",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Decelerating",
+     "enip": "in:4.5",
+     "meaning": "Logic Status bit 5: 1 = decelerating",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Alarm",
+     "enip": "in:4.6",
+     "meaning": "Logic Status bit 6: 1 = alarm (parameters 959 and 960)",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Fault",
+     "enip": "in:4.7",
+     "meaning": "Logic Status bit 7: 1 = fault (parameters 952 and 953)",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Setpoint Speed",
+     "enip": "in:5.0",
+     "meaning": "Logic Status bit 8: 1 = at setpoint speed",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Manual Mode",
+     "enip": "in:5.1",
+     "meaning": "Logic Status bit 9: 1 = manual mode active",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Speed Ref ID",
+     "enip": "in:5.2..in:5.6",
+     "meaning": "Logic Status bits 10-14: 00001 = auto Ref A (545), 00010 = auto Ref B (550), 00011..00111 = auto Preset 3..7 (573..577), 10000..10110 = manual port 0..6, 11101 = manual from the embedded ENET (port 13), 11110 = manual from DriveLogix (port 14), 11111 = alternate manual ref select; other values reserved",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Running",
+     "enip": "in:6.0",
+     "meaning": "Logic Status bit 16: 1 = running",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Jogging",
+     "enip": "in:6.1",
+     "meaning": "Logic Status bit 17: 1 = jogging",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Stopping",
+     "enip": "in:6.2",
+     "meaning": "Logic Status bit 18: 1 = stopping",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "DC Brake",
+     "enip": "in:6.3",
+     "meaning": "Logic Status bit 19: 1 = DC brake",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Dynamic Brake Active",
+     "enip": "in:6.4",
+     "meaning": "Logic Status bit 20: 1 = dynamic brake active",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Speed Mode",
+     "enip": "in:6.5",
+     "meaning": "Logic Status bit 21: 1 = speed mode",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Position Mode",
+     "enip": "in:6.6",
+     "meaning": "Logic Status bit 22: 1 = position mode",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Torque Mode",
+     "enip": "in:6.7",
+     "meaning": "Logic Status bit 23: 1 = torque mode",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Zero Speed",
+     "enip": "in:7.0",
+     "meaning": "Logic Status bit 24: 1 = at zero speed",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Home",
+     "enip": "in:7.1",
+     "meaning": "Logic Status bit 25: 1 = at home",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "At Limit",
+     "enip": "in:7.2",
+     "meaning": "Logic Status bit 26: 1 = at limit",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Current Limit",
+     "enip": "in:7.3",
+     "meaning": "Logic Status bit 27: 1 = at current limit",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Bus Freq Reg",
+     "enip": "in:7.4",
+     "meaning": "Logic Status bit 28: 1 = bus frequency regulation",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Enable On",
+     "enip": "in:7.5",
+     "meaning": "Logic Status bit 29: 1 = enable on",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Motor Overload",
+     "enip": "in:7.6",
+     "meaning": "Logic Status bit 30: 1 = motor overload",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Regen",
+     "enip": "in:7.7",
+     "meaning": "Logic Status bit 31: 1 = regenerating",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 196-198 (printed 196-198), Table 21, Logic Bit column (0-based); Logic Status is Generic Profile Input DINT 1 = in bytes 4-7 (DINT 0 is a pad word); bit n is byte 4 + n/8, bit n%8 (inferred)"
+    },
+    {
+     "name": "Feedback",
+     "enip": "in:8:f32",
+     "meaning": "Speed feedback, 32-bit REAL in Hz or RPM as set by drive parameter 300 (Speed Units), same unit as the Reference",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 100 (printed 100), Table 4, Generic Profile Input column and Output column, DINT column (0-based): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 2; PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 101 (printed 101)"
+    },
+    {
+     "name": "DL To Net 01..16",
+     "enip": "in:12:u32 .. in:72:u32",
+     "meaning": "sixteen 32-bit words that read the drive parameters assigned in Parameters 17..32 (DL To Net 01..16); word n is in byte 12 + 4n. Each source is a DINT or a REAL as its own parameter says. Only as many as the input size covers (12 bytes = none, 76 = all 16)",
+     "source": "PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 100 (printed 100), Table 4, Generic Profile Input column and Output column, DINT column (0-based): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 3-18; PowerFlex 755 Embedded EtherNet/IP Adapter User Manual 750COM-UM001G-EN-P (August 2018), PDF p. 94-95 (printed 94-95) for the size rule, PDF p. 102 (printed 102) Using Datalinks"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 755, 755HiP: ODVA Declaration of Conformity",
@@ -6039,6 +6904,11 @@
      "title": "PowerFlex 755, 755HiP: EDS (ODVA marketplace)",
      "sha256": "58ffcda61a8f3c1fd2e94969d5a0abcaf72d980162362937786bee0d11c597b3",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 755 Drive Embedded EtherNet/IP Adapter User Manual, 750COM-UM001 (publication 750COM-UM001G-EN-P, August 2018)",
+     "sha256": "1d3e5cf16d24abfd2e13a1abd6848a0c5c47ae2b7b2e5ea26c5440f915b372b0",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um001_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
