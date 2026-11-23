@@ -26,6 +26,7 @@ url = "https://..."                     # https on 443 only
 title = "TBEN-S2-8DXP EDS"
 found = "2026-11-14 search: turck tben-s2-8dxp eds; product page https://..."
 terms = "none stated"                   # optional: what the vendor says about redistribution
+browser = true                          # optional: only a person's browser gets the file (below)
 ```
 
 ## The fetch rules
@@ -38,6 +39,28 @@ disallows, RFC 9309); one request a second per host; 64 MiB a file, 256 MiB
 unpacked from an archive; at most 5 redirects, never to http; the bytes must be
 the kind claimed (a PDF starts `%PDF-`, an EDS has `[File]` and `[Device]`, and
 an HTML page is never a document).
+
+## Documents only a browser gets
+
+Some vendors serve a file only to a person's browser: a script wall, a terms
+box to tick, a bot filter that answers anything else with 403. The fetcher does
+not work around those. Such a `[[doc]]` says `browser = true`, and its `url` is
+the page the file is downloaded from (the file may have no URL of its own: a
+form post, a script). `docs-fetch.py` never requests it, and reports it
+`refused` until it is in the store.
+
+Someone downloads the file in a browser, from that page, and imports it:
+
+```sh
+python3 -I scripts/docs-fetch.py collect/<vendor>.toml --import URL FILE
+```
+
+`URL` is the `[[doc]]`'s url; `FILE` is what the browser saved. The file is held
+to the fetcher's own checks (the size cap, the kind, an archive's caps and
+members), stored by hash like any other, and its lock entry carries
+`"via": "browser"` with the page as `final_url`. From then on it is `stored`.
+Say in `found` what the page asked for (a terms box ticked, and by whose
+leave), so the next person knows what downloading it again involves.
 
 ## The bucket
 

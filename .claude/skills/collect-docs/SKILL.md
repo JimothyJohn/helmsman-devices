@@ -67,6 +67,13 @@ Each line is `fetched`, `stored` (already in the store, no request), `changed`
 internet, HTML where a PDF was promised, a cap. Fix the candidate (a better URL),
 do not work around the rule. Exit 1 when anything was refused.
 
+A vendor that serves a file only to a person's browser (a script wall, a terms
+box, a bot filter's 403) is not a rule to get around either: give that `[[doc]]`
+`browser = true` with the download page as its `url`, and once someone has
+downloaded the file in a browser, `--import URL FILE` takes it in
+(collect/README.md, Documents only a browser gets). Never fake a browser's user
+agent to the fetcher. Ticking a vendor's terms box is the person's decision.
+
 ## 3. Draft
 
 ```sh
