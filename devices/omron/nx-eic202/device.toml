@@ -5,6 +5,7 @@
 vendor = "Omron"
 model = "NX-EIC202"
 kind = "remote-io"
+category = "io-coupler"
 article = "NX-EIC202"
 
 [device.photo]

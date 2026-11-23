@@ -5,6 +5,7 @@
 vendor = "Lenze"
 model = "i550 cabinet"
 kind = "drive"
+category = "drive"
 article = "Inverter Drive i550 cabinet"
 
 [identity.enip]

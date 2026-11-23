@@ -4,6 +4,7 @@
 vendor = "Advantech"
 model = "ADAM-6015"
 kind = "remote-io"
+category = "panel-io"
 channels = "7 RTD AI"
 
 [protocols.modbus]

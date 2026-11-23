@@ -6,6 +6,7 @@ vendor = "SICK"
 model = "WTB4F_DID8389194"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
+category = "sensor"
 family = "Photoelectric sensors"
 vendor_url = "https://www.sick.com"
 

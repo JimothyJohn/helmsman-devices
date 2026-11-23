@@ -4,7 +4,8 @@
 [device]
 vendor = "WAGO"
 model = "750-823"
-kind = "remote-io"
+kind = "controller"
+category = "controller"
 article = "750-823"
 
 [identity.enip]

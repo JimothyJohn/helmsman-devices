@@ -5,6 +5,7 @@
 vendor = "Festo"
 model = "VABX-A-S-EL-E12-CTED-EP"
 kind = "remote-io"
+category = "valve-terminal"
 article = "VABX-A-S-EL-E12-CTED-EP"
 
 [identity.enip]

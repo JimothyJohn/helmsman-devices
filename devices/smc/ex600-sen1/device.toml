@@ -5,6 +5,7 @@
 vendor = "SMC"
 model = "EX600-SEN1/SEN2"
 kind = "remote-io"
+category = "valve-terminal"
 article = "EX600-SEN#"
 
 [identity.enip]

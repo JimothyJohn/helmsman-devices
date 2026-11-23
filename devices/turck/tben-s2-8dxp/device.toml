@@ -5,6 +5,7 @@
 vendor = "Turck"
 model = "TBEN-S2-8DXP"
 kind = "remote-io"
+category = "io-block"
 article = "6814076"
 
 [device.photo]

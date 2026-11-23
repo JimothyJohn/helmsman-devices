@@ -5,6 +5,7 @@
 vendor = "Eaton"
 model = "PowerXL VFD EIP Comm. Card"
 kind = "drive"
+category = "drive"
 article = "DXX-NET-EIP"
 
 [identity.enip]

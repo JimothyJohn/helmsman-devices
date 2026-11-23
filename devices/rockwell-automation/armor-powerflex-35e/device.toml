@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "Armor PowerFlex 35E"
 kind = "drive"
+category = "drive"
 article = "35E..."
 
 [identity.enip]

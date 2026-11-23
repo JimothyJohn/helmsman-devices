@@ -5,6 +5,7 @@
 vendor = "Festo"
 model = "CTEU-EP"
 kind = "remote-io"
+category = "valve-terminal"
 article = "CTEU-EP"
 
 [identity.enip]

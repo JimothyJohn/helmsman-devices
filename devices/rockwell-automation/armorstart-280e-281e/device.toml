@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "ArmorStart 280E/281E (EtherNet/IP)"
 kind = "other"
+category = "motor-starter"
 article = "280E-F12Z-10B"
 
 [identity.enip]

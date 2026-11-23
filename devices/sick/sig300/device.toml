@@ -5,6 +5,7 @@
 vendor = "SICK"
 model = "SIG300"
 kind = "remote-io"
+category = "iolink-master"
 article = "SIG300-0A05AA100"
 
 [identity.enip]

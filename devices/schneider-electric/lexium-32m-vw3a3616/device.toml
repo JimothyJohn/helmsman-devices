@@ -5,6 +5,7 @@
 vendor = "Schneider Electric"
 model = "Lexium 32M with VW3A3616"
 kind = "drive"
+category = "drive"
 article = "LXM32M"
 
 [identity.enip]

@@ -2,6 +2,7 @@
 vendor = "Murrelektronik"
 model = "IMPACT67 E DIO8 (DIO8)"
 kind = "remote-io"
+category = "io-block"
 article = "55089"
 channels = "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)"
 checked_on = "2026-11-16"

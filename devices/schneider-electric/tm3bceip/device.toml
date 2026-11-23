@@ -4,6 +4,7 @@
 vendor = "Schneider Electric"
 model = "Modicon TM3 bus coupler TM3BCEIP"
 kind = "remote-io"
+category = "io-coupler"
 article = "TM3BCEIP"
 
 [protocols.modbus]

@@ -5,6 +5,7 @@
 vendor = "Omron"
 model = "ERT1-OD32SLH-1"
 kind = "remote-io"
+category = "panel-io"
 
 [identity.enip]
 vendor_id = 47

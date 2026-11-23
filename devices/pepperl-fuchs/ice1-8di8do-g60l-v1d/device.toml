@@ -5,6 +5,7 @@
 vendor = "Pepperl+Fuchs"
 model = "ICE1-8DI8DO-G60L-V1D"
 kind = "remote-io"
+category = "io-block"
 article = "295312"
 
 [identity.enip]

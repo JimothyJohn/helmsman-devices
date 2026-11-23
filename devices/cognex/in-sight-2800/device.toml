@@ -5,6 +5,7 @@
 vendor = "Cognex"
 model = "In-Sight 2800 Series"
 kind = "sensor"
+category = "vision"
 article = "IS28XX-XX"
 
 [identity.enip]

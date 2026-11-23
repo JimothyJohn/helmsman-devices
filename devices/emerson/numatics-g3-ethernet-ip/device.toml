@@ -5,6 +5,7 @@
 vendor = "Emerson"
 model = "Numatics G3 EtherNet/IP"
 kind = "remote-io"
+category = "valve-terminal"
 article = "Numatics G3 240-325"
 
 [identity.enip]

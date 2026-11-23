@@ -5,6 +5,7 @@
 vendor = "Phoenix Contact"
 model = "AXL F BK EIP EF"
 kind = "remote-io"
+category = "io-coupler"
 channels = "none of its own: the Axioline F modules behind it (up to 63) set the I/O"
 article = "2702782"
 

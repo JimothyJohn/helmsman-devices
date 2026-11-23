@@ -6,6 +6,7 @@ vendor = "ifm"
 model = "KQxxxx"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
+category = "sensor"
 family = "KQ"
 vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
 

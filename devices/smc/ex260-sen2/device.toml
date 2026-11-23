@@ -5,6 +5,7 @@
 vendor = "SMC"
 model = "EX260-SEN2"
 kind = "other"
+category = "valve-terminal"
 article = "EX260-SEN2"
 
 [identity.enip]

@@ -5,6 +5,7 @@
 vendor = "Yaskawa"
 model = "Yaskawa GA501"
 kind = "drive"
+category = "drive"
 article = "GA501"
 
 [identity.enip]

@@ -5,6 +5,7 @@
 vendor = "IMI Norgren"
 model = "VS18/VS26"
 kind = "other"
+category = "valve-terminal"
 article = "N/A"
 
 [identity.enip]

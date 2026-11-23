@@ -5,6 +5,7 @@
 vendor = "Turck"
 model = "FEN20-4DIP-4DXP"
 kind = "remote-io"
+category = "panel-io"
 article = "6931090"
 
 [identity.enip]

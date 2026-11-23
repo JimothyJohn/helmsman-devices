@@ -5,6 +5,7 @@
 vendor = "ifm"
 model = "AL1590"
 kind = "remote-io"
+category = "iolink-master"
 article = "AL1590"
 
 [identity.enip]

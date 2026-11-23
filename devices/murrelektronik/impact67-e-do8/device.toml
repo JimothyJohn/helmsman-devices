@@ -2,6 +2,7 @@
 vendor = "Murrelektronik"
 model = "IMPACT67 E DO8"
 kind = "remote-io"
+category = "io-block"
 article = "55087"
 channels = "8 DO (2 A each)"
 profile = "murrelektronik-impact67-e-do8.device"   # the device profile a controller copies into a project (helmsman-device 1)

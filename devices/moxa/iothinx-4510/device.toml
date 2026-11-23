@@ -4,6 +4,7 @@
 vendor = "Moxa"
 model = "ioThinx 4510"
 kind = "remote-io"
+category = "io-coupler"
 channels = "modular, up to 32 I/O modules"
 
 [device.photo]

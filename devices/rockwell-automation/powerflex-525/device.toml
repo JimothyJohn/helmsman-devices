@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 525 (embedded EtherNet/IP)"
 kind = "drive"
+category = "drive"
 article = "25B..."
 
 [identity.enip]

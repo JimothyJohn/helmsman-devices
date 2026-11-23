@@ -4,6 +4,7 @@
 vendor = "Advantech"
 model = "ADAM-6250"
 kind = "remote-io"
+category = "panel-io"
 channels = "8 DI, 7 DO (sink)"
 
 [device.photo]

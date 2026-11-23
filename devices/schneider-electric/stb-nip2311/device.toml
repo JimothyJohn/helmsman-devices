@@ -4,6 +4,7 @@
 vendor = "Schneider Electric"
 model = "Modicon STB NIP2311"
 kind = "remote-io"
+category = "io-coupler"
 
 [protocols.modbus]
 driver = "modbus-tcp"

@@ -5,6 +5,7 @@
 vendor = "ABB"
 model = "ABB Drive via Ethernet/IP FEIP-21"
 kind = "drive"
+category = "drive"
 article = "FEIP-21"
 
 [identity.enip]

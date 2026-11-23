@@ -2,6 +2,7 @@
 vendor = "Universal Robots"
 model = "e-Series"
 kind = "other"
+category = "robot"
 channels = "robot state, joints, TCP, control box and tool I/O, general purpose registers"
 profile = "universal-robots-e-series.device"   # Modbus TCP only until EtherNet/IP has been tried
 # No checked_on: only UR's simulators have answered (README "Simulators").

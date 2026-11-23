@@ -5,6 +5,7 @@
 vendor = "Balluff"
 model = "BNI EIP-508-105-Z015"
 kind = "remote-io"
+category = "iolink-master"
 article = "BNI006A"
 
 [identity.enip]

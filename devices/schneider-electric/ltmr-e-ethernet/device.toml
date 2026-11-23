@@ -5,6 +5,7 @@
 vendor = "Schneider Electric"
 model = "TeSys T LTMR E (Ethernet)"
 kind = "other"
+category = "motor-starter"
 article = "LTMR"
 
 [identity.enip]

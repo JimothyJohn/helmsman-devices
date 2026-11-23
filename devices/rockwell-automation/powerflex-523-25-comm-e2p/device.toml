@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 523 with 25-COMM-E2P"
 kind = "drive"
+category = "drive"
 article = "25-COMM-E2P     "
 
 [identity.enip]

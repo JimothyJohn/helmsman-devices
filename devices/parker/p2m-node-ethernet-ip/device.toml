@@ -5,6 +5,7 @@
 vendor = "Parker"
 model = "P2M Node 24DO ETHERNET/IP"
 kind = "remote-io"
+category = "valve-terminal"
 article = "P2M Node 24DO ETHERNET/IP"
 
 [identity.enip]

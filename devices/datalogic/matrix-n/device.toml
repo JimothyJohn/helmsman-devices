@@ -5,6 +5,7 @@
 vendor = "Datalogic"
 model = "Matrix N Series"
 kind = "sensor"
+category = "vision"
 article = "DATALOGIC Scanner"
 
 [identity.enip]

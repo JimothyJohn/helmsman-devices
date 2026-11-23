@@ -4,6 +4,7 @@
 vendor = "Schneider Electric"
 model = "TeSys island bus coupler TPRBCEIP"
 kind = "remote-io"
+category = "motor-starter"
 article = "TPRBCEIP"
 
 [protocols.modbus]

@@ -5,6 +5,7 @@
 vendor = "Rockwell Automation"
 model = "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)"
 kind = "drive"
+category = "drive"
 article = "PowerFlex 527 AC Drive via embedded dual port Enet - CIP Motion / Safe Torque Off  CIP Safety"
 
 [identity.enip]
