@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "AL1326"
+kind = "remote-io"
+article = "AL1326"
+
+[identity.enip]
+vendor_id = 322
+product_code = 1007
+device_type = 12
+revisions = ["2.3"]   # the EDS's MajRev.MinRev
+product_name = "IO-Link Master DL EIP 8P IP67"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner IO-Acyc-Diag"
+# input_assembly: the size is set by Param1: 0..446 bytes, default 446
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param2: 0..302 bytes, default 302
+output_assembly = { instance = 150 }
+config_assembly = { instance = 199, bytes = 98 }
+eds = { name = "ifm_IOL_Master_AL1326.eds", size = 104895, sha256 = "4d87d3aae3e67243dfb4b55bdc7052942a54ec18a2d230289739b45380529f9e", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2234/11979.02_EDS.zip (member of 11979.02_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "400bde222c05ae2b85e5aab0c2f14f898d016b729ee43d38e388b155d6ce5859"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2234/11979_DOC_060623.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, EDS (ODVA Marketplace)"
+sha256 = "1b67d5dd337c5090bd35f8c2b16d1a56aa8abcee5366b8182bc505e6d9d55dc2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2234/11979.02_EDS.zip; retrieved 2026-11-23; not redistributed here"

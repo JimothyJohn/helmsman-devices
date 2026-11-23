@@ -259,6 +259,250 @@
    "terms": "none stated with the file",
    "title": "IODD package ifm-000257-20190307-IODD1.1 (PN7072, PN7092, PN7572, PN7592, status B)",
    "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1857/11600_DOC_061920.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1857/11600_DOC_061920.pdf",
+   "folders": [
+    "devices/ifm/al1122",
+    "devices/ifm/al1222",
+    "devices/ifm/al1322"
+   ],
+   "kind": "datasheet",
+   "name": "11600_DOC_061920.pdf",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "17dcd8b16b7daa05d70f5207319a5c073bc998f4e3353415bc61daf8d9ca66d5",
+   "size": 111378,
+   "terms": "none stated",
+   "title": "ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2234/11979_DOC_060623.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2234/11979_DOC_060623.pdf",
+   "folders": [
+    "devices/ifm/al1326"
+   ],
+   "kind": "datasheet",
+   "name": "11979_DOC_060623.pdf",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "400bde222c05ae2b85e5aab0c2f14f898d016b729ee43d38e388b155d6ce5859",
+   "size": 136502,
+   "terms": "none stated",
+   "title": "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2861/12637_DOC_072425.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2861/12637_DOC_072425.pdf",
+   "folders": [
+    "devices/ifm/al1590"
+   ],
+   "kind": "datasheet",
+   "name": "12637_DOC_072425.pdf",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "f22c45810e294b3eae906dcb1c0c01f092d16913dc6c529b00e2b3eff33d2099",
+   "size": 133227,
+   "terms": "none stated",
+   "title": "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1857/11600.04-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1857/11600.04-EDS.zip",
+   "folders": [
+    "devices/ifm/al1122",
+    "devices/ifm/al1222",
+    "devices/ifm/al1322"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS/AL1120/ifm_IOL_Master_AL1120.eds",
+     "sha256": "d741aa6710260e72dd56a63e0f9278c5af23cef44081fd93cc412a8592af2da5",
+     "size": 63459,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1121/ifm_IOL_Master_AL1121.eds",
+     "sha256": "9ea1cf280ad015d59693f39bd8897077585ca9d6e294012a8c8fcbfba8000d03",
+     "size": 63461,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1122/ifm_IOL_Master_AL1122.eds",
+     "sha256": "968982cef6f0ae665a42e64fbba78dbabfa718a5c466b029134a36438ae0425b",
+     "size": 103495,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1123/ifm_IOL_Master_AL1123.eds",
+     "sha256": "1cd2f8a6283f8de7343c87ea65a33ab4cb3ab37204f65e0b7b0ab0f6ddb90567",
+     "size": 103497,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1220/ifm_IOL_Master_AL1220.eds",
+     "sha256": "fa04c5251c14958a378a2213db2687a22fbd21653fe213c07bdafdc415b1dae0",
+     "size": 63459,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1221/ifm_IOL_Master_AL1221.eds",
+     "sha256": "2e8145c35f99cf9ceb00afcb3610982ba85d7edf32196abcc0e7b8f02c80759b",
+     "size": 63461,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1222/ifm_IOL_Master_AL1222.eds",
+     "sha256": "7979dc70a7f3a8e6dedf99c7d15ead6bb90b4701aba6ba1bc804baac2c2a1dc2",
+     "size": 103495,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1223/ifm_IOL_Master_AL1223.eds",
+     "sha256": "50ec095b97d169b5a75778ff697380c3758bbde4ada6d7e93e77618976b6ba81",
+     "size": 103497,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1320/ifm_IOL_Master_AL1320.eds",
+     "sha256": "9fc15474b5a3890decf1948da1c2d574acddab75c7e6b9de10696e166a55c330",
+     "size": 63459,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1321/ifm_IOL_Master_AL1321.eds",
+     "sha256": "dbc18c5dfffe360112c1620e432f8fb86a7e534833746e5246d476ba40c9321e",
+     "size": 63461,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1322/ifm_IOL_Master_AL1322.eds",
+     "sha256": "6d3716839a12b2586622427e49e40151a4fc72b870f1e27283d5af4273088e0a",
+     "size": 103495,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1323/ifm_IOL_Master_AL1323.eds",
+     "sha256": "f1890ae90f611a40e2fa095b0061875d00d5f73411daa01185e59e233d2c2731",
+     "size": 103497,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/AL1920/ifm_IOL_Master_AL1920.eds",
+     "sha256": "1cb5f26ff0652eb2de948fb35394a753ac5dda7333b4583f6e7f80026a8728cb",
+     "size": 103495,
+     "type": "eds"
+    }
+   ],
+   "name": "11600.04-EDS.zip",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "f96eab82c48e0c963520753db3edcfddf980d74384c1ce820092757b8b541417",
+   "size": 144339,
+   "terms": "none stated",
+   "title": "ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2234/11979.02_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2234/11979.02_EDS.zip",
+   "folders": [
+    "devices/ifm/al1326"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "eds_files/AL1324/ifm_IOL_Master_AL1324.eds",
+     "sha256": "a5f221823d3c09793261c50cc109f449857529a5672b8b81f58e3219e4af85b4",
+     "size": 64851,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1325/ifm_IOL_Master_AL1325.eds",
+     "sha256": "032a3b2d50552bb916a8ce1a2d65b521d3f0baf7ef53d8d45192d48cb845b57a",
+     "size": 64853,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1326/ifm_IOL_Master_AL1326.eds",
+     "sha256": "4d87d3aae3e67243dfb4b55bdc7052942a54ec18a2d230289739b45380529f9e",
+     "size": 104895,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1327/ifm_IOL_Master_AL1327.eds",
+     "sha256": "47fdcc92f4916d76a00c7931012279472a2570beb6a2e68bd535c7b8032bd92f",
+     "size": 104897,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1420/ifm_IOL_Master_AL1420.eds",
+     "sha256": "7cae8ee66553904b40ce7d359b7ab7b702ba65318c54d52a4c7cd3266f2ca21d",
+     "size": 76503,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1421/ifm_IOL_Master_AL1421.eds",
+     "sha256": "b1e31bf0225ba6f8c34a91caadc94401ab6d41cbe3e61ea91cd170816a1a79b5",
+     "size": 76505,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1422/ifm_IOL_Master_AL1422.eds",
+     "sha256": "98e83ef75ec5cb37acaafa874787c9ed9d63e3321e90b3dd33d4b3ba6db4368a",
+     "size": 121002,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1423/ifm_IOL_Master_AL1423.eds",
+     "sha256": "0d2b8c29a8421332b436789ccf84dfeb07e0589e19c09dcd7ea45f745a07efc5",
+     "size": 121004,
+     "type": "eds"
+    },
+    {
+     "name": "eds_files/AL1921/ifm_IOL_Master_AL1921.eds",
+     "sha256": "2dbc28c6087fb708c3b795c65e819fa561525a1c777292c41c9a53df13910d34",
+     "size": 104895,
+     "type": "eds"
+    }
+   ],
+   "name": "11979.02_EDS.zip",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "1b67d5dd337c5090bd35f8c2b16d1a56aa8abcee5366b8182bc505e6d9d55dc2",
+   "size": 111828,
+   "terms": "none stated",
+   "title": "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2861/12637.01_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2861/12637.01_EDS.zip",
+   "folders": [
+    "devices/ifm/al1590"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ifm_AL1590.eds",
+     "sha256": "567fe42fd8f8e72aee55ebc68720be69898671d26fc5ffe98e34ff07a32f69da",
+     "size": 96285,
+     "type": "eds"
+    },
+    {
+     "name": "ifm_AL1591.eds",
+     "sha256": "14ace505bf4c5bf737c49ef4b852e1cbf7092fe97fea8b5b2bb12a54c09c4732",
+     "size": 96286,
+     "type": "eds"
+    }
+   ],
+   "name": "12637.01_EDS.zip",
+   "retrieved": "2026-11-23T03:37:32Z",
+   "sha256": "bce2c6886a4fed3dbbef1b23af92e6e120c524ddfbb7c5a1b205b809a9b77491",
+   "size": 25216,
+   "terms": "none stated",
+   "title": "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, EDS (ODVA Marketplace)",
+   "type": "zip"
   }
  },
  "format": "helmsman-devices-collect-lock 1"

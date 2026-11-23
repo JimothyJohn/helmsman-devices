@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SICK"
+model = "SIG300"
+kind = "remote-io"
+article = "SIG300-0A05AA100"
+
+[identity.enip]
+vendor_id = 808
+product_code = 16641
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "SIG300"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param151: 4..404 bytes, default 404
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param150: 4..404 bytes, default 404
+output_assembly = { instance = 100 }
+config_assembly = { instance = 153 }
+eds = { name = "SICK_SIG300_V1.3.1.eds", size = 138245, sha256 = "9631245f5d0981b532d629c1532955b1c52b7ef83271c3add4ef919dc79c7cb2", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2796/SICK_SIG300_V1.3.1.eds", terms = "none stated" }
+
+[[sources]]
+title = "SICK SIG300, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "fd899e883f5523482bf0f10ff36cb6887c6957b1ab312570fae60ca2f8249eea"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2796/12525_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SICK SIG300, EDS (ODVA Marketplace)"
+sha256 = "9631245f5d0981b532d629c1532955b1c52b7ef83271c3add4ef919dc79c7cb2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2796/SICK_SIG300_V1.3.1.eds; retrieved 2026-11-23; not redistributed here"

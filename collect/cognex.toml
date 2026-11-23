@@ -1,0 +1,69 @@
+format = "helmsman-devices-collect 1"
+vendor = "Cognex"
+
+# EDS and declaration of conformity from the ODVA Marketplace pages (read 2026-11-22). The DataMan 370 is not named on the marketplace; the DM30x/DM36x entry is the nearest.
+
+[[doc]]
+folders = ["devices/cognex/dataman-dm36x"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1679/11346.02_EDS.zip"
+title = "Cognex DataMan DM30x, DM36x, AID36x readers, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex DataMan DM30x; product page https://marketplace.odva.org/products/1679-dataman-dm30x-reader-dataman-dm36x-reader-dataman-aid36x-reader"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/dataman-dm36x"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1679/11346_DOC_11022015.pdf"
+title = "Cognex DataMan DM30x, DM36x, AID36x readers, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex DataMan DM30x; product page https://marketplace.odva.org/products/1679-dataman-dm30x-reader-dataman-dm36x-reader-dataman-aid36x-reader"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-2800"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2468/12213.03_EDS.zip"
+title = "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 2800 (IS2802M; product page https://marketplace.odva.org/products/2468-is2802m-is2802c-is2805x-is2801x-is2800m"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-2800"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2468/12213_DOC_071524.pdf"
+title = "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 2800 (IS2802M; product page https://marketplace.odva.org/products/2468-is2802m-is2802c-is2805x-is2801x-is2800m"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-7000"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1669/02A6006401090A00.eds"
+title = "Cognex In-Sight 7000 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 7000 Series; product page https://marketplace.odva.org/products/1669-in-sight-7000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-7000"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1669/11273_DOC_060414.pdf"
+title = "Cognex In-Sight 7000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 7000 Series; product page https://marketplace.odva.org/products/1669-in-sight-7000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-7800"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2053/11713.01-EDS.zip"
+title = "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 7800; product page https://marketplace.odva.org/products/2053-in-sight-7800-in-sight-7802-in-sight-780xc-in-sight-7500-in-sight-7502-in-sight-7900-in-sight-7902"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/cognex/in-sight-7800"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2053/11713_DOC_102418.pdf"
+title = "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Cognex In-Sight 7800; product page https://marketplace.odva.org/products/2053-in-sight-7800-in-sight-7802-in-sight-780xc-in-sight-7500-in-sight-7502-in-sight-7900-in-sight-7902"
+terms = "none stated"
+

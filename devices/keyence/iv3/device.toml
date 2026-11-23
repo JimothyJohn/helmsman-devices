@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Keyence"
+model = "IV3 Series"
+kind = "sensor"
+article = "IV3 Series"
+
+[identity.enip]
+vendor_id = 367
+product_code = 4606
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "IV3 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Monitor Data And External Input"
+# input_assembly: the size is set by Param10100: 2..1400 bytes, default 394
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param10101: 2..104 bytes, default 12
+output_assembly = { instance = 101 }
+config_assembly = { instance = 1 }
+eds = { name = "Keyence_4606_0101.eds", size = 8178, sha256 = "301244a528dc409be0785bc44d2048260cc63afc69b42a00fa7f238daa24e292", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2406/Keyence_4606_0101.eds", terms = "none stated" }
+
+[[sources]]
+title = "Keyence IV3 Series, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "75377788cd081cc9343b53f4d5f01bf40d9bc6e5d9d64cbb0c1c23ac69ffd1f5"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2406/12099_DOC_072721.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Keyence IV3 Series, EDS (ODVA Marketplace)"
+sha256 = "301244a528dc409be0785bc44d2048260cc63afc69b42a00fa7f238daa24e292"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2406/Keyence_4606_0101.eds; retrieved 2026-11-23; not redistributed here"

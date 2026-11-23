@@ -1,0 +1,70 @@
+{
+ "docs": {
+  "https://info.bannerengineering.com/_dav/cs/idcplg?IdcService=GET_FILE&RevisionSelectionMethod=LatestReleased&dDocName=B_4205242": {
+   "content_type": "application/zip",
+   "final_url": "https://info.bannerengineering.com/_dav/cs/idcplg?IdcService=GET_FILE&RevisionSelectionMethod=LatestReleased&dDocName=B_4205242",
+   "folders": [
+    "devices/banner/dxmr90-4k"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "B_4205242/DXM_EDS/BannerDXM_1_1_02152023.eds",
+     "sha256": "a2b91f84d761612222b31fcaa5819a62a8be9c66d209d671ee8479aa42601de4",
+     "size": 6398,
+     "type": "eds"
+    },
+    {
+     "name": "B_4205242/DXM_EDS/DXM EIP on ControlLogix v2.pdf",
+     "sha256": "65a74f508e08218beb5eb25f05c23515f9ddf28ed2ce01bdea1e24974bc52cba",
+     "size": 900364,
+     "type": "pdf"
+    },
+    {
+     "name": "B_4205242/DXM_EDS/DXM EIP on Omron CJ2H.pdf",
+     "sha256": "4f529c67cf638ab72e6971ee9680c221d3e13b6ba58bfc27637bba3ae91f0271",
+     "size": 650102,
+     "type": "pdf"
+    }
+   ],
+   "name": "idcplg",
+   "retrieved": "2026-11-23T03:39:58Z",
+   "sha256": "f5121dd57399b14a6486a0faf2d23bc9e4f886cb1984b2e57dbf93419848ae1c",
+   "size": 1860385,
+   "terms": "none stated",
+   "title": "DXM Controller EDS File (12 Sep 2023), listed on the DXMR90-4K part page",
+   "type": "zip"
+  },
+  "https://info.bannerengineering.com/cs/groups/public/documents/literature/229492.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://info.bannerengineering.com/cs/groups/public/documents/literature/229492.pdf",
+   "folders": [
+    "devices/banner/dxmr90-4k"
+   ],
+   "kind": "manual",
+   "name": "229492.pdf",
+   "retrieved": "2026-11-23T03:39:58Z",
+   "sha256": "7935c2323fb8dbf0812b8f75d0a495ff49d6a61f3f979c2dca0d85320577a9a7",
+   "size": 5401075,
+   "terms": "none stated",
+   "title": "DXMR90-4K IO-Link Master Product Manual, English (26 Jan 2026)",
+   "type": "pdf"
+  },
+  "https://info.bannerengineering.com/cs/groups/public/documents/literature/229732.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://info.bannerengineering.com/cs/groups/public/documents/literature/229732.pdf",
+   "folders": [
+    "devices/banner/dxmr90-4k"
+   ],
+   "kind": "register-map",
+   "name": "229732.pdf",
+   "retrieved": "2026-11-23T03:39:58Z",
+   "sha256": "c2d7b862f844dd4d404ab95b10736d7ab93d45fac9e3768f11115c0c4f1ebb75",
+   "size": 812010,
+   "terms": "none stated",
+   "title": "DXMR90-4K Device Register and IO-Link Data Reference Guide (16 Sep 2025)",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

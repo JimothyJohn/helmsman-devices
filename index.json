@@ -277,6 +277,31 @@
    }
   },
   {
+   "folder": "devices/banner/dxmr90-4k",
+   "vendor": "Banner",
+   "model": "DXMR90-4K",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 12,
+     "product_code": 200
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BannerDXM_1_1_02152023.eds",
+      "size": 6398,
+      "sha256": "a2b91f84d761612222b31fcaa5819a62a8be9c66d209d671ee8479aa42601de4"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/beckhoff/bk9050",
    "vendor": "Beckhoff",
    "model": "BK9050",
@@ -355,6 +380,116 @@
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/dataman-dm36x",
+   "vendor": "Cognex",
+   "model": "DataMan 300 Series Reader",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 1290
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0678077312900100.eds",
+      "size": 23102,
+      "sha256": "cfd8bf5305a2f0d12e16416556f8ea7491581da317b0b816754ae07c1dd93817"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-2800",
+   "vendor": "Cognex",
+   "model": "In-Sight 2800 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 3585
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6030E0E010100.eds",
+      "size": 28866,
+      "sha256": "7e27edb64069a078dfa6cbd2217f316df78ea321d9d84971ed5f29f6ab98d012"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-7000",
+   "vendor": "Cognex",
+   "model": "In-Sight 7000 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 265
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6006401090A00.eds",
+      "size": 20980,
+      "sha256": "ef13ffda43b6dbc64a3c7a2a60b1d632ea2a930a798cacc8c472e13a0ad48827"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-7800",
+   "vendor": "Cognex",
+   "model": "In-Sight 7900-7500 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 276
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6006401140B00.eds",
+      "size": 26235,
+      "sha256": "c6f8930eb49edcfc631529dca6a3b664ca76f050fb708483c6af22d9d2b1f2ed"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/datalogic/matrix-n",
+   "vendor": "Datalogic",
+   "model": "Matrix N Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 850,
+     "product_code": 3000
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS-V3.23.1-DATALOGIC-Scanner-20230108.eds",
+      "size": 48515,
+      "sha256": "334b9482c86b4195a1e683a52294d927a891a99f8dcec048efc3d4dd707d1d0f"
+     }
     }
    }
   },
@@ -689,6 +824,116 @@
    }
   },
   {
+   "folder": "devices/ifm/al1122",
+   "vendor": "ifm",
+   "model": "AL1122",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1122
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1122.eds",
+      "size": 103495,
+      "sha256": "968982cef6f0ae665a42e64fbba78dbabfa718a5c466b029134a36438ae0425b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1222",
+   "vendor": "ifm",
+   "model": "AL1222",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1222
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1222.eds",
+      "size": 103495,
+      "sha256": "7979dc70a7f3a8e6dedf99c7d15ead6bb90b4701aba6ba1bc804baac2c2a1dc2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1322",
+   "vendor": "ifm",
+   "model": "AL1322",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1322
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1322.eds",
+      "size": 103495,
+      "sha256": "6d3716839a12b2586622427e49e40151a4fc72b870f1e27283d5af4273088e0a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1326",
+   "vendor": "ifm",
+   "model": "AL1326",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1007
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1326.eds",
+      "size": 104895,
+      "sha256": "4d87d3aae3e67243dfb4b55bdc7052942a54ec18a2d230289739b45380529f9e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1590",
+   "vendor": "ifm",
+   "model": "AL1590",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1590
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_AL1590.eds",
+      "size": 96285,
+      "sha256": "567fe42fd8f8e72aee55ebc68720be69898671d26fc5ffe98e34ff07a32f69da"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
@@ -844,6 +1089,138 @@
       "name": "VS_32.eds",
       "size": 7817,
       "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/iv3",
+   "vendor": "Keyence",
+   "model": "IV3 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 4606
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_4606_0101.eds",
+      "size": 8178,
+      "sha256": "301244a528dc409be0785bc44d2048260cc63afc69b42a00fa7f238daa24e292"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/iv4",
+   "vendor": "Keyence",
+   "model": "IV4 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 4607
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_4607_0101.eds",
+      "size": 25509,
+      "sha256": "49b07f53bc105f3c31527f826246ef3c8637e39775a8922bbab67e515c112ba1"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-1000",
+   "vendor": "Keyence",
+   "model": "SR-1000 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1004
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1004_0101.eds",
+      "size": 39356,
+      "sha256": "01b8d93f00e11e1057198f8c05962142b7998eadd1ccdec0ff55c47f0f115cb5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-2000",
+   "vendor": "Keyence",
+   "model": "SR-2000 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1007
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1007_0101.eds",
+      "size": 41438,
+      "sha256": "bc27713bbb31d68315666c476ea4f9811ac8341ed4198bdfe490b1f05aaf5416"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-5000",
+   "vendor": "Keyence",
+   "model": "SR-5000 Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1008
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1008_0101.eds",
+      "size": 43449,
+      "sha256": "a38c844d1968dcd9de378356a4a5c923fbe46711ba4d02525779889b20497fc4"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-x1h3h",
+   "vendor": "Keyence",
+   "model": "SR-X1H3H Series",
+   "kind": "sensor",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1009
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1009_0101.eds",
+      "size": 41564,
+      "sha256": "a7207d5694e0c6c47638fd4abca01610891a20cb6a491e82ee70192fe69336ef"
      }
     }
    }
@@ -1553,6 +1930,94 @@
       "name": "0004002BD1000100.eds",
       "size": 29546,
       "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice1-8di8do-g60l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE1-8DI8DO-G60L-V1D",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 50
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS-V3.11.1-PepperlFuchs-ICE1-8DI8DO-G60L-V1D-20170215.eds",
+      "size": 70355,
+      "sha256": "c357b58b9be78e386868a766b5a548afb6d3483952e9c6499b74cc96b35339db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice2-8iol-g65l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE2-8IOL-G65L-V1D",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 374
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE2-8IOL-G65L-V1D_1.6_v1.03.eds",
+      "size": 31004,
+      "sha256": "0298a01ea47bfd649eb71ac5ebeac58af8c5ac30ea1b1dac0880029edaa02a5c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice2-8iol-k45s-rj45",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE2-8IOL-K45S-RJ45",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 373
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE2-8IOL-K45S-RJ45_1.6_v1.03.eds",
+      "size": 32806,
+      "sha256": "503f77385343d3a4bcbbd51f08735ac01ed90dd0fa801ecb8067198db37d0542"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice21-8iol2-g70l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE21-8IOL2-G70L-V1D",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 69
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE21-8IOL2-G70L-V1D_1.7_v1.00.eds",
+      "size": 31017,
+      "sha256": "da8b386d9f736621735e0d1c8b964f17693afe39173fa00a0630428f387bf9ed"
      }
     }
    }
@@ -2329,6 +2794,72 @@
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/iolg2ei",
+   "vendor": "SICK",
+   "model": "IOLG2EI-03208R01",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 20618
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "IOLG2EI-03208R01.eds",
+      "size": 198944,
+      "sha256": "a14956e637a09957dd07e5d9fcb31ceca24daa3edcd94aa16ac90d5542da38e6"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/sig300",
+   "vendor": "SICK",
+   "model": "SIG300",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 16641
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SICK_SIG300_V1.3.1.eds",
+      "size": 138245,
+      "sha256": "9631245f5d0981b532d629c1532955b1c52b7ef83271c3add4ef919dc79c7cb2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/sig350-0005ap100",
+   "vendor": "SICK",
+   "model": "SIG350",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 16642
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SICK_SIG350-0005AP100_V1.0.0.eds",
+      "size": 156030,
+      "sha256": "c58192ebcd1f66ef618d0a6f579929b12b26f799cd883073b03009ece8f8c9db"
+     }
     }
    }
   },

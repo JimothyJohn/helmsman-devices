@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Keyence"
+model = "SR-1000 Series"
+kind = "sensor"
+article = "SR-1000"
+
+[identity.enip]
+vendor_id = 367
+product_code = 1004
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "SR-1000 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Class1"
+# input_assembly: the size is set by Param1: 40..1400 bytes, default 172
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param2: 4..1400 bytes, default 76
+output_assembly = { instance = 101 }
+config_assembly = { instance = 1 }
+eds = { name = "Keyence_1004_0101.eds", size = 39356, sha256 = "01b8d93f00e11e1057198f8c05962142b7998eadd1ccdec0ff55c47f0f115cb5", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1438/Keyence_1004_0101.eds", terms = "none stated" }
+
+[[sources]]
+title = "Keyence SR-1000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "b8b445068eba2d35a1bea1055c990c636f84b7cdae14d6c894161a00df7856b6"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1438/11296_DOC_081314.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Keyence SR-1000 Series, EDS (ODVA Marketplace)"
+sha256 = "01b8d93f00e11e1057198f8c05962142b7998eadd1ccdec0ff55c47f0f115cb5"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1438/Keyence_1004_0101.eds; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,36 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SICK"
+model = "SIG350"
+kind = "remote-io"
+article = "SIG350-0005AP100"
+
+[identity.enip]
+vendor_id = 808
+product_code = 16642
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "SIG350"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner - 32 bytes per IO-Link Port"
+# instances are the defaults of Param2, Param1: the EDS lets a scanner choose others
+# input_assembly: the size is set by Param151: 4..276 bytes, default 276
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param150: 4..276 bytes, default 276
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102, bytes = 130 }
+eds = { name = "SICK_SIG350-0005AP100_V1.0.0.eds", size = 156030, sha256 = "c58192ebcd1f66ef618d0a6f579929b12b26f799cd883073b03009ece8f8c9db", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2509/12265.01-EDS.zip (member of 12265.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "SICK SIG350-0005AP100, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "aa567cb43f3dd426f8762de3151dd44604e6ccb76caf561c9185d23d71919366"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2509/12265_DOC_062422.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SICK SIG350-0005AP100, EDS (ODVA Marketplace)"
+sha256 = "7eda2e3e90f451cfd6a7fbf71024f4d41f2f8732039cfff5be97cac3bf73c9a0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2509/12265.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

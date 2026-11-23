@@ -1,0 +1,149 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1669/11273_DOC_060414.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1669/11273_DOC_060414.pdf",
+   "folders": [
+    "devices/cognex/in-sight-7000"
+   ],
+   "kind": "datasheet",
+   "name": "11273_DOC_060414.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "287c288c42b51e097c7d047b24d9460d0a334605e21f216a636cdb6d7d432fe2",
+   "size": 100232,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 7000 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1679/11346_DOC_11022015.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1679/11346_DOC_11022015.pdf",
+   "folders": [
+    "devices/cognex/dataman-dm36x"
+   ],
+   "kind": "datasheet",
+   "name": "11346_DOC_11022015.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "091798f45c8a0d42419b2bfe38330ee9ade8872a173c2e77f02e4d4ef4369420",
+   "size": 98294,
+   "terms": "none stated",
+   "title": "Cognex DataMan DM30x, DM36x, AID36x readers, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2053/11713_DOC_102418.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2053/11713_DOC_102418.pdf",
+   "folders": [
+    "devices/cognex/in-sight-7800"
+   ],
+   "kind": "datasheet",
+   "name": "11713_DOC_102418.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "aebb0affa29a3681dcafc0d9bb24802f5758452ea822676ac504f161a4088bff",
+   "size": 652688,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2468/12213_DOC_071524.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2468/12213_DOC_071524.pdf",
+   "folders": [
+    "devices/cognex/in-sight-2800"
+   ],
+   "kind": "datasheet",
+   "name": "12213_DOC_071524.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "e5ea3420499b0ebfdf3a51e1d88cd818dce8f30e527b4388b6529b4372c18e7e",
+   "size": 175613,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1669/02A6006401090A00.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1669/02A6006401090A00.eds",
+   "folders": [
+    "devices/cognex/in-sight-7000"
+   ],
+   "kind": "eds",
+   "name": "02A6006401090A00.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "ef13ffda43b6dbc64a3c7a2a60b1d632ea2a930a798cacc8c472e13a0ad48827",
+   "size": 20980,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 7000 Series, EDS (ODVA Marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1679/11346.02_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1679/11346.02_EDS.zip",
+   "folders": [
+    "devices/cognex/dataman-dm36x"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0678077312900100.eds",
+     "sha256": "cfd8bf5305a2f0d12e16416556f8ea7491581da317b0b816754ae07c1dd93817",
+     "size": 23102,
+     "type": "eds"
+    }
+   ],
+   "name": "11346.02_EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "12b1749f01a75311bb2c03282699528a4dd094816bb26bf6c831754c371b6328",
+   "size": 2286,
+   "terms": "none stated",
+   "title": "Cognex DataMan DM30x, DM36x, AID36x readers, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2053/11713.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2053/11713.01-EDS.zip",
+   "folders": [
+    "devices/cognex/in-sight-7800"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "02A6006401140B00.eds",
+     "sha256": "c6f8930eb49edcfc631529dca6a3b664ca76f050fb708483c6af22d9d2b1f2ed",
+     "size": 26235,
+     "type": "eds"
+    }
+   ],
+   "name": "11713.01-EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "8e4757e83acacc2874d0b9ee3534aa4a6b3c8f502e3f5e68bab674aa4e1a2da8",
+   "size": 10902,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2468/12213.03_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2468/12213.03_EDS.zip",
+   "folders": [
+    "devices/cognex/in-sight-2800"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "02A6030E0E010100.eds",
+     "sha256": "7e27edb64069a078dfa6cbd2217f316df78ea321d9d84971ed5f29f6ab98d012",
+     "size": 28866,
+     "type": "eds"
+    }
+   ],
+   "name": "12213.03_EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "2d70feeaaf8d0432ce99838f5f32b31ba66859dea59bee128bebda79513d0b05",
+   "size": 3016,
+   "terms": "none stated",
+   "title": "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), EDS (ODVA Marketplace)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
