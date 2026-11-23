@@ -1265,6 +1265,314 @@
    }
   },
   {
+   "folder": "devices/rockwell-automation/1719-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1719-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 315
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1719_AENTR.eds",
+      "size": 7966,
+      "sha256": "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-16cfgm12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-16CFGM12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 357
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701650300.eds",
+      "size": 29825,
+      "sha256": "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-8x8m12dr",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-8X8M12DR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 358
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701660300.eds",
+      "size": 55643,
+      "sha256": "b3f3b8397d8922a81fc2655ce72874f9c798b672abe9a5dad1242cb3060c566a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ib16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-IB16M12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 369
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16InBlock2Port.eds",
+      "size": 23963,
+      "sha256": "96657dd7152d74f77722c4a7a39b3a929ec5cfb4a5f1506e654d80ce395856ec"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ob16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-OB16M12R",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 370
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16OutBlock2Port.eds",
+      "size": 13675,
+      "sha256": "4ec0530cbf3c9474dc764b4e7171209c2be0c09e2616f9da0ea26292b36d1d32"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 108
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C006C070B_1734_AENT.eds",
+      "size": 48519,
+      "sha256": "76a23243b7fbf2df4b2c83b048349bbe25bf1172c55d88812697f0c8c8d6efdb"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 196
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00C4070B_1734_AENTR.eds",
+      "size": 48986,
+      "sha256": "34e8304305f4d7bb7b7bfc84359495f3e9165ca87e11086bf65071d4fbfe1f84"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1738-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1738-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 132
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C0084060C_1738_AENT_SerB.eds",
+      "size": 48466,
+      "sha256": "c328fd321b48e5c3b89890a693eb35afabeba536bdf0b629682d3eb473e6182a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1769-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1769-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 298
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C012A0100.eds",
+      "size": 4229,
+      "sha256": "aa2345723785b71f7c40a51dba4854e8cab8937a4eec20d747503c9109b9ffb5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENT",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 90
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C005A0400.EDS",
+      "size": 79801,
+      "sha256": "97b40eec9bf440faa340cb59ffb17a341e2c5b543d1d222928696ea7def8fa89"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 261
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01050200.eds",
+      "size": 136799,
+      "sha256": "45dafe6e13b170a11327785d9cafe6e3f7ae35eb29901d8d9be5110623ecb18c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5069-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5069-AEN2TR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 252
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FC0300_as_uploaded_from_3.011.44.eds",
+      "size": 14648,
+      "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AEN2TR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 322
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01420600.eds",
+      "size": 18440,
+      "sha256": "90ca83cf7c596e7bbffc56be436332727527b4812f08fe2c158dda080ffe2e99"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AENTR",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 253
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FD0600.eds",
+      "size": 17323,
+      "sha256": "c7c3d7e5283ae82dab20f07111a21d682e77023aad994ccb2df09a757b9646ab"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",

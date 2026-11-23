@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1738-AENT"
+kind = "remote-io"
+article = "1738-AENT"
+
+[identity.enip]
+vendor_id = 1
+product_code = 132
+device_type = 12
+revisions = ["6.13"]   # the EDS's MajRev.MinRev
+product_name = "1738-AENT/B Ethernet Adapter"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Assembly Exclusive Owner"
+# input_assembly: the size is set by Param3: 8..509 bytes, default 8
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param2: 0..505 bytes, default 0
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102 }
+eds = { name = "0001000C0084060C_1738_AENT_SerB.eds", size = 48466, sha256 = "c328fd321b48e5c3b89890a693eb35afabeba536bdf0b629682d3eb473e6182a", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip (member of 10401.33_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorPOINT EtherNet/IP adapters EDS package 10401.33 (1738-AENT, 1738-AENTR)"
+sha256 = "385800c349a5560fa3f59bc3527b729c22e0c26fb035239320cfe1356890817d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip; retrieved 2026-11-23; not redistributed here"

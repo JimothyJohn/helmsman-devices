@@ -2816,6 +2816,456 @@
    }
   },
   {
+   "folder": "devices/rockwell-automation/1719-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1719-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 315,
+     "device_type": 12,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1719-AENTR Ex I/O EtherNet/IP Adapter"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 48
+    },
+    "output": {
+     "instance": 198,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "1719_AENTR.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "1719-AENTR EtherNet/IP adapter EDS package 11554.05",
+     "sha256": "d0264b0694e663237f0b2725309934385d3a5b2be2f32298a6fedac07b74ee28",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-16cfgm12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-16CFGM12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 357,
+     "device_type": 7,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1732E-16CFGM12R 16 DC In/Out M12"
+    },
+    "input": {
+     "instance": 105,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 102,
+     "bytes": 6
+    },
+    "eds": "0001000701650300.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
+     "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-8x8m12dr",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-8X8M12DR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 358,
+     "device_type": 7,
+     "revisions": [
+      "3.12"
+     ],
+     "product_name": "1732E-8X8M12DR 8 DC In/Out M12"
+    },
+    "input": {
+     "instance": 114,
+     "bytes": 9
+    },
+    "output": {
+     "instance": 34,
+     "bytes": 1
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 8
+    },
+    "eds": "0001000701660300.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
+     "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ib16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-IB16M12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 369,
+     "device_type": 7,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "1732E-IB16M12R 16 DC In M12"
+    },
+    "input": {
+     "instance": 105,
+     "bytes": 6
+    },
+    "output": {
+     "instance": 190,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 101,
+     "bytes": 4
+    },
+    "eds": "1732E_16InBlock2Port.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
+     "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ob16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-OB16M12R",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 370,
+     "device_type": 7,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "1732E-OB16M12R 16 DC Out M12"
+    },
+    "input": {
+     "instance": 192,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "eds": "1732E_16OutBlock2Port.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
+     "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 108,
+     "device_type": 12,
+     "revisions": [
+      "7.15"
+     ],
+     "product_name": "1734-AENT/C Ethernet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C006C070B_1734_AENT.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09",
+     "sha256": "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 196,
+     "device_type": 12,
+     "revisions": [
+      "7.15"
+     ],
+     "product_name": "1734-AENTR/C EtherNet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C00C4070B_1734_AENTR.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09",
+     "sha256": "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1738-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1738-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 132,
+     "device_type": 12,
+     "revisions": [
+      "6.13"
+     ],
+     "product_name": "1738-AENT/B Ethernet Adapter"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "0001000C0084060C_1738_AENT_SerB.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ArmorPOINT EtherNet/IP adapters EDS package 10401.33 (1738-AENT, 1738-AENTR)",
+     "sha256": "385800c349a5560fa3f59bc3527b729c22e0c26fb035239320cfe1356890817d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1769-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1769-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 298,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "1769-AENTR"
+    },
+    "eds": "0001000C012A0100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CompactLogix 1769-AENTR EDS package 11237.04",
+     "sha256": "5d0a1249479d0e23e2f6be9cca005bca9a6c0c7e66cd7ffe2f2c2a7c554ef8ce",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1162/11237.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENT",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 90,
+     "device_type": 12,
+     "revisions": [
+      "4.1"
+     ],
+     "product_name": "1794-AENT FLEX I/O Ethernet Adapter"
+    },
+    "eds": "0001000C005A0400.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX I/O 1794-AENT/B EDS package 10585.05",
+     "sha256": "4e723f2d1210738af0528eb488ba573a04de82f89bc8d470bdebf6569361ace8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 261,
+     "device_type": 12,
+     "revisions": [
+      "2.12"
+     ],
+     "product_name": "1794-AENTR FLEX Ethernet Adapter"
+    },
+    "eds": "0001000C01050200.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX I/O 1794-AENTR EDS package 10989.14",
+     "sha256": "4a95df7cee1fec8d6e40cc17a424c4f90e8206d9c6ceb2024bce137a7b185b85",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5069-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5069-AEN2TR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 252,
+     "device_type": 12,
+     "revisions": [
+      "3.1"
+     ],
+     "product_name": "5069-AEN2TR"
+    },
+    "eds": "0001000C00FC0300_as_uploaded_from_3.011.44.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Compact 5000 5069-AEN2TR EDS (uploaded from firmware 3.011.44)",
+     "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AEN2TR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 322,
+     "device_type": 12,
+     "revisions": [
+      "6.12"
+     ],
+     "product_name": "5094 Adapter 16 Modules RJ45"
+    },
+    "eds": "0001000C01420600.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)",
+     "sha256": "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AENTR",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1,
+     "product_code": 253,
+     "device_type": 12,
+     "revisions": [
+      "6.12"
+     ],
+     "product_name": "5094 Adapter 8 Modules RJ45"
+    },
+    "eds": "0001000C00FD0600.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)",
+     "sha256": "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
