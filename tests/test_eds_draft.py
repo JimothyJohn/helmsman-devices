@@ -382,6 +382,73 @@ CONNECTION = """
 """
 
 
+class Vendor(unittest.TestCase):
+    """A draft names the vendor as the library does (PR #60), keyed by the EDS's VendCode;
+    VendName is only for an id the library does not know."""
+
+    def setUp(self):
+        self.root = pathlib.Path(tempfile.mkdtemp())
+
+    def index(self, devices):
+        (self.root / "index.json").write_text(json.dumps({"devices": devices}))
+        return ed.library_vendors(self.root)
+
+    @staticmethod
+    def entry(vendor, vid):
+        return {"vendor": vendor, "identity": {"enip": {"vendor_id": vid, "product_code": 1}}}
+
+    def eds(self, vid=48, name="Turck AG"):
+        text = EDS.replace('VendName = "Turck";', f'VendName = "{name}";')
+        text = text.replace("VendCode = 48;", f"VendCode = {vid};")
+        return ed.parse(text.encode())
+
+    def test_a_known_vendor_id_gets_the_library_name_not_vendname(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(), None, "turck", lib), "Turck")
+
+    def test_an_unknown_vendor_id_falls_back_to_vendname(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(vid=999), None, "x", lib), "Turck AG")
+
+    def test_the_vendor_flag_wins_over_both(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(), "Mine", "turck", lib), "Mine")
+        self.assertEqual(ed.vendor_for(self.eds(vid=999), "Mine", "x", lib), "Mine")
+
+    def test_entries_that_disagree_take_the_majority_and_a_tie_the_first_name(self):
+        entries = [self.entry(n, i) for n, i in (("B", 1), ("A", 1), ("B", 1), ("Z", 2), ("Y", 2))]
+        self.assertEqual(self.index(entries), {1: "B", 2: "Y"})
+
+    def test_no_vendor_id_and_a_hostile_index_fall_back_without_a_crash(self):
+        lib = self.index([self.entry("Turck", 48)])
+        eds = self.eds()
+        del eds["device"]["vendor_id"]
+        self.assertEqual(ed.vendor_for(eds, None, "turck", lib), "Turck AG")
+        del eds["device"]["vendor_name"]
+        self.assertEqual(ed.vendor_for(eds, None, "turck", lib), "turck")
+        self.assertEqual(self.index([{"vendor": "Moxa"}, self.entry("Turck", 48)]), {48: "Turck"})
+        for body in (
+            "not json",
+            "[]",
+            '{"devices": 5}',
+            '{"devices": null}',
+            '{"devices": [null, {"vendor": "V"}, {"vendor": 3, "identity": {"enip": {"vendor_id": 1}}}]}',
+            '{"devices": [{"vendor": "V", "identity": {"enip": {"vendor_id": "48"}}}]}',
+            '{"devices": [{"vendor": "V", "identity": {"enip": {"vendor_id": true}}}]}',
+        ):
+            with self.subTest(body=body):
+                (self.root / "index.json").write_text(body)
+                self.assertEqual(ed.library_vendors(self.root), {})
+        (self.root / "index.json").unlink()
+        self.assertEqual(ed.library_vendors(self.root), {})
+        self.assertEqual(ed.vendor_for(self.eds(), None, "turck", {}), "Turck AG")
+
+    def test_the_real_library_names_the_vendors_it_has(self):
+        lib = ed.library_vendors()
+        self.assertGreater(len(lib), 10)
+        self.assertEqual(lib.get(243), "Schneider Electric")  # Novanta IMS shares the id; 5 entries to 1
+
+
 class Network(unittest.TestCase):
     """An EDS is written for one network. ODVA lists DeviceNet and ControlNet files beside the
     EtherNet/IP ones, and a draft from one of them is an entry for a device nobody can reach

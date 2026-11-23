@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# TURCK TBEN-L5-8IOL
+# Turck TBEN-L5-8IOL
 
 EDS identity: vendor 48 TURCK, product code
 14017, device type 12 Communications Adapter,

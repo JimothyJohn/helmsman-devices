@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Keyence Corporation IV3 Series
+# Keyence IV3 Series
 
 EDS identity: vendor 367 Keyence Corporation, product code
 4606, device type 43 Generic Device,
