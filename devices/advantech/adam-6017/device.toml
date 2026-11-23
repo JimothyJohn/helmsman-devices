@@ -1,0 +1,71 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6017"
+kind = "remote-io"
+channels = "8 AI, 2 DO"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "AI value"
+modbus = "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)"
+meaning = "analog input in engineering units, one word a channel"
+source = "ADAM-6000 User Manual Ed. 12 p. 197"
+
+[[points]]
+name = "AI float value"
+modbus = "hr:30..hr:45 (4X 40031~40046, two words a channel, IEEE754)"
+meaning = "analog input as a 32-bit float"
+source = "ADAM-6000 User Manual Ed. 12 p. 198"
+
+[[points]]
+name = "AI status"
+modbus = "hr:100..hr:114 (4X 40101, 40103, ..., 40115, one word a channel at every second address)"
+meaning = "status bits: 0 fail, 1 over range, 2 under range, 3 open circuit/burnout, 7 ADC init error, 9 zero/span calibration error"
+source = "ADAM-6000 User Manual Ed. 12 p. 198, remark 4 p. 199-200"
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:17 (0X 00017-00018, R/W)"
+meaning = "digital output command and state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 195"
+
+[[points]]
+name = "open-circuit flag"
+modbus = "coil:120..coil:127 (0X 00121-00128, read)"
+meaning = "1 = no signal in the 4~20 mA range"
+source = "ADAM-6000 User Manual Ed. 12 p. 196, remark 1 p. 199"
+
+[[points]]
+name = "high / low alarm flags"
+modbus = "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)"
+meaning = "1 = alarm active against the limits set in the Adam/Apax .NET Utility"
+source = "ADAM-6000 User Manual Ed. 12 p. 196, remarks 2-3 p. 199"
+
+[[points]]
+name = "AI type code"
+modbus = "hr:200..hr:207 (4X 40201-40208, R/W)"
+meaning = "input range, e.g. 0x0143 = +/-10 V, 0x0180 = 4~20 mA; 13 codes"
+source = "ADAM-6000 User Manual Ed. 12 p. 199-200"
+
+[[points]]
+name = "AI channel enable"
+modbus = "hr:220 (4X 40221, R/W)"
+meaning = "which channels are scanned; only on the CE or D version"
+source = "ADAM-6000 User Manual Ed. 12 p. 199"
+
+[[points]]
+name = "module name"
+modbus = "hr:210..hr:211 (4X 40211-40212, read)"
+meaning = "the model as hex"
+source = "ADAM-6000 User Manual Ed. 12 p. 199"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"

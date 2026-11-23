@@ -1,0 +1,52 @@
+# Written by hand from the documents. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Moxa"
+model = "ioThinx 4510"
+kind = "remote-io"
+channels = "modular, up to 32 I/O modules"
+
+[device.photo]
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/en/getattachment/Products/INDUSTRIAL-EDGE-CONNECTIVITY/Controllers-and-IOs/Advanced-Controllers-and-I-Os/ioThinx-4510-Series/moxa-iothinx-4510-series-image-(1).jpg"
+page = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
+seen = 2026-11-22
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# Unit id and register addresses: not read (see README).
+
+[[points]]
+name = "BIR internal bits"
+modbus = "coil (0xxxx), 48 bits, parameter boolInternalRegister"
+meaning = "BOOL internal register, read/write"
+source = "ioThinx 4510 Series User's Manual v6.2 p. 111"
+
+[[points]]
+name = "watchdog alarm flag"
+modbus = "input status (1xxxx), 1 bit, parameter watchdogAlarmFlag"
+meaning = "0 normal, 1 watchdog alarm"
+source = "ioThinx 4510 Series User's Manual v6.2 p. 111"
+
+[[points]]
+name = "WORD / DWORD / FLOAT internal registers"
+modbus = "holding register (4xxxx), parameters wirValue (48 words), dirValue (96), firValue (96)"
+meaning = "internal registers holding values from the Modbus RTU master or other sources"
+source = "ioThinx 4510 Series User's Manual v6.2 p. 111"
+
+[[points]]
+name = "device identity"
+modbus = "input register (3xxxx), parameters deviceName (8 bytes), firmwareVersion (4), firmwareBuildDate (4), serialNumber (6), systemError (1 word)"
+meaning = "name, firmware, build date and error word as ASCII bytes"
+source = "ioThinx 4510 Series User's Manual v6.2 p. 112"
+
+[[points]]
+name = "45MR-1600 / 1601 DI module"
+modbus = "input status diStatus (16 bits), diMode (16); holding diCounterValue (8 DWORD); input register diStatusAll (1 word)"
+meaning = "16 DI channels, DI or counter mode; the module's base address depends on its slot"
+source = "ioThinx 4510 Series User's Manual v6.2 p. 112"
+
+[[sources]]
+title = "ioThinx 4510 Series User's Manual, v6.2"
+sha256 = "c70d5cd9a76772ff5237ee923ef0be86c4a5f3de8be5074f3b25580147b6a6bc"
+where = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf; retrieved 2026-11-22; not redistributed here"

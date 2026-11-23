@@ -1,0 +1,22 @@
+# Written by hand from the documents. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Moxa"
+model = "ioLogik E2212"
+kind = "remote-io"
+channels = "8 DI, 8 DO, 4 DIO"
+
+[device.photo]
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/53f5dd5f-29a8-41ea-b02a-21a0ca91680c/moxa-iologik-e2212-image.jpg"
+page = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2212"
+seen = 2026-11-22
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# Unit id and register addresses: not read (see README).
+
+[[sources]]
+title = "ioLogik E2200 Series Datasheet, v1.3"
+sha256 = "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e"
+where = "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"

@@ -2,6 +2,78 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/acromag/xt1111-000",
+   "vendor": "Acromag",
+   "model": "XT1111-000",
+   "kind": "remote-io",
+   "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/acromag/xt1121-000",
+   "vendor": "Acromag",
+   "model": "XT1121-000",
+   "kind": "remote-io",
+   "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6015",
+   "vendor": "Advantech",
+   "model": "ADAM-6015",
+   "kind": "remote-io",
+   "channels": "7 RTD AI",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6017",
+   "vendor": "Advantech",
+   "model": "ADAM-6017",
+   "kind": "remote-io",
+   "channels": "8 AI, 2 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6018",
+   "vendor": "Advantech",
+   "model": "ADAM-6018",
+   "kind": "remote-io",
+   "channels": "8 TC AI, 8 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6024",
+   "vendor": "Advantech",
+   "model": "ADAM-6024",
+   "kind": "remote-io",
+   "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
@@ -43,6 +115,70 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
    },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6066",
+   "vendor": "Advantech",
+   "model": "ADAM-6066",
+   "kind": "remote-io",
+   "channels": "6 DI, 6 relay DO",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6250",
+   "vendor": "Advantech",
+   "model": "ADAM-6250",
+   "kind": "remote-io",
+   "channels": "8 DI, 7 DO (sink)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6250/Product%20-%20Photo(Main)/ADAM-6250_03_S20190730122849.jpg",
+    "page": "https://www.advantech.com/en/products/7447e150-338d-402d-b5a1-c9ce6d98816e/adam-6250/mod_da940b26-501f-413e-bfbc-732fd7496782"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6251",
+   "vendor": "Advantech",
+   "model": "ADAM-6251",
+   "kind": "remote-io",
+   "channels": "16 DI",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6256",
+   "vendor": "Advantech",
+   "model": "ADAM-6256",
+   "kind": "remote-io",
+   "channels": "16 DO (sink)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6260",
+   "vendor": "Advantech",
+   "model": "ADAM-6260",
+   "kind": "remote-io",
+   "channels": "6 relay DO (5 Form C, 1 Form A)",
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -778,6 +914,70 @@
     "modbus": {
      "driver": "modbus-tcp",
      "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2210",
+   "vendor": "Moxa",
+   "model": "ioLogik E2210",
+   "kind": "remote-io",
+   "channels": "12 DI, 8 DO (sink)",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8bc1a754-93d9-40f0-bc93-672a7b55f2c0/moxa-iologik-e2210-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2212",
+   "vendor": "Moxa",
+   "model": "ioLogik E2212",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DO, 4 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/53f5dd5f-29a8-41ea-b02a-21a0ca91680c/moxa-iologik-e2212-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2212"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2242",
+   "vendor": "Moxa",
+   "model": "ioLogik E2242",
+   "kind": "remote-io",
+   "channels": "4 AI, 12 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8803760d-977d-46ec-8008-a7657aba6497/moxa-iologik-e2242-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2242"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iothinx-4510",
+   "vendor": "Moxa",
+   "model": "ioThinx 4510",
+   "kind": "remote-io",
+   "channels": "modular, up to 32 I/O modules",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/en/getattachment/Products/INDUSTRIAL-EDGE-CONNECTIVITY/Controllers-and-IOs/Advanced-Controllers-and-I-Os/ioThinx-4510-Series/moxa-iothinx-4510-series-image-(1).jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
     }
    }
   },

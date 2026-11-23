@@ -1,0 +1,69 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6015"
+kind = "remote-io"
+channels = "7 RTD AI"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "AI value"
+modbus = "hr:0..hr:6 (4X 40001-40007); average of ch0-6 at hr:8 (40009)"
+meaning = "RTD input in engineering units (degC) as an integer word"
+source = "ADAM-6000 User Manual Ed. 12 p. 191-192"
+
+[[points]]
+name = "AI float value"
+modbus = "hr:30..hr:43 (4X 40031~40044, two words a channel, IEEE754)"
+meaning = "RTD input as a 32-bit float"
+source = "ADAM-6000 User Manual Ed. 12 p. 193"
+
+[[points]]
+name = "AI status"
+modbus = "hr:100..hr:113 (4X 40101~40114, two words a channel)"
+meaning = "status bits: 0 = normal, bit 3 = open circuit/burnout"
+source = "ADAM-6000 User Manual Ed. 12 p. 194-195"
+
+[[points]]
+name = "burnout flag"
+modbus = "coil:120..coil:126 (0X 00121-00127, read)"
+meaning = "1 = no RTD signal detected on the channel"
+source = "ADAM-6000 User Manual Ed. 12 p. 192, remark 1 p. 194"
+
+[[points]]
+name = "high alarm flag"
+modbus = "coil:130..coil:136 (0X 00131-00137, read)"
+meaning = "1 = input above the high alarm value set in the Adam/Apax .NET Utility"
+source = "ADAM-6000 User Manual Ed. 12 p. 192, remark 2 p. 194"
+
+[[points]]
+name = "low alarm flag"
+modbus = "coil:140..coil:146 (0X 00141-00147, read)"
+meaning = "1 = input below the low alarm value"
+source = "ADAM-6000 User Manual Ed. 12 p. 193, remark 3 p. 194"
+
+[[points]]
+name = "AI type code"
+modbus = "hr:200..hr:206 (4X 40201-40207, R/W)"
+meaning = "input range, e.g. 0x03A4 = PT100(385) -50~150 degC; table of 14 codes"
+source = "ADAM-6000 User Manual Ed. 12 p. 194-195"
+
+[[points]]
+name = "module name"
+modbus = "hr:210..hr:211 (4X 40211-40212, read)"
+meaning = "the model as hex, a cheap identity check"
+source = "ADAM-6000 User Manual Ed. 12 p. 194, remark 6 p. 195"
+
+[[questions]]
+ask = "Which of the ADAM-6015 Modbus addresses does the manual mark as supported only by the ADAM-6015-DE (high-speed) version?"
+source = "ADAM-6000 User Manual Ed. 12 p. 194, note under the 6015 table (the marked addresses are shown by colour)"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"
