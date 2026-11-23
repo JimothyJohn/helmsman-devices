@@ -13,7 +13,7 @@ Open items for the device library. The board (`/todo`) renders this file; an
       asked: 2026-11-23
       by: resume 2026-11-23
 
-- [ ] **Fetch vendor manuals in a real browser?** — Rockwell's literature library, Festo and Danfoss answer 403 (Akamai) to curl and WebFetch; WAGO 750-362/363 and the Siemens IM 155-6 MF HF manual need JavaScript to download. So about 40 entries are an EDS and an ODVA declaration and nothing else: no `[[points]]`, so `use.py` gives the connection but not the channels' bits. A fetch through Chrome on the Air (the extension, your own browser, an honest user agent) would read the same public PDFs a person would. Files would still be hashed into the S3 store, never committed.
+- [ ] **Fetch vendor manuals in a real browser?** — Rockwell's literature library, Festo and Danfoss answer 403 (Akamai) to curl and WebFetch; WAGO 750-362/363 and the Siemens IM 155-6 MF HF manual need JavaScript to download, and so do Murrelektronik's shop and (likely) Pepperl+Fuchs' product pages. So about 40 entries are an EDS and an ODVA declaration and nothing else: no `[[points]]`, so `use.py` gives the connection but not the channels' bits. A fetch through Chrome on the Air (the extension, your own browser, an honest user agent) would read the same public PDFs a person would. Files would still be hashed into the S3 store, never committed.
       options: browser fetch — points for the Rockwell, Festo, Danfoss, WAGO and Siemens entries in a follow-up batch | you download — you drop the PDFs in a folder and I hash and read them | leave them — those entries stay EDS-only
       recommend: browser fetch — it is a person's fetch of public documents, and it unblocks the biggest gap in the library
       stakes: high
@@ -55,42 +55,48 @@ Open items for the device library. The board (`/todo`) renders this file; an
 
 ## Library work
 
-- [ ] **Hash the documents some channels lines were read from** — channels for Schneider PM5560, STB NIP2311, TM3BCEIP, TPRBCEIP, Siemens SENTRON PAC3200/4200, SINAMICS G120, IM 155-6 MF HF and SMC EX260/EX600 came from vendor pages found by search, not from a document in the entry's `[[sources]]`. PAC4200 and G120 were read from other editions than the entries name.
+- [x] **Hash the documents some channels lines were read from** — channels for Schneider PM5560, STB NIP2311, TM3BCEIP, TPRBCEIP, Siemens SENTRON PAC3200/4200, SINAMICS G120, IM 155-6 MF HF and SMC EX260/EX600 came from vendor pages found by search, not from a document in the entry's `[[sources]]`. PAC4200 and G120 were read from other editions than the entries name.
       result: each of those lines names a document in `[[sources]]` with size and SHA-256, or is marked inferred
       est: 3h
       difficulty: med
       id: hash-channel-sources
       asked: 2026-11-23
 
-- [ ] **Find the port count of the Pepperl+Fuchs ICE21-8IOL2-G70L-V1D** — the one entry with no channels: its EDS states no port count and no vendor page was found. The "8IOL" in the model number is not a source.
-      result: `channels` with a data sheet page, or a README line saying why not
-      est: 1h
-      difficulty: med
+- [ ] **Find the port count of the Pepperl+Fuchs ICE21-8IOL2-G70L-V1D** — the one entry with no channels. Searched 2026-11-23 (#65): the ODVA Marketplace page links only the EDS and the declaration of conformity, and P+F's IO-Link master page lists only the ICE1 family. The data sheet is likely on P+F's product page for article 70148669, which no fetcher reached. The "8IOL" in the model number is not a source.
+      result: `channels` with a data sheet page
+      depends: browser-fetch
+      est: 30m
+      difficulty: low
+      model: fable
+      notes: a browser step, so it stays with the main session
       id: pf-ice21-channels
       asked: 2026-11-23
 
-- [ ] **Store the files of six older entries** — Moxa E1212/E1213, two Murrelektronik, Novanta and UR were collected by hand before the S3 store, so the DeviceNet/ControlNet check could not read their EDS. Two are unit-checked.
-      result: their files in the store by hash, and the network check run on them
-      est: 1h
-      difficulty: med
+- [ ] **Store the last two Murrelektronik files** — #69 stored the hand-collected files of the Moxa E1212/E1213, Novanta, UR and the two 55089 EDS (every hash matched, every EDS is EtherNet/IP). Two remain: the IMPACT67 E manual, art. 55368 (sha256 f01edb0a…, cited by 5 Murrelektronik folders), and the 55086 EDS (fd900040…, in 55086_IMPACT67_KF5_x_11.zip). shop.murrelektronik.com answers a fetcher with only a "Please wait..." script page. collect/murrelektronik.toml names both in a comment.
+      result: both in the store by hash, collect/murrelektronik.lock.json written, the 55086 EDS's network verdict
+      depends: browser-fetch
+      est: 30m
+      difficulty: low
+      model: fable
+      notes: a browser step, so it stays with the main session
       id: store-older-files
       asked: 2026-11-23
 
-- [ ] **Find the Moxa ioLogik E2200 manual** — not linked from moxa.com's product pages, so E2210/E2212/E2242 have no register points.
+- [x] **Find the Moxa ioLogik E2200 manual** — not linked from moxa.com's product pages, so E2210/E2212/E2242 have no register points.
       result: `[[points]]` for the three, each with a page
       est: 2h
       difficulty: med
       id: moxa-e2200-points
       asked: 2026-11-22
 
-- [ ] **Drop the EDS vendor string from README titles** — 17 READMEs open with the EDS's VendName ("# SICK AG SIG300", "# Banner Engineering Corp. Banner DXM") instead of the folder's `[device] vendor`.
+- [x] **Drop the EDS vendor string from README titles** — 17 READMEs open with the EDS's VendName ("# SICK AG SIG300", "# Banner Engineering Corp. Banner DXM") instead of the folder's `[device] vendor`.
       result: each title is `# <vendor> <model>` as device.toml states them
       est: 30m
       difficulty: low
       id: readme-titles
       asked: 2026-11-22
 
-- [ ] **Give eds-draft.py a vendor name per vendor id** — it copies the EDS VendName into `[device] vendor`, so drafts drift from the names #60 normalized.
+- [x] **Give eds-draft.py a vendor name per vendor id** — it copies the EDS VendName into `[device] vendor`, so drafts drift from the names #60 normalized.
       result: a vendor id → name table the draft uses, with a test; VendName only for an id not in it
       est: 1h
       difficulty: med
