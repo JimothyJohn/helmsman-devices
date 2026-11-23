@@ -5,7 +5,7 @@ vendor = "Siemens"
 model = "SENTRON PAC3200"
 kind = "other"
 category = "power-meter"
-channels = "1 DI, 1 DO; voltage, current, power, energy, frequency, power factor, THD; 2-, 3- and 4-wire systems"   # from: SENTRON PAC3200 Manual A5E01168664B-04 (02/2008) p.19-20 (digital input and output, wiring), Table 3-3 p.24; opened 2026-11-23
+channels = "1 DI, 1 DO; voltage, current, power, energy, frequency, power factor, THD; 2-, 3- and 4-wire systems"   # from: SENTRON PAC3200 Manual A5E01168664B-04 (02/2008) p.19 (3.1 Features: one digital input and one digital output; two-, three- and four-wire systems), Table 3-3 p.24 (measured variables)
 article = "7KM3200"
 
 [protocols.modbus]
@@ -41,3 +41,8 @@ source = "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 41; the zero-based
 [[questions]]
 ask = "Is the offset in Table 3-6 one-based (offset 1 is Modbus address 0, as 4X 40001 would be) and is the high or low word of a float first?"
 source = "SENTRON PAC3200 Manual A5E01168664B-04 p. 40 (the table) and p. 38 (port 502): the pages read give neither"
+
+[[sources]]
+title = "SENTRON PAC3200 Manual A5E01168664B-04 (02/2008)"
+sha256 = "b9efef1f28f8588d3f9b9ba04754e4914850fb0ec74373955d199d8f6b3de187"
+where = "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf; retrieved 2026-11-23; not redistributed here"

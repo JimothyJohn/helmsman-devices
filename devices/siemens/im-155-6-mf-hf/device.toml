@@ -5,8 +5,13 @@ vendor = "Siemens"
 model = "SIMATIC ET 200SP IM 155-6 MF HF"
 kind = "remote-io"
 category = "io-coupler"
-channels = "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)"   # from: Siemens MultiFieldbus devices webinar 20 Aug 2020 (assets.new.siemens.com): p.5 overview, feature-differences slide; opened 2026-11-23
+channels = "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)"   # from: Siemens MultiFieldbus devices webinar 20 Aug 2020: pdf p.4 (ET 200SP IM155-6MF HF), p.6 (PROFINET, EtherNet/IP and Modbus TCP supported); the equipment manual was not fetchable
 
 [[questions]]
 ask = "Which EtherNet/IP identity and Modbus TCP map does the interface module report? Its EDS is exported by the MultiFieldbus Configuration Tool (MFCT) and is the same whatever the station's configuration, so there is none to collect; the Modbus register layout is exported as a CSV per project."
 source = "Siemens MultiFieldbus devices webinar (20 Aug 2020), pp. 15 and 26"
+
+[[sources]]
+title = "Siemens MultiFieldbus devices webinar (20 Aug 2020)"
+sha256 = "540308b5464732946dc5cd56af939da0dd2e60d58bce10e6129aee26835bc57d"
+where = "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf; retrieved 2026-11-23; not redistributed here"

@@ -30,6 +30,21 @@
    "title": "SENTRON PAC3200 Manual A5E01168664B-04 (12/2016)",
    "type": "pdf"
   },
+  "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf",
+   "folders": [
+    "devices/siemens/sinamics-g120-cu240e-2-pn"
+   ],
+   "kind": "manual",
+   "name": "G120_CU240BE2_op_instr_0418_en-US.pdf",
+   "retrieved": "2026-11-23T14:32:54Z",
+   "sha256": "74db4eb9e93e8ca305004c4284786d20402834881f6cd13e4e3aca69529d02f0",
+   "size": 13404125,
+   "terms": "none stated",
+   "title": "SINAMICS G120 Control Units CU240B-2 / CU240E-2 Operating Instructions 04/2018 (A5E34259001B AF)",
+   "type": "pdf"
+  },
   "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf": {
    "content_type": "application/pdf",
    "final_url": "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf",

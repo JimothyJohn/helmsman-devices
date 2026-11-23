@@ -36,3 +36,36 @@ found = "2026-11-22 search: smc ex600-sen7 eds; https://marketplace.odva.org/pro
 terms = "none stated"
 
 # One EDS (one product code) covers EX600-SEN3 and SEN4, SEN1 and SEN2, SEN7 and SEN8, so each pair is one folder.
+
+# The manuals the channels lines were read from (pages opened 2026-11-22; links as the entries' comments gave them).
+[[doc]]
+folders = ["devices/smc/ex260-sen1", "devices/smc/ex260-sen2", "devices/smc/ex260-sen3", "devices/smc/ex260-sen4"]
+kind = "manual"
+url = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf"
+title = "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E"
+found = "2026-11-22 search: smc ex260-sen manual; smcworld.com manual page"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen1"]
+kind = "manual"
+url = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf"
+title = "SMC EtherNet/IP compatible SI unit EX600-SEN#, manual EX*-OMN0032-D"
+found = "2026-11-22 search: smc ex600-sen manual; smcworld.com manual page"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen3"]
+kind = "manual"
+url = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf"
+title = "SMC EX600-SEN3/SEN4 manual EX*-OMS0027"
+found = "2026-11-22 search: smc ex600-sen3 manual; smcworld.com manual page"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/smc/ex600-sen7"]
+kind = "manual"
+url = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf"
+title = "SMC EX600-SEN7/SEN8 manual EX*-OMZ0024"
+found = "2026-11-22 search: smc ex600-sen7 manual; smcworld.com manual page"
+terms = "none stated"

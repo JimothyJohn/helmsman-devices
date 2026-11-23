@@ -5,7 +5,7 @@ vendor = "Schneider Electric"
 model = "PowerLogic PM5560"
 kind = "other"
 category = "power-meter"
-channels = "4 DI, 2 DO; voltage, current, power, energy, frequency, power factor, THD, demand; 3-phase"   # from: PM5500/PM5600/PM5700 User Manual HRB1684301-18 (12/2025): feature matrix p.20, contents pp.189-203, display of frequency; opened 2026-11-23
+channels = "4 DI, 2 DO; voltage, current, power, energy, frequency, power factor, THD, demand; 3-phase"   # from: PM5500/PM5600/PM5700 User Manual HRB1684301-18 (12/2025), features differentiation matrix pdf p.20 (PM5560: 4 digital inputs, 2 digital outputs); measured quantities from contents pp.189-203
 article = "METSEPM5560"
 
 [protocols.modbus]
@@ -16,3 +16,8 @@ port = 502
 [[questions]]
 ask = "The user manual says the PM5560 is ODVA-certified for EtherNet/IP (p. 18) but ships no EDS and no assembly list in the pages read: what identity and assemblies does it report, and where is the EDS?"
 source = "PM5500 / PM5600 / PM5700 User Manual HRB1684301-18 p. 18"
+
+[[sources]]
+title = "PowerLogic PM5500 / PM5600 / PM5700 series User Manual (HRB1684301-18, 12/2025)"
+sha256 = "5fc9be72ef9787001b38ea9fd41b6b52c77f0498acc66a4212f39eac05ce3e79"
+where = "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf; retrieved 2026-11-23; not redistributed here"

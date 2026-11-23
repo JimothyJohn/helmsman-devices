@@ -5757,7 +5757,13 @@
     "port": 502
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "PowerLogic PM5500 / PM5600 / PM5700 series User Manual (HRB1684301-18, 12/2025)",
+     "sha256": "5fc9be72ef9787001b38ea9fd41b6b52c77f0498acc66a4212f39eac05ce3e79",
+     "where": "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "The user manual says the PM5560 is ODVA-certified for EtherNet/IP (p. 18) but ships no EDS and no assembly list in the pages read: what identity and assemblies does it report, and where is the EDS?",
@@ -5794,7 +5800,13 @@
      "source": "STBNIP2311 Applications Guide EIO0000000051.05 p. 125; the zero-based form is inferred from 45357-45391"
     }
    ],
-   "sources": []
+   "sources": [
+    {
+     "title": "STBNIP2311 Standard Dual Port Ethernet Modbus TCP/IP Network Interface Module, Applications Guide (EIO0000000051.05)",
+     "sha256": "0045a19fb1cf8bf1d8513e5a788e1d8f72d80dcf4aab8bffae7dcd39ae65e2f5",
+     "where": "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
   },
   {
    "folder": "devices/schneider-electric/tm3bceip",
@@ -5805,7 +5817,18 @@
     "map": false
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "TM3BCEIP Bus Coupler, Instruction Sheet (PHA71490.07)",
+     "sha256": "459d6449dc952db3979f1367cc258ccf3fcbdf84651fdf3b38e7b75c39afffdb",
+     "where": "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Product data sheet Characteristics TM3BCEIP",
+     "sha256": "e6862ac1c4d9294bfd78762fa2747e97b21771ba9607a32c57679dd18a75fa1c",
+     "where": "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity (vendor id, product code, revision) and assembly sizes does the coupler report, and does an EDS exist? Schneider's site lists only firmware packages for it, and a community answer says the configurator exports a project-specific EDS.",
@@ -5822,7 +5845,18 @@
     "map": false
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "TeSys island TPRBCEIP product data sheet",
+     "sha256": "7e16f3c3cd8fde5595602fac147a5179cb639645020332fdbeff26c156330dcc",
+     "where": "https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TeSys island TPRBCEIP Bus Coupler (Ethernet IP) - Instruction Sheet (MFR44097.05)",
+     "sha256": "2b50b494482f5b3ffdffadaca428b13bc24f2050b767a0e87e6c88c8680dc34f",
+     "where": "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity and assembly sizes does the coupler report? The Quick Start Guide has the island's DTM export L5X files for Studio 5000 (Export > EDS to L5X File Format) instead of publishing an EDS, so the sizes depend on the configured island.",
@@ -5977,7 +6011,13 @@
    "model": "SIMATIC ET 200SP IM 155-6 MF HF",
    "channels": "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)",
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "Siemens MultiFieldbus devices webinar (20 Aug 2020)",
+     "sha256": "540308b5464732946dc5cd56af939da0dd2e60d58bce10e6129aee26835bc57d",
+     "where": "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity and Modbus TCP map does the interface module report? Its EDS is exported by the MultiFieldbus Configuration Tool (MFCT) and is the same whatever the station's configuration, so there is none to collect; the Modbus register layout is exported as a CSV per project.",
@@ -6020,7 +6060,13 @@
      "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 41; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SENTRON PAC3200 Manual A5E01168664B-04 (02/2008)",
+     "sha256": "b9efef1f28f8588d3f9b9ba04754e4914850fb0ec74373955d199d8f6b3de187",
+     "where": "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Is the offset in Table 3-6 one-based (offset 1 is Modbus address 0, as 4X 40001 would be) and is the high or low word of a float first?",
@@ -6063,7 +6109,13 @@
      "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019)",
+     "sha256": "fafd49af4745c2fc24d78b0a9a7d09a1a3746f7d9d7ade94baee1d5a9a247276",
+     "where": "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Is the offset in Table A-1 one-based (offset 1 is Modbus address 0) and is the high or low word of a float first?",
@@ -6101,7 +6153,18 @@
      "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SINAMICS G120 Control Units CU240B-2 / CU240E-2 Operating Instructions 04/2018 (A5E34259001B AF)",
+     "sha256": "74db4eb9e93e8ca305004c4284786d20402834881f6cd13e4e3aca69529d02f0",
+     "where": "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SINAMICS G120 Fieldbus Function Manual 04/2014 (A5E34229197B AA), EtherNet/IP chapter",
+     "sha256": "ef6ef688e9834c018df1a60c411ab72b2bfcbb36b4690ad0ac4575c308c99cc2",
+     "where": "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which vendor id, product code and revision does a CU240E-2 PN report on EtherNet/IP, and is the Siemens EDS the one to use? The manual names an EDS at a Siemens portal entry (48351511), which redirects to a JavaScript search page and could not be collected.",
@@ -6145,6 +6208,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6184,6 +6252,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6223,6 +6296,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6262,6 +6340,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6298,6 +6381,11 @@
      "title": "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)",
      "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EtherNet/IP compatible SI unit EX600-SEN#, manual EX*-OMN0032-D",
+     "sha256": "0b46ecb7ddc6de35b6818aeb8041827e4e2d59c1840e9ec74587e74eed37d9f3",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6335,6 +6423,11 @@
      "title": "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)",
      "sha256": "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EX600-SEN3/SEN4 manual EX*-OMS0027",
+     "sha256": "c5ecfbc661d38da7c2e7a42e876d8360f5d6b811b3cdecbb340aebe166df0681",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6372,6 +6465,11 @@
      "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
      "sha256": "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EX600-SEN7/SEN8 manual EX*-OMZ0024",
+     "sha256": "bc26e10c748731dde6bbddc2ee469a529cbf7cfcbf2f29110d381aa5b4d8b2dc",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },

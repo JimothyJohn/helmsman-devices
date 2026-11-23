@@ -5,7 +5,7 @@ vendor = "Siemens"
 model = "SENTRON PAC4200"
 kind = "other"
 category = "power-meter"
-channels = "2 DI, 2 DO (plug-in up to 8 DI, 4 DO); voltage, current, power, energy, frequency, power factor, THD"   # from: SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019) section 2.2 interfaces, 2.3 measured variables p.18; opened 2026-11-23
+channels = "2 DI, 2 DO (plug-in up to 8 DI, 4 DO); voltage, current, power, energy, frequency, power factor, THD"   # from: SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019) section 2.1 Interfaces p.13 (two integral DI, two DO, optionally up to 8 plug-in DI and 4 DO), 2.3 measured variables pp.18-19
 article = "7KM4200"
 
 [protocols.modbus]
@@ -41,3 +41,8 @@ source = "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the ze
 [[questions]]
 ask = "Is the offset in Table A-1 one-based (offset 1 is Modbus address 0) and is the high or low word of a float first?"
 source = "SENTRON PAC4200 System Manual A5E02316180B-05 p. 146: the pages read give neither"
+
+[[sources]]
+title = "SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019)"
+sha256 = "fafd49af4745c2fc24d78b0a9a7d09a1a3746f7d9d7ade94baee1d5a9a247276"
+where = "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf; retrieved 2026-11-23; not redistributed here"
