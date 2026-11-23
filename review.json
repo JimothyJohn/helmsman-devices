@@ -341,6 +341,44 @@
    }
   },
   {
+   "folder": "devices/balluff/bni-eip-508-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-508-105-Z015",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 43,
+     "product_code": 20618,
+     "device_type": 43,
+     "revisions": [
+      "3.1"
+     ],
+     "product_name": "BNI EIP-508-105-Z015"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 392
+    },
+    "output": {
+     "instance": 101,
+     "bytes": 262
+    },
+    "config": {
+     "instance": 102,
+     "bytes": 194
+    },
+    "eds": "BNI_EIP-508-105-Z015.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015",
+     "sha256": "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/beckhoff/ek9000",
    "vendor": "Beckhoff",
    "model": "EK9000",
@@ -1407,6 +1445,127 @@
    }
   },
   {
+   "folder": "devices/omron/ert1-hd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-HD16CH-1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1102,
+     "device_type": 7,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ERT1-HD16CH-1"
+    },
+    "input": {
+     "instance": 5,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 199,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "ERT1-HD16CH-1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+     "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/omron/ert1-id32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-ID32SLH-1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1104,
+     "device_type": 7,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ERT1-ID32SLH-1"
+    },
+    "input": {
+     "instance": 6,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 199,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "ERT1-ID32SLH-1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet",
+     "sha256": "4c1de6bd123f75fb6391090cf550cea149c96ba5d71620d05abe232c96ad5565",
+     "where": "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+     "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/omron/ert1-md32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-MD32SLH-1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1105,
+     "device_type": 7,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ERT1-MD32SLH-1"
+    },
+    "input": {
+     "instance": 5,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "ERT1-MD32SLH-1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet",
+     "sha256": "4c1de6bd123f75fb6391090cf550cea149c96ba5d71620d05abe232c96ad5565",
+     "where": "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf; retrieved 2026-11-14; not redistributed here"
+    },
+    {
+     "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+     "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
@@ -1445,6 +1604,43 @@
      "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
      "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/omron/ert1-wd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-WD16CH-1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 47,
+     "product_code": 1103,
+     "device_type": 7,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ERT1-WD16CH-1"
+    },
+    "input": {
+     "instance": 199,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 35,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "ERT1-WD16CH-1.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)",
+     "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -1849,6 +2045,92 @@
    ]
   },
   {
+   "folder": "devices/turck/tben-s2-2com-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2COM-4DXP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14031,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-2COM-4DXP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 470
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 400
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 12
+    },
+    "eds": "TBEN-S2-2COM-4DXP_R2.7.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-2rfid-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2RFID-4DXP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14029,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-2RFID-4DXP"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 382
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 308
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 10
+    },
+    "eds": "TBEN-S2-2RFID-4DXP_R2.7.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/turck/tben-s2-4ai",
    "vendor": "TURCK",
    "model": "TBEN-S2-4AI",
@@ -1941,6 +2223,49 @@
      "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
      "sha256": "5491181b5f32ce6bf23492976160984d922f7052fc06e0adef6d41fe652934c3",
      "where": "https://www.turck.us/attachment/100001931.pdf; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/turck/tben-s2-4iol",
+   "vendor": "Turck",
+   "model": "TBEN-S2-4IOL",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 48,
+     "product_code": 14024,
+     "device_type": 12,
+     "revisions": [
+      "2.7"
+     ],
+     "product_name": "TBEN-S2-4IOL"
+    },
+    "input": {
+     "instance": 103,
+     "bytes": 208
+    },
+    "output": {
+     "instance": 104,
+     "bytes": 132
+    },
+    "config": {
+     "instance": 106,
+     "bytes": 12
+    },
+    "eds": "TBEN-S2-4IOL_R2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "TBEN-S EDS files and catalog files (family package)",
+     "sha256": "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9",
+     "where": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TBEN-S GSDML files (family package)",
+     "sha256": "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9",
+     "where": "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },

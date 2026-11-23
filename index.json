@@ -97,6 +97,28 @@
    }
   },
   {
+   "folder": "devices/balluff/bni-eip-508-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-508-105-Z015",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 43,
+     "product_code": 20618
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BNI_EIP-508-105-Z015.eds",
+      "size": 198637,
+      "sha256": "593a700b5a81c73009eec3f7a2fa019b1ef3bffe421b6d75c388c2b7bb945fab"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/beckhoff/ek9000",
    "vendor": "Beckhoff",
    "model": "EK9000",
@@ -638,6 +660,72 @@
    }
   },
   {
+   "folder": "devices/omron/ert1-hd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-HD16CH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1102
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-HD16CH-1.eds",
+      "size": 15388,
+      "sha256": "78af590da4f7a7c60580d5ed53760c4017c6519cb1fa76ff2be5155c43a5238b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-id32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-ID32SLH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1104
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-ID32SLH-1.eds",
+      "size": 15867,
+      "sha256": "c6c07d841714183a2ef67e74685d9fbe76c56a724ccb481bde16ba565184b54f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-md32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-MD32SLH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1105
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-MD32SLH-1.eds",
+      "size": 33523,
+      "sha256": "29f131f210cf4d38798fdae75b433407c3b2f238ced0ea4df8ef6e70e149435b"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
@@ -655,6 +743,28 @@
       "name": "ERT1-OD32SLH-1.eds",
       "size": 45765,
       "sha256": "068568cf28a53b7898fcb3ae41c8f96c013fccbe88a90123f1ef3a601319b3db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-wd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-WD16CH-1",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1103
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-WD16CH-1.eds",
+      "size": 29699,
+      "sha256": "8262a974f075c1e7d58e723574570cc4fb6e9ce9be4ba4b40a2070ffa8d58ca1"
      }
     }
    }
@@ -893,6 +1003,50 @@
    }
   },
   {
+   "folder": "devices/turck/tben-s2-2com-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2COM-4DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14031
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-2COM-4DXP_R2.7.eds",
+      "size": 41063,
+      "sha256": "cf9b10945155a00cc9211878d3c62922722e569f62ee4ff8156721450df5fd40"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-2rfid-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2RFID-4DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14029
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-2RFID-4DXP_R2.7.eds",
+      "size": 39440,
+      "sha256": "dfae8c45ec58c9b8da6de5a7a038c5dccf1aaa070285e89951cd90fe9822db17"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s2-4ai",
    "vendor": "TURCK",
    "model": "TBEN-S2-4AI",
@@ -940,6 +1094,28 @@
       "name": "TBEN-S2-4AO_R2.8.eds",
       "size": 28667,
       "sha256": "b07e2643b6c61174d4987fe2997d7702a13e8a3554f628823bd64d43890fdc43"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-4iol",
+   "vendor": "Turck",
+   "model": "TBEN-S2-4IOL",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14024
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4IOL_R2.8.eds",
+      "size": 33375,
+      "sha256": "6aac0db43609d9cfe8f99d66863f1efb2947174e9ed37692724e3f6f08de802b"
      }
     }
    }

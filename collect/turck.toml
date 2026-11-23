@@ -5,7 +5,9 @@ vendor = "Turck"
 # https://www.turck.us/en/product/6814076 (read 2026-11-14); the EDS and GSDML
 # packages and the instructions for use cover the whole series. The 2COM,
 # 2RFID and 4IOL blocks are in the packages too and are left for later: they
-# are serial, RFID and IO-Link masters, not plain I/O.
+# are serial, RFID and IO-Link masters, not plain I/O (added 2026-11-23 from the same packages;
+# the Instructions for Use below covers only the analog and digital blocks, so these three
+# folders cite the EDS and GSDML packages only).
 
 [[doc]]
 folders = [
@@ -19,6 +21,9 @@ folders = [
   "devices/turck/tben-s2-4ao",
   "devices/turck/tben-s2-8dip",
   "devices/turck/tben-s2-8dxp",
+  "devices/turck/tben-s2-2com-4dxp",
+  "devices/turck/tben-s2-2rfid-4dxp",
+  "devices/turck/tben-s2-4iol",
 ]
 kind = "eds"
 url = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip"
@@ -38,6 +43,9 @@ folders = [
   "devices/turck/tben-s2-4ao",
   "devices/turck/tben-s2-8dip",
   "devices/turck/tben-s2-8dxp",
+  "devices/turck/tben-s2-2com-4dxp",
+  "devices/turck/tben-s2-2rfid-4dxp",
+  "devices/turck/tben-s2-4iol",
 ]
 kind = "gsdml"
 url = "https://www.turck.us/attachment/TBEN-S_PROFINET.zip"

@@ -21,7 +21,8 @@
    "content_type": "application/zip",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip",
    "folders": [
-    "devices/balluff/bni-eip-302-105-z015"
+    "devices/balluff/bni-eip-302-105-z015",
+    "devices/balluff/bni-eip-508-105-z015"
    ],
    "kind": "eds",
    "members": [
@@ -39,7 +40,7 @@
     }
    ],
    "name": "10943.03-EDSFiles.zip",
-   "retrieved": "2026-11-14T18:11:12Z",
+   "retrieved": "2026-11-23T03:36:49Z",
    "sha256": "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822",
    "size": 17597,
    "terms": "none stated",

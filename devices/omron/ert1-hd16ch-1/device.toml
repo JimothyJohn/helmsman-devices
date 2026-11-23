@@ -1,0 +1,27 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Omron"
+model = "ERT1-HD16CH-1"
+kind = "remote-io"
+
+[identity.enip]
+vendor_id = 47
+product_code = 1102
+device_type = 7
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "ERT1-HD16CH-1"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "01_Input Only"
+input_assembly = { instance = 5, bytes = 2 }
+output_assembly = { instance = 199, bytes = 0 }
+config_assembly = { instance = 1 }
+eds = { name = "ERT1-HD16CH-1.eds", size = 15388, sha256 = "78af590da4f7a7c60580d5ed53760c4017c6519cb1fa76ff2be5155c43a5238b", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip (member of 10718-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)"
+sha256 = "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip; retrieved 2026-11-23; not redistributed here"
