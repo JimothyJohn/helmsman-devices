@@ -543,6 +543,404 @@
    ]
   },
   {
+   "folder": "devices/emerson/numatics-580-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 580,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics 580 Ethernet/IP"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "NUMATICS-580.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics 580 EtherNet/IP EDS (ODVA marketplace, product 1165)",
+     "sha256": "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP DLR+QC",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 5800,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics 580 Ethernet/IP DLR+QC"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "NUMATICS-5800.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics 580 EtherNet/IP DLR/QuickConnect EDS (ODVA marketplace, product 1166)",
+     "sha256": "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/emerson/numatics-g3-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics G3 EtherNet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 52,
+     "product_code": 101,
+     "device_type": 12,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "Numatics G3 Ethernet/IP DLR+QC"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "G3EP0102s-2013-03-01.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Numatics G3 EtherNet/IP node EDS (ODVA marketplace, product 516)",
+     "sha256": "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cmmt-as",
+   "vendor": "Festo",
+   "model": "CMMT-AS-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 65282,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CMMT-AS"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CMMT-AS-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)",
+     "sha256": "49a30233e0d5ee3c8f03c8ecea9f8e11bed747a3988da0f3674b79ce09c0c968",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-ap-a-ep",
+   "vendor": "Festo",
+   "model": "CPX-AP-A-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14064,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "CPX-AP-A-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "CPX-AP-A-EP_NoConfig.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)",
+     "sha256": "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)",
+     "sha256": "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-ap-i-ep-m12",
+   "vendor": "Festo",
+   "model": "CPX-AP-I-EP-M12",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14057,
+     "device_type": 12,
+     "revisions": [
+      "1.3"
+     ],
+     "product_name": "CPX-AP-I-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "CPX-AP-I-EP_NoConfig.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)",
+     "sha256": "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)",
+     "sha256": "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-e-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-E-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14040,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-E-EP EtherNet/IP 2-Port Remote I/O"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "CPX-E-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-E-EP EDS (ODVA marketplace, product 1883)",
+     "sha256": "6f8a0156a2f41f70dece568a53e325b826cc7cd545ba3f5428cd7a62a207bbc8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-fb32",
+   "vendor": "Festo Corporation",
+   "model": "CPX-FB32",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 13002,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-FB32 Remote I/O"
+    },
+    "input": {
+     "instance": 101,
+     "bytes": 13
+    },
+    "output": {
+     "instance": 100,
+     "bytes": 11
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CPX-FB32.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-FB32 EDS (ODVA marketplace, product 981)",
+     "sha256": "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cpx-fb36",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-FB36",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14026,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CPX-FB36 EtherNet/IP 2-Port Remote I/O"
+    },
+    "input": {
+     "instance": 101
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 102
+    },
+    "eds": "CPX-FB36.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CPX-FB36 EDS (ODVA marketplace, product 1773)",
+     "sha256": "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/cteu-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CTEU-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 6001,
+     "device_type": 12,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "CTEU-EP EtherNet/IP bus node"
+    },
+    "input": {
+     "instance": 111
+    },
+    "output": {
+     "instance": 110
+    },
+    "config": {
+     "instance": 102,
+     "bytes": 38
+    },
+    "eds": "CTEU-EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "CTEU-EP EDS (ODVA marketplace, product 1771)",
+     "sha256": "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/festo/vabx-a-cted-ep",
+   "vendor": "Festo",
+   "model": "VABX-A-S-EL-E12-CTED-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 26,
+     "product_code": 14065,
+     "device_type": 12,
+     "revisions": [
+      "1.2"
+     ],
+     "product_name": "VABX-A-S-EL-E12-CTED-EP"
+    },
+    "input": {
+     "instance": 110
+    },
+    "output": {
+     "instance": 111
+    },
+    "config": {
+     "instance": 140
+    },
+    "eds": "VABX_A_S_EL_E12-CTED_EP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)",
+     "sha256": "6893130fd051baab752a19aef9f45ffc3cdaa119756076ab77de5846198035e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
@@ -591,6 +989,70 @@
      "title": "IODD ifm-000257-20190307-IODD1.1.xml",
      "sha256": "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831",
      "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/imi-norgren/vr1x-ep",
+   "vendor": "Norgren Manufacturing Co., Ltd.",
+   "model": "VR1X-EP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 1609,
+     "product_code": 1,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "VR1X-EP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 10
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 3
+    },
+    "config": {
+     "instance": 151,
+     "bytes": 102
+    },
+    "eds": "NORGREN-VR1X-EP-24-V1.2.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VR1X-EP EtherNet/IP EDS (ODVA marketplace, product 2241)",
+     "sha256": "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/imi-norgren/vs18-vs26",
+   "vendor": "IMI Norgren Limited",
+   "model": "VS18/VS26",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 42,
+     "product_code": 332,
+     "device_type": 27,
+     "revisions": [
+      "2.8"
+     ],
+     "product_name": "NORGREN VSxx 32"
+    },
+    "eds": "VS_32.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)",
+     "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -1495,6 +1957,117 @@
    ]
   },
   {
+   "folder": "devices/parker/p2h-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2H Node 32DO EtherNet/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53296,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2H Node 32DO EtherNet/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 8
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 5
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "P2H_Ethernet_IP.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2H node EtherNet/IP EDS (ODVA marketplace, product 2381)",
+     "sha256": "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/parker/p2m-lite-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Lite Node 24DO ETHERNET/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53505,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2M Lite Node 24DO ETHERNET/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 7
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "Parker_Lite.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2M Lite node EtherNet/IP EDS (ODVA marketplace, product 2292)",
+     "sha256": "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/parker/p2m-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Node 24DO ETHERNET/IP",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 4,
+     "product_code": 53504,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "P2M Node 24DO ETHERNET/IP"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 7
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 0
+    },
+    "eds": "0004002BD1000100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "P2M node EtherNet/IP EDS (ODVA marketplace, product 2090)",
+     "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2090/0004002BD1000100.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
    "vendor": "Phoenix Contact",
    "model": "AXL F BK EIP EF",
@@ -1562,6 +2135,265 @@
      "title": "IODD SICK-WTB4F_DID8389194-20211014-IODD1.1.xml",
      "sha256": "b90941d68a47a7b41dbaa58dc26d5807266c641e924e3c076434b26b09598a65",
      "where": "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 156,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN1"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen1_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen2",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN2",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 157,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN2"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen2_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN3",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 158,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN3"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen3_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex260-sen4",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN4",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 159,
+     "device_type": 27,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "EX260-SEN4"
+    },
+    "input": {
+     "instance": 100,
+     "bytes": 2
+    },
+    "output": {
+     "instance": 150,
+     "bytes": 2
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 4
+    },
+    "eds": "ex260_sen4_24_v22.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
+     "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN1/SEN2",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 126,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "EX600-SEN#"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 5
+    },
+    "eds": "EX600_SEN_.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)",
+     "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN3/SEN4",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 203,
+     "device_type": 12,
+     "revisions": [
+      "1.2"
+     ],
+     "product_name": "EX600-SEN3/4"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 0
+    },
+    "eds": "ex600_sen3_4_v11.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)",
+     "sha256": "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/smc/ex600-sen7",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN7/SEN8",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 7,
+     "product_code": 258,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "EX600-SEN7/8"
+    },
+    "input": {
+     "instance": 100
+    },
+    "output": {
+     "instance": 150
+    },
+    "config": {
+     "instance": 105,
+     "bytes": 0
+    },
+    "eds": "ex600_sen7_8_v10.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
+     "sha256": "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },

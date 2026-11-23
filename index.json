@@ -167,6 +167,248 @@
    }
   },
   {
+   "folder": "devices/emerson/numatics-580-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 580
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NUMATICS-580.eds",
+      "size": 11153,
+      "sha256": "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics 580 Ethernet/IP DLR+QC",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 5800
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NUMATICS-5800.eds",
+      "size": 16260,
+      "sha256": "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/emerson/numatics-g3-ethernet-ip",
+   "vendor": "Numatics, Inc",
+   "model": "Numatics G3 EtherNet/IP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 101
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "G3EP0102s-2013-03-01.eds",
+      "size": 10239,
+      "sha256": "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cmmt-as",
+   "vendor": "Festo",
+   "model": "CMMT-AS-EP",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 65282
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CMMT-AS-EP.eds",
+      "size": 15543,
+      "sha256": "c236152b75a2f51c7b7a1313aa65211984a2aadb0d67c7905b32d8259dcb818f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-ap-a-ep",
+   "vendor": "Festo",
+   "model": "CPX-AP-A-EP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14064
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-AP-A-EP_NoConfig.eds",
+      "size": 54219,
+      "sha256": "673bf6e669694afa8bd3481fc313c224f7441f0fc7919d706b313e24c23590bc"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-ap-i-ep-m12",
+   "vendor": "Festo",
+   "model": "CPX-AP-I-EP-M12",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14057
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-AP-I-EP_NoConfig.eds",
+      "size": 54219,
+      "sha256": "271a251efdbc18c7d0ce4dd9fe245f057bb96437e3dc6e0b13f32cb90221c575"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-e-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-E-EP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14040
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-E-EP.eds",
+      "size": 33766,
+      "sha256": "d0eb5d75938223588d6fed74360a2b8b00eaf5321de65bc5ce410d0edd7871a9"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-fb32",
+   "vendor": "Festo Corporation",
+   "model": "CPX-FB32",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 13002
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-FB32.eds",
+      "size": 7762,
+      "sha256": "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-fb36",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CPX-FB36",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14026
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-FB36.eds",
+      "size": 33526,
+      "sha256": "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cteu-ep",
+   "vendor": "Festo AG & Co. KG",
+   "model": "CTEU-EP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 6001
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CTEU-EP.eds",
+      "size": 57519,
+      "sha256": "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/vabx-a-cted-ep",
+   "vendor": "Festo",
+   "model": "VABX-A-S-EL-E12-CTED-EP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14065
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "VABX_A_S_EL_E12-CTED_EP.eds",
+      "size": 111360,
+      "sha256": "a569fd87dbb62e68898f85cdf77a03e9280be1febeea63cc6d8361ae34e9f40f"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
@@ -281,6 +523,50 @@
     "PN7592"
    ],
    "record": "record.json"
+  },
+  {
+   "folder": "devices/imi-norgren/vr1x-ep",
+   "vendor": "Norgren Manufacturing Co., Ltd.",
+   "model": "VR1X-EP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 1609,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NORGREN-VR1X-EP-24-V1.2.eds",
+      "size": 60935,
+      "sha256": "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/imi-norgren/vs18-vs26",
+   "vendor": "IMI Norgren Limited",
+   "model": "VS18/VS26",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 42,
+     "product_code": 332
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "VS_32.eds",
+      "size": 7817,
+      "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca"
+     }
+    }
+   }
   },
   {
    "folder": "devices/moxa/iologik-e1210",
@@ -686,6 +972,72 @@
    }
   },
   {
+   "folder": "devices/parker/p2h-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2H Node 32DO EtherNet/IP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53296
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "P2H_Ethernet_IP.EDS",
+      "size": 71874,
+      "sha256": "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/parker/p2m-lite-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Lite Node 24DO ETHERNET/IP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53505
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Parker_Lite.eds",
+      "size": 69571,
+      "sha256": "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/parker/p2m-node-ethernet-ip",
+   "vendor": "Parker Hannifin Corporation",
+   "model": "P2M Node 24DO ETHERNET/IP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53504
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0004002BD1000100.eds",
+      "size": 29546,
+      "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
    "vendor": "Phoenix Contact",
    "model": "AXL F BK EIP EF",
@@ -735,6 +1087,160 @@
     "1123757"
    ],
    "record": "record.json"
+  },
+  {
+   "folder": "devices/smc/ex260-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN1",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 156
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen1_24_v22.eds",
+      "size": 15092,
+      "sha256": "5ba9793175e7a8479ae97db56cd89faf535ba46f85fd3b55098f60b3dfe4f78b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen2",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN2",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 157
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen2_24_v22.eds",
+      "size": 15092,
+      "sha256": "48688b7c007affabb7cab673d682ddcdedc64eadb524a26c4aed0dc096493c3d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN3",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 158
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen3_24_v22.eds",
+      "size": 15092,
+      "sha256": "7491b14ee137e0f8752287fe5ef1670daa217ede7696cbcee4d3e6d8c600ea88"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen4",
+   "vendor": "SMC Corporation",
+   "model": "EX260-SEN4",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 159
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen4_24_v22.eds",
+      "size": 15092,
+      "sha256": "2692aaa3aba57bea855e4145f6eefd76bd0b034c4cca87db5290c163e28e96ba"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen1",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN1/SEN2",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 126
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EX600_SEN_.eds",
+      "size": 10860,
+      "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen3",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN3/SEN4",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 203
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex600_sen3_4_v11.eds",
+      "size": 17866,
+      "sha256": "dc93058747800c178b5b456840bf753c0c11e9e3c06e8d0961bd03bec6f7a553"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen7",
+   "vendor": "SMC Corporation",
+   "model": "EX600-SEN7/SEN8",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 258
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex600_sen7_8_v10.eds",
+      "size": 18775,
+      "sha256": "3de03eb923764bae8e31612d2c5f7323fd709ca178c97f0f5ea9bb45ce706140"
+     }
+    }
+   }
   },
   {
    "folder": "devices/turck/tben-s1-4dip-4dop",
