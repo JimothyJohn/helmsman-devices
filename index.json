@@ -2,6 +2,30 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/acromag/xt1111-000",
+   "vendor": "Acromag",
+   "model": "XT1111-000",
+   "kind": "remote-io",
+   "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/acromag/xt1121-000",
+   "vendor": "Acromag",
+   "model": "XT1121-000",
+   "kind": "remote-io",
+   "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/advantech/adam-6015",
    "vendor": "Advantech",
    "model": "ADAM-6015",
@@ -604,6 +628,70 @@
     "modbus": {
      "driver": "modbus-tcp",
      "map": "modbus.map"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2210",
+   "vendor": "Moxa",
+   "model": "ioLogik E2210",
+   "kind": "remote-io",
+   "channels": "12 DI, 8 DO (sink)",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8bc1a754-93d9-40f0-bc93-672a7b55f2c0/moxa-iologik-e2210-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2212",
+   "vendor": "Moxa",
+   "model": "ioLogik E2212",
+   "kind": "remote-io",
+   "channels": "8 DI, 8 DO, 4 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/53f5dd5f-29a8-41ea-b02a-21a0ca91680c/moxa-iologik-e2212-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2212"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2242",
+   "vendor": "Moxa",
+   "model": "ioLogik E2242",
+   "kind": "remote-io",
+   "channels": "4 AI, 12 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8803760d-977d-46ec-8008-a7657aba6497/moxa-iologik-e2242-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2242"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iothinx-4510",
+   "vendor": "Moxa",
+   "model": "ioThinx 4510",
+   "kind": "remote-io",
+   "channels": "modular, up to 32 I/O modules",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/en/getattachment/Products/INDUSTRIAL-EDGE-CONNECTIVITY/Controllers-and-IOs/Advanced-Controllers-and-I-Os/ioThinx-4510-Series/moxa-iothinx-4510-series-image-(1).jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
+   },
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
     }
    }
   },

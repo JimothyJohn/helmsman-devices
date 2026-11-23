@@ -2,6 +2,104 @@
  "format": "helmsman-devices-review 1",
  "devices": [
   {
+   "folder": "devices/acromag/xt1111-000",
+   "vendor": "Acromag",
+   "model": "XT1111-000",
+   "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI group 0..3",
+     "modbus": "ir:0..ir:3 (3x 30001-30004, FC 4; one word a group of 4 channels, bit n = channel n of the group)",
+     "meaning": "input state, 1 = on (active-low input asserted below 0.8 V)",
+     "source": "XT1111-000 User's Manual 8500949 p. 33-34"
+    },
+    {
+     "name": "heart beat",
+     "modbus": "ir:4 (3x 30005, FC 4)",
+     "meaning": "counter that increments by 1 for each host-to-network transfer, 0 to 65535; shows whether the data is fresh",
+     "source": "XT1111-000 User's Manual 8500949 p. 34"
+    },
+    {
+     "name": "DO group 0..3",
+     "modbus": "hr:0..hr:3 (4x 40001-40004, FC 3, 6, 16; bit n = output channel n of the group)",
+     "meaning": "output state command, 1 = on (output closed), 0 = off (open)",
+     "source": "XT1111-000 User's Manual 8500949 p. 34-35"
+    },
+    {
+     "name": "module identity",
+     "modbus": "FC 17 Report Slave ID (hidden function)",
+     "meaning": "a string such as Acromag,XT1121-xxx,9300-217 in the manual's example",
+     "source": "XT1111-000 User's Manual 8500949 p. 32"
+    }
+   ],
+   "sources": [
+    {
+     "title": "8500949 XT1111-000 User's Manual",
+     "sha256": "096903b0ddf79b0ad8f706233b19e2a428a2feabeab9d5be6f7be67088377faf",
+     "where": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Are the XT1111 holding registers kept in flash across a power cycle? The XT1111 manual says they are maintained in non-volatile flash, the sister XT1121 manual says they are not.",
+     "source": "XT1111-000 manual 8500949 p. 33 and XT1121-000 manual 8500950 p. 33"
+    }
+   ]
+  },
+  {
+   "folder": "devices/acromag/xt1121-000",
+   "vendor": "Acromag",
+   "model": "XT1121-000",
+   "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "DI group 0..3",
+     "modbus": "ir:0..ir:3 (3x 30001-30004, FC 4; one word a group of 4 channels, bit n = channel n of the group)",
+     "meaning": "input state, 1 = on (active-high input asserted above 2.0 V)",
+     "source": "XT1121-000 User's Manual 8500950 p. 33-34"
+    },
+    {
+     "name": "heart beat",
+     "modbus": "ir:4 (3x 30005, FC 4)",
+     "meaning": "counter that increments by 1 for each host-to-network transfer, 0 to 65535; shows whether the data is fresh",
+     "source": "XT1121-000 User's Manual 8500950 p. 34"
+    },
+    {
+     "name": "DO group 0..3",
+     "modbus": "hr:0..hr:3 (4x 40001-40004, FC 3, 6, 16; bit n = output channel n of the group)",
+     "meaning": "output state command, 1 = on (output closed), 0 = off (open)",
+     "source": "XT1121-000 User's Manual 8500950 p. 34-35"
+    },
+    {
+     "name": "module identity",
+     "modbus": "FC 17 Report Slave ID (hidden function)",
+     "meaning": "a string such as Acromag,XT1121-xxx,9300-217 in the manual's example",
+     "source": "XT1121-000 User's Manual 8500950 p. 32"
+    }
+   ],
+   "sources": [
+    {
+     "title": "8500950 XT1121-000 User's Manual",
+     "sha256": "6df1f36f3bca3ca137133676b05e44b534e0fc50b1460eff8f0c3cd927bf701b",
+     "where": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1121_950P-User-Manual.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Are the XT1121-000 holding registers kept in flash across a power cycle? The XT1121 manual says holding register values are not maintained in non-volatile flash, the sister XT1111 manual says they are.",
+     "source": "XT1121-000 manual 8500950 p. 33 (not maintained) and XT1111-000 manual 8500949 p. 33 (maintained)"
+    }
+   ]
+  },
+  {
    "folder": "devices/advantech/adam-6015",
    "vendor": "Advantech",
    "model": "ADAM-6015",
@@ -1541,6 +1639,109 @@
      "title": "Firmware for ioLogik E1200 Series (ioLogik E1262/E1262-T) Release Notes, to v4.0 (Build24071616, Aug 29, 2025)",
      "sha256": "f9999a03690521f52eb5df1b654d9ea41a0de3aba9291986a8d8eec437b92427",
      "where": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1262-e1262-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e2210",
+   "vendor": "Moxa",
+   "model": "ioLogik E2210",
+   "channels": "12 DI, 8 DO (sink)",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e2212",
+   "vendor": "Moxa",
+   "model": "ioLogik E2212",
+   "channels": "8 DI, 8 DO, 4 DIO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iologik-e2242",
+   "vendor": "Moxa",
+   "model": "ioLogik E2242",
+   "channels": "4 AI, 12 DIO",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ioLogik E2200 Series Datasheet, v1.3",
+     "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+     "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/moxa/iothinx-4510",
+   "vendor": "Moxa",
+   "model": "ioThinx 4510",
+   "channels": "modular, up to 32 I/O modules",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "BIR internal bits",
+     "modbus": "coil (0xxxx), 48 bits, parameter boolInternalRegister",
+     "meaning": "BOOL internal register, read/write",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "watchdog alarm flag",
+     "modbus": "input status (1xxxx), 1 bit, parameter watchdogAlarmFlag",
+     "meaning": "0 normal, 1 watchdog alarm",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "WORD / DWORD / FLOAT internal registers",
+     "modbus": "holding register (4xxxx), parameters wirValue (48 words), dirValue (96), firValue (96)",
+     "meaning": "internal registers holding values from the Modbus RTU master or other sources",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 111"
+    },
+    {
+     "name": "device identity",
+     "modbus": "input register (3xxxx), parameters deviceName (8 bytes), firmwareVersion (4), firmwareBuildDate (4), serialNumber (6), systemError (1 word)",
+     "meaning": "name, firmware, build date and error word as ASCII bytes",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 112"
+    },
+    {
+     "name": "45MR-1600 / 1601 DI module",
+     "modbus": "input status diStatus (16 bits), diMode (16); holding diCounterValue (8 DWORD); input register diStatusAll (1 word)",
+     "meaning": "16 DI channels, DI or counter mode; the module's base address depends on its slot",
+     "source": "ioThinx 4510 Series User's Manual v6.2 p. 112"
+    }
+   ],
+   "sources": [
+    {
+     "title": "ioThinx 4510 Series User's Manual, v6.2",
+     "sha256": "c70d5cd9a76772ff5237ee923ef0be86c4a5f3de8be5074f3b25580147b6a6bc",
+     "where": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf; retrieved 2026-11-22; not redistributed here"
     }
    ]
   },
