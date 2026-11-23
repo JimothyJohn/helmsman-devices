@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Banner Engineering Corp. Banner DXM
+# Banner DXMR90-4K
 
 EDS identity: vendor 12 Banner Engineering Corp., product code
 200, device type 43 Generic Device,

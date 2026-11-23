@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# SICK AG SIG350
+# SICK SIG350
 
 EDS identity: vendor 808 SICK AG, product code
 16642, device type 12 Communications Adapter,
