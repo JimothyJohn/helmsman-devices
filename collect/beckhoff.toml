@@ -22,3 +22,16 @@ url = "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9
 title = "EK9000 Modbus TCP/UDP Bus Coupler, Documentation (English)"
 found = "2026-11-14 search: beckhoff ek9000 bk9000 modbus tcp bus coupler documentation pdf"
 terms = "none stated"
+
+# BK9050 (Modbus TCP, Ethernet bus coupler for K-bus terminals). The link comes from the
+# search result for "BK9050 documentation pdf" (2026-11-23); the product page
+# https://www.beckhoff.com/en-us/products/i-o/bus-terminals/bkxxxx-bus-coupler/bk9050.html
+# lists Modbus TCP and ADS, not EtherNet/IP, so there is no EDS. One manual covers BK9000, BK9050, BK9100.
+
+[[doc]]
+folder = "devices/beckhoff/bk9050"
+kind = "manual"
+url = "https://download.beckhoff.com/download/document/io/bus-terminals/bk9000_bk9050_bk9100en.pdf"
+title = "BK9000, BK9050 and BK9100 Bus Coupler Documentation V4.7.0 (English)"
+found = "2026-11-23 search: beckhoff bk9050 modbus tcp bus coupler documentation pdf; product page https://www.beckhoff.com/en-us/products/i-o/bus-terminals/bkxxxx-bus-coupler/bk9050.html"
+terms = "none stated"

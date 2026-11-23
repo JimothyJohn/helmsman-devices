@@ -24,6 +24,496 @@
    "title": "TBEN-S Analog and Digital I/O, Instructions for Use",
    "type": "pdf"
   },
+  "https://www.turck.us/attachment/FEN20_ETHERNETIP.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://www.turck.us/attachment/FEN20_ETHERNETIP.zip",
+   "folders": [
+    "devices/turck/fen20-4dip-4dxp"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "FEN20_ETHERNETIP/FEN20-EDS/FEN20-16DXP_R2.7.eds",
+     "sha256": "fc5d1f3d9b9771c08adf8b5e284bd87401c10963a67d3ab214b55eb174a0dfc3",
+     "size": 29620,
+     "type": "eds"
+    },
+    {
+     "name": "FEN20_ETHERNETIP/FEN20-EDS/FEN20-4DIN-4DXN_R2.7.eds",
+     "sha256": "ecbea96ba9eb99b43dca97d8f88fde355c439506d62b2e60bfb01e27b26f88e4",
+     "size": 29596,
+     "type": "eds"
+    },
+    {
+     "name": "FEN20_ETHERNETIP/FEN20-EDS/FEN20-4DIP-4DXP_R2.7.eds",
+     "sha256": "8151e22af6558ff2c7f0cfae9fdfbfade7b75f80f3ab699b031f5643717a5e73",
+     "size": 29597,
+     "type": "eds"
+    },
+    {
+     "name": "FEN20_ETHERNETIP/FEN20-EDS/FEN20-4IOL_R2.7.eds",
+     "sha256": "c9da3156c586c8df05600449c612add44473a637eea563261646182fee0923d2",
+     "size": 33295,
+     "type": "eds"
+    }
+   ],
+   "name": "FEN20_ETHERNETIP.zip",
+   "retrieved": "2026-11-23T03:37:47Z",
+   "sha256": "4eff4b49616d269e688a03f520b55e8e4cbf87dac26bc3b3cbad26d01dbcd511",
+   "size": 345727,
+   "terms": "none stated",
+   "title": "FEN20 EDS files and catalog files (family package)",
+   "type": "zip"
+  },
+  "https://www.turck.us/attachment/TBEN-L_ETHERNETIP.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://www.turck.us/attachment/TBEN-L_ETHERNETIP.zip",
+   "folders": [
+    "devices/turck/tben-l5-8iol"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DIP_R2.7_enhanced_v10035.eds",
+     "sha256": "1f2e782e66312539e47b8c9645f84dd8580d8ef3638f0bc3f43e21ba2971d6dc",
+     "size": 66657,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DIP_R2.7_simple_v10035.eds",
+     "sha256": "d03816006024212b27a9d332bfbce39d016f38e488feb19339a456a60ca4d0a7",
+     "size": 43519,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DOP_R2.7_enhanced_v10035.eds",
+     "sha256": "31343fbdcec6a54c88c316366b91140ed232c283f25d63f36027de926bc1ed78",
+     "size": 69781,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DOP_R2.7_simple_v10035.eds",
+     "sha256": "3ba86829af2b585811a96b94d8a7c6403c937e12b7fe75c0ced4cb00070b0dd8",
+     "size": 43973,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DXP_R2.7_enhanced_v10004.eds",
+     "sha256": "ac185a7e2e136ee08d310787e3d02c56fc33c6a800202df5de7d1698ea502300",
+     "size": 92220,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-16DXP_R2.7_simple_v10004.eds",
+     "sha256": "6b4a91efb88517868d4be054cf8b8eb1d5ca6b00cce9a6ba0cd9b321811a9d87",
+     "size": 38068,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-8DIP-8DOP_R2.7_enhanced_v10035.eds",
+     "sha256": "8241afd976796b04c75d7281551a4f5d886c9d0e6ade9ca4d5f6b73a4fc810e3",
+     "size": 69938,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-8DIP-8DOP_R2.7_simple_v10035.eds",
+     "sha256": "14d5bcf79214535e208caf598fedd841566bc2924bca81356234ea2dc458f716",
+     "size": 44010,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-8IOLA_R2.7_simple_v9987.eds",
+     "sha256": "7db5c1c12d994dabcd99729478fa07460af02f50dcc32827da0043000ec476fb",
+     "size": 99148,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-CLL-8IOL_R2.7_simple_v9987.eds",
+     "sha256": "e788ba800059385c3558869e1aff999594e5fc4ef1c86d575353c693f7c82efc",
+     "size": 89134,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-ELAE-8IOLA_R2.7_simple_v10137.eds",
+     "sha256": "56676614b8ab5bf9783c64e46d850f8d959b489bbeaf32a83f11836c9fbc976b",
+     "size": 99144,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-ELL-8IOLA_R2.7_simple_v10137.eds",
+     "sha256": "3e32588ef8837f998b5c6848d8bd652127e0d5246ff30fdc39e74e553a75117b",
+     "size": 99141,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-16DIP_R2.7_simple.eds",
+     "sha256": "a7a52db4e09b1b64d9b3ab9237b0bd09504cdd0501f6637e21c3feef76c2232f",
+     "size": 43779,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-16DOP-01_R1.0.eds",
+     "sha256": "e108b6f9c51812e0adc9e90cb4e000e4c218ec30b29880c4c9d2d3d46ce37c3e",
+     "size": 29937,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-16DOP_R2.7_simple.eds",
+     "sha256": "f0a44dbdab32711e33cc71bc7985f7ba3ffd433f7bfe2c53fbe3efe69ead0c3b",
+     "size": 38993,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-16DXP_R2.7_simple.eds",
+     "sha256": "334c182e6f812da182f811199b16efb307fa7aa087c4a660d9492d4e336fcda5",
+     "size": 59398,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-8DIP-8DOP-01_R1.0.eds",
+     "sha256": "756ee87d80bb2a4c47841561ecacd655e3d44968c625f82907ed25100a3fcac3",
+     "size": 29945,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L1-8DIP-8DOP_R2.7_simple.eds",
+     "sha256": "3bda0642a61bf31a9e6d27d15f489ed2789f4ee583a6a9ba1631ac29c422d119",
+     "size": 42389,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DIN_R2.7_simple.eds",
+     "sha256": "25f4105adc9a6137a4f7122fc37c567877128991b2f9b94de0d2fd64b0fb22b3",
+     "size": 30008,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DIP_R2.7_simple.eds",
+     "sha256": "d4cc9d81f7a9430613000651b7553f182efb2c9f245c533149bdd84d38f291b0",
+     "size": 30008,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DON_R2.7_simple.eds",
+     "sha256": "d78bf22bc021fd18b7891820406786ee70bb8112d6a4adc41b40a1d7980fa1c6",
+     "size": 30037,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DOP_R2.7_simple.eds",
+     "sha256": "eecdd0ffa28f2b0494ccceb861b7f6e723fd67e25bd325cd7cfa3b8b83a6f05e",
+     "size": 30038,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DXN_R2.7_simple.eds",
+     "sha256": "e517a9682f90b90ee5d95b62564facfb499591fd08b62369a667f47f7a60b5e3",
+     "size": 30068,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-16DXP_R2.7_simple.eds",
+     "sha256": "d951732cdf2e1f22db3c9c092b785c98a61b46d3702e420f809f3578a39505ad",
+     "size": 30069,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-4RFID-8DXP_R1.0.eds",
+     "sha256": "cf953903c1919fb53b0dafbe6224e7ea4c9b87b17f1c42b918323543ac3d9cfb",
+     "size": 79972,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8DIN-8DON_R2.7_simple.eds",
+     "sha256": "e7e71444f38818c53d9786a9e871317bfd93ae5b18343f9e336d430f358a4203",
+     "size": 30045,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8DIP-8DOP_R2.7_simple.eds",
+     "sha256": "334b7ea6b154525de83d2764149e3d5ebd941684a9a0cdc5962915f3387f6404",
+     "size": 30046,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8IOL-IOT1_R2.7_enhanced_v9964.eds",
+     "sha256": "7172e261e1859f05dfc7f8b053ef23eac02237b1ce4d96a673db25b69b97d62a",
+     "size": 426672,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8IOLA-IOT1_R2.7_enhanced_v9964.eds",
+     "sha256": "ebd5b476d5422179c0742a5ab5393896f36db8c2793fd50d24ef3b6d1104fcd9",
+     "size": 439940,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8IOLA_R2.7_simple.eds",
+     "sha256": "4b701982339b22b7961cef61e93365b9b6a53f7172fd1f8f86ae77ac41248bba",
+     "size": 89081,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-8IOL_R2.7_simple.eds",
+     "sha256": "82c23d7d3508d4992df12415c98bf1cbadce0a034fcffc29c0ec949935c4aa6e",
+     "size": 38513,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-SE-M2_R2.7.xml",
+     "sha256": "253d42d0ed0852a3c30f5e3b653bad911d88a7bb46cc93bf1601200177ae606b",
+     "size": 68235,
+     "type": "xml"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-SE-M2_R2.7_enhanced.eds",
+     "sha256": "7e973dc3f345688bc36765c2d24380f890d98debfeb34707c1c94b0f651083ff",
+     "size": 102473,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L4-SE-M2_R2.7_simple.eds",
+     "sha256": "63ea8550de88950f5fe9d588f4499078305cd3d9f6409b4801bf4ce8ecd3967a",
+     "size": 41091,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-16DIP_R2.7_simple.eds",
+     "sha256": "0ac822be88fecfad1af80e4c812cb9e60a6d79a56a97fadc41c525683cf7d650",
+     "size": 30008,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-16DOP-01_R1.0.eds",
+     "sha256": "36347763c7dc191e6ebd6044a9f9e24e503580f2b1b22a461d75a22e7dfeb145",
+     "size": 29939,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-16DOP_R2.7_simple.eds",
+     "sha256": "b858babc07ee035138d0e63a145e3f3e13be688e308d35008ba0b0d57d15baff",
+     "size": 30037,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-16DXP_R2.7_enhanced_v2.12.eds",
+     "sha256": "87af6f26839f7afa140f416bafdcdab1a7c9d63cf3fb527d6cc69eb7973705c2",
+     "size": 71041,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-16DXP_R2.7_simple.eds",
+     "sha256": "4deee1e57f51324e94dbf61cd5aa52f0a7a636299307755cfcb51ceb3c7db1b4",
+     "size": 30068,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-4RFID-8DXP_R1.0.eds",
+     "sha256": "0d3827cac1ae2966247a43f43121da87d20d3b76f434060deda050c0fbc15cec",
+     "size": 79972,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-8DIP-8DOP-01_R1.0.eds",
+     "sha256": "a53b43c01f9dbb3ae200804718b7b47dea0d615a7a3530cf3d1d96411759a8d3",
+     "size": 29947,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-8DIP-8DOP_R2.7_simple.eds",
+     "sha256": "1d0b16f949376ef6493c291dc09a46290ca8b22309097f30ffbcd37e029e4815",
+     "size": 30045,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-8IOL_R2.7_simple.eds",
+     "sha256": "228ded674df1646bb9775b96c1610a4557657af85ff606926fe96fde9b832e35",
+     "size": 38513,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-SE-M2_R2.7_enhanced.eds",
+     "sha256": "0008f33c670ad601f9cf844b0d2aecb1fcab417e928813dbc7639073fc273a46",
+     "size": 102473,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-L5-SE-M2_R2.7_simple.eds",
+     "sha256": "29b6afd9c3dc37c189a925d99d7fa9de3bd26517031d94eee6c83373a81e6061",
+     "size": 41091,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-16DIP_R2.7_simple.eds",
+     "sha256": "f8575bf3b6ab7b50e645a343accca6c220d4c6a616de250ab5d449a21c9c9009",
+     "size": 34029,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-16DOP_R2.7_simple.eds",
+     "sha256": "229d51f84fa86a1fd4471aebbe734ca564f35be918e8078755a0a315068b5a03",
+     "size": 34058,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-16DXP_R2.7_enhanced_v2.12.eds",
+     "sha256": "a8204854a10ee4f4979d6f782b4b541efcaea48f390619964fe9d14dc458f2f4",
+     "size": 77015,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-16DXP_R2.7_simple.eds",
+     "sha256": "52d52e0bd5704cbe1b0e864650704c122c99863d4ef34ddf81b08d4c7ddc3dd7",
+     "size": 34087,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4RFID-8DXP_R1.0.eds",
+     "sha256": "127ead1412ccba77ba8662f197721aa98dce5f863ea2fa75eb0fddf49608326a",
+     "size": 104149,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4RMC-2IOL_R2.7_enhanced_v9958.eds",
+     "sha256": "5a1916a201d3a3d2f51989c9eafc49fad439be26bf5a5b06e941a168cd9d26ad",
+     "size": 341429,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4RMC-2IOL_R2.7_simple_v9958.eds",
+     "sha256": "a5260a517a976c39697da7e544ac8f069fc42e80cc8edd9c21211f780f3cdb3b",
+     "size": 80490,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4RMC_R2.7_enhanced.eds",
+     "sha256": "8c08ab7272e0fdbabdf4eb4e96dafdb6ca46c795ae15eb2e72a92709b99e864c",
+     "size": 173833,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4RMC_R2.7_simple.eds",
+     "sha256": "b8df5ece85fcaf75c5119dd78f62b31a428567b209e05a32de64848878b3f962",
+     "size": 35368,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4SLC_R2.7_enhanced.eds",
+     "sha256": "7e094d3cb4a484163a04a03ca73e3e0c7617e92e04b563b85dc48ba36c6afa5b",
+     "size": 1223375,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-4SLC_R2.7_simple.eds",
+     "sha256": "3b24fcc2680aacb9df864054e6e2a2b3f0e3671462c8d41dfc9c79556986d2d9",
+     "size": 39734,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-8DIP-8DOP_R2.7_simple.eds",
+     "sha256": "7d3a604ba41956e3edb6194dc47441b99bc57ff96cef5938ceeeabbcf84da553",
+     "size": 34095,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-8IOL-IOT1_R2.7_enhanced_v9964.eds",
+     "sha256": "ec3c9b2e7f6f4df9b1def2e8b7086a1964018482444a873755543d9e080eec1a",
+     "size": 426672,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-8IOLA-IOT1_R2.7_enhanced_v9964.eds",
+     "sha256": "23493ad9cf8a988409bea731efaa280849b64155873c03044d2d61b6e2f3e23a",
+     "size": 439940,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-8IOLA_R2.7_simple.eds",
+     "sha256": "28c04200d527304a171b9d4a535e6288f25e5b2f67a8bf2fd937b064f5836c83",
+     "size": 89255,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-8IOL_R2.7_simple.eds",
+     "sha256": "92827dac0cf7e2b9aa920686fb8de0e5af730e8740a884fd8ed3bd0ac0648094",
+     "size": 37647,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-SE-M2_R2.7_enhanced.eds",
+     "sha256": "c8f2c0c21d4aaa28e34693425eb49bd8d684932523332d541ab35869313e5c3b",
+     "size": 102473,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LL-SE-M2_R2.7_simple.eds",
+     "sha256": "3141c4623c3ef1881ee20b4351c6871d83c07f45d47f2f8c73dde8914ccd04e0",
+     "size": 41091,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LLH-4RMC_R2.7.xml",
+     "sha256": "d67c0884de1970eff7722722ca76de4140f23e3924d26fbec3f2f668b403711d",
+     "size": 178219,
+     "type": "xml"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LLH-4RMC_R2.7_enhanced.eds",
+     "sha256": "f2e44a36fd988591fa270e9bf04c19e36074e0b9b71143b116cf381cbdde74c8",
+     "size": 173835,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LLH-4RMC_R2.7_simple.eds",
+     "sha256": "d364c80f00d939ef51703d5cd69ffff867c20de58fd1451d702afdc0ae1cc885",
+     "size": 35370,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LLH-4SLC_R2.7_enhanced.eds",
+     "sha256": "d209c4fd8f722d8402741c9f972976fbaa76788d24fa3a5b7ed497dd7457d9d6",
+     "size": 1223377,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN-LLH-4SLC_R2.7_simple.eds",
+     "sha256": "88a59475f76f1beabb6a822cdc3f2902a8e4e07c44e516cd2c2ce6e30ff05d9b",
+     "size": 39736,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN_L4_EN1.eds",
+     "sha256": "ff15be8657ae21d121946fe4202e9c316422906895dffd6aea86b587725b0668",
+     "size": 70081,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN_L4_EN1_OMRON.eds",
+     "sha256": "37a73bc8d56566968686827b33659ab41b637618d1f80ea05a66d5715438f3e1",
+     "size": 51043,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN_L5_EN1.eds",
+     "sha256": "07a889355cdbe72d56e353866c998524b2280752888d81752127e9e431dd1938",
+     "size": 70081,
+     "type": "eds"
+    },
+    {
+     "name": "TBEN-L_ETHERNETIP/TURCK-EDS/TBEN_L5_EN1_OMRON.eds",
+     "sha256": "3b0822fcaa684828626266ec6d82fc60be27b2a3c025344bce8bf6402986c20c",
+     "size": 51043,
+     "type": "eds"
+    }
+   ],
+   "name": "TBEN-L_ETHERNETIP.zip",
+   "retrieved": "2026-11-23T03:37:47Z",
+   "sha256": "91c35fe7408fc5f7581c89de5e31606fd1b12a53cdd2e6d6c8c47c5ad7f4d743",
+   "size": 5221261,
+   "terms": "none stated",
+   "title": "TBEN-L EDS files and catalog files (family package)",
+   "type": "zip"
+  },
   "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip": {
    "content_type": "application/zip",
    "final_url": "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip",
@@ -309,6 +799,21 @@
    "terms": "none stated",
    "title": "TBEN-S GSDML files (family package)",
    "type": "zip"
+  },
+  "https://www.turck.us/attachment/d301407.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.turck.us/attachment/d301407.pdf",
+   "folders": [
+    "devices/turck/tben-l5-8iol"
+   ],
+   "kind": "manual",
+   "name": "d301407.pdf",
+   "retrieved": "2026-11-23T03:37:47Z",
+   "sha256": "5980862a2476139188733dab2403f871460d54660f9d514d3db238d1680d1e82",
+   "size": 9682750,
+   "terms": "none stated",
+   "title": "TBEN-Lx-8IOL Instructions for Use",
+   "type": "pdf"
   },
   "https://www.turck.us/datasheet/_us/edb_6814076_eng_us.pdf": {
    "content_type": "application/pdf",

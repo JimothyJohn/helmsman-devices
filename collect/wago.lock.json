@@ -4,7 +4,9 @@
    "content_type": "application/zip",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip",
    "folders": [
-    "devices/wago/750-363"
+    "devices/wago/750-363",
+    "devices/wago/750-823",
+    "devices/wago/750-893"
    ],
    "kind": "eds",
    "members": [
@@ -28,7 +30,7 @@
     }
    ],
    "name": "11921.02-EDS.zip",
-   "retrieved": "2026-11-14T17:01:59Z",
+   "retrieved": "2026-11-23T03:37:11Z",
    "sha256": "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36",
    "size": 10991,
    "terms": "none stated",
