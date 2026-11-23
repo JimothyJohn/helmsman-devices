@@ -23,3 +23,38 @@ url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f
 title = "ioThinx 4510 Series User's Manual, v6.2"
 found = "2026-11-22 product page https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
 terms = "none stated"
+
+# ioLogik E1212 and E1213 (older entries, collected by hand before the store).
+# The E1200 manual v15.10 is the library copy; the UIB wiki is a mirror, used because
+# moxa.com's own link for v15.10 was not found.
+[[doc]]
+folders = ["devices/moxa/iologik-e1212", "devices/moxa/iologik-e1213"]
+kind = "manual"
+url = "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf"
+title = "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)"
+found = "2026-11-02 mirror on the University of Bergen PCT wiki, named in the folders' [[sources]]; re-fetched 2026-11-23"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/moxa/iologik-e1212"]
+kind = "release-notes"
+url = "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_Software%20Release%20History.pdf"
+title = "Firmware for ioLogik E1200 Series (ioLogik E1212/E1212-T) Release Notes, to v4.0"
+found = "link in devices/moxa/iologik-e1212 [[sources]]; re-fetched 2026-11-23"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/moxa/iologik-e1212"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1870/11624.01_EDs.zip"
+title = "ioLogik E1212 EDS V1.1 (ODVA marketplace zip)"
+found = "2026-11-23 Download the EDS File on https://marketplace.odva.org/products/1870-iologik-e1212 (the E1212 folder's source)"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/moxa/iologik-e1213"]
+kind = "eds"
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/7e522078-ad5a-47b4-aa80-4d963ed76b4f/moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds"
+title = "E1213/E1213-T EDS file software package v2.0"
+found = "2026-11-23 https://moxa.com/en/support/product-support/software-and-documentation?psid=42116 (E1213 row)"
+terms = "none stated"

@@ -1,0 +1,35 @@
+{
+ "docs": {
+  "https://s3-eu-west-1.amazonaws.com/ur-support-site/16377/ModBus%20Server%20Data.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://s3-eu-west-1.amazonaws.com/ur-support-site/16377/ModBus%20Server%20Data.pdf",
+   "folders": [
+    "devices/universal-robots/e-series"
+   ],
+   "kind": "register-map",
+   "name": "ModBusServerData.pdf",
+   "retrieved": "2026-11-23T14:32:49Z",
+   "sha256": "6a2fbe54d36fb03811e6a371f033006e5b888a06119486f153c461eb8de0555e",
+   "size": 219498,
+   "terms": "none stated",
+   "title": "ModBus Server Data (register table, 8 pages)",
+   "type": "pdf"
+  },
+  "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds": {
+   "content_type": "application/octet-stream",
+   "final_url": "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds",
+   "folders": [
+    "devices/universal-robots/e-series"
+   ],
+   "kind": "eds",
+   "name": "UniversalRobot.eds",
+   "retrieved": "2026-11-23T14:32:49Z",
+   "sha256": "c3e930f63bf56c21af010fdf89ae3e8de196080df791ca6af6b32e436a75da62",
+   "size": 177465,
+   "terms": "none stated",
+   "title": "UniversalRobot.eds",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

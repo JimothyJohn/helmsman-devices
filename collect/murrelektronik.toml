@@ -23,3 +23,14 @@ vendor = "Murrelektronik"
 # (device profile 0x07, DOC 10817 of 2011) packages EDS files for 55085, 55086,
 # 55087 and 55088 only, in the older generation. Listing 2508 (IMPACT67 Pro E
 # DIO8 IOL8) is another product.
+
+# In the private store (2026-11-23): both 55089 EDS files above, copied from the owner's
+# cache/sha256/ after their SHA-256 was checked, because they have no link to fetch.
+#
+# Not in the store, no link readable (shop.murrelektronik.com answers a fetch with a
+# "Please wait..." script page): the IMPACT67 E manual, art. no. 55368 ed. 1.8
+# (sha256 f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f; used by
+# impact67-e-di16, -di8-do8, -dio8-dio8, -do16, -do8) and 55086_Impact67_EIP_DI8DO8.eds
+# (sha256 fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e, from
+# 55086_IMPACT67_KF5_x_11.zip, impact67-e-di8-do8). Someone with a browser session adds
+# them here as [[doc]] once they have read the links off the page.
