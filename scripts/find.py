@@ -8,10 +8,11 @@ narrow any list. Each line ends with what the folder gives a project, and
 
 Usage: python3 -I scripts/find.py [options] [CATEGORY] [WORD ...]
   CATEGORY          a category id from the first list (drive, io-block, ...)
-  WORD ...          every word must be in the vendor, model, an order number or the folder
+  WORD ...          every word must be in the vendor, model, channels, an order number or
+                    the folder: "relay", "8 di", "powerflex 525"
   --protocol NAME   only devices that speak it: enip, modbus or iolink
   --id V:P          the EtherNet/IP vendor id and product code ListIdentity gave (1:9)
-  --ready           only devices whose folder has a profile or a map
+  --ready           only devices whose folder has a profile or a map: the channels are named already
   --checked         only devices checked on a unit
   --json            the matches as JSON, one object each, for a program
   --index PATH      another index.json than this checkout's
@@ -86,12 +87,15 @@ def gives(d):
         has.append("eds")
     if d.get("record"):
         has.append("record")
+    n = d.get("points")
+    if isinstance(n, int) and not isinstance(n, bool) and n > 0:
+        has.append(f"{n} point{'s' if n != 1 else ''}")
     return has
 
 
 def haystack(d):
     products = d.get("products") if isinstance(d.get("products"), list) else []
-    parts = [d.get("vendor"), d.get("model"), d.get("folder"), *products]
+    parts = [d.get("vendor"), d.get("model"), d.get("channels"), d.get("folder"), *products]
     return " ".join(p for p in parts if isinstance(p, str)).casefold()
 
 
@@ -166,17 +170,19 @@ def list_devices(found, label):
         (
             printable(d.get("folder")),
             f"{printable(d.get('vendor'), 40)} {printable(d.get('model'), 60)}",
+            printable(d.get("channels"), 60) or "-",
             ",".join(speaks(d)) or "-",
-            ",".join(gives(d)) or "-",
+            ", ".join(gives(d)) or "identity only",
             printable(d.get("checked_on"), 10) or "documents",
         )
         for d in found
     ]
-    widths = [max(len(r[k]) for r in rows) for k in range(4)]
+    widths = [max(len(r[k]) for r in rows) for k in range(5)]
     print(f"{len(found)} {label}\n")
     for r in rows:
-        print("  " + "  ".join(f"{r[k]:<{widths[k]}}" for k in range(4)) + "  " + r[4])
-    print("\nColumns: folder, device, speaks, what the folder gives, checked on a unit or from documents.")
+        print("  " + "  ".join(f"{r[k]:<{widths[k]}}" for k in range(5)) + "  " + r[5])
+    print("\nColumns: folder, device, channels, speaks, what the folder gives a project")
+    print("(profile, map, eds, record, documented points), checked on a unit or from documents.")
     print(f"Next: python3 -I scripts/use.py {rows[0][0]}")
 
 
@@ -209,8 +215,9 @@ def main(argv):
         print("nothing matches. The categories:", file=sys.stderr)
         print("  " + " ".join(printable(i, 40) for i in ids), file=sys.stderr)
         return 1
-    label = next((printable(c.get("label")) for c in cats if c.get("id") == category), "devices")
-    list_devices(found, label if category else "devices")
+    n = "device" if len(found) == 1 else "devices"
+    label = next((printable(c.get("label")) for c in cats if c.get("id") == category), "")
+    list_devices(found, f"{n} under {label}" if label else n)
     return 0
 
 

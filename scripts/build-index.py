@@ -302,6 +302,12 @@ def entry(folder: pathlib.Path) -> dict:
     # device.toml (scripts/build-records.py): say that it is there.
     if "wired" in t:
         out["record"] = "record.json"
+    # How many [[points]] the documents gave: a list says which entries name their channels.
+    points = t.get("points", [])
+    if not isinstance(points, list) or len(points) > 4096:
+        raise SystemExit(f"{rel}: points: at most 4096 tables")
+    if points:
+        out["points"] = len(points)
     protocols = {}
     for name, p in t.get("protocols", {}).items():
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")

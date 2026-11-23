@@ -19,8 +19,10 @@ Usage: python3 -I scripts/use.py DEVICE [options]
                   or words that match exactly one device (tben-s2-8dxp)
   --address A     the device's endpoint, in place of ADDR: a host, host:port,
                   cip=VENDOR:PRODUCT or mac=AA-BB-CC-DD-EE-FF
-  --id NAME       the device id in the I/O map (default dev)
-  --eds PATH      check a file you have against the entry's EDS (size and SHA-256), then stop
+  --id NAME       the device's name in the I/O map lines (default dev; a copied map
+                  keeps its own name unless you give one)
+  --eds PATH      check an EDS you have against the entry's (size and SHA-256), then stop;
+                  PATH is the .eds itself, taken out of the vendor's zip if it came in one
   --json          the same as JSON, for a program
 
 Exit 0, 1 when --eds does not match, 2 for a bad argument or an unknown device.
@@ -134,9 +136,7 @@ def profile_way(folder, rel, name, dev_id, endpoint):
         first = next((c for c in channels if c[0] == direction), None)
         if first:
             lines.append(f"{direction:<3} {signal_name(dev_id, first[1])} {first[2]} {dev_id} ch:{first[1]}")
-    notes = [
-        f"{len(channels)} channels: {', '.join(c[1] for c in channels[:12])}{', ...' if len(channels) > 12 else ''}"
-    ]
+    notes = [f"{len(channels)} channels: {', '.join(c[1] for c in channels)}"]
     if transports:
         notes.append(f"The box tries {', then '.join(transports)} and uses the first that answers.")
     notes.append("A signal binds a channel by name (ch:NAME); name the signals as the machine calls them.")
@@ -149,18 +149,28 @@ def profile_way(folder, rel, name, dev_id, endpoint):
     }
 
 
-def map_way(folder, rel, protocol, name, address):
+def map_way(folder, rel, protocol, name, dev_id, address):
     text = (folder / name).read_text().splitlines()[:MAX_MAP_LINES]
+    declared = {
+        f[1] for f in (line.split("#", 1)[0].split() for line in text) if len(f) >= 4 and f[0] == "device"
+    }
+    # --id names the map's device when the map has one; with several, their names stay.
+    old = declared.pop() if dev_id and len(declared) == 1 else None
     lines = []
     for line in text:
-        f = line.split()
-        if address and len(f) >= 4 and f[0] == "device":
-            # ADDR on a device line only, as a box does it (helmsman-project devlib
-            # with_address); an endpoint that brings its own port or is an identity
-            # (cip=, mac=) takes the place of ADDR:PORT whole.
-            whole = ":" in address or "=" in address
-            pattern = r"(?<![A-Za-z0-9_])ADDR" + (r"(:\d+)?" if whole else "") + r"(?![A-Za-z0-9_])"
-            line = re.sub(pattern, lambda _: address, line, count=1)
+        f = line.split("#", 1)[0].split()
+        if len(f) >= 4 and f[0] == "device":
+            if address:
+                # ADDR on a device line only, as a box does it (helmsman-project devlib
+                # with_address); an endpoint that brings its own port or is an identity
+                # (cip=, mac=) takes the place of ADDR:PORT whole.
+                whole = ":" in address or "=" in address
+                pattern = r"(?<![A-Za-z0-9_])ADDR" + (r"(:\d+)?" if whole else "") + r"(?![A-Za-z0-9_])"
+                line = re.sub(pattern, lambda _: address, line, count=1)
+            if old:
+                line = re.sub(r"^(\s*device\s+)\S+", lambda m: m.group(1) + dev_id, line, count=1)
+        elif old and len(f) >= 5 and f[0] in ("in", "out") and f[3] == old:
+            line = re.sub(r"^(\s*\S+\s+\S+\s+\S+\s+)\S+", lambda m: m.group(1) + dev_id, line, count=1)
         lines.append(printable(line))
     return {
         "how": "map",
@@ -169,6 +179,8 @@ def map_way(folder, rel, protocol, name, address):
         "lines": lines,
         "notes": [
             "The signal names are the bench's: keep the points, rename the signals.",
+            *([] if old or not dev_id else ["The map names several devices: their names are kept."]),
+            *([] if dev_id else ["The device's name is the bench's too (--id sets it)."]),
             *([] if address else ["ADDR is the device's address."]),
         ],
     }
@@ -196,12 +208,18 @@ def eds_ways(rel, enip, dev_id, endpoint, checked):
         explicit_config = [f"{gives}; this form sends none unless you add config_data=HEX."]
     if eds and eds.get("name"):
         name = printable(eds.get("name"), 120)
+        url = printable(eds.get("url"))
+        member = re.fullmatch(r"(\S+) \(member of ([^()]+)\)", url)
+        if member:
+            get = f"Get {member.group(2)} from {member.group(1)} and take {name} ({eds.get('size')} bytes) out of it."
+        else:
+            get = f"Get {name} ({eds.get('size')} bytes) from {url or 'the sources below'}."
         ways.append(
             {
                 "how": "eds",
                 "title": "The vendor's EDS as a project file: the driver reads the connection from it",
                 "steps": [
-                    f"Get {name} ({eds.get('size')} bytes) from {printable(eds.get('url')) or 'the source below'}.",
+                    get,
                     f"Check it is the file this entry read: python3 -I scripts/use.py {rel} --eds PATH",
                     f"Put it in the project as {name}.",
                 ],
@@ -283,7 +301,8 @@ def category_label(cid):
         return printable(cid, 40)
 
 
-def sheet(folder, dev_id, address):
+def sheet(folder, dev_id, address, named=None):
+    """`named` is the id the caller chose, None when dev_id is only the default."""
     import tomllib
 
     rel = folder.relative_to(ROOT).as_posix()
@@ -297,7 +316,7 @@ def sheet(folder, dev_id, address):
         ways.append(profile_way(folder, rel, dev["profile"], dev_id, endpoint))
     for protocol, p in protocols.items():
         if isinstance(p.get("map"), str) and (folder / p["map"]).is_file():
-            ways.append(map_way(folder, rel, printable(protocol, 20), p["map"], address))
+            ways.append(map_way(folder, rel, printable(protocol, 20), p["map"], named, address))
     if "enip" in protocols:
         ways += eds_ways(rel, protocols["enip"], dev_id, endpoint, bool(checked))
     if "modbus" in protocols and not protocols["modbus"].get("map"):
@@ -311,11 +330,13 @@ def sheet(folder, dev_id, address):
     ]
     open_ = []
     if not checked:
-        open_.append(f"{UNCHECKED} Test it on yours before a machine depends on it (AGENTS.md, step 4).")
+        open_.append(
+            f"{UNCHECKED} Test it on yours before a machine depends on it (AGENTS.md, Mapping a device, step 4)."
+        )
     if protocols and not points and not dev.get("profile"):
         open_.append(
             "No channel is mapped: the entry has no points. Read them from the manual in the sources, "
-            "or work them out on the unit, and send them back (AGENTS.md, Mapping a device)."
+            "or work them out on the unit, and send them back (AGENTS.md, Mapping a device, step 4)."
         )
     if not ways:
         open_.append("The folder has identity and sources only: nothing to paste yet.")
@@ -426,7 +447,7 @@ def main(argv):
         folder = folder_of(opts["words"])
         if "--eds" in opts:
             return check_eds(folder, opts["--eds"])
-        s = sheet(folder, dev_id, address)
+        s = sheet(folder, dev_id, address, opts.get("--id"))
     except Bad as e:
         print(f"use.py: {e}", file=sys.stderr)
         return 2

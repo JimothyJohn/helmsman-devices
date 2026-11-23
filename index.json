@@ -93,6 +93,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -106,6 +107,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -119,6 +121,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "7 RTD AI",
+   "points": 8,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -132,6 +135,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "8 AI, 2 DO",
+   "points": 9,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -145,6 +149,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "8 TC AI, 8 DO",
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -158,6 +163,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "points": 8,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -175,6 +181,7 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(Main)/ADAM-6050_03_Ori-(1)-(1)20220418173324.png",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6050-D1.htm"
    },
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -192,6 +199,7 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6052/Product%20-%20Photo(Main)/ADAM-6052_03_S20190725161934.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-EtherNet-IP-Modules/model-ADAM-6052-D.htm"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -209,6 +217,7 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -222,6 +231,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "6 DI, 6 relay DO",
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -239,6 +249,7 @@
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6250/Product%20-%20Photo(Main)/ADAM-6250_03_S20190730122849.jpg",
     "page": "https://www.advantech.com/en/products/7447e150-338d-402d-b5a1-c9ce6d98816e/adam-6250/mod_da940b26-501f-413e-bfbc-732fd7496782"
    },
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -252,6 +263,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "16 DI",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -265,6 +277,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "16 DO (sink)",
+   "points": 3,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -278,6 +291,7 @@
    "kind": "remote-io",
    "category": "panel-io",
    "channels": "6 relay DO (5 Form C, 1 Form A)",
+   "points": 3,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -291,6 +305,7 @@
    "kind": "remote-io",
    "category": "io-block",
    "channels": "8 M12 ports, 16 inputs",
+   "points": 4,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -304,6 +319,7 @@
    "kind": "remote-io",
    "category": "io-block",
    "channels": "8 M12 ports, 8 outputs (pin 4, 2 A each)",
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -323,6 +339,7 @@
      "product_code": 12330
     }
    },
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -390,6 +407,7 @@
    "kind": "remote-io",
    "category": "io-coupler",
    "channels": "up to 64 Bus Terminals, 512 bytes in and 512 bytes out",
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -407,6 +425,7 @@
     "url": "https://multimedia.beckhoff.com/media/ek9000__web_preview.png",
     "page": "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9000.html"
    },
+   "points": 6,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -430,6 +449,7 @@
      "product_code": 9500
     }
    },
+   "points": 1,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -447,6 +467,7 @@
     "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-538-4-form-a-relays-8-digital-inputs-and-an-ascii-gateway.jpg",
     "page": "https://www.brainboxes.com/product/remote-io/digital/ed-538"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -464,6 +485,7 @@
     "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-588-8-digital-inputs-8-digital-outputs-and-an-ascii-gateway.jpg",
     "page": "https://www.brainboxes.com/product/remote-io/digital/ed-588"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -1453,6 +1475,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1210"
    },
    "profile": "moxa-iologik-e1210.device",
+   "points": 2,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1472,6 +1495,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1211"
    },
    "profile": "moxa-iologik-e1211.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1497,6 +1521,7 @@
      "product_code": 514
     }
    },
+   "points": 3,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -1533,6 +1558,7 @@
      "product_code": 515
     }
    },
+   "points": 3,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -1562,6 +1588,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1214"
    },
    "profile": "moxa-iologik-e1214.device",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1581,6 +1608,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1240"
    },
    "profile": "moxa-iologik-e1240.device",
+   "points": 2,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1600,6 +1628,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1241"
    },
    "profile": "moxa-iologik-e1241.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1619,6 +1648,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1242"
    },
    "profile": "moxa-iologik-e1242.device",
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1638,6 +1668,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1260"
    },
    "profile": "moxa-iologik-e1260.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1657,6 +1688,7 @@
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1262"
    },
    "profile": "moxa-iologik-e1262.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -1726,6 +1758,7 @@
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/en/getattachment/Products/INDUSTRIAL-EDGE-CONNECTIVITY/Controllers-and-IOs/Advanced-Controllers-and-I-Os/ioThinx-4510-Series/moxa-iothinx-4510-series-image-(1).jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
    },
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -1869,6 +1902,7 @@
      "product_code": 15362
     }
    },
+   "points": 9,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2200,6 +2234,7 @@
      "product_code": 8169
     }
    },
+   "points": 1,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2965,6 +3000,7 @@
    "model": "Modicon STB NIP2311",
    "kind": "remote-io",
    "category": "io-coupler",
+   "points": 3,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -3102,6 +3138,7 @@
    "model": "SENTRON PAC3200",
    "kind": "other",
    "category": "power-meter",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -3114,6 +3151,7 @@
    "model": "SENTRON PAC4200",
    "kind": "other",
    "category": "power-meter",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -3126,6 +3164,7 @@
    "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
    "kind": "drive",
    "category": "drive",
+   "points": 2,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -3696,6 +3735,7 @@
      "product_code": 1
     }
    },
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io",

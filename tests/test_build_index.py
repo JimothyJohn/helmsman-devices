@@ -283,6 +283,11 @@ class CatalogFile(unittest.TestCase):
         self.assertIn("| [C](devices/w/c/) | V |  |  | identity and sources | documents |", blocks)
         self.assertLess(blocks.index("[B]"), blocks.index("[C]"))
 
+    def test_the_index_counts_the_documented_points(self):
+        _, index, _, _, _ = build(self.FOLDERS)
+        by = {d["folder"]: d.get("points") for d in index["devices"]}
+        self.assertEqual(by, {"devices/v/a": 2, "devices/v/b": None, "devices/w/c": None})
+
     def test_a_model_cannot_break_the_table_or_start_markup(self):
         _, _, text, _, _ = build(
             {"v/a": device("A | B <img src=x> [l](http://e) *b* `c` &amp;", 'category = "drive"\n')}

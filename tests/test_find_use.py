@@ -52,6 +52,8 @@ DEVICES = [
         "kind": "remote-io",
         "category": "io-block",
         "checked_on": "2026-11-02",
+        "channels": "8 DI, 4 relays",
+        "points": 3,
         "profile": "acme-block-8.device",
         "protocols": {"enip": {"driver": "enip-io", "map": "enip.map"}, "modbus": {"driver": "modbus-tcp"}},
     },
@@ -117,7 +119,27 @@ class Find(unittest.TestCase):
 
     def test_json_says_what_the_folder_gives(self):
         _, out, _ = run(find, "--index", index_file(), "--json", "io-block")
-        self.assertEqual(json.loads(out)["gives"], ["profile", "map"])
+        self.assertEqual(json.loads(out)["gives"], ["profile", "map", "3 points"])
+
+    def test_what_a_device_has_is_searched_and_shown(self):
+        self.assertEqual(self.folders("relay"), (0, ["devices/acme/block-8"]))
+        self.assertEqual(self.folders("drive", "relay"), (1, []))
+        _, out, _ = run(find, "--index", index_file(), "acme")
+        self.assertRegex(
+            out, r"Acme Block 8\s+8 DI, 4 relays\s+enip,modbus\s+profile, map, 3 points\s+2026-11-02"
+        )
+        self.assertRegex(out, r"Acme VFD 9\s+-\s+enip\s+eds\s+documents")
+
+    def test_one_device_is_not_called_devices(self):
+        _, out, _ = run(find, "--index", index_file(), "io-block")
+        self.assertTrue(out.startswith("1 device under I/O blocks\n"), out)
+        _, out, _ = run(find, "--index", index_file(), "acme")
+        self.assertTrue(out.startswith("2 devices\n"), out)
+
+    def test_a_folder_with_nothing_to_paste_says_identity_only(self):
+        bare = [{"folder": "devices/a/b", "vendor": "A", "model": "B", "category": "drive", "points": True}]
+        _, out, _ = run(find, "--index", index_file(bare), "drive")
+        self.assertIn("identity only", out)
 
     def test_the_list_points_at_use(self):
         _, out, _ = run(find, "--index", index_file(), "drive", "vfd")
@@ -294,7 +316,7 @@ class Use(unittest.TestCase):
             ],
         )
         self.assertIn("enip-io, then modbus-tcp", " ".join(s["ways"][0]["notes"]))
-        self.assertIn("2 channels", " ".join(s["ways"][0]["notes"]))
+        self.assertIn("2 channels: DI-00, DO-00", " ".join(s["ways"][0]["notes"]))
 
     def test_a_map_gets_the_address_on_its_device_lines_only(self):
         text = "# ADDR is the unit\ndevice b8 modbus-tcp ADDR:502 unit=1\nin  ADDR bool b8 di:0\n"
@@ -309,6 +331,33 @@ class Use(unittest.TestCase):
             lines(sheet(toml, files={"modbus.map": text}), "map")[1], "device b8 modbus-tcp ADDR:502 unit=1"
         )
         self.assertEqual(lines(sheet(toml, files={"modbus.map": text}), "modbus"), [])
+
+    def test_id_names_a_maps_one_device_and_the_signals_on_it(self):
+        text = "device b8 modbus-tcp ADDR:502 unit=1  # b8 is the block\nin  b8  bool b8 di:0\nout x bool box do:0\n"
+        toml = BASE + '[protocols.modbus]\ndriver = "modbus-tcp"\nmap = "modbus.map"\n'
+        got = sheet(toml, "--id", "rio", files={"modbus.map": text})
+        self.assertEqual(
+            lines(got, "map"),
+            [
+                "device rio modbus-tcp ADDR:502 unit=1  # b8 is the block",
+                "in  b8  bool rio di:0",
+                "out x bool box do:0",
+            ],
+        )
+        kept = sheet(toml, files={"modbus.map": text})
+        self.assertEqual(lines(kept, "map")[0], "device b8 modbus-tcp ADDR:502 unit=1  # b8 is the block")
+        self.assertIn("--id sets it", " ".join(kept["ways"][0]["notes"]))
+        two = text + "device other modbus-tcp ADDR:502\n"
+        got = sheet(toml, "--id", "rio", files={"modbus.map": two})
+        self.assertEqual(lines(got, "map")[0].split()[1], "b8")
+        self.assertIn("several devices", " ".join(got["ways"][0]["notes"]))
+
+    def test_an_eds_inside_a_zip_is_said_to_be_inside_it(self):
+        eds = 'eds = { name = "b8.eds", size = 5, sha256 = "%s", url = "https://acme.example/f.zip (member of f.zip)" }\n'
+        step = next(w for w in sheet(BASE + ENIP + eds % ("a" * 64))["ways"] if w["how"] == "eds")["steps"][0]
+        self.assertEqual(
+            step, "Get f.zip from https://acme.example/f.zip and take b8.eds (5 bytes) out of it."
+        )
 
     def test_modbus_without_a_unit_says_so_and_does_not_invent_one(self):
         s = sheet(BASE + '[protocols.modbus]\ndriver = "modbus-tcp"\nport = 1502\n')
