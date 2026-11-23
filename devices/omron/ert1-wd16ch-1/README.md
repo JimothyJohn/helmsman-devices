@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# OMRON Corporation ERT1-WD16CH-1
+# Omron ERT1-WD16CH-1
 
 EDS identity: vendor 47 OMRON Corporation, product code
 1103, device type 7 General Purpose Discrete I/O,

@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Datalogic, Inc. Unattended Scanning System
+# Datalogic Matrix N Series
 
 EDS identity: vendor 850 Datalogic, Inc., product code
 3000, device type 43 Generic Device (keyable),

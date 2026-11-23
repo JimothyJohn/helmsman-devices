@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# SMC EX600-SEN7
+# SMC EX600-SEN7/SEN8
 
 EDS identity: vendor 7 SMC Corporation, product code
 258, device type 12 Communications Adapter,
