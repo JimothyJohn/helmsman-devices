@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "CMMT-AS-EP"
+kind = "drive"
+article = "CMMT-AS"
+
+[identity.enip]
+vendor_id = 26
+product_code = 65282
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CMMT-AS"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "DriveProfile - Exclusive Owner"
+# input_assembly: the size is set by Param6: 24..24 bytes, default 24
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param5: 24..24 bytes, default 24
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102 }
+eds = { name = "CMMT-AS-EP.eds", size = 15543, sha256 = "c236152b75a2f51c7b7a1313aa65211984a2aadb0d67c7905b32d8259dcb818f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip (member of 11965.03-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)"
+sha256 = "49a30233e0d5ee3c8f03c8ecea9f8e11bed747a3988da0f3674b79ce09c0c968"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
