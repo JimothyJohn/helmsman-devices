@@ -15,9 +15,70 @@ seen = 2026-11-22
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502
-# Unit id and register addresses: not read (see README).
+# The unit id is not given in the manual (see [[questions]]).
+
+[[points]]
+name = "DI-00..DI-11"
+modbus = "di:0..di:11; ir:12288..ir:12299 = each as one word"
+meaning = "digital input state, 1 = on; 12 inputs, of which four are the DIO channels (which four the table does not say)"
+source = "E2200 manual v7.2 p. 185 (1xxxx and 3xxxx 0x3000); di:12..di:15 are 'Non-active'"
+
+[[points]]
+name = "DI counters"
+modbus = "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)"
+meaning = "event counter value of channel n at 2n"
+source = "E2200 manual v7.2 p. 185 (count value hi-byte at 2n, lo-byte at 2n+1); read as one 32-bit value is inferred"
+
+[[points]]
+name = "DI-00..DI-11 mode"
+modbus = "hr:72..hr:83"
+meaning = "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value"
+source = "E2200 manual v7.2 p. 187-188"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:72..coil:83 (start/stop); coil:84..coil:95 (write 1 to clear); coil:97..coil:108 (overflow, write 0 to clear)"
+meaning = "counter start/stop status (1 = start), clear (write only) and overflow flag, per channel"
+source = "E2200 manual v7.2 p. 180-183; the overflow range starts at 0x0060 on p. 182 and its CH0 row is not legible in the text, so its start is inferred"
+
+[[points]]
+name = "DO-00..DO-11"
+modbus = "coil:0..coil:11; hr:84..hr:95 = each as one word"
+meaning = "digital output command and state, 1 = on; 12 outputs, of which four are the DIO channels (which four the table does not say)"
+source = "E2200 manual v7.2 p. 178 (0xxxx), p. 188 (4xxxx, 'Citect SCADA compatibility'); the CH0 word row at hr:84 is inferred from CH1 at hr:85"
+
+[[points]]
+name = "DO-00..DO-11 mode"
+modbus = "hr:48..hr:59"
+meaning = "0 = DO, 1 = pulse output, per channel"
+source = "E2200 manual v7.2 p. 187"
+
+[[points]]
+name = "DIO 0..3 direction"
+modbus = "coil:156..coil:159; hr:240..hr:243"
+meaning = "1 = output (DO mode), 0 = input (DI mode), for the four DIO channels"
+source = "E2200 manual v7.2 p. 184-185, p. 195"
+
+[[points]]
+name = "DO pulse output"
+modbus = "hr:0:u32 .. hr:22:u32 (count, two words a channel); hr:24..hr:35 (low width); hr:36..hr:47 (high width)"
+meaning = "pulse count and low/high signal widths of channel n in pulse mode"
+source = "E2200 manual v7.2 p. 186; the unit of the widths is not stated there; one 32-bit count is inferred from hi-/lo-word rows"
+
+[[sources]]
+title = "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)"
+sha256 = "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b"
+where = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
 
 [[sources]]
 title = "ioLogik E2200 Series Datasheet, v1.3"
 sha256 = "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e"
 where = "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+
+[[questions]]
+ask = "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port."
+source = "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"
+
+[[questions]]
+ask = "Which of CH0..CH11 are the four DIO channels (DIO 0..3)? The table lists 12 DI and 12 DO channels and a direction bit per DIO, and does not map them."
+source = "E2200 manual v7.2 p. 184-185"

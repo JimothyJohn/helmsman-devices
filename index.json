@@ -1727,6 +1727,7 @@
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8bc1a754-93d9-40f0-bc93-672a7b55f2c0/moxa-iologik-e2210-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210"
    },
+   "points": 7,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -1744,6 +1745,7 @@
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/53f5dd5f-29a8-41ea-b02a-21a0ca91680c/moxa-iologik-e2212-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2212"
    },
+   "points": 8,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -1761,6 +1763,7 @@
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8803760d-977d-46ec-8008-a7657aba6497/moxa-iologik-e2242-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2242"
    },
+   "points": 12,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
