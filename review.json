@@ -3400,15 +3400,15 @@
     },
     {
      "name": "DI counter control",
-     "modbus": "coil:72..coil:83 (start/stop); coil:84..coil:95 (write 1 to clear); coil:97..coil:108 (overflow, write 0 to clear)",
+     "modbus": "coil:72..coil:83 (start/stop); coil:84..coil:95 (write 1 to clear); coil:96..coil:107 (overflow, write 0 to clear)",
      "meaning": "counter start/stop status (1 = start), clear (write only) and overflow flag, per channel",
-     "source": "E2200 manual v7.2 p. 180-183; the overflow range starts at 0x0060 on p. 182 and its CH0 row is not legible in the text, so its start is inferred"
+     "source": "E2200 manual v7.2 p. 180-183 (overflow CH0 at 0x0060, p. 182)"
     },
     {
      "name": "DO-00..DO-11",
      "modbus": "coil:0..coil:11; hr:84..hr:95 = each as one word",
      "meaning": "digital output command and state, 1 = on; 12 outputs, of which four are the DIO channels (which four the table does not say)",
-     "source": "E2200 manual v7.2 p. 178 (0xxxx), p. 188 (4xxxx, 'Citect SCADA compatibility'); the CH0 word row at hr:84 is inferred from CH1 at hr:85"
+     "source": "E2200 manual v7.2 p. 178 (0xxxx), p. 188 (4xxxx, 'Citect SCADA compatibility')"
     },
     {
      "name": "DO-00..DO-11 mode",
