@@ -119,6 +119,18 @@
    }
   },
   {
+   "folder": "devices/beckhoff/bk9050",
+   "vendor": "Beckhoff",
+   "model": "BK9050",
+   "kind": "remote-io",
+   "channels": "up to 64 Bus Terminals, 512 bytes in and 512 bytes out",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/beckhoff/ek9000",
    "vendor": "Beckhoff",
    "model": "EK9000",
@@ -847,6 +859,50 @@
    "record": "record.json"
   },
   {
+   "folder": "devices/turck/fen20-4dip-4dxp",
+   "vendor": "Turck",
+   "model": "FEN20-4DIP-4DXP",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 31090
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "FEN20-4DIP-4DXP_R2.7.eds",
+      "size": 29597,
+      "sha256": "8151e22af6558ff2c7f0cfae9fdfbfade7b75f80f3ab699b031f5643717a5e73"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-l5-8iol",
+   "vendor": "Turck",
+   "model": "TBEN-L5-8IOL",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14017
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-L5-8IOL_R2.7_simple.eds",
+      "size": 38513,
+      "sha256": "228ded674df1646bb9775b96c1610a4557657af85ff606926fe96fde9b832e35"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s1-4dip-4dop",
    "vendor": "TURCK",
    "model": "TBEN-S1-4DIP-4DOP",
@@ -1226,6 +1282,50 @@
       "name": "07500363.eds",
       "size": 20821,
       "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-823",
+   "vendor": "WAGO",
+   "model": "750-823",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 823
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500823.eds",
+      "size": 23432,
+      "sha256": "82f4dfb6221521033b3407dd80e1dc91b3814ab012ad4aedfaf89119b9087907"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-893",
+   "vendor": "WAGO",
+   "model": "750-893",
+   "kind": "remote-io",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 893
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500893.eds",
+      "size": 23432,
+      "sha256": "5bab4675e2f8be707a36bbdc914b2d5b28d36dcbf33c2c1cffa25891e3a78757"
      }
     }
    }

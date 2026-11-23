@@ -4,7 +4,7 @@
 vendor = "Beckhoff"
 model = "BK9050"
 kind = "remote-io"
-channels = "up to 64 Bus Terminals (255 with K-bus extension), 1020 digital inputs/outputs, 512 bytes of input and 512 bytes of output data"
+channels = "up to 64 Bus Terminals, 512 bytes in and 512 bytes out"
 
 [protocols.modbus]
 driver = "modbus-tcp"
