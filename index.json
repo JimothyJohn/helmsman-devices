@@ -2,6 +2,28 @@
  "format": "helmsman-devices-index 1",
  "devices": [
   {
+   "folder": "devices/abb/feip-21",
+   "vendor": "ABB, Inc.",
+   "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 46,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "FEIP21_filerev1_2.EDS",
+      "size": 115812,
+      "sha256": "c67b3dfdce91d48f4a88166576d8d8c723297a8325098d5e8a7709ffa49684ff"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/acromag/xt1111-000",
    "vendor": "Acromag",
    "model": "XT1111-000",
@@ -299,6 +321,94 @@
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/delta-electronics/cmm-eip01",
+   "vendor": "Delta electronics, inc.",
+   "model": "CMM-EIP01",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 799,
+     "product_code": 260
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "031F000C010400010001.eds",
+      "size": 1177149,
+      "sha256": "f90f682a2dec3fe1db4ae4e959fc97e9578684b043b1a1a74633126ff29bce7e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dg1",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DG1",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12288
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_EIP_v2.8.eds",
+      "size": 233100,
+      "sha256": "bdea15cd765ecb14091c0b3850ddc89e46eaa5d97e572e1e0ce01d55c1795e1f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dm1-pro",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DM1 PRO",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12329
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXLDM1_EIP_V1.06.eds",
+      "size": 262169,
+      "sha256": "479e24e490e2b74aedb17f5706ad80284bf7e42774ff528dea9ce7a7e880492b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
+   "vendor": "Eaton Electrical",
+   "model": "PowerXL VFD EIP Comm. Card",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12338
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds",
+      "size": 141156,
+      "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4"
+     }
     }
    }
   },
@@ -700,6 +810,94 @@
       "name": "VS_32.eds",
       "size": 7817,
       "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/lenze/i550",
+   "vendor": "Lenze",
+   "model": "i550 cabinet",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 587,
+     "product_code": 550
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Lenze_i550-cabinet_V07.eds",
+      "size": 198396,
+      "sha256": "5dd7abf7c3860b0e6a80dce919f6dda43e0b68190910ebaca1d3fbab0ebb975d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-d800-e",
+   "vendor": "Mitsubishi Electric Corporation",
+   "model": "FR-D800-E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 112
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A1000200700102.eds",
+      "size": 278023,
+      "sha256": "4fe0e69aaf2c0236773ef9da6d2d2b9ea03fcfc12f9a1795465a85b9f2b71338"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 62
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003E0101.eds",
+      "size": 74537,
+      "sha256": "e0040f44b581fbea0c30adb3e8652add6ef28d1e1399eb32cc90ca96686cbc92"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-sce",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-SCE",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 63
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003F0100.eds",
+      "size": 245163,
+      "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28"
      }
     }
    }
@@ -2064,6 +2262,138 @@
       "name": "07500363.eds",
       "size": 20821,
       "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw300",
+   "vendor": "WEG",
+   "model": "CFW300",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5376
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW300_V30X.eds",
+      "size": 23862,
+      "sha256": "8afd16f58d765ce02c83ed36a73f1dc58ba23daa1c7e6ec41a22d084610f6069"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw320",
+   "vendor": "WEG",
+   "model": "CFW320",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6400
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW320_V10X.eds",
+      "size": 23862,
+      "sha256": "498095c732e801d29d180da7c5a19a9dfeefe2ea76be0c73d2bd5219edca9131"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw500",
+   "vendor": "WEG",
+   "model": "CFW500",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6656
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW500_CETH2_V10X.eds",
+      "size": 31045,
+      "sha256": "5b174b3564c3310d426ef1f4879635f2079a89681a7938c5da77c847137ab51a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/ssw900",
+   "vendor": "WEG",
+   "model": "SSW900",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5888
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_SSW900_V13X.eds",
+      "size": 25640,
+      "sha256": "2d08f8afa0a57dc04a2793d4f0647df3916083d530fbde71155b5405cf7f6611"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga500-ga501",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa GA501",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24063
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "GA501_v1.005.eds",
+      "size": 50957,
+      "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga800-si-en3d",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CIPR-GA80U2004_SI-EN3D_v2.8.eds",
+      "size": 51252,
+      "sha256": "e57045ccd15e2067b800e6e2dad04d63b4e4d578e8bc3acca119cbce25b14cc1"
      }
     }
    }

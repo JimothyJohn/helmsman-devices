@@ -1,0 +1,43 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf",
+   "folders": [
+    "devices/delta-electronics/cmm-eip01"
+   ],
+   "kind": "datasheet",
+   "name": "11630_DOC_081617.pdf",
+   "retrieved": "2026-11-23T03:42:39Z",
+   "sha256": "87f27de8f6ca5f4ff376c2d90361778ad4e5ad989194f291888df2006f232f15",
+   "size": 159233,
+   "terms": "none stated",
+   "title": "Delta CMM-EIP01: declaration of conformity (ODVA), ODVA marketplace product 1924",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip",
+   "folders": [
+    "devices/delta-electronics/cmm-eip01"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "031F000C010400010001.eds",
+     "sha256": "f90f682a2dec3fe1db4ae4e959fc97e9578684b043b1a1a74633126ff29bce7e",
+     "size": 1177149,
+     "type": "eds"
+    }
+   ],
+   "name": "11630.01-EDS.zip",
+   "retrieved": "2026-11-23T03:42:39Z",
+   "sha256": "4dcd355ef630c29221a334e501c698507da571e81032e435bd712ed48111aa26",
+   "size": 215494,
+   "terms": "none stated",
+   "title": "Delta CMM-EIP01: EDS, ODVA marketplace product 1924",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
