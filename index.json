@@ -2057,6 +2057,160 @@
    }
   },
   {
+   "folder": "devices/schneider-electric/atv320-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV320 with VW3A3616",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6153
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV320_0120E.eds",
+      "size": 24600,
+      "sha256": "9e123939ba24528712d066dca565a8cd125ee765add0fe9637e178b35d7101a2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/atv340",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV340 (embedded Ethernet)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6176
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV340xx_V3.6.eds",
+      "size": 31477,
+      "sha256": "7905f62de65da28f386e0ff0784c7a229ff39ce326925432b8aaa251dc21f21f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/atv630",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Process ATV630 / ATV930 (embedded Ethernet)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV9xx.eds",
+      "size": 39760,
+      "sha256": "85429040d78bcf0ba89d7198b72282be12973deeff3e7f3231b7bbe13458437b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/lexium-32m-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Lexium 32M with VW3A3616",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 2564
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_EIP_LXM32M_1.20.eds",
+      "size": 11110,
+      "sha256": "e0baaad1ed57480965c10b333bee3a7b134801398273ab940634248817124c08"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/ltmr-e-ethernet",
+   "vendor": "Schneider Electric",
+   "model": "TeSys T LTMR E (Ethernet)",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 304
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_TESYST_MMC_L_EIP.eds",
+      "size": 543674,
+      "sha256": "30d8d6c84eb047ca0cd06559c80cb7dce6b9772da3c48df36e6d90a6b5ac9b0c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/pm5560",
+   "vendor": "Schneider Electric",
+   "model": "PowerLogic PM5560",
+   "kind": "other",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/stb-nip2311",
+   "vendor": "Schneider Electric",
+   "model": "Modicon STB NIP2311",
+   "kind": "remote-io",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/tm3bceip",
+   "vendor": "Schneider Electric",
+   "model": "Modicon TM3 bus coupler TM3BCEIP",
+   "kind": "remote-io",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/tprbceip",
+   "vendor": "Schneider Electric",
+   "model": "TeSys island bus coupler TPRBCEIP",
+   "kind": "remote-io",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
@@ -2079,6 +2233,45 @@
     "1123757"
    ],
    "record": "record.json"
+  },
+  {
+   "folder": "devices/siemens/im-155-6-mf-hf",
+   "vendor": "Siemens",
+   "model": "SIMATIC ET 200SP IM 155-6 MF HF",
+   "kind": "remote-io"
+  },
+  {
+   "folder": "devices/siemens/sentron-pac3200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC3200",
+   "kind": "other",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sentron-pac4200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC4200",
+   "kind": "other",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sinamics-g120-cu240e-2-pn",
+   "vendor": "Siemens",
+   "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
+   "kind": "drive",
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
   },
   {
    "folder": "devices/smc/ex260-sen1",

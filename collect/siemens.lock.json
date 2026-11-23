@@ -1,0 +1,65 @@
+{
+ "docs": {
+  "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf",
+   "folders": [
+    "devices/siemens/im-155-6-mf-hf"
+   ],
+   "kind": "datasheet",
+   "name": "siemens-mulitfieldbus-devices-webinar-20aug2020.pdf",
+   "retrieved": "2026-11-23T03:41:39Z",
+   "sha256": "540308b5464732946dc5cd56af939da0dd2e60d58bce10e6129aee26835bc57d",
+   "size": 3046022,
+   "terms": "none stated",
+   "title": "Siemens MultiFieldbus devices webinar (20 Aug 2020)",
+   "type": "pdf"
+  },
+  "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf",
+   "folders": [
+    "devices/siemens/sentron-pac3200"
+   ],
+   "kind": "manual",
+   "name": "A5E01168664B-04_EN-US_122016_201612221316360495.pdf",
+   "retrieved": "2026-11-23T03:40:24Z",
+   "sha256": "b9efef1f28f8588d3f9b9ba04754e4914850fb0ec74373955d199d8f6b3de187",
+   "size": 7155099,
+   "terms": "none stated",
+   "title": "SENTRON PAC3200 Manual A5E01168664B-04 (12/2016)",
+   "type": "pdf"
+  },
+  "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf",
+   "folders": [
+    "devices/siemens/sinamics-g120-cu240e-2-pn"
+   ],
+   "kind": "manual",
+   "name": "A6V10556730.pdf",
+   "retrieved": "2026-11-23T03:40:24Z",
+   "sha256": "ef6ef688e9834c018df1a60c411ab72b2bfcbb36b4690ad0ac4575c308c99cc2",
+   "size": 5779085,
+   "terms": "none stated",
+   "title": "SINAMICS G120 Fieldbus Function Manual (EtherNet/IP chapter), A6V10556730",
+   "type": "pdf"
+  },
+  "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf",
+   "folders": [
+    "devices/siemens/sentron-pac4200"
+   ],
+   "kind": "manual",
+   "name": "manual_pac4200_en-US_en-US.pdf",
+   "retrieved": "2026-11-23T03:40:24Z",
+   "sha256": "fafd49af4745c2fc24d78b0a9a7d09a1a3746f7d9d7ade94baee1d5a9a247276",
+   "size": 4837783,
+   "terms": "none stated",
+   "title": "SENTRON PAC4200 System Manual (en-US)",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
