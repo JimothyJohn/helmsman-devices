@@ -6,6 +6,7 @@ vendor = "Pepperl+Fuchs"
 model = "ICE1-8DI8DO-G60L-V1D"
 kind = "remote-io"
 category = "io-block"
+channels = "8 DI, 8 DO (2 A per channel)"   # from: pepperl-fuchs.com/en/products-gp25581/81848 opened 2026-11-22: '8 digital inputs (X1-X4), 8 digital outputs (X5-X8)'; 2 A per channel
 article = "295312"
 
 [identity.enip]

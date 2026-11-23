@@ -6,6 +6,7 @@ vendor = "Yaskawa"
 model = "Yaskawa GA501"
 kind = "drive"
 category = "drive"
+channels = "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections"   # from: EDS GA501_v1.005.eds: Connection1-14 names and sizes (no assembly member names)
 article = "GA501"
 
 [identity.enip]

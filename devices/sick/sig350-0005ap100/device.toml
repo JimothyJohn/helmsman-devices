@@ -6,6 +6,7 @@ vendor = "SICK"
 model = "SIG350"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports, each configurable as IO-Link, DI or DO"   # from: EDS Params 'IO-Link Port S1..S8 - Port Mode' (IOL Manual, IOL Autostart, Digital Input, Digital Output)
 article = "SIG350-0005AP100"
 
 [identity.enip]

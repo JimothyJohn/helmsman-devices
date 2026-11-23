@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "CMMT-AS-EP"
 kind = "drive"
 category = "drive"
+channels = "drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way"   # from: EDS CMMT-AS-EP.eds assemblies 5/6 DriveProfile O->T/T->O (12 x 16-bit members) and 7/8 Extended Process Data (16 x 16-bit, 32 bytes)
 article = "CMMT-AS"
 
 [identity.enip]

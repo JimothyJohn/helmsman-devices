@@ -6,6 +6,7 @@ vendor = "Banner"
 model = "DXMR90-4K"
 kind = "remote-io"
 category = "iolink-master"
+channels = "4 IO-Link ports (class A), up to 8 discrete signals on pins 2 and 4"   # from: DXMR90-4K IO-Link Master Product Manual (26 Jan 2026), Product Overview: 'four IO-Link ports', 'up to eight discrete signals using pin 2 or pin 4', 'four Class A ports'
 
 [identity.enip]
 vendor_id = 12

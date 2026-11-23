@@ -5,6 +5,7 @@ vendor = "Siemens"
 model = "SENTRON PAC3200"
 kind = "other"
 category = "power-meter"
+channels = "1 DI, 1 DO; voltage, current, power, energy, frequency, power factor, THD; 2-, 3- and 4-wire systems"   # from: SENTRON PAC3200 Manual A5E01168664B-04 (02/2008) p.19-20 (digital input and output, wiring), Table 3-3 p.24; opened 2026-11-23
 article = "7KM3200"
 
 [protocols.modbus]

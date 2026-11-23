@@ -6,6 +6,7 @@ vendor = "SMC"
 model = "EX260-SEN1"
 kind = "other"
 category = "valve-terminal"
+channels = "32 solenoid outputs"   # from: SMC manual No.EX*-OMP0013-E 'SI unit for EtherNet/IP' (smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf), specifications table, PDF p.37, opened 2026-11-22: SEN1/SEN2 32 outputs, M12 connector, PNP
 article = "EX260-SEN1"
 
 [identity.enip]

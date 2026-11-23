@@ -6,6 +6,7 @@ vendor = "Omron"
 model = "ERT1-WD16CH-1"
 kind = "remote-io"
 category = "panel-io"
+channels = "16 DO"   # from: ERT1-WD16CH-1.eds [Capacity] InputCount = 0, OutputCount = 16
 
 [identity.enip]
 vendor_id = 47

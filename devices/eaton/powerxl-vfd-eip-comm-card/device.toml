@@ -6,6 +6,7 @@ vendor = "Eaton"
 model = "PowerXL VFD EIP Comm. Card"
 kind = "drive"
 category = "drive"
+channels = "1 drive: motor control word, speed ref, process data, position control out; status word, speed, torque, process data in"   # from: EDS PowerXL_VFD_EIP_Comm_Card_v1.9.eds: assemblies 20/70, 121-124, 129-132
 article = "DXX-NET-EIP"
 
 [identity.enip]

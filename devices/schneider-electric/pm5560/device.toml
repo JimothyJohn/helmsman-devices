@@ -5,6 +5,7 @@ vendor = "Schneider Electric"
 model = "PowerLogic PM5560"
 kind = "other"
 category = "power-meter"
+channels = "4 DI, 2 DO; voltage, current, power, energy, frequency, power factor, THD, demand; 3-phase"   # from: PM5500/PM5600/PM5700 User Manual HRB1684301-18 (12/2025): feature matrix p.20, contents pp.189-203, display of frequency; opened 2026-11-23
 article = "METSEPM5560"
 
 [protocols.modbus]

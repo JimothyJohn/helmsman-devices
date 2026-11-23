@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1719-AENTR"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the 1719 Ex I/O modules behind it set the I/O"   # from: EDS ProdName '1719-AENTR Ex I/O EtherNet/IP Adapter'; [Modular] Rack entries '1719-A8 Chassis' etc.
 article = "1719-AENTR"
 
 [identity.enip]

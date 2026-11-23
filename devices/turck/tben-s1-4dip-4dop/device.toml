@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S1-4DIP-4DOP"
 kind = "remote-io"
 category = "io-block"
+channels = "4 DI, 4 DO (PNP, 2 A per output)"   # from: TBEN-S Analog and Digital I/O Instructions for Use V06.00, sec. 14.6
 article = "6814021"
 
 [device.photo]

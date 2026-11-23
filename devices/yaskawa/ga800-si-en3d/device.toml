@@ -6,6 +6,7 @@ vendor = "Yaskawa"
 model = "Yaskawa SI-EN3D for CIPR-GA80U2004"
 kind = "drive"
 category = "drive"
+channels = "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections"   # from: EDS CIPR-GA80U2004_SI-EN3D_v2.8.eds: connection names and sizes (no assembly member names)
 article = "CIPR-GA80U2004"
 
 [identity.enip]

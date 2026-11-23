@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-4IOL"
 kind = "remote-io"
 category = "iolink-master"
+channels = "4 IO-Link ports (class A), 4 DIO (PNP, 0.5 A)"   # from: TBEN-S2-4IOL data sheet 6814024, https://www.turck.us/datasheet/_us/edb_6814024_eng_us.pdf, p. 1-3, 2026-11-22
 article = "6814024"
 
 [identity.enip]

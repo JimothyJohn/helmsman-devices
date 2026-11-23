@@ -6,6 +6,7 @@ vendor = "Delta Electronics"
 model = "CMM-EIP01"
 kind = "drive"
 category = "drive"
+channels = "1 drive: control, frequency control out; error code, frequency, output current, DC bus and output voltage, speed in"   # from: EDS 031F000C010400010001.eds: Assem1/2/4/5 member names
 article = "CMM-EIP01"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-2RFID-4DXP"
 kind = "remote-io"
 category = "io-block"
+channels = "2 RFID ports (HF/UHF read/write heads, M12), 4 DIO (PNP, 0.5 A)"   # from: TBEN-S2-2RFID-4DXP data sheet 6814029, https://www.turck.us/datasheet/_us/edb_6814029_eng_us.pdf, p. 1-2, 2026-11-22
 article = "6814029"
 
 [identity.enip]

@@ -5,6 +5,7 @@
    "folder": "devices/abb/feip-21",
    "vendor": "ABB",
    "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "channels": "1 drive: control word, speed ref (torque ref) out, status word, actual speed (torque) in, drive parameter data",
    "enip": {
     "map": false,
     "identity": {
@@ -974,6 +975,7 @@
    "folder": "devices/balluff/bni-eip-508-105-z015",
    "vendor": "Balluff",
    "model": "BNI EIP-508-105-Z015",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -1012,6 +1014,7 @@
    "folder": "devices/banner/dxmr90-4k",
    "vendor": "Banner",
    "model": "DXMR90-4K",
+   "channels": "4 IO-Link ports (class A), up to 8 discrete signals on pins 2 and 4",
    "enip": {
     "map": false,
     "identity": {
@@ -1326,6 +1329,7 @@
    "folder": "devices/cognex/dataman-dm36x",
    "vendor": "Cognex",
    "model": "DataMan 300 Series Reader",
+   "channels": "1 reader: trigger and control out, read result and status in",
    "enip": {
     "map": false,
     "identity": {
@@ -1372,6 +1376,7 @@
    "folder": "devices/cognex/in-sight-2800",
    "vendor": "Cognex",
    "model": "In-Sight 2800 Series",
+   "channels": "1 vision sensor: trigger and commands out, inspection results and status in",
    "enip": {
     "map": false,
     "identity": {
@@ -1412,6 +1417,7 @@
    "folder": "devices/cognex/in-sight-7000",
    "vendor": "Cognex",
    "model": "In-Sight 7000 Series",
+   "channels": "1 vision sensor: trigger and job load out, inspection results and status in",
    "enip": {
     "map": false,
     "identity": {
@@ -1453,6 +1459,7 @@
    "folder": "devices/cognex/in-sight-7800",
    "vendor": "Cognex",
    "model": "In-Sight 7900-7500 Series",
+   "channels": "1 vision sensor: trigger and commands out, inspection results and status in",
    "enip": {
     "map": false,
     "identity": {
@@ -1493,6 +1500,7 @@
    "folder": "devices/datalogic/matrix-n",
    "vendor": "Datalogic",
    "model": "Matrix N Series",
+   "channels": "1 reader: item and presence bits out, item status and data fragments in",
    "enip": {
     "map": false,
     "identity": {
@@ -1539,6 +1547,7 @@
    "folder": "devices/delta-electronics/cmm-eip01",
    "vendor": "Delta Electronics",
    "model": "CMM-EIP01",
+   "channels": "1 drive: control, frequency control out; error code, frequency, output current, DC bus and output voltage, speed in",
    "enip": {
     "map": false,
     "identity": {
@@ -1579,6 +1588,7 @@
    "folder": "devices/eaton/powerxl-dg1",
    "vendor": "Eaton",
    "model": "PowerXL DG1",
+   "channels": "1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in",
    "enip": {
     "map": false,
     "identity": {
@@ -1621,6 +1631,7 @@
    "folder": "devices/eaton/powerxl-dm1-pro",
    "vendor": "Eaton",
    "model": "PowerXL DM1 PRO",
+   "channels": "1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in",
    "enip": {
     "map": false,
     "identity": {
@@ -1663,6 +1674,7 @@
    "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
    "vendor": "Eaton",
    "model": "PowerXL VFD EIP Comm. Card",
+   "channels": "1 drive: motor control word, speed ref, process data, position control out; status word, speed, torque, process data in",
    "enip": {
     "map": false,
     "identity": {
@@ -1705,6 +1717,7 @@
    "folder": "devices/emerson/numatics-580-ethernet-ip",
    "vendor": "Emerson",
    "model": "Numatics 580 Ethernet/IP",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
    "enip": {
     "map": false,
     "identity": {
@@ -1740,6 +1753,7 @@
    "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
    "vendor": "Emerson",
    "model": "Numatics 580 Ethernet/IP DLR+QC",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
    "enip": {
     "map": false,
     "identity": {
@@ -1775,6 +1789,7 @@
    "folder": "devices/emerson/numatics-g3-ethernet-ip",
    "vendor": "Emerson",
    "model": "Numatics G3 EtherNet/IP",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
    "enip": {
     "map": false,
     "identity": {
@@ -1810,6 +1825,7 @@
    "folder": "devices/festo/cmmt-as",
    "vendor": "Festo",
    "model": "CMMT-AS-EP",
+   "channels": "drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way",
    "enip": {
     "map": false,
     "identity": {
@@ -1845,6 +1861,7 @@
    "folder": "devices/festo/cpx-ap-a-ep",
    "vendor": "Festo",
    "model": "CPX-AP-A-EP",
+   "channels": "none of its own: the CPX-AP modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -1885,6 +1902,7 @@
    "folder": "devices/festo/cpx-ap-i-ep-m12",
    "vendor": "Festo",
    "model": "CPX-AP-I-EP-M12",
+   "channels": "none of its own: the CPX-AP modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -1925,6 +1943,7 @@
    "folder": "devices/festo/cpx-e-ep",
    "vendor": "Festo",
    "model": "CPX-E-EP",
+   "channels": "none of its own: the CPX-E modules behind it set the I/O (Input/Output Size 0-64, default 4)",
    "enip": {
     "map": false,
     "identity": {
@@ -1960,6 +1979,7 @@
    "folder": "devices/festo/cpx-fb32",
    "vendor": "Festo",
    "model": "CPX-FB32",
+   "channels": "none of its own: the CPX modules behind it set the I/O (11 bytes of outputs, 13 bytes of inputs)",
    "enip": {
     "map": false,
     "identity": {
@@ -1997,6 +2017,7 @@
    "folder": "devices/festo/cpx-fb36",
    "vendor": "Festo",
    "model": "CPX-FB36",
+   "channels": "none of its own: the CPX modules behind it set the I/O (Input/Output Size 0-64, default 4)",
    "enip": {
     "map": false,
     "identity": {
@@ -2032,6 +2053,7 @@
    "folder": "devices/festo/cteu-ep",
    "vendor": "Festo",
    "model": "CTEU-EP",
+   "channels": "I-Port bus node: 8, 16, 32 or 64 bytes of outputs and inputs (single or dual port assemblies)",
    "enip": {
     "map": false,
     "identity": {
@@ -2068,6 +2090,7 @@
    "folder": "devices/festo/vabx-a-cted-ep",
    "vendor": "Festo",
    "model": "VABX-A-S-EL-E12-CTED-EP",
+   "channels": "process data only: up to 488 bytes in, 496 bytes out, no channel names in the EDS",
    "enip": {
     "map": false,
     "identity": {
@@ -2103,6 +2126,7 @@
    "folder": "devices/ifm/al1122",
    "vendor": "ifm",
    "model": "AL1122",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -2144,6 +2168,7 @@
    "folder": "devices/ifm/al1222",
    "vendor": "ifm",
    "model": "AL1222",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -2185,6 +2210,7 @@
    "folder": "devices/ifm/al1322",
    "vendor": "ifm",
    "model": "AL1322",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -2226,6 +2252,7 @@
    "folder": "devices/ifm/al1326",
    "vendor": "ifm",
    "model": "AL1326",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -2267,6 +2294,7 @@
    "folder": "devices/ifm/al1590",
    "vendor": "ifm",
    "model": "AL1590",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -2308,6 +2336,7 @@
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
+   "channels": "2 switching signals (SSC1, SSC2), 1 process value (PDV1)",
    "points": [],
    "sources": [
     {
@@ -2321,6 +2350,7 @@
    "folder": "devices/ifm/kq6005",
    "vendor": "ifm",
    "model": "KQxxxx",
+   "channels": "1 switch state (OUT1), 1 process value",
    "points": [],
    "sources": [
     {
@@ -2334,6 +2364,7 @@
    "folder": "devices/ifm/o5d100",
    "vendor": "ifm",
    "model": "O5D100/O5D102/O5D150/O5D152/O5D159",
+   "channels": "1 switch state (OUT1), distance value",
    "points": [],
    "sources": [
     {
@@ -2347,6 +2378,7 @@
    "folder": "devices/ifm/pn7092",
    "vendor": "ifm",
    "model": "(PN7072, PN7092, PN7572, PN7592) Status B",
+   "channels": "2 switching outputs (OUT1, OUT2), pressure value, device status",
    "points": [],
    "sources": [
     {
@@ -2360,6 +2392,7 @@
    "folder": "devices/imi-norgren/vr1x-ep",
    "vendor": "IMI Norgren",
    "model": "VR1X-EP",
+   "channels": "24 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -2395,35 +2428,10 @@
    ]
   },
   {
-   "folder": "devices/imi-norgren/vs18-vs26",
-   "vendor": "IMI Norgren",
-   "model": "VS18/VS26",
-   "enip": {
-    "map": false,
-    "identity": {
-     "vendor_id": 42,
-     "product_code": 332,
-     "device_type": 27,
-     "revisions": [
-      "2.8"
-     ],
-     "product_name": "NORGREN VSxx 32"
-    },
-    "eds": "VS_32.eds"
-   },
-   "points": [],
-   "sources": [
-    {
-     "title": "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)",
-     "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca",
-     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds; retrieved 2026-11-23; not redistributed here"
-    }
-   ]
-  },
-  {
    "folder": "devices/keyence/iv3",
    "vendor": "Keyence",
    "model": "IV3 Series",
+   "channels": "1 vision sensor: external input out, monitor data in",
    "enip": {
     "map": false,
     "identity": {
@@ -2464,6 +2472,7 @@
    "folder": "devices/keyence/iv4",
    "vendor": "Keyence",
    "model": "IV4 Series",
+   "channels": "1 vision sensor: external input out, monitor data in",
    "enip": {
     "map": false,
     "identity": {
@@ -2504,6 +2513,7 @@
    "folder": "devices/keyence/sr-1000",
    "vendor": "Keyence",
    "model": "SR-1000 Series",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
    "enip": {
     "map": false,
     "identity": {
@@ -2544,6 +2554,7 @@
    "folder": "devices/keyence/sr-2000",
    "vendor": "Keyence",
    "model": "SR-2000 Series",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
    "enip": {
     "map": false,
     "identity": {
@@ -2584,6 +2595,7 @@
    "folder": "devices/keyence/sr-5000",
    "vendor": "Keyence",
    "model": "SR-5000 Series",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
    "enip": {
     "map": false,
     "identity": {
@@ -2624,6 +2636,7 @@
    "folder": "devices/keyence/sr-x1h3h",
    "vendor": "Keyence",
    "model": "SR-X1H3H Series",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
    "enip": {
     "map": false,
     "identity": {
@@ -2664,6 +2677,7 @@
    "folder": "devices/lenze/i550",
    "vendor": "Lenze",
    "model": "i550 cabinet",
+   "channels": "1 drive: drive control word, speed (and torque) setpoint out; drive status word, actual speed (and torque) in",
    "enip": {
     "map": false,
     "identity": {
@@ -2707,6 +2721,7 @@
    "folder": "devices/mitsubishi-electric/fr-d800-e",
    "vendor": "Mitsubishi Electric",
    "model": "FR-D800-E",
+   "channels": "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in",
    "enip": {
     "map": false,
     "identity": {
@@ -2746,6 +2761,7 @@
    "folder": "devices/mitsubishi-electric/fr-e800-e",
    "vendor": "Mitsubishi Electric",
    "model": "FR-E800-E",
+   "channels": "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in",
    "enip": {
     "map": false,
     "identity": {
@@ -2785,6 +2801,7 @@
    "folder": "devices/mitsubishi-electric/fr-e800-sce",
    "vendor": "Mitsubishi Electric",
    "model": "FR-E800-SCE",
+   "channels": "1 drive: run fwd/rev, fault reset, speed ref out; faulted, running, state in; safety STO, SS1, SSM, SLS1-4 bits",
    "enip": {
     "map": false,
     "identity": {
@@ -3596,6 +3613,7 @@
    "folder": "devices/novanta/lexium-mdrive-ethernet",
    "vendor": "Novanta IMS",
    "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
+   "channels": "1 drive: moves, accel, currents out; flags, inputs, position in; 4 DI, 2 DO, 1 AI, 1 high-speed out",
    "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
    "checked_on": "2026-11-16",
    "enip": {
@@ -3739,6 +3757,7 @@
    "folder": "devices/omron/ert1-hd16ch-1",
    "vendor": "Omron",
    "model": "ERT1-HD16CH-1",
+   "channels": "16 DI",
    "enip": {
     "map": false,
     "identity": {
@@ -3776,6 +3795,7 @@
    "folder": "devices/omron/ert1-id32slh-1",
    "vendor": "Omron",
    "model": "ERT1-ID32SLH-1",
+   "channels": "32 DI (PNP)",
    "enip": {
     "map": false,
     "identity": {
@@ -3818,6 +3838,7 @@
    "folder": "devices/omron/ert1-md32slh-1",
    "vendor": "Omron",
    "model": "ERT1-MD32SLH-1",
+   "channels": "16 DI, 16 DO (PNP, 0.5 A per output)",
    "enip": {
     "map": false,
     "identity": {
@@ -3860,6 +3881,7 @@
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
+   "channels": "32 DO (PNP, 0.5 A per point)",
    "enip": {
     "map": false,
     "identity": {
@@ -3902,6 +3924,7 @@
    "folder": "devices/omron/ert1-wd16ch-1",
    "vendor": "Omron",
    "model": "ERT1-WD16CH-1",
+   "channels": "16 DO",
    "enip": {
     "map": false,
     "identity": {
@@ -3939,6 +3962,7 @@
    "folder": "devices/omron/nx-eic202",
    "vendor": "Omron",
    "model": "NX-EIC202",
+   "channels": "none of its own: the NX Units behind it (up to 63) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -3985,6 +4009,7 @@
    "folder": "devices/parker/p2h-node-ethernet-ip",
    "vendor": "Parker",
    "model": "P2H Node 32DO EtherNet/IP",
+   "channels": "32 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -4022,6 +4047,7 @@
    "folder": "devices/parker/p2m-lite-node-ethernet-ip",
    "vendor": "Parker",
    "model": "P2M Lite Node 24DO ETHERNET/IP",
+   "channels": "24 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -4059,6 +4085,7 @@
    "folder": "devices/parker/p2m-node-ethernet-ip",
    "vendor": "Parker",
    "model": "P2M Node 24DO ETHERNET/IP",
+   "channels": "24 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -4096,6 +4123,7 @@
    "folder": "devices/pepperl-fuchs/ice1-8di8do-g60l-v1d",
    "vendor": "Pepperl+Fuchs",
    "model": "ICE1-8DI8DO-G60L-V1D",
+   "channels": "8 DI, 8 DO (2 A per channel)",
    "enip": {
     "map": false,
     "identity": {
@@ -4137,6 +4165,7 @@
    "folder": "devices/pepperl-fuchs/ice2-8iol-g65l-v1d",
    "vendor": "Pepperl+Fuchs",
    "model": "ICE2-8IOL-G65L-V1D",
+   "channels": "8 IO-Link ports (class A), each also DI; up to 8 DO",
    "enip": {
     "map": false,
     "identity": {
@@ -4177,6 +4206,7 @@
    "folder": "devices/pepperl-fuchs/ice2-8iol-k45s-rj45",
    "vendor": "Pepperl+Fuchs",
    "model": "ICE2-8IOL-K45S-RJ45",
+   "channels": "8 IO-Link ports (class A), each also DI; up to 8 DO",
    "enip": {
     "map": false,
     "identity": {
@@ -4321,6 +4351,7 @@
    "folder": "devices/rockwell-automation/1719-aentr",
    "vendor": "Rockwell Automation",
    "model": "1719-AENTR",
+   "channels": "none of its own: the 1719 Ex I/O modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4358,6 +4389,7 @@
    "folder": "devices/rockwell-automation/1732e-16cfgm12r",
    "vendor": "Rockwell Automation",
    "model": "1732E-16CFGM12R",
+   "channels": "16 DC in/out points (16 input bits, 16 output bits, M12)",
    "enip": {
     "map": false,
     "identity": {
@@ -4396,6 +4428,7 @@
    "folder": "devices/rockwell-automation/1732e-8x8m12dr",
    "vendor": "Rockwell Automation",
    "model": "1732E-8X8M12DR",
+   "channels": "8 DC in/out points (8 input bits, 8 output bits, M12)",
    "enip": {
     "map": false,
     "identity": {
@@ -4434,6 +4467,7 @@
    "folder": "devices/rockwell-automation/1732e-ib16m12r",
    "vendor": "Rockwell Automation",
    "model": "1732E-IB16M12R",
+   "channels": "16 DI (M12)",
    "enip": {
     "map": false,
     "identity": {
@@ -4472,6 +4506,7 @@
    "folder": "devices/rockwell-automation/1732e-ob16m12r",
    "vendor": "Rockwell Automation",
    "model": "1732E-OB16M12R",
+   "channels": "16 DO (M12)",
    "enip": {
     "map": false,
     "identity": {
@@ -4510,6 +4545,7 @@
    "folder": "devices/rockwell-automation/1734-aent",
    "vendor": "Rockwell Automation",
    "model": "1734-AENT",
+   "channels": "none of its own: the POINT I/O modules behind it (up to 63) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4545,6 +4581,7 @@
    "folder": "devices/rockwell-automation/1734-aentr",
    "vendor": "Rockwell Automation",
    "model": "1734-AENTR",
+   "channels": "none of its own: the POINT I/O modules behind it (up to 63) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4580,6 +4617,7 @@
    "folder": "devices/rockwell-automation/1738-aent",
    "vendor": "Rockwell Automation",
    "model": "1738-AENT",
+   "channels": "none of its own: the ArmorPOINT modules behind it (up to 63) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4615,6 +4653,7 @@
    "folder": "devices/rockwell-automation/1769-aentr",
    "vendor": "Rockwell Automation",
    "model": "1769-AENTR",
+   "channels": "none of its own: the 1769 modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4641,6 +4680,7 @@
    "folder": "devices/rockwell-automation/1794-aent",
    "vendor": "Rockwell Automation",
    "model": "1794-AENT",
+   "channels": "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)",
    "enip": {
     "map": false,
     "identity": {
@@ -4667,6 +4707,7 @@
    "folder": "devices/rockwell-automation/1794-aentr",
    "vendor": "Rockwell Automation",
    "model": "1794-AENTR",
+   "channels": "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)",
    "enip": {
     "map": false,
     "identity": {
@@ -4693,6 +4734,7 @@
    "folder": "devices/rockwell-automation/5069-aen2tr",
    "vendor": "Rockwell Automation",
    "model": "5069-AEN2TR",
+   "channels": "none of its own: the Compact 5000 (5069) modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4719,6 +4761,7 @@
    "folder": "devices/rockwell-automation/5094-aen2tr",
    "vendor": "Rockwell Automation",
    "model": "5094-AEN2TR",
+   "channels": "none of its own: the FLEX 5000 modules behind it (up to 16) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4745,6 +4788,7 @@
    "folder": "devices/rockwell-automation/5094-aentr",
    "vendor": "Rockwell Automation",
    "model": "5094-AENTR",
+   "channels": "none of its own: the FLEX 5000 modules behind it (up to 8) set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -4771,6 +4815,7 @@
    "folder": "devices/rockwell-automation/armor-powerflex-35e",
    "vendor": "Rockwell Automation",
    "model": "Armor PowerFlex 35E",
+   "channels": "1 drive: logic command and command velocity out, logic status, output frequency, voltage and current in",
    "enip": {
     "map": false,
     "identity": {
@@ -4813,6 +4858,7 @@
    "folder": "devices/rockwell-automation/armorstart-280e-281e",
    "vendor": "Rockwell Automation",
    "model": "ArmorStart 280E/281E (EtherNet/IP)",
+   "channels": "1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in",
    "enip": {
     "map": false,
     "identity": {
@@ -4855,6 +4901,7 @@
    "folder": "devices/rockwell-automation/armorstart-lt",
    "vendor": "Rockwell Automation",
    "model": "ArmorStart LT 290E/291E/294E (EtherNet/IP)",
+   "channels": "1 starter: run forward, reset fault, Out0-Out5 out; status and points Pt00-Pt05 in",
    "enip": {
     "map": false,
     "identity": {
@@ -4898,6 +4945,7 @@
    "folder": "devices/rockwell-automation/powerflex-523-25-comm-e2p",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 523 with 25-COMM-E2P",
+   "channels": "1 adapter, 5 drive slots (0-4): logic command and reference out, logic status and feedback in, each",
    "enip": {
     "map": false,
     "identity": {
@@ -4944,6 +4992,7 @@
    "folder": "devices/rockwell-automation/powerflex-525",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 525 (embedded EtherNet/IP)",
+   "channels": "1 drive: logic command, reference, 4 datalinks out; logic status, feedback, 4 datalinks in",
    "enip": {
     "map": false,
     "identity": {
@@ -4984,6 +5033,7 @@
    "folder": "devices/rockwell-automation/powerflex-527",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)",
+   "channels": "1 CIP Motion safety drive: 500 bytes each way, no members named in the EDS",
    "enip": {
     "map": false,
     "identity": {
@@ -5029,6 +5079,7 @@
    "folder": "devices/rockwell-automation/powerflex-6000t",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 6000T",
+   "channels": "1 drive: logic command, reference, 16 datalinks out; logic status, feedback, 16 datalinks in",
    "enip": {
     "map": false,
     "identity": {
@@ -5069,6 +5120,7 @@
    "folder": "devices/rockwell-automation/powerflex-70",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 70 (EtherNet/IP adapter)",
+   "channels": "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)",
    "enip": {
     "map": false,
     "identity": {
@@ -5115,6 +5167,7 @@
    "folder": "devices/rockwell-automation/powerflex-70ec",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 70EC",
+   "channels": "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)",
    "enip": {
     "map": false,
     "identity": {
@@ -5152,59 +5205,10 @@
    ]
   },
   {
-   "folder": "devices/rockwell-automation/powerflex-753",
-   "vendor": "Rockwell Automation",
-   "model": "PowerFlex 753 with 20-750-ENETR",
-   "enip": {
-    "map": false,
-    "identity": {
-     "vendor_id": 1,
-     "product_code": 1168,
-     "device_type": 140,
-     "revisions": [
-      "1.1"
-     ],
-     "product_name": "PowerFlex 753"
-    },
-    "input": {
-     "instance": 1
-    },
-    "output": {
-     "instance": 2
-    },
-    "config": {
-     "instance": 6
-    },
-    "eds": "0001008C04900100.eds"
-   },
-   "points": [],
-   "sources": [
-    {
-     "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): ODVA Declaration of Conformity",
-     "sha256": "b5307d5e9b42975144a965767a67c1a1e1bbc0575d91ba7276fdbefad026bffc",
-     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf; retrieved 2026-11-23; not redistributed here"
-    },
-    {
-     "title": "PowerFlex 753 and 755 family (ODVA listing 854): ODVA Declaration of Conformity",
-     "sha256": "98c533cad64c898058e2d4a10cfd50bc6d29fa7d1d81771eabc86596604bdc4c",
-     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf; retrieved 2026-11-23; not redistributed here"
-    },
-    {
-     "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): EDS (ODVA marketplace)",
-     "sha256": "fe78ee688ac471b6f4da955407e9528e5a5a99ef3435e55bf163d0b96dc52042",
-     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip; retrieved 2026-11-23; not redistributed here"
-    },
-    {
-     "title": "PowerFlex 753 and 755 family (ODVA listing 854): EDS (ODVA marketplace)",
-     "sha256": "1aeef508465e71acd6ddbf23a65837224d4d1ec31ad44ed9f7e160ba26a25300",
-     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip; retrieved 2026-11-23; not redistributed here"
-    }
-   ]
-  },
-  {
    "folder": "devices/rockwell-automation/powerflex-753ts",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 753TS",
+   "channels": "1 drive: logic command, reference, 16 datalinks out; logic status, feedback, 16 datalinks in",
    "enip": {
     "map": false,
     "identity": {
@@ -5245,6 +5249,7 @@
    "folder": "devices/rockwell-automation/powerflex-755",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 755 (embedded EtherNet/IP)",
+   "channels": "1 drive: I/O connection of 8-72 bytes out and 12-76 bytes in (EDS gives sizes, no members)",
    "enip": {
     "map": false,
     "identity": {
@@ -5285,6 +5290,7 @@
    "folder": "devices/rockwell-automation/powerflex-755ts",
    "vendor": "Rockwell Automation",
    "model": "PowerFlex 755TS",
+   "channels": "1 CIP Motion safety drive: 500 bytes each way, no members named in the EDS",
    "enip": {
     "map": false,
     "identity": {
@@ -5324,6 +5330,7 @@
    "folder": "devices/schneider-electric/atv320-vw3a3616",
    "vendor": "Schneider Electric",
    "model": "Altivar Machine ATV320 with VW3A3616",
+   "channels": "1 drive: CIP basic/extended speed control, or CiA402 native profile, 6 words each way mapped by comm scanner",
    "enip": {
     "map": false,
     "identity": {
@@ -5366,6 +5373,7 @@
    "folder": "devices/schneider-electric/atv340",
    "vendor": "Schneider Electric",
    "model": "Altivar Machine ATV340 (embedded Ethernet)",
+   "channels": "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101",
    "enip": {
     "map": false,
     "identity": {
@@ -5408,6 +5416,7 @@
    "folder": "devices/schneider-electric/atv630",
    "vendor": "Schneider Electric",
    "model": "Altivar Process ATV630 / ATV930 (embedded Ethernet)",
+   "channels": "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101/106/107",
    "enip": {
     "map": false,
     "identity": {
@@ -5450,6 +5459,7 @@
    "folder": "devices/schneider-electric/lexium-32m-vw3a3616",
    "vendor": "Schneider Electric",
    "model": "Lexium 32M with VW3A3616",
+   "channels": "1 drive: control word, 2 mode references, ramps, 3 mapped params out; status words, position, speed, current in",
    "enip": {
     "map": false,
     "identity": {
@@ -5492,6 +5502,7 @@
    "folder": "devices/schneider-electric/ltmr-e-ethernet",
    "vendor": "Schneider Electric",
    "model": "TeSys T LTMR E (Ethernet)",
+   "channels": "1 motor starter: run fwd/rev and trip reset out; running, ready, alarm, tripped and monitoring registers in",
    "enip": {
     "map": false,
     "identity": {
@@ -5534,6 +5545,7 @@
    "folder": "devices/schneider-electric/pm5560",
    "vendor": "Schneider Electric",
    "model": "PowerLogic PM5560",
+   "channels": "4 DI, 2 DO; voltage, current, power, energy, frequency, power factor, THD, demand; 3-phase",
    "modbus": {
     "map": false,
     "port": 502
@@ -5551,6 +5563,7 @@
    "folder": "devices/schneider-electric/stb-nip2311",
    "vendor": "Schneider Electric",
    "model": "Modicon STB NIP2311",
+   "channels": "none of its own: the Advantys STB I/O modules behind it (up to 32) set the I/O",
    "modbus": {
     "map": false,
     "port": 502
@@ -5581,6 +5594,7 @@
    "folder": "devices/schneider-electric/tm3bceip",
    "vendor": "Schneider Electric",
    "model": "Modicon TM3 bus coupler TM3BCEIP",
+   "channels": "none of its own: the TM3 and TM2 expansion modules behind it set the I/O",
    "modbus": {
     "map": false
    },
@@ -5597,6 +5611,7 @@
    "folder": "devices/schneider-electric/tprbceip",
    "vendor": "Schneider Electric",
    "model": "TeSys island bus coupler TPRBCEIP",
+   "channels": "none of its own: the TeSys island starters and I/O modules behind it (up to 20) set the I/O",
    "modbus": {
     "map": false
    },
@@ -5613,6 +5628,7 @@
    "folder": "devices/sick/iolg2ei",
    "vendor": "SICK",
    "model": "IOLG2EI-03208R01",
+   "channels": "8 IO-Link ports",
    "enip": {
     "map": false,
     "identity": {
@@ -5656,6 +5672,7 @@
    "folder": "devices/sick/sig300",
    "vendor": "SICK",
    "model": "SIG300",
+   "channels": "8 IO-Link ports, each configurable as IO-Link, DI or DO",
    "enip": {
     "map": false,
     "identity": {
@@ -5696,6 +5713,7 @@
    "folder": "devices/sick/sig350-0005ap100",
    "vendor": "SICK",
    "model": "SIG350",
+   "channels": "8 IO-Link ports, each configurable as IO-Link, DI or DO",
    "enip": {
     "map": false,
     "identity": {
@@ -5737,6 +5755,7 @@
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
+   "channels": "2 switching signals (QL1, QL2), receive level",
    "points": [],
    "sources": [
     {
@@ -5750,6 +5769,7 @@
    "folder": "devices/siemens/im-155-6-mf-hf",
    "vendor": "Siemens",
    "model": "SIMATIC ET 200SP IM 155-6 MF HF",
+   "channels": "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)",
    "points": [],
    "sources": [],
    "questions": [
@@ -5763,6 +5783,7 @@
    "folder": "devices/siemens/sentron-pac3200",
    "vendor": "Siemens",
    "model": "SENTRON PAC3200",
+   "channels": "1 DI, 1 DO; voltage, current, power, energy, frequency, power factor, THD; 2-, 3- and 4-wire systems",
    "modbus": {
     "map": false,
     "port": 502
@@ -5805,6 +5826,7 @@
    "folder": "devices/siemens/sentron-pac4200",
    "vendor": "Siemens",
    "model": "SENTRON PAC4200",
+   "channels": "2 DI, 2 DO (plug-in up to 8 DI, 4 DO); voltage, current, power, energy, frequency, power factor, THD",
    "modbus": {
     "map": false,
     "port": 502
@@ -5847,6 +5869,7 @@
    "folder": "devices/siemens/sinamics-g120-cu240e-2-pn",
    "vendor": "Siemens",
    "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
+   "channels": "1 drive: run fwd, fault reset, speed ref out; faulted, running, actual speed in; 6 DI, 3 DO, 2 AI, 2 AO",
    "enip": {
     "map": false,
     "input": {
@@ -5884,6 +5907,7 @@
    "folder": "devices/smc/ex260-sen1",
    "vendor": "SMC",
    "model": "EX260-SEN1",
+   "channels": "32 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -5922,6 +5946,7 @@
    "folder": "devices/smc/ex260-sen2",
    "vendor": "SMC",
    "model": "EX260-SEN2",
+   "channels": "32 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -5960,6 +5985,7 @@
    "folder": "devices/smc/ex260-sen3",
    "vendor": "SMC",
    "model": "EX260-SEN3",
+   "channels": "16 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -5998,6 +6024,7 @@
    "folder": "devices/smc/ex260-sen4",
    "vendor": "SMC",
    "model": "EX260-SEN4",
+   "channels": "16 solenoid outputs",
    "enip": {
     "map": false,
     "identity": {
@@ -6036,6 +6063,7 @@
    "folder": "devices/smc/ex600-sen1",
    "vendor": "SMC",
    "model": "EX600-SEN1/SEN2",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
    "enip": {
     "map": false,
     "identity": {
@@ -6071,6 +6099,7 @@
    "folder": "devices/smc/ex600-sen3",
    "vendor": "SMC",
    "model": "EX600-SEN3/SEN4",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
    "enip": {
     "map": false,
     "identity": {
@@ -6107,6 +6136,7 @@
    "folder": "devices/smc/ex600-sen7",
    "vendor": "SMC",
    "model": "EX600-SEN7/SEN8",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
    "enip": {
     "map": false,
     "identity": {
@@ -6143,6 +6173,7 @@
    "folder": "devices/turck/fen20-4dip-4dxp",
    "vendor": "Turck",
    "model": "FEN20-4DIP-4DXP",
+   "channels": "4 DI, 4 DIO (PNP)",
    "enip": {
     "map": false,
     "identity": {
@@ -6181,6 +6212,7 @@
    "folder": "devices/turck/tben-l5-8iol",
    "vendor": "Turck",
    "model": "TBEN-L5-8IOL",
+   "channels": "8 IO-Link ports (4 class A, 4 class B), 4 DIO (PNP)",
    "enip": {
     "map": false,
     "identity": {
@@ -6224,6 +6256,7 @@
    "folder": "devices/turck/tben-s1-4dip-4dop",
    "vendor": "Turck",
    "model": "TBEN-S1-4DIP-4DOP",
+   "channels": "4 DI, 4 DO (PNP, 2 A per output)",
    "enip": {
     "map": false,
     "identity": {
@@ -6271,6 +6304,7 @@
    "folder": "devices/turck/tben-s1-4dxp",
    "vendor": "Turck",
    "model": "TBEN-S1-4DXP",
+   "channels": "4 DIO (PNP in or out, 2 A per output)",
    "enip": {
     "map": false,
     "identity": {
@@ -6319,6 +6353,7 @@
    "folder": "devices/turck/tben-s1-8dip",
    "vendor": "Turck",
    "model": "TBEN-S1-8DIP",
+   "channels": "8 DI (PNP, M8)",
    "enip": {
     "map": false,
     "identity": {
@@ -6366,6 +6401,7 @@
    "folder": "devices/turck/tben-s1-8dip-d",
    "vendor": "Turck",
    "model": "TBEN-S1-8DIP-D",
+   "channels": "8 DI (PNP, M12, channel diagnostics)",
    "enip": {
     "map": false,
     "identity": {
@@ -6413,6 +6449,7 @@
    "folder": "devices/turck/tben-s1-8dop",
    "vendor": "Turck",
    "model": "TBEN-S1-8DOP",
+   "channels": "8 DO (PNP, 2 A each from HW rev 2, 0.5 A before)",
    "enip": {
     "map": false,
     "identity": {
@@ -6460,6 +6497,7 @@
    "folder": "devices/turck/tben-s1-8dxp",
    "vendor": "Turck",
    "model": "TBEN-S1-8DXP",
+   "channels": "8 DIO (PNP in or out, M8)",
    "enip": {
     "map": false,
     "identity": {
@@ -6507,6 +6545,7 @@
    "folder": "devices/turck/tben-s2-2com-4dxp",
    "vendor": "Turck",
    "model": "TBEN-S2-2COM-4DXP",
+   "channels": "2 serial ports (RS485 or RS232), 4 DIO (PNP, 0.5 A per output)",
    "enip": {
     "map": false,
     "identity": {
@@ -6550,6 +6589,7 @@
    "folder": "devices/turck/tben-s2-2rfid-4dxp",
    "vendor": "Turck",
    "model": "TBEN-S2-2RFID-4DXP",
+   "channels": "2 RFID ports (HF/UHF read/write heads, M12), 4 DIO (PNP, 0.5 A)",
    "enip": {
     "map": false,
     "identity": {
@@ -6593,6 +6633,7 @@
    "folder": "devices/turck/tben-s2-4ai",
    "vendor": "Turck",
    "model": "TBEN-S2-4AI",
+   "channels": "4 AI (voltage, current, RTD, resistance, thermocouple)",
    "enip": {
     "map": false,
     "identity": {
@@ -6641,6 +6682,7 @@
    "folder": "devices/turck/tben-s2-4ao",
    "vendor": "Turck",
    "model": "TBEN-S2-4AO",
+   "channels": "4 AO (voltage or current)",
    "enip": {
     "map": false,
     "identity": {
@@ -6689,6 +6731,7 @@
    "folder": "devices/turck/tben-s2-4iol",
    "vendor": "Turck",
    "model": "TBEN-S2-4IOL",
+   "channels": "4 IO-Link ports (class A), 4 DIO (PNP, 0.5 A)",
    "enip": {
     "map": false,
     "identity": {
@@ -6732,6 +6775,7 @@
    "folder": "devices/turck/tben-s2-8dip",
    "vendor": "Turck",
    "model": "TBEN-S2-8DIP",
+   "channels": "8 DI (PNP, 4 M12 ports)",
    "enip": {
     "map": false,
     "identity": {
@@ -6780,6 +6824,7 @@
    "folder": "devices/turck/tben-s2-8dxp",
    "vendor": "Turck",
    "model": "TBEN-S2-8DXP",
+   "channels": "8 DIO (PNP inputs or 2 A outputs, M12)",
    "enip": {
     "map": false,
     "identity": {
@@ -6925,6 +6970,7 @@
    "folder": "devices/wago/750-363",
    "vendor": "WAGO",
    "model": "750-363",
+   "channels": "none of its own: the WAGO I/O System modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -6960,6 +7006,7 @@
    "folder": "devices/wago/750-823",
    "vendor": "WAGO",
    "model": "750-823",
+   "channels": "none of its own: the WAGO I/O System modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -6995,6 +7042,7 @@
    "folder": "devices/wago/750-893",
    "vendor": "WAGO",
    "model": "750-893",
+   "channels": "none of its own: the WAGO 750/753 I/O modules behind it set the I/O",
    "enip": {
     "map": false,
     "identity": {
@@ -7030,6 +7078,7 @@
    "folder": "devices/weg/cfw300",
    "vendor": "WEG",
    "model": "CFW300",
+   "channels": "1 drive: control word, speed reference, parameter writes out; status word, motor speed, parameter reads in",
    "enip": {
     "map": false,
     "identity": {
@@ -7070,6 +7119,7 @@
    "folder": "devices/weg/cfw320",
    "vendor": "WEG",
    "model": "CFW320",
+   "channels": "1 drive: control word, speed reference, parameter writes out; status word, motor speed, parameter reads in",
    "enip": {
     "map": false,
     "identity": {
@@ -7110,6 +7160,7 @@
    "folder": "devices/weg/cfw500",
    "vendor": "WEG",
    "model": "CFW500",
+   "channels": "1 drive: control word, speed reference, I/O data out; status word, motor speed, I/O data in (28 bytes each way)",
    "enip": {
     "map": false,
     "identity": {
@@ -7150,6 +7201,7 @@
    "folder": "devices/weg/ssw900",
    "vendor": "WEG",
    "model": "SSW900",
+   "channels": "control word and parameter writes out; status word and parameter reads in",
    "enip": {
     "map": false,
     "identity": {
@@ -7190,6 +7242,7 @@
    "folder": "devices/yaskawa/ga500-ga501",
    "vendor": "Yaskawa",
    "model": "Yaskawa GA501",
+   "channels": "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections",
    "enip": {
     "map": false,
     "identity": {
@@ -7232,6 +7285,7 @@
    "folder": "devices/yaskawa/ga800-si-en3d",
    "vendor": "Yaskawa",
    "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "channels": "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections",
    "enip": {
     "map": false,
     "identity": {

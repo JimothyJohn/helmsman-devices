@@ -371,3 +371,65 @@ class FromLock(unittest.TestCase):
     def test_unknown_name_refused(self):
         with self.assertRaises(SystemExit):
             ed.eds_from_lock(self.lock, "devices/turck/tben-s2-8dxp", self.store, "nope.eds")
+
+
+CONNECTION = """
+[Connection Manager]
+        Connection1 = 0x04010002, 0x44640405, , 2, Assem2, , 4, Assem1, , 0, , "Exclusive Owner", "", "20 04 24 06 2C 02 2C 01";
+[Assembly]
+        Assem1 = "in", , 4, , , , ;
+        Assem2 = "out", , 2, , , , ;
+"""
+
+
+class Network(unittest.TestCase):
+    """An EDS is written for one network. ODVA lists DeviceNet and ControlNet files beside the
+    EtherNet/IP ones, and a draft from one of them is an entry for a device nobody can reach
+    over Ethernet (two were drafted on 2026-11-22 and removed the next day)."""
+
+    def draft(self, extra):
+        e = ed.parse((EDS + extra).encode())
+        return ed.draft(e, {"name": "x.eds", "size": 1, "sha256": "0" * 64}, [], "V", "M")
+
+    def test_an_ethernet_ip_classification_drafts(self):
+        for classes in (
+            "Class1 = EtherNetIP;",
+            "Class1 = 1_RSNetWorx_Adapter;\nClass2 = ethernetip;",
+            "Class1 = ControlNet;\nClass2 = EtherNetIP;",
+        ):
+            with self.subTest(classes=classes):
+                self.assertIn(
+                    "[identity.enip]", self.draft("[Device Classification]\n" + classes + CONNECTION)
+                )
+
+    def test_no_classification_drafts_when_the_connections_are_there(self):
+        self.assertIn("[identity.enip]", self.draft(CONNECTION))
+
+    def test_a_controlnet_or_devicenet_classification_is_refused_by_name(self):
+        for classes, name in (
+            ("Class1 = 1_RSNetWorx_Adapter;\nClass2 = ControlNet;", "ControlNet"),
+            ("Class1 = DeviceNet;", "DeviceNet"),
+            ("Class1 = CompoNet;", "CompoNet"),
+        ):
+            with self.subTest(classes=classes), self.assertRaises(ed.EdsError) as c:
+                self.draft("[Device Classification]\n" + classes + CONNECTION)
+            self.assertIn(name, str(c.exception))
+            self.assertIn("EtherNet/IP", str(c.exception))
+
+    def test_a_devicenet_file_with_no_classification_is_refused(self):
+        """As ODVA's VS_32.eds was: [IO_Info] for its I/O and no [Connection Manager]."""
+        text = (
+            "[File]\n Revision = 2.8;\n[Device]\n VendCode = 42;\n ProdType = 27;\n ProdCode = 332;\n"
+            ' MajRev = 2;\n MinRev = 8;\n ProdName = "VSxx 32";\n'
+            "[IO_Info]\n Default = 0x0001;\n PollInfo = 0x0001, 1, 1;\n"
+            ' Output1 = 4, 0, 0x0001, "Outputs", 6, "20 04 24 23 30 03", "";\n'
+        )
+        e = ed.parse(text.encode())
+        with self.assertRaises(ed.EdsError) as c:
+            ed.draft(e, {"name": "x.eds", "size": 1, "sha256": "0" * 64}, [], "V", "M")
+        self.assertIn("DeviceNet", str(c.exception))
+
+    def test_show_still_reads_such_a_file_and_says_what_it_is(self):
+        e = ed.parse((EDS + "[Device Classification]\nClass1 = ControlNet;\n" + CONNECTION).encode())
+        self.assertEqual(e["device"]["product_name"], "TBEN-S2-8DXP block")
+        self.assertIn("ControlNet", e["not_ethernet_ip"])

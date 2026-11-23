@@ -6,6 +6,7 @@ vendor = "Festo"
 model = "CTEU-EP"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "I-Port bus node: 8, 16, 32 or 64 bytes of outputs and inputs (single or dual port assemblies)"   # from: EDS CTEU-EP.eds assemblies 110-141 'Single Port Outputs 8bytes' ... 'Dual Port Outputs 64 bytes', I-Port parameters per port
 article = "CTEU-EP"
 
 [identity.enip]

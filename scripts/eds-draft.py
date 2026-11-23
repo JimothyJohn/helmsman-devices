@@ -40,6 +40,10 @@ DEVICE_KINDS = {  # CIP device type -> device.toml kind
 }
 
 
+# [Device Classification] values that name a network Helmsman does not speak.
+OTHER_NETWORKS = ("devicenet", "controlnet", "componet")
+
+
 class EdsError(ValueError):
     pass
 
@@ -209,6 +213,19 @@ def parse(data: bytes) -> dict:
         if not 0 <= dev.get(key, -1) <= 65535:
             raise EdsError(f"[Device] has no {key} 0..65535")
     out = {"device": dev}
+    # Which network the file is for. ODVA lists DeviceNet and ControlNet files beside the
+    # EtherNet/IP ones; a draft from one of them is an entry nobody reaches over Ethernet.
+    classes = [
+        (f[0] or "").strip().strip('"')
+        for k, f in sec.get("device classification", [])
+        if k.lower().startswith("class") and f
+    ]
+    others = [c for c in classes if c.lower() in OTHER_NETWORKS]
+    if others and not any(c.lower() == "ethernetip" for c in classes):
+        out["not_ethernet_ip"] = f"the EDS is classified {', '.join(others)}, not EtherNet/IP"
+    elif "io_info" in sec and "connection manager" not in sec:
+        # [IO_Info] is how a DeviceNet EDS lists its I/O; an EtherNet/IP one has [Connection Manager].
+        out["not_ethernet_ip"] = "a DeviceNet EDS ([IO_Info], no [Connection Manager]), not EtherNet/IP"
     f = one("file", "Revision")
     if f and re.fullmatch(r"\d+\.\d+", f[0]):
         out["file_revision"] = f[0]
@@ -306,6 +323,8 @@ def pick_connection(eds: dict) -> dict | None:
 
 
 def draft(eds: dict, eds_file: dict, sources: list[dict], vendor: str, model: str) -> str:
+    if eds.get("not_ethernet_ip"):
+        raise EdsError(eds["not_ethernet_ip"])
     d = eds["device"]
     kind = DEVICE_KINDS.get(d.get("device_type"), "other")
     lines = [
@@ -510,6 +529,8 @@ def main(argv: list[str]) -> int:
             eds = parse(data)
         except EdsError as e:
             raise SystemExit(f"{eds_file['name']}: {e}") from None
+        if eds.get("not_ethernet_ip"):
+            raise SystemExit(f"{eds_file['name']}: {eds['not_ethernet_ip']}: no folder is drafted from it")
         vendor = vendor or eds["device"].get("vendor_name") or parts[1]
         model = model or eds["device"].get("product_name") or parts[2]
         target = ROOT / folder

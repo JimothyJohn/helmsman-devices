@@ -6,6 +6,7 @@ vendor = "WEG"
 model = "SSW900"
 kind = "other"
 category = "motor-starter"
+channels = "control word and parameter writes out; status word and parameter reads in"   # from: EDS Assem110/160 member names; the EDS calls it a Generic Device and does not say what kind
 article = "SSW900-CETH-W"
 
 [identity.enip]

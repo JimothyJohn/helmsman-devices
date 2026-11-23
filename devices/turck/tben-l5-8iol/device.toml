@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-L5-8IOL"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports (4 class A, 4 class B), 4 DIO (PNP)"   # from: TBEN-Lx-8IOL Instructions for Use V04.00, sec. 4 and 4.2
 article = "6814017"
 
 [identity.enip]

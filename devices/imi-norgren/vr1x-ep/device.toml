@@ -6,6 +6,7 @@ vendor = "IMI Norgren"
 model = "VR1X-EP"
 kind = "remote-io"
 category = "valve-terminal"
+channels = "24 solenoid outputs"   # from: EDS NORGREN-VR1X-EP-24-V1.2.eds: assembly 150 'Digital Outputs' 3 bytes of 'Solenoid Output Point Values'; cycle counter assembly 101 has 24 x 4-byte counters
 article = "Ethernet Valve Island VR series"
 
 [identity.enip]

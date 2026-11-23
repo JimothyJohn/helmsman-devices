@@ -5,6 +5,7 @@ vendor = "Schneider Electric"
 model = "Modicon STB NIP2311"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the Advantys STB I/O modules behind it (up to 32) set the I/O"   # from: Advantys STB NIP 2311 Applications Guide EIO0000000051.05 (10/2019), 'Island Bus I/O' (pdf p.14), opened 2026-11-23
 
 [protocols.modbus]
 driver = "modbus-tcp"

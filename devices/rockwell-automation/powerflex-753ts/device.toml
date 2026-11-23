@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 753TS"
 kind = "drive"
 category = "drive"
+channels = "1 drive: logic command, reference, 16 datalinks out; logic status, feedback, 16 datalinks in"   # from: EDS_753TS.eds Assem2 'Output' (Logic Command, Reference, DL Out 1-16) and Assem1 'Input' (Logic Status, Feedback, DL In 1-16)
 article = "20F1D.../20F1E..."
 
 [identity.enip]

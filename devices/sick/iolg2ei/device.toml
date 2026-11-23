@@ -6,6 +6,7 @@ vendor = "SICK"
 model = "IOLG2EI-03208R01"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports"   # from: EDS Params 'IOL Port 1..8 Cycle Time'
 article = "6053255"
 
 [identity.enip]

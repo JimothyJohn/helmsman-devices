@@ -6,6 +6,7 @@ vendor = "Schneider Electric"
 model = "Altivar Machine ATV320 with VW3A3616"
 kind = "drive"
 category = "drive"
+channels = "1 drive: CIP basic/extended speed control, or CiA402 native profile, 6 words each way mapped by comm scanner"   # from: ATV320 Modbus TCP-EtherNet IP Manual NVE41313.02 p.61-62; EDS SE_ET_ATV320_0120E.eds assemblies 20/21/70/71/100/101
 
 [identity.enip]
 vendor_id = 243

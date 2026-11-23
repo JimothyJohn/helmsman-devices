@@ -6,6 +6,7 @@ vendor = "WEG"
 model = "CFW500"
 kind = "drive"
 category = "drive"
+channels = "1 drive: control word, speed reference, I/O data out; status word, motor speed, I/O data in (28 bytes each way)"   # from: EDS EIP_CFW500_CETH2_V10X.eds: Assem100/120/121, 150/170/171, 'Speed + I/O data'
 article = "CFW500"
 
 [identity.enip]

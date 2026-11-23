@@ -6,6 +6,7 @@ vendor = "Schneider Electric"
 model = "Altivar Machine ATV340 (embedded Ethernet)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101"   # from: ATV340 Ethernet Embedded Manual NVE61653.03 p.31 (Cyclical Exchanges); EDS SE_ET_ATV340xx_V3.6.eds
 
 [identity.enip]
 vendor_id = 243

@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 523 with 25-COMM-E2P"
 kind = "drive"
 category = "drive"
+channels = "1 adapter, 5 drive slots (0-4): logic command and reference out, logic status and feedback in, each"   # from: EDS Assem2 'Output' (Logic Command 0-4, Reference 0-4) and Assem1 'Input' (Logic Status 0-4, Feedback 0-4)
 article = "25-COMM-E2P     "
 
 [identity.enip]

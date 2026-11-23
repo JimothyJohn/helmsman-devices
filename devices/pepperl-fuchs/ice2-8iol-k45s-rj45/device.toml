@@ -6,6 +6,7 @@ vendor = "Pepperl+Fuchs"
 model = "ICE2-8IOL-K45S-RJ45"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports (class A), each also DI; up to 8 DO"   # from: pepperl-fuchs.com/en/products-gp25581/96760 opened 2026-11-22: '8 x IO-Link Class A (X1 - X8)'; max 8 IOL + 8 DI, 16 DI, or 8 DI + 8 DO
 article = "70104879"
 
 [identity.enip]

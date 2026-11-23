@@ -5,6 +5,7 @@ vendor = "Schneider Electric"
 model = "TeSys island bus coupler TPRBCEIP"
 kind = "remote-io"
 category = "motor-starter"
+channels = "none of its own: the TeSys island starters and I/O modules behind it (up to 20) set the I/O"   # from: Schneider TPRBCEIP data sheet (iportal2.schneider-electric.com TPRBCEIP_DATA SHEET.PDF) p.1, opened 2026-11-23
 article = "TPRBCEIP"
 
 [protocols.modbus]

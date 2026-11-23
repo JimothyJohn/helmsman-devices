@@ -40,9 +40,11 @@ channels are named already) and `--checked` (a unit confirmed it) narrow
 any of these. `--json` prints one object a line for a program. Exit 0 with
 matches, 1 with none, 2 for an argument it refuses. Python 3.9 or later.
 
-The library does not know prices or stock, and channels are stated for
-about a quarter of the entries: a search by capability finds those and
-misses the rest, so read the category's list too.
+Channels are what the entry's documents say the device has: "8 DI, 4 DO"
+for a block, "8 IO-Link ports" for a master, "32 solenoid outputs" for a
+valve terminal. The head of a modular station has none of its own and names
+the modules behind it; a drive, a starter or a camera says what it
+exchanges with a controller. The library does not know prices or stock.
 
 [`CATALOG.md`](CATALOG.md) is the same list as tables, one per category,
 for reading on GitHub. `index.json` is the same list as data, for a program
@@ -201,6 +203,16 @@ is the format. Follow both as written; the rules in them are not optional:
 Give the entry its shelf: `category = "..."` under `[device]`, one of the
 ids in the table above, from what the vendor calls the device. An entry
 without one is listed under "Not yet sorted" and `build-index.py` names it.
+
+Say what it has: `channels = "8 DI, 4 DO (2 A each)"   # from: data sheet p. 2`,
+one line of at most 120 characters, in the words a search uses (DI, DO, DIO,
+AI, AO, relays, IO-Link ports, solenoid outputs, the count first), with the
+document it was read from in the comment. The model number alone is not a
+source. `docs/device-toml.md` has the forms for a modular head and a drive.
+
+`eds-draft.py` refuses an EDS written for another network (DeviceNet,
+ControlNet): ODVA lists those beside the EtherNet/IP files, sometimes in the
+same package. Find the EtherNet/IP file or drop the device with the reason.
 
 #### 4. Test the entry against the unit
 

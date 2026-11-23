@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1732E-IB16M12R"
 kind = "remote-io"
 category = "io-block"
+channels = "16 DI (M12)"   # from: EDS ProdName '1732E-IB16M12R 16 DC In M12'
 article = "1732E-IB16M12R"
 
 [identity.enip]

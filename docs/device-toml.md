@@ -8,6 +8,7 @@ vendor = "Moxa"                 # text, for a search
 model = "ioLogik E1213"         # text, for a search
 kind = "remote-io"              # remote-io | drive | controller | sensor | other: what a box reads
 category = "panel-io"           # the shelf it is listed on, see "Categories" below
+channels = "8 DI, 4 DO, 4 DIO (source type)"   # from: <document, page>. What it has, see "Channels" below
 checked_on = "2026-11-02"       # the date the facts were last checked on a unit
 firmware = "V3.1 Build19110615" # the firmware they were checked against
 profile = "moxa-iologik-e1213.device"  # the device profile in this folder (helmsman-device 1): a controller copies it into a project when the device is added
@@ -97,6 +98,27 @@ when it writes, so a draft is seen and sorted.
 `index.json` carries `category` on every device and, beside `devices`,
 `categories`: the ids in use, in this order, each with its `label` and
 `what`. A box reads `format` and `devices` by key and ignores the rest.
+
+## Channels
+
+`channels` is one line, at most 120 characters, saying what the device has:
+what a list shows beside the model and what a search by capability matches
+(`find.py "16 DI"`, `find.py relay`). It is read from a document, and the
+comment after it names the document: `# from: data sheet p. 2`,
+`# from: EDS ProdName '...'`, or the vendor's page with the date it was
+seen. A model number that seems to spell it out is not a source.
+
+| the device | the line |
+| --- | --- |
+| fixed I/O | counts first, in the words a search uses: `8 DI, 8 DO (2 A each)`, `16 DIO`, `4 AI`, `6 DI, 6 relays`; `DIO` is a channel that is an input or an output |
+| an IO-Link master | `8 IO-Link ports (4 class A, 4 class B), 4 DIO` |
+| a valve terminal | `32 solenoid outputs`, `up to 32 solenoid outputs` when the document gives a maximum |
+| the head of a modular station | `none of its own: the <family> modules behind it (up to N) set the I/O`, the number only when a document states it |
+| a drive, a starter, a camera, a meter | what it exchanges with a controller, as the EDS's assembly members or the manual name it: `1 drive: control word and speed reference out, status word and actual speed in`; built-in terminals only when a document states them |
+
+When the documents give sizes and no names, the line says that
+(`500 bytes each way, no members named in the EDS`). When no document in
+reach says what the device has, the line is left out.
 
 ## A sensor or actuator on a digital channel
 

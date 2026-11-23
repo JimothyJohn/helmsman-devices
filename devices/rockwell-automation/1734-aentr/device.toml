@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1734-AENTR"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the POINT I/O modules behind it (up to 63) set the I/O"   # from: EDS (1734-AENTR/C) Param 'Chassis Size': 'number of I/O modules plus 1 additional slot for the adapter', max 64
 article = "1734-AENTR"
 
 [identity.enip]

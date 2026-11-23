@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "5069-AEN2TR"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the Compact 5000 (5069) modules behind it set the I/O"   # from: EDS [Modular] Rack1..Rack32 '5069 N slot Chassis, must be in slot 0'; package title Compact 5000 5069-AEN2TR
 article = "5069-AEN2TR"
 
 [identity.enip]

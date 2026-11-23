@@ -87,6 +87,16 @@ identity and sources are not.
 Keep the draft honest: no `checked_on`, `firmware` or `checked_by` until a unit
 has been on the bench (README: Contributing).
 
+The draft refuses an EDS written for another network (its `[Device Classification]`
+names DeviceNet or ControlNet and not EtherNet/IP, or it lists its I/O under
+`[IO_Info]` with no `[Connection Manager]`). ODVA's marketplace lists such files
+beside the EtherNet/IP ones, sometimes in one zip: pick the EtherNet/IP member with
+`--eds`, or drop the device with the reason in the collect file.
+
+Say what the device has: `channels = "8 DI, 4 DO"   # from: <document, page>` under
+`[device]`, from a document you opened (`docs/device-toml.md`, Channels), never from
+the model number alone.
+
 Give every new folder its shelf: `category = "..."` under `[device]`, one of the
 ids `docs/device-toml.md` lists (`io-block`, `drive`, `valve-terminal`, ...), from
 what the vendor calls the device. `eds-draft.py` does not write one, and a folder

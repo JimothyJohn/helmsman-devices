@@ -14,21 +14,6 @@
    "terms": "none stated",
    "title": "VR1X-EP EtherNet/IP EDS (ODVA marketplace, product 2241)",
    "type": "eds"
-  },
-  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds": {
-   "content_type": "binary/octet-stream",
-   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds",
-   "folders": [
-    "devices/imi-norgren/vs18-vs26"
-   ],
-   "kind": "eds",
-   "name": "VS_32.eds",
-   "retrieved": "2026-11-23T03:38:37Z",
-   "sha256": "8f3d82a9a977c9b5aed74aec8c34e24444cf8b864760b28c9a6c99969b7cbdca",
-   "size": 7817,
-   "terms": "none stated",
-   "title": "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)",
-   "type": "eds"
   }
  },
  "format": "helmsman-devices-collect-lock 1"

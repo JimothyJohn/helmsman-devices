@@ -6,6 +6,7 @@ vendor = "Eaton"
 model = "PowerXL DM1 PRO"
 kind = "drive"
 category = "drive"
+channels = "1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in"   # from: EDS PowerXLDM1_EIP_V1.06.eds: assemblies 20-25, 70-75 member names
 article = "DM1 PRO"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Schneider Electric"
 model = "Altivar Process ATV630 / ATV930 (embedded Ethernet)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101/106/107"   # from: ATV900 Embedded Ethernet manual NHA80940.03 p.30-31; EDS SE_ET_ATV9xx.eds assemblies 20/21/70/71/100/101/106/107
 
 [identity.enip]
 vendor_id = 243

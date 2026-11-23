@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S2-8DXP"
 kind = "remote-io"
 category = "io-block"
+channels = "8 DIO (PNP inputs or 2 A outputs, M12)"   # from: TBEN-S2-8DXP data sheet 6814076 p. 1-2
 article = "6814076"
 
 [device.photo]

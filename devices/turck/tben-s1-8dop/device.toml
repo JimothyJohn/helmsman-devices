@@ -6,6 +6,7 @@ vendor = "Turck"
 model = "TBEN-S1-8DOP"
 kind = "remote-io"
 category = "io-block"
+channels = "8 DO (PNP, 2 A each from HW rev 2, 0.5 A before)"   # from: TBEN-S Analog and Digital I/O Instructions for Use V06.00, sec. 14.5
 article = "6814022"
 
 [device.photo]

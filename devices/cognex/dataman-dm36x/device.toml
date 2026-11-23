@@ -6,6 +6,7 @@ vendor = "Cognex"
 model = "DataMan 300 Series Reader"
 kind = "sensor"
 category = "vision"
+channels = "1 reader: trigger and control out, read result and status in"   # from: EDS Assem11 'input format' (Trigger Ready, Decode Complete, Results Available, Result Data) and Assem21 'output format' (Trigger Enable, Trigger, Results Ack, Soft Event)
 article = "DMR-3XX-00"
 
 [identity.enip]

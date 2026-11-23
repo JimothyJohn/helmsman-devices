@@ -6,6 +6,7 @@ vendor = "WAGO"
 model = "750-893"
 kind = "controller"
 category = "controller"
+channels = "none of its own: the WAGO 750/753 I/O modules behind it set the I/O"   # from: WAGO product page https://www.wago.com/us/controllers-bus-couplers-i-o/controller-ethernet-ip/p/750-893, 2026-11-22
 article = "750-893"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Schneider Electric"
 model = "TeSys T LTMR E (Ethernet)"
 kind = "other"
 category = "motor-starter"
+channels = "1 motor starter: run fwd/rev and trip reset out; running, ready, alarm, tripped and monitoring registers in"   # from: TeSys T LTMR Ethernet Communication Guide DOCA0129EN-03 p.64-67 (assemblies 2-5, 50-54, 100, 110); EDS SE_TESYST_MMC_L_EIP.eds
 article = "LTMR"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 755 (embedded EtherNet/IP)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: I/O connection of 8-72 bytes out and 12-76 bytes in (EDS gives sizes, no members)"   # from: EDS Param 'Output Size' 8-72, 'Input Size' 12-76; Connection 'Discrete Exclusive Owner'
 article = "20G..."
 
 [identity.enip]

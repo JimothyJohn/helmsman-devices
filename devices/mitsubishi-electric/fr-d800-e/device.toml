@@ -6,6 +6,7 @@ vendor = "Mitsubishi Electric"
 model = "FR-D800-E"
 kind = "drive"
 category = "drive"
+channels = "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in"   # from: EDS 00A1000200700102.eds: Assem20-23, 70-73 bit tables
 article = "FR-D800-E"
 
 [identity.enip]

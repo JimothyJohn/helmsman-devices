@@ -3,13 +3,10 @@ vendor = "IMI Norgren"
 
 # EDS files from the ODVA marketplace pages Norgren submitted (https://marketplace.odva.org/organizations/202-norgren-gmbh); read 2026-11-22.
 
-[[doc]]
-folders = ["devices/imi-norgren/vs18-vs26"]
-kind = "eds"
-url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/686/VS_32.eds"
-title = "VS18/VS26 valve island EtherNet/IP EDS (ODVA marketplace, product 686)"
-found = "2026-11-22 search: norgren vs18 ethernet/ip eds; https://marketplace.odva.org/products/686-vs18-vs26-valve-islands, Download the EDS File"
-terms = "none stated"
+# Not an EtherNet/IP device: ODVA marketplace product 686 (VS18/VS26 valve islands),
+# https://marketplace.odva.org/products/686-vs18-vs26-valve-islands, serves VS_32.eds, whose
+# own header says "VSxx DeviceNet Node with 32 Outputs (16 VALVES)" (MAC ID, baud rate 125/250/500 kb/s).
+# A folder was drafted from it on 2026-11-22 and removed on 2026-11-23 when the file was read.
 
 # VM10EPI/VS18-26EPI (ODVA product 1868, EDS_11601.01.zip) holds nine EDS, one per product code; the page does not say which is which, so it is left for later.
 
