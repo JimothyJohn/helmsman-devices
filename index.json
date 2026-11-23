@@ -2776,6 +2776,7 @@
      "product_code": 10640
     }
    },
+   "points": 44,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2800,6 +2801,7 @@
      "product_code": 48
     }
    },
+   "points": 26,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2824,6 +2826,7 @@
      "product_code": 50
     }
    },
+   "points": 26,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2872,6 +2875,7 @@
      "product_code": 2192
     }
    },
+   "points": 44,
    "protocols": {
     "enip": {
      "driver": "enip-io",
