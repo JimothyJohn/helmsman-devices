@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Eaton Corporation PowerXL DG1
+# Eaton PowerXL DG1
 
 EDS identity: vendor 68 Eaton Corporation, product code
 12288, device type 2 AC Drive Device,

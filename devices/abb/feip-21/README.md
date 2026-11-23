@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# ABB, Inc. ABB Drive via Ethernet/IP FEIP-21
+# ABB ABB Drive via Ethernet/IP FEIP-21
 
 EDS identity: vendor 46 ABB, Inc., product code
 1, device type 103 Drive,

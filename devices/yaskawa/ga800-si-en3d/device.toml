@@ -2,7 +2,7 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "Yaskawa America, Inc."
+vendor = "Yaskawa"
 model = "Yaskawa SI-EN3D for CIPR-GA80U2004"
 kind = "drive"
 article = "CIPR-GA80U2004"

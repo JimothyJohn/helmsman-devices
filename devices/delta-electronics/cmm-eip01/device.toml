@@ -2,7 +2,7 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "Delta electronics, inc."
+vendor = "Delta Electronics"
 model = "CMM-EIP01"
 kind = "drive"
 article = "CMM-EIP01"

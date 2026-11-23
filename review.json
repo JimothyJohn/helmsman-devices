@@ -3,7 +3,7 @@
  "devices": [
   {
    "folder": "devices/abb/feip-21",
-   "vendor": "ABB, Inc.",
+   "vendor": "ABB",
    "model": "ABB Drive via Ethernet/IP FEIP-21",
    "enip": {
     "map": false,
@@ -1537,7 +1537,7 @@
   },
   {
    "folder": "devices/delta-electronics/cmm-eip01",
-   "vendor": "Delta electronics, inc.",
+   "vendor": "Delta Electronics",
    "model": "CMM-EIP01",
    "enip": {
     "map": false,
@@ -1577,7 +1577,7 @@
   },
   {
    "folder": "devices/eaton/powerxl-dg1",
-   "vendor": "Eaton Corporation",
+   "vendor": "Eaton",
    "model": "PowerXL DG1",
    "enip": {
     "map": false,
@@ -1619,7 +1619,7 @@
   },
   {
    "folder": "devices/eaton/powerxl-dm1-pro",
-   "vendor": "Eaton Corporation",
+   "vendor": "Eaton",
    "model": "PowerXL DM1 PRO",
    "enip": {
     "map": false,
@@ -1661,7 +1661,7 @@
   },
   {
    "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
-   "vendor": "Eaton Electrical",
+   "vendor": "Eaton",
    "model": "PowerXL VFD EIP Comm. Card",
    "enip": {
     "map": false,
@@ -1703,7 +1703,7 @@
   },
   {
    "folder": "devices/emerson/numatics-580-ethernet-ip",
-   "vendor": "Numatics, Inc",
+   "vendor": "Emerson",
    "model": "Numatics 580 Ethernet/IP",
    "enip": {
     "map": false,
@@ -1738,7 +1738,7 @@
   },
   {
    "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
-   "vendor": "Numatics, Inc",
+   "vendor": "Emerson",
    "model": "Numatics 580 Ethernet/IP DLR+QC",
    "enip": {
     "map": false,
@@ -1773,7 +1773,7 @@
   },
   {
    "folder": "devices/emerson/numatics-g3-ethernet-ip",
-   "vendor": "Numatics, Inc",
+   "vendor": "Emerson",
    "model": "Numatics G3 EtherNet/IP",
    "enip": {
     "map": false,
@@ -1923,7 +1923,7 @@
   },
   {
    "folder": "devices/festo/cpx-e-ep",
-   "vendor": "Festo AG & Co. KG",
+   "vendor": "Festo",
    "model": "CPX-E-EP",
    "enip": {
     "map": false,
@@ -1958,7 +1958,7 @@
   },
   {
    "folder": "devices/festo/cpx-fb32",
-   "vendor": "Festo Corporation",
+   "vendor": "Festo",
    "model": "CPX-FB32",
    "enip": {
     "map": false,
@@ -1995,7 +1995,7 @@
   },
   {
    "folder": "devices/festo/cpx-fb36",
-   "vendor": "Festo AG & Co. KG",
+   "vendor": "Festo",
    "model": "CPX-FB36",
    "enip": {
     "map": false,
@@ -2030,7 +2030,7 @@
   },
   {
    "folder": "devices/festo/cteu-ep",
-   "vendor": "Festo AG & Co. KG",
+   "vendor": "Festo",
    "model": "CTEU-EP",
    "enip": {
     "map": false,
@@ -2358,7 +2358,7 @@
   },
   {
    "folder": "devices/imi-norgren/vr1x-ep",
-   "vendor": "Norgren Manufacturing Co., Ltd.",
+   "vendor": "IMI Norgren",
    "model": "VR1X-EP",
    "enip": {
     "map": false,
@@ -2396,7 +2396,7 @@
   },
   {
    "folder": "devices/imi-norgren/vs18-vs26",
-   "vendor": "IMI Norgren Limited",
+   "vendor": "IMI Norgren",
    "model": "VS18/VS26",
    "enip": {
     "map": false,
@@ -2705,7 +2705,7 @@
   },
   {
    "folder": "devices/mitsubishi-electric/fr-d800-e",
-   "vendor": "Mitsubishi Electric Corporation",
+   "vendor": "Mitsubishi Electric",
    "model": "FR-D800-E",
    "enip": {
     "map": false,
@@ -3983,7 +3983,7 @@
   },
   {
    "folder": "devices/parker/p2h-node-ethernet-ip",
-   "vendor": "Parker Hannifin Corporation",
+   "vendor": "Parker",
    "model": "P2H Node 32DO EtherNet/IP",
    "enip": {
     "map": false,
@@ -4020,7 +4020,7 @@
   },
   {
    "folder": "devices/parker/p2m-lite-node-ethernet-ip",
-   "vendor": "Parker Hannifin Corporation",
+   "vendor": "Parker",
    "model": "P2M Lite Node 24DO ETHERNET/IP",
    "enip": {
     "map": false,
@@ -4057,7 +4057,7 @@
   },
   {
    "folder": "devices/parker/p2m-node-ethernet-ip",
-   "vendor": "Parker Hannifin Corporation",
+   "vendor": "Parker",
    "model": "P2M Node 24DO ETHERNET/IP",
    "enip": {
     "map": false,
@@ -5882,7 +5882,7 @@
   },
   {
    "folder": "devices/smc/ex260-sen1",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX260-SEN1",
    "enip": {
     "map": false,
@@ -5920,7 +5920,7 @@
   },
   {
    "folder": "devices/smc/ex260-sen2",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX260-SEN2",
    "enip": {
     "map": false,
@@ -5958,7 +5958,7 @@
   },
   {
    "folder": "devices/smc/ex260-sen3",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX260-SEN3",
    "enip": {
     "map": false,
@@ -5996,7 +5996,7 @@
   },
   {
    "folder": "devices/smc/ex260-sen4",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX260-SEN4",
    "enip": {
     "map": false,
@@ -6034,7 +6034,7 @@
   },
   {
    "folder": "devices/smc/ex600-sen1",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX600-SEN1/SEN2",
    "enip": {
     "map": false,
@@ -6069,7 +6069,7 @@
   },
   {
    "folder": "devices/smc/ex600-sen3",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX600-SEN3/SEN4",
    "enip": {
     "map": false,
@@ -6105,7 +6105,7 @@
   },
   {
    "folder": "devices/smc/ex600-sen7",
-   "vendor": "SMC Corporation",
+   "vendor": "SMC",
    "model": "EX600-SEN7/SEN8",
    "enip": {
     "map": false,
@@ -6222,7 +6222,7 @@
   },
   {
    "folder": "devices/turck/tben-s1-4dip-4dop",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-4DIP-4DOP",
    "enip": {
     "map": false,
@@ -6317,7 +6317,7 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dip",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DIP",
    "enip": {
     "map": false,
@@ -6364,7 +6364,7 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dip-d",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DIP-D",
    "enip": {
     "map": false,
@@ -6411,7 +6411,7 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dop",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DOP",
    "enip": {
     "map": false,
@@ -6458,7 +6458,7 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dxp",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DXP",
    "enip": {
     "map": false,
@@ -6591,7 +6591,7 @@
   },
   {
    "folder": "devices/turck/tben-s2-4ai",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S2-4AI",
    "enip": {
     "map": false,
@@ -6639,7 +6639,7 @@
   },
   {
    "folder": "devices/turck/tben-s2-4ao",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S2-4AO",
    "enip": {
     "map": false,
@@ -7188,7 +7188,7 @@
   },
   {
    "folder": "devices/yaskawa/ga500-ga501",
-   "vendor": "Yaskawa America, Inc.",
+   "vendor": "Yaskawa",
    "model": "Yaskawa GA501",
    "enip": {
     "map": false,
@@ -7230,7 +7230,7 @@
   },
   {
    "folder": "devices/yaskawa/ga800-si-en3d",
-   "vendor": "Yaskawa America, Inc.",
+   "vendor": "Yaskawa",
    "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
    "enip": {
     "map": false,

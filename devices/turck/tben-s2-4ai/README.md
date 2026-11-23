@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# TURCK TBEN-S2-4AI
+# Turck TBEN-S2-4AI
 
 EDS identity: vendor 48 TURCK, product code
 14025, device type 12 Communications Adapter,

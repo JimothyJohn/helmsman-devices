@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Eaton Electrical PowerXL VFD EIP Comm. Card
+# Eaton PowerXL VFD EIP Comm. Card
 
 EDS identity: vendor 68 Eaton Electrical, product code
 12338, device type 2 AC Drive Device,

@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Parker Hannifin Corporation P2M Lite Node 24DO ETHERNET/IP
+# Parker P2M Lite Node 24DO ETHERNET/IP
 
 EDS identity: vendor 4 Parker Hannifin Corporation, product code
 53505, device type 43 Generic Device,

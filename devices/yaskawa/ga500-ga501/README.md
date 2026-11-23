@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Yaskawa America, Inc. Yaskawa GA501
+# Yaskawa Yaskawa GA501
 
 EDS identity: vendor 44 Yaskawa America, Inc., product code
 24063, device type 2 AC Drive Device,

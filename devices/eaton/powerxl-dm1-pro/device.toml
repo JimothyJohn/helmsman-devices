@@ -2,7 +2,7 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "Eaton Corporation"
+vendor = "Eaton"
 model = "PowerXL DM1 PRO"
 kind = "drive"
 article = "DM1 PRO"
