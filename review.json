@@ -5083,6 +5083,17 @@
      "title": "Armor PowerFlex 35E: EDS (ODVA marketplace)",
      "sha256": "2af95303f1d98eec8bc949f666141127904675de8a049722f9c3441b4c4431ca",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Armor PowerFlex 350 AC Drives User Manual, 35-UM001J-EN-P",
+     "sha256": "b04946e12a4da0abfce45258f986edfc879aa9ce3e00ab4dbbacd4e3f5a29c93",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/35-um001_-en-p.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which bytes of assembly 769 (28 bytes out) and 1025 (76 bytes in) are the logic command, command velocity, logic status and output frequency?",
+     "source": "35-UM001J-EN-P PDF p. 155 sends the CIP objects and attributes to publication 35-RD001, not collected"
     }
    ]
   },
@@ -5344,7 +5355,188 @@
     },
     "eds": "00010097071E0100.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "logic command: Normal Stop",
+     "enip": "out:0.0",
+     "meaning": "bit 0, 1 = Normal Stop; a 0 (Not Stop) must be present before Start or Jog takes effect. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Start",
+     "enip": "out:0.1",
+     "meaning": "bit 1, 1 = Start. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Jog 1",
+     "enip": "out:0.2",
+     "meaning": "bit 2, 1 = Jog; a transition to 0 stops the drive. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Clear Fault",
+     "enip": "out:0.3",
+     "meaning": "bit 3, 1 = Clear Fault; the value must switch from 0 to 1. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Unipolar Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "bits 4-5: 00 = no command, 01 = Forward, 10 = Reverse, 11 = no command. The speed reference cannot be negative: direction is set only here. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Keypad",
+     "enip": "out:0.6",
+     "meaning": "bit 6, 1 = Force Keypad Control. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: MOP Increment",
+     "enip": "out:0.7",
+     "meaning": "bit 7, 1 = MOP Increment. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Accel Time",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "bits 8-9: 00 = no command, 01 = Accel Time 1 (P041), 10 = Accel Time 2 (A442), 11 = hold the rate selected. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Decel Time",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "bits 10-11: 00 = no command, 01 = Decel Time 1 (P042), 10 = Decel Time 2 (A443), 11 = hold the rate selected. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: Ref Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "bits 12-14 (Ref Select 1 is bit 12): 000 = no command, 001 = P047 Speed Reference1, 010 = P049 Speed Reference2, 011 = P051 Speed Reference3, 100 to 111 = A410 to A413 Preset Freq 0 to 3. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic command: MOP Decrement",
+     "enip": "out:1.7",
+     "meaning": "bit 15, 1 = MOP Decrement. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 158.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 157, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "reference",
+     "enip": "out:2.0..out:3.7",
+     "meaning": "speed reference, 16-bit INT in units of 0.01 Hz (3000 = 30.00 Hz); capped by host P044 [Maximum Freq]; a negative value overflows to maximum speed.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); scaling PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 65"
+    },
+    {
+     "name": "logic status: Run Ready",
+     "enip": "in:4.0",
+     "meaning": "bit 0, 1 = ready to run. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Active",
+     "enip": "in:4.1",
+     "meaning": "bit 1, 1 = active (running). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Command Direction",
+     "enip": "in:4.2",
+     "meaning": "bit 2, 0 = reverse, 1 = forward. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "bit 3, 0 = rotating reverse, 1 = rotating forward. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Accel",
+     "enip": "in:4.4",
+     "meaning": "bit 4, 1 = accelerating. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Decel",
+     "enip": "in:4.5",
+     "meaning": "bit 5, 1 = decelerating. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Fault",
+     "enip": "in:4.7",
+     "meaning": "bit 7, 1 = faulted (bit 6 is reserved). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: At Speed",
+     "enip": "in:5.0",
+     "meaning": "bit 8, 1 = at reference. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Main Frequency",
+     "enip": "in:5.1",
+     "meaning": "bit 9, 1 = frequency reference controlled by the active comm. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Operation Command",
+     "enip": "in:5.2",
+     "meaning": "bit 10, 1 = start/stop controlled by the active comm. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Parameters",
+     "enip": "in:5.3",
+     "meaning": "bit 11, 1 = parameters locked. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "logic status: Digital Input 1..4",
+     "enip": "in:5.4..in:5.7",
+     "meaning": "bits 12-15, the drive's digital inputs 1 to 4 (the manual gives no more). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 159.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 158, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64)"
+    },
+    {
+     "name": "feedback",
+     "enip": "in:6.0..in:7.7",
+     "meaning": "speed feedback, 16-bit value in units of 0.01 Hz (5000 = 50.00 Hz).",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); scaling PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 65"
+    },
+    {
+     "name": "pad words (not a signal)",
+     "enip": "in:0.0..in:3.7",
+     "meaning": "two pad words ahead of the logic status in the Generic Profile image; the EDS's 4-byte Reserved member (Param100) is the same.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); EDS Assem1 member Param100 'Reserved', 4 bytes"
+    },
+    {
+     "name": "datalinks out 1..4",
+     "enip": "out:4.0..out:11.7",
+     "meaning": "one 16-bit word per enabled datalink, the target parameter chosen by host C165..C168 [Opt Data Out 1..4] with device parameter 03 [DLs To Net Act]; a reset is needed after configuring them. Single-drive mode only.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); datalink parameters PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 66"
+    },
+    {
+     "name": "datalinks in 1..4",
+     "enip": "in:8.0..in:15.7",
+     "meaning": "one 16-bit word per enabled datalink, the source parameter chosen by host C161..C164 [Opt Data In 1..4] with device parameter 02 [DLs From Net Act]; a reset is needed after configuring them. Single-drive mode only.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 64, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); datalink parameters PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 66"
+    },
+    {
+     "name": "multi-drive: drives 1..4 logic command and reference",
+     "enip": "out:4.0..out:11.7",
+     "meaning": "only in Multi-drive mode (C169, C175): per drive, a logic command word then a reference word, drive 1 at bytes 4-7, drive 2 at 8-11, drive 3 at 12-15, drive 4 at 16-19drive 4 at bytes 16-19 (drive 0 is bytes 0-3 above, the same layout). Datalinks cannot be used with Multi-drive mode. Bits are those of the logic command and reference above.",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 90, Multi-Drive Example of I/O Image (Word column, 0-based 16-bit words; byte = 2 x word, little-endian inferred); EDS Param1 8..24 and Param2 4..20 bytes agree"
+    },
+    {
+     "name": "multi-drive: drives 1..4 logic status and feedback",
+     "enip": "in:8.0..in:23.7",
+     "meaning": "only in Multi-drive mode: per drive, a logic status word then a feedback word, after the 4 pad bytes and drive 0 (bytes 4-7): drive 1 at bytes 8-11, drive 2 at 12-15, drive 3 at 16-19, drive 4 at 20-23. A drive that is disconnected or powered down on the RS-485 network affects its words (the manual's note on p. 90 is cut off in the text read; the page was not re-read for it).",
+     "source": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013) p. 90, Multi-Drive Example of I/O Image (Word column, 0-based 16-bit words; byte = 2 x word, little-endian inferred); EDS Param1 8..24 and Param2 4..20 bytes agree"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
@@ -5355,6 +5547,11 @@
      "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
      "sha256": "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual 520COM-UM003A-EN-E (June 2013)",
+     "sha256": "ad7684cfe91859cb0afd63daa57decd822a814bf185bd0c8a2b4cb5161fc78c2",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520com-um003_-en-e.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
     }
    ],
    "questions": [
@@ -5391,7 +5588,176 @@
     },
     "eds": "0001009700090100.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "logic command: Normal Stop",
+     "enip": "out:0.0",
+     "meaning": "bit 0, 1 = Normal Stop; a 0 (Not Stop) must be present before Start or Jog takes effect. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Start",
+     "enip": "out:0.1",
+     "meaning": "bit 1, 1 = Start. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Jog 1",
+     "enip": "out:0.2",
+     "meaning": "bit 2, 1 = Jog; a transition to 0 stops the drive. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Clear Fault",
+     "enip": "out:0.3",
+     "meaning": "bit 3, 1 = Clear Fault; the value must switch from 0 to 1. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Unipolar Direction",
+     "enip": "out:0.4..out:0.5",
+     "meaning": "bits 4-5: 00 = no command, 01 = Forward, 10 = Reverse, 11 = no command. The speed reference cannot be negative: direction is set only here. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Keypad",
+     "enip": "out:0.6",
+     "meaning": "bit 6, 1 = Force Keypad Control. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: MOP Increment",
+     "enip": "out:0.7",
+     "meaning": "bit 7, 1 = MOP Increment. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Accel Time",
+     "enip": "out:1.0..out:1.1",
+     "meaning": "bits 8-9: 00 = no command, 01 = Accel Time 1 (P041), 10 = Accel Time 2 (A442), 11 = hold the rate selected. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Decel Time",
+     "enip": "out:1.2..out:1.3",
+     "meaning": "bits 10-11: 00 = no command, 01 = Decel Time 1 (P042), 10 = Decel Time 2 (A443), 11 = hold the rate selected. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: Ref Select",
+     "enip": "out:1.4..out:1.6",
+     "meaning": "bits 12-14 (Ref Select 1 is bit 12): 000 = no command, 001 = P047 Speed Reference1, 010 = P049 Speed Reference2, 011 = P051 Speed Reference3, 100 to 111 = A410 to A413 Preset Freq 0 to 3. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic command: MOP Decrement",
+     "enip": "out:1.7",
+     "meaning": "bit 15, 1 = MOP Decrement. Velocity mode (C122 = 0); with C122 = 1 (Position) the command bits are other, p. 154.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 153, Appendix D Logic Command Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at output INT 0 = bytes 0-1 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "reference",
+     "enip": "out:2.0..out:3.7",
+     "meaning": "speed reference, 16-bit value in units of 0.01 Hz (3000 = 30.00 Hz); the drive may override it (start source and speed reference parameters), and a negative value overflows to maximum speed.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); scaling PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 63"
+    },
+    {
+     "name": "logic status: Run Ready",
+     "enip": "in:4.0",
+     "meaning": "bit 0, 1 = ready to run. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Active",
+     "enip": "in:4.1",
+     "meaning": "bit 1, 1 = active (running). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Command Direction",
+     "enip": "in:4.2",
+     "meaning": "bit 2, 0 = reverse, 1 = forward. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Actual Direction",
+     "enip": "in:4.3",
+     "meaning": "bit 3, 0 = rotating reverse, 1 = rotating forward. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Accel",
+     "enip": "in:4.4",
+     "meaning": "bit 4, 1 = accelerating. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Decel",
+     "enip": "in:4.5",
+     "meaning": "bit 5, 1 = decelerating. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Fault",
+     "enip": "in:4.7",
+     "meaning": "bit 7, 1 = faulted (bit 6 is reserved). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: At Speed",
+     "enip": "in:5.0",
+     "meaning": "bit 8, 1 = at reference. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Main Frequency",
+     "enip": "in:5.1",
+     "meaning": "bit 9, 1 = frequency reference controlled by the active comm. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Operation Command",
+     "enip": "in:5.2",
+     "meaning": "bit 10, 1 = start/stop controlled by the active comm. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Parameters",
+     "enip": "in:5.3",
+     "meaning": "bit 11, 1 = parameters locked. Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "logic status: Digital Input 1..4",
+     "enip": "in:5.4..in:5.7",
+     "meaning": "bits 12-15, the drive's digital inputs 1 to 4 (the manual gives no more). Velocity mode (C122 = 0); with C122 = 1 (Position) the status bits are other, p. 155.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 154, Appendix D Logic Status Word, Velocity Bit Definitions, 'Logic Bits' column (bit number 0-15, 0 at the right); byte.bit inferred: bit within the 16-bit word at Generic Profile input INT 2 = bytes 4-5 (PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62)"
+    },
+    {
+     "name": "feedback",
+     "enip": "in:6.0..in:7.7",
+     "meaning": "speed feedback, 16-bit value in units of 0.01 Hz (5000 = 50.00 Hz).",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); scaling PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 63"
+    },
+    {
+     "name": "pad words (not a signal)",
+     "enip": "in:0.0..in:3.7",
+     "meaning": "two pad words ahead of the logic status in the Generic Profile image; the EDS's 4-byte Reserved member (Param100) is the same.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); EDS Assem1 member Param100 'Reserved', 4 bytes"
+    },
+    {
+     "name": "datalinks out 1..4",
+     "enip": "out:4.0..out:11.7",
+     "meaning": "one 16-bit word per enabled datalink, the target parameter chosen by C157..C160 [EN Data Out 1..4]; present only when the connection size includes them (output up to 12 bytes). Datalinks cannot be used with Multi-drive mode.",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); datalink parameters PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 63"
+    },
+    {
+     "name": "datalinks in 1..4",
+     "enip": "in:8.0..in:15.7",
+     "meaning": "one 16-bit word per enabled datalink, the source parameter chosen by C153..C156 [EN Data In 1..4]; present only when the connection size includes them (input up to 16 bytes).",
+     "source": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 62, I/O Image table, 'Generic Profile' INT column (0-based INT; byte = 2 x INT, 16-bit little-endian, both inferred); datalink parameters PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013) p. 63"
+    }
+   ],
    "sources": [
     {
      "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
@@ -5402,6 +5768,11 @@
      "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
      "sha256": "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual 520COM-UM001B-EN-E (March 2013)",
+     "sha256": "2e1250e2629945de433aad1819d783cf1038ace137e706bf97ac2cf13a860046",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520com-um001_-en-e.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
     }
    ]
   },
@@ -5442,12 +5813,21 @@
      "title": "PowerFlex 527-STO CIP Safety: EDS (ODVA marketplace)",
      "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "PowerFlex 527 Adjustable Frequency AC Drive User Manual, 520-UM002F-EN-E",
+     "sha256": "9b722b7a8e5befdae7e602b40ea6265db8de403ce0253e4a1c118e0da3d49287",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520-um002_-en-e.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
     }
    ],
    "questions": [
     {
      "ask": "Does a PowerFlex 527 without the STO option answer with the same product code (15) and the same connection, or does it need a different EDS?",
      "source": "ODVA marketplace product 1966 lists only the 527-STO CIP Safety drive"
+    },
+    {
+     "ask": "What do the 500 bytes of the CIP Motion safety drive connection (assemblies 81 and 2) hold, and is there a fixed logic command and status layout for a generic I/O connection to a 527?",
+     "source": "520-UM002F-EN-E gives only the STO safety tags (PDF p. 92, Table 9) and refers motion control to the Integrated Motion on the EtherNet/IP Network Reference Manual"
     }
    ]
   },
