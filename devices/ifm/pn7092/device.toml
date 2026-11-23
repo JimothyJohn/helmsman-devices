@@ -7,6 +7,7 @@ model = "(PN7072, PN7092, PN7572, PN7592) Status B"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
 category = "sensor"
+channels = "2 switching outputs (OUT1, OUT2), pressure value, device status"   # from: the entry's IODD signals (OUT1, OUT2, Pressure, Device status), IODD ifm-000257-20190307-IODD1.1.xml
 family = "PN7"
 vendor_url = "www.ifm.com/gb/en/downloadarea/IOContent"
 

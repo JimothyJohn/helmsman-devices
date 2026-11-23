@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 525 (embedded EtherNet/IP)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: logic command, reference, 4 datalinks out; logic status, feedback, 4 datalinks in"   # from: EDS Assem2 'Output' (Logic Command, Reference, DL Out 1-4) and Assem1 'Input' (Logic Status, Feedback, DL In 1-4)
 article = "25B..."
 
 [identity.enip]

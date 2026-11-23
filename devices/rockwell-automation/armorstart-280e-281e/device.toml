@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "ArmorStart 280E/281E (EtherNet/IP)"
 kind = "other"
 category = "motor-starter"
+channels = "1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in"   # from: EDS Assem162 'Starter Cmd' (RunForward, RunReverse, ResetFault, OutA, OutB) and Assem150 'Starter Stat' (TripPresent, Running..., In0-In3); ProdName 'ArmorStart 280E'
 article = "280E-F12Z-10B"
 
 [identity.enip]

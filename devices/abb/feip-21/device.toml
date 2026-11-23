@@ -6,6 +6,7 @@ vendor = "ABB"
 model = "ABB Drive via Ethernet/IP FEIP-21"
 kind = "drive"
 category = "drive"
+channels = "1 drive: control word, speed ref (torque ref) out, status word, actual speed (torque) in, drive parameter data"   # from: EDS FEIP21_filerev1_2.EDS: assemblies 20/70, 22/72, 120/170
 article = "FEIP-21"
 
 [identity.enip]

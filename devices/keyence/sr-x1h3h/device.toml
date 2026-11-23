@@ -6,6 +6,7 @@ vendor = "Keyence"
 model = "SR-X1H3H Series"
 kind = "sensor"
 category = "vision"
+channels = "1 reader: read, preset and tune requests out, read result data, status and counts in"   # from: EDS Assem100/Assem101 member names (Read Request, Preset Request, Tune Request; Result Data, Read Complete, Result Data Size)
 article = "SR-X1H3H"
 
 [identity.enip]

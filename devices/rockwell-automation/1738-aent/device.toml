@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1738-AENT"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the ArmorPOINT modules behind it (up to 63) set the I/O"   # from: EDS (1738-AENT/B) Param 'Chassis Size': 'number of I/O modules plus 1 additional slot for the adapter', max 64; package title ArmorPOINT EtherNet/IP adapters
 article = "1738-AENT"
 
 [identity.enip]

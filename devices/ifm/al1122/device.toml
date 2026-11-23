@@ -6,6 +6,7 @@ vendor = "ifm"
 model = "AL1122"
 kind = "remote-io"
 category = "iolink-master"
+channels = "8 IO-Link ports"   # from: EDS ProdName 'IO-Link Master SL EIP 8P IP67'
 article = "AL1122"
 
 [identity.enip]

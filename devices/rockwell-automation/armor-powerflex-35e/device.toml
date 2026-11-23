@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "Armor PowerFlex 35E"
 kind = "drive"
 category = "drive"
+channels = "1 drive: logic command and command velocity out, logic status, output frequency, voltage and current in"   # from: EDS Assem769 'Output' (Logic Command, Command Velocity) and Assem1025 'Input' (Logic Status, Output Frequency/Voltage/Current/Power, DC Bus Voltage, Heatsink Temp, ...)
 article = "35E..."
 
 [identity.enip]

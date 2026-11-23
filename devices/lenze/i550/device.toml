@@ -6,6 +6,7 @@ vendor = "Lenze"
 model = "i550 cabinet"
 kind = "drive"
 category = "drive"
+channels = "1 drive: drive control word, speed (and torque) setpoint out; drive status word, actual speed (and torque) in"   # from: EDS Lenze_i550-cabinet_V07.eds: assemblies 20/22/70/72
 article = "Inverter Drive i550 cabinet"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "5094-AEN2TR"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the FLEX 5000 modules behind it (up to 16) set the I/O"   # from: EDS ProdName '5094 Adapter 16 Modules RJ45'
 article = "5094-AEN2TR"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 753 with 20-750-ENETR"
 kind = "drive"
 category = "drive"
+channels = "1 drive: I/O connection of 8-72 bytes out and 4-76 bytes in (EDS gives sizes, no members)"   # from: EDS Param 'Output Size' 8-72, 'Input Size' 4-76; Connection 'Exclusive Owner'
 article = "20G..."
 
 [identity.enip]

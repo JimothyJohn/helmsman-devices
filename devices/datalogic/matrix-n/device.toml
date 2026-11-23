@@ -6,6 +6,7 @@ vendor = "Datalogic"
 model = "Matrix N Series"
 kind = "sensor"
 category = "vision"
+channels = "1 reader: item and presence bits out, item status and data fragments in"   # from: EDS Assem101 Input (Item Status, Item Data Size, Local Presence and Input Bits, Fragment Data) and Assem113 Output (Remote Presence And Output Bits)
 article = "DATALOGIC Scanner"
 
 [identity.enip]

@@ -7,6 +7,7 @@ model = "WTB4F_DID8389194"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
 category = "sensor"
+channels = "2 switching signals (QL1, QL2), receive level"   # from: the entry's IODD signals (QL1, QL2, 'Current receive level (live)'), IODD SICK-WTB4F_DID8389194-20211014-IODD1.1.xml
 family = "Photoelectric sensors"
 vendor_url = "https://www.sick.com"
 

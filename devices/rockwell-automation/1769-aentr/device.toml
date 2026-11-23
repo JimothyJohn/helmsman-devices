@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1769-AENTR"
 kind = "remote-io"
 category = "io-coupler"
+channels = "none of its own: the 1769 modules behind it set the I/O"   # from: EDS (1769-AENTR) [Modular] Rack1 '1769 Chassis, slot 0'; package title CompactLogix 1769-AENTR
 article = "1769-AENTR"
 
 [identity.enip]

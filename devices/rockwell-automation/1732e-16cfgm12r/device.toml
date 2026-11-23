@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "1732E-16CFGM12R"
 kind = "remote-io"
 category = "io-block"
+channels = "16 DIO, DC in/out (16 input bits, 16 output bits, M12)"   # from: EDS ProdName '1732E-16CFGM12R 16 DC In/Out M12'; connections: 16 bits of input data, 16 output bits
 article = "1732E-16CFGM12R"
 
 [identity.enip]

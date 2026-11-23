@@ -6,6 +6,7 @@ vendor = "Rockwell Automation"
 model = "PowerFlex 70 (EtherNet/IP adapter)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)"   # from: EDS Param 'Output Size' 0-20, 'Input Size' 4-24; Connection 'Discrete Exclusive Owner'; device type 'DPI to EtherNet/IP'
 article = "20A"
 
 [identity.enip]

@@ -6,6 +6,7 @@ vendor = "Keyence"
 model = "IV3 Series"
 kind = "sensor"
 category = "vision"
+channels = "1 vision sensor: external input out, monitor data in"   # from: EDS Assem100 'Input Assembly' 1400 B, Assem101 'Output Assembly' 104 B; Params 'Monitor Data Size', 'External Input Size'
 article = "IV3 Series"
 
 [identity.enip]

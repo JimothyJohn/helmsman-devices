@@ -6,6 +6,7 @@ vendor = "Cognex"
 model = "In-Sight 7900-7500 Series"
 kind = "sensor"
 category = "vision"
+channels = "1 vision sensor: trigger and commands out, inspection results and status in"   # from: EDS Assem13 'input format' (Trigger Ready, Inspection Completed, Job Pass, Inspection Results) and Assem22 'output format' (Trigger, Execute Command, Set Offline, External Event)
 article = "IS79XX-XX-IS75XX-XX"
 
 [identity.enip]

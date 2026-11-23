@@ -6,6 +6,7 @@ vendor = "Schneider Electric"
 model = "Lexium 32M with VW3A3616"
 kind = "drive"
 category = "drive"
+channels = "1 drive: control word, 2 mode references, ramps, 3 mapped params out; status words, position, speed, current in"   # from: VW3A3616 LXM32M EtherNet/IP User Guide 0198441113802 p.15-16 (assemblies 103 and 113); EDS SE_EIP_LXM32M_1.20.eds
 article = "LXM32M"
 
 [identity.enip]
