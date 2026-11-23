@@ -1,6 +1,5 @@
 > **Draft from documents.** No unit has been checked; every value here is the
-> EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
-> read from the manual, with its page for each.
+> EDS's or the manual's, and no unit has confirmed either.
 
 # Rockwell Automation ArmorStart LT 290E/291E/294E (EtherNet/IP)
 
@@ -11,7 +10,7 @@ revision 2.1; EDS file revision
 
 ## What this folder stands for
 
-A substitute for the second ArmorStart candidate: ArmorStart LT 290E/291E/294E. ODVA's `10993.02-EDS.zip` holds one EDS per rating; the drafted one is the 290E 0.24-3.5A, `0001001603010200.eds`. The others were not drafted.Manuals: Rockwell's literature site refused the fetcher (HTTP 403), so no manual was read for this folder. It has no `[[points]]`; the assemblies are the EDS's, and what their bytes mean is still to be read from the manual.
+A substitute for the second ArmorStart candidate: ArmorStart LT 290E/291E/294E. ODVA's `10993.02-EDS.zip` holds one EDS per rating; the drafted one is the 290E 0.24-3.5A, `0001001603010200.eds`. The others were not drafted.Manual: 290E-UM001C-EN-P, fetched in a browser because the site answers a plain fetch with 403. The `[[points]]` were read from its Appendix B (PDF pp. 201-202: instance 150 out, instance 152 in) and cross-checked with Chapter 3 Tables 16-21 (PDF pp. 90-95). The 'Byte' column is 0-based and is what `enip` uses, counted from byte 0 of the assembly: bytes 0-3 of instance 152 are reserved (connection fault in the Logix tag). Sizes agree with the EDS: 30 bytes in, 6 bytes out, and the 84-byte configuration assembly 100 (last member at byte 82, 2 bytes). Not read: the 294E assemblies 154/156 (inverter type) and the parameter table. No unit has confirmed any point; the 16-bit values are marked inferred where the manual gives only INT and low/high byte labels.
 
 ## Connections the EDS offers
 
@@ -30,6 +29,7 @@ A substitute for the second ArmorStart candidate: ArmorStart LT 290E/291E/294E. 
 | --- | --- | --- |
 | ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity | `8155a32a7c606b77…` | https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf; retrieved 2026-11-23; not redistributed here |
 | ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace) | `07c2f541dc2a416f…` | https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip; retrieved 2026-11-23; not redistributed here |
+| ArmorStart LT EtherNet/IP Version User Manual, Bulletin 290E, 291E, 294E, 290E-UM001C-EN-P | `e520232cad2973a1…` | https://literature.rockwellautomation.com/idc/groups/literature/documents/um/290e-um001_-en-p.pdf; fetched in a browser 2026-11-23; not redistributed here |
 
 Vendor files are not in this repository; fetch them with
 `scripts/docs-fetch.py` from the `collect/` file that lists them and check the hash.
