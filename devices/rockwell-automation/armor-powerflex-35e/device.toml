@@ -33,3 +33,12 @@ where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/do
 title = "Armor PowerFlex 35E: EDS (ODVA marketplace)"
 sha256 = "2af95303f1d98eec8bc949f666141127904675de8a049722f9c3441b4c4431ca"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Armor PowerFlex 350 AC Drives User Manual, 35-UM001J-EN-P"
+sha256 = "b04946e12a4da0abfce45258f986edfc879aa9ce3e00ab4dbbacd4e3f5a29c93"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/35-um001_-en-p.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
+
+[[questions]]
+ask = "Which bytes of assembly 769 (28 bytes out) and 1025 (76 bytes in) are the logic command, command velocity, logic status and output frequency?"
+source = "35-UM001J-EN-P PDF p. 155 sends the CIP objects and attributes to publication 35-RD001, not collected"
