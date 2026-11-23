@@ -1,5 +1,22 @@
 {
  "docs": {
+  "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf": {
+   "content_type": "",
+   "final_url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf",
+   "folders": [
+    "devices/rockwell-automation/1732e-16cfgm12r",
+    "devices/rockwell-automation/1732e-ib16m12r",
+    "devices/rockwell-automation/1732e-ob16m12r"
+   ],
+   "kind": "manual",
+   "name": "hd-1732e-in009_-en-p.pdf",
+   "retrieved": "2026-11-23T16:09:04Z",
+   "sha256": "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd",
+   "size": 1370328,
+   "title": "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009",
+   "type": "pdf",
+   "via": "browser"
+  },
   "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip": {
    "content_type": "application/zip",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip",

@@ -70,3 +70,32 @@ url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_
 title = "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)"
 found = "2026-11-22 https://marketplace.odva.org/products/2973-vabx-a-s-el-e12-cted-ep-vabx-a-p-el-e12-cted-ep, Download the EDS File"
 terms = "none stated"
+
+# festo.com documents: www.festo.com and its asset host answer a plain fetch with 403
+# (Akamai). Found with Festo's own support-portal search in a person's Chrome on 2026-11-23;
+# each url below redirects to a time-limited signed link on media.festo.com. Downloaded in
+# that browser and imported with docs-fetch.py --import.
+
+[[doc]]
+folder = "devices/festo/cteu-ep"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/661102"
+title = "Operating instructions CTEU-EP, bus node EtherNet/IP (CTEU-EP_2017-02a_8067819g1)"
+found = "2026-11-23 festo.com support portal search 'CTEU-EP', User documentation"
+browser = true
+
+[[doc]]
+folder = "devices/festo/cteu-ep"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/700368"
+title = "CTEU-EP / CTEU-VN additional information (CTEU-EP_CTEU-VN_additional_2024-07_8218501g1)"
+found = "2026-11-23 festo.com support portal search 'CTEU-EP', User documentation"
+browser = true
+
+[[doc]]
+folder = "devices/festo/cmmt-as"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/665942"
+title = "Manual CMMT-AS-...-S1, servo drive: software, device profile, function, fieldbus (CMMT-AS-_-S1_manual_2026-06p_8259155g1)"
+found = "2026-11-23 festo.com support portal search 'CMMT-AS EtherNet/IP', User documentation"
+browser = true
