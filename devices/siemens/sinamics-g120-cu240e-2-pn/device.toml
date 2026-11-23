@@ -5,6 +5,7 @@ vendor = "Siemens"
 model = "SINAMICS G120 CU240E-2 PN (EtherNet/IP)"
 kind = "drive"
 category = "drive"
+channels = "1 drive: run fwd, fault reset, speed ref out; faulted, running, actual speed in; 6 DI, 3 DO, 2 AI, 2 AO"   # from: G120 CU240B-2/CU240E-2 Operating Instructions 04/2018 A5E34259001B AF s.10.2 p.445-446 (terminals); assemblies 20/70 from the entry's points (Fieldbus Function Manual p.68, not opened by me)
 article = "CU240E-2 PN"
 
 [protocols.enip]

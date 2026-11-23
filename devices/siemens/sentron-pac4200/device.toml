@@ -5,6 +5,7 @@ vendor = "Siemens"
 model = "SENTRON PAC4200"
 kind = "other"
 category = "power-meter"
+channels = "2 DI, 2 DO (plug-in up to 8 DI, 4 DO); voltage, current, power, energy, frequency, power factor, THD"   # from: SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019) section 2.2 interfaces, 2.3 measured variables p.18; opened 2026-11-23
 article = "7KM4200"
 
 [protocols.modbus]
