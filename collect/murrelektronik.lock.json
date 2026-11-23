@@ -1,0 +1,61 @@
+{
+ "docs": {
+  "https://shop.murrelektronik.com/55089": {
+   "content_type": "",
+   "final_url": "https://shop.murrelektronik.com/55089",
+   "folders": [
+    "devices/murrelektronik/impact67-e-di16",
+    "devices/murrelektronik/impact67-e-di8-do8",
+    "devices/murrelektronik/impact67-e-dio8-dio8",
+    "devices/murrelektronik/impact67-e-do16",
+    "devices/murrelektronik/impact67-e-do8"
+   ],
+   "kind": "archive",
+   "members": [
+    {
+     "name": "55368_hdb_de_18.pdf",
+     "sha256": "d24045c28752b26ed2143d66edbeef02ba3de3bf814035cc13f34e26de59e000",
+     "size": 9432635,
+     "type": "pdf"
+    },
+    {
+     "name": "55368_hdb_en_18.pdf",
+     "sha256": "f01edb0ad41cc1aa12de4984c68e1384afc3e6a6df38694401623be58d77c77f",
+     "size": 9631751,
+     "type": "pdf"
+    }
+   ],
+   "name": "55368_hdb_x_18.zip",
+   "retrieved": "2026-11-23T15:33:08Z",
+   "sha256": "22dfef4f62866d9e01fb81c0cb33916630c646ee0de15b1d8ace4ca3b9fc0c76",
+   "size": 17089219,
+   "title": "IMPACT67 E user manual, art. 55368 ed. 1.8 (German and English PDFs)",
+   "type": "zip",
+   "via": "browser"
+  },
+  "https://shop.murrelektronik.com/en/I-O-Systems/Impact67/Modules/IMPACT67-COMPACT-MODULE-PLASTIC-55086.html": {
+   "content_type": "",
+   "final_url": "https://shop.murrelektronik.com/en/I-O-Systems/Impact67/Modules/IMPACT67-COMPACT-MODULE-PLASTIC-55086.html",
+   "folders": [
+    "devices/murrelektronik/impact67-e-di8-do8"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "55086_Impact67_EIP_DI8DO8.eds",
+     "sha256": "fd900040a8f59ea7c67b8908dae152639cd45516855a8299cdd5bf3654ed745e",
+     "size": 11427,
+     "type": "eds"
+    }
+   ],
+   "name": "55086_IMPACT67_KF5_x_11.zip",
+   "retrieved": "2026-11-23T15:33:16Z",
+   "sha256": "6e6748dc382a045b4d8dd326b128efaa12a92ffc729293b9449dd5f56aa3cb69",
+   "size": 1968,
+   "title": "IMPACT67 E DI8 DO8 (55086): EDS",
+   "type": "zip",
+   "via": "browser"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
