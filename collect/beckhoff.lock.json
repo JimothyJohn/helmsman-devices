@@ -1,5 +1,20 @@
 {
  "docs": {
+  "https://download.beckhoff.com/download/document/io/bus-terminals/bk9000_bk9050_bk9100en.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://download.beckhoff.com/download/document/io/bus-terminals/bk9000_bk9050_bk9100en.pdf",
+   "folders": [
+    "devices/beckhoff/bk9050"
+   ],
+   "kind": "manual",
+   "name": "bk9000_bk9050_bk9100en.pdf",
+   "retrieved": "2026-11-23T03:40:08Z",
+   "sha256": "8bad38660eadc3637a386dda19f87358e878e76fe55c71d443bca25acbec8259",
+   "size": 4225971,
+   "terms": "none stated",
+   "title": "BK9000, BK9050 and BK9100 Bus Coupler Documentation V4.7.0 (English)",
+   "type": "pdf"
+  },
   "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf": {
    "content_type": "application/pdf",
    "final_url": "https://download.beckhoff.com/download/document/io/ethercat-terminals/ek9000_en.pdf",

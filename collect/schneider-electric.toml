@@ -1,0 +1,146 @@
+format = "helmsman-devices-collect 1"
+vendor = "Schneider Electric"
+
+# Every URL below was read off the se.com download page named in `found`
+# (https://www.se.com/us/en/download/document/<ref>/), 2026-11-22.
+
+[[doc]]
+folder = "devices/schneider-electric/stb-nip2311"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf"
+title = "STBNIP2311 Standard Dual Port Ethernet Modbus TCP/IP Network Interface Module, Applications Guide (EIO0000000051.05)"
+found = "2026-11-22 search: se.com STB NIP2311 EDS; download page https://www.se.com/us/en/download/document/EIO0000000051/. No EDS is published for it: the module is Modbus TCP only."
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/tm3bceip"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf"
+title = "TM3BCEIP Bus Coupler, Instruction Sheet (PHA71490.07)"
+found = "2026-11-22 search: se.com TM3BCEIP; download page https://www.se.com/us/en/download/document/PHA71490/. No EDS found on se.com (only firmware packages)."
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/schneider-electric/atv320-vw3a3616", "devices/schneider-electric/lexium-32m-vw3a3616"]
+kind = "eds"
+url = "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip"
+title = "Ethernet EDS VW3A3616 V1.20 (EDS files for the VW3A3616 card)"
+found = "2026-11-22 search: se.com ATV320 EDS VW3A3616; download page https://www.se.com/us/en/download/document/Ethernet_EDS_VW3A3616_V1.20/ (its ranges list Altivar Machine ATV320 and Lexium 32 & Motors)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/atv320-vw3a3616"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=NVE41313&p_enDocType=User+guide&p_File_Name=ATV320_Modbus_TCP_EtherNet_IP_Manual_NVE41313_02.pdf"
+title = "ATV320 Modbus TCP-EtherNet IP Manual (NVE41313.02)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/NVE41313/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/atv340"
+kind = "eds"
+url = "https://download.se.com/files?p_Doc_Ref=ATV340_Ethernet_IP_Emb_V3.6&p_enDocType=Software+-+Data+Library&p_File_Name=ATV340_Ethernet_IP_Embedded_EDS_V3.6.zip"
+title = "ATV340 Ethernet IP Embedded EDS V3.6"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/ATV340_Ethernet_IP_Emb_V3.6/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/atv340"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=NVE61653&p_enDocType=User+guide&p_File_Name=ATV340_Ethernet_Embedded_Manual_NVE61653_03.pdf"
+title = "ATV340 Ethernet Embedded Manual (NVE61653.03)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/NVE61653/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/atv630"
+kind = "eds"
+url = "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip"
+title = "ATV900 Ethernet IP Embedded EDS V2.3"
+found = "2026-11-22 (one EDS, product name ATV9xx, serves ATV630 and ATV930: one folder) search: se.com Altivar Process EDS; download page https://www.se.com/us/en/download/document/Ethernet_IP_Embedded_EDS_V2.3/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/atv630"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=NHA80940&p_enDocType=User+guide&p_File_Name=ATV900_Ethernet_Manual_Embedded_NHA80940_03.pdf"
+title = "ATV900 Embedded Ethernet manual (NHA80940.03)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/NHA80940/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/lexium-32m-vw3a3616"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=0198441113802-EN&p_enDocType=User+guide&p_File_Name=0198441113802_LXM32M+EtherNet_IP_EN.pdf"
+title = "VW3A3616 - LXM32M Ethernet TCP/IP Module (Protocol EtherNet/IP) User Guide (0198441113802)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/0198441113802-EN/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/tprbceip"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf"
+title = "TeSys island TPRBCEIP Bus Coupler (Ethernet IP) - Instruction Sheet (MFR44097.05)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/MFR44097/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/tprbceip"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=8536IB1906EN&p_enDocType=User+guide&p_File_Name=8536IB1906EN-03.pdf"
+title = "TeSys island - Quick Start Guide for EtherNet/IP Applications (8536IB1906EN-03)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/8536IB1906EN/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/ltmr-e-ethernet"
+kind = "eds"
+url = "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip"
+title = "EDS File for TeSys T EIP (1.5.000)"
+found = "2026-11-22 search: se.com TM3BCEIP EDS (result); download page https://www.se.com/us/en/download/document/EIP_EDS_1.5.00/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/ltmr-e-ethernet"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=DOCA0129EN&p_enDocType=User+guide&p_File_Name=DOCA0129EN_03.pdf"
+title = "TeSys T LTMR Motor Management Controller Ethernet Communication Guide (DOCA0129EN 03)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/DOCA0129EN/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/tm3bceip"
+kind = "datasheet"
+url = "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF"
+title = "Product data sheet Characteristics TM3BCEIP"
+found = "2026-11-22 search: se.com TM3BCEIP hardware guide; result https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/tprbceip"
+kind = "datasheet"
+url = "https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF"
+title = "TPRBCEIP product data sheet"
+found = "2026-11-22 search: se.com TeSys island EDS TPRBCEIP; result https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/pm5560"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf"
+title = "PowerLogic PM5500 / PM5600 / PM5700 series - User Manual (HRB1684301-18)"
+found = "2026-11-22 search: se.com PM5560 manual; download page https://www.se.com/us/en/download/document/HRB1684301/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/schneider-electric/pm5560"
+kind = "manual"
+url = "https://download.se.com/files?p_Doc_Ref=GDE41422&p_enDocType=Instruction+sheet&p_File_Name=GDE41422-05.pdf"
+title = "PowerLogic PM5560 / PM5580 / PM5650 - Instruction sheet (GDE41422-05)"
+found = "2026-11-22 download page https://www.se.com/us/en/download/document/GDE41422/"
+terms = "none stated"
+
+# OTB1E0DM9LP (Advantys OTB Ethernet, Modbus TCP): dropped. The se.com product
+# page lists a user guide but its link is built in JavaScript; the guide's number
+# (1606385) is only named by third parties and its download page does not render.
+# behind login: https://www.se.com/us/en/product/OTB1E0DM9LP/i-o-distributed-module-otb-ethernet-tcp-ip-0-100-m/

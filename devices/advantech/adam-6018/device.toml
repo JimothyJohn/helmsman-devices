@@ -1,0 +1,47 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6018"
+kind = "remote-io"
+channels = "8 TC AI, 8 DO"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "AI value"
+modbus = "hr:0..hr:7 (4X 40001-40008); average at hr:8 (40009)"
+meaning = "thermocouple input in engineering units, one word a channel"
+source = "ADAM-6000 User Manual Ed. 12 p. 202"
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:23 (0X 00017-00024, R/W)"
+meaning = "digital output command and state, 1 = on (ADAM-6018 only; the 6018+ has no outputs)"
+source = "ADAM-6000 User Manual Ed. 12 p. 200"
+
+[[points]]
+name = "burnout flag"
+modbus = "coil:120..coil:127 (0X 00121-00128, read)"
+meaning = "1 = no thermocouple signal on the channel"
+source = "ADAM-6000 User Manual Ed. 12 p. 201, remark 1 p. 203"
+
+[[points]]
+name = "high / low alarm flags"
+modbus = "coil:130..coil:138 and coil:140..coil:148 (0X 00131-00139, 00141-00149, read)"
+meaning = "1 = alarm active against the limits set in the Adam/Apax .NET Utility"
+source = "ADAM-6000 User Manual Ed. 12 p. 201-202, remarks 2-3 p. 203"
+
+[[points]]
+name = "historical max / min AI value"
+modbus = "hr:10..hr:18 and hr:20..hr:28 (4X 40011-40019, 40021-40029, read)"
+meaning = "highest and lowest value seen per channel, cleared by coil:100.. / coil:110.. (0X 00101-00109, 00111-00119)"
+source = "ADAM-6000 User Manual Ed. 12 p. 201-203"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"

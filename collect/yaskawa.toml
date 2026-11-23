@@ -1,0 +1,35 @@
+format = "helmsman-devices-collect 1"
+vendor = "yaskawa"
+
+[[doc]]
+folder = "devices/yaskawa/ga500-ga501"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf"
+title = "Yaskawa GA500 / GA501 EtherNet/IP: declaration of conformity (ODVA), ODVA marketplace product 2770"
+found = "2026-11-22 https://marketplace.odva.org/products/2770-ga501 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/yaskawa/ga500-ga501"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds"
+title = "Yaskawa GA500 / GA501 EtherNet/IP: EDS, ODVA marketplace product 2770"
+found = "2026-11-22 https://marketplace.odva.org/products/2770-ga501 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/yaskawa/ga800-si-en3d"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf"
+title = "Yaskawa 1740 listing: declaration of conformity (ODVA), ODVA marketplace product 1740"
+found = "2026-11-22 https://marketplace.odva.org/products/1740-cipr-ga80u2004-cimr-au2a0004-cipr-gaxxxxxxx-cimr-vau2a0001-cipr-xxxxxxxxx-q2x-axxxx-cimr-xxxxxxxx-cimr-mxxxxxxxxxx-q2v-axxxx-q2a-axxxx (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/yaskawa/ga800-si-en3d"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip"
+title = "Yaskawa 1740 listing: EDS, ODVA marketplace product 1740"
+found = "2026-11-22 https://marketplace.odva.org/products/1740-cipr-ga80u2004-cimr-au2a0004-cipr-gaxxxxxxx-cimr-vau2a0001-cipr-xxxxxxxxx-q2x-axxxx-cimr-xxxxxxxx-cimr-mxxxxxxxxxx-q2v-axxxx-q2a-axxxx (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

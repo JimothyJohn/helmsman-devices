@@ -1,0 +1,15 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Schneider Electric"
+model = "TeSys island bus coupler TPRBCEIP"
+kind = "remote-io"
+article = "TPRBCEIP"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+# The data sheet lists a "Modbus TCP server" and an "EtherNet/IP adapter" on two switched fieldbus ports; no port or register map is in the documents read.
+
+[[questions]]
+ask = "Which EtherNet/IP identity and assembly sizes does the coupler report? The Quick Start Guide has the island's DTM export L5X files for Studio 5000 (Export > EDS to L5X File Format) instead of publishing an EDS, so the sizes depend on the configured island."
+source = "TeSys island Quick Start Guide for EtherNet/IP Applications 8536IB1906EN-03 p. 11"

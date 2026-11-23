@@ -4,6 +4,8 @@
    "content_type": "application/pdf",
    "final_url": "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf",
    "folders": [
+    "devices/omron/ert1-id32slh-1",
+    "devices/omron/ert1-md32slh-1",
     "devices/omron/ert1-od32slh-1"
    ],
    "kind": "datasheet",
@@ -49,7 +51,11 @@
    "content_type": "application/zip",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip",
    "folders": [
-    "devices/omron/ert1-od32slh-1"
+    "devices/omron/ert1-hd16ch-1",
+    "devices/omron/ert1-id32slh-1",
+    "devices/omron/ert1-md32slh-1",
+    "devices/omron/ert1-od32slh-1",
+    "devices/omron/ert1-wd16ch-1"
    ],
    "kind": "eds",
    "members": [
@@ -85,7 +91,7 @@
     }
    ],
    "name": "10718-EDS.zip",
-   "retrieved": "2026-11-14T18:13:25Z",
+   "retrieved": "2026-11-23T03:35:16Z",
    "sha256": "4c8b911751eab799e53a3a72f4727e2bd7ea10c577e4584145dbc02e373d6890",
    "size": 13608,
    "terms": "none stated",

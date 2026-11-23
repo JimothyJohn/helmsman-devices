@@ -1,0 +1,24 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "5094-AEN2TR"
+kind = "remote-io"
+article = "5094-AEN2TR"
+
+[identity.enip]
+vendor_id = 1
+product_code = 322
+device_type = 12
+revisions = ["6.12"]   # the EDS's MajRev.MinRev
+product_name = "5094 Adapter 16 Modules RJ45"
+
+[protocols.enip]
+driver = "enip-io"
+eds = { name = "0001000C01420600.eds", size = 18440, sha256 = "90ca83cf7c596e7bbffc56be436332727527b4812f08fe2c158dda080ffe2e99", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip (member of 11693.11_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)"
+sha256 = "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip; retrieved 2026-11-23; not redistributed here"

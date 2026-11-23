@@ -1,0 +1,51 @@
+format = "helmsman-devices-collect 1"
+vendor = "eaton"
+
+[[doc]]
+folder = "devices/eaton/powerxl-dg1"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf"
+title = "Eaton PowerXL DG1: declaration of conformity (ODVA), ODVA marketplace product 1777"
+found = "2026-11-22 https://marketplace.odva.org/products/1777-powerxl-dg1 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/eaton/powerxl-dg1"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip"
+title = "Eaton PowerXL DG1: EDS, ODVA marketplace product 1777"
+found = "2026-11-22 https://marketplace.odva.org/products/1777-powerxl-dg1 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/eaton/powerxl-vfd-eip-comm-card"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf"
+title = "Eaton PowerXL EtherNet/IP comm card: declaration of conformity (ODVA), ODVA marketplace product 2764"
+found = "2026-11-22 https://marketplace.odva.org/products/2764-powerxl-vfd-eip-comm-card (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/eaton/powerxl-vfd-eip-comm-card"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds"
+title = "Eaton PowerXL EtherNet/IP comm card: EDS, ODVA marketplace product 2764"
+found = "2026-11-22 https://marketplace.odva.org/products/2764-powerxl-vfd-eip-comm-card (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/eaton/powerxl-dm1-pro"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2297/11952_DOC_011623.pdf"
+title = "Eaton PowerXL DM1 Pro: declaration of conformity (ODVA), ODVA marketplace product 2297"
+found = "2026-11-22 https://marketplace.odva.org/products/2297-powerxl-dm1-pro (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/eaton/powerxl-dm1-pro"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2297/11952.03-EDS.zip"
+title = "Eaton PowerXL DM1 Pro: EDS, ODVA marketplace product 2297"
+found = "2026-11-22 https://marketplace.odva.org/products/2297-powerxl-dm1-pro (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

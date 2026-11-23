@@ -1,0 +1,10 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Siemens"
+model = "SIMATIC ET 200SP IM 155-6 MF HF"
+kind = "remote-io"
+
+[[questions]]
+ask = "Which EtherNet/IP identity and Modbus TCP map does the interface module report? Its EDS is exported by the MultiFieldbus Configuration Tool (MFCT) and is the same whatever the station's configuration, so there is none to collect; the Modbus register layout is exported as a CSV per project."
+source = "Siemens MultiFieldbus devices webinar (20 Aug 2020), pp. 15 and 26"

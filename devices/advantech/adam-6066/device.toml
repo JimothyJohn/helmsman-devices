@@ -1,0 +1,47 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6066"
+kind = "remote-io"
+channels = "6 DI, 6 relay DO"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "DI"
+modbus = "coil:0..coil:5 (0X 00001-00006, read)"
+meaning = "digital input state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 217"
+
+[[points]]
+name = "relay DO"
+modbus = "coil:16..coil:21 (0X 00017-00022, R/W)"
+meaning = "relay output command and state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 217"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:32..coil:55 (0X 00033-00056, four coils a channel)"
+meaning = "per channel: counter start (1) / stop (0), clear counter, clear overflow, DI latch status"
+source = "ADAM-6000 User Manual Ed. 12 p. 217"
+
+[[points]]
+name = "DI counter / frequency value"
+modbus = "hr:0..hr:11 (4X 40001-40012, two words a channel)"
+meaning = "counter value, or frequency in frequency mode"
+source = "ADAM-6000 User Manual Ed. 12 p. 218"
+
+[[points]]
+name = "pulse output widths"
+modbus = "hr:12..hr:35 (4X 40013-40036, two words a channel: low-level width then high-level width)"
+meaning = "pulse output timing per relay channel; absolute and incremental pulse registers follow (4X 40037-, not listed here)"
+source = "ADAM-6000 User Manual Ed. 12 p. 218"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"

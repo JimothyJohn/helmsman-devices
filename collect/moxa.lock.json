@@ -1,0 +1,37 @@
+{
+ "docs": {
+  "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf",
+   "folders": [
+    "devices/moxa/iothinx-4510"
+   ],
+   "kind": "manual",
+   "name": "moxa-iothinx-4510-series-manual-v6.2.pdf",
+   "retrieved": "2026-11-23T03:37:45Z",
+   "sha256": "c70d5cd9a76772ff5237ee923ef0be86c4a5f3de8be5074f3b25580147b6a6bc",
+   "size": 13929183,
+   "terms": "none stated",
+   "title": "ioThinx 4510 Series User's Manual, v6.2",
+   "type": "pdf"
+  },
+  "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf",
+   "folders": [
+    "devices/moxa/iologik-e2210",
+    "devices/moxa/iologik-e2212",
+    "devices/moxa/iologik-e2242"
+   ],
+   "kind": "datasheet",
+   "name": "moxa-iologik-e2200-series-datasheet-v1.3.pdf",
+   "retrieved": "2026-11-23T03:37:45Z",
+   "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+   "size": 1422588,
+   "terms": "none stated",
+   "title": "ioLogik E2200 Series Datasheet, v1.3",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

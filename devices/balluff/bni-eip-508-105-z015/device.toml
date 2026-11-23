@@ -1,0 +1,28 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Balluff"
+model = "BNI EIP-508-105-Z015"
+kind = "remote-io"
+article = "BNI006A"
+
+[identity.enip]
+vendor_id = 43
+product_code = 20618
+device_type = 43
+revisions = ["3.1"]   # the EDS's MajRev.MinRev
+product_name = "BNI EIP-508-105-Z015"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection2 "Exclusive Owner"
+input_assembly = { instance = 100, bytes = 392 }
+output_assembly = { instance = 101, bytes = 262 }
+config_assembly = { instance = 102, bytes = 194 }
+eds = { name = "BNI_EIP-508-105-Z015.eds", size = 198637, sha256 = "593a700b5a81c73009eec3f7a2fa019b1ef3bffe421b6d75c388c2b7bb945fab", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip (member of 10943.03-EDSFiles.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015"
+sha256 = "4056224315d1afb50efd377e030441bba316698bdd9cbdb88aa011b3f5e4b822"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip; retrieved 2026-11-23; not redistributed here"
