@@ -97,9 +97,9 @@ Fixed channels in one module with terminals, on a DIN rail. `find.py panel-io`
 | [ioLogik E1242](devices/moxa/iologik-e1242/) | Moxa | Modbus TCP | 4 AI, 4 DI, 4 DIO | profile, map, 5 points | documents |
 | [ioLogik E1260](devices/moxa/iologik-e1260/) | Moxa | Modbus TCP | 6 RTD | profile, map, 1 point | documents |
 | [ioLogik E1262](devices/moxa/iologik-e1262/) | Moxa | Modbus TCP | 8 TC | profile, map, 1 point | documents |
-| [ioLogik E2210](devices/moxa/iologik-e2210/) | Moxa | Modbus TCP | 12 DI, 8 DO (sink) | identity and sources | documents |
-| [ioLogik E2212](devices/moxa/iologik-e2212/) | Moxa | Modbus TCP | 8 DI, 8 DO, 4 DIO | identity and sources | documents |
-| [ioLogik E2242](devices/moxa/iologik-e2242/) | Moxa | Modbus TCP | 4 AI, 12 DIO | identity and sources | documents |
+| [ioLogik E2210](devices/moxa/iologik-e2210/) | Moxa | Modbus TCP | 12 DI, 8 DO (sink) | 7 points | documents |
+| [ioLogik E2212](devices/moxa/iologik-e2212/) | Moxa | Modbus TCP | 8 DI, 8 DO, 4 DIO | 8 points | documents |
+| [ioLogik E2242](devices/moxa/iologik-e2242/) | Moxa | Modbus TCP | 4 AI, 12 DIO | 12 points | documents |
 | [ERT1-HD16CH-1](devices/omron/ert1-hd16ch-1/) | Omron | EtherNet/IP | 16 DI | EDS connection | documents |
 | [ERT1-ID32SLH-1](devices/omron/ert1-id32slh-1/) | Omron | EtherNet/IP | 32 DI (PNP) | EDS connection | documents |
 | [ERT1-MD32SLH-1](devices/omron/ert1-md32slh-1/) | Omron | EtherNet/IP | 16 DI, 16 DO (PNP, 0.5 A per output) | EDS connection | documents |
