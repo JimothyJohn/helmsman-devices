@@ -238,8 +238,8 @@ Starters, soft starters and motor management relays. `find.py motor-starter`
 
 | model | vendor | speaks | channels | to use it | checked |
 | --- | --- | --- | --- | --- | --- |
-| [ArmorStart 280E/281E (EtherNet/IP)](devices/rockwell-automation/armorstart-280e-281e/) | Rockwell Automation | EtherNet/IP | 1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in | EDS connection | documents |
-| [ArmorStart LT 290E/291E/294E (EtherNet/IP)](devices/rockwell-automation/armorstart-lt/) | Rockwell Automation | EtherNet/IP | 1 starter: run forward, reset fault, Out0-Out5 out; status and points Pt00-Pt05 in | EDS connection | documents |
+| [ArmorStart 280E/281E (EtherNet/IP)](devices/rockwell-automation/armorstart-280e-281e/) | Rockwell Automation | EtherNet/IP | 1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in | EDS connection, 10 points | documents |
+| [ArmorStart LT 290E/291E/294E (EtherNet/IP)](devices/rockwell-automation/armorstart-lt/) | Rockwell Automation | EtherNet/IP | 1 starter: run forward, reset fault, Out0-Out5 out; status and points Pt00-Pt05 in | EDS connection, 11 points | documents |
 | [TeSys island bus coupler TPRBCEIP](devices/schneider-electric/tprbceip/) | Schneider Electric | Modbus TCP | none of its own: the TeSys island starters and I/O modules behind it (up to 20) set the I/O | identity and sources | documents |
 | [TeSys T LTMR E (Ethernet)](devices/schneider-electric/ltmr-e-ethernet/) | Schneider Electric | EtherNet/IP | 1 motor starter: run fwd/rev and trip reset out; running, ready, alarm, tripped and monitoring registers in | EDS connection | documents |
 | [SSW900](devices/weg/ssw900/) | WEG | EtherNet/IP | control word and parameter writes out; status word and parameter reads in | EDS connection | documents |

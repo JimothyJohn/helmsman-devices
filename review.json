@@ -4633,6 +4633,16 @@
      "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
      "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009",
+     "sha256": "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
+    },
+    {
+     "title": "ArmorBlock I/O 16-channel Configurable Digital Modules Installation Instructions, 1732E-IN008",
+     "sha256": "4d178b8251128919230c5b12bac89705c54fb7f8d1c34ce8f082d242b5b66038",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in008_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
@@ -4711,6 +4721,11 @@
      "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
      "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009",
+     "sha256": "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
@@ -4750,6 +4765,11 @@
      "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
      "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009",
+     "sha256": "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
@@ -5106,7 +5126,68 @@
     },
     "eds": "0001001600910200.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "connection status",
+     "enip": "in:0.0..in:3.7",
+     "meaning": "bytes 0-3 are reserved; the manual says they refer to PLC communication status: all 1s = connection fault, all 0s = normal (the Logix tag {name}:I.Fault). The EDS says the input assembly returns 4 reserved bytes followed by 12 bytes of status",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); note p. 303 and Table 20 p. 120; EDS Connection1 help string"
+    },
+    {
+     "name": "TripPresent..Ready",
+     "enip": "in:4.0..in:4.4",
+     "meaning": "bit 0 TripPresent (fault exists with unit), bit 1 WarningPresent, bit 2 RunningForward (motor commanded to run forward), bit 3 RunningReverse (motor commanded to run reverse), bit 4 Ready (control power and 3-phase present); bits 5-7 of byte 4 are not used",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+    },
+    {
+     "name": "In0..In3",
+     "enip": "in:5.0..in:5.3",
+     "meaning": "state of the starter's own inputs 0 to 3, bit n = In n",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+    },
+    {
+     "name": "Hand, DisconnectClosed",
+     "enip": "in:5.4..in:5.5",
+     "meaning": "bit 4 Hand, bit 5 DisconnectClosed (the disconnect is closed); bits 6-7 not used. The manual describes Hand as 'HOA is in Auto mode', which contradicts the name, see questions",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+    },
+    {
+     "name": "Pt00DeviceOut..Pt14DeviceOut",
+     "enip": "in:6.0..in:7.6",
+     "meaning": "DeviceLogix network output status, Pt00..Pt07 in byte 6 bits 0-7 and Pt08..Pt14 in byte 7 bits 0-6",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+    },
+    {
+     "name": "LogicEnabled",
+     "enip": "in:7.7",
+     "meaning": "DeviceLogix is enabled (the table labels the bit 'LogicEnable', the tag table and Table 20 'LogicEnabled')",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+    },
+    {
+     "name": "ProducedWord0..3Param",
+     "enip": "in:8:u16 .. in:14:u16",
+     "meaning": "four 16-bit words at bytes 8, 10, 12, 14 (low byte first): the values of the parameters selected by the produced-assembly configuration parameters (ProducedWord0Param..ProducedWord3Param, 'Parameter 13..16'; the Appendix B table names them 'Int00DeviceOut Cfg'..'Int03DeviceOut Cfg'). Which parameter each carries depends on that setting. Byte order inferred from the table's '(low byte)' in byte 8 and '(high byte)' in byte 9 **inferred** as little-endian u16",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); Table 20 p. 120"
+    },
+    {
+     "name": "RunForward, RunReverse, ResetFault",
+     "enip": "out:0.0..out:0.2",
+     "meaning": "bit 0 RunForward (command forward), bit 1 RunReverse (command reverse), bit 2 ResetFault (fault reset); bits 3-5 not used. Switches the motor: the person's to command, never the agent's",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+    },
+    {
+     "name": "OutA, OutB",
+     "enip": "out:0.6..out:0.7",
+     "meaning": "bit 6 OutA, bit 7 OutB: the starter's two outputs ('OutputA', 'OutputB'). The person's to switch",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+    },
+    {
+     "name": "Pt00DeviceIn..Pt15DeviceIn",
+     "enip": "out:1.0..out:2.7",
+     "meaning": "network inputs to the DeviceLogix engine, Pt00..Pt07 in byte 1 and Pt08..Pt15 in byte 2, bit n of the byte = point n of the group",
+     "source": "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+    }
+   ],
    "sources": [
     {
      "title": "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity",
@@ -5117,6 +5198,17 @@
      "title": "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)",
      "sha256": "247261c77de331506ff9795d80fa96979b701913d0f272e9c2f8de943879acc0",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorStart with EtherNet/IP User Manual, Bulletin 280E, 281E, 284E, 280E-UM001C-EN-P (September 2015)",
+     "sha256": "aa6b32b8256d408d813d264b5789e463f7ac8785bb6012e30c3c94c35b25e230",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/280e-um001_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "The 280E manual describes the Hand status bit (byte 5, bit 4) as 'HOA is in Auto mode'. Is the bit set when the HOA selector is in Hand, or in Auto?",
+     "source": "280E-UM001C-EN-P Table 20, PDF p. 120 (the description) against Table 17, p. 117 (the name Hand)"
     }
    ]
   },
@@ -5150,7 +5242,74 @@
     },
     "eds": "0001001603010200.eds"
    },
-   "points": [],
+   "points": [
+    {
+     "name": "connection status",
+     "enip": "in:0.0..in:3.7",
+     "meaning": "bytes 0-3 are reserved (Logix tag {name}:I.ConnectionFault, 'PLC Communication Fault only'); the tag table says all 1s = fault, all 0s = normal",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 94 (Fault)"
+    },
+    {
+     "name": "TripPresent..CurrentFlowing",
+     "enip": "in:4.0..in:4.7",
+     "meaning": "bit 0 TripPresent (fault exists within unit), bit 1 WarningPresent, bit 2 RunningForward (motor commanded to run forward), bit 3 RunningReverse, bit 4 Ready (control and 3-phase power present), bit 5 NetControlStatus (not described in the tag tables), bit 6 not used, bit 7 CurrentFlowing (current is passing to the motor)",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; tag descriptions Table 21 pp. 94-95"
+    },
+    {
+     "name": "DLXEnabled, Keypad, DisconnectClosed",
+     "enip": "in:5.0..in:5.6",
+     "meaning": "bit 0 DLXEnabled (DeviceLogix enabled), bit 1 KeyPadAuto (HOA in Auto), bit 2 KeyPadOff (HOA in Off), bit 3 KeyPadHand (HOA in Hand), bits 4-5 not used, bit 6 DisconnectClosed (the disconnect is closed), bit 7 not used",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; tag descriptions Table 21 pp. 94-95"
+    },
+    {
+     "name": "Pt00..Pt05",
+     "enip": "in:6.0..in:6.5",
+     "meaning": "status of the six user-configured I/O points, 'User-configured I/O status'; bits 6-7 of byte 6 and byte 7 are blank in the table",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 95"
+    },
+    {
+     "name": "Pt00DeviceOut..Pt15DeviceOut",
+     "enip": "in:8.0..in:9.7",
+     "meaning": "DeviceLogix network output status, Pt00..Pt07 in byte 8 and Pt08..Pt15 in byte 9",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 95"
+    },
+    {
+     "name": "An00DeviceOut",
+     "enip": "in:10:u16",
+     "meaning": "DeviceLogix analog network output, bytes 10 (low) and 11 (high); the Logix tag is INT (Table 19), read here as little-endian u16 **inferred**",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92"
+    },
+    {
+     "name": "parameters 1-5, 11, 12, 16, 17",
+     "enip": "in:12:u16 .. in:28:u16",
+     "meaning": "nine 16-bit parameter values at bytes 12, 14, 16, 18, 20, 22, 24, 26, 28: Parameter 1 PhaseL1Current, 2 PhaseL2Current, 3 PhaseL3Current, 4 AverageCurrent, 5 %ThermalUtilized, 11 SwitchedVolts (OutputSourceV, IPS units), 12 UnswitchedVolts (SensorSourceV, IPS units), 16 TripStatus, 17 WarningStatus. Scaling and units come from the parameter table, not read here. Little-endian **inferred** from the table's low/high byte labels elsewhere in the same table",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 18 p. 92 (the Logix tags are INT, Table 19)"
+    },
+    {
+     "name": "RunForward, RunReverse, ResetFault",
+     "enip": "out:0.0..out:0.2",
+     "meaning": "bit 0 RunForward, bit 1 RunReverse, bit 2 ResetFault; bits 3-7 not used. Switches the motor: the person's to command, never the agent's",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; tag descriptions Table 20 p. 94"
+    },
+    {
+     "name": "Out00..Out05",
+     "enip": "out:1.0..out:1.5",
+     "meaning": "commands the six points Pt00-Pt05 ON when the user has defined a point as an output (the Logix tags Pt00Data..Pt05Data); bits 6-7 not used. The person's to switch",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+    },
+    {
+     "name": "Pt00DeviceIn..Pt15DeviceIn",
+     "enip": "out:2.0..out:3.7",
+     "meaning": "network inputs to the DeviceLogix engine, Pt00..Pt07 in byte 2 and Pt08..Pt15 in byte 3",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+    },
+    {
+     "name": "AnalogDeviceIn",
+     "enip": "out:4:u16",
+     "meaning": "network analog input to the DeviceLogix engine (Int00DeviceIn), bytes 4 (low) and 5 (high); the Logix tag is INT, read here as little-endian u16 **inferred**",
+     "source": "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+    }
+   ],
    "sources": [
     {
      "title": "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity",
@@ -5161,6 +5320,11 @@
      "title": "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)",
      "sha256": "07c2f541dc2a416f0e07d85d6774543015dbc353942233ec83c1d8c5366a9445",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ArmorStart LT EtherNet/IP Version User Manual, Bulletin 290E, 291E, 294E, 290E-UM001C-EN-P",
+     "sha256": "e520232cad2973a123501bf744a798cf11295d006e1cc3d8859c0021c3bbc774",
+     "where": "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/290e-um001_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
     }
    ]
   },
