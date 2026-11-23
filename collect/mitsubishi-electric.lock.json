@@ -1,0 +1,111 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf",
+   "folders": [
+    "devices/mitsubishi-electric/fr-e800-e"
+   ],
+   "kind": "datasheet",
+   "name": "11932_DOC_100919.pdf",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "a326fab9a1b6425133f71aa1eea635a24612b114de4663f4b2266c42b538ff98",
+   "size": 38240,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-E800-E: declaration of conformity (ODVA), ODVA marketplace product 2156",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf",
+   "folders": [
+    "devices/mitsubishi-electric/fr-e800-sce"
+   ],
+   "kind": "datasheet",
+   "name": "11935_DOC_051320.pdf",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "75334048f965586f3dc5193f57585624b4c130b2e394ae62f690a11df12877c2",
+   "size": 117857,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-E800-SCE: declaration of conformity (ODVA), ODVA marketplace product 2231",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf",
+   "folders": [
+    "devices/mitsubishi-electric/fr-d800-e"
+   ],
+   "kind": "datasheet",
+   "name": "12552_DOC_110624.pdf",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "0a5fd017960cf765dfd199e4c26f96444e4396d659ab072e4f8d1f5af7549a8a",
+   "size": 140546,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-D800-E: declaration of conformity (ODVA), ODVA marketplace product 2787",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip",
+   "folders": [
+    "devices/mitsubishi-electric/fr-e800-e"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "00A10002003E0101.eds",
+     "sha256": "e0040f44b581fbea0c30adb3e8652add6ef28d1e1399eb32cc90ca96686cbc92",
+     "size": 74537,
+     "type": "eds"
+    }
+   ],
+   "name": "11932.01-EDS.zip",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "85de70997bd9c67e731270eb542d506798c500d05d481c511809feb0e4e6c5c3",
+   "size": 4224,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-E800-E: EDS, ODVA marketplace product 2156",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds",
+   "folders": [
+    "devices/mitsubishi-electric/fr-e800-sce"
+   ],
+   "kind": "eds",
+   "name": "00A10002003F0100.eds",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28",
+   "size": 245163,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-E800-SCE: EDS, ODVA marketplace product 2231",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip",
+   "folders": [
+    "devices/mitsubishi-electric/fr-d800-e"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "12552.01/00A1000200700102.eds",
+     "sha256": "4fe0e69aaf2c0236773ef9da6d2d2b9ea03fcfc12f9a1795465a85b9f2b71338",
+     "size": 278023,
+     "type": "eds"
+    }
+   ],
+   "name": "12552.01.zip",
+   "retrieved": "2026-11-23T03:40:56Z",
+   "sha256": "c90227479e640e11e53df19a099b6f9e5ed8e0ce4566314b814de4f80b55bcb6",
+   "size": 17566,
+   "terms": "none stated",
+   "title": "Mitsubishi Electric FR-D800-E: EDS, ODVA marketplace product 2787",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

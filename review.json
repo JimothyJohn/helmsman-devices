@@ -2,6 +2,49 @@
  "format": "helmsman-devices-review 1",
  "devices": [
   {
+   "folder": "devices/abb/feip-21",
+   "vendor": "ABB, Inc.",
+   "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 46,
+     "product_code": 1,
+     "device_type": 103,
+     "revisions": [
+      "1.64"
+     ],
+     "product_name": "ABB Drive via Ethernet/IP FEIP-21"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1,
+     "bytes": 4
+    },
+    "eds": "FEIP21_filerev1_2.EDS"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ABB FEIP-21 EtherNet/IP adapter module: declaration of conformity (ODVA), ODVA marketplace product 2829",
+     "sha256": "d6ec1bc5d20db9ba9827e04665423ed2b2ab351f529dfab43c378606ed430c6a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ABB FEIP-21 EtherNet/IP adapter module: EDS, ODVA marketplace product 2829",
+     "sha256": "42bf024b5ecb8a0ce980827af62bfbb3c35162ae1e929f27013eab78cb18ce64",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
@@ -543,6 +586,172 @@
    ]
   },
   {
+   "folder": "devices/delta-electronics/cmm-eip01",
+   "vendor": "Delta electronics, inc.",
+   "model": "CMM-EIP01",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 799,
+     "product_code": 260,
+     "device_type": 12,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CMM-EIP01"
+    },
+    "input": {
+     "instance": 105
+    },
+    "output": {
+     "instance": 104
+    },
+    "config": {
+     "instance": 128
+    },
+    "eds": "031F000C010400010001.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Delta CMM-EIP01: declaration of conformity (ODVA), ODVA marketplace product 1924",
+     "sha256": "87f27de8f6ca5f4ff376c2d90361778ad4e5ad989194f291888df2006f232f15",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Delta CMM-EIP01: EDS, ODVA marketplace product 1924",
+     "sha256": "4dcd355ef630c29221a334e501c698507da571e81032e435bd712ed48111aa26",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-dg1",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DG1",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12288,
+     "device_type": 2,
+     "revisions": [
+      "2.2"
+     ],
+     "product_name": "PowerXL DG1"
+    },
+    "input": {
+     "instance": 11,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 10,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXL_EIP_v2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL DG1: declaration of conformity (ODVA), ODVA marketplace product 1777",
+     "sha256": "812c0e0a2ed3db2e2c06ef588a3e1397f303714724a9f565e997a1b1e91d4c51",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL DG1: EDS, ODVA marketplace product 1777",
+     "sha256": "f0ab6f2304ec7edc35723bc495a26dda76971213ef0fab150f09e98e560fdbc8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-dm1-pro",
+   "vendor": "Eaton Corporation",
+   "model": "PowerXL DM1 PRO",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12329,
+     "device_type": 2,
+     "revisions": [
+      "2.4"
+     ],
+     "product_name": "PowerXL DM1 PRO"
+    },
+    "input": {
+     "instance": 11,
+     "bytes": 0
+    },
+    "output": {
+     "instance": 10,
+     "bytes": 0
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXLDM1_EIP_V1.06.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL DM1 Pro: declaration of conformity (ODVA), ODVA marketplace product 2297",
+     "sha256": "040e532cb2d479eb1fda78fd79dcbe35d38572ce7113166ef64f64065f257d2d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2297/11952_DOC_011623.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL DM1 Pro: EDS, ODVA marketplace product 2297",
+     "sha256": "e7490fc282e8b579f4847309d1310d587b5d79c26a841a8fe9a1917f27cbc2be",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2297/11952.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
+   "vendor": "Eaton Electrical",
+   "model": "PowerXL VFD EIP Comm. Card",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 68,
+     "product_code": 12338,
+     "device_type": 2,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "PowerXL VFD EIP Comm. Card"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Eaton PowerXL EtherNet/IP comm card: declaration of conformity (ODVA), ODVA marketplace product 2764",
+     "sha256": "ac8a66900ee14a4d966d3c6e2447cd8fcbd51e416f214adc29db86056c7e0ff7",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Eaton PowerXL EtherNet/IP comm card: EDS, ODVA marketplace product 2764",
+     "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
    "folder": "devices/ifm/if6123",
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
@@ -591,6 +800,166 @@
      "title": "IODD ifm-000257-20190307-IODD1.1.xml",
      "sha256": "e3f88b9148e5defd54ebd2e2ccd8ac5c6976946d1d53ef93d1df86b89406f831",
      "where": "https://ioddfinder.io-link.com/api/vendors/310/iodds/9066/files/zip/rated; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/lenze/i550",
+   "vendor": "Lenze",
+   "model": "i550 cabinet",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 587,
+     "product_code": 550,
+     "device_type": 2,
+     "revisions": [
+      "7.1"
+     ],
+     "product_name": "i550 cabinet"
+    },
+    "input": {
+     "instance": 71,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 21,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 130,
+     "bytes": 68
+    },
+    "eds": "Lenze_i550-cabinet_V07.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Lenze i550 / i650: declaration of conformity (ODVA), ODVA marketplace product 2570",
+     "sha256": "79d08c9f63de375a9043b52501ed2da33aacfebf45ad2c12453e92366f44d518",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Lenze i550 / i650: EDS, ODVA marketplace product 2570",
+     "sha256": "7c2cd850def387b2c0ae6ccf55d4732ccc6807a8dc8459f1343ef169fe9bcbe8",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-d800-e",
+   "vendor": "Mitsubishi Electric Corporation",
+   "model": "FR-D800-E",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 112,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-D800-E"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A1000200700102.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-D800-E: declaration of conformity (ODVA), ODVA marketplace product 2787",
+     "sha256": "0a5fd017960cf765dfd199e4c26f96444e4396d659ab072e4f8d1f5af7549a8a",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-D800-E: EDS, ODVA marketplace product 2787",
+     "sha256": "c90227479e640e11e53df19a099b6f9e5ed8e0ce4566314b814de4f80b55bcb6",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-E",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 62,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-E800-E"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A10002003E0101.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-E800-E: declaration of conformity (ODVA), ODVA marketplace product 2156",
+     "sha256": "a326fab9a1b6425133f71aa1eea635a24612b114de4663f4b2266c42b538ff98",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-E800-E: EDS, ODVA marketplace product 2156",
+     "sha256": "85de70997bd9c67e731270eb542d506798c500d05d481c511809feb0e4e6c5c3",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-sce",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-SCE",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 161,
+     "product_code": 63,
+     "device_type": 2,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "FR-E800-SCE"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "eds": "00A10002003F0100.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Mitsubishi Electric FR-E800-SCE: declaration of conformity (ODVA), ODVA marketplace product 2231",
+     "sha256": "75334048f965586f3dc5193f57585624b4c130b2e394ae62f690a11df12877c2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Mitsubishi Electric FR-E800-SCE: EDS, ODVA marketplace product 2231",
+     "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -2169,6 +2538,250 @@
      "title": "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)",
      "sha256": "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip; retrieved 2026-11-14; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw300",
+   "vendor": "WEG",
+   "model": "CFW300",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 5376,
+     "device_type": 43,
+     "revisions": [
+      "3.1"
+     ],
+     "product_name": "CFW300"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW300_V30X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW300: declaration of conformity (ODVA), ODVA marketplace product 2202",
+     "sha256": "a3c5162fa2aab6cc141f373af2d8aeb4a005f73fb63094f7450f55ce6764f776",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW300: EDS, ODVA marketplace product 2202",
+     "sha256": "c45ab18f67fb60bc30deb8bedc44939a484c6904842913b9c073e9e19013e616",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw320",
+   "vendor": "WEG",
+   "model": "CFW320",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 6400,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CFW320"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW320_V10X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW320: declaration of conformity (ODVA), ODVA marketplace product 2462",
+     "sha256": "a86c874dd3907f3091e17aaa28c6a3ececc2b30f641b55c6e51d6a459a057337",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2462/12226_DOC_021622.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW320: EDS, ODVA marketplace product 2462",
+     "sha256": "e1125ca528c718fe2f449a6e24196e596c2002e71964bd567a637799e440563f",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2462/12226.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/cfw500",
+   "vendor": "WEG",
+   "model": "CFW500",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 6656,
+     "device_type": 43,
+     "revisions": [
+      "1.1"
+     ],
+     "product_name": "CFW500"
+    },
+    "input": {
+     "instance": 150
+    },
+    "output": {
+     "instance": 100
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_CFW500_CETH2_V10X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG CFW500: declaration of conformity (ODVA), ODVA marketplace product 2768",
+     "sha256": "7809fda67ec0bf33cf93f5ae48f56119c5c84c873283b51220d6adfa79608b37",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG CFW500: EDS, ODVA marketplace product 2768",
+     "sha256": "11acd09b50d3e720b5150eda5aabef8a5b584ee2d6b8961625de1580013ff9e9",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/weg/ssw900",
+   "vendor": "WEG",
+   "model": "SSW900",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 853,
+     "product_code": 5888,
+     "device_type": 43,
+     "revisions": [
+      "1.30"
+     ],
+     "product_name": "SSW900"
+    },
+    "input": {
+     "instance": 160
+    },
+    "output": {
+     "instance": 110
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "EIP_SSW900_V13X.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "WEG SSW900: declaration of conformity (ODVA), ODVA marketplace product 2394",
+     "sha256": "6b22e25567968fc15fbfe6a543b7d0e74e907ae2e4f1dd59fb2c9b674b31ed2d",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "WEG SSW900: EDS, ODVA marketplace product 2394",
+     "sha256": "8ed475238b4c7fa6f5c2e03979d0fd141b9f4a597823e7f992147fd895719b6f",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/yaskawa/ga500-ga501",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa GA501",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 44,
+     "product_code": 24063,
+     "device_type": 2,
+     "revisions": [
+      "1.5"
+     ],
+     "product_name": "Yaskawa GA501"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "GA501_v1.005.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Yaskawa GA500 / GA501 EtherNet/IP: declaration of conformity (ODVA), ODVA marketplace product 2770",
+     "sha256": "0b341fd56f7767f83e8e4a07dc020da27a5de238d7dacea811e14449451710a2",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Yaskawa GA500 / GA501 EtherNet/IP: EDS, ODVA marketplace product 2770",
+     "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/yaskawa/ga800-si-en3d",
+   "vendor": "Yaskawa America, Inc.",
+   "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 44,
+     "product_code": 24192,
+     "device_type": 2,
+     "revisions": [
+      "2.8"
+     ],
+     "product_name": "Yaskawa SI-EN3D for CIPR-GA80U2004"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "CIPR-GA80U2004_SI-EN3D_v2.8.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Yaskawa 1740 listing: declaration of conformity (ODVA), ODVA marketplace product 1740",
+     "sha256": "f22fff86a4ab1ca43ef3e2352db68d54c8dc35de523f97e1f8c60c6365fc1d70",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Yaskawa 1740 listing: EDS, ODVA marketplace product 1740",
+     "sha256": "c5a10ca71a76cbd19ebc51f8423a34504ec0ad677a25af4dba333370a7ab3598",
+     "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
     }
    ]
   }

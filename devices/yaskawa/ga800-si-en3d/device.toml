@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Yaskawa America, Inc."
+model = "Yaskawa SI-EN3D for CIPR-GA80U2004"
+kind = "drive"
+article = "CIPR-GA80U2004"
+
+[identity.enip]
+vendor_id = 44
+product_code = 24192
+device_type = 2
+revisions = ["2.8"]   # the EDS's MajRev.MinRev
+product_name = "Yaskawa SI-EN3D for CIPR-GA80U2004"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Speed Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+config_assembly = { instance = 6 }
+eds = { name = "CIPR-GA80U2004_SI-EN3D_v2.8.eds", size = 51252, sha256 = "e57045ccd15e2067b800e6e2dad04d63b4e4d578e8bc3acca119cbce25b14cc1", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip (member of 11453.04-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Yaskawa 1740 listing: declaration of conformity (ODVA), ODVA marketplace product 1740"
+sha256 = "f22fff86a4ab1ca43ef3e2352db68d54c8dc35de523f97e1f8c60c6365fc1d70"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Yaskawa 1740 listing: EDS, ODVA marketplace product 1740"
+sha256 = "c5a10ca71a76cbd19ebc51f8423a34504ec0ad677a25af4dba333370a7ab3598"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
