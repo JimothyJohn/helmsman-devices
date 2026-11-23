@@ -13,10 +13,13 @@ vendor = "Balluff"
 # (BNI005J): not in the ODVA zip, and balluff.com's software list
 # (https://www.balluff.com/en-be/downloads/software) is behind HTTP 403.
 # The manual below gives their process data, so their folders are hand-written.
-# IO-Link masters (BNI EIP-502/508) are out of scope.
+# IO-Link masters (BNI EIP-502/508) were out of scope; the 508 folder was added 2026-11-23 from the EDS alone.
 
 [[doc]]
-folder = "devices/balluff/bni-eip-302-105-z015"
+folders = [
+  "devices/balluff/bni-eip-302-105-z015",
+  "devices/balluff/bni-eip-508-105-z015",
+]
 kind = "eds"
 url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/448/10943.03-EDSFiles.zip"
 title = "Balluff EtherNet/IP EDS files (ODVA marketplace 448): BNI EIP-302-105-Z015, BNI EIP-508-105-Z015"

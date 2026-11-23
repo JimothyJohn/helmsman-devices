@@ -5,7 +5,9 @@ vendor = "Turck"
 # https://www.turck.us/en/product/6814076 (read 2026-11-14); the EDS and GSDML
 # packages and the instructions for use cover the whole series. The 2COM,
 # 2RFID and 4IOL blocks are in the packages too and are left for later: they
-# are serial, RFID and IO-Link masters, not plain I/O.
+# are serial, RFID and IO-Link masters, not plain I/O (added 2026-11-23 from the same packages;
+# the Instructions for Use below covers only the analog and digital blocks, so these three
+# folders cite the EDS and GSDML packages only).
 
 [[doc]]
 folders = [
@@ -19,6 +21,9 @@ folders = [
   "devices/turck/tben-s2-4ao",
   "devices/turck/tben-s2-8dip",
   "devices/turck/tben-s2-8dxp",
+  "devices/turck/tben-s2-2com-4dxp",
+  "devices/turck/tben-s2-2rfid-4dxp",
+  "devices/turck/tben-s2-4iol",
 ]
 kind = "eds"
 url = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip"
@@ -38,6 +43,9 @@ folders = [
   "devices/turck/tben-s2-4ao",
   "devices/turck/tben-s2-8dip",
   "devices/turck/tben-s2-8dxp",
+  "devices/turck/tben-s2-2com-4dxp",
+  "devices/turck/tben-s2-2rfid-4dxp",
+  "devices/turck/tben-s2-4iol",
 ]
 kind = "gsdml"
 url = "https://www.turck.us/attachment/TBEN-S_PROFINET.zip"
@@ -70,4 +78,34 @@ kind = "datasheet"
 url = "https://www.turck.us/datasheet/_us/edb_6814076_eng_us.pdf"
 title = "TBEN-S2-8DXP data sheet (6814076), English"
 found = "2026-11-14 product page https://www.turck.us/en/product/6814076, Data Sheets"
+terms = "none stated"
+
+# TBEN-L5-8IOL (IO-Link master, 6814017). Links from the product page
+# https://www.turck.us/en/product/6814017 (read 2026-11-23), Configuration Files and Instructions for Use.
+
+[[doc]]
+folder = "devices/turck/tben-l5-8iol"
+kind = "eds"
+url = "https://www.turck.us/attachment/TBEN-L_ETHERNETIP.zip"
+title = "TBEN-L EDS files and catalog files (family package)"
+found = "2026-11-23 search: turck tben-l5-8iol eds; product page https://www.turck.us/en/product/6814017, Configuration Files"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/turck/tben-l5-8iol"
+kind = "manual"
+url = "https://www.turck.us/attachment/d301407.pdf"
+title = "TBEN-Lx-8IOL Instructions for Use"
+found = "2026-11-23 product page https://www.turck.us/en/product/6814017, Instructions for Use"
+terms = "none stated"
+
+# FEN20-4DIP-4DXP. Links from the FEN20-4DIP-4DXP-DIN product page
+# https://www.turck.us/en/product/6931092 (read 2026-11-23), Configuration Files.
+
+[[doc]]
+folder = "devices/turck/fen20-4dip-4dxp"
+kind = "eds"
+url = "https://www.turck.us/attachment/FEN20_ETHERNETIP.zip"
+title = "FEN20 EDS files and catalog files (family package)"
+found = "2026-11-23 search: turck fen20-4dip-4dxp eds; product page https://www.turck.us/en/product/6931092, Configuration Files"
 terms = "none stated"

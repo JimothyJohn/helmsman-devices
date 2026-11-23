@@ -35,7 +35,13 @@ terms = "none stated"
 # behind login/not found: W481 manual, listed on https://edata.omron.com.au/eData/manuals.html
 
 [[doc]]
-folder = "devices/omron/ert1-od32slh-1"
+folders = [
+  "devices/omron/ert1-od32slh-1",
+  "devices/omron/ert1-hd16ch-1",
+  "devices/omron/ert1-id32slh-1",
+  "devices/omron/ert1-md32slh-1",
+  "devices/omron/ert1-wd16ch-1",
+]
 kind = "eds"
 url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1237/10718-EDS.zip"
 title = "EDS for ERT1-XD16CH-1, ERT1-XD32SLH-1, ERT1-OD32SLH-1 (ODVA marketplace, product 1237)"
@@ -43,7 +49,11 @@ found = "2026-11-14 search: marketplace.odva.org omron; https://marketplace.odva
 terms = "none stated"
 
 [[doc]]
-folder = "devices/omron/ert1-od32slh-1"
+folders = [
+  "devices/omron/ert1-od32slh-1",
+  "devices/omron/ert1-id32slh-1",
+  "devices/omron/ert1-md32slh-1",
+]
 kind = "datasheet"
 url = "https://assets.omron.eu/downloads/latest/datasheet/en/r34i_ert1-_32slh-1_ethernet_ip_screwless_remote_i_o_datasheet_en.pdf"
 title = "ERT1-_32SLH-1 high density EtherNet/IP remote I/O datasheet"
