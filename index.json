@@ -2658,6 +2658,7 @@
      "product_code": 145
     }
    },
+   "points": 10,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2682,6 +2683,7 @@
      "product_code": 769
     }
    },
+   "points": 11,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2706,6 +2708,7 @@
      "product_code": 1822
     }
    },
+   "points": 30,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2730,6 +2733,7 @@
      "product_code": 9
     }
    },
+   "points": 28,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2778,6 +2782,7 @@
      "product_code": 10640
     }
    },
+   "points": 44,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2802,6 +2807,7 @@
      "product_code": 48
     }
    },
+   "points": 26,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2826,6 +2832,7 @@
      "product_code": 50
     }
    },
+   "points": 26,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -2874,6 +2881,7 @@
      "product_code": 2192
     }
    },
+   "points": 44,
    "protocols": {
     "enip": {
      "driver": "enip-io",

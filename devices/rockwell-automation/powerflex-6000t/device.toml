@@ -1,6 +1,7 @@
-# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
-# checked_on, firmware and checked_by stay out until one has, and every value
-# below is what the vendor's file says, not what a device did.
+# Drafted by scripts/eds-draft.py from the EDS; the [[points]] were then read by hand from the
+# manual listed under [[sources]], page by page. No unit has been checked: checked_on, firmware
+# and checked_by stay out until one has, and every value below is what the vendor's files say,
+# not what a device did.
 [device]
 vendor = "Rockwell Automation"
 model = "PowerFlex 6000T"
@@ -26,6 +27,274 @@ output_assembly = { instance = 2 }
 config_assembly = { instance = 6 }
 eds = { name = "12040.08_EDS", size = 40833, sha256 = "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS", terms = "none stated" }
 
+# Points below are the connection the EDS names (Connection1, assemblies 1 and 2), all words 32-bit. Byte.bit are the protocol's
+# 0-based offsets, worked out from the manual's 0-based DINT and Logic Bit columns.
+
+[[points]]
+name = "Normal Stop"
+enip = "out:0.0"
+meaning = "Logic Command bit 0: 1 = Normal Stop. A 0 must be present before Start, Jog or Run is accepted"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2) (4)"
+
+[[points]]
+name = "Start"
+enip = "out:0.1"
+meaning = "Logic Command bit 1: 1 = Start, momentary"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (1)"
+
+[[points]]
+name = "Jog 1"
+enip = "out:0.2"
+meaning = "Logic Command bit 2: 1 = Jog 1 (speed set in 10:1894). A transition to 0 stops the drive"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+
+[[points]]
+name = "Clear Fault"
+enip = "out:0.3"
+meaning = "Logic Command bit 3: 1 = Clear Fault; the value must switch from 0 to 1"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (3)"
+
+[[points]]
+name = "Direction"
+enip = "out:0.4..out:0.5"
+meaning = "Logic Command bits 4-5 (the table names both Unipolar Direction): 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Manual"
+enip = "out:0.6"
+meaning = "Logic Command bit 6: 1 = Manual"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Accel Time"
+enip = "out:1.0..out:1.1"
+meaning = "Logic Command bits 8-9: 00 = no command, 01 = Accel Time 1 (10:1915), 10 = Accel Time 2 (10:1916), 11 = use present time"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Decel Time"
+enip = "out:1.2..out:1.3"
+meaning = "Logic Command bits 10-11: 00 = no command, 01 = Decel Time 1 (10:1917), 10 = Decel Time 2 (10:1918), 11 = use present time"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Ref Select"
+enip = "out:1.4..out:1.6"
+meaning = "Logic Command bits 12-14: 000 = no command, 001 = Ref A (10:1800), 010 = Ref B (10:1801), 011..111 = Preset 3..7 (10:1816..10:1820)"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Coast Stop"
+enip = "out:2.0"
+meaning = "Logic Command bit 16: 1 = Coast to Stop"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Current Limit Stop"
+enip = "out:2.1"
+meaning = "Logic Command bit 17: 1 = Current Limit Stop"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Run"
+enip = "out:2.2"
+meaning = "Logic Command bit 18: 1 = Run. A 0 must be present on bit 0 first; a transition to 0 stops the drive"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (4)"
+
+[[points]]
+name = "Jog 2"
+enip = "out:2.3"
+meaning = "Logic Command bit 19: 1 = Jog 2 (speed set in 10:1895). A transition to 0 stops the drive"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 121 (printed 121), Table 99 (drive products), Logic Bit column (0-based); Logic Command is Output DINT 0 = out bytes 0-3; bit n is byte n/8, bit n%8 (inferred); footnote (2)"
+
+[[points]]
+name = "Reference"
+enip = "out:4:f32"
+meaning = "Velocity reference, 32-bit REAL in Hz or RPM as set by drive 10:1891 (Velocity Units): 30.0 = 30.0 Hz. The commanded maximum cannot exceed 10:1392 (Max Speed Fwd). A negative value is a reverse command only in a bipolar direction mode"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 1; scaling PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56-57 (printed 56-57), Table 7"
+
+[[points]]
+name = "DL From Net 01..16"
+enip = "out:8:u32 .. out:68:u32"
+meaning = "sixteen 32-bit words that write the drive parameters assigned in 0:321..0:336 (DL From Net 01..16); word n is out byte 8 + 4n. Each target is a DINT or a REAL as its own parameter says. Only as many as the output size covers (8 bytes = none, 72 = all 16). Not saved to nonvolatile memory"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Output DINT 2-17; PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 57 (printed 57) Using Datalinks, PDF p. 55 (printed 55) for one 32-bit word per datalink"
+
+[[points]]
+name = "Run Ready"
+enip = "in:4.0"
+meaning = "Logic Status bit 0: 1 = ready to run"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Active"
+enip = "in:4.1"
+meaning = "Logic Status bit 1: 1 = active"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Command Direction"
+enip = "in:4.2"
+meaning = "Logic Status bit 2: 1 = forward, 0 = reverse"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Actual Direction"
+enip = "in:4.3"
+meaning = "Logic Status bit 3: 1 = forward, 0 = reverse"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Accelerating"
+enip = "in:4.4"
+meaning = "Logic Status bit 4: 1 = accelerating"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Decelerating"
+enip = "in:4.5"
+meaning = "Logic Status bit 5: 1 = decelerating"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Alarm"
+enip = "in:4.6"
+meaning = "Logic Status bit 6: 1 = alarm (10:465..467)"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Fault"
+enip = "in:4.7"
+meaning = "Logic Status bit 7: 1 = fault (10:461 and 10:462)"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "At Setpoint Speed"
+enip = "in:5.0"
+meaning = "Logic Status bit 8: 1 = at setpoint speed"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Manual Mode"
+enip = "in:5.1"
+meaning = "Logic Status bit 9: 1 = manual mode active"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Speed Ref ID"
+enip = "in:5.2..in:5.6"
+meaning = "Logic Status bits 10-14: 00001 = auto Ref A (10:1800), 00010 = auto Ref B (10:1801), 00011..00111 = auto Preset 3..7 (10:1816..10:1820), 10000..10110 = manual port 0..6, 11101 = built-in ENET (0:211), 11111 = alternate manual ref select (10:1835); other values reserved"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Running"
+enip = "in:6.0"
+meaning = "Logic Status bit 16: 1 = running"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Jogging"
+enip = "in:6.1"
+meaning = "Logic Status bit 17: 1 = jogging"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Stopping"
+enip = "in:6.2"
+meaning = "Logic Status bit 18: 1 = stopping"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "DC Brake"
+enip = "in:6.3"
+meaning = "Logic Status bit 19: 1 = DC brake"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Dynamic Brake Active"
+enip = "in:6.4"
+meaning = "Logic Status bit 20: 1 = dynamic brake active"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Speed Mode"
+enip = "in:6.5"
+meaning = "Logic Status bit 21: 1 = speed mode"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Position Mode"
+enip = "in:6.6"
+meaning = "Logic Status bit 22: 1 = position mode"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Torque Mode"
+enip = "in:6.7"
+meaning = "Logic Status bit 23: 1 = torque mode"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "At Zero Speed"
+enip = "in:7.0"
+meaning = "Logic Status bit 24: 1 = at zero speed"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "At Home"
+enip = "in:7.1"
+meaning = "Logic Status bit 25: 1 = at home"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "At Limit"
+enip = "in:7.2"
+meaning = "Logic Status bit 26: 1 = at limit"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Current Limit"
+enip = "in:7.3"
+meaning = "Logic Status bit 27: 1 = at current limit"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Bus Freq Reg"
+enip = "in:7.4"
+meaning = "Logic Status bit 28: 1 = bus frequency regulation"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Enable On"
+enip = "in:7.5"
+meaning = "Logic Status bit 29: 1 = enable on"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Motor Overload"
+enip = "in:7.6"
+meaning = "Logic Status bit 30: 1 = motor overload"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Regen"
+enip = "in:7.7"
+meaning = "Logic Status bit 31: 1 = regenerating"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 122-123 (printed 122-123), Table 100 (drive products), Logic Bit column (0-based); Logic Status is in bytes 4-7, after a pad word the manual does not show but the EDS lists as Param100 Reserved (inferred); bit n is byte 4 + n/8, bit n%8 (inferred)"
+
+[[points]]
+name = "Feedback"
+enip = "in:8:f32"
+meaning = "Velocity feedback, 32-bit REAL in Hz or RPM as set by drive 10:1891 (Velocity Units), same unit as the Reference"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 1 of Table 6 (DINT 2 with the pad word); PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56); type REAL from the EDS Param102"
+
+[[points]]
+name = "DL To Net 01..16"
+enip = "in:12:u32 .. in:72:u32"
+meaning = "sixteen 32-bit words that read the drive parameters assigned in 0:340..0:355 (DL To Net 01..16); word n is in byte 12 + 4n. Each source is a DINT or a REAL as its own parameter says (the EDS types them all REAL). Only as many as the input size covers (12 bytes = none, 76 = all 16)"
+source = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 56 (printed 56), Table 6, DINT column (0-based), with a leading pad word on the input side from the EDS (Param100 Reserved): DINT n is bytes 4n..4n+3, low byte first (byte offset inferred), Input DINT 2-17 of Table 6 (3-18 with the pad word); PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual 750COM-UM009B-EN-P (April 2021), PDF p. 57 (printed 57) Using Datalinks"
+
+
 [[sources]]
 title = "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity"
 sha256 = "66cbf2811650eb129197543205774ac4163842e274d65563e30bc9069c15f582"
@@ -35,3 +304,8 @@ where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/do
 title = "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)"
 sha256 = "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter User Manual, 750COM-UM009 (publication 750COM-UM009B-EN-P, April 2021)"
+sha256 = "3df2899e8f852582b26b72679b48c7078bcd02d2216aa4fb2025ef234bc4f279"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
