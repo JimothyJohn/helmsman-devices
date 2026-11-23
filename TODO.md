@@ -5,7 +5,7 @@ Open items for the device library. The board (`/todo`) renders this file; an
 
 ## Open questions for Nick
 
-- [ ] **Promote dev to main?** — main is the deploy line: the gallery at helmsman.advin.io/find reads it. dev is 38 commits ahead (#52–#63): 130 new devices (46 → 174 after two removals), a category on every entry, `channels` on 173 of 174, CATALOG.md, scripts/find.py and use.py, eds-draft refusing DeviceNet/ControlNet files, ruff 0.17.6. All merged with green CI. The gallery's category row (helmsman #564, on helmsman dev) shows only once this lands on main and helmsman dev reaches master.
+- [ ] **Promote dev to main?** — main is the deploy line: the gallery at helmsman.advin.io/find reads it. dev is 80 commits ahead (#52–#78): 130 new devices (46 → 174 after two removals), a category on every entry, `channels` on all 174, 445 documented points across the library (254 of them from Rockwell and Festo manuals fetched in a browser), CATALOG.md, scripts/find.py and use.py, eds-draft refusing DeviceNet/ControlNet files and naming vendors by vendor id, docs-fetch --import for browser downloads. All merged with green CI. The gallery's category row (helmsman #564, on helmsman dev) shows only once this lands on main and helmsman dev reaches master.
       options: promote now — the gallery gains 128 devices and its category row once helmsman is promoted too | wait — nothing changes for visitors
       recommend: promote now — every PR in it passed CI, and the gallery is two promotions behind the library
       stakes: high
@@ -102,16 +102,19 @@ Open items for the device library. The board (`/todo`) renders this file; an
       id: yaskawa-entries
       asked: 2026-11-22
 
-- [ ] **Read points from the manuals behind Akamai** — Rockwell, Festo, Danfoss, WAGO 750-362/363, Siemens IM 155-6 MF HF.
-      result: `[[points]]` with pages for those entries
-      status: doing
-      notes: 2026-11-23 fetched in Chrome and stored: Rockwell 1732E-IN008/IN009, 280E-UM001, 290E-UM001, 520COM-UM001/UM003, 520-UM002, 20COMM-UM010, 750COM-UM001/UM009, 35-UM001; Festo CTEU-EP x2, CMMT-AS S1 manual. Couplers and controllers (1734, 1738, 1769, 1794, 5069, 5094, 1719, CPX, WAGO, IM 155-6) skipped: no channels of their own. Not found: VABX CTED-EP manual (two searches), a manual naming 1732E-8X8M12DR, 753TS/755TS (750COM-UM009 names neither)
-      est: 1d
-      difficulty: med
-      model: fable
-      notes: runs in the main session, since the browser is Chrome on the Air through the extension
+- [x] **Read points from the manuals behind Akamai** — 254 points on 10 entries (#75-#78, each checked against its manual before merge): ArmorStart 280E/281E and LT, PowerFlex 525, 523 with 25-COMM-E2P, 70, 70EC, 755, 6000T; Festo CTEU-EP and CMMT-AS.
       id: akamai-points
       asked: 2026-11-22
+
+- [ ] **Fetch the next manuals in Chrome** — five entries got no points because the manual that has the layout is another document: 1732E-UM001 (16-channel configurable ArmorBlock; IN008/IN009 are installation sheets with no assembly layout, and IN008 p. 9 names UM001), a manual naming 1732E-IB16M12R/OB16M12R's assemblies, the CIP Objects and Attributes reference 35-RD001 (Armor PowerFlex 35E; 35-UM001 p. 155 points to it), Festo's "Appendix to operating instructions" for the CTEU-EP's coil mapping, and a VABX CTED-EP manual (two portal searches found none). Same route as 2026-11-23: Chrome on the Air, hash in the page, one zip per site, Nick's scp, docs-fetch --import.
+      needs: Chrome on the Air with the Claude extension connected, and Nick for one scp line
+      result: [[points]] for 1732E-IB16M12R, -OB16M12R, -16CFGM12R, Armor PowerFlex 35E, and the CTEU-EP coil bits
+      est: 3h
+      difficulty: med
+      model: fable
+      notes: a browser step, so it stays with the main session; readers can then be delegated
+      id: browser-manuals-2
+      asked: 2026-11-23
 
 ## Needs a unit on the bench
 
@@ -137,3 +140,11 @@ Open items for the device library. The board (`/todo`) renders this file; an
       difficulty: med
       id: unit-contradictions
       asked: 2026-11-16
+
+- [ ] **Settle three findings the manual readers could not** — PowerFlex 70EC: the entry's EDS is device type 152 ("DPI to DLR EtherNet/IP"), while 20COMM-UM010 (the 20-COMM-E) reports type 123, which it labels "PowerFlex 70 EC drive"; the 70EC's points follow the 20-COMM-E manual and are marked inferred. Festo CTEU-EP: the manual says configuration assembly 102 with size 0 for a generic module, the EDS gives 38 bytes. Festo CMMT-AS: no default telegram stated, and the byte order of the process-data words on EtherNet/IP is inferred.
+      needs: each unit on the network; enip-identify.py output and one read of the input assembly
+      result: the entries follow the unit; inferred marks removed where the unit confirms them
+      status: blocked
+      difficulty: med
+      id: unit-reader-findings
+      asked: 2026-11-23
