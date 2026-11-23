@@ -1,5 +1,19 @@
 {
  "docs": {
+  "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf",
+   "folders": [
+    "devices/pepperl-fuchs/ice21-8iol2-g70l-v1d"
+   ],
+   "kind": "datasheet",
+   "name": "70148669_eng.pdf",
+   "retrieved": "2026-11-23T15:36:42Z",
+   "sha256": "0ed5ed265ec60523c18001b0028d6b037843f37e605c09f7a0f85b8d19351c94",
+   "size": 1594448,
+   "title": "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet",
+   "type": "pdf"
+  },
   "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1886/11612_DOC_050417.pdf": {
    "content_type": "application/pdf",
    "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1886/11612_DOC_050417.pdf",

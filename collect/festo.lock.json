@@ -177,6 +177,51 @@
    "terms": "none stated",
    "title": "CPX-FB32 EDS (ODVA marketplace, product 981)",
    "type": "eds"
+  },
+  "https://www.festo.com/assets/attachment/en/661102": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/661102",
+   "folders": [
+    "devices/festo/cteu-ep"
+   ],
+   "kind": "manual",
+   "name": "hd-festo-661102-CTEU-EP_2017-02a_8067819g1.pdf",
+   "retrieved": "2026-11-23T16:09:06Z",
+   "sha256": "de54e31c2882b1c88172c3385a58d5f8b8c7dfc9499c21109a838febaf91f9a4",
+   "size": 115607,
+   "title": "Operating instructions CTEU-EP, bus node EtherNet/IP (CTEU-EP_2017-02a_8067819g1)",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://www.festo.com/assets/attachment/en/665942": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/665942",
+   "folders": [
+    "devices/festo/cmmt-as"
+   ],
+   "kind": "manual",
+   "name": "CMMT-AS-_-S1_manual_2026-06p_8259155g1.pdf",
+   "retrieved": "2026-11-23T16:09:10Z",
+   "sha256": "7688e16ae76d2756276655489f2fb90c393755749328ceb88d3c9c9b10be8188",
+   "size": 19891993,
+   "title": "Manual CMMT-AS-...-S1, servo drive: software, device profile, function, fieldbus (CMMT-AS-_-S1_manual_2026-06p_8259155g1)",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://www.festo.com/assets/attachment/en/700368": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/700368",
+   "folders": [
+    "devices/festo/cteu-ep"
+   ],
+   "kind": "manual",
+   "name": "CTEU-EP_CTEU-VN_additional_2024-07_8218501g1.pdf",
+   "retrieved": "2026-11-23T16:09:08Z",
+   "sha256": "e50154d290627a0ba68aa666da0f0ffb3069de2be88326a6f49dc5cf56850fe0",
+   "size": 76767,
+   "title": "CTEU-EP / CTEU-VN additional information (CTEU-EP_CTEU-VN_additional_2024-07_8218501g1)",
+   "type": "pdf",
+   "via": "browser"
   }
  },
  "format": "helmsman-devices-collect-lock 1"

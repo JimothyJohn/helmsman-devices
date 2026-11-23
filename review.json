@@ -4459,6 +4459,7 @@
    "folder": "devices/pepperl-fuchs/ice21-8iol2-g70l-v1d",
    "vendor": "Pepperl+Fuchs",
    "model": "ICE21-8IOL2-G70L-V1D",
+   "channels": "8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B",
    "enip": {
     "map": false,
     "identity": {
@@ -4483,6 +4484,11 @@
    },
    "points": [],
    "sources": [
+    {
+     "title": "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet",
+     "sha256": "0ed5ed265ec60523c18001b0028d6b037843f37e605c09f7a0f85b8d19351c94",
+     "where": "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf; retrieved 2026-11-23 (P+F stamps each copy with the day it was made, so a later copy may hash differently); not redistributed here"
+    },
     {
      "title": "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODVA Marketplace)",
      "sha256": "8f2b24783cd09130c8c311eebb52f2e5a527fe1782dfb07521880171930366a6",

@@ -51,6 +51,13 @@ title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODV
 found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE21-8IOL2-G70L-V1D; product page https://marketplace.odva.org/products/2992-ice21-8iol2-g70l-v1d"
 terms = "none stated"
 
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice21-8iol2-g70l-v1d"]
+kind = "datasheet"
+url = "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf"
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet"
+found = "2026-11-23 in Chrome: pepperl-fuchs.com site search 70148669, product page https://www.pepperl-fuchs.com/en/products-gp25581/134475, the Download datasheet (PDF) button's file"
+
 
 # Candidate ICE1-8IOL-G60L-V1D (IO-Link master): its EDS is not in the ODVA entry above, whose members are the
 # ICE1-8DI8DO-G60L(-C1)-V1D blocks (digital I/O, not IO-Link). Not found elsewhere, 2026-11-22.

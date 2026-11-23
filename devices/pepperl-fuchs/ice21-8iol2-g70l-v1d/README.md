@@ -18,12 +18,13 @@ revision 1.7; EDS file revision
 
 ## Channels
 
-No `channels` line: searched 2026-11-23 (web search on the full model number, the article number 70148669 and the family name ICE21; the ODVA Marketplace product page; the Pepperl+Fuchs IO-Link master page `/en/gp32668`) and found no Pepperl+Fuchs data sheet or manual for this model, and the EDS states no port count. The "8IOL" in the model number is not a source.
+8 IO-Link ports: X01 to X06 are class A, each with a digital input or output on pin 2 as well; X07 and X08 are class B, with switchable actuator supply on pins 2 and 5 (data sheet p. 2, "Inputs/Outputs, Number/Type"). The data sheet was found on 2026-11-23 through Pepperl+Fuchs' own site search in a person's browser, which the site requires; the file itself is served to the fetcher.
 
 ## Sources
 
 | what | SHA-256 | where |
 | --- | --- | --- |
+| Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet | `0ed5ed265ec60523…` | https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf; retrieved 2026-11-23 (stamped with the day it was made: a later copy may hash differently); not redistributed here |
 | Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODVA Marketplace) | `8f2b24783cd09130…` | https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2992/12602_DOC_070426.pdf; retrieved 2026-11-23; not redistributed here |
 | Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, EDS (ODVA Marketplace) | `791d7df8a0cd649f…` | https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2992/12602.02.zip; retrieved 2026-11-23; not redistributed here |
 

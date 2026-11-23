@@ -54,7 +54,7 @@ Open items for the device library. The board (`/todo`) renders this file; an
       id: hash-channel-sources
       asked: 2026-11-23
 
-- [ ] **Find the port count of the Pepperl+Fuchs ICE21-8IOL2-G70L-V1D** — the one entry with no channels. Searched 2026-11-23 (#65): the ODVA Marketplace page links only the EDS and the declaration of conformity, and P+F's IO-Link master page lists only the ICE1 family. The data sheet is likely on P+F's product page for article 70148669, which no fetcher reached. The "8IOL" in the model number is not a source.
+- [x] **Find the port count of the Pepperl+Fuchs ICE21-8IOL2-G70L-V1D** — the one entry with no channels. Searched 2026-11-23 (#65): the ODVA Marketplace page links only the EDS and the declaration of conformity, and P+F's IO-Link master page lists only the ICE1 family. The data sheet is likely on P+F's product page for article 70148669, which no fetcher reached. The "8IOL" in the model number is not a source.
       result: `channels` with a data sheet page
       needs: Chrome on the Air with the Claude extension connected (headless Chromium gets 403 there; no user-agent faking)
       est: 30m
@@ -104,7 +104,8 @@ Open items for the device library. The board (`/todo`) renders this file; an
 
 - [ ] **Read points from the manuals behind Akamai** — Rockwell, Festo, Danfoss, WAGO 750-362/363, Siemens IM 155-6 MF HF.
       result: `[[points]]` with pages for those entries
-      needs: Chrome on the Air with the Claude extension connected (headless Chromium gets 403 there; no user-agent faking)
+      status: doing
+      notes: 2026-11-23 fetched in Chrome and stored: Rockwell 1732E-IN008/IN009, 280E-UM001, 290E-UM001, 520COM-UM001/UM003, 520-UM002, 20COMM-UM010, 750COM-UM001/UM009, 35-UM001; Festo CTEU-EP x2, CMMT-AS S1 manual. Couplers and controllers (1734, 1738, 1769, 1794, 5069, 5094, 1719, CPX, WAGO, IM 155-6) skipped: no channels of their own. Not found: VABX CTED-EP manual (two searches), a manual naming 1732E-8X8M12DR, 753TS/755TS (750COM-UM009 names neither)
       est: 1d
       difficulty: med
       model: fable

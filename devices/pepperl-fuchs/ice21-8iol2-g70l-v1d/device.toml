@@ -7,6 +7,7 @@ model = "ICE21-8IOL2-G70L-V1D"
 kind = "remote-io"
 category = "iolink-master"
 article = "70148669"
+channels = "8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B"   # from: data sheet 70148669_eng.pdf p. 2
 
 [identity.enip]
 vendor_id = 57
@@ -24,6 +25,11 @@ input_assembly = { instance = 101 }
 output_assembly = { instance = 117 }
 config_assembly = { instance = 1 }
 eds = { name = "ICE21-8IOL2-G70L-V1D_1.7_v1.00.eds", size = 31017, sha256 = "da8b386d9f736621735e0d1c8b964f17693afe39173fa00a0630428f387bf9ed", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2992/12602.02.zip (member of 12602.02.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet"
+sha256 = "0ed5ed265ec60523c18001b0028d6b037843f37e605c09f7a0f85b8d19351c94"
+where = "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf; retrieved 2026-11-23 (P+F stamps each copy with the day it was made, so a later copy may hash differently); not redistributed here"
 
 [[sources]]
 title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODVA Marketplace)"
