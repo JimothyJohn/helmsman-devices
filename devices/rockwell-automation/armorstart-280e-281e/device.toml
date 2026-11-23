@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "ArmorStart 280E/281E (EtherNet/IP)"
+kind = "other"
+article = "280E-F12Z-10B"
+
+[identity.enip]
+vendor_id = 1
+product_code = 145
+device_type = 22
+revisions = ["2.3"]   # the EDS's MajRev.MinRev
+product_name = "ArmorStart 280E 0.5-2.5A 24VDC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 150, bytes = 16 }
+output_assembly = { instance = 162, bytes = 3 }
+config_assembly = { instance = 1 }
+eds = { name = "0001001600910200.eds", size = 64224, sha256 = "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip (member of 10910.04-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity"
+sha256 = "1836745b0fb1d49b695a04a7f149c321359862de189f3214caf104dbff95b446"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)"
+sha256 = "247261c77de331506ff9795d80fa96979b701913d0f272e9c2f8de943879acc0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip; retrieved 2026-11-23; not redistributed here"

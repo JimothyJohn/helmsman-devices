@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "ArmorStart LT 290E/291E/294E (EtherNet/IP)"
+kind = "other"
+article = "290E-FAZ-Gx"
+
+[identity.enip]
+vendor_id = 1
+product_code = 769
+device_type = 22
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "ArmorStart 290E 0.24-3.5A"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 152, bytes = 30 }
+output_assembly = { instance = 150, bytes = 6 }
+config_assembly = { instance = 100, bytes = 84 }
+eds = { name = "0001001603010200.eds", size = 142693, sha256 = "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip (member of 10993.02-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity"
+sha256 = "8155a32a7c606b7745a77640832031e7b29edcbda8f920678fd094e5bb459843"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)"
+sha256 = "07c2f541dc2a416f0e07d85d6774543015dbc353942233ec83c1d8c5366a9445"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip; retrieved 2026-11-23; not redistributed here"

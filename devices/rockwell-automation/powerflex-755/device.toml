@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 755 (embedded EtherNet/IP)"
+kind = "drive"
+article = "20G..."
+
+[identity.enip]
+vendor_id = 1
+product_code = 2192
+device_type = 143
+revisions = ["16.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 755"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param2: 12..76 bytes, default 12
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param1: 8..72 bytes, default 8
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "0001008F08901000.eds", size = 6563, sha256 = "521e5178f12075fb7125af9d8a0558b7deb2c7c84d145d3772e9ce5242dda67c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip (member of 10875.04.zip)", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 755, 755HiP: ODVA Declaration of Conformity"
+sha256 = "58bf5c53762a6e4e55ee2046eec36614844508b9d8b6afbdb1c9791c46fe097b"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1644/10875_DOC_042225.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 755, 755HiP: EDS (ODVA marketplace)"
+sha256 = "58ffcda61a8f3c1fd2e94969d5a0abcaf72d980162362937786bee0d11c597b3"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip; retrieved 2026-11-23; not redistributed here"
