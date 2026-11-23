@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SICK"
+model = "IOLG2EI-03208R01"
+kind = "remote-io"
+article = "6053255"
+
+[identity.enip]
+vendor_id = 808
+product_code = 20618
+device_type = 43
+revisions = ["3.4"]   # the EDS's MajRev.MinRev
+product_name = "IOLG2EI-03208R01"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection2 "Exclusive Owner"
+input_assembly = { instance = 100, bytes = 392 }
+output_assembly = { instance = 101, bytes = 262 }
+config_assembly = { instance = 102, bytes = 194 }
+eds = { name = "IOLG2EI-03208R01.eds", size = 198944, sha256 = "a14956e637a09957dd07e5d9fcb31ceca24daa3edcd94aa16ac90d5542da38e6", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1455/IOLG2EI-03208R01.eds", terms = "none stated" }
+
+[[sources]]
+title = "SICK IO-Link Master (IOLG2EI), ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "5bb0a95703f69cd14d9eee99f7ab1a4309d0c21a40631b795edd2d04ee2ed998"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1455/11372_DOC_031615.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SICK IO-Link Master (IOLG2EI), EDS (ODVA Marketplace)"
+sha256 = "a14956e637a09957dd07e5d9fcb31ceca24daa3edcd94aa16ac90d5542da38e6"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1455/IOLG2EI-03208R01.eds; retrieved 2026-11-23; not redistributed here"

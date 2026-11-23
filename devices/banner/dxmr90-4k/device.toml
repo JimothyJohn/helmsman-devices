@@ -1,0 +1,47 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Banner"
+model = "DXMR90-4K"
+kind = "remote-io"
+
+[identity.enip]
+vendor_id = 12
+product_code = 200
+device_type = 43
+revisions = ["2.22"]   # the EDS's MajRev.MinRev
+product_name = "Banner DXM"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "DXM Assemblies"
+input_assembly = { instance = 100, bytes = 456 }   # bytes: manual p. 27, "DXM to Originator"
+output_assembly = { instance = 112, bytes = 456 }   # bytes: manual p. 27, "Originator to DXM"
+config_assembly = { instance = 128 }
+eds = { name = "BannerDXM_1_1_02152023.eds", size = 6398, sha256 = "a2b91f84d761612222b31fcaa5819a62a8be9c66d209d671ee8479aa42601de4", url = "https://info.bannerengineering.com/_dav/cs/idcplg?IdcService=GET_FILE&RevisionSelectionMethod=LatestReleased&dDocName=B_4205242 (member of idcplg)", terms = "none stated" }
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The manual (p. 5) says the DXMR90-4K is a Modbus TCP/IP server on port 502 by default and answers
+# for its local registers; the register addresses are in the Device Register and IO-Link Data Reference Guide.
+
+[[questions]]
+ask = "The EDS is the DXM family's file (product name \"Banner DXM\", vendor 12, product code 200); does a DXMR90-4K answer ListIdentity with that name and code, or with its own?"
+source = "DXMR90-4K manual p. 27 (\"ProdName: Banner DXM\") and the EDS BannerDXM_1_1_02152023.eds"
+
+[[sources]]
+title = "DXM Controller EDS File (12 Sep 2023), listed on the DXMR90-4K part page"
+sha256 = "f5121dd57399b14a6486a0faf2d23bc9e4f886cb1984b2e57dbf93419848ae1c"
+where = "https://info.bannerengineering.com/_dav/cs/idcplg?IdcService=GET_FILE&RevisionSelectionMethod=LatestReleased&dDocName=B_4205242; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "DXMR90-4K IO-Link Master Product Manual, English (26 Jan 2026)"
+sha256 = "7935c2323fb8dbf0812b8f75d0a495ff49d6a61f3f979c2dca0d85320577a9a7"
+where = "https://info.bannerengineering.com/cs/groups/public/documents/literature/229492.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "DXMR90-4K Device Register and IO-Link Data Reference Guide (16 Sep 2025)"
+sha256 = "c2d7b862f844dd4d404ab95b10736d7ab93d45fac9e3768f11115c0c4f1ebb75"
+where = "https://info.bannerengineering.com/cs/groups/public/documents/literature/229732.pdf; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,101 @@
+format = "helmsman-devices-collect 1"
+vendor = "Keyence"
+
+# EDS and declaration of conformity from the ODVA Marketplace pages (read 2026-11-22). Keyence's own download pages ask for an account; behind login: https://www.keyence.com/download/download/confirmation?dlAssetId=AS_75627
+
+[[doc]]
+folders = ["devices/keyence/sr-x1h3h"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2491/12185.02_EDS.zip"
+title = "Keyence SR-X1H3H Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-X1H3H Series; product page https://marketplace.odva.org/products/2491-sr-x1h3h-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-x1h3h"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2491/12185_DOC_040324.pdf"
+title = "Keyence SR-X1H3H Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-X1H3H Series; product page https://marketplace.odva.org/products/2491-sr-x1h3h-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-1000"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1438/Keyence_1004_0101.eds"
+title = "Keyence SR-1000 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-1000 Series; product page https://marketplace.odva.org/products/1438-sr-1000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-1000"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1438/11296_DOC_081314.pdf"
+title = "Keyence SR-1000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-1000 Series; product page https://marketplace.odva.org/products/1438-sr-1000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/iv3"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2406/Keyence_4606_0101.eds"
+title = "Keyence IV3 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence IV3 Series; product page https://marketplace.odva.org/products/2406-iv3-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/iv3"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2406/12099_DOC_072721.pdf"
+title = "Keyence IV3 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence IV3 Series; product page https://marketplace.odva.org/products/2406-iv3-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-2000"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1860/Keyence_1007_0101.eds"
+title = "Keyence SR-2000 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-2000 Series; product page https://marketplace.odva.org/products/1860-sr-2000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-2000"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1860/11567_DOC_030917.pdf"
+title = "Keyence SR-2000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-2000 Series; product page https://marketplace.odva.org/products/1860-sr-2000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-5000"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2207/11937.01-EDS.zip"
+title = "Keyence SR-5000 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-5000 Series; product page https://marketplace.odva.org/products/2207-sr-5000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/sr-5000"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2207/11937_DOC_030420.pdf"
+title = "Keyence SR-5000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence SR-5000 Series; product page https://marketplace.odva.org/products/2207-sr-5000-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/iv4"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2703/Keyence_4607_0101.eds"
+title = "Keyence IV4 Series, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence IV4 Series; product page https://marketplace.odva.org/products/2703-iv4-series"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/keyence/iv4"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2703/12434_DOC_012624.pdf"
+title = "Keyence IV4 Series, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Keyence IV4 Series; product page https://marketplace.odva.org/products/2703-iv4-series"
+terms = "none stated"
+

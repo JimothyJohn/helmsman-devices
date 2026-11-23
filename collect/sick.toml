@@ -17,3 +17,54 @@ url = "https://ioddfinder.io-link.com/api/vendors/26/iodds/12863/files/zip/rated
 title = "IODD package SICK-WTB4F_DID8389194-20211014-IODD1.1 (WTB4FP photoelectric proximity sensors)"
 found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=WTB4 (vendorId 26, ioddId 12863)"
 terms = "none stated with the file"
+
+# SIG350 / SIG300 / IO-Link Master: EDS and declaration of conformity from ODVA Marketplace pages (read 2026-11-22).
+
+[[doc]]
+folders = ["devices/sick/sig350-0005ap100"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2509/12265.01-EDS.zip"
+title = "SICK SIG350-0005AP100, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK SIG350-0005AP100; product page https://marketplace.odva.org/products/2509-sig350-0005ap100"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/sick/sig350-0005ap100"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2509/12265_DOC_062422.pdf"
+title = "SICK SIG350-0005AP100, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK SIG350-0005AP100; product page https://marketplace.odva.org/products/2509-sig350-0005ap100"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/sick/sig300"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2796/SICK_SIG300_V1.3.1.eds"
+title = "SICK SIG300, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK SIG300; product page https://marketplace.odva.org/products/2796-sig300"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/sick/sig300"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2796/12525_DOC_091124.pdf"
+title = "SICK SIG300, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK SIG300; product page https://marketplace.odva.org/products/2796-sig300"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/sick/iolg2ei"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1455/IOLG2EI-03208R01.eds"
+title = "SICK IO-Link Master (IOLG2EI), EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK IO-Link Master (IOLG2EI); product page https://marketplace.odva.org/products/1455-io-link-master"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/sick/iolg2ei"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1455/11372_DOC_031615.pdf"
+title = "SICK IO-Link Master (IOLG2EI), ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace SICK IO-Link Master (IOLG2EI); product page https://marketplace.odva.org/products/1455-io-link-master"
+terms = "none stated"
+

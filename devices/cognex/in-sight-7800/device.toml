@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Cognex"
+model = "In-Sight 7900-7500 Series"
+kind = "sensor"
+article = "IS79XX-XX-IS75XX-XX"
+
+[identity.enip]
+vendor_id = 678
+product_code = 276
+device_type = 100
+revisions = ["11.1"]   # the EDS's MajRev.MinRev
+product_name = "In-Sight 7900-7500 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Consume Data From/Produce Data To"
+# input_assembly: the size is set by Param2: 2..500 bytes, default 496
+input_assembly = { instance = 13 }
+# output_assembly: the size is set by Param3: 2..496 bytes, default 496
+output_assembly = { instance = 22 }
+config_assembly = { instance = 1 }
+eds = { name = "02A6006401140B00.eds", size = 26235, sha256 = "c6f8930eb49edcfc631529dca6a3b664ca76f050fb708483c6af22d9d2b1f2ed", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2053/11713.01-EDS.zip (member of 11713.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "aebb0affa29a3681dcafc0d9bb24802f5758452ea822676ac504f161a4088bff"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2053/11713_DOC_102418.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Cognex In-Sight 7800, 7802, 780xC, 7500, 7502, 7900, 7902, EDS (ODVA Marketplace)"
+sha256 = "8e4757e83acacc2874d0b9ee3534aa4a6b3c8f502e3f5e68bab674aa4e1a2da8"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2053/11713.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

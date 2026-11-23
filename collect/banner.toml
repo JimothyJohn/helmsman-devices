@@ -1,0 +1,29 @@
+format = "helmsman-devices-collect 1"
+vendor = "Banner"
+
+# DXMR90-4K. Links from the part page https://www.bannerengineering.com/us/en/products/part.813874.html (read 2026-11-22).
+# The page lists one EDS, "DXM Controller EDS File" (12 Sep 2023, 1.9MB), under the DXMR90 controller family.
+
+[[doc]]
+folder = "devices/banner/dxmr90-4k"
+kind = "eds"
+url = "https://info.bannerengineering.com/_dav/cs/idcplg?IdcService=GET_FILE&RevisionSelectionMethod=LatestReleased&dDocName=B_4205242"
+title = "DXM Controller EDS File (12 Sep 2023), listed on the DXMR90-4K part page"
+found = "2026-11-22 search: banner dxmr90-4k eds; part page https://www.bannerengineering.com/us/en/products/part.813874.html"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/banner/dxmr90-4k"
+kind = "manual"
+url = "https://info.bannerengineering.com/cs/groups/public/documents/literature/229492.pdf"
+title = "DXMR90-4K IO-Link Master Product Manual, English (26 Jan 2026)"
+found = "2026-11-22 part page https://www.bannerengineering.com/us/en/products/part.813874.html"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/banner/dxmr90-4k"
+kind = "register-map"
+url = "https://info.bannerengineering.com/cs/groups/public/documents/literature/229732.pdf"
+title = "DXMR90-4K Device Register and IO-Link Data Reference Guide (16 Sep 2025)"
+found = "2026-11-22 part page https://www.bannerengineering.com/us/en/products/part.813874.html"
+terms = "none stated"

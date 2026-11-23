@@ -1,0 +1,21 @@
+format = "helmsman-devices-collect 1"
+vendor = "Datalogic"
+
+# EDS and declaration of conformity from the ODVA Marketplace page (read 2026-11-22).
+
+[[doc]]
+folders = ["devices/datalogic/matrix-n"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/461/10049.03_EDSFile.zip"
+title = "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Datalogic MATRIX N product line (Matrix 120N; product page https://marketplace.odva.org/products/461-matrix-n-product-line-matrix-120n-matrix-210n-matrix-220n-matrix-300n-matrix-320n-matrix-410n-matrix-450n"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/datalogic/matrix-n"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/461/10049_DOC_103123.pdf"
+title = "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Datalogic MATRIX N product line (Matrix 120N; product page https://marketplace.odva.org/products/461-matrix-n-product-line-matrix-120n-matrix-210n-matrix-220n-matrix-300n-matrix-320n-matrix-410n-matrix-450n"
+terms = "none stated"
+

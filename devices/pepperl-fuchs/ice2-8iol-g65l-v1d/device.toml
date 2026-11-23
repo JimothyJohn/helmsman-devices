@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Pepperl+Fuchs"
+model = "ICE2-8IOL-G65L-V1D"
+kind = "remote-io"
+article = "70104877"
+
+[identity.enip]
+vendor_id = 57
+product_code = 374
+device_type = 43
+revisions = ["1.40"]   # the EDS's MajRev.MinRev
+product_name = "ICE2-8IOL-G65L-V1D"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Read/Write All Ports"
+# input_assembly: the size is set by Param4: 2..499 bytes, default 288
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param6: 2..499 bytes, default 256
+output_assembly = { instance = 117 }
+config_assembly = { instance = 1 }
+eds = { name = "ICE2-8IOL-G65L-V1D_1.6_v1.03.eds", size = 31004, sha256 = "0298a01ea47bfd649eb71ac5ebeac58af8c5ac30ea1b1dac0880029edaa02a5c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2379/11916.02-EDS.zip (member of 11916.02-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Pepperl+Fuchs ICE2-8IOL-G65L-V1D, ICE2-8IOL-K45S-RJ45, ICE2-8IOL-K45P-RJ45, ICE2-8IOL1-G65L-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "1dd8d71989e4c10834ccde0bd64083aaa377577ed2b3a5e03079809b7c5b7e87"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2379/11916_DOC_022221.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Pepperl+Fuchs ICE2-8IOL-G65L-V1D, ICE2-8IOL-K45S-RJ45, ICE2-8IOL-K45P-RJ45, ICE2-8IOL1-G65L-V1D, EDS (ODVA Marketplace)"
+sha256 = "66168bbed45bf33268004f646799df0e4926b1f88bf8369ffd642ae210de9d0d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2379/11916.02-EDS.zip; retrieved 2026-11-23; not redistributed here"

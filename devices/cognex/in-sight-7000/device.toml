@@ -1,0 +1,34 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Cognex"
+model = "In-Sight 7000 Series"
+kind = "sensor"
+article = "IS7XXX"
+
+[identity.enip]
+vendor_id = 678
+product_code = 265
+device_type = 100
+revisions = ["10.1"]   # the EDS's MajRev.MinRev
+product_name = "In-Sight 7000 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Consume Data From"
+# input_assembly: the size is set by Param2: 2..500 bytes, default 12
+input_assembly = { instance = 12 }
+output_assembly = { instance = 254, bytes = 0 }
+config_assembly = { instance = 1 }
+eds = { name = "02A6006401090A00.eds", size = 20980, sha256 = "ef13ffda43b6dbc64a3c7a2a60b1d632ea2a930a798cacc8c472e13a0ad48827", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1669/02A6006401090A00.eds", terms = "none stated" }
+
+[[sources]]
+title = "Cognex In-Sight 7000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "287c288c42b51e097c7d047b24d9460d0a334605e21f216a636cdb6d7d432fe2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1669/11273_DOC_060414.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Cognex In-Sight 7000 Series, EDS (ODVA Marketplace)"
+sha256 = "ef13ffda43b6dbc64a3c7a2a60b1d632ea2a930a798cacc8c472e13a0ad48827"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1669/02A6006401090A00.eds; retrieved 2026-11-23; not redistributed here"
