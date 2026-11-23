@@ -11,10 +11,12 @@ Usage:
   python3 -I scripts/eds-draft.py show EDS
       print what the EDS says, as JSON
   python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json FOLDER [--model TEXT] [--force]
-      [--eds NAME]
+      [--eds NAME] [--vendor TEXT]
       write FOLDER/device.toml and README.md from the EDS the lock lists for FOLDER
       (the stored file, or the archive member when the EDS came zipped); when
-      more than one EDS is in reach (a family package), --eds names the file
+      more than one EDS is in reach (a family package), --eds names the file.
+      The vendor is the name the library already uses for the EDS's VendCode (from
+      index.json), else the EDS's VendName; --vendor overrides both
 
 An existing device.toml is never overwritten without --force.
 Standard library only (Python 3.11).
@@ -313,6 +315,39 @@ def toml_str(s: str) -> str:
     return json.dumps(str(s), ensure_ascii=False)
 
 
+def library_vendors(root: pathlib.Path = ROOT) -> dict[int, str]:
+    """CIP vendor id -> the vendor name the library uses, read from index.json.
+
+    index.json is built from every folder's [identity.enip] vendor_id and [device] vendor and
+    is checked fresh in CI, so the names cannot drift from the entries. When entries with one
+    id disagree the most common name wins, the alphabetically first on a tie. An index that is
+    missing or unreadable gives no names: the draft then falls back to the EDS's own."""
+    try:
+        devices = json.loads((root / "index.json").read_text(encoding="utf-8"))["devices"]
+        entries = list(devices)
+    except (OSError, ValueError, KeyError, TypeError):
+        return {}
+    names: dict[int, dict[str, int]] = {}
+    for d in entries:  # an entry with no EtherNet/IP identity (a Modbus unit) is skipped, not fatal
+        try:
+            vid = d["identity"]["enip"]["vendor_id"]
+            name = d["vendor"]
+        except (KeyError, TypeError):
+            continue
+        if isinstance(vid, int) and not isinstance(vid, bool) and isinstance(name, str) and name:
+            names.setdefault(vid, {}).setdefault(name, 0)
+            names[vid][name] += 1
+    return {vid: min(c, key=lambda n: (-c[n], n)) for vid, c in names.items()}
+
+
+def vendor_for(eds: dict, override: str | None, fallback: str, library: dict[int, str]) -> str:
+    """--vendor, else the library's name for the EDS's VendCode, else its VendName, else FALLBACK."""
+    if override:
+        return override
+    dev = eds["device"]
+    return library.get(dev.get("vendor_id")) or dev.get("vendor_name") or fallback
+
+
 def pick_connection(eds: dict) -> dict | None:
     """The connection a draft names: the first Exclusive Owner, else the first with both instances."""
     full = [c for c in eds["connections"] if "o_to_t_instance" in c and "t_to_o_instance" in c]
@@ -531,7 +566,7 @@ def main(argv: list[str]) -> int:
             raise SystemExit(f"{eds_file['name']}: {e}") from None
         if eds.get("not_ethernet_ip"):
             raise SystemExit(f"{eds_file['name']}: {eds['not_ethernet_ip']}: no folder is drafted from it")
-        vendor = vendor or eds["device"].get("vendor_name") or parts[1]
+        vendor = vendor_for(eds, vendor, parts[1], library_vendors())
         model = model or eds["device"].get("product_name") or parts[2]
         target = ROOT / folder
         if (target / "device.toml").exists() and not force:
