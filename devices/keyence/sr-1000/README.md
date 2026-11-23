@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Keyence Corporation SR-1000 Series
+# Keyence SR-1000 Series
 
 EDS identity: vendor 367 Keyence Corporation, product code
 1004, device type 43 Generic Device,

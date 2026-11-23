@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# Cognex Corporation In-Sight 2800 Series
+# Cognex In-Sight 2800 Series
 
 EDS identity: vendor 678 Cognex Corporation, product code
 3585, device type 782 In-Sight Vision System,
