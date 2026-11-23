@@ -5,7 +5,7 @@ vendor = "Schneider Electric"
 model = "Modicon STB NIP2311"
 kind = "remote-io"
 category = "io-coupler"
-channels = "none of its own: the Advantys STB I/O modules behind it (up to 32) set the I/O"   # from: Advantys STB NIP 2311 Applications Guide EIO0000000051.05 (10/2019), 'Island Bus I/O' (pdf p.14), opened 2026-11-23
+channels = "none of its own: the Advantys STB I/O modules behind it (up to 32) set the I/O"   # from: Advantys STB NIP 2311 Applications Guide EIO0000000051.05 (10/2019), 'Island Bus I/O' pdf p.14: an island supports as many as 32 I/O modules
 
 [protocols.modbus]
 driver = "modbus-tcp"
@@ -29,3 +29,8 @@ name = "island diagnostics"
 modbus = "hr:5356..hr:5390 (4X 45357-45391, read)"
 meaning = "35 registers of predefined diagnostic data for the Advantys STB system"
 source = "STBNIP2311 Applications Guide EIO0000000051.05 p. 125; the zero-based form is inferred from 45357-45391"
+
+[[sources]]
+title = "STBNIP2311 Standard Dual Port Ethernet Modbus TCP/IP Network Interface Module, Applications Guide (EIO0000000051.05)"
+sha256 = "0045a19fb1cf8bf1d8513e5a788e1d8f72d80dcf4aab8bffae7dcd39ae65e2f5"
+where = "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf; retrieved 2026-11-23; not redistributed here"

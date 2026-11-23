@@ -6,7 +6,7 @@ vendor = "SMC"
 model = "EX600-SEN3/SEN4"
 kind = "remote-io"
 category = "valve-terminal"
-channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual EX*-OMS0027 (EX600-SEN3/4), System Outline p.11 and Specifications 'Number of solenoid valves 32 outputs' p.26; smcworld.com EXxx-OMS0027.pdf, 2026-11-22
+channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual EX*-OMS0027 (EX600-SEN3/4), System Outline pdf p.9 (up to 32 outputs), Assembly p.11 (up to 10 units including the SI unit), Specifications p.26 (32 solenoid valve outputs)
 article = "EX600-SEN3/4"
 
 [identity.enip]
@@ -30,3 +30,8 @@ eds = { name = "ex600_sen3_4_v11.eds", size = 17866, sha256 = "dc93058747800c178
 title = "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)"
 sha256 = "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SMC EX600-SEN3/SEN4 manual EX*-OMS0027"
+sha256 = "c5ecfbc661d38da7c2e7a42e876d8360f5d6b811b3cdecbb340aebe166df0681"
+where = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf; retrieved 2026-11-23; not redistributed here"

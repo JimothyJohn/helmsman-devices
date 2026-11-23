@@ -3307,12 +3307,66 @@
     "map": false,
     "port": 502
    },
-   "points": [],
+   "points": [
+    {
+     "name": "DI-00..DI-11",
+     "modbus": "di:0..di:11; ir:12288..ir:12299 = each as one word",
+     "meaning": "digital input state, 1 = on (channel n at address n)",
+     "source": "E2200 manual v7.2 p. 171 (1xxxx), p. 172 (3xxxx 0x3000, 'Citect SCADA compatibility')"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)",
+     "meaning": "event counter value of channel n at 2n; a channel in DI mode (hr:52 = 0) does not count",
+     "source": "E2200 manual v7.2 p. 171-172 (Count Value Hi-Byte at 2n, Lo-Byte at 2n+1); read as one 32-bit value is inferred"
+    },
+    {
+     "name": "DI-00..DI-11 mode",
+     "modbus": "hr:52..hr:63",
+     "meaning": "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value",
+     "source": "E2200 manual v7.2 p. 173"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:48..coil:59 (start/stop); coil:60..coil:71 (write 1 to clear); coil:72..coil:83 (overflow, write 0 to clear)",
+     "meaning": "counter start/stop status (1 = start), clear (write only, reads 0) and overflow flag, per channel",
+     "source": "E2200 manual v7.2 p. 167-168"
+    },
+    {
+     "name": "DO-00..DO-07",
+     "modbus": "coil:0..coil:7; hr:256..hr:263 = each as one word",
+     "meaning": "digital output command and state, 1 = on (channel n at address n)",
+     "source": "E2200 manual v7.2 p. 166 (0xxxx), p. 174 (4xxxx 0x0100, 'Citect SCADA compatibility')"
+    },
+    {
+     "name": "DO-00..DO-07 mode",
+     "modbus": "hr:32..hr:39",
+     "meaning": "0 = DO, 1 = pulse output, per channel",
+     "source": "E2200 manual v7.2 p. 172-173"
+    },
+    {
+     "name": "DO pulse output",
+     "modbus": "hr:0:u32 .. hr:14:u32 (count, two words a channel); hr:16..hr:23 (low width); hr:24..hr:31 (high width)",
+     "meaning": "pulse count and low/high signal widths of channel n in pulse mode",
+     "source": "E2200 manual v7.2 p. 172; the unit of the widths is not stated there; one 32-bit count is inferred from Hi-/Lo-Byte rows"
+    }
+   ],
    "sources": [
+    {
+     "title": "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)",
+     "sha256": "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b",
+     "where": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
+    },
     {
      "title": "ioLogik E2200 Series Datasheet, v1.3",
      "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
      "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port.",
+     "source": "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"
     }
    ]
   },
@@ -3325,12 +3379,76 @@
     "map": false,
     "port": 502
    },
-   "points": [],
+   "points": [
+    {
+     "name": "DI-00..DI-11",
+     "modbus": "di:0..di:11; ir:12288..ir:12299 = each as one word",
+     "meaning": "digital input state, 1 = on; 12 inputs, of which four are the DIO channels (which four the table does not say)",
+     "source": "E2200 manual v7.2 p. 185 (1xxxx and 3xxxx 0x3000); di:12..di:15 are 'Non-active'"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)",
+     "meaning": "event counter value of channel n at 2n",
+     "source": "E2200 manual v7.2 p. 185 (count value hi-byte at 2n, lo-byte at 2n+1); read as one 32-bit value is inferred"
+    },
+    {
+     "name": "DI-00..DI-11 mode",
+     "modbus": "hr:72..hr:83",
+     "meaning": "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value",
+     "source": "E2200 manual v7.2 p. 187-188"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:72..coil:83 (start/stop); coil:84..coil:95 (write 1 to clear); coil:97..coil:108 (overflow, write 0 to clear)",
+     "meaning": "counter start/stop status (1 = start), clear (write only) and overflow flag, per channel",
+     "source": "E2200 manual v7.2 p. 180-183; the overflow range starts at 0x0060 on p. 182 and its CH0 row is not legible in the text, so its start is inferred"
+    },
+    {
+     "name": "DO-00..DO-11",
+     "modbus": "coil:0..coil:11; hr:84..hr:95 = each as one word",
+     "meaning": "digital output command and state, 1 = on; 12 outputs, of which four are the DIO channels (which four the table does not say)",
+     "source": "E2200 manual v7.2 p. 178 (0xxxx), p. 188 (4xxxx, 'Citect SCADA compatibility'); the CH0 word row at hr:84 is inferred from CH1 at hr:85"
+    },
+    {
+     "name": "DO-00..DO-11 mode",
+     "modbus": "hr:48..hr:59",
+     "meaning": "0 = DO, 1 = pulse output, per channel",
+     "source": "E2200 manual v7.2 p. 187"
+    },
+    {
+     "name": "DIO 0..3 direction",
+     "modbus": "coil:156..coil:159; hr:240..hr:243",
+     "meaning": "1 = output (DO mode), 0 = input (DI mode), for the four DIO channels",
+     "source": "E2200 manual v7.2 p. 184-185, p. 195"
+    },
+    {
+     "name": "DO pulse output",
+     "modbus": "hr:0:u32 .. hr:22:u32 (count, two words a channel); hr:24..hr:35 (low width); hr:36..hr:47 (high width)",
+     "meaning": "pulse count and low/high signal widths of channel n in pulse mode",
+     "source": "E2200 manual v7.2 p. 186; the unit of the widths is not stated there; one 32-bit count is inferred from hi-/lo-word rows"
+    }
+   ],
    "sources": [
+    {
+     "title": "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)",
+     "sha256": "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b",
+     "where": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
+    },
     {
      "title": "ioLogik E2200 Series Datasheet, v1.3",
      "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
      "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port.",
+     "source": "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"
+    },
+    {
+     "ask": "Which of CH0..CH11 are the four DIO channels (DIO 0..3)? The table lists 12 DI and 12 DO channels and a direction bit per DIO, and does not map them.",
+     "source": "E2200 manual v7.2 p. 184-185"
     }
    ]
   },
@@ -3343,12 +3461,100 @@
     "map": false,
     "port": 502
    },
-   "points": [],
+   "points": [
+    {
+     "name": "DI-00..DI-11",
+     "modbus": "di:0..di:11; ir:12288..ir:12299 = each as one word (low byte)",
+     "meaning": "digital input state, 1 = on (the 12 DIO channels read as inputs); address n is channel n",
+     "source": "E2200 manual v7.2 p. 220 (1xxxx), p. 221 (3xxxx 0x3000). Firmware V1.x used di:256..di:271 for this and the AI LEDs (p. 220 note); this is the V3.0 and later map"
+    },
+    {
+     "name": "DI counters",
+     "modbus": "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)",
+     "meaning": "event counter value of channel n at 2n",
+     "source": "E2200 manual v7.2 p. 220 (Counter Value Hi-/Lo-Word); read as one 32-bit value is inferred"
+    },
+    {
+     "name": "DI-00..DI-11 mode",
+     "modbus": "hr:96..hr:107",
+     "meaning": "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value",
+     "source": "E2200 manual v7.2 p. 223"
+    },
+    {
+     "name": "AI-00..AI-03",
+     "modbus": "ir:24..ir:27",
+     "meaning": "analog input reading of channel n at 24 + n (word)",
+     "source": "E2200 manual v7.2 p. 220; the scaling to volts or mA is not given in the table"
+    },
+    {
+     "name": "AI-00..AI-03 min / max",
+     "modbus": "ir:32..ir:35 (minimum); ir:40..ir:43 (maximum)",
+     "meaning": "lowest and highest reading of channel n since reset, same encoding as the reading",
+     "source": "E2200 manual v7.2 p. 220-221; 'since reset' is inferred"
+    },
+    {
+     "name": "AI-00..AI-03 range",
+     "modbus": "hr:512..hr:515",
+     "meaning": "per channel: 0 +/-150 mV, 1 +/-500 mV, 2 +/-5 V, 3 +/-10 V, 4 0-20 mA, 5 4-20 mA, 6 0-150 mV, 7 0-500 mV, 8 0-5 V, 9 0-10 V; others refused",
+     "source": "E2200 manual v7.2 p. 227-228"
+    },
+    {
+     "name": "AI-00..AI-03 enable",
+     "modbus": "hr:108..hr:111",
+     "meaning": "1 = enabled, 0 = disabled, per channel",
+     "source": "E2200 manual v7.2 p. 224"
+    },
+    {
+     "name": "AI-00..AI-03 LED",
+     "modbus": "di:12..di:15",
+     "meaning": "state of the channel's AI LED, 1 = on",
+     "source": "E2200 manual v7.2 p. 220"
+    },
+    {
+     "name": "DO-00..DO-11",
+     "modbus": "coil:0..coil:11; hr:128..hr:139 = each as one word",
+     "meaning": "digital output command and state, 1 = on (channel n at address n); a channel drives only when set to output",
+     "source": "E2200 manual v7.2 p. 214 (0xxxx), p. 224 (4xxxx 0x0080)"
+    },
+    {
+     "name": "DIO-00..DIO-11 direction",
+     "modbus": "coil:156..coil:167",
+     "meaning": "1 = output, 0 = input (default input), per channel",
+     "source": "E2200 manual v7.2 p. 218"
+    },
+    {
+     "name": "DO-00..DO-11 mode",
+     "modbus": "hr:72..hr:83",
+     "meaning": "0 = DO, 1 = pulse output, per channel",
+     "source": "E2200 manual v7.2 p. 222"
+    },
+    {
+     "name": "DI counter control",
+     "modbus": "coil:72..coil:83 (start/stop); hr:200..hr:211 (counter start word); hr:212..hr:223 (counter clear word)",
+     "meaning": "counter start/stop status and clear, per channel",
+     "source": "E2200 manual v7.2 p. 215-216, p. 225; the coil ranges between 0x0054 and 0x0077 (clear, overflow, trigger) were not read channel by channel"
+    }
+   ],
    "sources": [
+    {
+     "title": "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)",
+     "sha256": "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b",
+     "where": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
+    },
     {
      "title": "ioLogik E2200 Series Datasheet, v1.3",
      "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
      "where": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+    }
+   ],
+   "questions": [
+    {
+     "ask": "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port.",
+     "source": "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"
+    },
+    {
+     "ask": "What do the AI words at ir:24..ir:27 hold: raw ADC counts, or a value scaled to the channel's range? The table says 'Read AI Value' and gives no formula; the manual's scaling registers (hr:284..hr:311) suggest a raw reading plus an optional float.",
+     "source": "E2200 manual v7.2 p. 220, p. 226-227"
     }
    ]
   },
@@ -5551,7 +5757,13 @@
     "port": 502
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "PowerLogic PM5500 / PM5600 / PM5700 series User Manual (HRB1684301-18, 12/2025)",
+     "sha256": "5fc9be72ef9787001b38ea9fd41b6b52c77f0498acc66a4212f39eac05ce3e79",
+     "where": "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "The user manual says the PM5560 is ODVA-certified for EtherNet/IP (p. 18) but ships no EDS and no assembly list in the pages read: what identity and assemblies does it report, and where is the EDS?",
@@ -5588,7 +5800,13 @@
      "source": "STBNIP2311 Applications Guide EIO0000000051.05 p. 125; the zero-based form is inferred from 45357-45391"
     }
    ],
-   "sources": []
+   "sources": [
+    {
+     "title": "STBNIP2311 Standard Dual Port Ethernet Modbus TCP/IP Network Interface Module, Applications Guide (EIO0000000051.05)",
+     "sha256": "0045a19fb1cf8bf1d8513e5a788e1d8f72d80dcf4aab8bffae7dcd39ae65e2f5",
+     "where": "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
   },
   {
    "folder": "devices/schneider-electric/tm3bceip",
@@ -5599,7 +5817,18 @@
     "map": false
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "TM3BCEIP Bus Coupler, Instruction Sheet (PHA71490.07)",
+     "sha256": "459d6449dc952db3979f1367cc258ccf3fcbdf84651fdf3b38e7b75c39afffdb",
+     "where": "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "Product data sheet Characteristics TM3BCEIP",
+     "sha256": "e6862ac1c4d9294bfd78762fa2747e97b21771ba9607a32c57679dd18a75fa1c",
+     "where": "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity (vendor id, product code, revision) and assembly sizes does the coupler report, and does an EDS exist? Schneider's site lists only firmware packages for it, and a community answer says the configurator exports a project-specific EDS.",
@@ -5616,7 +5845,18 @@
     "map": false
    },
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "TeSys island TPRBCEIP product data sheet",
+     "sha256": "7e16f3c3cd8fde5595602fac147a5179cb639645020332fdbeff26c156330dcc",
+     "where": "https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TeSys island TPRBCEIP Bus Coupler (Ethernet IP) - Instruction Sheet (MFR44097.05)",
+     "sha256": "2b50b494482f5b3ffdffadaca428b13bc24f2050b767a0e87e6c88c8680dc34f",
+     "where": "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity and assembly sizes does the coupler report? The Quick Start Guide has the island's DTM export L5X files for Studio 5000 (Export > EDS to L5X File Format) instead of publishing an EDS, so the sizes depend on the configured island.",
@@ -5771,7 +6011,13 @@
    "model": "SIMATIC ET 200SP IM 155-6 MF HF",
    "channels": "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)",
    "points": [],
-   "sources": [],
+   "sources": [
+    {
+     "title": "Siemens MultiFieldbus devices webinar (20 Aug 2020)",
+     "sha256": "540308b5464732946dc5cd56af939da0dd2e60d58bce10e6129aee26835bc57d",
+     "where": "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which EtherNet/IP identity and Modbus TCP map does the interface module report? Its EDS is exported by the MultiFieldbus Configuration Tool (MFCT) and is the same whatever the station's configuration, so there is none to collect; the Modbus register layout is exported as a CSV per project.",
@@ -5814,7 +6060,13 @@
      "source": "SENTRON PAC3200 Manual A5E01168664B-04 Table 3-6 p. 41; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SENTRON PAC3200 Manual A5E01168664B-04 (02/2008)",
+     "sha256": "b9efef1f28f8588d3f9b9ba04754e4914850fb0ec74373955d199d8f6b3de187",
+     "where": "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Is the offset in Table 3-6 one-based (offset 1 is Modbus address 0, as 4X 40001 would be) and is the high or low word of a float first?",
@@ -5857,7 +6109,13 @@
      "source": "SENTRON PAC4200 System Manual A5E02316180B-05 Table A-1 p. 146; the zero-based address is inferred from offset 65, and so is the word order, which the pages read do not state"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SENTRON PAC4200 System Manual A5E02316180B-05 (05/2019)",
+     "sha256": "fafd49af4745c2fc24d78b0a9a7d09a1a3746f7d9d7ade94baee1d5a9a247276",
+     "where": "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Is the offset in Table A-1 one-based (offset 1 is Modbus address 0) and is the high or low word of a float first?",
@@ -5895,7 +6153,18 @@
      "source": "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68"
     }
    ],
-   "sources": [],
+   "sources": [
+    {
+     "title": "SINAMICS G120 Control Units CU240B-2 / CU240E-2 Operating Instructions 04/2018 (A5E34259001B AF)",
+     "sha256": "74db4eb9e93e8ca305004c4284786d20402834881f6cd13e4e3aca69529d02f0",
+     "where": "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SINAMICS G120 Fieldbus Function Manual 04/2014 (A5E34229197B AA), EtherNet/IP chapter",
+     "sha256": "ef6ef688e9834c018df1a60c411ab72b2bfcbb36b4690ad0ac4575c308c99cc2",
+     "where": "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ],
    "questions": [
     {
      "ask": "Which vendor id, product code and revision does a CU240E-2 PN report on EtherNet/IP, and is the Siemens EDS the one to use? The manual names an EDS at a Siemens portal entry (48351511), which redirects to a JavaScript search page and could not be collected.",
@@ -5939,6 +6208,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -5978,6 +6252,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6017,6 +6296,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6056,6 +6340,11 @@
      "title": "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)",
      "sha256": "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E",
+     "sha256": "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6092,6 +6381,11 @@
      "title": "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)",
      "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EtherNet/IP compatible SI unit EX600-SEN#, manual EX*-OMN0032-D",
+     "sha256": "0b46ecb7ddc6de35b6818aeb8041827e4e2d59c1840e9ec74587e74eed37d9f3",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6129,6 +6423,11 @@
      "title": "EX600-SEN3/SEN4 EDS (ODVA marketplace, product 1176)",
      "sha256": "8fda9dd804adb4d98a478ee86cdc7b291bf329a979b1b4d792602226a2fac02e",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1176/11319.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EX600-SEN3/SEN4 manual EX*-OMS0027",
+     "sha256": "c5ecfbc661d38da7c2e7a42e876d8360f5d6b811b3cdecbb340aebe166df0681",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMS0027.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },
@@ -6166,6 +6465,11 @@
      "title": "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)",
      "sha256": "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b",
      "where": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "SMC EX600-SEN7/SEN8 manual EX*-OMZ0024",
+     "sha256": "bc26e10c748731dde6bbddc2ee469a529cbf7cfcbf2f29110d381aa5b4d8b2dc",
+     "where": "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf; retrieved 2026-11-23; not redistributed here"
     }
    ]
   },

@@ -15,9 +15,94 @@ seen = 2026-11-22
 [protocols.modbus]
 driver = "modbus-tcp"
 port = 502
-# Unit id and register addresses: not read (see README).
+# The unit id is not given in the manual (see [[questions]]).
+
+[[points]]
+name = "DI-00..DI-11"
+modbus = "di:0..di:11; ir:12288..ir:12299 = each as one word (low byte)"
+meaning = "digital input state, 1 = on (the 12 DIO channels read as inputs); address n is channel n"
+source = "E2200 manual v7.2 p. 220 (1xxxx), p. 221 (3xxxx 0x3000). Firmware V1.x used di:256..di:271 for this and the AI LEDs (p. 220 note); this is the V3.0 and later map"
+
+[[points]]
+name = "DI counters"
+modbus = "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)"
+meaning = "event counter value of channel n at 2n"
+source = "E2200 manual v7.2 p. 220 (Counter Value Hi-/Lo-Word); read as one 32-bit value is inferred"
+
+[[points]]
+name = "DI-00..DI-11 mode"
+modbus = "hr:96..hr:107"
+meaning = "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value"
+source = "E2200 manual v7.2 p. 223"
+
+[[points]]
+name = "AI-00..AI-03"
+modbus = "ir:24..ir:27"
+meaning = "analog input reading of channel n at 24 + n (word)"
+source = "E2200 manual v7.2 p. 220; the scaling to volts or mA is not given in the table"
+
+[[points]]
+name = "AI-00..AI-03 min / max"
+modbus = "ir:32..ir:35 (minimum); ir:40..ir:43 (maximum)"
+meaning = "lowest and highest reading of channel n since reset, same encoding as the reading"
+source = "E2200 manual v7.2 p. 220-221; 'since reset' is inferred"
+
+[[points]]
+name = "AI-00..AI-03 range"
+modbus = "hr:512..hr:515"
+meaning = "per channel: 0 +/-150 mV, 1 +/-500 mV, 2 +/-5 V, 3 +/-10 V, 4 0-20 mA, 5 4-20 mA, 6 0-150 mV, 7 0-500 mV, 8 0-5 V, 9 0-10 V; others refused"
+source = "E2200 manual v7.2 p. 227-228"
+
+[[points]]
+name = "AI-00..AI-03 enable"
+modbus = "hr:108..hr:111"
+meaning = "1 = enabled, 0 = disabled, per channel"
+source = "E2200 manual v7.2 p. 224"
+
+[[points]]
+name = "AI-00..AI-03 LED"
+modbus = "di:12..di:15"
+meaning = "state of the channel's AI LED, 1 = on"
+source = "E2200 manual v7.2 p. 220"
+
+[[points]]
+name = "DO-00..DO-11"
+modbus = "coil:0..coil:11; hr:128..hr:139 = each as one word"
+meaning = "digital output command and state, 1 = on (channel n at address n); a channel drives only when set to output"
+source = "E2200 manual v7.2 p. 214 (0xxxx), p. 224 (4xxxx 0x0080)"
+
+[[points]]
+name = "DIO-00..DIO-11 direction"
+modbus = "coil:156..coil:167"
+meaning = "1 = output, 0 = input (default input), per channel"
+source = "E2200 manual v7.2 p. 218"
+
+[[points]]
+name = "DO-00..DO-11 mode"
+modbus = "hr:72..hr:83"
+meaning = "0 = DO, 1 = pulse output, per channel"
+source = "E2200 manual v7.2 p. 222"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:72..coil:83 (start/stop); hr:200..hr:211 (counter start word); hr:212..hr:223 (counter clear word)"
+meaning = "counter start/stop status and clear, per channel"
+source = "E2200 manual v7.2 p. 215-216, p. 225; the coil ranges between 0x0054 and 0x0077 (clear, overflow, trigger) were not read channel by channel"
+
+[[sources]]
+title = "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)"
+sha256 = "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b"
+where = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
 
 [[sources]]
 title = "ioLogik E2200 Series Datasheet, v1.3"
 sha256 = "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e"
 where = "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+
+[[questions]]
+ask = "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port."
+source = "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"
+
+[[questions]]
+ask = "What do the AI words at ir:24..ir:27 hold: raw ADC counts, or a value scaled to the channel's range? The table says 'Read AI Value' and gives no formula; the manual's scaling registers (hr:284..hr:311) suggest a raw reading plus an optional float."
+source = "E2200 manual v7.2 p. 220, p. 226-227"

@@ -6,7 +6,7 @@ vendor = "SMC"
 model = "EX260-SEN4"
 kind = "other"
 category = "valve-terminal"
-channels = "16 solenoid outputs"   # from: SMC manual No.EX*-OMP0013-E 'SI unit for EtherNet/IP' (smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf), specifications table, PDF p.37, opened 2026-11-22: SEN3/SEN4 16 outputs, NPN
+channels = "16 solenoid outputs"   # from: SMC manual EX*-OMP0013-E 'SI unit for EtherNet/IP', Specifications, pdf p.37: number of outputs SEN1/SEN2 32, SEN3/SEN4 16
 article = "EX260-SEN4"
 
 [identity.enip]
@@ -28,3 +28,8 @@ eds = { name = "ex260_sen4_24_v22.eds", size = 15092, sha256 = "2692aaa3aba57bea
 title = "EX260-SEN1/2/3/4 EDS (ODVA marketplace, product 1560)"
 sha256 = "e54c0c294aa5d15046a0a375d029de941b7f5af70a1509d251ecfe2c6b648259"
 where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1560/11007_EDS_file.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SMC SI unit for EtherNet/IP EX260-SEN#, manual EX*-OMP0013-E"
+sha256 = "38ef425f898637b15ed9c3bb11ad6a745721ee0c187aa0796662f6490486b523"
+where = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMP0013.pdf; retrieved 2026-11-23; not redistributed here"

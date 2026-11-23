@@ -1,11 +1,7 @@
 format = "helmsman-devices-collect 1"
 vendor = "Moxa"
 
-# ioLogik E2200 series: Modbus TCP server, Click&Go. The datasheet covers the models.
-# No manual: moxa.com's product pages (opened 2026-11-22) link the datasheet only, and the one
-# User's Manual copy found (v7.1, develop3.moxa.ru, Moxa Russia's host) does not resolve for the fetcher.
-# So the register map is not read yet; folders carry channels and protocol only.
-# behind login: https://www.moxa.com/en/support (the manual is in Moxa's support search, not on the product page)
+# ioLogik E2200 series: Modbus TCP server, Click&Go. The datasheet covers the models; the manual holds the Modbus address table.
 
 [[doc]]
 folders = ["devices/moxa/iologik-e2210", "devices/moxa/iologik-e2212", "devices/moxa/iologik-e2242"]
@@ -13,6 +9,14 @@ kind = "datasheet"
 url = "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf"
 title = "ioLogik E2200 Series Datasheet, v1.3"
 found = "2026-11-22 product page https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210 (relative link resolved on moxa.com)"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/moxa/iologik-e2210", "devices/moxa/iologik-e2212", "devices/moxa/iologik-e2242"]
+kind = "manual"
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf"
+title = "ioLogik E2200 Series User's Manual, v7.2"
+found = "2026-11-23 Moxa support page https://www.moxa.com/en/support/product-support/software-and-documentation/search?psid=71178 (Related Support Documents: Manual for ioLogik E2200 Series, v7.2, 2022-08-08), linked from the Software & Documentation page"
 terms = "none stated"
 
 # ioThinx 4510: modular remote I/O adapter, Modbus TCP server.
