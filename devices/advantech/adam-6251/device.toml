@@ -1,0 +1,41 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6251"
+kind = "remote-io"
+channels = "16 DI"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "DI"
+modbus = "coil:0..coil:15 (0X 00001-00016, read)"
+meaning = "digital input state, 1 = on"
+source = "ADAM-6200 User Manual Ed. 5 p. 140"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:32..coil:95 (0X 00033-00096: start/stop, clear counter, clear overflow, DI latch, sixteen each)"
+meaning = "per DI channel counter and latch control"
+source = "ADAM-6200 User Manual Ed. 5 p. 140-142"
+
+[[points]]
+name = "DI counter / frequency value"
+modbus = "hr:0..hr:31 (4X 40001-40032, two words a channel)"
+meaning = "counter value or frequency"
+source = "ADAM-6200 User Manual Ed. 5 p. 142"
+
+[[points]]
+name = "DI as one word"
+modbus = "hr:300 (4X 40301)"
+meaning = "all 16 DI in one register"
+source = "ADAM-6200 User Manual Ed. 5 p. 142"
+
+[[sources]]
+title = "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)"
+sha256 = "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"

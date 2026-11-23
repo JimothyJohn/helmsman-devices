@@ -1,0 +1,50 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2090/0004002BD1000100.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2090/0004002BD1000100.eds",
+   "folders": [
+    "devices/parker/p2m-node-ethernet-ip"
+   ],
+   "kind": "eds",
+   "name": "0004002BD1000100.eds",
+   "retrieved": "2026-11-23T03:38:29Z",
+   "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591",
+   "size": 29546,
+   "terms": "none stated",
+   "title": "P2M node EtherNet/IP EDS (ODVA marketplace, product 2090)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds",
+   "folders": [
+    "devices/parker/p2m-lite-node-ethernet-ip"
+   ],
+   "kind": "eds",
+   "name": "Parker_Lite.eds",
+   "retrieved": "2026-11-23T03:38:29Z",
+   "sha256": "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0",
+   "size": 69571,
+   "terms": "none stated",
+   "title": "P2M Lite node EtherNet/IP EDS (ODVA marketplace, product 2292)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2381/P2H_Ethernet_IP.EDS",
+   "folders": [
+    "devices/parker/p2h-node-ethernet-ip"
+   ],
+   "kind": "eds",
+   "name": "P2H_Ethernet_IP.EDS",
+   "retrieved": "2026-11-23T03:38:29Z",
+   "sha256": "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db",
+   "size": 71874,
+   "terms": "none stated",
+   "title": "P2H node EtherNet/IP EDS (ODVA marketplace, product 2381)",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

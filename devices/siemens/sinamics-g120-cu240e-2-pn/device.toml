@@ -1,0 +1,29 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Siemens"
+model = "SINAMICS G120 CU240E-2 PN (EtherNet/IP)"
+kind = "drive"
+article = "CU240E-2 PN"
+
+[protocols.enip]
+driver = "enip-io"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+# The two assemblies above are the required ODVA ones, 4 bytes each (manual p. 68); the manual lists optional ones up to instance 75 / 25 and parameter-assembly variants (p. 67).
+
+[[points]]
+name = "Basic Speed Control output (assembly 20)"
+enip = "out assembly 20, 4 bytes: byte 0 bit 0 RUN Forward, bit 2 Fault Reset, bytes 2-3 Speed Reference (low byte first)"
+meaning = "command and speed setpoint of the ODVA AC/DC drive profile"
+source = "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68; used with p8980 = 1 (ODVA AC/DC profile) and p0922 = 1 (p. 66)"
+
+[[points]]
+name = "Basic Speed Control input (assembly 70)"
+enip = "in assembly 70, 4 bytes: byte 0 bit 0 Faulted, bit 2 Running Forward, bytes 2-3 Speed Actual (low byte first)"
+meaning = "status and actual speed of the ODVA AC/DC drive profile"
+source = "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.6, p. 68"
+
+[[questions]]
+ask = "Which vendor id, product code and revision does a CU240E-2 PN report on EtherNet/IP, and is the Siemens EDS the one to use? The manual names an EDS at a Siemens portal entry (48351511), which redirects to a JavaScript search page and could not be collected."
+source = "SINAMICS G120 Fieldbus Function Manual 04/2014 FW V4.7 A5E34229197B section 4.2, p. 67"

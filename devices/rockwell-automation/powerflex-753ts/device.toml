@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 753TS"
+kind = "drive"
+article = "20F1D.../20F1E..."
+
+[identity.enip]
+vendor_id = 1
+product_code = 7056
+device_type = 143
+revisions = ["13.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 753TS "
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param1: 12..76 bytes, default 12
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param2: 8..72 bytes, default 8
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "EDS_753TS.eds", size = 39871, sha256 = "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 753TS: ODVA Declaration of Conformity"
+sha256 = "24c1238364e3154595c880bf8f3490256def9a81fb11a8dcedc23e5accce8e08"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2691/12345_DOC_022724.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 753TS: EDS (ODVA marketplace)"
+sha256 = "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds; retrieved 2026-11-23; not redistributed here"

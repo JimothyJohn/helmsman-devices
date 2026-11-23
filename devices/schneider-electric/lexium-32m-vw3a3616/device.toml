@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Schneider Electric"
+model = "Lexium 32M with VW3A3616"
+kind = "drive"
+article = "LXM32M"
+
+[identity.enip]
+vendor_id = 243
+product_code = 2564
+device_type = 0
+revisions = ["1.20"]   # the EDS's MajRev.MinRev
+product_name = "Lexium 32"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 113, bytes = 38 }
+output_assembly = { instance = 103, bytes = 38 }
+config_assembly = { instance = 5 }
+eds = { name = "SE_EIP_LXM32M_1.20.eds", size = 11110, sha256 = "e0baaad1ed57480965c10b333bee3a7b134801398273ab940634248817124c08", url = "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip (member of files)", terms = "none stated" }
+
+[[sources]]
+title = "Ethernet EDS VW3A3616 V1.20 (EDS files for the VW3A3616 card)"
+sha256 = "21eacb40dfd56362ea14af223df0b5742b44c969822bf04f0065bd41325a82aa"
+where = "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "VW3A3616 - LXM32M Ethernet TCP/IP Module (Protocol EtherNet/IP) User Guide (0198441113802)"
+sha256 = "6a2f23d1c81400e611d61380a30bbcae3db7cb3b033c647aea774e0d942d05cf"
+where = "https://download.se.com/files?p_Doc_Ref=0198441113802-EN&p_enDocType=User+guide&p_File_Name=0198441113802_LXM32M+EtherNet_IP_EN.pdf; retrieved 2026-11-23; not redistributed here"

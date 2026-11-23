@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "WEG"
+model = "SSW900"
+kind = "other"
+article = "SSW900-CETH-W"
+
+[identity.enip]
+vendor_id = 853
+product_code = 5888
+device_type = 43
+revisions = ["1.30"]   # the EDS's MajRev.MinRev
+product_name = "SSW900"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "110/160 Manufacturer Parameters"
+# input_assembly: the size is set by Param4: 2..100 bytes, default 2
+input_assembly = { instance = 160 }
+# output_assembly: the size is set by Param3: 2..40 bytes, default 2
+output_assembly = { instance = 110 }
+config_assembly = { instance = 1 }
+eds = { name = "EIP_SSW900_V13X.eds", size = 25640, sha256 = "2d08f8afa0a57dc04a2793d4f0647df3916083d530fbde71155b5405cf7f6611", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip (member of 12119.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "WEG SSW900: declaration of conformity (ODVA), ODVA marketplace product 2394"
+sha256 = "6b22e25567968fc15fbfe6a543b7d0e74e907ae2e4f1dd59fb2c9b674b31ed2d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "WEG SSW900: EDS, ODVA marketplace product 2394"
+sha256 = "8ed475238b4c7fa6f5c2e03979d0fd141b9f4a597823e7f992147fd895719b6f"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

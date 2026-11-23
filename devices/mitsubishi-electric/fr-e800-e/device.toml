@@ -1,0 +1,31 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Mitsubishi Electric"
+model = "FR-E800-E"
+kind = "drive"
+
+[identity.enip]
+vendor_id = 161
+product_code = 62
+device_type = 2
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "FR-E800-E"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Speed Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+eds = { name = "00A10002003E0101.eds", size = 74537, sha256 = "e0040f44b581fbea0c30adb3e8652add6ef28d1e1399eb32cc90ca96686cbc92", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip (member of 11932.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Mitsubishi Electric FR-E800-E: declaration of conformity (ODVA), ODVA marketplace product 2156"
+sha256 = "a326fab9a1b6425133f71aa1eea635a24612b114de4663f4b2266c42b538ff98"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Mitsubishi Electric FR-E800-E: EDS, ODVA marketplace product 2156"
+sha256 = "85de70997bd9c67e731270eb542d506798c500d05d481c511809feb0e4e6c5c3"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

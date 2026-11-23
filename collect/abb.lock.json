@@ -1,0 +1,43 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf",
+   "folders": [
+    "devices/abb/feip-21"
+   ],
+   "kind": "datasheet",
+   "name": "12553_DOC_092426.pdf",
+   "retrieved": "2026-11-23T03:40:34Z",
+   "sha256": "d6ec1bc5d20db9ba9827e04665423ed2b2ab351f529dfab43c378606ed430c6a",
+   "size": 121003,
+   "terms": "none stated",
+   "title": "ABB FEIP-21 EtherNet/IP adapter module: declaration of conformity (ODVA), ODVA marketplace product 2829",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip",
+   "folders": [
+    "devices/abb/feip-21"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "FEIP21_filerev1_2.EDS",
+     "sha256": "c67b3dfdce91d48f4a88166576d8d8c723297a8325098d5e8a7709ffa49684ff",
+     "size": 115812,
+     "type": "eds"
+    }
+   ],
+   "name": "12553.02.zip",
+   "retrieved": "2026-11-23T03:40:34Z",
+   "sha256": "42bf024b5ecb8a0ce980827af62bfbb3c35162ae1e929f27013eab78cb18ce64",
+   "size": 7147,
+   "terms": "none stated",
+   "title": "ABB FEIP-21 EtherNet/IP adapter module: EDS, ODVA marketplace product 2829",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

@@ -1,0 +1,21 @@
+format = "helmsman-devices-collect 1"
+vendor = "Acromag"
+
+# BusWorks XT Ethernet I/O, Modbus TCP/IP models. Found by search on acromag.com 2026-11-22.
+# The XT1533 manual that search also returned is the Profinet model's and has no Modbus map: not used.
+
+[[doc]]
+folders = ["devices/acromag/xt1121-000"]
+kind = "manual"
+url = "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1121_950P-User-Manual.pdf"
+title = "8500950 XT1121-000 User's Manual"
+found = "2026-11-22 search: Acromag XT1121-000 user manual Modbus TCP/IP register map pdf, site acromag.com"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/acromag/xt1111-000"]
+kind = "manual"
+url = "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf"
+title = "8500949 XT1111-000 User's Manual"
+found = "2026-11-22 search: Acromag XT1121-000 user manual Modbus TCP/IP register map pdf, site acromag.com"
+terms = "none stated"

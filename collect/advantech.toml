@@ -4,9 +4,18 @@ vendor = "Advantech"
 # ADAM-6000 Modbus TCP I/O: one series manual covers the models.
 
 [[doc]]
-folders = ["devices/advantech/adam-6050", "devices/advantech/adam-6052", "devices/advantech/adam-6060"]
+folders = ["devices/advantech/adam-6050", "devices/advantech/adam-6052", "devices/advantech/adam-6060", "devices/advantech/adam-6015", "devices/advantech/adam-6017", "devices/advantech/adam-6018", "devices/advantech/adam-6024", "devices/advantech/adam-6066"]
 kind = "manual"
 url = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf"
 title = "ADAM-6000 Series User Manual, Edition 12"
 found = "2026-11-14 search: advdownload.advantech.com adam-6000 series user manual pdf"
+terms = "none stated"
+
+# ADAM-6200 Modbus TCP I/O: one series manual covers the 6250, 6251, 6256 and the 6260 relay module.
+[[doc]]
+folders = ["devices/advantech/adam-6250", "devices/advantech/adam-6251", "devices/advantech/adam-6256", "devices/advantech/adam-6260"]
+kind = "manual"
+url = "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf"
+title = "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5"
+found = "2026-11-22 search: advdownload.advantech.com ADAM-6200 User Manual pdf; listed on Advantech's support page for the ADAM-6200 Series"
 terms = "none stated"

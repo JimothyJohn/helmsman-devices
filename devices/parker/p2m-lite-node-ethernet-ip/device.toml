@@ -1,0 +1,28 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Parker Hannifin Corporation"
+model = "P2M Lite Node 24DO ETHERNET/IP"
+kind = "remote-io"
+article = "P2M Lite Node 24DO ETHERNET/IP"
+
+[identity.enip]
+vendor_id = 4
+product_code = 53505
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "P2M Lite Node 24DO ETHERNET/IP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive owner"
+input_assembly = { instance = 100, bytes = 7 }
+output_assembly = { instance = 150, bytes = 4 }
+config_assembly = { instance = 0 }
+eds = { name = "Parker_Lite.eds", size = 69571, sha256 = "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds", terms = "none stated" }
+
+[[sources]]
+title = "P2M Lite node EtherNet/IP EDS (ODVA marketplace, product 2292)"
+sha256 = "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2292/Parker_Lite.eds; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,15 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Schneider Electric"
+model = "Modicon TM3 bus coupler TM3BCEIP"
+kind = "remote-io"
+article = "TM3BCEIP"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+# The data sheet lists a "Modbus TCP/IP server" and an "Ethernet/IP adapter"; neither the data sheet nor the instruction sheet gives a port or a register map.
+
+[[questions]]
+ask = "Which EtherNet/IP identity (vendor id, product code, revision) and assembly sizes does the coupler report, and does an EDS exist? Schneider's site lists only firmware packages for it, and a community answer says the configurator exports a project-specific EDS."
+source = "Data sheet TM3BCEIP (10 May 2021) lists Ethernet/IP adapter and Modbus TCP/IP server; no EDS on its se.com download pages"

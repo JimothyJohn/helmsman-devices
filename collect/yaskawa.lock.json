@@ -1,0 +1,79 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1740/11453_DOC_082222.pdf",
+   "folders": [
+    "devices/yaskawa/ga800-si-en3d"
+   ],
+   "kind": "datasheet",
+   "name": "11453_DOC_082222.pdf",
+   "retrieved": "2026-11-23T03:42:58Z",
+   "sha256": "f22fff86a4ab1ca43ef3e2352db68d54c8dc35de523f97e1f8c60c6365fc1d70",
+   "size": 870074,
+   "terms": "none stated",
+   "title": "Yaskawa 1740 listing: declaration of conformity (ODVA), ODVA marketplace product 1740",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf",
+   "folders": [
+    "devices/yaskawa/ga500-ga501"
+   ],
+   "kind": "datasheet",
+   "name": "12536_DOC_091124.pdf",
+   "retrieved": "2026-11-23T03:42:58Z",
+   "sha256": "0b341fd56f7767f83e8e4a07dc020da27a5de238d7dacea811e14449451710a2",
+   "size": 132141,
+   "terms": "none stated",
+   "title": "Yaskawa GA500 / GA501 EtherNet/IP: declaration of conformity (ODVA), ODVA marketplace product 2770",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1740/11453.04-EDS.zip",
+   "folders": [
+    "devices/yaskawa/ga800-si-en3d"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "CIMR-AU2A0004_SI-EN3D_v2.8.eds",
+     "sha256": "4e295682ed8623cb152ce9a8b6ef48ce8577de390de2aa5606d80c7f3acf3fe7",
+     "size": 51249,
+     "type": "eds"
+    },
+    {
+     "name": "CIPR-GA80U2004_SI-EN3D_v2.8.eds",
+     "sha256": "e57045ccd15e2067b800e6e2dad04d63b4e4d578e8bc3acca119cbce25b14cc1",
+     "size": 51252,
+     "type": "eds"
+    }
+   ],
+   "name": "11453.04-EDS.zip",
+   "retrieved": "2026-11-23T03:42:58Z",
+   "sha256": "c5a10ca71a76cbd19ebc51f8423a34504ec0ad677a25af4dba333370a7ab3598",
+   "size": 5564,
+   "terms": "none stated",
+   "title": "Yaskawa 1740 listing: EDS, ODVA marketplace product 1740",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds",
+   "folders": [
+    "devices/yaskawa/ga500-ga501"
+   ],
+   "kind": "eds",
+   "name": "GA501_v1.005.eds",
+   "retrieved": "2026-11-23T03:42:58Z",
+   "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe",
+   "size": 50957,
+   "terms": "none stated",
+   "title": "Yaskawa GA500 / GA501 EtherNet/IP: EDS, ODVA marketplace product 2770",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

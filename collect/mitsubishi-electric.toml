@@ -1,0 +1,51 @@
+format = "helmsman-devices-collect 1"
+vendor = "mitsubishi-electric"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-e800-e"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2156/11932_DOC_100919.pdf"
+title = "Mitsubishi Electric FR-E800-E: declaration of conformity (ODVA), ODVA marketplace product 2156"
+found = "2026-11-22 https://marketplace.odva.org/products/2156-fr-e800-e (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-e800-e"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2156/11932.01-EDS.zip"
+title = "Mitsubishi Electric FR-E800-E: EDS, ODVA marketplace product 2156"
+found = "2026-11-22 https://marketplace.odva.org/products/2156-fr-e800-e (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-e800-sce"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf"
+title = "Mitsubishi Electric FR-E800-SCE: declaration of conformity (ODVA), ODVA marketplace product 2231"
+found = "2026-11-22 https://marketplace.odva.org/products/2231-fr-e800-sce (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-e800-sce"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds"
+title = "Mitsubishi Electric FR-E800-SCE: EDS, ODVA marketplace product 2231"
+found = "2026-11-22 https://marketplace.odva.org/products/2231-fr-e800-sce (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-d800-e"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf"
+title = "Mitsubishi Electric FR-D800-E: declaration of conformity (ODVA), ODVA marketplace product 2787"
+found = "2026-11-22 https://marketplace.odva.org/products/2787-fr-d800-e (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/mitsubishi-electric/fr-d800-e"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip"
+title = "Mitsubishi Electric FR-D800-E: EDS, ODVA marketplace product 2787"
+found = "2026-11-22 https://marketplace.odva.org/products/2787-fr-d800-e (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

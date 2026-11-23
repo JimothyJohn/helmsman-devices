@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 6000T"
+kind = "drive"
+article = "6000T..."
+
+[identity.enip]
+vendor_id = 1
+product_code = 10640
+device_type = 143
+revisions = ["11.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 6000T MV AC Drive"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param1: 12..76 bytes, default 12
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param2: 8..72 bytes, default 8
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "12040.08_EDS", size = 40833, sha256 = "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity"
+sha256 = "66cbf2811650eb129197543205774ac4163842e274d65563e30bc9069c15f582"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2255/12040_DOC_082126.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)"
+sha256 = "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS; retrieved 2026-11-23; not redistributed here"

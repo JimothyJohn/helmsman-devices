@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Numatics, Inc"
+model = "Numatics G3 EtherNet/IP"
+kind = "remote-io"
+article = "Numatics G3 240-325"
+
+[identity.enip]
+vendor_id = 52
+product_code = 101
+device_type = 12
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "Numatics G3 Ethernet/IP DLR+QC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..504 bytes, default 16
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param1: 0..504 bytes, default 16
+output_assembly = { instance = 150 }
+config_assembly = { instance = 1 }
+eds = { name = "G3EP0102s-2013-03-01.eds", size = 10239, sha256 = "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds", terms = "none stated" }
+
+[[sources]]
+title = "Numatics G3 EtherNet/IP node EDS (ODVA marketplace, product 516)"
+sha256 = "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds; retrieved 2026-11-23; not redistributed here"

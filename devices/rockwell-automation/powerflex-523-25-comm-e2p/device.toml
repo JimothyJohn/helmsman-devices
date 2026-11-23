@@ -1,0 +1,39 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 523 with 25-COMM-E2P"
+kind = "drive"
+article = "25-COMM-E2P     "
+
+[identity.enip]
+vendor_id = 1
+product_code = 1822
+device_type = 151
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "25-COMM-E2P     "
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param1: 8..24 bytes, default 8
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param2: 4..20 bytes, default 4
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "00010097071E0100.eds", size = 24819, sha256 = "d31bd29649028349734f5b815cd6650138dc796647a6502b8b9bac99d3cb8d6d", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip (member of 11171_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity"
+sha256 = "8e85ae6dc580a772342bb87ba02a33cb991629d65d80b34e0b664188c9cb453d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)"
+sha256 = "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[questions]]
+ask = "Does a PowerFlex 523 with a 25-COMM-E2P answer ListIdentity with this adapter EDS's product code (1822) and device type 151, or with the drive's own?"
+source = "ODVA marketplace product 580, EDS member 00010097071E0100.eds (an adapter EDS, not a 523 EDS)"
