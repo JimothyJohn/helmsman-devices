@@ -1,0 +1,36 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)"
+kind = "drive"
+article = "PowerFlex 527 AC Drive via embedded dual port Enet - CIP Motion / Safe Torque Off  CIP Safety"
+
+[identity.enip]
+vendor_id = 1
+product_code = 15
+device_type = 45
+revisions = ["2.3"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 527"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "CIP Motion Safety Drive Exclusive Owner"
+input_assembly = { instance = 2, bytes = 500 }
+output_assembly = { instance = 81, bytes = 500 }
+eds = { name = "0001002D000F0200.eds", size = 22378, sha256 = "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 527-STO CIP Safety: ODVA Declaration of Conformity"
+sha256 = "e7cf75e9a25ea6881b03a8e2a07d471fe47f02265ec74a56f5b6edd3e0951dd4"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1966/11388_DOC_052522.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 527-STO CIP Safety: EDS (ODVA marketplace)"
+sha256 = "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds; retrieved 2026-11-23; not redistributed here"
+
+[[questions]]
+ask = "Does a PowerFlex 527 without the STO option answer with the same product code (15) and the same connection, or does it need a different EDS?"
+source = "ODVA marketplace product 1966 lists only the 527-STO CIP Safety drive"

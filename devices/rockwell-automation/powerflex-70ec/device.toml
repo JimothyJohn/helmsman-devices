@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 70EC"
+kind = "drive"
+article = "20A... (with Enhanced Control)"
+
+[identity.enip]
+vendor_id = 1
+product_code = 50
+device_type = 152
+revisions = ["5.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 70 EC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param2: 4..24 bytes, default 8
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param1: 0..20 bytes, default 4
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "0001009800320500.eds", size = 11068, sha256 = "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds", terms = "none stated" }
+
+[[sources]]
+title = "PowerFlex 70EC: ODVA Declaration of Conformity"
+sha256 = "30fbc80109947ec26fbb98998eac2cc41e03774103c7489fb507edd925a3dbb1"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 70EC: EDS (ODVA marketplace)"
+sha256 = "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds; retrieved 2026-11-23; not redistributed here"

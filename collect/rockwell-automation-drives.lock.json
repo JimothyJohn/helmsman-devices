@@ -1,0 +1,859 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1639/10702_DOC_110308.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1639/10702_DOC_110308.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-70"
+   ],
+   "kind": "datasheet",
+   "name": "10702_DOC_110308.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "b5629f7a3d40358e860c331d65cbf80ec9dfd9bde77d3132d0a7b0e709d6e531",
+   "size": 67806,
+   "terms": "none stated",
+   "title": "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1644/10875_DOC_042225.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1644/10875_DOC_042225.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-755"
+   ],
+   "kind": "datasheet",
+   "name": "10875_DOC_042225.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "58bf5c53762a6e4e55ee2046eec36614844508b9d8b6afbdb1c9791c46fe097b",
+   "size": 135165,
+   "terms": "none stated",
+   "title": "PowerFlex 755, 755HiP: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-70ec"
+   ],
+   "kind": "datasheet",
+   "name": "11084_DOC_071713.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "30fbc80109947ec26fbb98998eac2cc41e03774103c7489fb507edd925a3dbb1",
+   "size": 104033,
+   "terms": "none stated",
+   "title": "PowerFlex 70EC: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1966/11388_DOC_052522.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1966/11388_DOC_052522.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-527"
+   ],
+   "kind": "datasheet",
+   "name": "11388_DOC_052522.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "e7cf75e9a25ea6881b03a8e2a07d471fe47f02265ec74a56f5b6edd3e0951dd4",
+   "size": 143583,
+   "terms": "none stated",
+   "title": "PowerFlex 527-STO CIP Safety: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2255/12040_DOC_082126.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2255/12040_DOC_082126.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-6000t"
+   ],
+   "kind": "datasheet",
+   "name": "12040_DOC_082126.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "66cbf2811650eb129197543205774ac4163842e274d65563e30bc9069c15f582",
+   "size": 124572,
+   "terms": "none stated",
+   "title": "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2432/12191_DOC_090125.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2432/12191_DOC_090125.pdf",
+   "folders": [
+    "devices/rockwell-automation/armor-powerflex-35e"
+   ],
+   "kind": "datasheet",
+   "name": "12191_DOC_090125.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "765503f461db543875b0d4e8618888a6091b5534bb7fc905e52d1ff7614b7987",
+   "size": 136028,
+   "terms": "none stated",
+   "title": "Armor PowerFlex 35E: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2690/12346_DOC_031726.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2690/12346_DOC_031726.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-755ts"
+   ],
+   "kind": "datasheet",
+   "name": "12346_DOC_031726.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "0721e8e87635607b795fd44e3d5288acbd40fa6f44e775d923137258ddeeda2b",
+   "size": 136462,
+   "terms": "none stated",
+   "title": "PowerFlex 755TS: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2691/12345_DOC_022724.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2691/12345_DOC_022724.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753ts"
+   ],
+   "kind": "datasheet",
+   "name": "12345_DOC_022724.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "24c1238364e3154595c880bf8f3490256def9a81fb11a8dcedc23e5accce8e08",
+   "size": 134864,
+   "terms": "none stated",
+   "title": "PowerFlex 753TS: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf",
+   "folders": [
+    "devices/rockwell-automation/armorstart-280e-281e"
+   ],
+   "kind": "datasheet",
+   "name": "10910_DOC_071422.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "1836745b0fb1d49b695a04a7f149c321359862de189f3214caf104dbff95b446",
+   "size": 137044,
+   "terms": "none stated",
+   "title": "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf",
+   "folders": [
+    "devices/rockwell-automation/armorstart-lt"
+   ],
+   "kind": "datasheet",
+   "name": "10993_DOC_083020.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "8155a32a7c606b7745a77640832031e7b29edcbda8f920678fd094e5bb459843",
+   "size": 135811,
+   "terms": "none stated",
+   "title": "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+    "devices/rockwell-automation/powerflex-525"
+   ],
+   "kind": "datasheet",
+   "name": "11171_DOC_071713.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "8e85ae6dc580a772342bb87ba02a33cb991629d65d80b34e0b664188c9cb453d",
+   "size": 88237,
+   "terms": "none stated",
+   "title": "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/581/11061_DOC_061812.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753"
+   ],
+   "kind": "datasheet",
+   "name": "11061_DOC_061812.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "b5307d5e9b42975144a965767a67c1a1e1bbc0575d91ba7276fdbefad026bffc",
+   "size": 59239,
+   "terms": "none stated",
+   "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/854/10788_DOC_082409.pdf",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753"
+   ],
+   "kind": "datasheet",
+   "name": "10788_DOC_082409.pdf",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "98c533cad64c898058e2d4a10cfd50bc6d29fa7d1d81771eabc86596604bdc4c",
+   "size": 44534,
+   "terms": "none stated",
+   "title": "PowerFlex 753 and 755 family (ODVA listing 854): ODVA Declaration of Conformity",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-70"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001007B00300200.eds",
+     "sha256": "7c31097c75b1a0f7a47f91e69c9b6761d2e51607e78ab5b1b47e193128f3779f",
+     "size": 5593,
+     "type": "eds"
+    },
+    {
+     "name": "0001007B08900100.eds",
+     "sha256": "92a5a2cd5c29354e44d58f50916d5f415e42af8e3c717c7717f3bf47ffa2581c",
+     "size": 5719,
+     "type": "eds"
+    }
+   ],
+   "name": "10702-EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "c76a77ae3a5b27591c1607286f0c41cfea8bdabd7288fdfd952e4771b66f0930",
+   "size": 3076,
+   "terms": "none stated",
+   "title": "PowerFlex 70 family (ODVA listing 1639): EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-755"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "PF755 V16 eds/0001007808901000.eds",
+     "sha256": "4464ef910ae491a01bec7b1eca62c7339ac6fb1af6ea86db418fce63526d63ef",
+     "size": 10367,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001007908901000.eds",
+     "sha256": "a4a05ed30be1a9de03ea8adc52841144a3d283e8176137714734e39fdd290a59",
+     "size": 12026,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001007B08901000.eds",
+     "sha256": "c2e63213ac38ba1b080684092a78f3d77be221be6429a288e51600a471a6ed3f",
+     "size": 5663,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001007B08901000.eds.ebf",
+     "sha256": "c148c98fdadb1f30e12d13f9de3d4b73c06b674238fc9199c7d7165550c77492",
+     "size": 5641,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001008108901000.eds",
+     "sha256": "c619f03527ee0f65af6fb4ef0e280eb1d80d4fde759525234b9571adbca2f652",
+     "size": 10375,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001008C08901000.eds",
+     "sha256": "6f30f5f8a49fd6e32fe155e5dd39156ac353119746e37aaf4ba74d651f2e2481",
+     "size": 16324,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001008D08901000.eds",
+     "sha256": "fe5260c6820a70c5a8611f6f116f8adc5dd95bb8dcf6e4f17ed3f1322b1a0f24",
+     "size": 67393,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001008E08901000.eds",
+     "sha256": "5913d6fe7102845a07cb963040b181453f36f4e65df5f1a416923c6b2aa95d0c",
+     "size": 37284,
+     "type": "eds"
+    },
+    {
+     "name": "PF755 V16 eds/0001008F08901000.eds",
+     "sha256": "521e5178f12075fb7125af9d8a0558b7deb2c7c84d145d3772e9ce5242dda67c",
+     "size": 6563,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/000100780C901000.eds",
+     "sha256": "2d3bbb06d492d2c8f5ec2e11156695b7c95b31ab1c04c76a25d4f3a9fc9a65ab",
+     "size": 10386,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/000100790C901000.eds",
+     "sha256": "0af5b356cc321fe881c5150fb524c0d15a9cf7feb020e263ef538e26c8ca6867",
+     "size": 12029,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/0001007B0C901000.eds",
+     "sha256": "9afb35275737e30a09f29b656a6870df9df966c58080c50a20dd4a2a539eba52",
+     "size": 5660,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/000100810C901000.eds",
+     "sha256": "8a45f0a4fea9e1a8972dd1137d9240e4e8f5b5a7da35dc299c728a179da650f1",
+     "size": 10394,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/0001008C0C901000.eds",
+     "sha256": "d7e5f422269fb2e71b636307f5631eab81ed04cde7750ed160897023cf7b9c14",
+     "size": 16344,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/0001008D0C901000.eds",
+     "sha256": "4941c2709e42e711b317cc9cf0fbd22c4d5d6bf8e27cc82573faf9c314d82647",
+     "size": 67412,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/0001008E0C901000.eds",
+     "sha256": "a67266b96b803bd45106e2ecaa765e726bc9c27ab6a62ba1a0e9b9e685994346",
+     "size": 37290,
+     "type": "eds"
+    },
+    {
+     "name": "PF755HiP V16 eds/0001008F0C901000.eds",
+     "sha256": "c7a665e62a8ecc454baec2177d5fe8724d7665dd246ff3391d78606655c0c398",
+     "size": 6582,
+     "type": "eds"
+    }
+   ],
+   "name": "10875.04.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "58ffcda61a8f3c1fd2e94969d5a0abcaf72d980162362937786bee0d11c597b3",
+   "size": 38776,
+   "terms": "none stated",
+   "title": "PowerFlex 755, 755HiP: EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds",
+   "folders": [
+    "devices/rockwell-automation/powerflex-70ec"
+   ],
+   "kind": "eds",
+   "name": "0001009800320500.eds",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd",
+   "size": 11068,
+   "terms": "none stated",
+   "title": "PowerFlex 70EC: EDS (ODVA marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds",
+   "folders": [
+    "devices/rockwell-automation/powerflex-527"
+   ],
+   "kind": "eds",
+   "name": "0001002D000F0200.eds",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d",
+   "size": 22378,
+   "terms": "none stated",
+   "title": "PowerFlex 527-STO CIP Safety: EDS (ODVA marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS": {
+   "content_type": "application/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS",
+   "folders": [
+    "devices/rockwell-automation/powerflex-6000t"
+   ],
+   "kind": "eds",
+   "name": "12040.08_EDS",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182",
+   "size": 40833,
+   "terms": "none stated",
+   "title": "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip",
+   "folders": [
+    "devices/rockwell-automation/armor-powerflex-35e"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "000100AA00030200.eds",
+     "sha256": "c84392f3c1a108a65180ea1b3658eb93f91c76cf8dfe7cf380224b7076f3356a",
+     "size": 41809,
+     "type": "eds"
+    }
+   ],
+   "name": "12191.10.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "2af95303f1d98eec8bc949f666141127904675de8a049722f9c3441b4c4431ca",
+   "size": 5225,
+   "terms": "none stated",
+   "title": "Armor PowerFlex 35E: EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2690/12346.06_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2690/12346.06_EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-755ts"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS_PowerFlex_755TS_85_R14.2.12001_CIP_Motion.eds",
+     "sha256": "173152a00e1b5ee7aaab6a6be219b27814e6f466650ba11ba44b23afaf8b943a",
+     "size": 9399,
+     "type": "eds"
+    }
+   ],
+   "name": "12346.06_EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "29d448ab91ceea1859aa0228a09193e8425b7c7c8a133658a074613687348449",
+   "size": 2134,
+   "terms": "none stated",
+   "title": "PowerFlex 755TS: EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753ts"
+   ],
+   "kind": "eds",
+   "name": "EDS_753TS.eds",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2",
+   "size": 39871,
+   "terms": "none stated",
+   "title": "PowerFlex 753TS: EDS (ODVA marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/armorstart-280e-281e"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "eds_280E/EtherNetIP/0001001600910200.eds",
+     "sha256": "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c",
+     "size": 64224,
+     "type": "eds"
+    },
+    {
+     "name": "eds_280E/EtherNetIP/0001001600920200.eds",
+     "sha256": "268ccb040a84bc76c56107d8db3cb17f6a0ac012ca0cb4c630de8696004032e3",
+     "size": 64226,
+     "type": "eds"
+    },
+    {
+     "name": "eds_280E/EtherNetIP/0001001600930100.eds",
+     "sha256": "8dfc59766feed239926563e917ad54441f4a94bd2751d935b78e1aa5202bb444",
+     "size": 64226,
+     "type": "eds"
+    },
+    {
+     "name": "eds_280E/EtherNetIP/0001001600930200.eds",
+     "sha256": "7f9831487dab37f4e243de4cdee00d5718269b33f6982da974a0b9f63f88ab0f",
+     "size": 64225,
+     "type": "eds"
+    },
+    {
+     "name": "eds_280E/EtherNetIP/00010016009A0200.eds",
+     "sha256": "5d224d9599b347bb5ca3fdc2cc663fd865f8d79653dd7e38169f6f3dd0ece174",
+     "size": 64227,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600D10200.eds",
+     "sha256": "6c7367aa3fe72f91582e934de73093bd1b6f7bd722b7ee0c6bebeb4d34993f17",
+     "size": 64227,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600D20200.eds",
+     "sha256": "b837496655068859ce24db44e25a44d63550aa09bb4a0544ecf0d92871578361",
+     "size": 64229,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600D30100.eds",
+     "sha256": "61b46542df8f67491144e7e615a8727b52e3d4b41b7bf0203a0a350f8fb9af9c",
+     "size": 64230,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600D30200.eds",
+     "sha256": "9cd46a9ddfc8ccd596b3bb300e06d09451d4dbb5503e96697c0ea28e4839caa7",
+     "size": 64229,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600DA0200.eds",
+     "sha256": "5a0672a67ba6eb4299119e17000f216e02d806df802f4d8147390226225a07f0",
+     "size": 64232,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600F10200.eds",
+     "sha256": "2265c78db80f508113380d7a056eb784d69ea2bfef63b52c7c6e2efc73ef77f9",
+     "size": 64226,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600F20200.eds",
+     "sha256": "5bec1d09ac8daeecfefcbf6be29e1e95520126332c00e29c9658c22119b0e085",
+     "size": 64228,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600F30200.eds",
+     "sha256": "42754879c619eb4a7cf7a2b7f3f22a4da03f5f419239efc7f3bee48c4f6f5fe9",
+     "size": 64228,
+     "type": "eds"
+    },
+    {
+     "name": "eds_281E/EtherNetIP/0001001600FA0200.eds",
+     "sha256": "6b15bf50f4e3dd119d3d610bba650c445eb4e179dfca5a7726132c32c30aa71b",
+     "size": 64231,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601720100.eds",
+     "sha256": "f5d69da2d8bd9d4f1b03c8198778521b7bd491315ed5633f32efad3577aee0b7",
+     "size": 100877,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601720200.eds",
+     "sha256": "aa55e97b9e9933612ed70030b254460e56af385661bdb00c60e0ab2ce2c0e377",
+     "size": 100876,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601740100.eds",
+     "sha256": "bb84b1773caf243656303c7aac98c02b7109f9c2b1773cade88808a65193a762",
+     "size": 100876,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601740200.eds",
+     "sha256": "059df1064bbd8cfb4dc26a0618753441c446f3d903f0618b93781fbb613ee5d5",
+     "size": 100875,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601760100.eds",
+     "sha256": "7b808be995d7f978b0a978ed807dfff0be7db0b0b5da92bae0f230a57cbcae95",
+     "size": 100876,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601760200.eds",
+     "sha256": "9ae05cf2230462af2f0885ccd2d57bb7e6252e44024566d8f77553352225588c",
+     "size": 100875,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601770100.eds",
+     "sha256": "88e38378f4f4b03549881f0643f935203b52d208e8205f11c21bab82199bce58",
+     "size": 100884,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601770200.eds",
+     "sha256": "f75e2d7b916963c654fab1d5ae1ed565d4ef1e4e776f229fc80a46216d7b0773",
+     "size": 100883,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601780100.eds",
+     "sha256": "0a04d43da73c922dccbe177e4565ed77614cc9e33a626b6b12654e1e915cbdf2",
+     "size": 100888,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601780200.eds",
+     "sha256": "3cb0545218216a690025d90966454cde12fada27ab112b31f011d380cad41dc5",
+     "size": 100887,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601A20200.eds",
+     "sha256": "b2ffc58fa96a6262eec916d982a5b4e30651bc909898f04f8424a240a2846c81",
+     "size": 100871,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601A40200.eds",
+     "sha256": "f13315a357a773f537758e6885f52fe93d751fe378262e3395a46c2f45b369ae",
+     "size": 100870,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601A60200.eds",
+     "sha256": "bb25f0e98687b459bc1fc7ecb583c0a2fbdff953a7e8be0de58285744de03a4e",
+     "size": 100870,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601A70200.eds",
+     "sha256": "37e5f98e94ca12c1202790c3efbebab61bae6fa0bda9a2a680af1413fec96a44",
+     "size": 100878,
+     "type": "eds"
+    },
+    {
+     "name": "eds_284E/EtherNetIP/0001001601A80200.eds",
+     "sha256": "1cd7decd28207b7cbc7030e2ec90df2ff2f127d156c7a7571cd19729132644e9",
+     "size": 100882,
+     "type": "eds"
+    }
+   ],
+   "name": "10910.04-EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "247261c77de331506ff9795d80fa96979b701913d0f272e9c2f8de943879acc0",
+   "size": 334051,
+   "terms": "none stated",
+   "title": "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/armorstart-lt"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "290E/0001001603010200.eds",
+     "sha256": "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85",
+     "size": 142693,
+     "type": "eds"
+    },
+    {
+     "name": "290E/0001001603020200.eds",
+     "sha256": "c57c143679b3682766e772290475135599d81a6aac304cf465ced6b142063fb4",
+     "size": 142694,
+     "type": "eds"
+    },
+    {
+     "name": "290EP/0001001603110200.eds",
+     "sha256": "30d2c50aa2dc569a3559de9d5299732cd050e3a6a537f081e31273d08c5b8cc5",
+     "size": 142679,
+     "type": "eds"
+    },
+    {
+     "name": "290EP/0001001603120200.eds",
+     "sha256": "21d44f0b7d0bb7e4670d4ea5b05e98add62979cf744e9f00daf95cf3f809304a",
+     "size": 142680,
+     "type": "eds"
+    },
+    {
+     "name": "291E/0001001603410200.eds",
+     "sha256": "68a97aec6dbe19e6db0dc1a5f5b700202b6e931443b489722536a30305298fad",
+     "size": 143111,
+     "type": "eds"
+    },
+    {
+     "name": "291E/0001001603420200.eds",
+     "sha256": "bc8593aeb039859be93a013f361b1d576b97d7ea229913b42792099df5c6c051",
+     "size": 143112,
+     "type": "eds"
+    },
+    {
+     "name": "291EP/0001001603510200.eds",
+     "sha256": "f5608f10d9ad8766373a66f2ecf9937054a3da3dd020b0a0aa51c5a2f1b542ae",
+     "size": 143097,
+     "type": "eds"
+    },
+    {
+     "name": "291EP/0001001603520200.eds",
+     "sha256": "7b42cefce31f183a5de0f2858c53bc1ed08e842f5db9ed3640bbd5cc9b24cf74",
+     "size": 143098,
+     "type": "eds"
+    },
+    {
+     "name": "294E/0001001603C20200.eds",
+     "sha256": "05ea4ff3e2ae4aa06cf6d6cbc78595495da07ee86b2f986e396abfbf65217385",
+     "size": 149646,
+     "type": "eds"
+    },
+    {
+     "name": "294E/0001001603C40200.eds",
+     "sha256": "0a8f59488b58bdbbe7aa61982fa2cbb2b920859660be59e4a4a91384e6add3fc",
+     "size": 149647,
+     "type": "eds"
+    },
+    {
+     "name": "294E/0001001603C60200.eds",
+     "sha256": "863eed4ce83818f1397cbe2af3986f2ee6d40b8c78bf9a971253bded111ace1c",
+     "size": 149647,
+     "type": "eds"
+    },
+    {
+     "name": "294EP/0001001603D20200.eds",
+     "sha256": "c236a7a9a5f3c498aa34daa88a809c922a3d6df671b922a8de20ea9172f7277c",
+     "size": 149632,
+     "type": "eds"
+    },
+    {
+     "name": "294EP/0001001603D40200.eds",
+     "sha256": "08f89baa338c157fe4dd44fdb656f628a5caccdaa1cbb8c27511faf1ca226982",
+     "size": 149633,
+     "type": "eds"
+    },
+    {
+     "name": "294EP/0001001603D60200.eds",
+     "sha256": "8184c1b6a86ff98e8ce6caae922ea393f25570d6aac8b5a23898c752dba741e5",
+     "size": 149633,
+     "type": "eds"
+    }
+   ],
+   "name": "10993.02-EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "07c2f541dc2a416f0e07d85d6774543015dbc353942233ec83c1d8c5366a9445",
+   "size": 265157,
+   "terms": "none stated",
+   "title": "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+    "devices/rockwell-automation/powerflex-525"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001009700090100.eds",
+     "sha256": "a02b3ea15a13f64b3c94a7c48de37877d2804eb5f09dc47225e57e68ba9bcab7",
+     "size": 18530,
+     "type": "eds"
+    },
+    {
+     "name": "00010097071E0100.eds",
+     "sha256": "d31bd29649028349734f5b815cd6650138dc796647a6502b8b9bac99d3cb8d6d",
+     "size": 24819,
+     "type": "eds"
+    }
+   ],
+   "name": "11171_EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "388e7f6ed55bb038146b6a44349471e89fbb48be3b305abeac4e6ad305e6cf75",
+   "size": 4911,
+   "terms": "none stated",
+   "title": "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/581/11061-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001008E08900500.eds",
+     "sha256": "d0199eefa72a760a25f2ef63daf0138c31653c25f2c1481091dc43101643457e",
+     "size": 36692,
+     "type": "eds"
+    },
+    {
+     "name": "0001008EE2A00100.eds",
+     "sha256": "fb6c2c12bc8bef69d478fe53514d3d3143f9666de4d82502af3bb10a3e3c95a7",
+     "size": 2175,
+     "type": "eds"
+    }
+   ],
+   "name": "11061-EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "fe78ee688ac471b6f4da955407e9528e5a5a99ef3435e55bf163d0b96dc52042",
+   "size": 3738,
+   "terms": "none stated",
+   "title": "PowerFlex 750-Series dual-port EtherNet/IP option module (20-750-ENETR): EDS (ODVA marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/854/10788_EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/powerflex-753"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001008C04900100.eds",
+     "sha256": "14d8734a3d758f338b57e16c479fcf3c8b0cb3a6b97cbf1101b0160f035a9340",
+     "size": 14087,
+     "type": "eds"
+    },
+    {
+     "name": "0001008C05900100.eds",
+     "sha256": "705652a432fba60144522ee38ceb13cf52de15bb3d0a7809c44c273633cc28bd",
+     "size": 14100,
+     "type": "eds"
+    },
+    {
+     "name": "0001008C06900100.eds",
+     "sha256": "cdb035de5ed38ab42b3b1a58de47dac9e73368387857db2c42671e2816d8ed40",
+     "size": 14116,
+     "type": "eds"
+    },
+    {
+     "name": "0001008C08900100.eds",
+     "sha256": "0daae777109b0d4c23fc05034f353f5a8ff0ee0cdbb9d4696a5a9877e1ffe1b5",
+     "size": 14087,
+     "type": "eds"
+    },
+    {
+     "name": "0001008C09900100.eds",
+     "sha256": "f9417606b9c53f4b42e1f3a6278f796c3a80d22dd2fdf9dd4b5d766015dbbae4",
+     "size": 14100,
+     "type": "eds"
+    },
+    {
+     "name": "0001008C0A900100.eds",
+     "sha256": "88457f9d0b150aed44f6a3e7b942394e4e2337af8890b8a0d45cd6d8593d4bfc",
+     "size": 14116,
+     "type": "eds"
+    }
+   ],
+   "name": "10788_EDS.zip",
+   "retrieved": "2026-11-23T03:51:20Z",
+   "sha256": "1aeef508465e71acd6ddbf23a65837224d4d1ec31ad44ed9f7e160ba26a25300",
+   "size": 12141,
+   "terms": "none stated",
+   "title": "PowerFlex 753 and 755 family (ODVA listing 854): EDS (ODVA marketplace)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

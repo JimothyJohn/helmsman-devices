@@ -713,6 +713,292 @@
    }
   },
   {
+   "folder": "devices/rockwell-automation/armor-powerflex-35e",
+   "vendor": "Rockwell Automation",
+   "model": "Armor PowerFlex 35E",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 3
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "000100AA00030200.eds",
+      "size": 41809,
+      "sha256": "c84392f3c1a108a65180ea1b3658eb93f91c76cf8dfe7cf380224b7076f3356a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-280e-281e",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart 280E/281E (EtherNet/IP)",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 145
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001600910200.eds",
+      "size": 64224,
+      "sha256": "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-lt",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart LT 290E/291E/294E (EtherNet/IP)",
+   "kind": "other",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 769
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001603010200.eds",
+      "size": 142693,
+      "sha256": "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 523 with 25-COMM-E2P",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 1822
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00010097071E0100.eds",
+      "size": 24819,
+      "sha256": "d31bd29649028349734f5b815cd6650138dc796647a6502b8b9bac99d3cb8d6d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-525",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 525 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 9
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009700090100.eds",
+      "size": 18530,
+      "sha256": "a02b3ea15a13f64b3c94a7c48de37877d2804eb5f09dc47225e57e68ba9bcab7"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-527",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 15
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001002D000F0200.eds",
+      "size": 22378,
+      "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-6000t",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 6000T",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 10640
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "12040.08_EDS",
+      "size": 40833,
+      "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70 (EtherNet/IP adapter)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 48
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001007B00300200.eds",
+      "size": 5593,
+      "sha256": "7c31097c75b1a0f7a47f91e69c9b6761d2e51607e78ab5b1b47e193128f3779f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70ec",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70EC",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 50
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009800320500.eds",
+      "size": 11068,
+      "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753 with 20-750-ENETR",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 1168
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001008C04900100.eds",
+      "size": 14087,
+      "sha256": "14d8734a3d758f338b57e16c479fcf3c8b0cb3a6b97cbf1101b0160f035a9340"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753TS",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 7056
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_753TS.eds",
+      "size": 39871,
+      "sha256": "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 2192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001008F08901000.eds",
+      "size": 6563,
+      "sha256": "521e5178f12075fb7125af9d8a0558b7deb2c7c84d145d3772e9ce5242dda67c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755TS",
+   "kind": "drive",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 85
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_PowerFlex_755TS_85_R14.2.12001_CIP_Motion.eds",
+      "size": 9399,
+      "sha256": "173152a00e1b5ee7aaab6a6be219b27814e6f466650ba11ba44b23afaf8b943a"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
