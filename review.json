@@ -1553,6 +1553,295 @@
    }
   },
   {
+   "folder": "devices/schneider-electric/atv320-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV320 with VW3A3616",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 6153,
+     "device_type": 2,
+     "revisions": [
+      "1.20"
+     ],
+     "product_name": "ATV320"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 5
+    },
+    "eds": "SE_ET_ATV320_0120E.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Ethernet EDS VW3A3616 V1.20 (EDS files for the VW3A3616 card)",
+     "sha256": "21eacb40dfd56362ea14af223df0b5742b44c969822bf04f0065bd41325a82aa",
+     "where": "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ATV320 Modbus TCP-EtherNet IP Manual (NVE41313.02)",
+     "sha256": "23f1712406743b5fa7a8b878dae4dd4b25c5ec15a12570c3e8620da32dc23da1",
+     "where": "https://download.se.com/files?p_Doc_Ref=NVE41313&p_enDocType=User+guide&p_File_Name=ATV320_Modbus_TCP_EtherNet_IP_Manual_NVE41313_02.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/atv340",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV340 (embedded Ethernet)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 6176,
+     "device_type": 2,
+     "revisions": [
+      "3.4"
+     ],
+     "product_name": "ATV340xx"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "SE_ET_ATV340xx_V3.6.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ATV340 Ethernet IP Embedded EDS V3.6",
+     "sha256": "46cd0b7348bfbde883903d5ad433f9642cbde5cbbf96fbfdff9bf92a6cd652a7",
+     "where": "https://download.se.com/files?p_Doc_Ref=ATV340_Ethernet_IP_Emb_V3.6&p_enDocType=Software+-+Data+Library&p_File_Name=ATV340_Ethernet_IP_Embedded_EDS_V3.6.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ATV340 Ethernet Embedded Manual (NVE61653.03)",
+     "sha256": "4c0f9ab27f7f8aded6529c319c885555e7fb8f700805cae6852c3527ab12b396",
+     "where": "https://download.se.com/files?p_Doc_Ref=NVE61653&p_enDocType=User+guide&p_File_Name=ATV340_Ethernet_Embedded_Manual_NVE61653_03.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/atv630",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Process ATV630 / ATV930 (embedded Ethernet)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 6192,
+     "device_type": 2,
+     "revisions": [
+      "2.1"
+     ],
+     "product_name": "ATV9xx"
+    },
+    "input": {
+     "instance": 70,
+     "bytes": 4
+    },
+    "output": {
+     "instance": 20,
+     "bytes": 4
+    },
+    "config": {
+     "instance": 1
+    },
+    "eds": "SE_ET_ATV9xx.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "ATV900 Ethernet IP Embedded EDS V2.3",
+     "sha256": "f2f51d2198f16e1d5c27263dd97ec213b2cc22e8214149abfb62117422017f8a",
+     "where": "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "ATV900 Embedded Ethernet manual (NHA80940.03)",
+     "sha256": "d83eebd45ea5f5062fe71558485235b054c55d4bb32272727824a64d7e125a43",
+     "where": "https://download.se.com/files?p_Doc_Ref=NHA80940&p_enDocType=User+guide&p_File_Name=ATV900_Ethernet_Manual_Embedded_NHA80940_03.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/lexium-32m-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Lexium 32M with VW3A3616",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 2564,
+     "device_type": 0,
+     "revisions": [
+      "1.20"
+     ],
+     "product_name": "Lexium 32"
+    },
+    "input": {
+     "instance": 113,
+     "bytes": 38
+    },
+    "output": {
+     "instance": 103,
+     "bytes": 38
+    },
+    "config": {
+     "instance": 5
+    },
+    "eds": "SE_EIP_LXM32M_1.20.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "Ethernet EDS VW3A3616 V1.20 (EDS files for the VW3A3616 card)",
+     "sha256": "21eacb40dfd56362ea14af223df0b5742b44c969822bf04f0065bd41325a82aa",
+     "where": "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "VW3A3616 - LXM32M Ethernet TCP/IP Module (Protocol EtherNet/IP) User Guide (0198441113802)",
+     "sha256": "6a2f23d1c81400e611d61380a30bbcae3db7cb3b033c647aea774e0d942d05cf",
+     "where": "https://download.se.com/files?p_Doc_Ref=0198441113802-EN&p_enDocType=User+guide&p_File_Name=0198441113802_LXM32M+EtherNet_IP_EN.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/ltmr-e-ethernet",
+   "vendor": "Schneider Electric",
+   "model": "TeSys T LTMR E (Ethernet)",
+   "enip": {
+    "map": false,
+    "identity": {
+     "vendor_id": 243,
+     "product_code": 304,
+     "device_type": 22,
+     "revisions": [
+      "1.5"
+     ],
+     "product_name": "TeSysT MMC Local"
+    },
+    "input": {
+     "instance": 50,
+     "bytes": 1
+    },
+    "output": {
+     "instance": 2,
+     "bytes": 1
+    },
+    "config": {
+     "instance": 6
+    },
+    "eds": "SE_TESYST_MMC_L_EIP.eds"
+   },
+   "points": [],
+   "sources": [
+    {
+     "title": "EDS File for TeSys T EIP (1.5.000)",
+     "sha256": "a9b5d5395bc39b6cb3dd503d998c7920a804f4e15a75dcdb7366d01428e550fe",
+     "where": "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip; retrieved 2026-11-23; not redistributed here"
+    },
+    {
+     "title": "TeSys T LTMR Motor Management Controller Ethernet Communication Guide (DOCA0129EN 03)",
+     "sha256": "7f8fcf0166e2778abe196a27063cf97d0e06fb2ed7cda43f09ba4cd056e01cd7",
+     "where": "https://download.se.com/files?p_Doc_Ref=DOCA0129EN&p_enDocType=User+guide&p_File_Name=DOCA0129EN_03.pdf; retrieved 2026-11-23; not redistributed here"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/pm5560",
+   "vendor": "Schneider Electric",
+   "model": "PowerLogic PM5560",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "The user manual says the PM5560 is ODVA-certified for EtherNet/IP (p. 18) but ships no EDS and no assembly list in the pages read: what identity and assemblies does it report, and where is the EDS?",
+     "source": "PM5500 / PM5600 / PM5700 User Manual HRB1684301-18 p. 18"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/stb-nip2311",
+   "vendor": "Schneider Electric",
+   "model": "Modicon STB NIP2311",
+   "modbus": {
+    "map": false,
+    "port": 502
+   },
+   "points": [
+    {
+     "name": "island output data",
+     "modbus": "hr:0.. (4X 40001-, R/W)",
+     "meaning": "data written to the island's output modules: one register for each digital output module, two for an analog output module, in island-bus order",
+     "source": "STBNIP2311 Applications Guide EIO0000000051.05 p. 119 (register numbers); the zero-based form hr:0 is inferred from 40001"
+    },
+    {
+     "name": "island input data and I/O status",
+     "modbus": "hr:5391.. (4X 45392-, read)",
+     "meaning": "input data and status of the island's I/O modules in island-bus order: a digital input module uses one register for data and the next for status; a digital output module reports its echo output and then its status",
+     "source": "STBNIP2311 Applications Guide EIO0000000051.05 p. 120; the zero-based form hr:5391 is inferred from 45392"
+    },
+    {
+     "name": "island diagnostics",
+     "modbus": "hr:5356..hr:5390 (4X 45357-45391, read)",
+     "meaning": "35 registers of predefined diagnostic data for the Advantys STB system",
+     "source": "STBNIP2311 Applications Guide EIO0000000051.05 p. 125; the zero-based form is inferred from 45357-45391"
+    }
+   ],
+   "sources": []
+  },
+  {
+   "folder": "devices/schneider-electric/tm3bceip",
+   "vendor": "Schneider Electric",
+   "model": "Modicon TM3 bus coupler TM3BCEIP",
+   "modbus": {
+    "map": false
+   },
+   "points": [],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Which EtherNet/IP identity (vendor id, product code, revision) and assembly sizes does the coupler report, and does an EDS exist? Schneider's site lists only firmware packages for it, and a community answer says the configurator exports a project-specific EDS.",
+     "source": "Data sheet TM3BCEIP (10 May 2021) lists Ethernet/IP adapter and Modbus TCP/IP server; no EDS on its se.com download pages"
+    }
+   ]
+  },
+  {
+   "folder": "devices/schneider-electric/tprbceip",
+   "vendor": "Schneider Electric",
+   "model": "TeSys island bus coupler TPRBCEIP",
+   "modbus": {
+    "map": false
+   },
+   "points": [],
+   "sources": [],
+   "questions": [
+    {
+     "ask": "Which EtherNet/IP identity and assembly sizes does the coupler report? The Quick Start Guide has the island's DTM export L5X files for Studio 5000 (Export > EDS to L5X File Format) instead of publishing an EDS, so the sizes depend on the configured island.",
+     "source": "TeSys island Quick Start Guide for EtherNet/IP Applications 8536IB1906EN-03 p. 11"
+    }
+   ]
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
