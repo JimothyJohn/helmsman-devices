@@ -158,7 +158,7 @@ Ports that speak IO-Link to sensors and actuators. `find.py iolink-master`
 | [AL1590](devices/ifm/al1590/) | ifm | EtherNet/IP | 8 IO-Link ports | EDS connection | documents |
 | [ICE2-8IOL-G65L-V1D](devices/pepperl-fuchs/ice2-8iol-g65l-v1d/) | Pepperl+Fuchs | EtherNet/IP | 8 IO-Link ports (class A), each also DI; up to 8 DO | EDS connection | documents |
 | [ICE2-8IOL-K45S-RJ45](devices/pepperl-fuchs/ice2-8iol-k45s-rj45/) | Pepperl+Fuchs | EtherNet/IP | 8 IO-Link ports (class A), each also DI; up to 8 DO | EDS connection | documents |
-| [ICE21-8IOL2-G70L-V1D](devices/pepperl-fuchs/ice21-8iol2-g70l-v1d/) | Pepperl+Fuchs | EtherNet/IP |  | EDS connection | documents |
+| [ICE21-8IOL2-G70L-V1D](devices/pepperl-fuchs/ice21-8iol2-g70l-v1d/) | Pepperl+Fuchs | EtherNet/IP | 8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B | EDS connection | documents |
 | [IOLG2EI-03208R01](devices/sick/iolg2ei/) | SICK | EtherNet/IP | 8 IO-Link ports | EDS connection | documents |
 | [SIG300](devices/sick/sig300/) | SICK | EtherNet/IP | 8 IO-Link ports, each configurable as IO-Link, DI or DO | EDS connection | documents |
 | [SIG350](devices/sick/sig350-0005ap100/) | SICK | EtherNet/IP | 8 IO-Link ports, each configurable as IO-Link, DI or DO | EDS connection | documents |

@@ -127,3 +127,11 @@ url = "https://literature.rockwellautomation.com/idc/groups/literature/documents
 title = "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009"
 found = "2026-11-23 rockwellautomation.com search '1732E-IB16M12R user manual', Documents tab"
 browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/1732e-16cfgm12r"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in008_-en-p.pdf"
+title = "ArmorBlock I/O 16-channel Configurable Digital Modules Installation Instructions, 1732E-IN008"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: '1732E-IB16M12R installation instructions'"
+browser = true

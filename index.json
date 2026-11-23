@@ -2236,6 +2236,7 @@
    "model": "ICE21-8IOL2-G70L-V1D",
    "kind": "remote-io",
    "category": "iolink-master",
+   "channels": "8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B",
    "identity": {
     "enip": {
      "vendor_id": 57,
