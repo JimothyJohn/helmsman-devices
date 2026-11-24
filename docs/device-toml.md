@@ -2,6 +2,11 @@
 
 One file per device. Keys and what a lookup does with them.
 
+The keys a file may hold, and the type of each, are in
+[`device.schema.json`](device.schema.json). `scripts/build-index.py --check`
+refuses a key that is not listed there and a value of the wrong type, so a new
+key is added to the schema in the same change that starts using it.
+
 ```toml
 [device]
 vendor = "Moxa"                 # text, for a search

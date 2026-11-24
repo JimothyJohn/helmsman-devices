@@ -1,0 +1,83 @@
+{
+  "format": "helmsman-device-schema 1",
+  "about": "Every key a device.toml may hold, and the type of its value. scripts/build-index.py --check refuses a key not listed here and a value of the wrong type. A string names a type (str, int, bool, date, list, map); an object is a table of keys; a one-element array is a list of such tables. A new key is added here in the same change that starts using it.",
+  "root": {
+    "device": {
+      "vendor": "str",
+      "model": "str",
+      "kind": "str",
+      "category": "str",
+      "channels": "str",
+      "article": "str",
+      "family": "str",
+      "firmware": "str",
+      "profile": "str",
+      "vendor_url": "str",
+      "checked_on": "date",
+      "checked_by": "str",
+      "photo": {"url": "str", "page": "str", "seen": "date"}
+    },
+    "identity": {
+      "enip": {
+        "vendor_id": "int",
+        "product_code": "int",
+        "device_type": "int",
+        "product_name": "str",
+        "revisions": "list"
+      },
+      "iolink": {"vendor_id": "int", "device_id": "int"}
+    },
+    "protocols": {
+      "enip": {
+        "driver": "str",
+        "map": "str",
+        "profile": "str",
+        "o_to_t_port_from_reply": "bool",
+        "eds": {"name": "str", "url": "str", "size": "int", "sha256": "str", "terms": "str"},
+        "input_assembly": {"instance": "int", "bytes": "int"},
+        "output_assembly": {"instance": "int", "bytes": "int"},
+        "config_assembly": {"instance": "int", "bytes": "int"},
+        "rpi_ms": {"default": "int", "min": "int", "max": "int"}
+      },
+      "modbus": {"driver": "str", "map": "str", "port": "int", "unit": "int"}
+    },
+    "sources": [{"title": "str", "sha256": "str", "where": "str"}],
+    "points": [{"name": "str", "meaning": "str", "source": "str", "enip": "str", "modbus": "str"}],
+    "questions": [{"ask": "str", "source": "str"}],
+    "variants": [{"product_id": "str", "name": "str", "description": "str"}],
+    "iodd": {
+      "date": "str",
+      "version": "str",
+      "profile_characteristic": "list",
+      "file": {"name": "str", "url": "str", "size": "int", "sha256": "str"}
+    },
+    "wired": {
+      "sio": "bool",
+      "switching": "str",
+      "source": "str",
+      "connections": [
+        {
+          "type": "str",
+          "products": "list",
+          "wires": [{"n": "int", "name": "str", "color": "str", "function": "str"}]
+        }
+      ]
+    },
+    "wiring": {"note": "str", "source": "str"},
+    "signals": [
+      {
+        "name": "str",
+        "dir": "str",
+        "type": "str",
+        "bits": "str",
+        "description": "str",
+        "on": "str",
+        "off": "str",
+        "values": "map"
+      }
+    ],
+    "settings": [
+      {"name": "str", "index": "int", "subindex": "int", "default": "str", "default_name": "str", "values": "map"}
+    ]
+  }
+}
