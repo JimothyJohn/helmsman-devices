@@ -12,6 +12,7 @@ channels = "1 drive: moves, accel, currents out; flags, inputs, position in; 4 D
 checked_on = "2026-11-16"
 firmware = "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)"
 checked_by = "helmsman bench"
+profile = "novanta-mdrive.device"   # the bench unit's layout (not the manual's); MA, MF, ER out, CF, LG, RD, AS are left out, unproven
 
 [device.photo]
 # a NEMA 23 (LM57) unit: Novanta has no NEMA 34 page; the bench unit is an LMDCE853C
