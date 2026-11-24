@@ -18,10 +18,19 @@ global unicast one, and the connection goes to the address that was checked
 at most 5 redirects, never to http.
 
 Usage: python3 -I scripts/docs-fetch.py collect/<vendor>.toml [--refresh] [--only FOLDER]
+       python3 -I scripts/docs-fetch.py collect/<vendor>.toml --import URL FILE
   --refresh      download again even when the store has the file; report a changed hash
   --only FOLDER  only the documents for that library folder
+  --import       take FILE, which a person's browser downloaded, as the document at URL
 
 A document is looked for in the local store, then the bucket, then the URL.
+
+Some vendors serve a file only to a person's browser: a script wall, a terms
+box, a bot filter. Such a [[doc]] says browser = true, and its url is the page
+the file is downloaded from. It is never fetched: someone downloads it in a
+browser and imports it with --import, which holds the file to the same checks
+(the size cap, the kind, an archive's caps), stores it by hash and records it
+in the lock with "via": "browser".
 Standard library only (tomllib needs Python 3.11); S3 goes through the aws CLI.
 """
 
@@ -47,6 +56,7 @@ import urllib.robotparser
 import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+USAGE = "usage: docs-fetch.py collect/<vendor>.toml [--refresh] [--only FOLDER] | --import URL FILE"
 FORMAT = "helmsman-devices-collect 1"
 LOCK_FORMAT = "helmsman-devices-collect-lock 1"
 FOLDER = re.compile(r"devices/[a-z0-9][a-z0-9_.-]{0,63}/[a-z0-9][a-z0-9_.-]{0,63}")
@@ -417,6 +427,8 @@ def load_candidates(path: pathlib.Path) -> dict:
         if d["url"] in seen:
             raise SystemExit(f"{where}: {d['url']} is listed twice; give one doc its folders = [...]")
         seen.add(d["url"])
+        if "browser" in d and not isinstance(d["browser"], bool):
+            raise SystemExit(f"{where}: browser must be true or false")
         if d["kind"] not in KINDS:
             raise SystemExit(f"{where}: kind must be one of {', '.join(sorted(KINDS))}")
         for f in d["folders"]:
@@ -485,32 +497,48 @@ def collect_one(doc: dict, entry: dict | None, fetcher: Fetcher, store: Store, r
     entry = described(entry, doc)
     if entry and not refresh and store.get(entry["sha256"]) is not None:
         return entry, "stored"
+    if doc.get("browser"):
+        return (
+            entry,
+            "refused: browser = true: download it from the page in a browser, then --import URL FILE",
+        )
     try:
         final, status, data, ctype = fetcher.get(doc["url"])
         if status != 200:
             raise Refused(f"HTTP {status}")
-        typ = check_kind(doc["kind"], data)
-        members = []
-        if typ == "zip":
-            for name, body in zip_members(data):
-                mtype = sniff(body)
-                if mtype in ("eds", "xml", "pdf"):
-                    msha = hashlib.sha256(body).hexdigest()
-                    store.put(msha, body)
-                    members.append({"name": name[:200], "sha256": msha, "size": len(body), "type": mtype})
-            if doc["kind"] in ("eds", "gsdml", "esi") and not any(
-                m["type"] == ("eds" if doc["kind"] == "eds" else "xml") for m in members
-            ):
-                raise Refused(f"the archive holds no {doc['kind']} file")
+        new = record(doc, data, final, ctype, store, now, None)
     except Refused as e:
         return entry, f"refused: {e}"
+    what = (
+        "fetched"
+        if entry is None or entry["sha256"] == new["sha256"]
+        else f"changed (was {entry['sha256'][:12]})"
+    )
+    return new, what
+
+
+def record(doc: dict, data: bytes, final: str, ctype: str, store: Store, now: str, name: str | None) -> dict:
+    """Check the bytes are the document's kind, store them (and an archive's members), and give the lock entry."""
+    typ = check_kind(doc["kind"], data)
+    members = []
+    if typ == "zip":
+        for mname, body in zip_members(data):
+            mtype = sniff(body)
+            if mtype in ("eds", "xml", "pdf"):
+                msha = hashlib.sha256(body).hexdigest()
+                store.put(msha, body)
+                members.append({"name": mname[:200], "sha256": msha, "size": len(body), "type": mtype})
+        if doc["kind"] in ("eds", "gsdml", "esi") and not any(
+            m["type"] == ("eds" if doc["kind"] == "eds" else "xml") for m in members
+        ):
+            raise Refused(f"the archive holds no {doc['kind']} file")
     sha = hashlib.sha256(data).hexdigest()
     store.put(sha, data, final)
     new = {
         "folders": doc["folders"],
         "kind": doc["kind"],
         "title": doc["title"],
-        "name": file_name(final, sha, doc["kind"], typ),
+        "name": name or file_name(final, sha, doc["kind"], typ),
         "size": len(data),
         "sha256": sha,
         "type": typ,
@@ -522,7 +550,36 @@ def collect_one(doc: dict, entry: dict | None, fetcher: Fetcher, store: Store, r
         new["members"] = sorted(members, key=lambda m: m["name"])
     if doc.get("terms"):
         new["terms"] = doc["terms"]
-    what = "fetched" if entry is None or entry["sha256"] == sha else f"changed (was {entry['sha256'][:12]})"
+    return new
+
+
+def import_name(name: str) -> str:
+    """A downloaded file's name, as a label: its last path part, in a safe alphabet, at most 200 characters."""
+    base = re.split(r"[\\/]", name)[-1]
+    return re.sub(r"[^A-Za-z0-9._()+-]", "_", base)[:200] or "download"
+
+
+def import_file(doc: dict, path: pathlib.Path, entry: dict | None, store: Store, now: str):
+    """(lock entry, what happened) for a file a person's browser downloaded: imported | changed | refused: why.
+
+    The file is held to the fetch's own checks (the size cap, the kind, an archive's caps)
+    and stored by hash; the lock entry says it came through a browser, from the page at
+    the document's url.
+    """
+    entry = described(entry, doc)
+    try:
+        size = path.stat().st_size
+        if size > MAX_BYTES:
+            raise Refused(f"{size} bytes, over the {MAX_BYTES} byte cap")
+        new = record(doc, path.read_bytes(), doc["url"], "", store, now, import_name(path.name))
+    except Refused as e:
+        return entry, f"refused: {e}"
+    new["via"] = "browser"
+    what = (
+        "imported"
+        if entry is None or entry["sha256"] == new["sha256"]
+        else f"changed (was {entry['sha256'][:12]})"
+    )
     return new, what
 
 
@@ -538,19 +595,43 @@ def main(argv: list[str]) -> int:
             raise SystemExit("--only needs a folder")
         only = args[i + 1]
         del args[i : i + 2]
+    imported = None
+    if "--import" in args:
+        i = args.index("--import")
+        if len(args) < i + 3:
+            raise SystemExit("--import needs the document's url and the downloaded file")
+        imported = (args[i + 1], pathlib.Path(args[i + 2]))
+        del args[i : i + 3]
+        if refresh or only:
+            raise SystemExit("--import takes one document; leave out --refresh and --only")
     if len(args) != 1:
-        print("usage: docs-fetch.py collect/<vendor>.toml [--refresh] [--only FOLDER]", file=sys.stderr)
+        print(USAGE, file=sys.stderr)
         return 2
     cpath = pathlib.Path(args[0])
     cand = load_candidates(cpath)
+    if imported:
+        url, path = imported
+        doc = next((d for d in cand.get("doc", []) if d["url"] == url), None)
+        if doc is None:
+            raise SystemExit(f"--import: {url} is not the url of a [[doc]] in {cpath}")
+        if not path.is_file():
+            raise SystemExit(f"--import: {path} is not a file")
     lpath = lock_path(cpath)
     lock = load_lock(lpath)
     bucket = os.environ.get("HELMSMAN_DOCS_BUCKET") or None
     if bucket and not shutil.which("aws"):
         raise SystemExit("HELMSMAN_DOCS_BUCKET is set and the aws CLI is not on PATH")
     store = Store(ROOT / "cache", bucket)
-    fetcher = Fetcher()
     now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if imported:
+        entry, what = import_file(doc, path, lock["docs"].get(url), store, now)
+        if entry is not None:
+            lock["docs"][url] = entry
+            write_lock(lpath, lock)
+        sha = entry["sha256"][:12] if entry else "-" * 12
+        print(f"{what.split(':')[0]:8} {sha} {doc['kind']:13} {doc['folders'][0]}  {what.partition(': ')[2]}")
+        return 1 if what.startswith("refused") else 0
+    fetcher = Fetcher()
     failed = 0
     for doc in cand.get("doc", []):
         if only and only not in doc["folders"]:

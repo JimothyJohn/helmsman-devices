@@ -1,0 +1,27 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Schneider Electric"
+model = "Modicon TM3 bus coupler TM3BCEIP"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the TM3 and TM2 expansion modules behind it set the I/O"   # from: TM3BCEIP Instruction Sheet PHA71490.07 pdf p.4 (TM3 and TM2 modules fitted behind the coupler) and data sheet p.1 ('Bus coupler module', 'maximum 7 expansion modules')
+article = "TM3BCEIP"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+# The data sheet lists a "Modbus TCP/IP server" and an "Ethernet/IP adapter"; neither the data sheet nor the instruction sheet gives a port or a register map.
+
+[[questions]]
+ask = "Which EtherNet/IP identity (vendor id, product code, revision) and assembly sizes does the coupler report, and does an EDS exist? Schneider's site lists only firmware packages for it, and a community answer says the configurator exports a project-specific EDS."
+source = "Data sheet TM3BCEIP (10 May 2021) lists Ethernet/IP adapter and Modbus TCP/IP server; no EDS on its se.com download pages"
+
+[[sources]]
+title = "TM3BCEIP Bus Coupler, Instruction Sheet (PHA71490.07)"
+sha256 = "459d6449dc952db3979f1367cc258ccf3fcbdf84651fdf3b38e7b75c39afffdb"
+where = "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Product data sheet Characteristics TM3BCEIP"
+sha256 = "e6862ac1c4d9294bfd78762fa2747e97b21771ba9607a32c57679dd18a75fa1c"
+where = "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"

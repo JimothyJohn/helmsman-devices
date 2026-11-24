@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "CPX-FB32"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the CPX modules behind it set the I/O (11 bytes of outputs, 13 bytes of inputs)"   # from: EDS CPX-FB32.eds: ProdName 'CPX-FB32 Remote I/O', Assem2 Output 11 bytes, Assem1 Input 13 bytes
+article = "CPX Ethernet/IP Node"
+
+[identity.enip]
+vendor_id = 26
+product_code = 13002
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CPX-FB32 Remote I/O"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Class1 Server"
+input_assembly = { instance = 101, bytes = 13 }
+output_assembly = { instance = 100, bytes = 11 }
+config_assembly = { instance = 102 }
+eds = { name = "CPX-FB32.eds", size = 7762, sha256 = "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds", terms = "none stated" }
+
+[[sources]]
+title = "CPX-FB32 EDS (ODVA marketplace, product 981)"
+sha256 = "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,34 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Schneider Electric"
+model = "Altivar Process ATV630 / ATV930 (embedded Ethernet)"
+kind = "drive"
+category = "drive"
+channels = "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101/106/107"   # from: ATV900 Embedded Ethernet manual NHA80940.03 p.30-31; EDS SE_ET_ATV9xx.eds assemblies 20/21/70/71/100/101/106/107
+
+[identity.enip]
+vendor_id = 243
+product_code = 6192
+device_type = 2
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "ATV9xx"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "CIP Basic Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+config_assembly = { instance = 1 }
+eds = { name = "SE_ET_ATV9xx.eds", size = 39760, sha256 = "85429040d78bcf0ba89d7198b72282be12973deeff3e7f3231b7bbe13458437b", url = "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip (member of files)", terms = "none stated" }
+
+[[sources]]
+title = "ATV900 Ethernet IP Embedded EDS V2.3"
+sha256 = "f2f51d2198f16e1d5c27263dd97ec213b2cc22e8214149abfb62117422017f8a"
+where = "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ATV900 Embedded Ethernet manual (NHA80940.03)"
+sha256 = "d83eebd45ea5f5062fe71558485235b054c55d4bb32272727824a64d7e125a43"
+where = "https://download.se.com/files?p_Doc_Ref=NHA80940&p_enDocType=User+guide&p_File_Name=ATV900_Ethernet_Manual_Embedded_NHA80940_03.pdf; retrieved 2026-11-23; not redistributed here"

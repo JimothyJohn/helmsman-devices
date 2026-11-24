@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1732E-IB16M12R"
+kind = "remote-io"
+category = "io-block"
+channels = "16 DI (M12)"   # from: EDS ProdName '1732E-IB16M12R 16 DC In M12'
+article = "1732E-IB16M12R"
+
+[identity.enip]
+vendor_id = 1
+product_code = 369
+device_type = 7
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "1732E-IB16M12R 16 DC In M12"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Logix - Input Only"
+input_assembly = { instance = 105, bytes = 6 }
+output_assembly = { instance = 190, bytes = 0 }
+config_assembly = { instance = 101, bytes = 4 }
+eds = { name = "1732E_16InBlock2Port.eds", size = 23963, sha256 = "96657dd7152d74f77722c4a7a39b3a929ec5cfb4a5f1506e654d80ce395856ec", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip (member of 10748.04-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorBlock 1732E 16-point EDS package 10748.04"
+sha256 = "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009"
+sha256 = "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"

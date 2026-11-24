@@ -10,7 +10,11 @@ vendor = "WAGO"
 # 750-362 is Modbus TCP only (no EDS); it waits for its manual.
 
 [[doc]]
-folder = "devices/wago/750-363"
+folders = [
+  "devices/wago/750-363",
+  "devices/wago/750-823",
+  "devices/wago/750-893",
+]
 kind = "eds"
 url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip"
 title = "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)"

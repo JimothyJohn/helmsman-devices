@@ -1,0 +1,201 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1438/11296_DOC_081314.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1438/11296_DOC_081314.pdf",
+   "folders": [
+    "devices/keyence/sr-1000"
+   ],
+   "kind": "datasheet",
+   "name": "11296_DOC_081314.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "b8b445068eba2d35a1bea1055c990c636f84b7cdae14d6c894161a00df7856b6",
+   "size": 112372,
+   "terms": "none stated",
+   "title": "Keyence SR-1000 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1860/11567_DOC_030917.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1860/11567_DOC_030917.pdf",
+   "folders": [
+    "devices/keyence/sr-2000"
+   ],
+   "kind": "datasheet",
+   "name": "11567_DOC_030917.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "f97c88a7d2d25d0618262ff3c7d1c33c0eefcb2ffd531ea39ebad2f1a3c71c8d",
+   "size": 96760,
+   "terms": "none stated",
+   "title": "Keyence SR-2000 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2207/11937_DOC_030420.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2207/11937_DOC_030420.pdf",
+   "folders": [
+    "devices/keyence/sr-5000"
+   ],
+   "kind": "datasheet",
+   "name": "11937_DOC_030420.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "e9ed9e83dd3c23f006a9b17897057eee33bdf7ab302b8b2556a295a7c499e2a7",
+   "size": 108029,
+   "terms": "none stated",
+   "title": "Keyence SR-5000 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2406/12099_DOC_072721.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2406/12099_DOC_072721.pdf",
+   "folders": [
+    "devices/keyence/iv3"
+   ],
+   "kind": "datasheet",
+   "name": "12099_DOC_072721.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "75377788cd081cc9343b53f4d5f01bf40d9bc6e5d9d64cbb0c1c23ac69ffd1f5",
+   "size": 128710,
+   "terms": "none stated",
+   "title": "Keyence IV3 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2491/12185_DOC_040324.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2491/12185_DOC_040324.pdf",
+   "folders": [
+    "devices/keyence/sr-x1h3h"
+   ],
+   "kind": "datasheet",
+   "name": "12185_DOC_040324.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "b3e0a6798490a59a5a0a8858a9c5a8df1f093cf0254591d2533b33b0bc53fa12",
+   "size": 132315,
+   "terms": "none stated",
+   "title": "Keyence SR-X1H3H Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2703/12434_DOC_012624.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2703/12434_DOC_012624.pdf",
+   "folders": [
+    "devices/keyence/iv4"
+   ],
+   "kind": "datasheet",
+   "name": "12434_DOC_012624.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "f677a76cf2658bcef28dc884ffd9086a1a91ac2144a0092f000bdbef76ea211d",
+   "size": 130342,
+   "terms": "none stated",
+   "title": "Keyence IV4 Series, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1438/Keyence_1004_0101.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1438/Keyence_1004_0101.eds",
+   "folders": [
+    "devices/keyence/sr-1000"
+   ],
+   "kind": "eds",
+   "name": "Keyence_1004_0101.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "01b8d93f00e11e1057198f8c05962142b7998eadd1ccdec0ff55c47f0f115cb5",
+   "size": 39356,
+   "terms": "none stated",
+   "title": "Keyence SR-1000 Series, EDS (ODVA Marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1860/Keyence_1007_0101.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1860/Keyence_1007_0101.eds",
+   "folders": [
+    "devices/keyence/sr-2000"
+   ],
+   "kind": "eds",
+   "name": "Keyence_1007_0101.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "bc27713bbb31d68315666c476ea4f9811ac8341ed4198bdfe490b1f05aaf5416",
+   "size": 41438,
+   "terms": "none stated",
+   "title": "Keyence SR-2000 Series, EDS (ODVA Marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2207/11937.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2207/11937.01-EDS.zip",
+   "folders": [
+    "devices/keyence/sr-5000"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "Keyence_1008_0101.eds",
+     "sha256": "a38c844d1968dcd9de378356a4a5c923fbe46711ba4d02525779889b20497fc4",
+     "size": 43449,
+     "type": "eds"
+    }
+   ],
+   "name": "11937.01-EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "82d9945e1b3f78965fa8b7c779efaa6900c11f43d2e67ec078cddf7751c3cf47",
+   "size": 5355,
+   "terms": "none stated",
+   "title": "Keyence SR-5000 Series, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2406/Keyence_4606_0101.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2406/Keyence_4606_0101.eds",
+   "folders": [
+    "devices/keyence/iv3"
+   ],
+   "kind": "eds",
+   "name": "Keyence_4606_0101.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "301244a528dc409be0785bc44d2048260cc63afc69b42a00fa7f238daa24e292",
+   "size": 8178,
+   "terms": "none stated",
+   "title": "Keyence IV3 Series, EDS (ODVA Marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2491/12185.02_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2491/12185.02_EDS.zip",
+   "folders": [
+    "devices/keyence/sr-x1h3h"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "Keyence_1009_0101.eds",
+     "sha256": "a7207d5694e0c6c47638fd4abca01610891a20cb6a491e82ee70192fe69336ef",
+     "size": 41564,
+     "type": "eds"
+    }
+   ],
+   "name": "12185.02_EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "93cad3747776ea3f495dc8331bbee99409e2e092800c108c48480f9bc9fd0b91",
+   "size": 5201,
+   "terms": "none stated",
+   "title": "Keyence SR-X1H3H Series, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2703/Keyence_4607_0101.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2703/Keyence_4607_0101.eds",
+   "folders": [
+    "devices/keyence/iv4"
+   ],
+   "kind": "eds",
+   "name": "Keyence_4607_0101.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "49b07f53bc105f3c31527f826246ef3c8637e39775a8922bbab67e515c112ba1",
+   "size": 25509,
+   "terms": "none stated",
+   "title": "Keyence IV4 Series, EDS (ODVA Marketplace)",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

@@ -1,0 +1,41 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Cognex"
+model = "DataMan 300 Series Reader"
+kind = "sensor"
+category = "vision"
+channels = "1 reader: trigger and control out, read result and status in"   # from: EDS Assem11 'input format' (Trigger Ready, Decode Complete, Results Available, Result Data) and Assem21 'output format' (Trigger Enable, Trigger, Results Ack, Soft Event)
+article = "DMR-3XX-00"
+
+[identity.enip]
+vendor_id = 678
+product_code = 1290
+device_type = 773
+revisions = ["1.5"]   # the EDS's MajRev.MinRev
+product_name = "DataMan 300 Series Reader"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Consume Data From/Produce Data To"
+# input_assembly: the size is set by Param2: 2..500 bytes, default 496
+input_assembly = { instance = 11 }
+# output_assembly: the size is set by Param3: 2..500 bytes, default 496
+output_assembly = { instance = 21 }
+config_assembly = { instance = 1 }
+eds = { name = "0678077312900100.eds", size = 23102, sha256 = "cfd8bf5305a2f0d12e16416556f8ea7491581da317b0b816754ae07c1dd93817", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1679/11346.02_EDS.zip (member of 11346.02_EDS.zip)", terms = "none stated" }
+
+[[questions]]
+ask = "Does a DataMan 370 answer ListIdentity as product code 1290, \"DataMan 300 Series Reader\"? The ODVA entry names DM30x, DM36x and AID36x, and the EDS names the series, not the model."
+source = "ODVA Marketplace product 1679 and the EDS 0678077312900100.eds"
+
+[[sources]]
+title = "Cognex DataMan DM30x, DM36x, AID36x readers, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "091798f45c8a0d42419b2bfe38330ee9ade8872a173c2e77f02e4d4ef4369420"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1679/11346_DOC_11022015.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Cognex DataMan DM30x, DM36x, AID36x readers, EDS (ODVA Marketplace)"
+sha256 = "12b1749f01a75311bb2c03282699528a4dd094816bb26bf6c831754c371b6328"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1679/11346.02_EDS.zip; retrieved 2026-11-23; not redistributed here"

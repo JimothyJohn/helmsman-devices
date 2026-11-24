@@ -1,0 +1,52 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Beckhoff"
+model = "BK9050"
+kind = "remote-io"
+category = "io-coupler"
+channels = "up to 64 Bus Terminals, 512 bytes in and 512 bytes out"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The manual (p. 57): the UNIT can be freely selected and is returned by the slave.
+
+[[points]]
+name = "process data inputs"
+modbus = "di:0..di:255 (FC 2); words from 0x0000 to 0x00FF (FC 3/4)"
+meaning = "digital inputs of the terminals, packed in K-bus order; analog and complex inputs follow in the word area"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58 (6.6.3), p. 60-62 (function list); the split between the bit and word views is inferred"
+
+[[points]]
+name = "process data outputs"
+modbus = "coil:0.. (FC 1/5/15); words from 0x0800 to 0x08FF (FC 3/6/16)"
+meaning = "digital outputs of the terminals, in K-bus order; 1 = on"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58 (6.6.3), p. 60-66 (function list); the split between the bit and word views is inferred"
+
+[[points]]
+name = "Bus Coupler status"
+modbus = "ir:4108 (0x100C), read only"
+meaning = "bit 15 FB fieldbus error (watchdog time elapsed), bit 1 CNF Bus Coupler configuration error, bit 0 KB Bus Terminal error"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58-59"
+
+[[points]]
+name = "process image lengths in bits"
+modbus = "ir:4112..ir:4115 (0x1010 analog outputs, 0x1011 analog inputs, 0x1012 digital outputs, 0x1013 digital inputs), read only"
+meaning = "size of each part of the process image, without PLC variables"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58"
+
+[[points]]
+name = "watchdog time"
+modbus = "hr:4384 (0x1120), read/write; current time hr:4128 (0x1020), read only"
+meaning = "pre-defined watchdog time in ms, default 1000; writing 0 switches the watchdog off"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58"
+
+[[questions]]
+ask = "Which Modbus function code reads the register interface at 0x1000: FC 3 (holding) or FC 4 (input), and does the manual's 'read only' block answer to both?"
+source = "BK9000, BK9050 and BK9100 documentation V4.7.0 p. 58 (the table) and p. 61-62 (the function descriptions)"
+
+[[sources]]
+title = "BK9000, BK9050 and BK9100 Bus Coupler Documentation V4.7.0 (English)"
+sha256 = "8bad38660eadc3637a386dda19f87358e878e76fe55c71d443bca25acbec8259"
+where = "https://download.beckhoff.com/download/document/io/bus-terminals/bk9000_bk9050_bk9100en.pdf; retrieved 2026-11-23; not redistributed here"

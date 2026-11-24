@@ -1,0 +1,32 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "VABX-A-S-EL-E12-CTED-EP"
+kind = "remote-io"
+category = "valve-terminal"
+channels = "process data only: up to 488 bytes in, 496 bytes out, no channel names in the EDS"   # from: EDS VABX_A_S_EL_E12-CTED_EP.eds: Params Input Size Exact I/O 1-488, Output Size Exact I/O 1-496; assemblies 100-125 fixed sizes up to 488/496 bytes
+article = "VABX-A-S-EL-E12-CTED-EP"
+
+[identity.enip]
+vendor_id = 26
+product_code = 14065
+device_type = 12
+revisions = ["1.2"]   # the EDS's MajRev.MinRev
+product_name = "VABX-A-S-EL-E12-CTED-EP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "I/O Con. Fixed SINT 16"
+# input_assembly: the size is set by Param3: 16..16 bytes, default 16
+input_assembly = { instance = 110 }
+# output_assembly: the size is set by Param4: 16..16 bytes, default 16
+output_assembly = { instance = 111 }
+config_assembly = { instance = 140 }
+eds = { name = "VABX_A_S_EL_E12-CTED_EP.eds", size = 111360, sha256 = "a569fd87dbb62e68898f85cdf77a03e9280be1febeea63cc6d8361ae34e9f40f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip (member of 12717.01_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)"
+sha256 = "6893130fd051baab752a19aef9f45ffc3cdaa119756076ab77de5846198035e0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip; retrieved 2026-11-23; not redistributed here"

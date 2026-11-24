@@ -1,0 +1,104 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "ArmorStart 280E/281E (EtherNet/IP)"
+kind = "other"
+category = "motor-starter"
+channels = "1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in"   # from: EDS Assem162 'Starter Cmd' (RunForward, RunReverse, ResetFault, OutA, OutB) and Assem150 'Starter Stat' (TripPresent, Running..., In0-In3); ProdName 'ArmorStart 280E'
+article = "280E-F12Z-10B"
+
+[identity.enip]
+vendor_id = 1
+product_code = 145
+device_type = 22
+revisions = ["2.3"]   # the EDS's MajRev.MinRev
+product_name = "ArmorStart 280E 0.5-2.5A 24VDC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 150, bytes = 16 }
+output_assembly = { instance = 162, bytes = 3 }
+config_assembly = { instance = 1 }
+eds = { name = "0001001600910200.eds", size = 64224, sha256 = "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip (member of 10910.04-EDS.zip)", terms = "none stated" }
+
+[[points]]
+name = "connection status"
+enip = "in:0.0..in:3.7"
+meaning = "bytes 0-3 are reserved; the manual says they refer to PLC communication status: all 1s = connection fault, all 0s = normal (the Logix tag {name}:I.Fault). The EDS says the input assembly returns 4 reserved bytes followed by 12 bytes of status"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); note p. 303 and Table 20 p. 120; EDS Connection1 help string"
+
+[[points]]
+name = "TripPresent..Ready"
+enip = "in:4.0..in:4.4"
+meaning = "bit 0 TripPresent (fault exists with unit), bit 1 WarningPresent, bit 2 RunningForward (motor commanded to run forward), bit 3 RunningReverse (motor commanded to run reverse), bit 4 Ready (control power and 3-phase present); bits 5-7 of byte 4 are not used"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+
+[[points]]
+name = "In0..In3"
+enip = "in:5.0..in:5.3"
+meaning = "state of the starter's own inputs 0 to 3, bit n = In n"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+
+[[points]]
+name = "Hand, DisconnectClosed"
+enip = "in:5.4..in:5.5"
+meaning = "bit 4 Hand, bit 5 DisconnectClosed (the disconnect is closed); bits 6-7 not used. The manual describes Hand as 'HOA is in Auto mode', which contradicts the name, see questions"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+
+[[points]]
+name = "Pt00DeviceOut..Pt14DeviceOut"
+enip = "in:6.0..in:7.6"
+meaning = "DeviceLogix network output status, Pt00..Pt07 in byte 6 bits 0-7 and Pt08..Pt14 in byte 7 bits 0-6"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+
+[[points]]
+name = "LogicEnabled"
+enip = "in:7.7"
+meaning = "DeviceLogix is enabled (the table labels the bit 'LogicEnable', the tag table and Table 20 'LogicEnabled')"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); tag descriptions Table 20 p. 120"
+
+[[points]]
+name = "ProducedWord0..3Param"
+enip = "in:8:u16 .. in:14:u16"
+meaning = "four 16-bit words at bytes 8, 10, 12, 14 (low byte first): the values of the parameters selected by the produced-assembly configuration parameters (ProducedWord0Param..ProducedWord3Param, 'Parameter 13..16'; the Appendix B table names them 'Int00DeviceOut Cfg'..'Int03DeviceOut Cfg'). Which parameter each carries depends on that setting. Byte order inferred from the table's '(low byte)' in byte 8 and '(high byte)' in byte 9 **inferred** as little-endian u16"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 150', PDF p. 303, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 17, p. 117 (Logix tags); Table 20 p. 120"
+
+[[points]]
+name = "RunForward, RunReverse, ResetFault"
+enip = "out:0.0..out:0.2"
+meaning = "bit 0 RunForward (command forward), bit 1 RunReverse (command reverse), bit 2 ResetFault (fault reset); bits 3-5 not used. Switches the motor: the person's to command, never the agent's"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+
+[[points]]
+name = "OutA, OutB"
+enip = "out:0.6..out:0.7"
+meaning = "bit 6 OutA, bit 7 OutB: the starter's two outputs ('OutputA', 'OutputB'). The person's to switch"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+
+[[points]]
+name = "Pt00DeviceIn..Pt15DeviceIn"
+enip = "out:1.0..out:2.7"
+meaning = "network inputs to the DeviceLogix engine, Pt00..Pt07 in byte 1 and Pt08..Pt15 in byte 2, bit n of the byte = point n of the group"
+source = "280E-UM001C-EN-P (Sept 2015) Appendix B 'Instance 162', PDF p. 305, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 5 Table 15, p. 116; tag descriptions Table 19 p. 119"
+
+[[questions]]
+ask = "The 280E manual describes the Hand status bit (byte 5, bit 4) as 'HOA is in Auto mode'. Is the bit set when the HOA selector is in Hand, or in Auto?"
+source = "280E-UM001C-EN-P Table 20, PDF p. 120 (the description) against Table 17, p. 117 (the name Hand)"
+
+[[sources]]
+title = "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity"
+sha256 = "1836745b0fb1d49b695a04a7f149c321359862de189f3214caf104dbff95b446"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)"
+sha256 = "247261c77de331506ff9795d80fa96979b701913d0f272e9c2f8de943879acc0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart with EtherNet/IP User Manual, Bulletin 280E, 281E, 284E, 280E-UM001C-EN-P (September 2015)"
+sha256 = "aa6b32b8256d408d813d264b5789e463f7ac8785bb6012e30c3c94c35b25e230"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/280e-um001_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"

@@ -1,0 +1,70 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6024"
+kind = "remote-io"
+category = "panel-io"
+channels = "6 AI, 2 AO, 2 DI, 2 DO"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "DI"
+modbus = "coil:0..coil:1 (0X 00001-00002, read)"
+meaning = "digital input state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 203"
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:17 (0X 00017-00018, R/W)"
+meaning = "digital output command and state, 1 = on"
+source = "ADAM-6000 User Manual Ed. 12 p. 203"
+
+[[points]]
+name = "AI value"
+modbus = "hr:0..hr:5 (4X 40001-40006, read)"
+meaning = "analog input value in engineering units"
+source = "ADAM-6000 User Manual Ed. 12 p. 203"
+
+[[points]]
+name = "AO value"
+modbus = "hr:10..hr:11 (4X 40011-40012, R/W)"
+meaning = "analog output value"
+source = "ADAM-6000 User Manual Ed. 12 p. 203"
+
+[[points]]
+name = "AI status"
+modbus = "hr:20..hr:25 (4X 40021-40026, read)"
+meaning = "0 normal, 1 over high, 2 over low (the table's last row repeats 0, read as invalid calibration)"
+source = "ADAM-6000 User Manual Ed. 12 p. 204"
+
+[[points]]
+name = "AI type code"
+modbus = "hr:200..hr:205 (4X 40201-40206, R/W)"
+meaning = "7 = 4~20 mA, 8 = +/-10 V, D = 0~20 mA"
+source = "ADAM-6000 User Manual Ed. 12 p. 204"
+
+[[points]]
+name = "AO type code"
+modbus = "hr:208..hr:209 (4X 40209-40210, R/W)"
+meaning = "0 = 0~20 mA, 1 = 4~20 mA, 2 = 0~10 V"
+source = "ADAM-6000 User Manual Ed. 12 p. 204"
+
+[[points]]
+name = "module name"
+modbus = "hr:210 (4X 40211, read)"
+meaning = "the model as hex"
+source = "ADAM-6000 User Manual Ed. 12 p. 204"
+
+[[questions]]
+ask = "In the ADAM-6024 AI status remark, the bit-value list reads 0 normal, 1 over high, 2 over low and then 0 invalid calibration: is the last value 3, and is the over-high / over-low order right?"
+source = "ADAM-6000 User Manual Ed. 12 p. 204, remark 1 (the list repeats the value 0)"
+
+[[sources]]
+title = "ADAM-6000 Series User Manual, Edition 12 (Part No. 2003600006)"
+sha256 = "c171dde578f01adb992c20c72591bb3cad35ccc47a43aa9dfeaa8af51dfadd8d"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-2B6FKTG/ADAM-6000_User_Manaul_Ed.12-FINAL.pdf; retrieved 2026-11-14; not redistributed here"

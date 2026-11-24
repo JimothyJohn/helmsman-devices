@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "ABB"
+model = "ABB Drive via Ethernet/IP FEIP-21"
+kind = "drive"
+category = "drive"
+channels = "1 drive: control word, speed ref (torque ref) out, status word, actual speed (torque) in, drive parameter data"   # from: EDS FEIP21_filerev1_2.EDS: assemblies 20/70, 22/72, 120/170
+article = "FEIP-21"
+
+[identity.enip]
+vendor_id = 46
+product_code = 1
+device_type = 103
+revisions = ["1.64"]   # the EDS's MajRev.MinRev
+product_name = "ABB Drive via Ethernet/IP FEIP-21"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "ODVA 20/70 Basic speed control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+config_assembly = { instance = 1, bytes = 4 }
+eds = { name = "FEIP21_filerev1_2.EDS", size = 115812, sha256 = "c67b3dfdce91d48f4a88166576d8d8c723297a8325098d5e8a7709ffa49684ff", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip (member of 12553.02.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ABB FEIP-21 EtherNet/IP adapter module: declaration of conformity (ODVA), ODVA marketplace product 2829"
+sha256 = "d6ec1bc5d20db9ba9827e04665423ed2b2ab351f529dfab43c378606ed430c6a"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ABB FEIP-21 EtherNet/IP adapter module: EDS, ODVA marketplace product 2829"
+sha256 = "42bf024b5ecb8a0ce980827af62bfbb3c35162ae1e929f27013eab78cb18ce64"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip; retrieved 2026-11-23; not redistributed here"

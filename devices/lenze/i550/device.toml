@@ -1,0 +1,36 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Lenze"
+model = "i550 cabinet"
+kind = "drive"
+category = "drive"
+channels = "1 drive: drive control word, speed (and torque) setpoint out; drive status word, actual speed (and torque) in"   # from: EDS Lenze_i550-cabinet_V07.eds: assemblies 20/22/70/72
+article = "Inverter Drive i550 cabinet"
+
+[identity.enip]
+vendor_id = 587
+product_code = 550
+device_type = 2
+revisions = ["7.1"]   # the EDS's MajRev.MinRev
+product_name = "i550 cabinet"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Speed"
+# instances are the defaults of Param1000, Param1001: the EDS lets a scanner choose others
+input_assembly = { instance = 71, bytes = 4 }
+output_assembly = { instance = 21, bytes = 4 }
+config_assembly = { instance = 130, bytes = 68 }
+eds = { name = "Lenze_i550-cabinet_V07.eds", size = 198396, sha256 = "5dd7abf7c3860b0e6a80dce919f6dda43e0b68190910ebaca1d3fbab0ebb975d", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip (member of 12334.03_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Lenze i550 / i650: declaration of conformity (ODVA), ODVA marketplace product 2570"
+sha256 = "79d08c9f63de375a9043b52501ed2da33aacfebf45ad2c12453e92366f44d518"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2570/12334_DOC_090926.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Lenze i550 / i650: EDS, ODVA marketplace product 2570"
+sha256 = "7c2cd850def387b2c0ae6ccf55d4732ccc6807a8dc8459f1343ef169fe9bcbe8"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2570/12334.03_EDS.zip; retrieved 2026-11-23; not redistributed here"

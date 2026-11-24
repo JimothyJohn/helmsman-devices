@@ -5,6 +5,8 @@
 vendor = "WAGO"
 model = "750-363"
 kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the WAGO I/O System modules behind it set the I/O"   # from: WAGO product page https://www.wago.com/global/i-o-systems/fieldbus-coupler-ethernet-ip/p/750-363, 2026-11-22
 article = "750-363"
 
 [device.photo]

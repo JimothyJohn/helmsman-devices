@@ -1,0 +1,277 @@
+format = "helmsman-devices-collect 1"
+vendor = "Rockwell Automation"
+
+# Drives, starters and overload relays. EDS and Declarations of Conformity come from the
+# ODVA marketplace pages (read 2026-11-22). Rockwell's own literature and product pages
+# answered 403 to a plain client, so no manual from that site is listed.
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-525", "devices/rockwell-automation/powerflex-523-25-comm-e2p"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/580/11171_EDS.zip"
+title = "PowerFlex 525 (embedded EtherNet/IP): EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 580, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-525", "devices/rockwell-automation/powerflex-523-25-comm-e2p"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/580/11171_DOC_071713.pdf"
+title = "PowerFlex 525 (embedded EtherNet/IP): ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 580, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-527"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1966/0001002D000F0200.eds"
+title = "PowerFlex 527-STO CIP Safety: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 1966, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-527"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1966/11388_DOC_052522.pdf"
+title = "PowerFlex 527-STO CIP Safety: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 1966, Download the Declaration of Conformity"
+terms = "none stated"
+
+# PowerFlex 753: no EtherNet/IP EDS in reach. ODVA listing 854 (10788_EDS.zip) holds six files, all
+# "PowerFlex 750-Series via ControlNet" (Class ControlNet); listing 581 (11061-EDS.zip, 20-750-ENETR) holds
+# the PowerFlex 755's "DPI to EtherNet/IP" file and the bare module's. A folder was drafted from the
+# ControlNet file on 2026-11-22 and removed on 2026-11-23 when the files were read.
+
+# Dropped: E300 (193-ECM-ETR). ODVA's E300 listings (products 882, 1783, 1952) carry DeviceNet EDS only
+# (1952: Catalog 193-ECM-DNT, HomeURL .../eds/DN/); no EtherNet/IP EDS was found.
+# Dropped: SMC-50, PowerFlex 40 / 4M with 22-COMM-E: no ODVA listing found, and Rockwell's PCDC and literature
+# hosts refuse automated clients (behind a bot wall: https://compatibility.rockwellautomation.com).
+# Dropped: Kinetix 5100 (2198-C..-ERS, ODVA product 2226): its "EDS file" link serves the conformity PDF, not an EDS.
+# Manuals found by search, all refused HTTP 403 to docs-fetch (Rockwell's literature host
+# blocks automated clients; behind login / bot wall: https://literature.rockwellautomation.com).
+# Not listed as documents, so no folder below cites them; the next person need not search again:
+#   520COM-UM001 (525) .../um/520com-um001_-en-e.pdf   520-UM002 (527) .../um/520-um002_-en-e.pdf
+#   750COM-UM008 (20-750-ENETR) .../um/750com-um008_-en-p.pdf   750COM-UM009 (755T, 6000T) .../um/750com-um009_-en-p.pdf
+#   193-UM015 (E300) .../um/193-um015_-en-p.pdf   280E-UM001 (ArmorStart) .../um/280e-um001_-en-p.pdf
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-755"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1644/10875.04.zip"
+title = "PowerFlex 755, 755HiP: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 1644, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-755"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1644/10875_DOC_042225.pdf"
+title = "PowerFlex 755, 755HiP: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 1644, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-755ts"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2690/12346.06_EDS.zip"
+title = "PowerFlex 755TS: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 2690, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-755ts"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2690/12346_DOC_031726.pdf"
+title = "PowerFlex 755TS: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 2690, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-753ts"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2691/EDS_753TS.eds"
+title = "PowerFlex 753TS: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 2691, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-753ts"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2691/12345_DOC_022724.pdf"
+title = "PowerFlex 753TS: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 2691, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-6000t"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2255/12040.08_EDS"
+title = "PowerFlex 6000T MV AC drive: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 2255, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-6000t"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2255/12040_DOC_082126.pdf"
+title = "PowerFlex 6000T MV AC drive: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 2255, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-280e-281e"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/555/10910.04-EDS.zip"
+title = "ArmorStart EtherNet/IP family (280E/281E): EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 555, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-280e-281e"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/555/10910_DOC_071422.pdf"
+title = "ArmorStart EtherNet/IP family (280E/281E): ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 555, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-lt"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip"
+title = "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 556, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-lt"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf"
+title = "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 556, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armor-powerflex-35e"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip"
+title = "Armor PowerFlex 35E: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 2432, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/armor-powerflex-35e"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2432/12191_DOC_090125.pdf"
+title = "Armor PowerFlex 35E: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 2432, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-70ec"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds"
+title = "PowerFlex 70EC: EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 1659, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-70ec"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf"
+title = "PowerFlex 70EC: ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 1659, Download the Declaration of Conformity"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-70"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1639/10702-EDS.zip"
+title = "PowerFlex 70 family (ODVA listing 1639): EDS (ODVA marketplace)"
+found = "2026-11-22 ODVA marketplace page 1639, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-70"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1639/10702_DOC_110308.pdf"
+title = "PowerFlex 70 family (ODVA listing 1639): ODVA Declaration of Conformity"
+found = "2026-11-22 ODVA marketplace page 1639, Download the Declaration of Conformity"
+terms = "none stated"
+
+
+# literature.rockwellautomation.com answers a plain fetch with 403 (Akamai), so these are
+# browser documents: read off Rockwell's own site search in a person's Chrome on 2026-11-23,
+# downloaded there and imported with docs-fetch.py --import. Each matched the SHA-256 taken
+# in the browser before the download.
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-280e-281e"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/280e-um001_-en-p.pdf"
+title = "ArmorStart with EtherNet/IP User Manual, Bulletin 280E, 281E, 284E, 280E-UM001"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'ArmorStart 280E 281E user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/armorstart-lt"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/290e-um001_-en-p.pdf"
+title = "ArmorStart LT EtherNet/IP Version User Manual, Bulletin 290E, 291E, 294E, 290E-UM001"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'ArmorStart 280E 281E user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-525"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520com-um001_-en-e.pdf"
+title = "PowerFlex 525 Embedded EtherNet/IP Adapter User Manual, 520COM-UM001"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'PowerFlex 525 embedded EtherNet/IP adapter user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-523-25-comm-e2p"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520com-um003_-en-e.pdf"
+title = "PowerFlex 25-COMM-E2P Dual-Port EtherNet/IP Adapter User Manual, 520COM-UM003"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'ArmorBlock dual-port EtherNet/IP digital user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-527"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520-um002_-en-e.pdf"
+title = "PowerFlex 527 Adjustable Frequency AC Drive User Manual, 520-UM002"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'PowerFlex 520-series adjustable frequency drive user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-70", "devices/rockwell-automation/powerflex-70ec"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/20comm-um010_-en-p.pdf"
+title = "PowerFlex 20-COMM-E EtherNet/IP Adapter User Manual, 20COMM-UM010"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: '20-COMM-E EtherNet/IP adapter user manual PowerFlex 70'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-755"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um001_-en-p.pdf"
+title = "PowerFlex 755 Drive Embedded EtherNet/IP Adapter User Manual, 750COM-UM001"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'PowerFlex 755 embedded EtherNet/IP adapter user manual'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/powerflex-6000t"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um009_-en-p.pdf"
+title = "PowerFlex 750-Series Drives with TotalFORCE Control Built-in EtherNet/IP Adapter, 750COM-UM009"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: '750COM-UM009'"
+browser = true
+
+[[doc]]
+folders = ["devices/rockwell-automation/armor-powerflex-35e"]
+kind = "manual"
+url = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/35-um001_-en-p.pdf"
+title = "Armor PowerFlex AC Drives User Manual, 35-UM001"
+found = "2026-11-23 rockwellautomation.com site search, Documents tab: 'Armor PowerFlex EtherNet/IP 35E'"
+browser = true

@@ -1,0 +1,341 @@
+{
+ "docs": {
+  "https://download.se.com/files?p_Doc_Ref=0198441113802-EN&p_enDocType=User+guide&p_File_Name=0198441113802_LXM32M+EtherNet_IP_EN.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=0198441113802-EN&p_enDocType=User+guide&p_File_Name=0198441113802_LXM32M+EtherNet_IP_EN.pdf",
+   "folders": [
+    "devices/schneider-electric/lexium-32m-vw3a3616"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "6a2f23d1c81400e611d61380a30bbcae3db7cb3b033c647aea774e0d942d05cf",
+   "size": 1369199,
+   "terms": "none stated",
+   "title": "VW3A3616 - LXM32M Ethernet TCP/IP Module (Protocol EtherNet/IP) User Guide (0198441113802)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=8536IB1906EN&p_enDocType=User+guide&p_File_Name=8536IB1906EN-03.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=8536IB1906EN&p_enDocType=User+guide&p_File_Name=8536IB1906EN-03.pdf",
+   "folders": [
+    "devices/schneider-electric/tprbceip"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "a4b5961f553b07d5c4cdc2c1a26580506d1ecf23a3bb39329a18aa5f45a0e761",
+   "size": 5549966,
+   "terms": "none stated",
+   "title": "TeSys island - Quick Start Guide for EtherNet/IP Applications (8536IB1906EN-03)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=ATV340_Ethernet_IP_Emb_V3.6&p_enDocType=Software+-+Data+Library&p_File_Name=ATV340_Ethernet_IP_Embedded_EDS_V3.6.zip": {
+   "content_type": "application/zip;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=ATV340_Ethernet_IP_Emb_V3.6&p_enDocType=Software+-+Data+Library&p_File_Name=ATV340_Ethernet_IP_Embedded_EDS_V3.6.zip",
+   "folders": [
+    "devices/schneider-electric/atv340"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "SE_ET_ATV340xx_V3.6.eds",
+     "sha256": "7905f62de65da28f386e0ff0784c7a229ff39ce326925432b8aaa251dc21f21f",
+     "size": 31477,
+     "type": "eds"
+    }
+   ],
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "46cd0b7348bfbde883903d5ad433f9642cbde5cbbf96fbfdff9bf92a6cd652a7",
+   "size": 4502,
+   "terms": "none stated",
+   "title": "ATV340 Ethernet IP Embedded EDS V3.6",
+   "type": "zip"
+  },
+  "https://download.se.com/files?p_Doc_Ref=DOCA0129EN&p_enDocType=User+guide&p_File_Name=DOCA0129EN_03.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=DOCA0129EN&p_enDocType=User+guide&p_File_Name=DOCA0129EN_03.pdf",
+   "folders": [
+    "devices/schneider-electric/ltmr-e-ethernet"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "7f8fcf0166e2778abe196a27063cf97d0e06fb2ed7cda43f09ba4cd056e01cd7",
+   "size": 11781161,
+   "terms": "none stated",
+   "title": "TeSys T LTMR Motor Management Controller Ethernet Communication Guide (DOCA0129EN 03)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=EIO0000000051&p_enDocType=User+guide&p_File_Name=EIO0000000051.05.pdf",
+   "folders": [
+    "devices/schneider-electric/stb-nip2311"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "0045a19fb1cf8bf1d8513e5a788e1d8f72d80dcf4aab8bffae7dcd39ae65e2f5",
+   "size": 5309558,
+   "terms": "none stated",
+   "title": "STBNIP2311 Standard Dual Port Ethernet Modbus TCP/IP Network Interface Module, Applications Guide (EIO0000000051.05)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip": {
+   "content_type": "application/zip;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip",
+   "folders": [
+    "devices/schneider-electric/ltmr-e-ethernet"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "SE_TESYST_MMC_L_EIP.eds",
+     "sha256": "30d8d6c84eb047ca0cd06559c80cb7dce6b9772da3c48df36e6d90a6b5ac9b0c",
+     "size": 543674,
+     "type": "eds"
+    },
+    {
+     "name": "SE_TESYST_MMC_L_EV40_EIP.eds",
+     "sha256": "b861f822add91e20330a50ab3d8196ec78f2245e75505af600bb3212c8a7b494",
+     "size": 579231,
+     "type": "eds"
+    },
+    {
+     "name": "SE_TESYST_MMC_R_EIP.eds",
+     "sha256": "60c38499f59d51d2c7f4e08a69608ea85349f8f3a0a156dfab3b93417b41c223",
+     "size": 543587,
+     "type": "eds"
+    },
+    {
+     "name": "SE_TESYST_MMC_R_EV40_EIP.eds",
+     "sha256": "817825ca1e4bd9892e3dbffbc62e164ae60b0798899be321354cb00a211ac2b7",
+     "size": 579169,
+     "type": "eds"
+    }
+   ],
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "a9b5d5395bc39b6cb3dd503d998c7920a804f4e15a75dcdb7366d01428e550fe",
+   "size": 107446,
+   "terms": "none stated",
+   "title": "EDS File for TeSys T EIP (1.5.000)",
+   "type": "zip"
+  },
+  "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip": {
+   "content_type": "application/zip;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=Ethernet_EDS_VW3A3616_V1.20&p_enDocType=Software+-+Data+Library&p_File_Name=Ethernet_EDS_VW3A3616_V1.20.zip",
+   "folders": [
+    "devices/schneider-electric/atv320-vw3a3616",
+    "devices/schneider-electric/lexium-32m-vw3a3616"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ATV32/SE_ET_ATV32_0120E.eds",
+     "sha256": "e4f705b6f755c9b7d4d6e522c1fc328c68488030cce4b4e8525541e7e0f2d4eb",
+     "size": 23339,
+     "type": "eds"
+    },
+    {
+     "name": "ATV320/SE_ET_ATV320_0120E.eds",
+     "sha256": "9e123939ba24528712d066dca565a8cd125ee765add0fe9637e178b35d7101a2",
+     "size": 24600,
+     "type": "eds"
+    },
+    {
+     "name": "LXM32/00F300000A040100.eds",
+     "sha256": "fb856c1dc60b00dd5b1789b22a7cd2ecff7eb8594eea9f3ebae5de4f3941a023",
+     "size": 9737,
+     "type": "eds"
+    },
+    {
+     "name": "LXM32/017900027D000100.eds",
+     "sha256": "8f5efd08d4429ec2c7fb60d683ad192a2d5779ba9ade68ea5e3ed53414f46841",
+     "size": 44346,
+     "type": "eds"
+    },
+    {
+     "name": "LXM32/017900027D010100.eds",
+     "sha256": "d91516841d5b9cb1c5a26c97d0d7a95369c61612659831deee777956b125fadd",
+     "size": 44346,
+     "type": "eds"
+    },
+    {
+     "name": "LXM32/SE_EIP_LXM32M_1.20.eds",
+     "sha256": "e0baaad1ed57480965c10b333bee3a7b134801398273ab940634248817124c08",
+     "size": 11110,
+     "type": "eds"
+    }
+   ],
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "21eacb40dfd56362ea14af223df0b5742b44c969822bf04f0065bd41325a82aa",
+   "size": 54846,
+   "terms": "none stated",
+   "title": "Ethernet EDS VW3A3616 V1.20 (EDS files for the VW3A3616 card)",
+   "type": "zip"
+  },
+  "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip": {
+   "content_type": "application/zip;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=Ethernet_IP_Embedded_EDS_V2.3&p_enDocType=Software+-+Data+Library&p_File_Name=ATV900_Ethernet_IP_Embedded_EDS_V2.3.zip",
+   "folders": [
+    "devices/schneider-electric/atv630"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ATV900_Ethernet_IP_Embedded_EDS_V2.3/SE_ET_ATV9xx.eds",
+     "sha256": "85429040d78bcf0ba89d7198b72282be12973deeff3e7f3231b7bbe13458437b",
+     "size": 39760,
+     "type": "eds"
+    }
+   ],
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "f2f51d2198f16e1d5c27263dd97ec213b2cc22e8214149abfb62117422017f8a",
+   "size": 4590,
+   "terms": "none stated",
+   "title": "ATV900 Ethernet IP Embedded EDS V2.3",
+   "type": "zip"
+  },
+  "https://download.se.com/files?p_Doc_Ref=GDE41422&p_enDocType=Instruction+sheet&p_File_Name=GDE41422-05.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=GDE41422&p_enDocType=Instruction+sheet&p_File_Name=GDE41422-05.pdf",
+   "folders": [
+    "devices/schneider-electric/pm5560"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:38:57Z",
+   "sha256": "1ed0810445f297b3d79a747cd26170d8f1c190f3cdc8934e3ece4fcff0ef5888",
+   "size": 8131858,
+   "terms": "none stated",
+   "title": "PowerLogic PM5560 / PM5580 / PM5650 - Instruction sheet (GDE41422-05)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=HRB1684301&p_enDocType=User+guide&p_File_Name=HRB1684301-18.pdf",
+   "folders": [
+    "devices/schneider-electric/pm5560"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:38:57Z",
+   "sha256": "5fc9be72ef9787001b38ea9fd41b6b52c77f0498acc66a4212f39eac05ce3e79",
+   "size": 6809510,
+   "terms": "none stated",
+   "title": "PowerLogic PM5500 / PM5600 / PM5700 series - User Manual (HRB1684301-18)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf",
+   "folders": [
+    "devices/schneider-electric/tprbceip"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "2b50b494482f5b3ffdffadaca428b13bc24f2050b767a0e87e6c88c8680dc34f",
+   "size": 1338170,
+   "terms": "none stated",
+   "title": "TeSys island TPRBCEIP Bus Coupler (Ethernet IP) - Instruction Sheet (MFR44097.05)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=NHA80940&p_enDocType=User+guide&p_File_Name=ATV900_Ethernet_Manual_Embedded_NHA80940_03.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=NHA80940&p_enDocType=User+guide&p_File_Name=ATV900_Ethernet_Manual_Embedded_NHA80940_03.pdf",
+   "folders": [
+    "devices/schneider-electric/atv630"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "d83eebd45ea5f5062fe71558485235b054c55d4bb32272727824a64d7e125a43",
+   "size": 11379301,
+   "terms": "none stated",
+   "title": "ATV900 Embedded Ethernet manual (NHA80940.03)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=NVE41313&p_enDocType=User+guide&p_File_Name=ATV320_Modbus_TCP_EtherNet_IP_Manual_NVE41313_02.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=NVE41313&p_enDocType=User+guide&p_File_Name=ATV320_Modbus_TCP_EtherNet_IP_Manual_NVE41313_02.pdf",
+   "folders": [
+    "devices/schneider-electric/atv320-vw3a3616"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "23f1712406743b5fa7a8b878dae4dd4b25c5ec15a12570c3e8620da32dc23da1",
+   "size": 4907433,
+   "terms": "none stated",
+   "title": "ATV320 Modbus TCP-EtherNet IP Manual (NVE41313.02)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=NVE61653&p_enDocType=User+guide&p_File_Name=ATV340_Ethernet_Embedded_Manual_NVE61653_03.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=NVE61653&p_enDocType=User+guide&p_File_Name=ATV340_Ethernet_Embedded_Manual_NVE61653_03.pdf",
+   "folders": [
+    "devices/schneider-electric/atv340"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "4c0f9ab27f7f8aded6529c319c885555e7fb8f700805cae6852c3527ab12b396",
+   "size": 12635999,
+   "terms": "none stated",
+   "title": "ATV340 Ethernet Embedded Manual (NVE61653.03)",
+   "type": "pdf"
+  },
+  "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf": {
+   "content_type": "application/pdf;charset=UTF-8",
+   "final_url": "https://download.se.com/files?p_Doc_Ref=PHA71490&p_enDocType=Instruction+sheet&p_File_Name=PHA71490_07.pdf",
+   "folders": [
+    "devices/schneider-electric/tm3bceip"
+   ],
+   "kind": "manual",
+   "name": "files",
+   "retrieved": "2026-11-23T03:36:45Z",
+   "sha256": "459d6449dc952db3979f1367cc258ccf3fcbdf84651fdf3b38e7b75c39afffdb",
+   "size": 1020773,
+   "terms": "none stated",
+   "title": "TM3BCEIP Bus Coupler, Instruction Sheet (PHA71490.07)",
+   "type": "pdf"
+  },
+  "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF": {
+   "content_type": "application/pdf",
+   "final_url": "https://iportal.se.com/Contents/docs/TM3BCEIP_DATA%20SHEET.PDF",
+   "folders": [
+    "devices/schneider-electric/tm3bceip"
+   ],
+   "kind": "datasheet",
+   "name": "TM3BCEIP_DATASHEET.PDF",
+   "retrieved": "2026-11-23T03:38:57Z",
+   "sha256": "e6862ac1c4d9294bfd78762fa2747e97b21771ba9607a32c57679dd18a75fa1c",
+   "size": 100442,
+   "terms": "none stated",
+   "title": "Product data sheet Characteristics TM3BCEIP",
+   "type": "pdf"
+  },
+  "https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF": {
+   "content_type": "application/pdf",
+   "final_url": "https://iportal.se.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF",
+   "folders": [
+    "devices/schneider-electric/tprbceip"
+   ],
+   "kind": "datasheet",
+   "name": "TPRBCEIP_DATASHEET.PDF",
+   "retrieved": "2026-11-23T03:38:57Z",
+   "sha256": "7e16f3c3cd8fde5595602fac147a5179cb639645020332fdbeff26c156330dcc",
+   "size": 109729,
+   "terms": "none stated",
+   "title": "TPRBCEIP product data sheet",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

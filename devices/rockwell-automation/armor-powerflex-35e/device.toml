@@ -1,0 +1,44 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "Armor PowerFlex 35E"
+kind = "drive"
+category = "drive"
+channels = "1 drive: logic command and command velocity out, logic status, output frequency, voltage and current in"   # from: EDS Assem769 'Output' (Logic Command, Command Velocity) and Assem1025 'Input' (Logic Status, Output Frequency/Voltage/Current/Power, DC Bus Voltage, Heatsink Temp, ...)
+article = "35E..."
+
+[identity.enip]
+vendor_id = 1
+product_code = 3
+device_type = 170
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "Armor PowerFlex"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+input_assembly = { instance = 1025, bytes = 76 }
+output_assembly = { instance = 769, bytes = 28 }
+config_assembly = { instance = 1 }
+eds = { name = "000100AA00030200.eds", size = 41809, sha256 = "c84392f3c1a108a65180ea1b3658eb93f91c76cf8dfe7cf380224b7076f3356a", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip (member of 12191.10.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Armor PowerFlex 35E: ODVA Declaration of Conformity"
+sha256 = "765503f461db543875b0d4e8618888a6091b5534bb7fc905e52d1ff7614b7987"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2432/12191_DOC_090125.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Armor PowerFlex 35E: EDS (ODVA marketplace)"
+sha256 = "2af95303f1d98eec8bc949f666141127904675de8a049722f9c3441b4c4431ca"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2432/12191.10.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Armor PowerFlex 350 AC Drives User Manual, 35-UM001J-EN-P"
+sha256 = "b04946e12a4da0abfce45258f986edfc879aa9ce3e00ab4dbbacd4e3f5a29c93"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/35-um001_-en-p.pdf; retrieved 2026-11-23, fetched in a browser; not redistributed here"
+
+[[questions]]
+ask = "Which bytes of assembly 769 (28 bytes out) and 1025 (76 bytes in) are the logic command, command velocity, logic status and output frequency?"
+source = "35-UM001J-EN-P PDF p. 155 sends the CIP objects and attributes to publication 35-RD001, not collected"

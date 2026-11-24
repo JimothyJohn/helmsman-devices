@@ -1,16 +1,188 @@
 {
  "format": "helmsman-devices-index 1",
+ "categories": [
+  {
+   "id": "io-block",
+   "label": "I/O blocks (on the machine)",
+   "what": "Fixed channels in one sealed housing with M12 ports."
+  },
+  {
+   "id": "panel-io",
+   "label": "I/O modules (in the cabinet)",
+   "what": "Fixed channels in one module with terminals, on a DIN rail."
+  },
+  {
+   "id": "io-coupler",
+   "label": "Modular I/O couplers",
+   "what": "The head of a row of I/O slices or modules; the channels depend on what is fitted."
+  },
+  {
+   "id": "iolink-master",
+   "label": "IO-Link masters",
+   "what": "Ports that speak IO-Link to sensors and actuators."
+  },
+  {
+   "id": "valve-terminal",
+   "label": "Valve terminals",
+   "what": "Pneumatic valve manifolds and their bus nodes; an output switches a solenoid."
+  },
+  {
+   "id": "drive",
+   "label": "Drives",
+   "what": "Frequency inverters, servo drives and their network option cards."
+  },
+  {
+   "id": "motor-starter",
+   "label": "Motor starters and protection",
+   "what": "Starters, soft starters and motor management relays."
+  },
+  {
+   "id": "power-meter",
+   "label": "Power meters",
+   "what": "Meters that give voltage, current, power and energy."
+  },
+  {
+   "id": "vision",
+   "label": "Vision sensors and code readers",
+   "what": "Cameras that inspect, and readers of 1D and 2D codes."
+  },
+  {
+   "id": "robot",
+   "label": "Robots",
+   "what": "Robot controllers, as a device another controller reads and commands."
+  },
+  {
+   "id": "controller",
+   "label": "Controllers",
+   "what": "Programmable controllers that also answer as a device."
+  },
+  {
+   "id": "sensor",
+   "label": "Sensors and actuators on a digital channel",
+   "what": "Wired to a point of an I/O block, not on the network; described from the IODD."
+  }
+ ],
  "devices": [
+  {
+   "folder": "devices/abb/feip-21",
+   "vendor": "ABB",
+   "model": "ABB Drive via Ethernet/IP FEIP-21",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control word, speed ref (torque ref) out, status word, actual speed (torque) in, drive parameter data",
+   "identity": {
+    "enip": {
+     "vendor_id": 46,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "FEIP21_filerev1_2.EDS",
+      "size": 115812,
+      "sha256": "c67b3dfdce91d48f4a88166576d8d8c723297a8325098d5e8a7709ffa49684ff"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/acromag/xt1111-000",
+   "vendor": "Acromag",
+   "model": "XT1111-000",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DI (active-low), 16 DO (low-side, sinking)",
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/acromag/xt1121-000",
+   "vendor": "Acromag",
+   "model": "XT1121-000",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DI (active-high), 16 DO (high-side, sourcing)",
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6015",
+   "vendor": "Advantech",
+   "model": "ADAM-6015",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "7 RTD AI",
+   "points": 8,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6017",
+   "vendor": "Advantech",
+   "model": "ADAM-6017",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "8 AI, 2 DO",
+   "points": 9,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6018",
+   "vendor": "Advantech",
+   "model": "ADAM-6018",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "8 TC AI, 8 DO",
+   "points": 5,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6024",
+   "vendor": "Advantech",
+   "model": "ADAM-6024",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "6 AI, 2 AO, 2 DI, 2 DO",
+   "points": 8,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
   {
    "folder": "devices/advantech/adam-6050",
    "vendor": "Advantech",
    "model": "ADAM-6050",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "12 DI, 6 DO (isolated)",
    "photo": {
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6050/Product%20-%20Photo(Main)/ADAM-6050_03_Ori-(1)-(1)20220418173324.png",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6050-D1.htm"
    },
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -22,11 +194,13 @@
    "vendor": "Advantech",
    "model": "ADAM-6052",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 DI, 8 DO (source type)",
    "photo": {
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6052/Product%20-%20Photo(Main)/ADAM-6052_03_S20190725161934.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-EtherNet-IP-Modules/model-ADAM-6052-D.htm"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -38,11 +212,87 @@
    "vendor": "Advantech",
    "model": "ADAM-6060",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "6 DI, 6 relay (form A)",
    "photo": {
     "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6060/Product%20-%20Photo(Main)/ADAM-6060_03_S20190725162316.jpg",
     "page": "https://buy.advantech.com/I-O-Devices-Communication/Remote-I-O-Modules-Ethernet-I-O-Modules-Digital-IO-Modules/model-ADAM-6060-D1.htm"
    },
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6066",
+   "vendor": "Advantech",
+   "model": "ADAM-6066",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "6 DI, 6 relay DO",
+   "points": 5,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6250",
+   "vendor": "Advantech",
+   "model": "ADAM-6250",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "8 DI, 7 DO (sink)",
+   "photo": {
+    "url": "https://advdownload.advantech.com/productfile/PIS/ADAM-6250/Product%20-%20Photo(Main)/ADAM-6250_03_S20190730122849.jpg",
+    "page": "https://www.advantech.com/en/products/7447e150-338d-402d-b5a1-c9ce6d98816e/adam-6250/mod_da940b26-501f-413e-bfbc-732fd7496782"
+   },
+   "points": 5,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6251",
+   "vendor": "Advantech",
+   "model": "ADAM-6251",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DI",
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6256",
+   "vendor": "Advantech",
+   "model": "ADAM-6256",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DO (sink)",
+   "points": 3,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/advantech/adam-6260",
+   "vendor": "Advantech",
+   "model": "ADAM-6260",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "6 relay DO (5 Form C, 1 Form A)",
+   "points": 3,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -54,7 +304,9 @@
    "vendor": "Balluff",
    "model": "BNI EIP-104-105-Z015",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "8 M12 ports, 16 inputs",
+   "points": 4,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -66,7 +318,9 @@
    "vendor": "Balluff",
    "model": "BNI EIP-202-105-Z015",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "8 M12 ports, 8 outputs (pin 4, 2 A each)",
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -78,6 +332,7 @@
    "vendor": "Balluff",
    "model": "BNI EIP-302-105-Z015",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "8 M12 ports, 16 channels (pins 2 and 4 each input or 2 A output)",
    "identity": {
     "enip": {
@@ -85,6 +340,7 @@
      "product_code": 12330
     }
    },
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -97,15 +353,82 @@
    }
   },
   {
+   "folder": "devices/balluff/bni-eip-508-105-z015",
+   "vendor": "Balluff",
+   "model": "BNI EIP-508-105-Z015",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 43,
+     "product_code": 20618
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BNI_EIP-508-105-Z015.eds",
+      "size": 198637,
+      "sha256": "593a700b5a81c73009eec3f7a2fa019b1ef3bffe421b6d75c388c2b7bb945fab"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/banner/dxmr90-4k",
+   "vendor": "Banner",
+   "model": "DXMR90-4K",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "4 IO-Link ports (class A), up to 8 discrete signals on pins 2 and 4",
+   "identity": {
+    "enip": {
+     "vendor_id": 12,
+     "product_code": 200
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "BannerDXM_1_1_02152023.eds",
+      "size": 6398,
+      "sha256": "a2b91f84d761612222b31fcaa5819a62a8be9c66d209d671ee8479aa42601de4"
+     }
+    },
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/beckhoff/bk9050",
+   "vendor": "Beckhoff",
+   "model": "BK9050",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "up to 64 Bus Terminals, 512 bytes in and 512 bytes out",
+   "points": 5,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/beckhoff/ek9000",
    "vendor": "Beckhoff",
    "model": "EK9000",
    "kind": "remote-io",
+   "category": "io-coupler",
    "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
    "photo": {
     "url": "https://multimedia.beckhoff.com/media/ek9000__web_preview.png",
     "page": "https://www.beckhoff.com/en-en/products/i-o/ethercat-terminals/ekxxxx-bus-coupler/ek9000.html"
    },
+   "points": 6,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -117,6 +440,7 @@
    "vendor": "Beckhoff",
    "model": "EK9500",
    "kind": "remote-io",
+   "category": "io-coupler",
    "channels": "none of its own: the EtherCAT terminals behind it set the I/O",
    "photo": {
     "url": "https://multimedia.beckhoff.com/media/ek9500__web_preview.png",
@@ -128,6 +452,7 @@
      "product_code": 9500
     }
    },
+   "points": 1,
    "protocols": {
     "enip": {
      "driver": "enip-io"
@@ -139,11 +464,13 @@
    "vendor": "Brainboxes",
    "model": "ED-538",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 DI, 4 DO",
    "photo": {
     "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-538-4-form-a-relays-8-digital-inputs-and-an-ascii-gateway.jpg",
     "page": "https://www.brainboxes.com/product/remote-io/digital/ed-538"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
@@ -155,14 +482,618 @@
    "vendor": "Brainboxes",
    "model": "ED-588",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 DI, 8 DO",
    "photo": {
     "url": "https://www.brainboxes.com/wp-content/uploads/2021/10/brainboxes-ed-588-8-digital-inputs-8-digital-outputs-and-an-ascii-gateway.jpg",
     "page": "https://www.brainboxes.com/product/remote-io/digital/ed-588"
    },
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/dataman-dm36x",
+   "vendor": "Cognex",
+   "model": "DataMan 300 Series Reader",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: trigger and control out, read result and status in",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 1290
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0678077312900100.eds",
+      "size": 23102,
+      "sha256": "cfd8bf5305a2f0d12e16416556f8ea7491581da317b0b816754ae07c1dd93817"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-2800",
+   "vendor": "Cognex",
+   "model": "In-Sight 2800 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 vision sensor: trigger and commands out, inspection results and status in",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 3585
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6030E0E010100.eds",
+      "size": 28866,
+      "sha256": "7e27edb64069a078dfa6cbd2217f316df78ea321d9d84971ed5f29f6ab98d012"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-7000",
+   "vendor": "Cognex",
+   "model": "In-Sight 7000 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 vision sensor: trigger and job load out, inspection results and status in",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 265
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6006401090A00.eds",
+      "size": 20980,
+      "sha256": "ef13ffda43b6dbc64a3c7a2a60b1d632ea2a930a798cacc8c472e13a0ad48827"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/cognex/in-sight-7800",
+   "vendor": "Cognex",
+   "model": "In-Sight 7900-7500 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 vision sensor: trigger and commands out, inspection results and status in",
+   "identity": {
+    "enip": {
+     "vendor_id": 678,
+     "product_code": 276
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "02A6006401140B00.eds",
+      "size": 26235,
+      "sha256": "c6f8930eb49edcfc631529dca6a3b664ca76f050fb708483c6af22d9d2b1f2ed"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/datalogic/matrix-n",
+   "vendor": "Datalogic",
+   "model": "Matrix N Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: item and presence bits out, item status and data fragments in",
+   "identity": {
+    "enip": {
+     "vendor_id": 850,
+     "product_code": 3000
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS-V3.23.1-DATALOGIC-Scanner-20230108.eds",
+      "size": 48515,
+      "sha256": "334b9482c86b4195a1e683a52294d927a891a99f8dcec048efc3d4dd707d1d0f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/delta-electronics/cmm-eip01",
+   "vendor": "Delta Electronics",
+   "model": "CMM-EIP01",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control, frequency control out; error code, frequency, output current, DC bus and output voltage, speed in",
+   "identity": {
+    "enip": {
+     "vendor_id": 799,
+     "product_code": 260
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "031F000C010400010001.eds",
+      "size": 1177149,
+      "sha256": "f90f682a2dec3fe1db4ae4e959fc97e9578684b043b1a1a74633126ff29bce7e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dg1",
+   "vendor": "Eaton",
+   "model": "PowerXL DG1",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12288
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_EIP_v2.8.eds",
+      "size": 233100,
+      "sha256": "bdea15cd765ecb14091c0b3850ddc89e46eaa5d97e572e1e0ce01d55c1795e1f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-dm1-pro",
+   "vendor": "Eaton",
+   "model": "PowerXL DM1 PRO",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: motor control bits, speed (torque, process) reference out; motor status bits, shaft speed, torque in",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12329
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXLDM1_EIP_V1.06.eds",
+      "size": 262169,
+      "sha256": "479e24e490e2b74aedb17f5706ad80284bf7e42774ff528dea9ce7a7e880492b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/eaton/powerxl-vfd-eip-comm-card",
+   "vendor": "Eaton",
+   "model": "PowerXL VFD EIP Comm. Card",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: motor control word, speed ref, process data, position control out; status word, speed, torque, process data in",
+   "identity": {
+    "enip": {
+     "vendor_id": 68,
+     "product_code": 12338
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds",
+      "size": 141156,
+      "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/emerson/numatics-580-ethernet-ip",
+   "vendor": "Emerson",
+   "model": "Numatics 580 Ethernet/IP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 580
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NUMATICS-580.eds",
+      "size": 11153,
+      "sha256": "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/emerson/numatics-580-ethernet-ip-dlr",
+   "vendor": "Emerson",
+   "model": "Numatics 580 Ethernet/IP DLR+QC",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 5800
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NUMATICS-5800.eds",
+      "size": 16260,
+      "sha256": "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/emerson/numatics-g3-ethernet-ip",
+   "vendor": "Emerson",
+   "model": "Numatics G3 EtherNet/IP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count",
+   "identity": {
+    "enip": {
+     "vendor_id": 52,
+     "product_code": 101
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "G3EP0102s-2013-03-01.eds",
+      "size": 10239,
+      "sha256": "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cmmt-as",
+   "vendor": "Festo",
+   "model": "CMMT-AS-EP",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 65282
+    }
+   },
+   "points": 26,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CMMT-AS-EP.eds",
+      "size": 15543,
+      "sha256": "c236152b75a2f51c7b7a1313aa65211984a2aadb0d67c7905b32d8259dcb818f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-ap-a-ep",
+   "vendor": "Festo",
+   "model": "CPX-AP-A-EP",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the CPX-AP modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14064
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-AP-A-EP_NoConfig.eds",
+      "size": 54219,
+      "sha256": "673bf6e669694afa8bd3481fc313c224f7441f0fc7919d706b313e24c23590bc"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-ap-i-ep-m12",
+   "vendor": "Festo",
+   "model": "CPX-AP-I-EP-M12",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the CPX-AP modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14057
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-AP-I-EP_NoConfig.eds",
+      "size": 54219,
+      "sha256": "271a251efdbc18c7d0ce4dd9fe245f057bb96437e3dc6e0b13f32cb90221c575"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-e-ep",
+   "vendor": "Festo",
+   "model": "CPX-E-EP",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the CPX-E modules behind it set the I/O (Input/Output Size 0-64, default 4)",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14040
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-E-EP.eds",
+      "size": 33766,
+      "sha256": "d0eb5d75938223588d6fed74360a2b8b00eaf5321de65bc5ce410d0edd7871a9"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-fb32",
+   "vendor": "Festo",
+   "model": "CPX-FB32",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the CPX modules behind it set the I/O (11 bytes of outputs, 13 bytes of inputs)",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 13002
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-FB32.eds",
+      "size": 7762,
+      "sha256": "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cpx-fb36",
+   "vendor": "Festo",
+   "model": "CPX-FB36",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the CPX modules behind it set the I/O (Input/Output Size 0-64, default 4)",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14026
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CPX-FB36.eds",
+      "size": 33526,
+      "sha256": "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/cteu-ep",
+   "vendor": "Festo",
+   "model": "CTEU-EP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "I-Port bus node: 8, 16, 32 or 64 bytes of outputs and inputs (single or dual port assemblies)",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 6001
+    }
+   },
+   "points": 9,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CTEU-EP.eds",
+      "size": 57519,
+      "sha256": "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/festo/vabx-a-cted-ep",
+   "vendor": "Festo",
+   "model": "VABX-A-S-EL-E12-CTED-EP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "process data only: up to 488 bytes in, 496 bytes out, no channel names in the EDS",
+   "identity": {
+    "enip": {
+     "vendor_id": 26,
+     "product_code": 14065
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "VABX_A_S_EL_E12-CTED_EP.eds",
+      "size": 111360,
+      "sha256": "a569fd87dbb62e68898f85cdf77a03e9280be1febeea63cc6d8361ae34e9f40f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1122",
+   "vendor": "ifm",
+   "model": "AL1122",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1122
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1122.eds",
+      "size": 103495,
+      "sha256": "968982cef6f0ae665a42e64fbba78dbabfa718a5c466b029134a36438ae0425b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1222",
+   "vendor": "ifm",
+   "model": "AL1222",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1222
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1222.eds",
+      "size": 103495,
+      "sha256": "7979dc70a7f3a8e6dedf99c7d15ead6bb90b4701aba6ba1bc804baac2c2a1dc2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1322",
+   "vendor": "ifm",
+   "model": "AL1322",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1322
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1322.eds",
+      "size": 103495,
+      "sha256": "6d3716839a12b2586622427e49e40151a4fc72b870f1e27283d5af4273088e0a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1326",
+   "vendor": "ifm",
+   "model": "AL1326",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1007
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_IOL_Master_AL1326.eds",
+      "size": 104895,
+      "sha256": "4d87d3aae3e67243dfb4b55bdc7052942a54ec18a2d230289739b45380529f9e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/ifm/al1590",
+   "vendor": "ifm",
+   "model": "AL1590",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 322,
+     "product_code": 1590
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ifm_AL1590.eds",
+      "size": 96285,
+      "sha256": "567fe42fd8f8e72aee55ebc68720be69898671d26fc5ffe98e34ff07a32f69da"
+     }
     }
    }
   },
@@ -171,6 +1102,8 @@
    "vendor": "ifm",
    "model": "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173",
    "kind": "sensor",
+   "category": "sensor",
+   "channels": "2 switching signals (SSC1, SSC2), 1 process value (PDV1)",
    "photo": {
     "url": "https://media.ifm.com/dam/019ef0d0-b9cc-7e41-bc6b-741412a185c3/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/IF6123.avif",
     "page": "https://www.ifm.com/us/en/product/IF6123"
@@ -198,6 +1131,8 @@
    "vendor": "ifm",
    "model": "KQxxxx",
    "kind": "sensor",
+   "category": "sensor",
+   "channels": "1 switch state (OUT1), 1 process value",
    "photo": {
     "url": "https://media.ifm.com/dam/019ef139-0207-7a00-810e-f81967f41ce6/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/KQ6005.avif",
     "page": "https://www.ifm.com/us/en/product/KQ6005"
@@ -240,6 +1175,8 @@
    "vendor": "ifm",
    "model": "O5D100/O5D102/O5D150/O5D152/O5D159",
    "kind": "sensor",
+   "category": "sensor",
+   "channels": "1 switch state (OUT1), distance value",
    "photo": {
     "url": "https://media.ifm.com/dam/019ef104-42f1-7b99-a5ba-8591952b7b60/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/O5D100.avif",
     "page": "https://www.ifm.com/de/en/product/O5D100"
@@ -264,6 +1201,8 @@
    "vendor": "ifm",
    "model": "(PN7072, PN7092, PN7572, PN7592) Status B",
    "kind": "sensor",
+   "category": "sensor",
+   "channels": "2 switching outputs (OUT1, OUT2), pressure value, device status",
    "photo": {
     "url": "https://media.ifm.com/dam/019ef10f-3f5c-7041-926c-b4f5ba471e6f/original%2Cf_avif%2Cw_576%2Ch_576%2Cbc_white/PN7092.avif",
     "page": "https://www.ifm.com/us/en/product/PN7092"
@@ -283,16 +1222,282 @@
    "record": "record.json"
   },
   {
+   "folder": "devices/imi-norgren/vr1x-ep",
+   "vendor": "IMI Norgren",
+   "model": "VR1X-EP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "24 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 1609,
+     "product_code": 1
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "NORGREN-VR1X-EP-24-V1.2.eds",
+      "size": 60935,
+      "sha256": "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/iv3",
+   "vendor": "Keyence",
+   "model": "IV3 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 vision sensor: external input out, monitor data in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 4606
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_4606_0101.eds",
+      "size": 8178,
+      "sha256": "301244a528dc409be0785bc44d2048260cc63afc69b42a00fa7f238daa24e292"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/iv4",
+   "vendor": "Keyence",
+   "model": "IV4 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 vision sensor: external input out, monitor data in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 4607
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_4607_0101.eds",
+      "size": 25509,
+      "sha256": "49b07f53bc105f3c31527f826246ef3c8637e39775a8922bbab67e515c112ba1"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-1000",
+   "vendor": "Keyence",
+   "model": "SR-1000 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1004
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1004_0101.eds",
+      "size": 39356,
+      "sha256": "01b8d93f00e11e1057198f8c05962142b7998eadd1ccdec0ff55c47f0f115cb5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-2000",
+   "vendor": "Keyence",
+   "model": "SR-2000 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1007
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1007_0101.eds",
+      "size": 41438,
+      "sha256": "bc27713bbb31d68315666c476ea4f9811ac8341ed4198bdfe490b1f05aaf5416"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-5000",
+   "vendor": "Keyence",
+   "model": "SR-5000 Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1008
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1008_0101.eds",
+      "size": 43449,
+      "sha256": "a38c844d1968dcd9de378356a4a5c923fbe46711ba4d02525779889b20497fc4"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/keyence/sr-x1h3h",
+   "vendor": "Keyence",
+   "model": "SR-X1H3H Series",
+   "kind": "sensor",
+   "category": "vision",
+   "channels": "1 reader: read, preset and tune requests out, read result data, status and counts in",
+   "identity": {
+    "enip": {
+     "vendor_id": 367,
+     "product_code": 1009
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Keyence_1009_0101.eds",
+      "size": 41564,
+      "sha256": "a7207d5694e0c6c47638fd4abca01610891a20cb6a491e82ee70192fe69336ef"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/lenze/i550",
+   "vendor": "Lenze",
+   "model": "i550 cabinet",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: drive control word, speed (and torque) setpoint out; drive status word, actual speed (and torque) in",
+   "identity": {
+    "enip": {
+     "vendor_id": 587,
+     "product_code": 550
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Lenze_i550-cabinet_V07.eds",
+      "size": 198396,
+      "sha256": "5dd7abf7c3860b0e6a80dce919f6dda43e0b68190910ebaca1d3fbab0ebb975d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-d800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-D800-E",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 112
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A1000200700102.eds",
+      "size": 278023,
+      "sha256": "4fe0e69aaf2c0236773ef9da6d2d2b9ea03fcfc12f9a1795465a85b9f2b71338"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-e",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-E",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 62
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003E0101.eds",
+      "size": 74537,
+      "sha256": "e0040f44b581fbea0c30adb3e8652add6ef28d1e1399eb32cc90ca96686cbc92"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/mitsubishi-electric/fr-e800-sce",
+   "vendor": "Mitsubishi Electric",
+   "model": "FR-E800-SCE",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: run fwd/rev, fault reset, speed ref out; faulted, running, state in; safety STO, SS1, SSM, SLS1-4 bits",
+   "identity": {
+    "enip": {
+     "vendor_id": 161,
+     "product_code": 63
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00A10002003F0100.eds",
+      "size": 245163,
+      "sha256": "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/moxa/iologik-e1210",
    "vendor": "Moxa",
    "model": "ioLogik E1210",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "16 DI",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/1bc19544-9f6e-4eda-9b53-47d7d7314a95/moxa-iologik-e1210-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1210"
    },
    "profile": "moxa-iologik-e1210.device",
+   "points": 2,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -305,12 +1510,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1211",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "16 DO",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/ad981e2f-1ac1-466d-bd4c-bed062652f8b/moxa-iologik-e1211-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1211"
    },
    "profile": "moxa-iologik-e1211.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -323,6 +1530,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1212",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 DI, 8 DIO",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/3ec4b6c0-0d49-440d-bc81-928fe89ec711/moxa-iologik-e1212-image.jpg",
@@ -335,6 +1543,7 @@
      "product_code": 514
     }
    },
+   "points": 3,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -356,6 +1565,7 @@
    "vendor": "Moxa",
    "model": "ioLogik E1213",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 DI, 4 DO, 4 DIO (source type)",
    "firmware": "V3.1 Build19110615",
    "checked_on": "2026-11-02",
@@ -370,6 +1580,7 @@
      "product_code": 515
     }
    },
+   "points": 3,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -392,12 +1603,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1214",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "6 DI, 6 relays",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/c8feb1c2-a50f-43ed-95b9-b0415b537278/moxa-iologik-e1214-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1214"
    },
    "profile": "moxa-iologik-e1214.device",
+   "points": 4,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -410,12 +1623,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1240",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 AI",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/aa9f3f9a-3d69-4ed3-bc33-364b877f2540/moxa-iologik-e1240-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1240"
    },
    "profile": "moxa-iologik-e1240.device",
+   "points": 2,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -428,12 +1643,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1241",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "4 AO",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/76744c12-450a-4fac-b391-9fb5d68e53e8/moxa-iologik-e1241-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1241"
    },
    "profile": "moxa-iologik-e1241.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -446,12 +1663,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1242",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "4 AI, 4 DI, 4 DIO",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/9f8f7cd6-a7cd-4add-98ea-439d09468561/moxa-iologik-e1242-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1242"
    },
    "profile": "moxa-iologik-e1242.device",
+   "points": 5,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -464,12 +1683,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1260",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "6 RTD",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/16b63dc7-a505-46e9-99fa-61ae71d9df19/moxa-iologik-e1260-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1260"
    },
    "profile": "moxa-iologik-e1260.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -482,12 +1703,14 @@
    "vendor": "Moxa",
    "model": "ioLogik E1262",
    "kind": "remote-io",
+   "category": "panel-io",
    "channels": "8 TC",
    "photo": {
     "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/260f103a-6041-4895-8e8f-e1bcee583b96/moxa-iologik-e1262-image.jpg",
     "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e1200-series/iologik-e1262"
    },
    "profile": "moxa-iologik-e1262.device",
+   "points": 1,
    "protocols": {
     "modbus": {
      "driver": "modbus-tcp",
@@ -496,10 +1719,83 @@
    }
   },
   {
+   "folder": "devices/moxa/iologik-e2210",
+   "vendor": "Moxa",
+   "model": "ioLogik E2210",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "12 DI, 8 DO (sink)",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8bc1a754-93d9-40f0-bc93-672a7b55f2c0/moxa-iologik-e2210-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210"
+   },
+   "points": 7,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2212",
+   "vendor": "Moxa",
+   "model": "ioLogik E2212",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "8 DI, 8 DO, 4 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/53f5dd5f-29a8-41ea-b02a-21a0ca91680c/moxa-iologik-e2212-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2212"
+   },
+   "points": 8,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iologik-e2242",
+   "vendor": "Moxa",
+   "model": "ioLogik E2242",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "4 AI, 12 DIO",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8803760d-977d-46ec-8008-a7657aba6497/moxa-iologik-e2242-image.jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2242"
+   },
+   "points": 12,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/moxa/iothinx-4510",
+   "vendor": "Moxa",
+   "model": "ioThinx 4510",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "modular, up to 32 I/O modules",
+   "photo": {
+    "url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/en/getattachment/Products/INDUSTRIAL-EDGE-CONNECTIVITY/Controllers-and-IOs/Advanced-Controllers-and-I-Os/ioThinx-4510-Series/moxa-iothinx-4510-series-image-(1).jpg",
+    "page": "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/advanced-controllers-and-i-os/iothinx-4510-series"
+   },
+   "points": 5,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
    "folder": "devices/murrelektronik/impact67-e-di16",
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DI16",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "16 DI (8 on pin 4, 8 on pin 2 of 8 M12 ports)",
    "photo": {
     "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
@@ -518,6 +1814,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DI8 DO8",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "8 DI, 8 DO (2 A each)",
    "photo": {
     "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
@@ -547,6 +1844,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DIO8 (DIO8)",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "16 DIO (pin 4 and pin 2 of 8 M12 ports, each an input or an output, 1.6 A)",
    "firmware": "revision 1.2 (ListIdentity)",
    "checked_on": "2026-11-16",
@@ -578,6 +1876,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DO16",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "16 DO (0.5 A each)",
    "photo": {
     "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
@@ -596,6 +1895,7 @@
    "vendor": "Murrelektronik",
    "model": "IMPACT67 E DO8",
    "kind": "remote-io",
+   "category": "io-block",
    "channels": "8 DO (2 A each)",
    "photo": {
     "url": "https://shop.murrelektronik.com/out/pictures/master/product/1/IM0008671.png",
@@ -614,6 +1914,8 @@
    "vendor": "Novanta IMS",
    "model": "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP",
    "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: moves, accel, currents out; flags, inputs, position in; 4 DI, 2 DO, 1 AI, 1 high-speed out",
    "firmware": "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)",
    "checked_on": "2026-11-16",
    "photo": {
@@ -626,6 +1928,7 @@
      "product_code": 15362
     }
    },
+   "points": 9,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -638,10 +1941,84 @@
    }
   },
   {
+   "folder": "devices/omron/ert1-hd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-HD16CH-1",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DI",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1102
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-HD16CH-1.eds",
+      "size": 15388,
+      "sha256": "78af590da4f7a7c60580d5ed53760c4017c6519cb1fa76ff2be5155c43a5238b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-id32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-ID32SLH-1",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "32 DI (PNP)",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1104
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-ID32SLH-1.eds",
+      "size": 15867,
+      "sha256": "c6c07d841714183a2ef67e74685d9fbe76c56a724ccb481bde16ba565184b54f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/omron/ert1-md32slh-1",
+   "vendor": "Omron",
+   "model": "ERT1-MD32SLH-1",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DI, 16 DO (PNP, 0.5 A per output)",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1105
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-MD32SLH-1.eds",
+      "size": 33523,
+      "sha256": "29f131f210cf4d38798fdae75b433407c3b2f238ced0ea4df8ef6e70e149435b"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/omron/ert1-od32slh-1",
    "vendor": "Omron",
    "model": "ERT1-OD32SLH-1",
    "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "32 DO (PNP, 0.5 A per point)",
    "identity": {
     "enip": {
      "vendor_id": 47,
@@ -660,10 +2037,36 @@
    }
   },
   {
+   "folder": "devices/omron/ert1-wd16ch-1",
+   "vendor": "Omron",
+   "model": "ERT1-WD16CH-1",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "16 DO",
+   "identity": {
+    "enip": {
+     "vendor_id": 47,
+     "product_code": 1103
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ERT1-WD16CH-1.eds",
+      "size": 29699,
+      "sha256": "8262a974f075c1e7d58e723574570cc4fb6e9ce9be4ba4b40a2070ffa8d58ca1"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/omron/nx-eic202",
    "vendor": "Omron",
    "model": "NX-EIC202",
    "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the NX Units behind it (up to 63) set the I/O",
    "photo": {
     "url": "https://8z1xg04k.tinifycdn.com/images/NX-EIC202.jpg?resize.method=fit&resize.width=400&resize.height=400",
     "page": "https://industrial.omron.co.uk/en/products/NX-EIC202"
@@ -686,10 +2089,179 @@
    }
   },
   {
+   "folder": "devices/parker/p2h-node-ethernet-ip",
+   "vendor": "Parker",
+   "model": "P2H Node 32DO EtherNet/IP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "32 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53296
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "P2H_Ethernet_IP.EDS",
+      "size": 71874,
+      "sha256": "9cd3f5dd84b6782582f199c4ef536f4ae9193efe943babe7b022d44c44fc07db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/parker/p2m-lite-node-ethernet-ip",
+   "vendor": "Parker",
+   "model": "P2M Lite Node 24DO ETHERNET/IP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "24 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53505
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "Parker_Lite.eds",
+      "size": 69571,
+      "sha256": "1edc8c8bc60c5b2c0aa855150b3a2e829849ac222bd5853e404d8916a8fea9e0"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/parker/p2m-node-ethernet-ip",
+   "vendor": "Parker",
+   "model": "P2M Node 24DO ETHERNET/IP",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "24 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 4,
+     "product_code": 53504
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0004002BD1000100.eds",
+      "size": 29546,
+      "sha256": "e36726805f5df83119ceb43eb484ee7e280ce8de2c46db3958ddbde60d030591"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice1-8di8do-g60l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE1-8DI8DO-G60L-V1D",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DI, 8 DO (2 A per channel)",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 50
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS-V3.11.1-PepperlFuchs-ICE1-8DI8DO-G60L-V1D-20170215.eds",
+      "size": 70355,
+      "sha256": "c357b58b9be78e386868a766b5a548afb6d3483952e9c6499b74cc96b35339db"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice2-8iol-g65l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE2-8IOL-G65L-V1D",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports (class A), each also DI; up to 8 DO",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 374
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE2-8IOL-G65L-V1D_1.6_v1.03.eds",
+      "size": 31004,
+      "sha256": "0298a01ea47bfd649eb71ac5ebeac58af8c5ac30ea1b1dac0880029edaa02a5c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice2-8iol-k45s-rj45",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE2-8IOL-K45S-RJ45",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports (class A), each also DI; up to 8 DO",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 373
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE2-8IOL-K45S-RJ45_1.6_v1.03.eds",
+      "size": 32806,
+      "sha256": "503f77385343d3a4bcbbd51f08735ac01ed90dd0fa801ecb8067198db37d0542"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/pepperl-fuchs/ice21-8iol2-g70l-v1d",
+   "vendor": "Pepperl+Fuchs",
+   "model": "ICE21-8IOL2-G70L-V1D",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B",
+   "identity": {
+    "enip": {
+     "vendor_id": 57,
+     "product_code": 69
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ICE21-8IOL2-G70L-V1D_1.7_v1.00.eds",
+      "size": 31017,
+      "sha256": "da8b386d9f736621735e0d1c8b964f17693afe39173fa00a0630428f387bf9ed"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/phoenix-contact/axl-f-bk-eip-ef",
    "vendor": "Phoenix Contact",
    "model": "AXL F BK EIP EF",
    "kind": "remote-io",
+   "category": "io-coupler",
    "channels": "none of its own: the Axioline F modules behind it (up to 63) set the I/O",
    "photo": {
     "url": "https://caas.phoenixcontact.com/caas/v1/stable/media/257490/full/b408?format=jpg",
@@ -701,6 +2273,7 @@
      "product_code": 8169
     }
    },
+   "points": 1,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -713,10 +2286,889 @@
    }
   },
   {
+   "folder": "devices/rockwell-automation/1719-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1719-AENTR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the 1719 Ex I/O modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 315
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1719_AENTR.eds",
+      "size": 7966,
+      "sha256": "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-16cfgm12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-16CFGM12R",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "16 DC in/out points (16 input bits, 16 output bits, M12)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 357
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701650300.eds",
+      "size": 29825,
+      "sha256": "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-8x8m12dr",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-8X8M12DR",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DC in/out points (8 input bits, 8 output bits, M12)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 358
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000701660300.eds",
+      "size": 55643,
+      "sha256": "b3f3b8397d8922a81fc2655ce72874f9c798b672abe9a5dad1242cb3060c566a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ib16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-IB16M12R",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "16 DI (M12)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 369
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16InBlock2Port.eds",
+      "size": 23963,
+      "sha256": "96657dd7152d74f77722c4a7a39b3a929ec5cfb4a5f1506e654d80ce395856ec"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1732e-ob16m12r",
+   "vendor": "Rockwell Automation",
+   "model": "1732E-OB16M12R",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "16 DO (M12)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 370
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "1732E_16OutBlock2Port.eds",
+      "size": 13675,
+      "sha256": "4ec0530cbf3c9474dc764b4e7171209c2be0c09e2616f9da0ea26292b36d1d32"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENT",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the POINT I/O modules behind it (up to 63) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 108
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C006C070B_1734_AENT.eds",
+      "size": 48519,
+      "sha256": "76a23243b7fbf2df4b2c83b048349bbe25bf1172c55d88812697f0c8c8d6efdb"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1734-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1734-AENTR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the POINT I/O modules behind it (up to 63) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 196
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00C4070B_1734_AENTR.eds",
+      "size": 48986,
+      "sha256": "34e8304305f4d7bb7b7bfc84359495f3e9165ca87e11086bf65071d4fbfe1f84"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1738-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1738-AENT",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the ArmorPOINT modules behind it (up to 63) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 132
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C0084060C_1738_AENT_SerB.eds",
+      "size": 48466,
+      "sha256": "c328fd321b48e5c3b89890a693eb35afabeba536bdf0b629682d3eb473e6182a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1769-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1769-AENTR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the 1769 modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 298
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C012A0100.eds",
+      "size": 4229,
+      "sha256": "aa2345723785b71f7c40a51dba4854e8cab8937a4eec20d747503c9109b9ffb5"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aent",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENT",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 90
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C005A0400.EDS",
+      "size": 79801,
+      "sha256": "97b40eec9bf440faa340cb59ffb17a341e2c5b543d1d222928696ea7def8fa89"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/1794-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "1794-AENTR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 261
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01050200.eds",
+      "size": 136799,
+      "sha256": "45dafe6e13b170a11327785d9cafe6e3f7ae35eb29901d8d9be5110623ecb18c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5069-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5069-AEN2TR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the Compact 5000 (5069) modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 252
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FC0300_as_uploaded_from_3.011.44.eds",
+      "size": 14648,
+      "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aen2tr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AEN2TR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the FLEX 5000 modules behind it (up to 16) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 322
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C01420600.eds",
+      "size": 18440,
+      "sha256": "90ca83cf7c596e7bbffc56be436332727527b4812f08fe2c158dda080ffe2e99"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/5094-aentr",
+   "vendor": "Rockwell Automation",
+   "model": "5094-AENTR",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the FLEX 5000 modules behind it (up to 8) set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 253
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001000C00FD0600.eds",
+      "size": 17323,
+      "sha256": "c7c3d7e5283ae82dab20f07111a21d682e77023aad994ccb2df09a757b9646ab"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armor-powerflex-35e",
+   "vendor": "Rockwell Automation",
+   "model": "Armor PowerFlex 35E",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: logic command and command velocity out, logic status, output frequency, voltage and current in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 3
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "000100AA00030200.eds",
+      "size": 41809,
+      "sha256": "c84392f3c1a108a65180ea1b3658eb93f91c76cf8dfe7cf380224b7076f3356a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-280e-281e",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart 280E/281E (EtherNet/IP)",
+   "kind": "other",
+   "category": "motor-starter",
+   "channels": "1 starter: run forward/reverse, reset fault, OutA, OutB out; status and 4 inputs (In0-In3) in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 145
+    }
+   },
+   "points": 10,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001600910200.eds",
+      "size": 64224,
+      "sha256": "55e288318f67e347c23bcbfab17cca837db4c0da2db1679941e385ef6475e93c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/armorstart-lt",
+   "vendor": "Rockwell Automation",
+   "model": "ArmorStart LT 290E/291E/294E (EtherNet/IP)",
+   "kind": "other",
+   "category": "motor-starter",
+   "channels": "1 starter: run forward, reset fault, Out0-Out5 out; status and points Pt00-Pt05 in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 769
+    }
+   },
+   "points": 11,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001001603010200.eds",
+      "size": 142693,
+      "sha256": "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-523-25-comm-e2p",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 523 with 25-COMM-E2P",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 adapter, 5 drive slots (0-4): logic command and reference out, logic status and feedback in, each",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 1822
+    }
+   },
+   "points": 30,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "00010097071E0100.eds",
+      "size": 24819,
+      "sha256": "d31bd29649028349734f5b815cd6650138dc796647a6502b8b9bac99d3cb8d6d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-525",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 525 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: logic command, reference, 4 datalinks out; logic status, feedback, 4 datalinks in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 9
+    }
+   },
+   "points": 28,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009700090100.eds",
+      "size": 18530,
+      "sha256": "a02b3ea15a13f64b3c94a7c48de37877d2804eb5f09dc47225e57e68ba9bcab7"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-527",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 527 (embedded EtherNet/IP, STO CIP Safety listing)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 CIP Motion safety drive: 500 bytes each way, no members named in the EDS",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 15
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001002D000F0200.eds",
+      "size": 22378,
+      "sha256": "58e97c3d7178d4daa8cb86bc79a5539a035179662191c3fe8ab39c6e4152612d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-6000t",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 6000T",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: logic command, reference, 16 datalinks out; logic status, feedback, 16 datalinks in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 10640
+    }
+   },
+   "points": 44,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "12040.08_EDS",
+      "size": 40833,
+      "sha256": "42d2fad7e8521edb5f193921aa9272a3a3043182d0d50013117dde6ef62ad182"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70 (EtherNet/IP adapter)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 48
+    }
+   },
+   "points": 26,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001007B00300200.eds",
+      "size": 5593,
+      "sha256": "7c31097c75b1a0f7a47f91e69c9b6761d2e51607e78ab5b1b47e193128f3779f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-70ec",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 70EC",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 50
+    }
+   },
+   "points": 26,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001009800320500.eds",
+      "size": 11068,
+      "sha256": "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-753ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 753TS",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: logic command, reference, 16 datalinks out; logic status, feedback, 16 datalinks in",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 7056
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_753TS.eds",
+      "size": 39871,
+      "sha256": "ffa875f571bd434acd5754b216bb5d4b11329044934fe6e93bcbcacdd4e2c2b2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755 (embedded EtherNet/IP)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: I/O connection of 8-72 bytes out and 12-76 bytes in (EDS gives sizes, no members)",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 2192
+    }
+   },
+   "points": 44,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "0001008F08901000.eds",
+      "size": 6563,
+      "sha256": "521e5178f12075fb7125af9d8a0558b7deb2c7c84d145d3772e9ce5242dda67c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/rockwell-automation/powerflex-755ts",
+   "vendor": "Rockwell Automation",
+   "model": "PowerFlex 755TS",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 CIP Motion safety drive: 500 bytes each way, no members named in the EDS",
+   "identity": {
+    "enip": {
+     "vendor_id": 1,
+     "product_code": 85
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EDS_PowerFlex_755TS_85_R14.2.12001_CIP_Motion.eds",
+      "size": 9399,
+      "sha256": "173152a00e1b5ee7aaab6a6be219b27814e6f466650ba11ba44b23afaf8b943a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/atv320-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV320 with VW3A3616",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: CIP basic/extended speed control, or CiA402 native profile, 6 words each way mapped by comm scanner",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6153
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV320_0120E.eds",
+      "size": 24600,
+      "sha256": "9e123939ba24528712d066dca565a8cd125ee765add0fe9637e178b35d7101a2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/atv340",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Machine ATV340 (embedded Ethernet)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6176
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV340xx_V3.6.eds",
+      "size": 31477,
+      "sha256": "7905f62de65da28f386e0ff0784c7a229ff39ce326925432b8aaa251dc21f21f"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/atv630",
+   "vendor": "Schneider Electric",
+   "model": "Altivar Process ATV630 / ATV930 (embedded Ethernet)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: CIP basic/extended speed control (2 words), or CiA402 native or I/O profile, assemblies 100/101/106/107",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 6192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_ET_ATV9xx.eds",
+      "size": 39760,
+      "sha256": "85429040d78bcf0ba89d7198b72282be12973deeff3e7f3231b7bbe13458437b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/lexium-32m-vw3a3616",
+   "vendor": "Schneider Electric",
+   "model": "Lexium 32M with VW3A3616",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control word, 2 mode references, ramps, 3 mapped params out; status words, position, speed, current in",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 2564
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_EIP_LXM32M_1.20.eds",
+      "size": 11110,
+      "sha256": "e0baaad1ed57480965c10b333bee3a7b134801398273ab940634248817124c08"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/ltmr-e-ethernet",
+   "vendor": "Schneider Electric",
+   "model": "TeSys T LTMR E (Ethernet)",
+   "kind": "other",
+   "category": "motor-starter",
+   "channels": "1 motor starter: run fwd/rev and trip reset out; running, ready, alarm, tripped and monitoring registers in",
+   "identity": {
+    "enip": {
+     "vendor_id": 243,
+     "product_code": 304
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SE_TESYST_MMC_L_EIP.eds",
+      "size": 543674,
+      "sha256": "30d8d6c84eb047ca0cd06559c80cb7dce6b9772da3c48df36e6d90a6b5ac9b0c"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/pm5560",
+   "vendor": "Schneider Electric",
+   "model": "PowerLogic PM5560",
+   "kind": "other",
+   "category": "power-meter",
+   "channels": "4 DI, 2 DO; voltage, current, power, energy, frequency, power factor, THD, demand; 3-phase",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/stb-nip2311",
+   "vendor": "Schneider Electric",
+   "model": "Modicon STB NIP2311",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the Advantys STB I/O modules behind it (up to 32) set the I/O",
+   "points": 3,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/tm3bceip",
+   "vendor": "Schneider Electric",
+   "model": "Modicon TM3 bus coupler TM3BCEIP",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the TM3 and TM2 expansion modules behind it set the I/O",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/schneider-electric/tprbceip",
+   "vendor": "Schneider Electric",
+   "model": "TeSys island bus coupler TPRBCEIP",
+   "kind": "remote-io",
+   "category": "motor-starter",
+   "channels": "none of its own: the TeSys island starters and I/O modules behind it (up to 20) set the I/O",
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/iolg2ei",
+   "vendor": "SICK",
+   "model": "IOLG2EI-03208R01",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 20618
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "IOLG2EI-03208R01.eds",
+      "size": 198944,
+      "sha256": "a14956e637a09957dd07e5d9fcb31ceca24daa3edcd94aa16ac90d5542da38e6"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/sig300",
+   "vendor": "SICK",
+   "model": "SIG300",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports, each configurable as IO-Link, DI or DO",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 16641
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SICK_SIG300_V1.3.1.eds",
+      "size": 138245,
+      "sha256": "9631245f5d0981b532d629c1532955b1c52b7ef83271c3add4ef919dc79c7cb2"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/sick/sig350-0005ap100",
+   "vendor": "SICK",
+   "model": "SIG350",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports, each configurable as IO-Link, DI or DO",
+   "identity": {
+    "enip": {
+     "vendor_id": 808,
+     "product_code": 16642
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "SICK_SIG350-0005AP100_V1.0.0.eds",
+      "size": 156030,
+      "sha256": "c58192ebcd1f66ef618d0a6f579929b12b26f799cd883073b03009ece8f8c9db"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/sick/wtb4f-did8389194",
    "vendor": "SICK",
    "model": "WTB4F_DID8389194",
    "kind": "sensor",
+   "category": "sensor",
+   "channels": "2 switching signals (QL1, QL2), receive level",
    "photo": {
     "url": "https://www.sick.com/media/pim/7/07/707/IM0085707.png?im=Resize,width=1020",
     "page": "https://www.sick.com/us/en/catalog/products/detection-sensors/photoelectric-sensors/w4/wtb4fp-22161120a00/p/p661408"
@@ -737,10 +3189,278 @@
    "record": "record.json"
   },
   {
+   "folder": "devices/siemens/im-155-6-mf-hf",
+   "vendor": "Siemens",
+   "model": "SIMATIC ET 200SP IM 155-6 MF HF",
+   "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the ET 200SP I/O modules behind it set the I/O (PROFINET, EtherNet/IP or Modbus TCP)"
+  },
+  {
+   "folder": "devices/siemens/sentron-pac3200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC3200",
+   "kind": "other",
+   "category": "power-meter",
+   "channels": "1 DI, 1 DO; voltage, current, power, energy, frequency, power factor, THD; 2-, 3- and 4-wire systems",
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sentron-pac4200",
+   "vendor": "Siemens",
+   "model": "SENTRON PAC4200",
+   "kind": "other",
+   "category": "power-meter",
+   "channels": "2 DI, 2 DO (plug-in up to 8 DI, 4 DO); voltage, current, power, energy, frequency, power factor, THD",
+   "points": 4,
+   "protocols": {
+    "modbus": {
+     "driver": "modbus-tcp"
+    }
+   }
+  },
+  {
+   "folder": "devices/siemens/sinamics-g120-cu240e-2-pn",
+   "vendor": "Siemens",
+   "model": "SINAMICS G120 CU240E-2 PN (EtherNet/IP)",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: run fwd, fault reset, speed ref out; faulted, running, actual speed in; 6 DI, 3 DO, 2 AI, 2 AO",
+   "points": 2,
+   "protocols": {
+    "enip": {
+     "driver": "enip-io"
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen1",
+   "vendor": "SMC",
+   "model": "EX260-SEN1",
+   "kind": "other",
+   "category": "valve-terminal",
+   "channels": "32 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 156
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen1_24_v22.eds",
+      "size": 15092,
+      "sha256": "5ba9793175e7a8479ae97db56cd89faf535ba46f85fd3b55098f60b3dfe4f78b"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen2",
+   "vendor": "SMC",
+   "model": "EX260-SEN2",
+   "kind": "other",
+   "category": "valve-terminal",
+   "channels": "32 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 157
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen2_24_v22.eds",
+      "size": 15092,
+      "sha256": "48688b7c007affabb7cab673d682ddcdedc64eadb524a26c4aed0dc096493c3d"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen3",
+   "vendor": "SMC",
+   "model": "EX260-SEN3",
+   "kind": "other",
+   "category": "valve-terminal",
+   "channels": "16 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 158
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen3_24_v22.eds",
+      "size": 15092,
+      "sha256": "7491b14ee137e0f8752287fe5ef1670daa217ede7696cbcee4d3e6d8c600ea88"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex260-sen4",
+   "vendor": "SMC",
+   "model": "EX260-SEN4",
+   "kind": "other",
+   "category": "valve-terminal",
+   "channels": "16 solenoid outputs",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 159
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex260_sen4_24_v22.eds",
+      "size": 15092,
+      "sha256": "2692aaa3aba57bea855e4145f6eefd76bd0b034c4cca87db5290c163e28e96ba"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen1",
+   "vendor": "SMC",
+   "model": "EX600-SEN1/SEN2",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 126
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EX600_SEN_.eds",
+      "size": 10860,
+      "sha256": "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen3",
+   "vendor": "SMC",
+   "model": "EX600-SEN3/SEN4",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 203
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex600_sen3_4_v11.eds",
+      "size": 17866,
+      "sha256": "dc93058747800c178b5b456840bf753c0c11e9e3c06e8d0961bd03bec6f7a553"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/smc/ex600-sen7",
+   "vendor": "SMC",
+   "model": "EX600-SEN7/SEN8",
+   "kind": "remote-io",
+   "category": "valve-terminal",
+   "channels": "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)",
+   "identity": {
+    "enip": {
+     "vendor_id": 7,
+     "product_code": 258
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "ex600_sen7_8_v10.eds",
+      "size": 18775,
+      "sha256": "3de03eb923764bae8e31612d2c5f7323fd709ca178c97f0f5ea9bb45ce706140"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/fen20-4dip-4dxp",
+   "vendor": "Turck",
+   "model": "FEN20-4DIP-4DXP",
+   "kind": "remote-io",
+   "category": "panel-io",
+   "channels": "4 DI, 4 DIO (PNP)",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 31090
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "FEN20-4DIP-4DXP_R2.7.eds",
+      "size": 29597,
+      "sha256": "8151e22af6558ff2c7f0cfae9fdfbfade7b75f80f3ab699b031f5643717a5e73"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-l5-8iol",
+   "vendor": "Turck",
+   "model": "TBEN-L5-8IOL",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "8 IO-Link ports (4 class A, 4 class B), 4 DIO (PNP)",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14017
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-L5-8IOL_R2.7_simple.eds",
+      "size": 38513,
+      "sha256": "228ded674df1646bb9775b96c1610a4557657af85ff606926fe96fde9b832e35"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s1-4dip-4dop",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-4DIP-4DOP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "4 DI, 4 DO (PNP, 2 A per output)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
     "page": "https://www.turck.us/en/product/6814021"
@@ -767,6 +3487,8 @@
    "vendor": "Turck",
    "model": "TBEN-S1-4DXP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "4 DIO (PNP in or out, 2 A per output)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic9/00508082_0.png",
     "page": "https://www.turck.us/en/product/100006468"
@@ -790,9 +3512,11 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dip",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DIP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DI (PNP, M8)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
     "page": "https://www.turck.us/en/product/6814020"
@@ -816,9 +3540,11 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dip-d",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DIP-D",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DI (PNP, M12, channel diagnostics)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
     "page": "https://www.turck.us/en/product/6814034"
@@ -842,9 +3568,11 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dop",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DOP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DO (PNP, 2 A each from HW rev 2, 0.5 A before)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
     "page": "https://www.turck.us/en/product/6814022"
@@ -868,9 +3596,11 @@
   },
   {
    "folder": "devices/turck/tben-s1-8dxp",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S1-8DXP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DIO (PNP in or out, M8)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic7/00329141_0.png",
     "page": "https://www.turck.us/en/product/6814023"
@@ -893,10 +3623,60 @@
    }
   },
   {
+   "folder": "devices/turck/tben-s2-2com-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2COM-4DXP",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "2 serial ports (RS485 or RS232), 4 DIO (PNP, 0.5 A per output)",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14031
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-2COM-4DXP_R2.7.eds",
+      "size": 41063,
+      "sha256": "cf9b10945155a00cc9211878d3c62922722e569f62ee4ff8156721450df5fd40"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/turck/tben-s2-2rfid-4dxp",
+   "vendor": "Turck",
+   "model": "TBEN-S2-2RFID-4DXP",
+   "kind": "remote-io",
+   "category": "io-block",
+   "channels": "2 RFID ports (HF/UHF read/write heads, M12), 4 DIO (PNP, 0.5 A)",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14029
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-2RFID-4DXP_R2.7.eds",
+      "size": 39440,
+      "sha256": "dfae8c45ec58c9b8da6de5a7a038c5dccf1aaa070285e89951cd90fe9822db17"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s2-4ai",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S2-4AI",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "4 AI (voltage, current, RTD, resistance, thermocouple)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
     "page": "https://www.turck.us/en/product/6814025"
@@ -920,9 +3700,11 @@
   },
   {
    "folder": "devices/turck/tben-s2-4ao",
-   "vendor": "TURCK",
+   "vendor": "Turck",
    "model": "TBEN-S2-4AO",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "4 AO (voltage or current)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
     "page": "https://www.turck.us/en/product/6814028"
@@ -945,10 +3727,36 @@
    }
   },
   {
+   "folder": "devices/turck/tben-s2-4iol",
+   "vendor": "Turck",
+   "model": "TBEN-S2-4IOL",
+   "kind": "remote-io",
+   "category": "iolink-master",
+   "channels": "4 IO-Link ports (class A), 4 DIO (PNP, 0.5 A)",
+   "identity": {
+    "enip": {
+     "vendor_id": 48,
+     "product_code": 14024
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "TBEN-S2-4IOL_R2.8.eds",
+      "size": 33375,
+      "sha256": "6aac0db43609d9cfe8f99d66863f1efb2947174e9ed37692724e3f6f08de802b"
+     }
+    }
+   }
+  },
+  {
    "folder": "devices/turck/tben-s2-8dip",
    "vendor": "Turck",
    "model": "TBEN-S2-8DIP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DI (PNP, 4 M12 ports)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
     "page": "https://www.turck.us/en/product/6814073"
@@ -975,6 +3783,8 @@
    "vendor": "Turck",
    "model": "TBEN-S2-8DXP",
    "kind": "remote-io",
+   "category": "io-block",
+   "channels": "8 DIO (PNP inputs or 2 A outputs, M12)",
    "photo": {
     "url": "https://www.turck.us/repo/_db_20261110090315_/Graphics/Pic4/00488634_0.png",
     "page": "https://www.turck.us/en/product/6814076"
@@ -1001,6 +3811,7 @@
    "vendor": "Universal Robots",
    "model": "e-Series",
    "kind": "other",
+   "category": "robot",
    "channels": "robot state, joints, TCP, control box and tool I/O, general purpose registers",
    "photo": {
     "url": "https://a.storyblok.com/f/169662/1072x1364/0330f92e8d/ur12e_product_4-3.png/m/fit-in/960x960",
@@ -1013,6 +3824,7 @@
      "product_code": 1
     }
    },
+   "points": 6,
    "protocols": {
     "enip": {
      "driver": "enip-io",
@@ -1033,6 +3845,8 @@
    "vendor": "WAGO",
    "model": "750-363",
    "kind": "remote-io",
+   "category": "io-coupler",
+   "channels": "none of its own: the WAGO I/O System modules behind it set the I/O",
    "photo": {
     "url": "https://www.wago.com/medias/200-1362992-DE.jpg?context=bWFzdGVyfGltYWdlc3wzMTUzfGltYWdlL2pwZWd8YUdNMEwyZ3pNaTh4TmpVMU5EYzFPRGc1TnpZNU5DOHlNREJmTVRNMk1qazVNbDlFUlM1cWNHY3w2YjA2NGExODYzMTE5ZWEyOTc1ZDM0OGY0NGFiYjJkOWY5MjZmNWY5NWQ0NmZlMjY2ZWNiZTg5ZTdmMzZmMDEw",
     "page": "https://www.wago.com/us/controllers-bus-couplers-i-o/fieldbus-coupler-ethernet-ip/p/750-363"
@@ -1050,6 +3864,198 @@
       "name": "07500363.eds",
       "size": 20821,
       "sha256": "202378e704b1480ca4230ae76c8ca621950f8257e8c14bb2c869bcca8726268e"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-823",
+   "vendor": "WAGO",
+   "model": "750-823",
+   "kind": "controller",
+   "category": "controller",
+   "channels": "none of its own: the WAGO I/O System modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 823
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500823.eds",
+      "size": 23432,
+      "sha256": "82f4dfb6221521033b3407dd80e1dc91b3814ab012ad4aedfaf89119b9087907"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/wago/750-893",
+   "vendor": "WAGO",
+   "model": "750-893",
+   "kind": "controller",
+   "category": "controller",
+   "channels": "none of its own: the WAGO 750/753 I/O modules behind it set the I/O",
+   "identity": {
+    "enip": {
+     "vendor_id": 40,
+     "product_code": 893
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "07500893.eds",
+      "size": 23432,
+      "sha256": "5bab4675e2f8be707a36bbdc914b2d5b28d36dcbf33c2c1cffa25891e3a78757"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw300",
+   "vendor": "WEG",
+   "model": "CFW300",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control word, speed reference, parameter writes out; status word, motor speed, parameter reads in",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5376
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW300_V30X.eds",
+      "size": 23862,
+      "sha256": "8afd16f58d765ce02c83ed36a73f1dc58ba23daa1c7e6ec41a22d084610f6069"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw320",
+   "vendor": "WEG",
+   "model": "CFW320",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control word, speed reference, parameter writes out; status word, motor speed, parameter reads in",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6400
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW320_V10X.eds",
+      "size": 23862,
+      "sha256": "498095c732e801d29d180da7c5a19a9dfeefe2ea76be0c73d2bd5219edca9131"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/cfw500",
+   "vendor": "WEG",
+   "model": "CFW500",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: control word, speed reference, I/O data out; status word, motor speed, I/O data in (28 bytes each way)",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 6656
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_CFW500_CETH2_V10X.eds",
+      "size": 31045,
+      "sha256": "5b174b3564c3310d426ef1f4879635f2079a89681a7938c5da77c847137ab51a"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/weg/ssw900",
+   "vendor": "WEG",
+   "model": "SSW900",
+   "kind": "other",
+   "category": "motor-starter",
+   "channels": "control word and parameter writes out; status word and parameter reads in",
+   "identity": {
+    "enip": {
+     "vendor_id": 853,
+     "product_code": 5888
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "EIP_SSW900_V13X.eds",
+      "size": 25640,
+      "sha256": "2d08f8afa0a57dc04a2793d4f0647df3916083d530fbde71155b5405cf7f6611"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga500-ga501",
+   "vendor": "Yaskawa",
+   "model": "Yaskawa GA501",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24063
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "GA501_v1.005.eds",
+      "size": 50957,
+      "sha256": "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe"
+     }
+    }
+   }
+  },
+  {
+   "folder": "devices/yaskawa/ga800-si-en3d",
+   "vendor": "Yaskawa",
+   "model": "Yaskawa SI-EN3D for CIPR-GA80U2004",
+   "kind": "drive",
+   "category": "drive",
+   "channels": "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections",
+   "identity": {
+    "enip": {
+     "vendor_id": 44,
+     "product_code": 24192
+    }
+   },
+   "protocols": {
+    "enip": {
+     "driver": "enip-io",
+     "eds": {
+      "name": "CIPR-GA80U2004_SI-EN3D_v2.8.eds",
+      "size": 51252,
+      "sha256": "e57045ccd15e2067b800e6e2dad04d63b4e4d578e8bc3acca119cbce25b14cc1"
      }
     }
    }

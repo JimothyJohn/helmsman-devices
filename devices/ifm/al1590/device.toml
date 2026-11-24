@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "ifm"
+model = "AL1590"
+kind = "remote-io"
+category = "iolink-master"
+channels = "8 IO-Link ports"   # from: EDS ProdName 'IO-LINK MASTER SOL MP 8P IP67'
+article = "AL1590"
+
+[identity.enip]
+vendor_id = 322
+product_code = 1590
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "IO-LINK MASTER SOL MP 8P IP67"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner IO-Acyc-Diag-EnMo"
+# input_assembly: the size is set by Param12: 0..450 bytes, default 450
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param13: 0..302 bytes, default 302
+output_assembly = { instance = 151 }
+config_assembly = { instance = 199, bytes = 106 }
+eds = { name = "ifm_AL1590.eds", size = 96285, sha256 = "567fe42fd8f8e72aee55ebc68720be69898671d26fc5ffe98e34ff07a32f69da", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2861/12637.01_EDS.zip (member of 12637.01_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "f22c45810e294b3eae906dcb1c0c01f092d16913dc6c529b00e2b3eff33d2099"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2861/12637_DOC_072425.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, EDS (ODVA Marketplace)"
+sha256 = "bce2c6886a4fed3dbbef1b23af92e6e120c524ddfbb7c5a1b205b809a9b77491"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2861/12637.01_EDS.zip; retrieved 2026-11-23; not redistributed here"

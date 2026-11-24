@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Turck"
+model = "TBEN-L5-8IOL"
+kind = "remote-io"
+category = "iolink-master"
+channels = "8 IO-Link ports (4 class A, 4 class B), 4 DIO (PNP)"   # from: TBEN-Lx-8IOL Instructions for Use V04.00, sec. 4 and 4.2
+article = "6814017"
+
+[identity.enip]
+vendor_id = 48
+product_code = 14017
+device_type = 12
+revisions = ["2.7"]   # the EDS's MajRev.MinRev
+product_name = "TBEN-L5-8IOL"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 103, bytes = 346 }
+output_assembly = { instance = 104, bytes = 262 }
+config_assembly = { instance = 106, bytes = 10 }
+eds = { name = "TBEN-L5-8IOL_R2.7_simple.eds", size = 38513, sha256 = "228ded674df1646bb9775b96c1610a4557657af85ff606926fe96fde9b832e35", url = "https://www.turck.us/attachment/TBEN-L_ETHERNETIP.zip (member of TBEN-L_ETHERNETIP.zip)", terms = "none stated" }
+
+[[sources]]
+title = "TBEN-L EDS files and catalog files (family package)"
+sha256 = "91c35fe7408fc5f7581c89de5e31606fd1b12a53cdd2e6d6c8c47c5ad7f4d743"
+where = "https://www.turck.us/attachment/TBEN-L_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "TBEN-Lx-8IOL Instructions for Use"
+sha256 = "5980862a2476139188733dab2403f871460d54660f9d514d3db238d1680d1e82"
+where = "https://www.turck.us/attachment/d301407.pdf; retrieved 2026-11-23; not redistributed here"

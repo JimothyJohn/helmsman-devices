@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "WEG"
+model = "CFW500"
+kind = "drive"
+category = "drive"
+channels = "1 drive: control word, speed reference, I/O data out; status word, motor speed, I/O data in (28 bytes each way)"   # from: EDS EIP_CFW500_CETH2_V10X.eds: Assem100/120/121, 150/170/171, 'Speed + I/O data'
+article = "CFW500"
+
+[identity.enip]
+vendor_id = 853
+product_code = 6656
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CFW500"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "100/150 Manufacturer Speed + I/O data"
+# input_assembly: the size is set by Param6: 0..28 bytes, default 4
+input_assembly = { instance = 150 }
+# output_assembly: the size is set by Param5: 0..28 bytes, default 4
+output_assembly = { instance = 100 }
+config_assembly = { instance = 1 }
+eds = { name = "EIP_CFW500_CETH2_V10X.eds", size = 31045, sha256 = "5b174b3564c3310d426ef1f4879635f2079a89681a7938c5da77c847137ab51a", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip (member of 12524.01.zip)", terms = "none stated" }
+
+[[sources]]
+title = "WEG CFW500: declaration of conformity (ODVA), ODVA marketplace product 2768"
+sha256 = "7809fda67ec0bf33cf93f5ae48f56119c5c84c873283b51220d6adfa79608b37"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "WEG CFW500: EDS, ODVA marketplace product 2768"
+sha256 = "11acd09b50d3e720b5150eda5aabef8a5b584ee2d6b8961625de1580013ff9e9"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip; retrieved 2026-11-23; not redistributed here"

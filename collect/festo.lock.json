@@ -1,0 +1,228 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf",
+   "folders": [
+    "devices/festo/cpx-ap-a-ep",
+    "devices/festo/cpx-ap-i-ep-m12"
+   ],
+   "kind": "manual",
+   "name": "12178_DOC_100121.pdf",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "b77d0e4046319ff3b3179adb24679198f4c14e571fdf87c4d77ff0de1fc3c97b",
+   "size": 131787,
+   "terms": "none stated",
+   "title": "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds",
+   "folders": [
+    "devices/festo/cteu-ep"
+   ],
+   "kind": "eds",
+   "name": "CTEU-EP.eds",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "ca6bf7b5be775efd584120b224b2d77a1ad1a0c88216b87bac86d32ccec45751",
+   "size": 57519,
+   "terms": "none stated",
+   "title": "CTEU-EP EDS (ODVA marketplace, product 1771)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds",
+   "folders": [
+    "devices/festo/cpx-fb36"
+   ],
+   "kind": "eds",
+   "name": "CPX-FB36.eds",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "ec29b2f751a32c04382f766961a6d486ebf783fd52283b1a8b1d4a2ee1e0e07c",
+   "size": 33526,
+   "terms": "none stated",
+   "title": "CPX-FB36 EDS (ODVA marketplace, product 1773)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip",
+   "folders": [
+    "devices/festo/cpx-e-ep"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS/CPX-E-EP.eds",
+     "sha256": "d0eb5d75938223588d6fed74360a2b8b00eaf5321de65bc5ce410d0edd7871a9",
+     "size": 33766,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/CPX-E-EP.eds.ebf",
+     "sha256": "ecd5238809a6f4b8c344c84037990177a622defae5b3bf8756d320a1fa0ddf2b",
+     "size": 33764,
+     "type": "eds"
+    }
+   ],
+   "name": "11634.01-EDS.zip",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "6f8a0156a2f41f70dece568a53e325b826cc7cd545ba3f5428cd7a62a207bbc8",
+   "size": 7685,
+   "terms": "none stated",
+   "title": "CPX-E-EP EDS (ODVA marketplace, product 1883)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip",
+   "folders": [
+    "devices/festo/cmmt-as"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS/CMMT-AS-EP.eds",
+     "sha256": "c236152b75a2f51c7b7a1313aa65211984a2aadb0d67c7905b32d8259dcb818f",
+     "size": 15543,
+     "type": "eds"
+    },
+    {
+     "name": "EDS/CMMT-ST-EP.eds",
+     "sha256": "d1313d284f3f104ebc6e956d0cce6db6d4a7090939e7a1c453cb437cd2902a7e",
+     "size": 15543,
+     "type": "eds"
+    }
+   ],
+   "name": "11965.03-EDS.zip",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "49a30233e0d5ee3c8f03c8ecea9f8e11bed747a3988da0f3674b79ce09c0c968",
+   "size": 4909,
+   "terms": "none stated",
+   "title": "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip",
+   "folders": [
+    "devices/festo/cpx-ap-a-ep",
+    "devices/festo/cpx-ap-i-ep-m12"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "CPX-AP-A-EP_NoConfig.eds",
+     "sha256": "673bf6e669694afa8bd3481fc313c224f7441f0fc7919d706b313e24c23590bc",
+     "size": 54219,
+     "type": "eds"
+    },
+    {
+     "name": "CPX-AP-I-EP_NoConfig.eds",
+     "sha256": "271a251efdbc18c7d0ce4dd9fe245f057bb96437e3dc6e0b13f32cb90221c575",
+     "size": 54219,
+     "type": "eds"
+    }
+   ],
+   "name": "12178.01-EDS.zip",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "d13ec8f7cd0a8ed41877014fe425642b608c5fdf0a992737bda19568dd8db7ad",
+   "size": 11313,
+   "terms": "none stated",
+   "title": "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip",
+   "folders": [
+    "devices/festo/vabx-a-cted-ep"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "VABX-A-P-EL-E12-CTED-EP.eds",
+     "sha256": "a828c4b1aac5ddb96ae793dca6f9ba7107d0bf87f7e4f77d30e6f7812f463530",
+     "size": 113714,
+     "type": "eds"
+    },
+    {
+     "name": "VABX_A_S_EL_E12-CTED_EP.eds",
+     "sha256": "a569fd87dbb62e68898f85cdf77a03e9280be1febeea63cc6d8361ae34e9f40f",
+     "size": 111360,
+     "type": "eds"
+    }
+   ],
+   "name": "12717.01_EDS.zip",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "6893130fd051baab752a19aef9f45ffc3cdaa119756076ab77de5846198035e0",
+   "size": 22580,
+   "terms": "none stated",
+   "title": "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds",
+   "folders": [
+    "devices/festo/cpx-fb32"
+   ],
+   "kind": "eds",
+   "name": "CPX-FB32.eds",
+   "retrieved": "2026-11-23T03:36:51Z",
+   "sha256": "38fe88d6f2c17f77e410f5a979e68ac8a79188abdfdbc126b44f215b7d60f5f3",
+   "size": 7762,
+   "terms": "none stated",
+   "title": "CPX-FB32 EDS (ODVA marketplace, product 981)",
+   "type": "eds"
+  },
+  "https://www.festo.com/assets/attachment/en/661102": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/661102",
+   "folders": [
+    "devices/festo/cteu-ep"
+   ],
+   "kind": "manual",
+   "name": "hd-festo-661102-CTEU-EP_2017-02a_8067819g1.pdf",
+   "retrieved": "2026-11-23T16:09:06Z",
+   "sha256": "de54e31c2882b1c88172c3385a58d5f8b8c7dfc9499c21109a838febaf91f9a4",
+   "size": 115607,
+   "title": "Operating instructions CTEU-EP, bus node EtherNet/IP (CTEU-EP_2017-02a_8067819g1)",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://www.festo.com/assets/attachment/en/665942": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/665942",
+   "folders": [
+    "devices/festo/cmmt-as"
+   ],
+   "kind": "manual",
+   "name": "CMMT-AS-_-S1_manual_2026-06p_8259155g1.pdf",
+   "retrieved": "2026-11-23T16:09:10Z",
+   "sha256": "7688e16ae76d2756276655489f2fb90c393755749328ceb88d3c9c9b10be8188",
+   "size": 19891993,
+   "title": "Manual CMMT-AS-...-S1, servo drive: software, device profile, function, fieldbus (CMMT-AS-_-S1_manual_2026-06p_8259155g1)",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://www.festo.com/assets/attachment/en/700368": {
+   "content_type": "",
+   "final_url": "https://www.festo.com/assets/attachment/en/700368",
+   "folders": [
+    "devices/festo/cteu-ep"
+   ],
+   "kind": "manual",
+   "name": "CTEU-EP_CTEU-VN_additional_2024-07_8218501g1.pdf",
+   "retrieved": "2026-11-23T16:09:08Z",
+   "sha256": "e50154d290627a0ba68aa666da0f0ffb3069de2be88326a6f49dc5cf56850fe0",
+   "size": 76767,
+   "title": "CTEU-EP / CTEU-VN additional information (CTEU-EP_CTEU-VN_additional_2024-07_8218501g1)",
+   "type": "pdf",
+   "via": "browser"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

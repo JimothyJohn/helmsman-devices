@@ -1,0 +1,32 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "CPX-E-EP"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the CPX-E modules behind it set the I/O (Input/Output Size 0-64, default 4)"   # from: EDS CPX-E-EP.eds: ProdName 'CPX-E-EP EtherNet/IP 2-Port Remote I/O', Params Input Size / Output Size min 0 max 64 default 4
+article = "CPX-E-EP"
+
+[identity.enip]
+vendor_id = 26
+product_code = 14040
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CPX-E-EP EtherNet/IP 2-Port Remote I/O"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "I/O Connection (SINT-Format)"
+# input_assembly: the size is set by Param1: 0..64 bytes, default 4
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param2: 0..64 bytes, default 4
+output_assembly = { instance = 100 }
+config_assembly = { instance = 1 }
+eds = { name = "CPX-E-EP.eds", size = 33766, sha256 = "d0eb5d75938223588d6fed74360a2b8b00eaf5321de65bc5ce410d0edd7871a9", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip (member of 11634.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "CPX-E-EP EDS (ODVA marketplace, product 1883)"
+sha256 = "6f8a0156a2f41f70dece568a53e325b826cc7cd545ba3f5428cd7a62a207bbc8"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

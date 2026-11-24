@@ -4,6 +4,7 @@
 vendor = "Beckhoff"
 model = "EK9000"
 kind = "remote-io"
+category = "io-coupler"
 channels = "none of its own: the EtherCAT terminals behind it set the I/O"
 
 [device.photo]

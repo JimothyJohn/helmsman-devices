@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SMC"
+model = "EX600-SEN7/SEN8"
+kind = "remote-io"
+category = "valve-terminal"
+channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual EX*-OMZ0024 (EX600-SEN7/8), System Outline pdf p.10 (up to 32 outputs, up to 9 units), Assembly p.12 (up to 10 units including the SI unit), Specifications p.26 (32 solenoid valve outputs)
+article = "EX600-SEN7/8"
+
+[identity.enip]
+vendor_id = 7
+product_code = 258
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "EX600-SEN7/8"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..1210 bytes, default 0
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param1: 0..1210 bytes, default 0
+output_assembly = { instance = 150 }
+config_assembly = { instance = 105, bytes = 0 }
+eds = { name = "ex600_sen7_8_v10.eds", size = 18775, sha256 = "3de03eb923764bae8e31612d2c5f7323fd709ca178c97f0f5ea9bb45ce706140", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip (member of 12174.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "EX600-SEN7/SEN8 EDS (ODVA marketplace, product 2421)"
+sha256 = "ee69b338e86b26270b8c30031d4b1f740e727e489eb67580d53e2dde2754507b"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2421/12174.01-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SMC EX600-SEN7/SEN8 manual EX*-OMZ0024"
+sha256 = "bc26e10c748731dde6bbddc2ee469a529cbf7cfcbf2f29110d381aa5b4d8b2dc"
+where = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMZ0024.pdf; retrieved 2026-11-23; not redistributed here"

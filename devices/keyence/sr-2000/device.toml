@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Keyence"
+model = "SR-2000 Series"
+kind = "sensor"
+category = "vision"
+channels = "1 reader: read, preset and tune requests out, read result data, status and counts in"   # from: EDS Assem100/Assem101 member names (Read Request, Preset Request, Tune Request; Result Data, Read Complete, Result Data Size)
+article = "SR-2000"
+
+[identity.enip]
+vendor_id = 367
+product_code = 1007
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "SR-2000 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Class1"
+# input_assembly: the size is set by Param1: 40..1400 bytes, default 172
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param2: 4..1400 bytes, default 76
+output_assembly = { instance = 101 }
+config_assembly = { instance = 1 }
+eds = { name = "Keyence_1007_0101.eds", size = 41438, sha256 = "bc27713bbb31d68315666c476ea4f9811ac8341ed4198bdfe490b1f05aaf5416", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1860/Keyence_1007_0101.eds", terms = "none stated" }
+
+[[sources]]
+title = "Keyence SR-2000 Series, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "f97c88a7d2d25d0618262ff3c7d1c33c0eefcb2ffd531ea39ebad2f1a3c71c8d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1860/11567_DOC_030917.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Keyence SR-2000 Series, EDS (ODVA Marketplace)"
+sha256 = "bc27713bbb31d68315666c476ea4f9811ac8341ed4198bdfe490b1f05aaf5416"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1860/Keyence_1007_0101.eds; retrieved 2026-11-23; not redistributed here"

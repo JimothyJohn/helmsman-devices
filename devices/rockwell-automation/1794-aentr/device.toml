@@ -1,0 +1,26 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1794-AENTR"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the FLEX I/O modules behind it set the I/O (the EDS has 8 slots)"   # from: EDS (1794-AENTR) ProdName 'FLEX Ethernet Adapter'; per-slot parameters Slot 0 to Slot 7 only
+article = "1794-AENTR"
+
+[identity.enip]
+vendor_id = 1
+product_code = 261
+device_type = 12
+revisions = ["2.12"]   # the EDS's MajRev.MinRev
+product_name = "1794-AENTR FLEX Ethernet Adapter"
+
+[protocols.enip]
+driver = "enip-io"
+eds = { name = "0001000C01050200.eds", size = 136799, sha256 = "45dafe6e13b170a11327785d9cafe6e3f7ae35eb29901d8d9be5110623ecb18c", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip (member of 10989.14.zip)", terms = "none stated" }
+
+[[sources]]
+title = "FLEX I/O 1794-AENTR EDS package 10989.14"
+sha256 = "4a95df7cee1fec8d6e40cc17a424c4f90e8206d9c6ceb2024bce137a7b185b85"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip; retrieved 2026-11-23; not redistributed here"

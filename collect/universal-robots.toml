@@ -1,0 +1,22 @@
+format = "helmsman-devices-collect 1"
+vendor = "Universal Robots"
+
+# E-Series: Modbus server register table and the EtherNet/IP EDS, read from
+# https://www.universal-robots.com/articles/ur/interface-communication/modbus-server/
+# when the folder was written; re-fetched 2026-11-23.
+
+[[doc]]
+folder = "devices/universal-robots/e-series"
+kind = "register-map"
+url = "https://s3-eu-west-1.amazonaws.com/ur-support-site/16377/ModBus%20Server%20Data.pdf"
+title = "ModBus Server Data (register table, 8 pages)"
+found = "link on https://www.universal-robots.com/articles/ur/interface-communication/modbus-server/"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/universal-robots/e-series"
+kind = "eds"
+url = "https://s3-eu-west-1.amazonaws.com/ur-support-site/18712/UniversalRobot.eds"
+title = "UniversalRobot.eds"
+found = "link named in the folder's [[sources]]"
+terms = "none stated"

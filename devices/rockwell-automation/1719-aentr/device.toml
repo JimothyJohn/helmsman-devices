@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1719-AENTR"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the 1719 Ex I/O modules behind it set the I/O"   # from: EDS ProdName '1719-AENTR Ex I/O EtherNet/IP Adapter'; [Modular] Rack entries '1719-A8 Chassis' etc.
+article = "1719-AENTR"
+
+[identity.enip]
+vendor_id = 1
+product_code = 315
+device_type = 12
+revisions = ["3.12"]   # the EDS's MajRev.MinRev
+product_name = "1719-AENTR Ex I/O EtherNet/IP Adapter"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Adapter Status"
+input_assembly = { instance = 101, bytes = 48 }
+output_assembly = { instance = 198, bytes = 0 }
+config_assembly = { instance = 102 }
+eds = { name = "1719_AENTR.eds", size = 7966, sha256 = "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip (member of 11554.05_EDS_Files.zip)", terms = "none stated" }
+
+[[sources]]
+title = "1719-AENTR EtherNet/IP adapter EDS package 11554.05"
+sha256 = "d0264b0694e663237f0b2725309934385d3a5b2be2f32298a6fedac07b74ee28"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip; retrieved 2026-11-23; not redistributed here"

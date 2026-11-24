@@ -1,0 +1,207 @@
+# Drafted by scripts/eds-draft.py from the EDS; the [[points]] were then read by hand from the
+# manual listed under [[sources]], page by page. No unit has been checked: checked_on, firmware
+# and checked_by stay out until one has, and every value below is what the vendor's files say,
+# not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "PowerFlex 70EC"
+kind = "drive"
+category = "drive"
+channels = "1 drive: I/O connection of 0-20 bytes out and 4-24 bytes in (EDS gives sizes, no members)"   # from: EDS Param 'Output Size' 0-20, 'Input Size' 4-24; Connection 'Discrete Exclusive Owner'
+article = "20A... (with Enhanced Control)"
+
+[identity.enip]
+vendor_id = 1
+product_code = 50
+device_type = 152
+revisions = ["5.1"]   # the EDS's MajRev.MinRev
+product_name = "PowerFlex 70 EC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Discrete Exclusive Owner"
+# input_assembly: the size is set by Param2: 4..24 bytes, default 8
+input_assembly = { instance = 1 }
+# output_assembly: the size is set by Param1: 0..20 bytes, default 4
+output_assembly = { instance = 2 }
+config_assembly = { instance = 6 }
+eds = { name = "0001009800320500.eds", size = 11068, sha256 = "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds", terms = "none stated" }
+
+# Points below are for the connection the EDS names (Connection1, assemblies 1 and 2): 16-bit Reference/Feedback and 16-bit
+# datalinks (Table 5.A). Byte.bit are the protocol's 0-based offsets, worked out from the manual's 0-based Word column.
+
+[[points]]
+name = "Stop"
+enip = "out:0.0"
+meaning = "Logic Command bit 0: 1 = Stop. A 0 must be present before a Start is accepted"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (1); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Start"
+enip = "out:0.1"
+meaning = "Logic Command bit 1: 1 = Start, momentary: returning to 0 does not stop the drive. Does not work when a digital input is set to 2-wire control"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnotes (1) (2); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Jog"
+enip = "out:0.2"
+meaning = "Logic Command bit 2: 1 = Jog (speed from drive parameter 100)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Clear Faults"
+enip = "out:0.3"
+meaning = "Logic Command bit 3: 1 = Clear Faults"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Direction"
+enip = "out:0.4..out:0.5"
+meaning = "Logic Command bits 4-5: 00 = no command, 01 = forward, 10 = reverse, 11 = hold direction control"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Local Control"
+enip = "out:0.6"
+meaning = "Logic Command bit 6: 1 = Local Control"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "MOP Increment"
+enip = "out:0.7"
+meaning = "Logic Command bit 7: 1 = increment the MOP reference"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Accel Rate"
+enip = "out:1.0..out:1.1"
+meaning = "Logic Command bits 8-9: 00 = no command, 01 = accel rate 1 (parameter 140), 10 = accel rate 2 (parameter 141), 11 = hold"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Decel Rate"
+enip = "out:1.2..out:1.3"
+meaning = "Logic Command bits 10-11: 00 = no command, 01 = decel rate 1 (parameter 142), 10 = decel rate 2 (parameter 143), 11 = hold"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Reference Select"
+enip = "out:1.4..out:1.6"
+meaning = "Logic Command bits 12-14: 000 = no command, 001 = Ref A (parameter 90), 010 = Ref B (parameter 93), 011..111 = Preset 3..7 (parameters 103..107). Exclusive ownership, see the drive manual"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); footnote (3); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "MOP Decrement"
+enip = "out:1.7"
+meaning = "Logic Command bit 15: 1 = decrement the MOP reference"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 271 (printed D-1), Logic Command Word table, Logic Bits header (0-based); Logic Command is Table 5.A Output word 0 = out bytes 0-1; bit n is byte n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Reference"
+enip = "out:2:i16"
+meaning = "Speed reference, signed 16-bit (-32768 to 32767), a scaled value and not Hz: 32767 = drive parameter 55 (Maximum Freq, default 130 Hz). Scaling = (parameter 82 Maximum Speed / parameter 55) x 32767, so 0..15123 = 0..60.0 Hz at the defaults. With parameter 298 (DPI Ref Select) = 1 (Max Speed) on a drive with enhanced control firmware 2.xxx or later, 32767 = parameter 82 instead"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output word 1; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7), PowerFlex 70/700/700H section; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Datalink In A1..D2"
+enip = "out:4:u16 .. out:18:u16"
+meaning = "eight 16-bit words that write the drive parameters assigned to Data In A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 300..307); word n is out byte 4 + 2n. A datalink set (A to D) is two words and is enabled by adapter parameter 23 (DPI I/O Cfg) bits 1-4. Whole numbers: a parameter with 0.1 resolution is multiplied by 10. Not saved to nonvolatile memory"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Output words 2-9; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 227 (printed B-3) parameter 23, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Ready"
+enip = "in:4.0"
+meaning = "Logic Status bit 0: 1 = Ready (parameter 214)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Active"
+enip = "in:4.1"
+meaning = "Logic Status bit 1: 1 = Active (running)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Command Direction"
+enip = "in:4.2"
+meaning = "Logic Status bit 2: 1 = forward, 0 = reverse"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Actual Direction"
+enip = "in:4.3"
+meaning = "Logic Status bit 3: 1 = forward, 0 = reverse"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Accelerating"
+enip = "in:4.4"
+meaning = "Logic Status bit 4: 1 = accelerating"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Decelerating"
+enip = "in:4.5"
+meaning = "Logic Status bit 5: 1 = decelerating"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Alarm"
+enip = "in:4.6"
+meaning = "Logic Status bit 6: 1 = alarm (parameters 211 and 212)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Fault"
+enip = "in:4.7"
+meaning = "Logic Status bit 7: 1 = fault (parameter 243)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "At Speed"
+enip = "in:5.0"
+meaning = "Logic Status bit 8: 1 = at reference"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Local Control"
+enip = "in:5.1..in:5.3"
+meaning = "Logic Status bits 9-11: which port has local control, 000 = port 0 (terminal block) to 110 = port 6, 111 = no local"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Reference Source"
+enip = "in:5.4..in:5.7"
+meaning = "Logic Status bits 12-15: 0000 = Ref A auto (parameter 90), 0001 = Ref B auto, 0010..0111 = Preset 2..7 auto, 1000 = terminal block manual, 1001..1110 = DPI port 1..6 manual, 1111 = jog ref"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 272 (printed D-2), Logic Status Word table, Logic Bits header (0-based); Logic Status is Table 5.A Input word 2 = in bytes 4-5 (words 0-1 are pad words); bit n is byte 4 + n/8, bit n%8 (inferred); INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Feedback"
+enip = "in:6:i16"
+meaning = "Speed feedback, signed 16-bit, same scaling as the Reference (0..15123 = 0..60.0 Hz at the defaults)"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input word 3; scaling 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 97 (printed 5-7): speed Feedback uses the same scaling as the speed Reference; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+[[points]]
+name = "Datalink Out A1..D2"
+enip = "in:8:u16 .. in:22:u16"
+meaning = "eight 16-bit words that read the drive parameters assigned to Data Out A1, A2, B1, B2, C1, C2, D1, D2 (drive parameters 310..317); word n is in byte 8 + 2n. Whole numbers: a parameter with 0.1 resolution is multiplied by 10"
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 93 (printed 5-3), Table 5.A, Word column (0-based): word n is bytes 2n and 2n+1, low byte first (byte offset inferred), Input words 4-11; 20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 99 (printed 5-9) Using Datalinks, PDF p. 113 (printed 5-23) Table 5.G for the parameter numbers; INFERRED for this entry: manual covers the 20-COMM-E (device type 123), this EDS is type 152 (DLR); same sizes; see questions"
+
+
+[[questions]]
+ask = "Is the 70EC entry's adapter (EDS device type 152, DPI to DLR EtherNet/IP) the same I/O image as the 20-COMM-E's? The manual used for the points covers the 20-COMM-E only and says nothing of DLR or of a 20-COMM-ER; its Identity Object reports device type 123, which the PowerFlex 70 entry carries, and its web-page example calls 123 'PowerFlex 70 EC'."
+source = "20-COMM-E EtherNet/IP Adapter User Manual 20COMM-UM010H-EN-P, PDF p. 215 (printed 8-9, Device Type row) and PDF p. 234 (printed C-2), Identity Object; EDS 0001009800320500.eds ProdType"
+
+[[sources]]
+title = "PowerFlex 70EC: ODVA Declaration of Conformity"
+sha256 = "30fbc80109947ec26fbb98998eac2cc41e03774103c7489fb507edd925a3dbb1"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1659/11084_DOC_071713.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 70EC: EDS (ODVA marketplace)"
+sha256 = "a3f828cbce6c5bc9e30bd2964d9c30888819d1877afa68c0887a79d3720145dd"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1659/0001009800320500.eds; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "PowerFlex 20-COMM-E EtherNet/IP Adapter User Manual, 20COMM-UM010 (publication 20COMM-UM010H-EN-P)"
+sha256 = "e707376542b3a411391039d3e5488ee8a6e963100b2935e9b391eac1d760e9ba"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/20comm-um010_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"

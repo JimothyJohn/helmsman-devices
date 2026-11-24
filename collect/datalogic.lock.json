@@ -1,0 +1,43 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/461/10049_DOC_103123.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/461/10049_DOC_103123.pdf",
+   "folders": [
+    "devices/datalogic/matrix-n"
+   ],
+   "kind": "datasheet",
+   "name": "10049_DOC_103123.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "4e1e5721d495b6e66fabcf38a7f7b8641e131814ca2b5781340a41b449eaac0d",
+   "size": 130143,
+   "terms": "none stated",
+   "title": "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/461/10049.03_EDSFile.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/461/10049.03_EDSFile.zip",
+   "folders": [
+    "devices/datalogic/matrix-n"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "EDS-V3.23.1-DATALOGIC-Scanner-20230108.eds",
+     "sha256": "334b9482c86b4195a1e683a52294d927a891a99f8dcec048efc3d4dd707d1d0f",
+     "size": 48515,
+     "type": "eds"
+    }
+   ],
+   "name": "10049.03_EDSFile.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "fa431657fd6394bf17b7031531eb664dd91064b79b533cf09bfde733436317da",
+   "size": 23175,
+   "terms": "none stated",
+   "title": "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), EDS (ODVA Marketplace)",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

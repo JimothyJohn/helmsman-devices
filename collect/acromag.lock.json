@@ -1,0 +1,35 @@
+{
+ "docs": {
+  "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1111_949P-User-Manual.pdf",
+   "folders": [
+    "devices/acromag/xt1111-000"
+   ],
+   "kind": "manual",
+   "name": "Acromag-XT1111_949P-User-Manual.pdf",
+   "retrieved": "2026-11-23T03:40:03Z",
+   "sha256": "096903b0ddf79b0ad8f706233b19e2a428a2feabeab9d5be6f7be67088377faf",
+   "size": 2368065,
+   "terms": "none stated",
+   "title": "8500949 XT1111-000 User's Manual",
+   "type": "pdf"
+  },
+  "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1121_950P-User-Manual.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.acromag.com/wp-content/uploads/2019/06/Acromag-XT1121_950P-User-Manual.pdf",
+   "folders": [
+    "devices/acromag/xt1121-000"
+   ],
+   "kind": "manual",
+   "name": "Acromag-XT1121_950P-User-Manual.pdf",
+   "retrieved": "2026-11-23T03:40:03Z",
+   "sha256": "6df1f36f3bca3ca137133676b05e44b534e0fc50b1460eff8f0c3cd927bf701b",
+   "size": 2409056,
+   "terms": "none stated",
+   "title": "8500950 XT1121-000 User's Manual",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

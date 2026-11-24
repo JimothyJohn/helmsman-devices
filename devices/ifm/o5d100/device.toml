@@ -6,6 +6,8 @@ vendor = "ifm"
 model = "O5D100/O5D102/O5D150/O5D152/O5D159"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
+category = "sensor"
+channels = "1 switch state (OUT1), distance value"   # from: the entry's IODD signals ('Switch state [OUT1]', 'Distance'), IODD ifm-000174-20210526-IODD1.1.xml
 family = "O5D"
 vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
 

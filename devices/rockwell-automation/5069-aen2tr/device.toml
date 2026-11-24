@@ -1,0 +1,26 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "5069-AEN2TR"
+kind = "remote-io"
+category = "io-coupler"
+channels = "none of its own: the Compact 5000 (5069) modules behind it set the I/O"   # from: EDS [Modular] Rack1..Rack32 '5069 N slot Chassis, must be in slot 0'; package title Compact 5000 5069-AEN2TR
+article = "5069-AEN2TR"
+
+[identity.enip]
+vendor_id = 1
+product_code = 252
+device_type = 12
+revisions = ["3.1"]   # the EDS's MajRev.MinRev
+product_name = "5069-AEN2TR"
+
+[protocols.enip]
+driver = "enip-io"
+eds = { name = "0001000C00FC0300_as_uploaded_from_3.011.44.eds", size = 14648, sha256 = "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds", terms = "none stated" }
+
+[[sources]]
+title = "Compact 5000 5069-AEN2TR EDS (uploaded from firmware 3.011.44)"
+sha256 = "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,63 @@
+format = "helmsman-devices-collect 1"
+vendor = "Pepperl+Fuchs"
+
+# EDS and declaration of conformity from the ODVA Marketplace pages (read 2026-11-22).
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice2-8iol-g65l-v1d", "devices/pepperl-fuchs/ice2-8iol-k45s-rj45"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2379/11916.02-EDS.zip"
+title = "Pepperl+Fuchs ICE2-8IOL-G65L-V1D, ICE2-8IOL-K45S-RJ45, ICE2-8IOL-K45P-RJ45, ICE2-8IOL1-G65L-V1D, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE2-8IOL-G65L-V1D; product page https://marketplace.odva.org/products/2379-ice2-8iol-g65l-v1d-ice2-8iol-k45s-rj45-ice2-8iol-k45p-rj45-ice2-8iol1-g65l-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice2-8iol-g65l-v1d", "devices/pepperl-fuchs/ice2-8iol-k45s-rj45"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2379/11916_DOC_022221.pdf"
+title = "Pepperl+Fuchs ICE2-8IOL-G65L-V1D, ICE2-8IOL-K45S-RJ45, ICE2-8IOL-K45P-RJ45, ICE2-8IOL1-G65L-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE2-8IOL-G65L-V1D; product page https://marketplace.odva.org/products/2379-ice2-8iol-g65l-v1d-ice2-8iol-k45s-rj45-ice2-8iol-k45p-rj45-ice2-8iol1-g65l-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice1-8di8do-g60l-v1d"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1886/11612.01_EDS.zip"
+title = "Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D, ICE1-16xxx-G60x-xx-V1D, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D; product page https://marketplace.odva.org/products/1886-ice1-8xxxxx-g60x-xx-v1d-ice1-16xxx-g60x-xx-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice1-8di8do-g60l-v1d"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1886/11612_DOC_050417.pdf"
+title = "Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D, ICE1-16xxx-G60x-xx-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D; product page https://marketplace.odva.org/products/1886-ice1-8xxxxx-g60x-xx-v1d-ice1-16xxx-g60x-xx-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice21-8iol2-g70l-v1d"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2992/12602.02.zip"
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE21-8IOL2-G70L-V1D; product page https://marketplace.odva.org/products/2992-ice21-8iol2-g70l-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice21-8iol2-g70l-v1d"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2992/12602_DOC_070426.pdf"
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace Pepperl+Fuchs ICE21-8IOL2-G70L-V1D; product page https://marketplace.odva.org/products/2992-ice21-8iol2-g70l-v1d"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/pepperl-fuchs/ice21-8iol2-g70l-v1d"]
+kind = "datasheet"
+url = "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf"
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet"
+found = "2026-11-23 in Chrome: pepperl-fuchs.com site search 70148669, product page https://www.pepperl-fuchs.com/en/products-gp25581/134475, the Download datasheet (PDF) button's file"
+
+
+# Candidate ICE1-8IOL-G60L-V1D (IO-Link master): its EDS is not in the ODVA entry above, whose members are the
+# ICE1-8DI8DO-G60L(-C1)-V1D blocks (digital I/O, not IO-Link). Not found elsewhere, 2026-11-22.

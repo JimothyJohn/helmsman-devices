@@ -7,6 +7,8 @@
 vendor = "Novanta IMS"
 model = "Liberty / Lexium MDrive Ethernet (LMD), EtherNet/IP"
 kind = "drive"
+category = "drive"
+channels = "1 drive: moves, accel, currents out; flags, inputs, position in; 4 DI, 2 DO, 1 AI, 1 high-speed out"   # from: LMD EtherNet/IP Protocol Implementation (LMD-EIP-REV-F) p.20 assemblies 100/112; LMDxE57C/85C manual 03.2015 I/O points list (pdf p.80)
 checked_on = "2026-11-16"
 firmware = "LMDCM 6.013, Hw: 2.10 (identity revision 2.36)"
 checked_by = "helmsman bench"

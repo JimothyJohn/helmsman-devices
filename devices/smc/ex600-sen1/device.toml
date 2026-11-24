@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "SMC"
+model = "EX600-SEN1/SEN2"
+kind = "remote-io"
+category = "valve-terminal"
+channels = "up to 32 solenoid outputs, plus up to 9 EX600 input/output units (10 with the SI unit)"   # from: SMC manual EX*-OMN0032-D 'EtherNet/IP compatible SI unit EX600-SEN#', System Outline pdf p.10 (up to 32 outputs, I/O units maximum 10 units) and Assembly p.13 (up to 10 units including the SI unit)
+article = "EX600-SEN#"
+
+[identity.enip]
+vendor_id = 7
+product_code = 126
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "EX600-SEN#"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..64 bytes, default 4
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param1: 0..64 bytes, default 4
+output_assembly = { instance = 150 }
+config_assembly = { instance = 5 }
+eds = { name = "EX600_SEN_.eds", size = 10860, sha256 = "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds", terms = "none stated" }
+
+[[sources]]
+title = "EX600-SEN1/SEN2 EDS (ODVA marketplace, product 1049)"
+sha256 = "4d80cffe24e536c6e3f79701a8b163a2b4eb0f2778f33683cb7861993cd79f3e"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1049/EX600_SEN_.eds; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "SMC EtherNet/IP compatible SI unit EX600-SEN#, manual EX*-OMN0032-D"
+sha256 = "0b46ecb7ddc6de35b6818aeb8041827e4e2d59c1840e9ec74587e74eed37d9f3"
+where = "https://www.smcworld.com/assets/manual/en-jp/files/EXxx-OMN0032.pdf; retrieved 2026-11-23; not redistributed here"

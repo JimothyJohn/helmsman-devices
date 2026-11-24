@@ -1,0 +1,34 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Mitsubishi Electric"
+model = "FR-D800-E"
+kind = "drive"
+category = "drive"
+channels = "1 drive: run fwd/rev, fault reset, speed (torque) reference out; faulted, running, drive state, speed ref in"   # from: EDS 00A1000200700102.eds: Assem20-23, 70-73 bit tables
+article = "FR-D800-E"
+
+[identity.enip]
+vendor_id = 161
+product_code = 112
+device_type = 2
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "FR-D800-E"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Speed Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+eds = { name = "00A1000200700102.eds", size = 278023, sha256 = "4fe0e69aaf2c0236773ef9da6d2d2b9ea03fcfc12f9a1795465a85b9f2b71338", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip (member of 12552.01.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Mitsubishi Electric FR-D800-E: declaration of conformity (ODVA), ODVA marketplace product 2787"
+sha256 = "0a5fd017960cf765dfd199e4c26f96444e4396d659ab072e4f8d1f5af7549a8a"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2787/12552_DOC_110624.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Mitsubishi Electric FR-D800-E: EDS, ODVA marketplace product 2787"
+sha256 = "c90227479e640e11e53df19a099b6f9e5ed8e0ce4566314b814de4f80b55bcb6"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2787/12552.01.zip; retrieved 2026-11-23; not redistributed here"

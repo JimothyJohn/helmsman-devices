@@ -1,0 +1,19 @@
+format = "helmsman-devices-collect 1"
+vendor = "abb"
+
+[[doc]]
+folder = "devices/abb/feip-21"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2829/12553_DOC_092426.pdf"
+title = "ABB FEIP-21 EtherNet/IP adapter module: declaration of conformity (ODVA), ODVA marketplace product 2829"
+found = "2026-11-22 https://marketplace.odva.org/products/2829-feip-21 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/abb/feip-21"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2829/12553.02.zip"
+title = "ABB FEIP-21 EtherNet/IP adapter module: EDS, ODVA marketplace product 2829"
+found = "2026-11-22 https://marketplace.odva.org/products/2829-feip-21 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

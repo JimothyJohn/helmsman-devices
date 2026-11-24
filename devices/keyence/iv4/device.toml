@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Keyence"
+model = "IV4 Series"
+kind = "sensor"
+category = "vision"
+channels = "1 vision sensor: external input out, monitor data in"   # from: EDS Assem100-103 'Input Assembly' 1400 B (Monitor Data Size Default/4XDetailed/8XDetailed/Simple), Assem110 'Output Assembly' 104 B, 'External Input Size'
+article = "IV4 Series"
+
+[identity.enip]
+vendor_id = 367
+product_code = 4607
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "IV4 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Default Monitor Data And External Input"
+# input_assembly: the size is set by Param10100: 2..1400 bytes, default 394
+input_assembly = { instance = 100 }
+# output_assembly: the size is set by Param10110: 2..104 bytes, default 12
+output_assembly = { instance = 110 }
+config_assembly = { instance = 1 }
+eds = { name = "Keyence_4607_0101.eds", size = 25509, sha256 = "49b07f53bc105f3c31527f826246ef3c8637e39775a8922bbab67e515c112ba1", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2703/Keyence_4607_0101.eds", terms = "none stated" }
+
+[[sources]]
+title = "Keyence IV4 Series, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "f677a76cf2658bcef28dc884ffd9086a1a91ac2144a0092f000bdbef76ea211d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2703/12434_DOC_012624.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Keyence IV4 Series, EDS (ODVA Marketplace)"
+sha256 = "49b07f53bc105f3c31527f826246ef3c8637e39775a8922bbab67e515c112ba1"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2703/Keyence_4607_0101.eds; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,32 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Emerson"
+model = "Numatics 580 Ethernet/IP"
+kind = "remote-io"
+category = "valve-terminal"
+channels = "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count"   # from: EDS NUMATICS-580.eds, Params Output Size / Input Size (min 0, max 504, default 16), assemblies 101/110/150 of 1216 bits
+article = "Numatics 580 P580AEEP1010A00"
+
+[identity.enip]
+vendor_id = 52
+product_code = 580
+device_type = 12
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "Numatics 580 Ethernet/IP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..504 bytes, default 16
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param1: 0..504 bytes, default 16
+output_assembly = { instance = 150 }
+config_assembly = { instance = 1 }
+eds = { name = "NUMATICS-580.eds", size = 11153, sha256 = "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds", terms = "none stated" }
+
+[[sources]]
+title = "Numatics 580 EtherNet/IP EDS (ODVA marketplace, product 1165)"
+sha256 = "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds; retrieved 2026-11-23; not redistributed here"

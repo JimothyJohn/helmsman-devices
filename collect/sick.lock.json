@@ -22,6 +22,104 @@
    "terms": "none stated with the file",
    "title": "IODD package SICK-WTB4F_DID8389194-20211014-IODD1.1 (WTB4FP photoelectric proximity sensors)",
    "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1455/11372_DOC_031615.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1455/11372_DOC_031615.pdf",
+   "folders": [
+    "devices/sick/iolg2ei"
+   ],
+   "kind": "datasheet",
+   "name": "11372_DOC_031615.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "5bb0a95703f69cd14d9eee99f7ab1a4309d0c21a40631b795edd2d04ee2ed998",
+   "size": 174356,
+   "terms": "none stated",
+   "title": "SICK IO-Link Master (IOLG2EI), ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2509/12265_DOC_062422.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2509/12265_DOC_062422.pdf",
+   "folders": [
+    "devices/sick/sig350-0005ap100"
+   ],
+   "kind": "datasheet",
+   "name": "12265_DOC_062422.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "aa567cb43f3dd426f8762de3151dd44604e6ccb76caf561c9185d23d71919366",
+   "size": 129575,
+   "terms": "none stated",
+   "title": "SICK SIG350-0005AP100, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2796/12525_DOC_091124.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2796/12525_DOC_091124.pdf",
+   "folders": [
+    "devices/sick/sig300"
+   ],
+   "kind": "datasheet",
+   "name": "12525_DOC_091124.pdf",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "fd899e883f5523482bf0f10ff36cb6887c6957b1ab312570fae60ca2f8249eea",
+   "size": 129979,
+   "terms": "none stated",
+   "title": "SICK SIG300, ODVA declaration of conformity (ODVA Marketplace)",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1455/IOLG2EI-03208R01.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1455/IOLG2EI-03208R01.eds",
+   "folders": [
+    "devices/sick/iolg2ei"
+   ],
+   "kind": "eds",
+   "name": "IOLG2EI-03208R01.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "a14956e637a09957dd07e5d9fcb31ceca24daa3edcd94aa16ac90d5542da38e6",
+   "size": 198944,
+   "terms": "none stated",
+   "title": "SICK IO-Link Master (IOLG2EI), EDS (ODVA Marketplace)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2509/12265.01-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2509/12265.01-EDS.zip",
+   "folders": [
+    "devices/sick/sig350-0005ap100"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "SICK_SIG350-0005AP100_V1.0.0.eds",
+     "sha256": "c58192ebcd1f66ef618d0a6f579929b12b26f799cd883073b03009ece8f8c9db",
+     "size": 156030,
+     "type": "eds"
+    }
+   ],
+   "name": "12265.01-EDS.zip",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "7eda2e3e90f451cfd6a7fbf71024f4d41f2f8732039cfff5be97cac3bf73c9a0",
+   "size": 14114,
+   "terms": "none stated",
+   "title": "SICK SIG350-0005AP100, EDS (ODVA Marketplace)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2796/SICK_SIG300_V1.3.1.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2796/SICK_SIG300_V1.3.1.eds",
+   "folders": [
+    "devices/sick/sig300"
+   ],
+   "kind": "eds",
+   "name": "SICK_SIG300_V1.3.1.eds",
+   "retrieved": "2026-11-23T03:39:43Z",
+   "sha256": "9631245f5d0981b532d629c1532955b1c52b7ef83271c3add4ef919dc79c7cb2",
+   "size": 138245,
+   "terms": "none stated",
+   "title": "SICK SIG300, EDS (ODVA Marketplace)",
+   "type": "eds"
   }
  },
  "format": "helmsman-devices-collect-lock 1"

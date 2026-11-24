@@ -5,6 +5,8 @@
 vendor = "Omron"
 model = "ERT1-OD32SLH-1"
 kind = "remote-io"
+category = "panel-io"
+channels = "32 DO (PNP, 0.5 A per point)"   # from: ERT1-_32SLH-1 datasheet, ordering information p. 2
 
 [identity.enip]
 vendor_id = 47

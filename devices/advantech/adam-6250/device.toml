@@ -1,0 +1,53 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6250"
+kind = "remote-io"
+category = "panel-io"
+channels = "8 DI, 7 DO (sink)"
+
+[device.photo]
+url = "https://advdownload.advantech.com/productfile/PIS/ADAM-6250/Product%20-%20Photo(Main)/ADAM-6250_03_S20190730122849.jpg"
+page = "https://www.advantech.com/en/products/7447e150-338d-402d-b5a1-c9ce6d98816e/adam-6250/mod_da940b26-501f-413e-bfbc-732fd7496782"
+seen = 2026-11-22
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "DI"
+modbus = "coil:0..coil:7 (0X 00001-00008, read)"
+meaning = "digital input state, 1 = on"
+source = "ADAM-6200 User Manual Ed. 5 p. 137"
+
+[[points]]
+name = "DO"
+modbus = "coil:16..coil:22 (0X 00017-00023, R/W)"
+meaning = "digital output command and state, 1 = on"
+source = "ADAM-6200 User Manual Ed. 5 p. 137"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:32..coil:63 (0X 00033-00064: start/stop, clear counter, clear overflow, DI latch, eight each)"
+meaning = "per DI channel counter and latch control"
+source = "ADAM-6200 User Manual Ed. 5 p. 137-138"
+
+[[points]]
+name = "DI counter / frequency value"
+modbus = "hr:0..hr:15 (4X 40001-40016, two words a channel)"
+meaning = "counter value or frequency"
+source = "ADAM-6200 User Manual Ed. 5 p. 138"
+
+[[points]]
+name = "DI / DO as words"
+modbus = "hr:300 all DI, hr:302 all DO (4X 40301, 40303)"
+meaning = "every channel in one register"
+source = "ADAM-6200 User Manual Ed. 5 p. 139"
+
+[[sources]]
+title = "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)"
+sha256 = "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"

@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Schneider Electric"
+model = "TeSys T LTMR E (Ethernet)"
+kind = "other"
+category = "motor-starter"
+channels = "1 motor starter: run fwd/rev and trip reset out; running, ready, alarm, tripped and monitoring registers in"   # from: TeSys T LTMR Ethernet Communication Guide DOCA0129EN-03 p.64-67 (assemblies 2-5, 50-54, 100, 110); EDS SE_TESYST_MMC_L_EIP.eds
+article = "LTMR"
+
+[identity.enip]
+vendor_id = 243
+product_code = 304
+device_type = 22
+revisions = ["1.5"]   # the EDS's MajRev.MinRev
+product_name = "TeSysT MMC Local"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Overload"
+input_assembly = { instance = 50, bytes = 1 }
+output_assembly = { instance = 2, bytes = 1 }
+config_assembly = { instance = 6 }
+eds = { name = "SE_TESYST_MMC_L_EIP.eds", size = 543674, sha256 = "30d8d6c84eb047ca0cd06559c80cb7dce6b9772da3c48df36e6d90a6b5ac9b0c", url = "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip (member of files)", terms = "none stated" }
+
+[[sources]]
+title = "EDS File for TeSys T EIP (1.5.000)"
+sha256 = "a9b5d5395bc39b6cb3dd503d998c7920a804f4e15a75dcdb7366d01428e550fe"
+where = "https://download.se.com/files?p_Doc_Ref=EIP_EDS_1.5.00&p_enDocType=Software+-+Data+Library&p_File_Name=EDS+EtherNetIP_TeSysT_1.5.000.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "TeSys T LTMR Motor Management Controller Ethernet Communication Guide (DOCA0129EN 03)"
+sha256 = "7f8fcf0166e2778abe196a27063cf97d0e06fb2ed7cda43f09ba4cd056e01cd7"
+where = "https://download.se.com/files?p_Doc_Ref=DOCA0129EN&p_enDocType=User+guide&p_File_Name=DOCA0129EN_03.pdf; retrieved 2026-11-23; not redistributed here"

@@ -1,0 +1,101 @@
+format = "helmsman-devices-collect 1"
+vendor = "Festo"
+
+# Festo's own support portal and product pages answer curl and WebFetch with
+# Access Denied (Akamai, 2026-11-22), so the EDS files come from the ODVA
+# marketplace pages Festo submitted for conformance (listed on
+# https://marketplace.odva.org/organizations/139-festo-se-co-kg).
+# behind login: https://www.festo.com/fox/net/supportportal/Details/648042/Document.aspx (CPX-E-EP EDS 1.2, 403 to a script)
+
+[[doc]]
+folders = ["devices/festo/cpx-ap-i-ep-m12", "devices/festo/cpx-ap-a-ep"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2436/12178.01-EDS.zip"
+title = "CPX-AP-I/A EtherNet/IP EDS (ODVA marketplace, product 2436)"
+found = "2026-11-22 search: festo cpx-ap-i-ep-m12 eds; https://marketplace.odva.org/products/2436-cpx-ap-i-a-distributed-modular-i-o-system-for-valves-and-controls, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/festo/cpx-ap-i-ep-m12", "devices/festo/cpx-ap-a-ep"]
+kind = "manual"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2436/12178_DOC_100121.pdf"
+title = "CPX-AP-I/A ODVA declaration of conformity (marketplace, product 2436)"
+found = "2026-11-22 same marketplace page, Declaration of Conformity link"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/cpx-e-ep"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1883/11634.01-EDS.zip"
+title = "CPX-E-EP EDS (ODVA marketplace, product 1883)"
+found = "2026-11-22 search: festo cpx-e-ep eds; https://marketplace.odva.org/products/1883-cpx-e-ep-remote-i-o, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/cpx-fb36"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1773/CPX-FB36.eds"
+title = "CPX-FB36 EDS (ODVA marketplace, product 1773)"
+found = "2026-11-22 https://marketplace.odva.org/products/1773-cpx-fb36-with-mpa-and-vtsa-valve-families, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/cteu-ep"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1771/CTEU-EP.eds"
+title = "CTEU-EP EDS (ODVA marketplace, product 1771)"
+found = "2026-11-22 search: festo cteu-ep eds; https://marketplace.odva.org/products/1771-cteu-ep-pneumatic-installation-system-for-valves-and-controls, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/cmmt-as"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip"
+title = "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)"
+found = "2026-11-22 https://marketplace.odva.org/products/2342-cmmt-as-st-motor-drives, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/cpx-fb32"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/981/CPX-FB32.eds"
+title = "CPX-FB32 EDS (ODVA marketplace, product 981)"
+found = "2026-11-22 https://marketplace.odva.org/products/981-cpx-fb32-remote-i-o, Download the EDS File"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/festo/vabx-a-cted-ep"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2973/12717.01_EDS.zip"
+title = "VABX-A-S-EL-E12-CTED-EP / VABX-A-P-EL-E12-CTED-EP EDS (ODVA marketplace, product 2973)"
+found = "2026-11-22 https://marketplace.odva.org/products/2973-vabx-a-s-el-e12-cted-ep-vabx-a-p-el-e12-cted-ep, Download the EDS File"
+terms = "none stated"
+
+# festo.com documents: www.festo.com and its asset host answer a plain fetch with 403
+# (Akamai). Found with Festo's own support-portal search in a person's Chrome on 2026-11-23;
+# each url below redirects to a time-limited signed link on media.festo.com. Downloaded in
+# that browser and imported with docs-fetch.py --import.
+
+[[doc]]
+folder = "devices/festo/cteu-ep"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/661102"
+title = "Operating instructions CTEU-EP, bus node EtherNet/IP (CTEU-EP_2017-02a_8067819g1)"
+found = "2026-11-23 festo.com support portal search 'CTEU-EP', User documentation"
+browser = true
+
+[[doc]]
+folder = "devices/festo/cteu-ep"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/700368"
+title = "CTEU-EP / CTEU-VN additional information (CTEU-EP_CTEU-VN_additional_2024-07_8218501g1)"
+found = "2026-11-23 festo.com support portal search 'CTEU-EP', User documentation"
+browser = true
+
+[[doc]]
+folder = "devices/festo/cmmt-as"
+kind = "manual"
+url = "https://www.festo.com/assets/attachment/en/665942"
+title = "Manual CMMT-AS-...-S1, servo drive: software, device profile, function, fieldbus (CMMT-AS-_-S1_manual_2026-06p_8259155g1)"
+found = "2026-11-23 festo.com support portal search 'CMMT-AS EtherNet/IP', User documentation"
+browser = true

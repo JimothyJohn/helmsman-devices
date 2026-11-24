@@ -42,3 +42,55 @@ url = "https://ioddfinder.io-link.com/api/vendors/310/iodds/25170/files/zip/rate
 title = "IODD package ifm-000173-20260420-IODD1.1 (KQ6001 to KQ6006)"
 found = "2026-11-14 IODDfinder search API: https://ioddfinder.io-link.com/api/drivers?status=APPROVED&productName=KQ6005 (vendorId 310, ioddId 25170)"
 terms = "none stated with the file"
+
+# EtherNet/IP IO-Link masters. EDS and declaration of conformity from the ODVA Marketplace pages (read 2026-11-22).
+# ifm.com's download pages are built by script (no EDS link visible, 2026-11-22); the ODVA Marketplace zips hold the AL1122, AL1222 and AL1322 EDS (listed there as IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K, which the ODVA page does not map to AL numbers).
+
+[[doc]]
+folders = ["devices/ifm/al1122", "devices/ifm/al1222", "devices/ifm/al1322"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1857/11600.04-EDS.zip"
+title = "ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K; product page https://marketplace.odva.org/products/1857-io-link-master-xl-eip-xp-ip67-io-link-master-cl-eip-8p-ip20-io-link-master-xl-eip-xp-ip69k"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/ifm/al1122", "devices/ifm/al1222", "devices/ifm/al1322"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1857/11600_DOC_061920.pdf"
+title = "ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-Link Master XL EIP XP IP67 / CL EIP 8P IP20 / XL EIP XP IP69K; product page https://marketplace.odva.org/products/1857-io-link-master-xl-eip-xp-ip67-io-link-master-cl-eip-8p-ip20-io-link-master-xl-eip-xp-ip69k"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/ifm/al1326"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2234/11979.02_EDS.zip"
+title = "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20; product page https://marketplace.odva.org/products/2234-io-link-master-pfl-eip-xp-ip67-io-link-master-pfl-eip-xp-ip69k-io-link-master-dl-eip-xp-ip69k-io-link-master-cl-eip-8p-ip20"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/ifm/al1326"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2234/11979_DOC_060623.pdf"
+title = "ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-Link Master PFL EIP XP IP67 / PFL EIP XP IP69K / DL EIP XP IP69K / CL EIP 8P IP20; product page https://marketplace.odva.org/products/2234-io-link-master-pfl-eip-xp-ip67-io-link-master-pfl-eip-xp-ip69k-io-link-master-dl-eip-xp-ip69k-io-link-master-cl-eip-8p-ip20"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/ifm/al1590"]
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2861/12637.01_EDS.zip"
+title = "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, EDS (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K; product page https://marketplace.odva.org/products/2861-io-link-master-sol-mp-8p-ip67-io-link-master-sol-mp-8p-ip69k"
+terms = "none stated"
+
+[[doc]]
+folders = ["devices/ifm/al1590"]
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2861/12637_DOC_072425.pdf"
+title = "ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K, ODVA declaration of conformity (ODVA Marketplace)"
+found = "2026-11-22 search: odva marketplace ifm IO-LINK MASTER SOL MP 8P IP67 / IP69K; product page https://marketplace.odva.org/products/2861-io-link-master-sol-mp-8p-ip67-io-link-master-sol-mp-8p-ip69k"
+terms = "none stated"
+

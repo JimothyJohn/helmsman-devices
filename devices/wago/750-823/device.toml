@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "WAGO"
+model = "750-823"
+kind = "controller"
+category = "controller"
+channels = "none of its own: the WAGO I/O System modules behind it set the I/O"   # from: WAGO product page https://www.wago.com/global/i-o-systems/controller-ethernet-ip/p/750-823, 2026-11-22
+article = "750-823"
+
+[identity.enip]
+vendor_id = 40
+product_code = 823
+device_type = 12
+revisions = ["1.4"]   # the EDS's MajRev.MinRev
+product_name = "WAGO 750-823 EtherNet/IP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "class1 - exclusive owner"
+# instances are the defaults of Param300, Param301: the EDS lets a scanner choose others
+# input_assembly: the size is set by Param201: 0..500 bytes, default 6
+input_assembly = { instance = 104 }
+# output_assembly: the size is set by Param200: 0..500 bytes, default 5
+output_assembly = { instance = 101 }
+config_assembly = { instance = 1 }
+eds = { name = "07500823.eds", size = 23432, sha256 = "82f4dfb6221521033b3407dd80e1dc91b3814ab012ad4aedfaf89119b9087907", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip (member of 11921.02-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "WAGO EDS for EtherNet/IP: 750-363, 750-823, 750-893 (ODVA marketplace, product 2172)"
+sha256 = "24eabd21e072869497e8323e7cb795dcb8a77de3294f2ea381335e66749bdf36"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2172/11921.02-EDS.zip; retrieved 2026-11-23; not redistributed here"

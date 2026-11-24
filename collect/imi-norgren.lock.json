@@ -1,0 +1,20 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2241/NORGREN-VR1X-EP-24-V1.2.eds",
+   "folders": [
+    "devices/imi-norgren/vr1x-ep"
+   ],
+   "kind": "eds",
+   "name": "NORGREN-VR1X-EP-24-V1.2.eds",
+   "retrieved": "2026-11-23T03:38:37Z",
+   "sha256": "87df5947b8369b608639834c4b435f7d51be68ecf7078e3ba732338f1fd53e41",
+   "size": 60935,
+   "terms": "none stated",
+   "title": "VR1X-EP EtherNet/IP EDS (ODVA marketplace, product 2241)",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

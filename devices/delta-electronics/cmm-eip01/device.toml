@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Delta Electronics"
+model = "CMM-EIP01"
+kind = "drive"
+category = "drive"
+channels = "1 drive: control, frequency control out; error code, frequency, output current, DC bus and output voltage, speed in"   # from: EDS 031F000C010400010001.eds: Assem1/2/4/5 member names
+article = "CMM-EIP01"
+
+[identity.enip]
+vendor_id = 799
+product_code = 260
+device_type = 12
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CMM-EIP01"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "IO Connection"
+input_assembly = { instance = 105 }
+output_assembly = { instance = 104 }
+config_assembly = { instance = 128 }
+eds = { name = "031F000C010400010001.eds", size = 1177149, sha256 = "f90f682a2dec3fe1db4ae4e959fc97e9578684b043b1a1a74633126ff29bce7e", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip (member of 11630.01-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Delta CMM-EIP01: declaration of conformity (ODVA), ODVA marketplace product 1924"
+sha256 = "87f27de8f6ca5f4ff376c2d90361778ad4e5ad989194f291888df2006f232f15"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1924/11630_DOC_081617.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Delta CMM-EIP01: EDS, ODVA marketplace product 1924"
+sha256 = "4dcd355ef630c29221a334e501c698507da571e81032e435bd712ed48111aa26"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1924/11630.01-EDS.zip; retrieved 2026-11-23; not redistributed here"

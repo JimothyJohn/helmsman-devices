@@ -1,0 +1,50 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1165/NUMATICS-580.eds",
+   "folders": [
+    "devices/emerson/numatics-580-ethernet-ip"
+   ],
+   "kind": "eds",
+   "name": "NUMATICS-580.eds",
+   "retrieved": "2026-11-23T03:38:22Z",
+   "sha256": "29d313afae036aa9d1f2f33f845e1cd041c0524dbde5603f0fa94f3a8c716bc3",
+   "size": 11153,
+   "terms": "none stated",
+   "title": "Numatics 580 EtherNet/IP EDS (ODVA marketplace, product 1165)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds",
+   "folders": [
+    "devices/emerson/numatics-580-ethernet-ip-dlr"
+   ],
+   "kind": "eds",
+   "name": "NUMATICS-5800.eds",
+   "retrieved": "2026-11-23T03:38:22Z",
+   "sha256": "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a",
+   "size": 16260,
+   "terms": "none stated",
+   "title": "Numatics 580 EtherNet/IP DLR/QuickConnect EDS (ODVA marketplace, product 1166)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/516/G3EP0102s-2013-03-01.eds",
+   "folders": [
+    "devices/emerson/numatics-g3-ethernet-ip"
+   ],
+   "kind": "eds",
+   "name": "G3EP0102s-2013-03-01.eds",
+   "retrieved": "2026-11-23T03:38:22Z",
+   "sha256": "f85af8493cc6105af13eaf5d1a700f34e271782bb1c4de73439dde46ba0442e5",
+   "size": 10239,
+   "terms": "none stated",
+   "title": "Numatics G3 EtherNet/IP node EDS (ODVA marketplace, product 516)",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

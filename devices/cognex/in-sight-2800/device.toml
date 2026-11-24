@@ -1,0 +1,37 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Cognex"
+model = "In-Sight 2800 Series"
+kind = "sensor"
+category = "vision"
+channels = "1 vision sensor: trigger and commands out, inspection results and status in"   # from: EDS Assem13 'input format' (Trigger Ready, Inspection Completed, Job Pass, Inspection Results) and Assem22 'output format' (Trigger, Execute Command, Set Offline, External Event)
+article = "IS28XX-XX"
+
+[identity.enip]
+vendor_id = 678
+product_code = 3585
+device_type = 782
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "In-Sight 2800 Series"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Consume Data From/Produce Data To"
+# input_assembly: the size is set by Param2: 2..500 bytes, default 496
+input_assembly = { instance = 13 }
+# output_assembly: the size is set by Param3: 2..496 bytes, default 496
+output_assembly = { instance = 22 }
+config_assembly = { instance = 1 }
+eds = { name = "02A6030E0E010100.eds", size = 28866, sha256 = "7e27edb64069a078dfa6cbd2217f316df78ea321d9d84971ed5f29f6ab98d012", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2468/12213.03_EDS.zip (member of 12213.03_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "e5ea3420499b0ebfdf3a51e1d88cd818dce8f30e527b4388b6529b4372c18e7e"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2468/12213_DOC_071524.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Cognex In-Sight 2800 (IS2802M, IS2802C, IS2805X, IS2801X, IS2800M), EDS (ODVA Marketplace)"
+sha256 = "2d70feeaaf8d0432ce99838f5f32b31ba66859dea59bee128bebda79513d0b05"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2468/12213.03_EDS.zip; retrieved 2026-11-23; not redistributed here"

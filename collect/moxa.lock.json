@@ -1,0 +1,123 @@
+{
+ "docs": {
+  "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/1fc3f6ac-1baa-4fc8-939b-cb2778cfe716/moxa-iothinx-4510-series-manual-v6.2.pdf",
+   "folders": [
+    "devices/moxa/iothinx-4510"
+   ],
+   "kind": "manual",
+   "name": "moxa-iothinx-4510-series-manual-v6.2.pdf",
+   "retrieved": "2026-11-23T03:37:45Z",
+   "sha256": "c70d5cd9a76772ff5237ee923ef0be86c4a5f3de8be5074f3b25580147b6a6bc",
+   "size": 13929183,
+   "terms": "none stated",
+   "title": "ioThinx 4510 Series User's Manual, v6.2",
+   "type": "pdf"
+  },
+  "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/7e522078-ad5a-47b4-aa80-4d963ed76b4f/moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds": {
+   "content_type": "application/octet-stream",
+   "final_url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/7e522078-ad5a-47b4-aa80-4d963ed76b4f/moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds",
+   "folders": [
+    "devices/moxa/iologik-e1213"
+   ],
+   "kind": "eds",
+   "name": "moxa-iologik-e1213-e1213-t-eds-file-software-package-v2.0.eds",
+   "retrieved": "2026-11-23T14:32:13Z",
+   "sha256": "3895fbca8bb036c1b31a9d6b68dea69eca6892fe0a6bce7409ab76311cfd470d",
+   "size": 42906,
+   "terms": "none stated",
+   "title": "E1213/E1213-T EDS file software package v2.0",
+   "type": "eds"
+  },
+  "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf",
+   "folders": [
+    "devices/moxa/iologik-e2210",
+    "devices/moxa/iologik-e2212",
+    "devices/moxa/iologik-e2242"
+   ],
+   "kind": "manual",
+   "name": "moxa-iologik-e2200-series-manual-v7.2.pdf",
+   "retrieved": "2026-11-23T14:31:27Z",
+   "sha256": "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b",
+   "size": 12513616,
+   "terms": "none stated",
+   "title": "ioLogik E2200 Series User's Manual, v7.2",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1870/11624.01_EDs.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1870/11624.01_EDs.zip",
+   "folders": [
+    "devices/moxa/iologik-e1212"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "ioLogik_E1212_EtherNetIP_V1.1_170207.eds",
+     "sha256": "4ab4e542774c833fabb5e145f72bc59b2559dbac32f62463e553fdeb248aa0e8",
+     "size": 42491,
+     "type": "eds"
+    }
+   ],
+   "name": "11624.01_EDs.zip",
+   "retrieved": "2026-11-23T14:32:13Z",
+   "sha256": "0ea810e78b5d70f718f93a149d50013b2957b6e5a8d699676a3130ea5cbdf019",
+   "size": 7944,
+   "terms": "none stated",
+   "title": "ioLogik E1212 EDS V1.1 (ODVA marketplace zip)",
+   "type": "zip"
+  },
+  "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://pct.wiki.uib.no/images/2/29/Moxa-iologik-e1200-series-manual-v15.10.pdf",
+   "folders": [
+    "devices/moxa/iologik-e1212",
+    "devices/moxa/iologik-e1213"
+   ],
+   "kind": "manual",
+   "name": "Moxa-iologik-e1200-series-manual-v15.10.pdf",
+   "retrieved": "2026-11-23T14:32:13Z",
+   "sha256": "f8788816b2e0062a68f9b7f1ef9850a2d57f92946ac8b64077c4e77097744454",
+   "size": 10137362,
+   "terms": "none stated",
+   "title": "ioLogik E1200 Series User's Manual, Version 15.10 (May 2021)",
+   "type": "pdf"
+  },
+  "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_Software%20Release%20History.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.moxa.com/Moxa/media/PDIM/S100000327/ioLogik%20E1200%20Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_Software%20Release%20History.pdf",
+   "folders": [
+    "devices/moxa/iologik-e1212"
+   ],
+   "kind": "release-notes",
+   "name": "ioLogikE1200Series_moxa-iologik-e1200-series-iologik-e1212-e1212-t-firmware-v4.0.1kp_SoftwareReleaseHistory.pdf",
+   "retrieved": "2026-11-23T14:32:13Z",
+   "sha256": "d5eed5bd230dc012d4d47305f5ea22d7b81270bdc03baa71d99b212cc7610dba",
+   "size": 64698,
+   "terms": "none stated",
+   "title": "Firmware for ioLogik E1200 Series (ioLogik E1212/E1212-T) Release Notes, to v4.0",
+   "type": "pdf"
+  },
+  "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf",
+   "folders": [
+    "devices/moxa/iologik-e2210",
+    "devices/moxa/iologik-e2212",
+    "devices/moxa/iologik-e2242"
+   ],
+   "kind": "datasheet",
+   "name": "moxa-iologik-e2200-series-datasheet-v1.3.pdf",
+   "retrieved": "2026-11-23T03:37:45Z",
+   "sha256": "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e",
+   "size": 1422588,
+   "terms": "none stated",
+   "title": "ioLogik E2200 Series Datasheet, v1.3",
+   "type": "pdf"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

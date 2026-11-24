@@ -1,0 +1,41 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Datalogic"
+model = "Matrix N Series"
+kind = "sensor"
+category = "vision"
+channels = "1 reader: item and presence bits out, item status and data fragments in"   # from: EDS Assem101 Input (Item Status, Item Data Size, Local Presence and Input Bits, Fragment Data) and Assem113 Output (Remote Presence And Output Bits)
+article = "DATALOGIC Scanner"
+
+[identity.enip]
+vendor_id = 850
+product_code = 3000
+device_type = 43
+revisions = ["1.8"]   # the EDS's MajRev.MinRev
+product_name = "Unattended Scanning System"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 138..138 bytes, default 138
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param3: 3..4 bytes, default 3
+output_assembly = { instance = 113 }
+config_assembly = { instance = 128 }
+eds = { name = "EDS-V3.23.1-DATALOGIC-Scanner-20230108.eds", size = 48515, sha256 = "334b9482c86b4195a1e683a52294d927a891a99f8dcec048efc3d4dd707d1d0f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/461/10049.03_EDSFile.zip (member of 10049.03_EDSFile.zip)", terms = "none stated" }
+
+[[questions]]
+ask = "The EDS is the Matrix N line's (product name \"Unattended Scanning System\", product code 3000). Does a current Matrix 220 or 320 (not the N) answer ListIdentity with the same code, or does it need Datalogic's newer EDS (V3.23.1, listed on its downloads page)?"
+source = "ODVA Marketplace product 461 (lists Matrix 220N and 320N) and the EDS EDS-V3.23.1-DATALOGIC-Scanner-20230108.eds"
+
+[[sources]]
+title = "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "4e1e5721d495b6e66fabcf38a7f7b8641e131814ca2b5781340a41b449eaac0d"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/461/10049_DOC_103123.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Datalogic MATRIX N product line (Matrix 120N, 210N, 220N, 300N, 320N, 410N, 450N), EDS (ODVA Marketplace)"
+sha256 = "fa431657fd6394bf17b7031531eb664dd91064b79b533cf09bfde733436317da"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/461/10049.03_EDSFile.zip; retrieved 2026-11-23; not redistributed here"

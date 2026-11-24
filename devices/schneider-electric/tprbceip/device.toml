@@ -1,0 +1,27 @@
+# Written by hand from the documents below. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Schneider Electric"
+model = "TeSys island bus coupler TPRBCEIP"
+kind = "remote-io"
+category = "motor-starter"
+channels = "none of its own: the TeSys island starters and I/O modules behind it (up to 20) set the I/O"   # from: TPRBCEIP data sheet (iportal2.schneider-electric.com TPRBCEIP_DATA SHEET.PDF, 2023-02-13) p.1: 'Management of the complete island up to 20 modules'
+article = "TPRBCEIP"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+# The data sheet lists a "Modbus TCP server" and an "EtherNet/IP adapter" on two switched fieldbus ports; no port or register map is in the documents read.
+
+[[questions]]
+ask = "Which EtherNet/IP identity and assembly sizes does the coupler report? The Quick Start Guide has the island's DTM export L5X files for Studio 5000 (Export > EDS to L5X File Format) instead of publishing an EDS, so the sizes depend on the configured island."
+source = "TeSys island Quick Start Guide for EtherNet/IP Applications 8536IB1906EN-03 p. 11"
+
+[[sources]]
+title = "TeSys island TPRBCEIP product data sheet"
+sha256 = "7e16f3c3cd8fde5595602fac147a5179cb639645020332fdbeff26c156330dcc"
+where = "https://iportal2.schneider-electric.com/Contents/docs/TPRBCEIP_DATA%20SHEET.PDF; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "TeSys island TPRBCEIP Bus Coupler (Ethernet IP) - Instruction Sheet (MFR44097.05)"
+sha256 = "2b50b494482f5b3ffdffadaca428b13bc24f2050b767a0e87e6c88c8680dc34f"
+where = "https://download.se.com/files?p_Doc_Ref=MFR44097&p_enDocType=Instruction+sheet&p_File_Name=TeSys-island-Bus-Coupler-Instruction-Sheet-MFR44097-05.pdf; retrieved 2026-11-23; not redistributed here"

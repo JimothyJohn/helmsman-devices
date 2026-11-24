@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Turck"
+model = "TBEN-S2-2RFID-4DXP"
+kind = "remote-io"
+category = "io-block"
+channels = "2 RFID ports (HF/UHF read/write heads, M12), 4 DIO (PNP, 0.5 A)"   # from: TBEN-S2-2RFID-4DXP data sheet 6814029, https://www.turck.us/datasheet/_us/edb_6814029_eng_us.pdf, p. 1-2, 2026-11-22
+article = "6814029"
+
+[identity.enip]
+vendor_id = 48
+product_code = 14029
+device_type = 12
+revisions = ["2.7"]   # the EDS's MajRev.MinRev
+product_name = "TBEN-S2-2RFID-4DXP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 103, bytes = 382 }
+output_assembly = { instance = 104, bytes = 308 }
+config_assembly = { instance = 106, bytes = 10 }
+eds = { name = "TBEN-S2-2RFID-4DXP_R2.7.eds", size = 39440, sha256 = "dfae8c45ec58c9b8da6de5a7a038c5dccf1aaa070285e89951cd90fe9822db17", url = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip (member of TBEN-S_ETHERNETIP.zip)", terms = "none stated" }
+
+[[sources]]
+title = "TBEN-S EDS files and catalog files (family package)"
+sha256 = "69f84dc3eee7ea3f6d9e4934571ae11aec207a680518ff306015445b848533a9"
+where = "https://www.turck.us/attachment/TBEN-S_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "TBEN-S GSDML files (family package)"
+sha256 = "6db8486032894feeb2d4208710f41dc31dae8bdc74300151b1a02ee9c216fca9"
+where = "https://www.turck.us/attachment/TBEN-S_PROFINET.zip; retrieved 2026-11-23; not redistributed here"

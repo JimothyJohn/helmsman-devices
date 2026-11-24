@@ -6,6 +6,8 @@ vendor = "ifm"
 model = "IF6123, IF6124, IG6615, IG6616, II5973, II5974, IM5172, IM5173"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
+category = "sensor"
+channels = "2 switching signals (SSC1, SSC2), 1 process value (PDV1)"   # from: the entry's IODD signals (SSC1, SSC2, PDV1), IODD ifm-000317-20170707-IODD1.1.xml
 family = "I"
 vendor_url = "www.ifm.com/ifmgb/web/io-link-download.htm"
 

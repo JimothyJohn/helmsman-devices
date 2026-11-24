@@ -1,0 +1,106 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "ArmorStart LT 290E/291E/294E (EtherNet/IP)"
+kind = "other"
+category = "motor-starter"
+channels = "1 starter: run forward, reset fault, Out0-Out5 out; status and points Pt00-Pt05 in"   # from: EDS Assem150 'Starter Cmd' (RunForward, ResetFault, Out0-Out5, ...) and Assem152 'Starter Status' (TripPresent, ..., Pt00-Pt05, ...); ProdName 'ArmorStart 290E'
+article = "290E-FAZ-Gx"
+
+[identity.enip]
+vendor_id = 1
+product_code = 769
+device_type = 22
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "ArmorStart 290E 0.24-3.5A"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 152, bytes = 30 }
+output_assembly = { instance = 150, bytes = 6 }
+config_assembly = { instance = 100, bytes = 84 }
+eds = { name = "0001001603010200.eds", size = 142693, sha256 = "2237e7a45e13c8f18c0ab4118883694cee0fa2d9603d514e28987d4f8561fd85", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip (member of 10993.02-EDS.zip)", terms = "none stated" }
+
+[[points]]
+name = "connection status"
+enip = "in:0.0..in:3.7"
+meaning = "bytes 0-3 are reserved (Logix tag {name}:I.ConnectionFault, 'PLC Communication Fault only'); the tag table says all 1s = fault, all 0s = normal"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 94 (Fault)"
+
+[[points]]
+name = "TripPresent..CurrentFlowing"
+enip = "in:4.0..in:4.7"
+meaning = "bit 0 TripPresent (fault exists within unit), bit 1 WarningPresent, bit 2 RunningForward (motor commanded to run forward), bit 3 RunningReverse, bit 4 Ready (control and 3-phase power present), bit 5 NetControlStatus (not described in the tag tables), bit 6 not used, bit 7 CurrentFlowing (current is passing to the motor)"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; tag descriptions Table 21 pp. 94-95"
+
+[[points]]
+name = "DLXEnabled, Keypad, DisconnectClosed"
+enip = "in:5.0..in:5.6"
+meaning = "bit 0 DLXEnabled (DeviceLogix enabled), bit 1 KeyPadAuto (HOA in Auto), bit 2 KeyPadOff (HOA in Off), bit 3 KeyPadHand (HOA in Hand), bits 4-5 not used, bit 6 DisconnectClosed (the disconnect is closed), bit 7 not used"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; tag descriptions Table 21 pp. 94-95"
+
+[[points]]
+name = "Pt00..Pt05"
+enip = "in:6.0..in:6.5"
+meaning = "status of the six user-configured I/O points, 'User-configured I/O status'; bits 6-7 of byte 6 and byte 7 are blank in the table"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 95"
+
+[[points]]
+name = "Pt00DeviceOut..Pt15DeviceOut"
+enip = "in:8.0..in:9.7"
+meaning = "DeviceLogix network output status, Pt00..Pt07 in byte 8 and Pt08..Pt15 in byte 9"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 21 p. 95"
+
+[[points]]
+name = "An00DeviceOut"
+enip = "in:10:u16"
+meaning = "DeviceLogix analog network output, bytes 10 (low) and 11 (high); the Logix tag is INT (Table 19), read here as little-endian u16 **inferred**"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92"
+
+[[points]]
+name = "parameters 1-5, 11, 12, 16, 17"
+enip = "in:12:u16 .. in:28:u16"
+meaning = "nine 16-bit parameter values at bytes 12, 14, 16, 18, 20, 22, 24, 26, 28: Parameter 1 PhaseL1Current, 2 PhaseL2Current, 3 PhaseL3Current, 4 AverageCurrent, 5 %ThermalUtilized, 11 SwitchedVolts (OutputSourceV, IPS units), 12 UnswitchedVolts (SensorSourceV, IPS units), 16 TripStatus, 17 WarningStatus. Scaling and units come from the parameter table, not read here. Little-endian **inferred** from the table's low/high byte labels elsewhere in the same table"
+source = "290E-UM001C-EN-P Appendix B 'Instance 152', PDF pp. 201-202, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 18, p. 92; Table 18 p. 92 (the Logix tags are INT, Table 19)"
+
+[[points]]
+name = "RunForward, RunReverse, ResetFault"
+enip = "out:0.0..out:0.2"
+meaning = "bit 0 RunForward, bit 1 RunReverse, bit 2 ResetFault; bits 3-7 not used. Switches the motor: the person's to command, never the agent's"
+source = "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; tag descriptions Table 20 p. 94"
+
+[[points]]
+name = "Out00..Out05"
+enip = "out:1.0..out:1.5"
+meaning = "commands the six points Pt00-Pt05 ON when the user has defined a point as an output (the Logix tags Pt00Data..Pt05Data); bits 6-7 not used. The person's to switch"
+source = "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+
+[[points]]
+name = "Pt00DeviceIn..Pt15DeviceIn"
+enip = "out:2.0..out:3.7"
+meaning = "network inputs to the DeviceLogix engine, Pt00..Pt07 in byte 2 and Pt08..Pt15 in byte 3"
+source = "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+
+[[points]]
+name = "AnalogDeviceIn"
+enip = "out:4:u16"
+meaning = "network analog input to the DeviceLogix engine (Int00DeviceIn), bytes 4 (low) and 5 (high); the Logix tag is INT, read here as little-endian u16 **inferred**"
+source = "290E-UM001C-EN-P Appendix B 'Instance 150', PDF p. 201, table column 'Byte' (0-based) and 'Bit 7..Bit 0'; same layout in Chapter 3 Table 16, p. 90; Table 20 p. 94"
+
+[[sources]]
+title = "ArmorStart LT EtherNet/IP family: ODVA Declaration of Conformity"
+sha256 = "8155a32a7c606b7745a77640832031e7b29edcbda8f920678fd094e5bb459843"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/556/10993_DOC_083020.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart LT EtherNet/IP family: EDS (ODVA marketplace)"
+sha256 = "07c2f541dc2a416f0e07d85d6774543015dbc353942233ec83c1d8c5366a9445"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/556/10993.02-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorStart LT EtherNet/IP Version User Manual, Bulletin 290E, 291E, 294E, 290E-UM001C-EN-P"
+sha256 = "e520232cad2973a123501bf744a798cf11295d006e1cc3d8859c0021c3bbc774"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/um/290e-um001_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"

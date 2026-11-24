@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Turck"
+model = "FEN20-4DIP-4DXP"
+kind = "remote-io"
+category = "panel-io"
+channels = "4 DI, 4 DIO (PNP)"   # from: FEN20-4DIP-4DXP data sheet 6931090, https://www.turck.us/datasheet/_us/edb_6931090_eng_us.pdf, p. 1, 2026-11-22
+article = "6931090"
+
+[identity.enip]
+vendor_id = 48
+product_code = 31090
+device_type = 12
+revisions = ["2.7"]   # the EDS's MajRev.MinRev
+product_name = "FEN20-4DIP-4DXP"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+input_assembly = { instance = 103, bytes = 8 }
+output_assembly = { instance = 104, bytes = 4 }
+config_assembly = { instance = 106, bytes = 12 }
+eds = { name = "FEN20-4DIP-4DXP_R2.7.eds", size = 29597, sha256 = "8151e22af6558ff2c7f0cfae9fdfbfade7b75f80f3ab699b031f5643717a5e73", url = "https://www.turck.us/attachment/FEN20_ETHERNETIP.zip (member of FEN20_ETHERNETIP.zip)", terms = "none stated" }
+
+[[sources]]
+title = "FEN20 EDS files and catalog files (family package)"
+sha256 = "4eff4b49616d269e688a03f520b55e8e4cbf87dac26bc3b3cbad26d01dbcd511"
+where = "https://www.turck.us/attachment/FEN20_ETHERNETIP.zip; retrieved 2026-11-23; not redistributed here"

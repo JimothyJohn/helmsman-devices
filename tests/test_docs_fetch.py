@@ -435,6 +435,86 @@ class OverHttp(unittest.TestCase):
         _, what = self.collect("https://vendor.example/eds.zip", kind="eds")
         self.assertIn("holds no eds", what)
 
+    # --- a document only a person's browser can download (browser = true) ---
+
+    def browser_doc(self, kind="eds"):
+        return self.doc("https://vendor.example/product/55086", kind) | {"browser": True}
+
+    def downloaded(self, name, data):
+        d = pathlib.Path(tempfile.mkdtemp())
+        (d / name).write_bytes(data)
+        return d / name
+
+    def import_(self, path, kind="eds", entry=None):
+        return df.import_file(self.browser_doc(kind), path, entry, self.store, "2026-11-23T00:00:00Z")
+
+    def test_a_browser_document_is_never_fetched(self):
+        SITES["vendor.example"]["/product/55086"] = (200, {}, zip_of({"a.eds": EDS}))
+        entry, what = df.collect_one(
+            self.browser_doc(), None, self.fetcher, self.store, False, "2026-11-23T00:00:00Z"
+        )
+        self.assertIsNone(entry)
+        self.assertTrue(what.startswith("refused") and "--import" in what, what)
+        self.assertEqual((SEEN, self.connects), ([], []))
+
+    def test_an_import_is_checked_stored_and_recorded_as_a_browser_download(self):
+        z = zip_of({"55086_Impact67_EIP_DI8DO8.eds": EDS, "readme.txt": b"hello"})
+        e, what = self.import_(self.downloaded("55086_IMPACT67_KF5_x_11.zip", z))
+        self.assertEqual(what, "imported", what)
+        self.assertEqual(
+            (e["via"], e["final_url"], e["name"], e["size"], e["type"]),
+            ("browser", "https://vendor.example/product/55086", "55086_IMPACT67_KF5_x_11.zip", len(z), "zip"),
+        )
+        self.assertEqual(e["sha256"], hashlib.sha256(z).hexdigest())
+        self.assertEqual(
+            [(m["name"], m["type"]) for m in e["members"]], [("55086_Impact67_EIP_DI8DO8.eds", "eds")]
+        )
+        self.assertEqual(self.store.get(e["sha256"]), z)
+        self.assertEqual(self.store.get(hashlib.sha256(EDS).hexdigest()), EDS)
+        self.assertEqual(SEEN, [])
+
+    def test_an_imported_document_is_then_stored_not_fetched(self):
+        e, _ = self.import_(self.downloaded("a.zip", zip_of({"a.eds": EDS})))
+        e2, what = df.collect_one(
+            self.browser_doc(), e, self.fetcher, self.store, False, "2026-11-24T00:00:00Z"
+        )
+        self.assertEqual((what, e2), ("stored", e))
+        self.assertEqual(SEEN, [])
+
+    def test_an_import_is_held_to_the_kind(self):
+        for kind, name, data, why in [
+            ("manual", "m.pdf", b"<!doctype html><html>Please wait...</html>", "bytes are html"),
+            ("eds", "e.zip", zip_of({"readme.txt": b"hello"}), "holds no eds"),
+            ("eds", "e.zip", b"PK\x03\x04 not really a zip", "archive"),
+            ("manual", "m.pdf", b"", "bytes are unknown"),
+        ]:
+            with self.subTest(name=name, why=why):
+                e, what = self.import_(self.downloaded(name, data), kind=kind)
+                self.assertIsNone(e)
+                self.assertTrue(what.startswith("refused") and why in what, what)
+
+    def test_an_import_over_the_size_cap_is_refused_unread(self):
+        p = self.downloaded("big.pdf", PDF)
+        cap, df.MAX_BYTES = df.MAX_BYTES, len(PDF) - 1
+        try:
+            e, what = self.import_(p, kind="manual")
+        finally:
+            df.MAX_BYTES = cap
+        self.assertIsNone(e)
+        self.assertIn("over the", what)
+
+    def test_a_reimport_of_another_file_reports_the_change(self):
+        e, _ = self.import_(self.downloaded("a.zip", zip_of({"a.eds": EDS})))
+        e2, what = self.import_(self.downloaded("a.zip", zip_of({"b.eds": EDS + b" Rev = 2;\r\n"})), entry=e)
+        self.assertEqual(what, f"changed (was {e['sha256'][:12]})")
+        self.assertNotEqual(e2["sha256"], e["sha256"])
+
+    def test_an_imported_name_is_a_label_only(self):
+        e, _ = self.import_(self.downloaded("x.zip", zip_of({"a.eds": EDS})))
+        self.assertEqual(df.import_name("../../etc/pass wd\n.zip"), "pass_wd_.zip")
+        self.assertEqual(df.import_name(""), "download")
+        self.assertEqual(e["name"], "x.zip")
+
 
 class Candidates(unittest.TestCase):
     def write(self, body):
@@ -473,6 +553,30 @@ class Candidates(unittest.TestCase):
         self.assertEqual(
             df.load_candidates(self.write(body))["doc"][0]["folders"], ["devices/v/m", "devices/v/n"]
         )
+
+    def test_browser_is_true_or_false(self):
+        doc = self.DOC.format(f="devices/v/m", k="eds", u="https://a.example/p")
+        self.assertTrue(
+            df.load_candidates(self.write(self.HEAD + doc + "browser = true\n"))["doc"][0]["browser"]
+        )
+        for bad in ('"yes"', "1"):
+            with self.subTest(bad=bad), self.assertRaises(SystemExit):
+                df.load_candidates(self.write(self.HEAD + doc + f"browser = {bad}\n"))
+
+    def test_import_names_a_listed_document_and_an_existing_file(self):
+        doc = self.DOC.format(f="devices/v/m", k="eds", u="https://a.example/p") + "browser = true\n"
+        toml = self.write(self.HEAD + doc)
+        real = toml.parent / "e.zip"
+        real.write_bytes(zip_of({"a.eds": EDS}))
+        for argv in (
+            [str(toml), "--import", "https://a.example/other", str(real)],
+            [str(toml), "--import", "https://a.example/p", str(toml.parent / "missing.zip")],
+            [str(toml), "--import", "https://a.example/p"],
+            [str(toml), "--import", "https://a.example/p", str(real), "--refresh"],
+        ):
+            with self.subTest(argv=argv[1:]), self.assertRaises(SystemExit):
+                df.main(argv)
+        self.assertFalse((toml.parent / "v.lock.json").exists())
 
     def test_wrong_format(self):
         with self.assertRaises(SystemExit):

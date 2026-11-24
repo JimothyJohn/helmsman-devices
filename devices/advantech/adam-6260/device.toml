@@ -1,0 +1,36 @@
+# Written by hand from the manual. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Advantech"
+model = "ADAM-6260"
+kind = "remote-io"
+category = "panel-io"
+channels = "6 relay DO (5 Form C, 1 Form A)"
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not stated in the manual pages read.
+
+[[points]]
+name = "relay DO"
+modbus = "coil:16..coil:21 (0X 00017-00022, R/W)"
+meaning = "relay output command and state, 1 = on"
+source = "ADAM-6200 User Manual Ed. 5 p. 146"
+
+[[points]]
+name = "pulse output widths and counts"
+modbus = "hr:0..hr:47 (4X 40001-40048: low-level width, high-level width, absolute pulse, incremental pulse, two words a channel each)"
+meaning = "pulse output timing and count per relay"
+source = "ADAM-6200 User Manual Ed. 5 p. 146-147"
+
+[[points]]
+name = "DO as one word"
+modbus = "hr:302 (4X 40303, R/W)"
+meaning = "all relays in one register"
+source = "ADAM-6200 User Manual Ed. 5 p. 147"
+
+[[sources]]
+title = "ADAM-6200 Series Intelligent Ethernet I/O Module User Manual, Edition 5 (Part No. 2003620004)"
+sha256 = "c5dbd750c3cc4bf5a20b6a40647ff105aa08be0a3732c9779197b00c5a178d1f"
+where = "https://advdownload.advantech.com/productfile/Downloadfile4/1-24AIR13/ADAM-6200_User_Manual_Ed.5_FINAL.pdf; retrieved 2026-11-22; not redistributed here"

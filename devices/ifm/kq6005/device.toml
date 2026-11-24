@@ -6,6 +6,8 @@ vendor = "ifm"
 model = "KQxxxx"
 # kind: inputs make a sensor, outputs alone an actuator; the IODD does not say. Change it if wrong.
 kind = "sensor"
+category = "sensor"
+channels = "1 switch state (OUT1), 1 process value"   # from: the entry's IODD signals ('Switch state [OUT1]', 'Process value'), IODD ifm-000173-20260420-IODD1.1.xml
 family = "KQ"
 vendor_url = "www.ifm.com/ifmgb/web/io-link_down.htm"
 

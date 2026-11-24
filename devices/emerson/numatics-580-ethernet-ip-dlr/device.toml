@@ -1,0 +1,32 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Emerson"
+model = "Numatics 580 Ethernet/IP DLR+QC"
+kind = "remote-io"
+category = "valve-terminal"
+channels = "variable I/O: Output Size and Input Size set at 0 to 504 (default 16), no fixed channel count"   # from: EDS NUMATICS-5800.eds, Params Output Size / Input Size (min 0, max 504, default 16), assemblies 101/110/150 of 1216 bits
+article = "Numatics 580 P580AEED1010"
+
+[identity.enip]
+vendor_id = 52
+product_code = 5800
+device_type = 12
+revisions = ["2.1"]   # the EDS's MajRev.MinRev
+product_name = "Numatics 580 Ethernet/IP DLR+QC"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Exclusive Owner"
+# input_assembly: the size is set by Param2: 0..504 bytes, default 16
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param1: 0..504 bytes, default 16
+output_assembly = { instance = 150 }
+config_assembly = { instance = 1 }
+eds = { name = "NUMATICS-5800.eds", size = 16260, sha256 = "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds", terms = "none stated" }
+
+[[sources]]
+title = "Numatics 580 EtherNet/IP DLR/QuickConnect EDS (ODVA marketplace, product 1166)"
+sha256 = "a3107a864add5b3da882e68e2f0378c29e697e7399e990f1eadd3cf7dc11dd7a"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1166/NUMATICS-5800.eds; retrieved 2026-11-23; not redistributed here"

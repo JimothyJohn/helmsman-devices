@@ -5,6 +5,25 @@ per device: how to reach it, what its points mean, where each fact comes
 from. A controller or its agent looks a device up here before working the
 mapping out from a manual.
 
+## Finding a device and using it
+
+[`CATALOG.md`](CATALOG.md) is every device in one list, a table per
+category (I/O blocks, drives, valve terminals, IO-Link masters, ...), each
+row with what its folder gives a project. From a shell:
+
+```sh
+python3 -I scripts/find.py                    # the categories
+python3 -I scripts/find.py drive powerflex    # a category, narrowed by words
+python3 -I scripts/find.py --id 48:14076      # by the identity a device answered with
+python3 -I scripts/use.py devices/turck/tben-s2-8dxp --address 192.168.1.20
+```
+
+`use.py` prints the lines that go into a Helmsman project's I/O map for the
+device you picked, best way first (a profile, a map, the vendor's EDS, the
+connection written out, Modbus TCP), then the documented points and what
+no unit has confirmed yet. Both only read this checkout.
+[`AGENTS.md`](AGENTS.md) walks an agent through it.
+
 ## Layout
 
 ```
@@ -21,6 +40,9 @@ folders (`devices/moxa/iologik-e1200-series.md`). A folder whose facts
 nobody has checked on a unit has no `checked_on` and says so at the top of
 its README. How firmware and versions are to be handled is planned in
 [`docs/firmware-and-resilience.md`](docs/firmware-and-resilience.md).
+
+`index.json` and `CATALOG.md` at the root are built from the folders by
+`scripts/build-index.py`; neither is edited by hand.
 
 `device.toml` is the record a lookup matches: first by what the wire gives
 (an EtherNet/IP vendor id and product code from ListIdentity, a Modbus

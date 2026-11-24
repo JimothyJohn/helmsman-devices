@@ -1,0 +1,42 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Pepperl+Fuchs"
+model = "ICE21-8IOL2-G70L-V1D"
+kind = "remote-io"
+category = "iolink-master"
+article = "70148669"
+channels = "8 IO-Link ports: 6 class A, each also DI/DO on pin 2; 2 class B"   # from: data sheet 70148669_eng.pdf p. 2
+
+[identity.enip]
+vendor_id = 57
+product_code = 69
+device_type = 12
+revisions = ["1.7"]   # the EDS's MajRev.MinRev
+product_name = "ICE21-8IOL2-G70L-V1D"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Read/Write All Ports"
+# input_assembly: the size is set by Param4: 2..499 bytes, default 288
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param6: 2..499 bytes, default 288
+output_assembly = { instance = 117 }
+config_assembly = { instance = 1 }
+eds = { name = "ICE21-8IOL2-G70L-V1D_1.7_v1.00.eds", size = 31017, sha256 = "da8b386d9f736621735e0d1c8b964f17693afe39173fa00a0630428f387bf9ed", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2992/12602.02.zip (member of 12602.02.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D (70148669), data sheet"
+sha256 = "0ed5ed265ec60523c18001b0028d6b037843f37e605c09f7a0f85b8d19351c94"
+where = "https://files.pepperl-fuchs.com/webcat/navi/productInfo/pds/70148669_eng.pdf; retrieved 2026-11-23 (P+F stamps each copy with the day it was made, so a later copy may hash differently); not redistributed here"
+
+[[sources]]
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "8f2b24783cd09130c8c311eebb52f2e5a527fe1782dfb07521880171930366a6"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2992/12602_DOC_070426.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Pepperl+Fuchs ICE21-8IOL2-G70L-V1D, EDS (ODVA Marketplace)"
+sha256 = "791d7df8a0cd649f6f4cff7603b2fe018d00f044742a88c84a785a50dc0b1af0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2992/12602.02.zip; retrieved 2026-11-23; not redistributed here"

@@ -6,6 +6,7 @@
 vendor = "Balluff"
 model = "BNI EIP-104-105-Z015"
 kind = "remote-io"
+category = "io-block"
 channels = "8 M12 ports, 16 inputs"
 article = "BNI004M"
 

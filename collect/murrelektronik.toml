@@ -23,3 +23,34 @@ vendor = "Murrelektronik"
 # (device profile 0x07, DOC 10817 of 2011) packages EDS files for 55085, 55086,
 # 55087 and 55088 only, in the older generation. Listing 2508 (IMPACT67 Pro E
 # DIO8 IOL8) is another product.
+
+# In the private store (2026-11-23): both 55089 EDS files above, copied from the owner's
+# cache/sha256/ after their SHA-256 was checked, because they have no link to fetch.
+#
+# The IMPACT67 E manual (55368) and the 55086 EDS: shop.murrelektronik.com answers a plain
+# fetch with a "Please wait..." script page, and a single download asks that a box be ticked
+# ("I agree with the Privacy Policy and Legal Notice"). Both were downloaded in a headless
+# browser on 2026-11-23, the box ticked with Nick's leave, and imported with --import; each
+# file the entries cite matched the SHA-256 they had recorded.
+
+[[doc]]
+folders = [
+  "devices/murrelektronik/impact67-e-di16",
+  "devices/murrelektronik/impact67-e-di8-do8",
+  "devices/murrelektronik/impact67-e-dio8-dio8",
+  "devices/murrelektronik/impact67-e-do16",
+  "devices/murrelektronik/impact67-e-do8",
+]
+kind = "archive"
+url = "https://shop.murrelektronik.com/55089"
+title = "IMPACT67 E user manual, art. 55368 ed. 1.8 (German and English PDFs)"
+found = "2026-11-23 the 55089 shop page, Downloads, Document: User manual 55368_hdb_x_18.zip (18); the terms box ticked"
+browser = true
+
+[[doc]]
+folder = "devices/murrelektronik/impact67-e-di8-do8"
+kind = "eds"
+url = "https://shop.murrelektronik.com/en/I-O-Systems/Impact67/Modules/IMPACT67-COMPACT-MODULE-PLASTIC-55086.html"
+title = "IMPACT67 E DI8 DO8 (55086): EDS"
+found = "2026-11-23 the shop's search for 55086, its product page, Downloads, Configuration Files: EDS 55086_IMPACT67_KF5_x_11.zip (11); the terms box ticked"
+browser = true

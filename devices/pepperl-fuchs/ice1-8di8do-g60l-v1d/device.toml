@@ -1,0 +1,38 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Pepperl+Fuchs"
+model = "ICE1-8DI8DO-G60L-V1D"
+kind = "remote-io"
+category = "io-block"
+channels = "8 DI, 8 DO (2 A per channel)"   # from: pepperl-fuchs.com/en/products-gp25581/81848 opened 2026-11-22: '8 digital inputs (X1-X4), 8 digital outputs (X5-X8)'; 2 A per channel
+article = "295312"
+
+[identity.enip]
+vendor_id = 57
+product_code = 50
+device_type = 7
+revisions = ["1.2"]   # the EDS's MajRev.MinRev
+product_name = "ICE1-8DI8DO-G60L-V1D"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "8 Bit In / Out + Diagnostic (Exclusive Owner)"
+# instances are the defaults of Param9, Param10: the EDS lets a scanner choose others
+# input_assembly: the size is set by Param14: 6..6 bytes, default 6
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param16: 1..1 bytes, default 1
+output_assembly = { instance = 100 }
+config_assembly = { instance = 105, bytes = 34 }
+eds = { name = "EDS-V3.11.1-PepperlFuchs-ICE1-8DI8DO-G60L-V1D-20170215.eds", size = 70355, sha256 = "c357b58b9be78e386868a766b5a548afb6d3483952e9c6499b74cc96b35339db", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1886/11612.01_EDS.zip (member of 11612.01_EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D, ICE1-16xxx-G60x-xx-V1D, ODVA declaration of conformity (ODVA Marketplace)"
+sha256 = "f7401b8a30b50f0491c52ab980658d4f3621ad10d60009e9ae87da1b9f2cde2b"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1886/11612_DOC_050417.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Pepperl+Fuchs ICE1-8xxxxx-G60x-xx-V1D, ICE1-16xxx-G60x-xx-V1D, EDS (ODVA Marketplace)"
+sha256 = "011c1ac357b3d437eb38fc1007832baca9a215cbc45361c6e2cb8c37071c7b84"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1886/11612.01_EDS.zip; retrieved 2026-11-23; not redistributed here"

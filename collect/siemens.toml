@@ -18,3 +18,50 @@ vendor = "Siemens"
 # title = "SIMATIC ET 200SP IM 155-6 MF HF (6ES7155-6MU01-0CN0) Equipment Manual 12/2025"
 # found = "2026-11-14 search: support.industry.siemens.com ET 200SP IM 155-6 MF HF equipment manual 6ES7155-6MU01-0CN0"
 # terms = "none stated"
+
+# SENTRON PAC3200 and PAC4200 (Modbus TCP only, no EDS). Links are from search
+# results on cache.industry.siemens.com, 2026-11-22.
+[[doc]]
+folder = "devices/siemens/sentron-pac3200"
+kind = "manual"
+url = "https://cache.industry.siemens.com/dl/files/150/26504150/att_906558/v1/A5E01168664B-04_EN-US_122016_201612221316360495.pdf"
+title = "SENTRON PAC3200 Manual A5E01168664B-04 (12/2016)"
+found = "2026-11-22 search: Siemens SENTRON PAC3200 manual Modbus TCP register 7KM3200; result on cache.industry.siemens.com"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/siemens/sentron-pac4200"
+kind = "manual"
+url = "https://cache.industry.siemens.com/dl/files/595/34261595/att_951630/v1/manual_pac4200_en-US_en-US.pdf"
+title = "SENTRON PAC4200 System Manual (en-US)"
+found = "2026-11-22 search: SENTRON PAC4200 manual Modbus TCP register 7KM4200; result on cache.industry.siemens.com"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/siemens/sinamics-g120-cu240e-2-pn"
+kind = "manual"
+url = "https://cache.industry.siemens.com/dl/files/275/109981275/att_1314024/v1/A6V10556730.pdf"
+title = "SINAMICS G120 Fieldbus Function Manual (EtherNet/IP chapter), A6V10556730"
+found = "2026-11-22 search: SINAMICS G120 CU240E-2 PN EtherNet/IP operating instructions; result on cache.industry.siemens.com"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/siemens/im-155-6-mf-hf"
+kind = "datasheet"
+url = "https://assets.new.siemens.com/siemens/assets/api/uuid:7ddfa593-1593-4497-8d3d-3b80b6dc9d1c/siemens-mulitfieldbus-devices-webinar-20aug2020.pdf"
+title = "Siemens MultiFieldbus devices webinar (20 Aug 2020)"
+found = "2026-11-22 search: ET 200SP IM 155-6 MF HF 6ES7155-6MU01-0CN0 EtherNet/IP Modbus TCP manual EDS MFCT; result on assets.new.siemens.com"
+terms = "none stated"
+
+# behind login/JS: the G120 EtherNet/IP EDS, "http://support.automation.siemens.com/WW/view/en/48351511" (named in the
+# Fieldbus Function Manual section 4.2); it redirects to a JavaScript portal search page, 2026-11-22.
+# ET 200SP IM 155-6 MF HF: EDS and UDT are exported by Siemens' MFCT (webinar p. 15), no file to collect;
+# the equipment manual and GSDML stay refused (see above); the webinar slides are the only document held.
+
+[[doc]]
+folder = "devices/siemens/sinamics-g120-cu240e-2-pn"
+kind = "manual"
+url = "https://cache.industry.siemens.com/dl/files/230/109757230/att_949185/v1/G120_CU240BE2_op_instr_0418_en-US.pdf"
+title = "SINAMICS G120 Control Units CU240B-2 / CU240E-2 Operating Instructions 04/2018 (A5E34259001B AF)"
+found = "2026-11-23 search: SINAMICS G120 CU240B-2 CU240E-2 Operating Instructions 04/2018 A5E34259001B AF pdf; result on cache.industry.siemens.com"
+terms = "none stated"

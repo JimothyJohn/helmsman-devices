@@ -1,0 +1,67 @@
+format = "helmsman-devices-collect 1"
+vendor = "weg"
+
+[[doc]]
+folder = "devices/weg/cfw300"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2202/11954_DOC_122019.pdf"
+title = "WEG CFW300: declaration of conformity (ODVA), ODVA marketplace product 2202"
+found = "2026-11-22 https://marketplace.odva.org/products/2202-cfw300 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/cfw300"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2202/11954.01-EDS.zip"
+title = "WEG CFW300: EDS, ODVA marketplace product 2202"
+found = "2026-11-22 https://marketplace.odva.org/products/2202-cfw300 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/cfw320"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2462/12226_DOC_021622.pdf"
+title = "WEG CFW320: declaration of conformity (ODVA), ODVA marketplace product 2462"
+found = "2026-11-22 https://marketplace.odva.org/products/2462-cfw320 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/cfw320"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2462/12226.01-EDS.zip"
+title = "WEG CFW320: EDS, ODVA marketplace product 2462"
+found = "2026-11-22 https://marketplace.odva.org/products/2462-cfw320 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/cfw500"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2768/12524_DOC_091124.pdf"
+title = "WEG CFW500: declaration of conformity (ODVA), ODVA marketplace product 2768"
+found = "2026-11-22 https://marketplace.odva.org/products/2768-cfw500 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/cfw500"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2768/12524.01.zip"
+title = "WEG CFW500: EDS, ODVA marketplace product 2768"
+found = "2026-11-22 https://marketplace.odva.org/products/2768-cfw500 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/ssw900"
+kind = "datasheet"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2394/12119_DOC_070121.pdf"
+title = "WEG SSW900: declaration of conformity (ODVA), ODVA marketplace product 2394"
+found = "2026-11-22 https://marketplace.odva.org/products/2394-ssw900 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+
+[[doc]]
+folder = "devices/weg/ssw900"
+kind = "eds"
+url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2394/12119.01-EDS.zip"
+title = "WEG SSW900: EDS, ODVA marketplace product 2394"
+found = "2026-11-22 https://marketplace.odva.org/products/2394-ssw900 (ODVA marketplace product page, EDS and conformance declaration links)"
+terms = "none stated"
+

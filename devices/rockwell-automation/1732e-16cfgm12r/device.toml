@@ -1,0 +1,40 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1732E-16CFGM12R"
+kind = "remote-io"
+category = "io-block"
+channels = "16 DC in/out points (16 input bits, 16 output bits, M12)"   # from: EDS ProdName '1732E-16CFGM12R 16 DC In/Out M12'; connections: 16 bits of input data, 16 output bits. Whether each point is configurable is not in the EDS
+article = "1732E-16CFGM12R"
+
+[identity.enip]
+vendor_id = 1
+product_code = 357
+device_type = 7
+revisions = ["3.12"]   # the EDS's MajRev.MinRev
+product_name = "1732E-16CFGM12R 16 DC In/Out M12"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Logix - Exclusive Owner"
+input_assembly = { instance = 105, bytes = 6 }
+output_assembly = { instance = 35, bytes = 2 }
+config_assembly = { instance = 102, bytes = 6 }
+eds = { name = "0001000701650300.eds", size = 29825, sha256 = "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip (member of 11894.05-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorBlock 1732E 16-point M12 EDS package 11894.05"
+sha256 = "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009"
+sha256 = "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"
+
+[[sources]]
+title = "ArmorBlock I/O 16-channel Configurable Digital Modules Installation Instructions, 1732E-IN008"
+sha256 = "4d178b8251128919230c5b12bac89705c54fb7f8d1c34ce8f082d242b5b66038"
+where = "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in008_-en-p.pdf; fetched in a browser 2026-11-23 (the site answers a plain fetch with 403); not redistributed here"

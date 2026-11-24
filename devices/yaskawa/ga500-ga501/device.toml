@@ -1,0 +1,35 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Yaskawa"
+model = "Yaskawa GA501"
+kind = "drive"
+category = "drive"
+channels = "1 drive: speed and torque control, 4 to 44 bytes each way; MEMOBUS message and dynamic control connections"   # from: EDS GA501_v1.005.eds: Connection1-14 names and sizes (no assembly member names)
+article = "GA501"
+
+[identity.enip]
+vendor_id = 44
+product_code = 24063
+device_type = 2
+revisions = ["1.5"]   # the EDS's MajRev.MinRev
+product_name = "Yaskawa GA501"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Speed Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+config_assembly = { instance = 6 }
+eds = { name = "GA501_v1.005.eds", size = 50957, sha256 = "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds", terms = "none stated" }
+
+[[sources]]
+title = "Yaskawa GA500 / GA501 EtherNet/IP: declaration of conformity (ODVA), ODVA marketplace product 2770"
+sha256 = "0b341fd56f7767f83e8e4a07dc020da27a5de238d7dacea811e14449451710a2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2770/12536_DOC_091124.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Yaskawa GA500 / GA501 EtherNet/IP: EDS, ODVA marketplace product 2770"
+sha256 = "9196ed40cfb7ddda66cba6f1207a5be6947484ae72242b0566ec2b003fde6bbe"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2770/GA501_v1.005.eds; retrieved 2026-11-23; not redistributed here"

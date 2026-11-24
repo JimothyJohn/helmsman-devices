@@ -371,3 +371,132 @@ class FromLock(unittest.TestCase):
     def test_unknown_name_refused(self):
         with self.assertRaises(SystemExit):
             ed.eds_from_lock(self.lock, "devices/turck/tben-s2-8dxp", self.store, "nope.eds")
+
+
+CONNECTION = """
+[Connection Manager]
+        Connection1 = 0x04010002, 0x44640405, , 2, Assem2, , 4, Assem1, , 0, , "Exclusive Owner", "", "20 04 24 06 2C 02 2C 01";
+[Assembly]
+        Assem1 = "in", , 4, , , , ;
+        Assem2 = "out", , 2, , , , ;
+"""
+
+
+class Vendor(unittest.TestCase):
+    """A draft names the vendor as the library does (PR #60), keyed by the EDS's VendCode;
+    VendName is only for an id the library does not know."""
+
+    def setUp(self):
+        self.root = pathlib.Path(tempfile.mkdtemp())
+
+    def index(self, devices):
+        (self.root / "index.json").write_text(json.dumps({"devices": devices}))
+        return ed.library_vendors(self.root)
+
+    @staticmethod
+    def entry(vendor, vid):
+        return {"vendor": vendor, "identity": {"enip": {"vendor_id": vid, "product_code": 1}}}
+
+    def eds(self, vid=48, name="Turck AG"):
+        text = EDS.replace('VendName = "Turck";', f'VendName = "{name}";')
+        text = text.replace("VendCode = 48;", f"VendCode = {vid};")
+        return ed.parse(text.encode())
+
+    def test_a_known_vendor_id_gets_the_library_name_not_vendname(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(), None, "turck", lib), "Turck")
+
+    def test_an_unknown_vendor_id_falls_back_to_vendname(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(vid=999), None, "x", lib), "Turck AG")
+
+    def test_the_vendor_flag_wins_over_both(self):
+        lib = self.index([self.entry("Turck", 48)])
+        self.assertEqual(ed.vendor_for(self.eds(), "Mine", "turck", lib), "Mine")
+        self.assertEqual(ed.vendor_for(self.eds(vid=999), "Mine", "x", lib), "Mine")
+
+    def test_entries_that_disagree_take_the_majority_and_a_tie_the_first_name(self):
+        entries = [self.entry(n, i) for n, i in (("B", 1), ("A", 1), ("B", 1), ("Z", 2), ("Y", 2))]
+        self.assertEqual(self.index(entries), {1: "B", 2: "Y"})
+
+    def test_no_vendor_id_and_a_hostile_index_fall_back_without_a_crash(self):
+        lib = self.index([self.entry("Turck", 48)])
+        eds = self.eds()
+        del eds["device"]["vendor_id"]
+        self.assertEqual(ed.vendor_for(eds, None, "turck", lib), "Turck AG")
+        del eds["device"]["vendor_name"]
+        self.assertEqual(ed.vendor_for(eds, None, "turck", lib), "turck")
+        self.assertEqual(self.index([{"vendor": "Moxa"}, self.entry("Turck", 48)]), {48: "Turck"})
+        for body in (
+            "not json",
+            "[]",
+            '{"devices": 5}',
+            '{"devices": null}',
+            '{"devices": [null, {"vendor": "V"}, {"vendor": 3, "identity": {"enip": {"vendor_id": 1}}}]}',
+            '{"devices": [{"vendor": "V", "identity": {"enip": {"vendor_id": "48"}}}]}',
+            '{"devices": [{"vendor": "V", "identity": {"enip": {"vendor_id": true}}}]}',
+        ):
+            with self.subTest(body=body):
+                (self.root / "index.json").write_text(body)
+                self.assertEqual(ed.library_vendors(self.root), {})
+        (self.root / "index.json").unlink()
+        self.assertEqual(ed.library_vendors(self.root), {})
+        self.assertEqual(ed.vendor_for(self.eds(), None, "turck", {}), "Turck AG")
+
+    def test_the_real_library_names_the_vendors_it_has(self):
+        lib = ed.library_vendors()
+        self.assertGreater(len(lib), 10)
+        self.assertEqual(lib.get(243), "Schneider Electric")  # Novanta IMS shares the id; 5 entries to 1
+
+
+class Network(unittest.TestCase):
+    """An EDS is written for one network. ODVA lists DeviceNet and ControlNet files beside the
+    EtherNet/IP ones, and a draft from one of them is an entry for a device nobody can reach
+    over Ethernet (two were drafted on 2026-11-22 and removed the next day)."""
+
+    def draft(self, extra):
+        e = ed.parse((EDS + extra).encode())
+        return ed.draft(e, {"name": "x.eds", "size": 1, "sha256": "0" * 64}, [], "V", "M")
+
+    def test_an_ethernet_ip_classification_drafts(self):
+        for classes in (
+            "Class1 = EtherNetIP;",
+            "Class1 = 1_RSNetWorx_Adapter;\nClass2 = ethernetip;",
+            "Class1 = ControlNet;\nClass2 = EtherNetIP;",
+        ):
+            with self.subTest(classes=classes):
+                self.assertIn(
+                    "[identity.enip]", self.draft("[Device Classification]\n" + classes + CONNECTION)
+                )
+
+    def test_no_classification_drafts_when_the_connections_are_there(self):
+        self.assertIn("[identity.enip]", self.draft(CONNECTION))
+
+    def test_a_controlnet_or_devicenet_classification_is_refused_by_name(self):
+        for classes, name in (
+            ("Class1 = 1_RSNetWorx_Adapter;\nClass2 = ControlNet;", "ControlNet"),
+            ("Class1 = DeviceNet;", "DeviceNet"),
+            ("Class1 = CompoNet;", "CompoNet"),
+        ):
+            with self.subTest(classes=classes), self.assertRaises(ed.EdsError) as c:
+                self.draft("[Device Classification]\n" + classes + CONNECTION)
+            self.assertIn(name, str(c.exception))
+            self.assertIn("EtherNet/IP", str(c.exception))
+
+    def test_a_devicenet_file_with_no_classification_is_refused(self):
+        """As ODVA's VS_32.eds was: [IO_Info] for its I/O and no [Connection Manager]."""
+        text = (
+            "[File]\n Revision = 2.8;\n[Device]\n VendCode = 42;\n ProdType = 27;\n ProdCode = 332;\n"
+            ' MajRev = 2;\n MinRev = 8;\n ProdName = "VSxx 32";\n'
+            "[IO_Info]\n Default = 0x0001;\n PollInfo = 0x0001, 1, 1;\n"
+            ' Output1 = 4, 0, 0x0001, "Outputs", 6, "20 04 24 23 30 03", "";\n'
+        )
+        e = ed.parse(text.encode())
+        with self.assertRaises(ed.EdsError) as c:
+            ed.draft(e, {"name": "x.eds", "size": 1, "sha256": "0" * 64}, [], "V", "M")
+        self.assertIn("DeviceNet", str(c.exception))
+
+    def test_show_still_reads_such_a_file_and_says_what_it_is(self):
+        e = ed.parse((EDS + "[Device Classification]\nClass1 = ControlNet;\n" + CONNECTION).encode())
+        self.assertEqual(e["device"]["product_name"], "TBEN-S2-8DXP block")
+        self.assertIn("ControlNet", e["not_ethernet_ip"])

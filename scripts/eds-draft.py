@@ -11,10 +11,12 @@ Usage:
   python3 -I scripts/eds-draft.py show EDS
       print what the EDS says, as JSON
   python3 -I scripts/eds-draft.py draft collect/<vendor>.lock.json FOLDER [--model TEXT] [--force]
-      [--eds NAME]
+      [--eds NAME] [--vendor TEXT]
       write FOLDER/device.toml and README.md from the EDS the lock lists for FOLDER
       (the stored file, or the archive member when the EDS came zipped); when
-      more than one EDS is in reach (a family package), --eds names the file
+      more than one EDS is in reach (a family package), --eds names the file.
+      The vendor is the name the library already uses for the EDS's VendCode (from
+      index.json), else the EDS's VendName; --vendor overrides both
 
 An existing device.toml is never overwritten without --force.
 Standard library only (Python 3.11).
@@ -38,6 +40,10 @@ DEVICE_KINDS = {  # CIP device type -> device.toml kind
     24: "remote-io",
     43: "remote-io",  # "Generic Device": what many I/O blocks declare (Balluff BNI EIP)
 }
+
+
+# [Device Classification] values that name a network Helmsman does not speak.
+OTHER_NETWORKS = ("devicenet", "controlnet", "componet")
 
 
 class EdsError(ValueError):
@@ -209,6 +215,19 @@ def parse(data: bytes) -> dict:
         if not 0 <= dev.get(key, -1) <= 65535:
             raise EdsError(f"[Device] has no {key} 0..65535")
     out = {"device": dev}
+    # Which network the file is for. ODVA lists DeviceNet and ControlNet files beside the
+    # EtherNet/IP ones; a draft from one of them is an entry nobody reaches over Ethernet.
+    classes = [
+        (f[0] or "").strip().strip('"')
+        for k, f in sec.get("device classification", [])
+        if k.lower().startswith("class") and f
+    ]
+    others = [c for c in classes if c.lower() in OTHER_NETWORKS]
+    if others and not any(c.lower() == "ethernetip" for c in classes):
+        out["not_ethernet_ip"] = f"the EDS is classified {', '.join(others)}, not EtherNet/IP"
+    elif "io_info" in sec and "connection manager" not in sec:
+        # [IO_Info] is how a DeviceNet EDS lists its I/O; an EtherNet/IP one has [Connection Manager].
+        out["not_ethernet_ip"] = "a DeviceNet EDS ([IO_Info], no [Connection Manager]), not EtherNet/IP"
     f = one("file", "Revision")
     if f and re.fullmatch(r"\d+\.\d+", f[0]):
         out["file_revision"] = f[0]
@@ -296,6 +315,39 @@ def toml_str(s: str) -> str:
     return json.dumps(str(s), ensure_ascii=False)
 
 
+def library_vendors(root: pathlib.Path = ROOT) -> dict[int, str]:
+    """CIP vendor id -> the vendor name the library uses, read from index.json.
+
+    index.json is built from every folder's [identity.enip] vendor_id and [device] vendor and
+    is checked fresh in CI, so the names cannot drift from the entries. When entries with one
+    id disagree the most common name wins, the alphabetically first on a tie. An index that is
+    missing or unreadable gives no names: the draft then falls back to the EDS's own."""
+    try:
+        devices = json.loads((root / "index.json").read_text(encoding="utf-8"))["devices"]
+        entries = list(devices)
+    except (OSError, ValueError, KeyError, TypeError):
+        return {}
+    names: dict[int, dict[str, int]] = {}
+    for d in entries:  # an entry with no EtherNet/IP identity (a Modbus unit) is skipped, not fatal
+        try:
+            vid = d["identity"]["enip"]["vendor_id"]
+            name = d["vendor"]
+        except (KeyError, TypeError):
+            continue
+        if isinstance(vid, int) and not isinstance(vid, bool) and isinstance(name, str) and name:
+            names.setdefault(vid, {}).setdefault(name, 0)
+            names[vid][name] += 1
+    return {vid: min(c, key=lambda n: (-c[n], n)) for vid, c in names.items()}
+
+
+def vendor_for(eds: dict, override: str | None, fallback: str, library: dict[int, str]) -> str:
+    """--vendor, else the library's name for the EDS's VendCode, else its VendName, else FALLBACK."""
+    if override:
+        return override
+    dev = eds["device"]
+    return library.get(dev.get("vendor_id")) or dev.get("vendor_name") or fallback
+
+
 def pick_connection(eds: dict) -> dict | None:
     """The connection a draft names: the first Exclusive Owner, else the first with both instances."""
     full = [c for c in eds["connections"] if "o_to_t_instance" in c and "t_to_o_instance" in c]
@@ -306,6 +358,8 @@ def pick_connection(eds: dict) -> dict | None:
 
 
 def draft(eds: dict, eds_file: dict, sources: list[dict], vendor: str, model: str) -> str:
+    if eds.get("not_ethernet_ip"):
+        raise EdsError(eds["not_ethernet_ip"])
     d = eds["device"]
     kind = DEVICE_KINDS.get(d.get("device_type"), "other")
     lines = [
@@ -510,7 +564,9 @@ def main(argv: list[str]) -> int:
             eds = parse(data)
         except EdsError as e:
             raise SystemExit(f"{eds_file['name']}: {e}") from None
-        vendor = vendor or eds["device"].get("vendor_name") or parts[1]
+        if eds.get("not_ethernet_ip"):
+            raise SystemExit(f"{eds_file['name']}: {eds['not_ethernet_ip']}: no folder is drafted from it")
+        vendor = vendor_for(eds, vendor, parts[1], library_vendors())
         model = model or eds["device"].get("product_name") or parts[2]
         target = ROOT / folder
         if (target / "device.toml").exists() and not force:

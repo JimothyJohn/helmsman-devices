@@ -2,7 +2,7 @@
 > EDS's, read by `scripts/eds-draft.py`. Points and their meaning are still to be
 > read from the manual, with its page for each.
 
-# TURCK TBEN-S1-8DIP
+# Turck TBEN-S1-8DIP
 
 EDS identity: vendor 48 TURCK, product code
 14020, device type 12 Communications Adapter,

@@ -2,9 +2,11 @@
 # checked_on, firmware and checked_by stay out until one has, and every value
 # below is what the vendor's file says, not what a device did.
 [device]
-vendor = "TURCK"
+vendor = "Turck"
 model = "TBEN-S1-8DIP"
 kind = "remote-io"
+category = "io-block"
+channels = "8 DI (PNP, M8)"   # from: TBEN-S Analog and Digital I/O Instructions for Use V06.00, sec. 14.2
 article = "6814020"
 
 [device.photo]

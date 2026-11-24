@@ -6,7 +6,9 @@ One file per device. Keys and what a lookup does with them.
 [device]
 vendor = "Moxa"                 # text, for a search
 model = "ioLogik E1213"         # text, for a search
-kind = "remote-io"              # remote-io | drive | controller | sensor | other
+kind = "remote-io"              # remote-io | drive | controller | sensor | other: what a box reads
+category = "panel-io"           # the shelf it is listed on, see "Categories" below
+channels = "8 DI, 4 DO, 4 DIO (source type)"   # from: <document, page>. What it has, see "Channels" below
 checked_on = "2026-11-02"       # the date the facts were last checked on a unit
 firmware = "V3.1 Build19110615" # the firmware they were checked against
 profile = "moxa-iologik-e1213.device"  # the device profile in this folder (helmsman-device 1): a controller copies it into a project when the device is added
@@ -61,6 +63,62 @@ firmware it was seen on.
 Everything a lookup matches on is under `identity`; everything a map needs
 is under `protocols`; everything a person wants to read is in the
 folder's README. A field nobody has checked is left out, not guessed.
+
+## Categories
+
+`category` is where a device is listed: its table in
+[`CATALOG.md`](../CATALOG.md), what `scripts/find.py` lists and what a page
+filters by. It is finer than `kind` because most of the library is one kind,
+`remote-io`. It is the editor's reading of what the vendor calls the device,
+not something a device reports, so a lookup never matches on it.
+
+| id | listed as | what is in it |
+| --- | --- | --- |
+| `io-block` | I/O blocks (on the machine) | fixed channels in one sealed housing with M12 ports |
+| `panel-io` | I/O modules (in the cabinet) | fixed channels in one module with terminals, on a DIN rail |
+| `io-coupler` | Modular I/O couplers | the head of a row of I/O slices or modules; the channels depend on what is fitted |
+| `iolink-master` | IO-Link masters | ports that speak IO-Link to sensors and actuators |
+| `valve-terminal` | Valve terminals | pneumatic valve manifolds and their bus nodes; an output switches a solenoid |
+| `drive` | Drives | frequency inverters, servo drives and their network option cards |
+| `motor-starter` | Motor starters and protection | starters, soft starters and motor management relays |
+| `power-meter` | Power meters | meters that give voltage, current, power and energy |
+| `vision` | Vision sensors and code readers | cameras that inspect, and readers of 1D and 2D codes |
+| `robot` | Robots | robot controllers, as a device another controller reads and commands |
+| `controller` | Controllers | programmable controllers that also answer as a device |
+| `sensor` | Sensors and actuators on a digital channel | wired to a point of an I/O block, not on the network |
+| `other` | Other | on the network, and none of the above |
+
+The list is `CATEGORIES` in `scripts/build-index.py`: a new shelf is added
+there, with its row here and in `AGENTS.md`. An id that is not in the list
+is refused. A folder with no `category` is not guessed at: a wired sensor
+or actuator (no `protocols`) goes under `sensor`, anything else under "Not
+yet sorted" (`unsorted` in `index.json`), and `build-index.py` names it
+when it writes, so a draft is seen and sorted.
+
+`index.json` carries `category` on every device and, beside `devices`,
+`categories`: the ids in use, in this order, each with its `label` and
+`what`. A box reads `format` and `devices` by key and ignores the rest.
+
+## Channels
+
+`channels` is one line, at most 120 characters, saying what the device has:
+what a list shows beside the model and what a search by capability matches
+(`find.py "16 DI"`, `find.py relay`). It is read from a document, and the
+comment after it names the document: `# from: data sheet p. 2`,
+`# from: EDS ProdName '...'`, or the vendor's page with the date it was
+seen. A model number that seems to spell it out is not a source.
+
+| the device | the line |
+| --- | --- |
+| fixed I/O | counts first, in the words a search uses: `8 DI, 8 DO (2 A each)`, `16 DIO`, `4 AI`, `6 DI, 6 relays`; `DIO` is a channel that is an input or an output |
+| an IO-Link master | `8 IO-Link ports (4 class A, 4 class B), 4 DIO` |
+| a valve terminal | `32 solenoid outputs`, `up to 32 solenoid outputs` when the document gives a maximum |
+| the head of a modular station | `none of its own: the <family> modules behind it (up to N) set the I/O`, the number only when a document states it |
+| a drive, a starter, a camera, a meter | what it exchanges with a controller, as the EDS's assembly members or the manual name it: `1 drive: control word and speed reference out, status word and actual speed in`; built-in terminals only when a document states them |
+
+When the documents give sizes and no names, the line says that
+(`500 bytes each way, no members named in the EDS`). When no document in
+reach says what the device has, the line is left out.
 
 ## A sensor or actuator on a digital channel
 

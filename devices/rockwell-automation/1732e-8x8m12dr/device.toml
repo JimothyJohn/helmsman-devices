@@ -1,0 +1,30 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Rockwell Automation"
+model = "1732E-8X8M12DR"
+kind = "remote-io"
+category = "io-block"
+channels = "8 DC in/out points (8 input bits, 8 output bits, M12)"   # from: EDS ProdName '1732E-8X8M12DR 8 DC In/Out M12'; connection help: 8 bits of Input Data, 8 output bits. Whether the points are shared is not in the EDS
+article = "1732E-8X8M12DR"
+
+[identity.enip]
+vendor_id = 1
+product_code = 358
+device_type = 7
+revisions = ["3.12"]   # the EDS's MajRev.MinRev
+product_name = "1732E-8X8M12DR 8 DC In/Out M12"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "1) Logix - Exclusive Owner w/Diags"
+input_assembly = { instance = 114, bytes = 9 }
+output_assembly = { instance = 34, bytes = 1 }
+config_assembly = { instance = 106, bytes = 8 }
+eds = { name = "0001000701660300.eds", size = 55643, sha256 = "b3f3b8397d8922a81fc2655ce72874f9c798b672abe9a5dad1242cb3060c566a", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip (member of 11894.05-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "ArmorBlock 1732E 16-point M12 EDS package 11894.05"
+sha256 = "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip; retrieved 2026-11-23; not redistributed here"

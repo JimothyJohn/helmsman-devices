@@ -1,0 +1,74 @@
+# Written by hand from the documents. No unit has been checked: checked_on,
+# firmware and checked_by stay out until one has.
+[device]
+vendor = "Moxa"
+model = "ioLogik E2210"
+kind = "remote-io"
+category = "panel-io"
+channels = "12 DI, 8 DO (sink)"
+
+[device.photo]
+url = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getattachment/8bc1a754-93d9-40f0-bc93-672a7b55f2c0/moxa-iologik-e2210-image.jpg"
+page = "https://www.moxa.com/en/products/industrial-edge-connectivity/controllers-and-ios/universal-controllers-and-i-os/iologik-e2200-series/iologik-e2210"
+seen = 2026-11-22
+
+[protocols.modbus]
+driver = "modbus-tcp"
+port = 502
+# The unit id is not given in the manual (see [[questions]]).
+
+[[points]]
+name = "DI-00..DI-11"
+modbus = "di:0..di:11; ir:12288..ir:12299 = each as one word"
+meaning = "digital input state, 1 = on (channel n at address n)"
+source = "E2200 manual v7.2 p. 171 (1xxxx), p. 172 (3xxxx 0x3000, 'Citect SCADA compatibility')"
+
+[[points]]
+name = "DI counters"
+modbus = "ir:0:u32 .. ir:22:u32 (two words a channel, high word first)"
+meaning = "event counter value of channel n at 2n; a channel in DI mode (hr:52 = 0) does not count"
+source = "E2200 manual v7.2 p. 171-172 (Count Value Hi-Byte at 2n, Lo-Byte at 2n+1); read as one 32-bit value is inferred"
+
+[[points]]
+name = "DI-00..DI-11 mode"
+modbus = "hr:52..hr:63"
+meaning = "0 = DI, 1 = counter, per channel; any other value is refused with Illegal Data Value"
+source = "E2200 manual v7.2 p. 173"
+
+[[points]]
+name = "DI counter control"
+modbus = "coil:48..coil:59 (start/stop); coil:60..coil:71 (write 1 to clear); coil:72..coil:83 (overflow, write 0 to clear)"
+meaning = "counter start/stop status (1 = start), clear (write only, reads 0) and overflow flag, per channel"
+source = "E2200 manual v7.2 p. 167-168"
+
+[[points]]
+name = "DO-00..DO-07"
+modbus = "coil:0..coil:7; hr:256..hr:263 = each as one word"
+meaning = "digital output command and state, 1 = on (channel n at address n)"
+source = "E2200 manual v7.2 p. 166 (0xxxx), p. 174 (4xxxx 0x0100, 'Citect SCADA compatibility')"
+
+[[points]]
+name = "DO-00..DO-07 mode"
+modbus = "hr:32..hr:39"
+meaning = "0 = DO, 1 = pulse output, per channel"
+source = "E2200 manual v7.2 p. 172-173"
+
+[[points]]
+name = "DO pulse output"
+modbus = "hr:0:u32 .. hr:14:u32 (count, two words a channel); hr:16..hr:23 (low width); hr:24..hr:31 (high width)"
+meaning = "pulse count and low/high signal widths of channel n in pulse mode"
+source = "E2200 manual v7.2 p. 172; the unit of the widths is not stated there; one 32-bit count is inferred from Hi-/Lo-Byte rows"
+
+[[sources]]
+title = "ioLogik E2200 Series User's Manual, v7.2 (2022-08-08)"
+sha256 = "62e957d08fdcb61140b28a45fe54c337a7e5883d181f68251bb2286cf4bd651b"
+where = "https://cdn-cms-frontdoor-dfc8ebanh6bkb3hs.a02.azurefd.net/getmedia/b6e2827c-9244-446a-babd-d9416dc55765/moxa-iologik-e2200-series-manual-v7.2.pdf; found on Moxa's support page for the E2200 series; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "ioLogik E2200 Series Datasheet, v1.3"
+sha256 = "b963b73cf84c6cabeb5496a5c42537c5c2dc305aa75f703ed93c4891a678fe0e"
+where = "https://www.moxa.com/getmedia/240b29be-aeb5-4910-80e8-bc58b1c8ba44/moxa-iologik-e2200-series-datasheet-v1.3.pdf; retrieved 2026-11-22; not redistributed here"
+
+[[questions]]
+ask = "Which unit id does the Modbus TCP server answer to? The manual's address tables give none, and the one unit id text (p. 26: RS-485 Unit ID 1, up to 247) is about the serial port."
+source = "E2200 manual v7.2, Appendix I (pp. 166-235) and the serial port notes"

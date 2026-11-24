@@ -1,0 +1,202 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Festo"
+model = "CMMT-AS-EP"
+kind = "drive"
+category = "drive"
+channels = "drive process data: DriveProfile 12 words each way, Extended Process Data 16 words each way"   # from: EDS CMMT-AS-EP.eds assemblies 5/6 DriveProfile O->T/T->O (12 x 16-bit members) and 7/8 Extended Process Data (16 x 16-bit, 32 bytes)
+article = "CMMT-AS"
+
+[identity.enip]
+vendor_id = 26
+product_code = 65282
+device_type = 43
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "CMMT-AS"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "DriveProfile - Exclusive Owner"
+# input_assembly: the size is set by Param6: 24..24 bytes, default 24
+input_assembly = { instance = 101 }
+# output_assembly: the size is set by Param5: 24..24 bytes, default 24
+output_assembly = { instance = 100 }
+config_assembly = { instance = 102 }
+eds = { name = "CMMT-AS-EP.eds", size = 15543, sha256 = "c236152b75a2f51c7b7a1313aa65211984a2aadb0d67c7905b32d8259dcb818f", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip (member of 11965.03-EDS.zip)", terms = "none stated" }
+
+[[sources]]
+title = "CMMT-AS / CMMT-ST EtherNet/IP EDS (ODVA marketplace, product 2342)"
+sha256 = "49a30233e0d5ee3c8f03c8ecea9f8e11bed747a3988da0f3674b79ce09c0c968"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2342/11965.03-EDS.zip; retrieved 2026-11-23; not redistributed here"
+
+
+[[points]]
+name = "T111 out STW1 bits 0..7 control word 1, low byte"
+enip = "out:0.0..out:0.7"
+meaning = "PZD1 (control word 1), bits 0 to 7. Bit 0 output stage enable (ON/OFF1, needs bit 3 = 1); 1 no coast stop (0 = OFF2); 2 no fast stop (0 = OFF3); 3 enable operation; 4 positioning: 1 = do not reject positioning task (speed mode: enable ramp generator); 5 positioning: 1 = no intermediate stop (speed: start ramp generator); 6 positioning: 0 to 1 activate positioning task (speed: enable speed setpoint); 7 acknowledge fault (0 to 1)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD1) and Tab. 1159 header; PDF p. 887-888 Tab. 1171 (STW1 bits; columns 'Speed mode' and 'Positioning mode'). Byte offset inferred from PZD order, the manual gives no byte offsets"
+
+[[points]]
+name = "T111 out STW1 bits 8..15 control word 1, high byte"
+enip = "out:1.0..out:1.7"
+meaning = "PZD1 (control word 1), bits 8 to 15. Bit 8 jogging 1; 9 jogging 2; 10 PLC master control (must be 1 for the other process data to apply); 11 positioning: start homing, 0 to 1 (speed: invert setpoint); 12 release holding brake; 13 positioning: start record change, 0 to 1; 14 and 15 reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD1) and Tab. 1159 header; PDF p. 887-888 Tab. 1171 (STW1 bits; columns 'Speed mode' and 'Positioning mode'). Byte offset inferred from PZD order, the manual gives no byte offsets"
+
+[[points]]
+name = "T111 out POS_STW1 positioner control word 1"
+enip = "out:2.0..out:3.7"
+meaning = "PZD2, 16 bits. Bits 0 to 6 positioning record selection (0 to 127); 8 absolute (1) or relative (0) positioning; 9 and 10 modulo direction (bit 9 = 1 positive, bit 10 = 1 negative, equal = shortest path); 14 setup mode (1) or positioning mode (0); 15 MDI selection (1 = activate MDI, direct setpoints); 7 and 11 to 13 reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD2); PDF p. 914-915 Tab. 1257 (POS_STW1 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 out POS_STW2 positioner control word 2"
+enip = "out:4.0..out:5.7"
+meaning = "PZD3, 16 bits. Bit 0 tracking mode; 1 set homing point (rising edge); 5 incremental (1) or velocity (0) jogging; 10 touch probe source (1 secondary encoder, 0 primary); 11 touch probe edge (1 falling, 0 rising); 14 activate software limit switch; 15 activate hardware limit switch; other bits reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD3); PDF p. 918-919 Tab. 1274 (POS_STW2 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 out STW2 control word 2"
+enip = "out:6.0..out:7.7"
+meaning = "PZD4, 16 bits. Bit 8 move to fixed stop (1 = activate, set before reaching the stop; 1 to 0 deactivates); all other bits reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD4); PDF p. 901 Tab. 1222 (STW2 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 out OVERRIDE velocity override"
+enip = "out:8.0..out:9.7"
+meaning = "PZD5, 16-bit signed (INT) percentage for the velocity of records, jogging, homing and MDI homing in positioning mode: 0x4000 (16384) = 100 %; the device parameter range is 0 to 200 %, values below are read as 0 %"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD5); PDF p. 913 section 14.6.8.17 and PDF p. 914 Tab. 1255. Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 out MDI_TARPOS MDI target position"
+enip = "out:10.0..out:13.7"
+meaning = "PZD6 and PZD7 together, 32-bit signed (DINT, profile PNU 34): target position for MDI (direct setpoint), in user units scaled by the factor group (Resolution position Px.7841, PNU 11724.0; limited to powers of 10)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (PZD6 to 7 merged cell in the left column, inferred from the merged cell in the image of the table); PDF p. 908 section 14.6.8.12 and Tab. 1237"
+
+[[points]]
+name = "T111 out MDI_VELOCITY MDI velocity"
+enip = "out:14.0..out:17.7"
+meaning = "PZD8 and PZD9 together, 32-bit unsigned (UDINT, profile PNU 35): velocity for MDI in user units scaled by the factor group (Resolution velocity Px.7842, PNU 11725.0; limited to powers of 10)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (PZD8 to 9 merged cell in the left column, inferred from the merged cell in the image of the table); PDF p. 908 section 14.6.8.13 and Tab. 1238"
+
+[[points]]
+name = "T111 out MDI_ACC MDI acceleration"
+enip = "out:18.0..out:19.7"
+meaning = "PZD10, 16-bit signed (INT, profile PNU 36): acceleration override for MDI, 0x4000 (16384) = 100 %, internally limited to 0.1 to 100 %"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, row PZD10); PDF p. 908 section 14.6.8.14 and Tab. 1239"
+
+[[points]]
+name = "T111 out MDI_DEC MDI deceleration"
+enip = "out:20.0..out:21.7"
+meaning = "PZD11, 16-bit signed (INT, profile PNU 37): deceleration override for MDI, 0x4000 (16384) = 100 %, internally limited to 0.1 to 100 %. PZD12 (bytes 22 and 23) is reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (left (setpoint, STW1 side) column of telegram 111, rows PZD11 and PZD12); PDF p. 908-909 section 14.6.8.15 and Tab. 1240"
+
+[[points]]
+name = "T111 in ZSW1 bits 0..7 status word 1, low byte"
+enip = "in:0.0..in:0.7"
+meaning = "PZD1 (status word 1), bits 0 to 7. Bit 0 ready to switch on; 1 ready for operation; 2 operation enabled; 3 fault active; 4 no coasting (0 = OFF2 active); 5 no fast stop (0 = OFF3 active); 6 switch-on inhibit; 7 warning"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD1); PDF p. 894 Tab. 1193 (ZSW1 bits; columns 'Speed mode' and 'Positioning mode'); PDF p. 896 PNU table for the PNU name of bit 9 (PNU 12207 listed in the PNU table). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in ZSW1 bits 8..15 status word 1, high byte"
+enip = "in:1.0..in:1.7"
+meaning = "PZD1 (status word 1), bits 8 to 15, positioning mode. Bit 8 setpoint/actual deviation in tolerance; 9 control requested ('Guide required' in the table, 'PLC Control Requested' in its PNU name); 10 target position reached; 11 reference point set; 12 positioning task acknowledged (0 to 1); 13 drive stationary; 14 axis accelerating; 15 drive decelerating. Speed mode: 10 speed comparison reached; 11 I, M or P limit not reached; 12 holding brake released; 13 no motor overtemperature warning; 14 direction (1 = actual speed >= 0); 15 no power unit overtemperature warning"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD1); PDF p. 894 Tab. 1193 (ZSW1 bits; columns 'Speed mode' and 'Positioning mode'); PDF p. 896 PNU table for the PNU name of bit 9 (PNU 12207 listed in the PNU table). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in POS_ZSW1 positioner status word 1"
+enip = "in:2.0..in:3.7"
+meaning = "PZD2, 16 bits. Bits 0 to 6 active positioning record (0 to 127; 0 when MDI is active or no record is active); 8 negative limit switch active; 9 positive limit switch active; 10 jogging active; 11 homing active; 13 positioning records active; 14 setup active; 15 MDI active; 7 and 12 reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD2); PDF p. 916-917 Tab. 1264 (POS_ZSW1 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in POS_ZSW2 positioner status word 2"
+enip = "in:4.0..in:5.7"
+meaning = "PZD3, 16 bits. Bit 0 tracking mode active; 1 velocity limiting active; 2 setpoint stopped; 4 drive moves forward; 5 drive moves backwards; 6 negative software limit switch active; 7 positive software limit switch active; 8 actual position <= cam switch 0; 9 actual position <= cam switch 1; 10 direct output 1 via record; 11 direct output 2 via record; 12 fixed stop reached; 13 fixed stop clamping torque reached; 14 move to fixed stop active; 15 positioning command active; 3 reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD3); PDF p. 920-921 Tab. 1283 (POS_ZSW2 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in ZSW2 status word 2"
+enip = "in:6.0..in:7.7"
+meaning = "PZD4, 16 bits. Bit 8 move to fixed stop active; bit 11 power stage active; all other bits reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD4); PDF p. 901 Tab. 1225 (ZSW2 bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in MELDW status word messages"
+enip = "in:8.0..in:9.7"
+meaning = "PZD5, 16 bits. Bit 0 ramp generator inactive (startup complete); 1 torque utilisation below threshold; 2 actual speed below threshold 1; 3 actual speed at or below threshold 2; 5 variable message function threshold exceeded; 6 no motor overtemperature warning; 7 no power stage overtemperature warning; 8 velocity setpoint/actual deviation in tolerance; 11 controller enable; 12 ready for operation; 13 power stage enabled; 4, 9, 10, 14, 15 reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD5); PDF p. 909 Tab. 1241 (MELDW bits). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in XIST_A actual position"
+enip = "in:10.0..in:13.7"
+meaning = "PZD6 and PZD7 together, 32-bit signed (DINT, profile PNU 28; parameter 'Actual value modulo', P1.113104): actual position in user units scaled by the factor group"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (PZD6 to 7 merged cell in the right column, inferred from the merged cell in the image of the table); PDF p. 907 section 14.6.8.11 and Tab. 1236"
+
+[[points]]
+name = "T111 in NIST_B actual velocity"
+enip = "in:14.0..in:17.7"
+meaning = "PZD8 and PZD9 together, 32-bit signed (profile PNU 8): actual speed, standardised like NSOLL_B (0x40000000 = 100 % of the speed set by PNU 60000, per the manual). NIST_A and NIST_B are the same parameter (Px.1210)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (PZD8 to 9 merged cell in the right column, inferred from the merged cell in the image of the table); PDF p. 902-903 section 14.6.8.6 and Tab. 1230"
+
+[[points]]
+name = "T111 in FAULT_CODE active error"
+enip = "in:18.0..in:19.7"
+meaning = "PZD10, 16-bit unsigned (UINT): the drive's active error (parameter P1.11280062, PNU 301); the code values are in the manual's fault list, not read here"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, row PZD10); PDF p. 882-883 Tab. 1162 and Tab. 1163 (Active error, UINT). Byte offset inferred from PZD order"
+
+[[points]]
+name = "T111 in WARN_CODE active warning"
+enip = "in:20.0..in:21.7"
+meaning = "PZD11, 16-bit unsigned (UINT): the drive's active warning (parameter P1.11280063, PNU 303). PZD12 (bytes 22 and 23) is reserved"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1160 (right (actual, ZSW1 side) column of telegram 111, rows PZD11 and PZD12); PDF p. 882-883 Tab. 1162 and Tab. 1163 (Active warning, UINT)"
+
+[[points]]
+name = "T1 out STW1 control word 1"
+enip = "out:0.0..out:1.7"
+meaning = "Telegram 1 (speed, 16 bit), PZD1: control word 1, same bits as telegram 111 (speed-mode meanings of bits 4, 5, 6, 11 apply). Only PZD1 and PZD2 are defined; the rest of the 24-byte image is not used by this telegram (inferred)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1159 (telegram 1, left (setpoint) column, row PZD1); PDF p. 887-888 Tab. 1171"
+
+[[points]]
+name = "T1 out NSOLL_A speed setpoint"
+enip = "out:2.0..out:3.7"
+meaning = "Telegram 1, PZD2: speed setpoint A, 16-bit signed (profile PNU 5), bit 15 is the sign, 0x4000 (16384) = 100 % of the speed set by PNU 60000"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1159 (telegram 1, left (setpoint) column, row PZD2); PDF p. 902 section 14.6.8.5 and Tab. 1229"
+
+[[points]]
+name = "T1 in ZSW1 status word 1"
+enip = "in:0.0..in:1.7"
+meaning = "Telegram 1 (speed, 16 bit), PZD1: status word 1, same bits as telegram 111"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1159 (telegram 1, right (actual) column, row PZD1); PDF p. 894 Tab. 1193"
+
+[[points]]
+name = "T1 in NIST_A actual speed"
+enip = "in:2.0..in:3.7"
+meaning = "Telegram 1, PZD2: actual speed A, 16-bit signed (profile PNU 6), standardised like NSOLL_A (0x4000 = 100 %)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 881 Tab. 1159 (telegram 1, right (actual) column, row PZD2); PDF p. 902-903 section 14.6.8.6 and Tab. 1230"
+
+[[points]]
+name = "EPD out extended process data"
+enip = "out:0.0..out:31.7"
+meaning = "Extended Process Data connection (assembly 110): 32 bytes, up to 8 parameters mapped with the CMMT-AS plug-in (Rx data), any read/write parameter of the drive; no fixed layout. Activated with parameter P0.3030104 'Extended process data (EtherNet/IP)'. The mapped parameters are read back in Number of objects/bytes Rx (P0.4242101/4242102)"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 880 section 14.6.4.1 ('instances 110 and 111 for the extended process data'); PDF p. 883-884 section 14.6.7 and Tab. 1165; PDF p. 886 Tab. 1168"
+
+[[points]]
+name = "EPD in extended process data"
+enip = "in:0.0..in:31.7"
+meaning = "Extended Process Data connection (assembly 111): 32 bytes, up to 8 parameters mapped with the CMMT-AS plug-in (Tx data), any parameter of the drive; no fixed layout. Number of objects/bytes Tx in P0.4242201/4242202"
+source = "Manual CMMT-AS-...-S1 (2026-06p) PDF p. 880 section 14.6.4.1; PDF p. 883-884 section 14.6.7 and Tab. 1165; PDF p. 885 Tab. 1166"
+
+[[sources]]
+title = "Manual CMMT-AS-...-S1: software, device profile, function, fieldbus (CMMT-AS-_-S1_manual_2026-06p_8259155g1), 924 pages"
+sha256 = "7688e16ae76d2756276655489f2fb90c393755749328ceb88d3c9c9b10be8188"
+where = "https://www.festo.com/assets/attachment/en/665942, downloaded in a browser 2026-11-23 (festo.com does not answer a fetch); kept in the private document store; not redistributed here. Chapter 14 'EtherNet/IP - Modbus TCP', PDF p. 853-921"
+
+[[questions]]
+ask = "Which telegram does a unit run on EtherNet/IP as delivered, and is the 24-byte DriveProfile image telegram 111 (the only one the manual lists with 12 PZD)? The manual says the 'Telegram selection' parameter (P0.3030101) picks the telegram and the mapping, and gives no default."
+source = "Manual CMMT-AS-...-S1 PDF p. 855 (Tab. 1089), PDF p. 880 (Tab. 1157, Tab. 1158)"
+
+[[questions]]
+ask = "Byte order and word offsets of the process data: the manual numbers words PZD1 to PZD12 and does not give byte offsets or byte order for EtherNet/IP. Is PZD1 at byte 0, low byte first?"
+source = "Manual CMMT-AS-...-S1 PDF p. 881 Tab. 1159 and Tab. 1160"

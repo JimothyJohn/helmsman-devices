@@ -1,0 +1,33 @@
+# Drafted by scripts/eds-draft.py from the EDS alone. No unit has been checked:
+# checked_on, firmware and checked_by stay out until one has, and every value
+# below is what the vendor's file says, not what a device did.
+[device]
+vendor = "Mitsubishi Electric"
+model = "FR-E800-SCE"
+kind = "drive"
+category = "drive"
+channels = "1 drive: run fwd/rev, fault reset, speed ref out; faulted, running, state in; safety STO, SS1, SSM, SLS1-4 bits"   # from: EDS 00A10002003F0100.eds: Assem20-23, 70-73, 140, 190
+
+[identity.enip]
+vendor_id = 161
+product_code = 63
+device_type = 2
+revisions = ["1.1"]   # the EDS's MajRev.MinRev
+product_name = "FR-E800-SCE"
+
+[protocols.enip]
+driver = "enip-io"
+# from Connection1 "Basic Speed Control"
+input_assembly = { instance = 70, bytes = 4 }
+output_assembly = { instance = 20, bytes = 4 }
+eds = { name = "00A10002003F0100.eds", size = 245163, sha256 = "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28", url = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds", terms = "none stated" }
+
+[[sources]]
+title = "Mitsubishi Electric FR-E800-SCE: declaration of conformity (ODVA), ODVA marketplace product 2231"
+sha256 = "75334048f965586f3dc5193f57585624b4c130b2e394ae62f690a11df12877c2"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2231/11935_DOC_051320.pdf; retrieved 2026-11-23; not redistributed here"
+
+[[sources]]
+title = "Mitsubishi Electric FR-E800-SCE: EDS, ODVA marketplace product 2231"
+sha256 = "60cd04c5794461026fe19503a49936e64344e6c420a5e50868cd2c362df2db28"
+where = "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2231/00A10002003F0100.eds; retrieved 2026-11-23; not redistributed here"

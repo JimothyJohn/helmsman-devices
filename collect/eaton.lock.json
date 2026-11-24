@@ -1,0 +1,111 @@
+{
+ "docs": {
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/1777/11482_DOC_102122.pdf",
+   "folders": [
+    "devices/eaton/powerxl-dg1"
+   ],
+   "kind": "datasheet",
+   "name": "11482_DOC_102122.pdf",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "812c0e0a2ed3db2e2c06ef588a3e1397f303714724a9f565e997a1b1e91d4c51",
+   "size": 128420,
+   "terms": "none stated",
+   "title": "Eaton PowerXL DG1: declaration of conformity (ODVA), ODVA marketplace product 1777",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2297/11952_DOC_011623.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2297/11952_DOC_011623.pdf",
+   "folders": [
+    "devices/eaton/powerxl-dm1-pro"
+   ],
+   "kind": "datasheet",
+   "name": "11952_DOC_011623.pdf",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "040e532cb2d479eb1fda78fd79dcbe35d38572ce7113166ef64f64065f257d2d",
+   "size": 131504,
+   "terms": "none stated",
+   "title": "Eaton PowerXL DM1 Pro: declaration of conformity (ODVA), ODVA marketplace product 2297",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf": {
+   "content_type": "application/pdf",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/doc_file/2764/12511_DOC_090226.pdf",
+   "folders": [
+    "devices/eaton/powerxl-vfd-eip-comm-card"
+   ],
+   "kind": "datasheet",
+   "name": "12511_DOC_090226.pdf",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "ac8a66900ee14a4d966d3c6e2447cd8fcbd51e416f214adc29db86056c7e0ff7",
+   "size": 120299,
+   "terms": "none stated",
+   "title": "Eaton PowerXL EtherNet/IP comm card: declaration of conformity (ODVA), ODVA marketplace product 2764",
+   "type": "pdf"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1777/11482.03-EDS.zip",
+   "folders": [
+    "devices/eaton/powerxl-dg1"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "PowerXL_EIP_v2.8.eds",
+     "sha256": "bdea15cd765ecb14091c0b3850ddc89e46eaa5d97e572e1e0ce01d55c1795e1f",
+     "size": 233100,
+     "type": "eds"
+    }
+   ],
+   "name": "11482.03-EDS.zip",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "f0ab6f2304ec7edc35723bc495a26dda76971213ef0fab150f09e98e560fdbc8",
+   "size": 6787,
+   "terms": "none stated",
+   "title": "Eaton PowerXL DG1: EDS, ODVA marketplace product 1777",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2297/11952.03-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2297/11952.03-EDS.zip",
+   "folders": [
+    "devices/eaton/powerxl-dm1-pro"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "PowerXLDM1_EIP_V1.06.eds",
+     "sha256": "479e24e490e2b74aedb17f5706ad80284bf7e42774ff528dea9ce7a7e880492b",
+     "size": 262169,
+     "type": "eds"
+    }
+   ],
+   "name": "11952.03-EDS.zip",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "e7490fc282e8b579f4847309d1310d587b5d79c26a841a8fe9a1917f27cbc2be",
+   "size": 19420,
+   "terms": "none stated",
+   "title": "Eaton PowerXL DM1 Pro: EDS, ODVA marketplace product 2297",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds": {
+   "content_type": "application/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2764/PowerXL_VFD_EIP_Comm_Card_v1.9.eds",
+   "folders": [
+    "devices/eaton/powerxl-vfd-eip-comm-card"
+   ],
+   "kind": "eds",
+   "name": "PowerXL_VFD_EIP_Comm_Card_v1.9.eds",
+   "retrieved": "2026-11-23T03:42:18Z",
+   "sha256": "665a566f6fa43ac4a5108b25bf74d2b3e8aaf432abab26e6915dcc5d46ecbed4",
+   "size": 141156,
+   "terms": "none stated",
+   "title": "Eaton PowerXL EtherNet/IP comm card: EDS, ODVA marketplace product 2764",
+   "type": "eds"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}

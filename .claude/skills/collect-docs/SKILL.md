@@ -67,6 +67,13 @@ Each line is `fetched`, `stored` (already in the store, no request), `changed`
 internet, HTML where a PDF was promised, a cap. Fix the candidate (a better URL),
 do not work around the rule. Exit 1 when anything was refused.
 
+A vendor that serves a file only to a person's browser (a script wall, a terms
+box, a bot filter's 403) is not a rule to get around either: give that `[[doc]]`
+`browser = true` with the download page as its `url`, and once someone has
+downloaded the file in a browser, `--import URL FILE` takes it in
+(collect/README.md, Documents only a browser gets). Never fake a browser's user
+agent to the fetcher. Ticking a vendor's terms box is the person's decision.
+
 ## 3. Draft
 
 ```sh
@@ -87,19 +94,36 @@ identity and sources are not.
 Keep the draft honest: no `checked_on`, `firmware` or `checked_by` until a unit
 has been on the bench (README: Contributing).
 
+The draft refuses an EDS written for another network (its `[Device Classification]`
+names DeviceNet or ControlNet and not EtherNet/IP, or it lists its I/O under
+`[IO_Info]` with no `[Connection Manager]`). ODVA's marketplace lists such files
+beside the EtherNet/IP ones, sometimes in one zip: pick the EtherNet/IP member with
+`--eds`, or drop the device with the reason in the collect file.
+
+Say what the device has: `channels = "8 DI, 4 DO"   # from: <document, page>` under
+`[device]`, from a document you opened (`docs/device-toml.md`, Channels), never from
+the model number alone.
+
+Give every new folder its shelf: `category = "..."` under `[device]`, one of the
+ids `docs/device-toml.md` lists (`io-block`, `drive`, `valve-terminal`, ...), from
+what the vendor calls the device. `eds-draft.py` does not write one, and a folder
+without it is listed under "Not yet sorted" in `CATALOG.md`; `build-index.py`
+names such folders when it writes.
+
 ## 4. Ship
 
 ```sh
-python3 -I scripts/build-index.py && python3 -I scripts/build-review.py
-uvx ruff@0.17.4 check . && uvx ruff@0.17.4 format --check .
-python3 -I scripts/build-index.py --check && python3 -I scripts/build-review.py --check
+python3 -I scripts/build-index.py && python3 -I scripts/build-review.py && python3 -I scripts/build-records.py
+uvx ruff@0.17.6 check . && uvx ruff@0.17.6 format --check .
+python3 -I scripts/build-index.py --check && python3 -I scripts/build-review.py --check && python3 -I scripts/build-records.py --check
 python3 -I -B -m unittest discover -s tests
+python3 -I scripts/use.py devices/<vendor>/<model>    # each new folder, read as its user will
 ```
 
 Commit `collect/<vendor>.toml`, `collect/<vendor>.lock.json`, the folders,
-`index.json` and `review.json`; never a file from `cache/`. Open the PR ready, not as a draft (Nick,
+`index.json`, `CATALOG.md` (`build-index.py` writes both) and `review.json`; never a file from `cache/`. Open the PR ready, not as a draft (Nick,
 2026-11-14): the auto-merge workflow skips drafts, and a folder from documents
 already says so (no `checked_on`), which the site shows as "from documents". Say
 in the PR body what a unit must settle (a contradiction between documents, a
-size the EDS leaves open). Two family PRs both regenerate `index.json`: when one
+size the EDS leaves open). Two family PRs both regenerate `index.json` and `CATALOG.md`: when one
 merges, merge `origin/dev` into the other and rerun `scripts/build-index.py`.

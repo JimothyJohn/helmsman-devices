@@ -1,0 +1,767 @@
+{
+ "docs": {
+  "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in008_-en-p.pdf": {
+   "content_type": "",
+   "final_url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in008_-en-p.pdf",
+   "folders": [
+    "devices/rockwell-automation/1732e-16cfgm12r"
+   ],
+   "kind": "manual",
+   "name": "1732e-in008_-en-p.pdf",
+   "retrieved": "2026-11-23T16:13:31Z",
+   "sha256": "4d178b8251128919230c5b12bac89705c54fb7f8d1c34ce8f082d242b5b66038",
+   "size": 1604121,
+   "title": "ArmorBlock I/O 16-channel Configurable Digital Modules Installation Instructions, 1732E-IN008",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf": {
+   "content_type": "",
+   "final_url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/in/1732e-in009_-en-p.pdf",
+   "folders": [
+    "devices/rockwell-automation/1732e-16cfgm12r",
+    "devices/rockwell-automation/1732e-ib16m12r",
+    "devices/rockwell-automation/1732e-ob16m12r"
+   ],
+   "kind": "manual",
+   "name": "hd-1732e-in009_-en-p.pdf",
+   "retrieved": "2026-11-23T16:09:04Z",
+   "sha256": "01b24672f1e986f006d0438764f75f2b492a31d76653c17d69467adda8ea44fd",
+   "size": 1370328,
+   "title": "ArmorBlock 2-port EtherNet/IP Modules Installation Instructions, 1732E-IN009",
+   "type": "pdf",
+   "via": "browser"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1019/10585.05-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1794-aent"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C005A0400.EDS",
+     "sha256": "97b40eec9bf440faa340cb59ffb17a341e2c5b543d1d222928696ea7def8fa89",
+     "size": 79801,
+     "type": "eds"
+    }
+   ],
+   "name": "10585.05-EDS.zip",
+   "retrieved": "2026-11-23T03:39:33Z",
+   "sha256": "4e723f2d1210738af0528eb488ba573a04de82f89bc8d470bdebf6569361ace8",
+   "size": 5790,
+   "terms": "none stated",
+   "title": "FLEX I/O 1794-AENT/B EDS package 10585.05",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1162/11237.04-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1162/11237.04-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1769-aentr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C012A0100.eds",
+     "sha256": "aa2345723785b71f7c40a51dba4854e8cab8937a4eec20d747503c9109b9ffb5",
+     "size": 4229,
+     "type": "eds"
+    }
+   ],
+   "name": "11237.04-EDS.zip",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "5d0a1249479d0e23e2f6be9cca005bca9a6c0c7e66cd7ffe2f2c2a7c554ef8ce",
+   "size": 1611,
+   "terms": "none stated",
+   "title": "CompactLogix 1769-AENTR EDS package 11237.04",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds": {
+   "content_type": "binary/octet-stream",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1185/0001000C00FC0300_as_uploaded_from_3.011.44.eds",
+   "folders": [
+    "devices/rockwell-automation/5069-aen2tr"
+   ],
+   "kind": "eds",
+   "name": "0001000C00FC0300_as_uploaded_from_3.011.44.eds",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "b40ea940a20752f66430df08ddd74ecdc0ea86618a4eda23cda922f86c6e116e",
+   "size": 14648,
+   "terms": "none stated",
+   "title": "Compact 5000 5069-AEN2TR EDS (uploaded from firmware 3.011.44)",
+   "type": "eds"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1240/10748.04-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1732e-ib16m12r",
+    "devices/rockwell-automation/1732e-ob16m12r"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "10748.04-EDS/1732E_16CfgBlock2Port.eds",
+     "sha256": "3ec4de7c04f16c6da6aef8991ab9c18fc0f455a09875fc19f88e1ff5caa58fc2",
+     "size": 29150,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_16InBlock2Port.eds",
+     "sha256": "96657dd7152d74f77722c4a7a39b3a929ec5cfb4a5f1506e654d80ce395856ec",
+     "size": 23963,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_16InBlock2PortDiags.eds",
+     "sha256": "45de097c3654ec000a83e1619461a6345ba474459db01d63dad152dd53468b4d",
+     "size": 33570,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_16InBlock2PortTime.eds",
+     "sha256": "54043f3c5a8607d0f364ec4ef88cb4223ee3befd49a6377f5d100a18899fd456",
+     "size": 86476,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_16OutBlock2Port.eds",
+     "sha256": "4ec0530cbf3c9474dc764b4e7171209c2be0c09e2616f9da0ea26292b36d1d32",
+     "size": 13675,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_16OutBlock2PortDiags.eds",
+     "sha256": "a7c2799f6518246196d433652eaa08f7c29a49577ab733a0c4bfd82b47fabb7e",
+     "size": 30876,
+     "type": "eds"
+    },
+    {
+     "name": "10748.04-EDS/1732E_8X8Block2PortDiags.eds",
+     "sha256": "a2074639a76796e302bbfcf8252b7f18d203cd3ee8adb73b199c8ce6ff21a6f4",
+     "size": 54877,
+     "type": "eds"
+    }
+   ],
+   "name": "10748.04-EDS.zip",
+   "retrieved": "2026-11-23T03:39:33Z",
+   "sha256": "1e30150bed43e04b6a245565f57b13cf26d6f24d338b1df6759a2d5b3d6e21d2",
+   "size": 22516,
+   "terms": "none stated",
+   "title": "ArmorBlock 1732E 16-point EDS package 10748.04",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1813/11554.05_EDS_Files.zip",
+   "folders": [
+    "devices/rockwell-automation/1719-aentr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "1718 Adapter EDS/1718_AENTR.eds",
+     "sha256": "fc34a48331a927f3414e0ad4da530328accfce6e38e441c38c339546cfab7202",
+     "size": 8271,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Adapter EDS/1718_AENTR.eds.ebf",
+     "sha256": "fc34a48331a927f3414e0ad4da530328accfce6e38e441c38c339546cfab7202",
+     "size": 8271,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10+10Chassis.eds",
+     "sha256": "631c43b11ae1593ab414c7306a9ed439742f4b031586ac677f392ee4eba6ae2c",
+     "size": 3131,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10+10Chassis.eds.ebf",
+     "sha256": "82917f09345f25a38cffc5e91b77623290cd5f253e3e6fe9654116102b17e00c",
+     "size": 3141,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10+20Chassis.eds",
+     "sha256": "d2a7068b1a35dd48d4c2b16a461426c6ed92e6329e667788f2c48fd182efd7f8",
+     "size": 3393,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10+20Chassis.eds.ebf",
+     "sha256": "74622ec18f098af71828766063c28b24cd784b14acf69c539b032a6e20d4b385",
+     "size": 3403,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10Chassis.eds",
+     "sha256": "6849727b53fb7d5464a5c0792bf872190d575db0a15df0d3b8fb0d6f45203d27",
+     "size": 2942,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A10Chassis.eds.ebf",
+     "sha256": "c66bc55c2d21aabea4e6cfa82ad4955b48aaccd0fc436cde5665f0e3a195a816",
+     "size": 2952,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20+10Chassis.eds",
+     "sha256": "1a0376000ea5d619d1944f7e65ed875fa2302131256d35e81e0f3ee7c709a973",
+     "size": 3391,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20+10Chassis.eds.ebf",
+     "sha256": "48f55538ce8f106c7ae5055a2ed3f62110fe371eaf4f696795d930e58f0caa47",
+     "size": 3401,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20+20Chassis.eds",
+     "sha256": "7278f5e3c962427c3710d6594e9a871a36b8383bbb8ec1c7ed6ab6dd5b470558",
+     "size": 3653,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20+20Chassis.eds.ebf",
+     "sha256": "17b969af0dcab17815bb8617f319716bb09683eb51dc6fb0a51dc7f0b5b0e8d8",
+     "size": 3663,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20Chassis.eds",
+     "sha256": "9b1193ab6853a64e95624b9c6b19f7d54c489062b85f60d02283ce03ab05ec3f",
+     "size": 3263,
+     "type": "eds"
+    },
+    {
+     "name": "1718 Chassis EDS/1718_A20Chassis.eds.ebf",
+     "sha256": "58bbef3c2163ec622529a891d3e0be864ebe1ed23cb93129fed058324caee8a2",
+     "size": 3273,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-CF4H.eds",
+     "sha256": "ad9ad0841474d57707b65a22ca7d0dcac3c69c86339fa2a101a85272153229ca",
+     "size": 30363,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-CF4H.eds.ebf",
+     "sha256": "c4e2cc64a4b677d523de69b25f7d9db7cf87a1f5c6deff0686bda66a89c2118a",
+     "size": 30286,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IBN8.eds",
+     "sha256": "a8577d1d683ddd50fe203f1843403fe50eaec9209b055a612d328071901339ea",
+     "size": 9090,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IBN8.eds.ebf",
+     "sha256": "134064f97b7cb5419f69a352ef1d52faac4457486ebd64a959bfa01fc04b7d48",
+     "size": 9013,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IBN8B.eds",
+     "sha256": "c506723068ebfa347a300adea4c394f54223b821851bf004c1b82235e52b41c2",
+     "size": 9148,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IBN8B.eds.ebf",
+     "sha256": "4854522e1ac61fc7b1d2bd961e57fa759b0b46d9336f5c2360e1d1af79d1d4ca",
+     "size": 9071,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IF4H.eds",
+     "sha256": "276f72bb441c0722fcccfcd8e433ceebd4c9e2e443f609597cc78875d9d54b5c",
+     "size": 16173,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IF4H.eds.ebf",
+     "sha256": "c7729767d532d8299836ba45b7a7e53d406193c53b834406af4ab0ac93421dd8",
+     "size": 16096,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IF4HB.eds",
+     "sha256": "b6e7aa83111a8d3c7bb61b6b632d5d03dd08f8f7c2a8c0a4069a312bb2ceb384",
+     "size": 16244,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IF4HB.eds.ebf",
+     "sha256": "54efbb5100e4944845cd64e7eb37d5658a53ae20cbd539b6ec1bd4d5cc2641a3",
+     "size": 16167,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IJ.eds",
+     "sha256": "92e8ba86d60bd889013381434e8720c3388ede605a48b2e75a130084bc22bf30",
+     "size": 9055,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IJ.eds.ebf",
+     "sha256": "6c9d0899406fceece40cde60cd3d3d439a79b9e0733bee7e789edeafe236b0a7",
+     "size": 8978,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IR4B.eds",
+     "sha256": "dc3746acc046f8b68729f1bddce478d8c1d233990f7c40192e00344d81ae7048",
+     "size": 9120,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IR4B.eds.ebf",
+     "sha256": "a9aa55fcf937cc3896d198d8dc8815bb18302566066a5ca7a978a8679eef3b56",
+     "size": 9043,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IRT4.eds",
+     "sha256": "e588e299d9edd59036ffa0ddec177ac46f482bafe2965d18fa02eb228e1fd857",
+     "size": 9111,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IRT4.eds.ebf",
+     "sha256": "62b367a8e2622e5359d7eb1a140f740d205e2f73a89eede428d3fbb6b81ab9f0",
+     "size": 9034,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IT4B.eds",
+     "sha256": "d548a88ecb6f5b98fc6b04fd1b7618805ac1078b0f4cc6955609888a45419407",
+     "size": 9096,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-IT4B.eds.ebf",
+     "sha256": "010c63537b71bc2d5f0b314626651b456dc3999a5190758c883b827e159a2f49",
+     "size": 9019,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-OB2.eds",
+     "sha256": "bd3afd79d7caac4a6fbd473ad7cd67c1dfaccd4cf2c3ca4e4b3b592def95e582",
+     "size": 16211,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-OB2.eds.ebf",
+     "sha256": "7618cd5f5c5ee8f1072f3dcb7e5a5e7a7de2f3d6f551a03cd4b9bc826454282b",
+     "size": 16134,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-OB2L.eds",
+     "sha256": "ffd52ff236ca156b99e359a740668448961e2d5bbbada17bdc3353094f0859b0",
+     "size": 16218,
+     "type": "eds"
+    },
+    {
+     "name": "1718 IO Module EDS/1718-OB2L.eds.ebf",
+     "sha256": "e88722521ce9e05b2a5141b68f8b38836a531e101905e9312fac491dba95b856",
+     "size": 16141,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Adapter EDS/1719_AENTR.eds",
+     "sha256": "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2",
+     "size": 7966,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Adapter EDS/1719_AENTR.eds.ebf",
+     "sha256": "ad297c35dc397581fe936ac4f2e4e0b6f6d77931c0ef0b6d469a7c7ab69b7ab2",
+     "size": 7966,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A22+24Chassis.eds",
+     "sha256": "a1ace2b739f605b80c49df0ce59be0fcf590267922d41c1dc2023f5c4443bb6a",
+     "size": 3491,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A22+24Chassis.eds.ebf",
+     "sha256": "771240414ede4a280bfc8ae7da0f15f52b07668158ae4620ec26618d4f1e4236",
+     "size": 3501,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A22Chassis.eds",
+     "sha256": "772712d9e2548a5b0a99a7c2b2c977242938e86fa6a633863dc741852c63b20a",
+     "size": 2879,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A22Chassis.eds.ebf",
+     "sha256": "8b346d7906a62b43270f14351de97f5892ef63333d5f7379541d8166400bc410",
+     "size": 2889,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A8+24Chassis.eds",
+     "sha256": "a5e5690611a2b71412bc6a72dffe69c2cf88e04016cdf813d96f0fdedacfcedc",
+     "size": 3203,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A8+24Chassis.eds.ebf",
+     "sha256": "4dc326a4e6075de867d575d30e30e78dde4e25dbc86afb0b8f7270a0b9463f62",
+     "size": 3213,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A8Chassis.eds",
+     "sha256": "ca16aab6a4fdd5dc990b451bf97484791638d51405fc17557d41adc48e2da385",
+     "size": 2467,
+     "type": "eds"
+    },
+    {
+     "name": "1719 Chassis EDS/1719_A8Chassis.eds.ebf",
+     "sha256": "4557eedd5aa4a256149aa0dcf6813476e194d54165b557d24b528cb4957285ce",
+     "size": 2477,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-CF4H.eds",
+     "sha256": "ee8b0175ae4493085fd751bc8621857b13599daaa9a630fc2a9c3fe6f53e0648",
+     "size": 30032,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-CF4H.eds.ebf",
+     "sha256": "905f470bf8cc5bf2e0b1246b9ae2fe1ce1e6a0e8adef269c9b6dd1821859d67f",
+     "size": 29955,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IBN8.eds",
+     "sha256": "5c4909bf6fcd412820d9bef89c2848a3d230df27cb465bb57b9bd39f86bb717e",
+     "size": 8758,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IBN8.eds.ebf",
+     "sha256": "807492e441f3c5e96492bba101774b97b3fe1dc81cac35fce7119508ee64a745",
+     "size": 8681,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IBN8B.eds",
+     "sha256": "ca0600205749ed2ad7d86d27dab6faa495c80f9136ca0be852388a1a4958cd3b",
+     "size": 8822,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IBN8B.eds.ebf",
+     "sha256": "46f6813c5c8fbd39b0e7c1947138ce2afb898fefce7f546cfdc1b87a9f53a8e5",
+     "size": 8745,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IF4H.eds",
+     "sha256": "f51aa3272b86aca0cb2326d63066127badb8cf78c6394a47745d77db205f3959",
+     "size": 15841,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IF4H.eds.ebf",
+     "sha256": "c8dd55fda9a58412e6d1cfd01c382bb88be7383d672e847aa2733aaabb88ae8d",
+     "size": 15764,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IF4HB.eds",
+     "sha256": "368187f4338d5879a9da69c0d9fe2a902336179544cfc9711c004cd061376261",
+     "size": 15910,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IF4HB.eds.ebf",
+     "sha256": "2340a8309dd6b2fd0ef2ba26c5c011659afb2bb85b558bcbb9cadc396c858356",
+     "size": 15833,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IJ.eds",
+     "sha256": "4910dd5f5597f84092e2194079ddbd3d7a7e51364ca6cd8c8feb6788ba32bbb5",
+     "size": 8723,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IJ.eds.ebf",
+     "sha256": "f781e379105fccdfff51b6f59b3ce242fcdc49f15c4f478cbe561e52bc888b8a",
+     "size": 8646,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IR4B.eds",
+     "sha256": "d92c411214b99fabd316348dbe12bf118cff1677014affc48247d48a5d39c454",
+     "size": 8797,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IR4B.eds.ebf",
+     "sha256": "8951f9d5a3f7126e5953207f0a8eca83322230397ed59d8ead3e0ea6e9a4d879",
+     "size": 8720,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IRT4.eds",
+     "sha256": "fe5b90662e45fef02ec25aefb09b5ebff287300c38dfa43fbb5f53bd4cca9a75",
+     "size": 8776,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IRT4.eds.ebf",
+     "sha256": "43c7cd7ac06d124ef9fc49348182e3eb3efd1c160a4b1e7ddb28e6cb1f035421",
+     "size": 8699,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IT4B.eds",
+     "sha256": "135141c66cfe720706f3ca37258cffc8ff1f371f4df124301a2073925e576e17",
+     "size": 8815,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-IT4B.eds.ebf",
+     "sha256": "cf7a3deeae71b88a557e506d0bdabf3b2b22ef77a02ffb07b324b9811b896c19",
+     "size": 8738,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-OB2.eds",
+     "sha256": "f942e6329d6671f4f7a9c133cbf709ac04e4d95fea3c53cb29b69470b4259aa1",
+     "size": 15879,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-OB2.eds.ebf",
+     "sha256": "70d74757537a08bed0837691f8a61b062cf5da560b6d2f0af3a6990895b62733",
+     "size": 15802,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-OB2L.eds",
+     "sha256": "15891c1d46f92dee900ab6befffeaeefb9d5be0321ca8104ea580a227642b6b4",
+     "size": 15886,
+     "type": "eds"
+    },
+    {
+     "name": "1719 IO Module EDS/1719-OB2L.eds.ebf",
+     "sha256": "01a4435d5bf3e5fb3fcbba2bec7b0dfe7fd32bc6f040d658ebec1900df73c8c9",
+     "size": 15809,
+     "type": "eds"
+    }
+   ],
+   "name": "11554.05_EDS_Files.zip",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "d0264b0694e663237f0b2725309934385d3a5b2be2f32298a6fedac07b74ee28",
+   "size": 133298,
+   "terms": "none stated",
+   "title": "1719-AENTR EtherNet/IP adapter EDS package 11554.05",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/1968/11693.11_EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/5094-aen2tr",
+    "devices/rockwell-automation/5094-aentr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C00FD0600.eds",
+     "sha256": "c7c3d7e5283ae82dab20f07111a21d682e77023aad994ccb2df09a757b9646ab",
+     "size": 17323,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C013E0600.eds",
+     "sha256": "c934dd4b55e8ffbef96413bfed8302e1ceac63fe76330b28c4e877e9784a40f7",
+     "size": 17228,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01410600.eds",
+     "sha256": "9c5477995a5c6f0b9a6649a1dae18e7ac0e648894ec9ad4b369c218eda64f8ac",
+     "size": 17333,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01420600.eds",
+     "sha256": "90ca83cf7c596e7bbffc56be436332727527b4812f08fe2c158dda080ffe2e99",
+     "size": 18440,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01430600.eds",
+     "sha256": "017906c0004d6ef1e486a8411489868194e8ef29da547d3a2ebe414b733b8642",
+     "size": 18450,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01440600.eds",
+     "sha256": "fe1992b754abd8730003a0e79c7f232978ae231a427fe6ab0f4c5468f78a6bd1",
+     "size": 18434,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01460600.eds",
+     "sha256": "aa15737c4216cb8dd18c89b9d5c199a9887720998996ac856c77529b7c24d136",
+     "size": 17218,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C01470600.eds",
+     "sha256": "19782741b77a755532e4bf16f5b978a8c744e210b8cca9e6ad0101f54c8f5d87",
+     "size": 18425,
+     "type": "eds"
+    }
+   ],
+   "name": "11693.11_EDS.zip",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "a0e6e823abf84140acc89719f62130cfcd7eef4bc05f87811fc8a7a34bba7641",
+   "size": 46286,
+   "terms": "none stated",
+   "title": "FLEX 5000 EtherNet/IP adapters EDS package 11693.11 (5094-AENTR, 5094-AEN2TR and variants)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2050/11808.09-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1734-aent",
+    "devices/rockwell-automation/1734-aentr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C006C070B_1734_AENT.eds",
+     "sha256": "76a23243b7fbf2df4b2c83b048349bbe25bf1172c55d88812697f0c8c8d6efdb",
+     "size": 48519,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C00C4070B_1734_AENTR.eds",
+     "sha256": "34e8304305f4d7bb7b7bfc84359495f3e9165ca87e11086bf65071d4fbfe1f84",
+     "size": 48986,
+     "type": "eds"
+    }
+   ],
+   "name": "11808.09-EDS.zip",
+   "retrieved": "2026-11-23T03:39:33Z",
+   "sha256": "f31fab6a86bfd8f0faf045791b8258dc790191ea09fc0403d998871522a4d990",
+   "size": 7298,
+   "terms": "none stated",
+   "title": "POINT I/O 1734-AENT/C and 1734-AENTR/C EDS package 11808.09",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/2159/11894.05-EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1732e-16cfgm12r",
+    "devices/rockwell-automation/1732e-8x8m12dr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000701650300.eds",
+     "sha256": "80b972c0a0816ac4cbfdbeee3990df0f943b5fe3b7f482d51830ad0675905856",
+     "size": 29825,
+     "type": "eds"
+    },
+    {
+     "name": "0001000701660300.eds",
+     "sha256": "b3f3b8397d8922a81fc2655ce72874f9c798b672abe9a5dad1242cb3060c566a",
+     "size": 55643,
+     "type": "eds"
+    }
+   ],
+   "name": "11894.05-EDS.zip",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "6d733a423323020a7c79d199aa79fb1194bbc9cbcf8a2c75deeb4d37e5baf8e0",
+   "size": 7053,
+   "terms": "none stated",
+   "title": "ArmorBlock 1732E 16-point M12 EDS package 11894.05",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/540/10401.33_EDS.zip",
+   "folders": [
+    "devices/rockwell-automation/1738-aent"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C0084060C_1738_AENT_SerB.eds",
+     "sha256": "c328fd321b48e5c3b89890a693eb35afabeba536bdf0b629682d3eb473e6182a",
+     "size": 48466,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C00C5060C_1738_AENTR_SerB.eds",
+     "sha256": "2164f79402380f02b566d18d4ca0a846c32a6688a460d3873e5ac339e4d5dd4b",
+     "size": 48994,
+     "type": "eds"
+    },
+    {
+     "name": "0001000C0104060C_PSSCENA_SerB.eds",
+     "sha256": "2daa1cca711e42167894f046430585de5a5792e1636e0d1856e44c89a0c76e67",
+     "size": 48172,
+     "type": "eds"
+    }
+   ],
+   "name": "10401.33_EDS.zip",
+   "retrieved": "2026-11-23T03:39:33Z",
+   "sha256": "385800c349a5560fa3f59bc3527b729c22e0c26fb035239320cfe1356890817d",
+   "size": 10837,
+   "terms": "none stated",
+   "title": "ArmorPOINT EtherNet/IP adapters EDS package 10401.33 (1738-AENT, 1738-AENTR)",
+   "type": "zip"
+  },
+  "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip": {
+   "content_type": "application/zip",
+   "final_url": "https://nyc3.digitaloceanspaces.com/odva-marketplace/uploads/product/eds_file/552/10989.14.zip",
+   "folders": [
+    "devices/rockwell-automation/1794-aentr"
+   ],
+   "kind": "eds",
+   "members": [
+    {
+     "name": "0001000C01050200.eds",
+     "sha256": "45dafe6e13b170a11327785d9cafe6e3f7ae35eb29901d8d9be5110623ecb18c",
+     "size": 136799,
+     "type": "eds"
+    }
+   ],
+   "name": "10989.14.zip",
+   "retrieved": "2026-11-23T03:36:21Z",
+   "sha256": "4a95df7cee1fec8d6e40cc17a424c4f90e8206d9c6ceb2024bce137a7b185b85",
+   "size": 6316,
+   "terms": "none stated",
+   "title": "FLEX I/O 1794-AENTR EDS package 10989.14",
+   "type": "zip"
+  }
+ },
+ "format": "helmsman-devices-collect-lock 1"
+}
