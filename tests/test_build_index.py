@@ -321,3 +321,73 @@ class CatalogFile(unittest.TestCase):
                 self.assertEqual(bi.main(), 1)
         finally:
             bi.ROOT, sys.argv = old_root, old_argv
+
+
+class Schema(unittest.TestCase):
+    """docs/device.schema.json: a key it does not list, or a value of the wrong type, fails the build."""
+
+    def test_the_schema_is_the_format_it_names(self):
+        import json
+
+        schema = json.loads(bi.SCHEMA.read_text())
+        self.assertEqual(schema["format"], "helmsman-device-schema 1")
+        self.assertIn("device", schema["root"])
+
+    def test_every_device_in_the_library_conforms(self):
+        for f in sorted((bi.ROOT / "devices").glob("*/*/device.toml")):
+            with self.subTest(folder=f.parent.name):
+                bi.entry(f.parent)
+
+    def test_unknown_keys_refused_at_every_depth(self):
+        for extra in (
+            'surprise = "x"\n',
+            "[surprise]\nx = 1\n",
+            "[[surprise]]\nx = 1\n",
+            '[device.photo]\nurl = "https://v.example/a.png"\npage = "https://v.example/a"\nseen = 2026-11-16\nx = 1\n',
+            '[protocols.enip]\ndriver = "enip-io"\nrunaway = true\n',
+            (
+                '[protocols.enip]\ndriver = "enip-io"\n[protocols.enip.eds]\nname = "a.eds"\nsize = 1\n'
+                f'sha256 = "{"a" * 64}"\nrunaway = 1\n'
+            ),
+            '[protocols.profinet]\ndriver = "enip-io"\n',
+            '[[sources]]\ntitle = "t"\nsha256 = "aa"\nwhere = "p. 1"\nextra = "x"\n',
+            '[[points]]\nname = "n"\nmeaning = "m"\nsource = "s"\ncolour = "red"\n',
+        ):
+            with self.subTest(extra=extra), self.assertRaises(SystemExit) as err:
+                entry(extra)
+            self.assertIn("not a key of docs/device.schema.json", str(err.exception))
+
+    def test_unknown_key_in_the_device_table_refused(self):
+        with self.assertRaises(SystemExit):
+            entry('colour = "red"\n')
+
+    def test_wrong_types_refused(self):
+        for extra in (
+            "channels = 8\n",
+            'article = ["a"]\n',
+            "checked_on = true\n",
+            '[identity.enip]\nvendor_id = "48"\nproduct_code = 1\n',
+            "[identity.enip]\nvendor_id = true\nproduct_code = 1\n",
+            "[protocols.enip]\ndriver = 1\n",
+            '[protocols.modbus]\ndriver = "modbus-tcp"\nport = "502"\n',
+            "points = 3\n",
+            'points = ["a"]\n',
+            "[[points]]\nname = 1\n",
+            '[protocols]\nenip = "x"\n',
+        ):
+            with self.subTest(extra=extra), self.assertRaises(SystemExit):
+                entry(extra)
+
+    def test_a_path_that_climbs_out_of_its_folder_refused(self):
+        for name in ("../x.map", "/etc/passwd", "a/b.map", "..", "x\\\\y.map"):
+            with self.subTest(map=name), self.assertRaises(SystemExit):
+                entry(f'[protocols.modbus]\ndriver = "modbus-tcp"\nmap = "{name}"\n')
+        for name in ("../x.device", "/x.device", "sub/x.device"):
+            with self.subTest(profile=name), self.assertRaises(SystemExit):
+                entry(f'profile = "{name}"\n')
+        with self.assertRaises(SystemExit):
+            entry(
+                '[protocols.enip]\ndriver = "enip-io"\n'
+                '[protocols.enip.eds]\nname = "../../x.eds"\nsize = 1\n'
+                f'sha256 = "{"a" * 64}"\n'
+            )

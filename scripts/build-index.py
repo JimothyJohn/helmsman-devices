@@ -228,6 +228,40 @@ def catalog(index: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+SCHEMA = ROOT / "docs" / "device.schema.json"
+TYPES = {
+    "str": lambda v: isinstance(v, str),
+    "int": lambda v: isinstance(v, int) and not isinstance(v, bool),
+    "bool": lambda v: isinstance(v, bool),
+    # A TOML date or a quoted YYYY-MM-DD; date() checks the calendar.
+    "date": lambda v: (
+        (isinstance(v, datetime.date) and not isinstance(v, datetime.datetime)) or isinstance(v, str)
+    ),
+    "list": lambda v: isinstance(v, list),
+    "map": lambda v: isinstance(v, dict),
+}
+
+
+def conform(v, spec, path, rel):
+    """Refuse a key the schema does not list and a value of the wrong type."""
+    if isinstance(spec, str):
+        if not TYPES[spec](v):
+            raise SystemExit(f"{rel}: {path}: a {spec}, got {type(v).__name__}")
+    elif isinstance(spec, list):
+        if not isinstance(v, list) or not all(isinstance(r, dict) for r in v):
+            raise SystemExit(f"{rel}: {path}: a list of tables")
+        for i, row in enumerate(v):
+            conform(row, spec[0], f"{path}[{i}]", rel)
+    else:
+        if not isinstance(v, dict):
+            raise SystemExit(f"{rel}: {path or 'device.toml'}: a table, got {type(v).__name__}")
+        for key, val in v.items():
+            where = f"{path}.{key}" if path else key
+            if key not in spec:
+                raise SystemExit(f"{rel}: {where}: not a key of docs/device.schema.json")
+            conform(val, spec[key], where, rel)
+
+
 def entry(folder: pathlib.Path) -> dict:
     t = tomllib.loads((folder / "device.toml").read_text())
     dev = t.get("device", {})
@@ -310,6 +344,8 @@ def entry(folder: pathlib.Path) -> dict:
         out["points"] = len(points)
     protocols = {}
     for name, p in t.get("protocols", {}).items():
+        if not isinstance(p, dict):
+            raise SystemExit(f"{rel}: protocols.{name}: a table with a driver")
         driver = text(p.get("driver"), f"{rel}: protocols.{name}.driver")
         if driver not in ("enip-io", "modbus-tcp", "logix-tag"):
             raise SystemExit(f"{rel}: protocols.{name}.driver: not a Helmsman driver: {driver}")
@@ -334,6 +370,8 @@ def entry(folder: pathlib.Path) -> dict:
         protocols[name] = rec
     if protocols:
         out["protocols"] = protocols
+    # Last, so a field's own message (what a box needs of it) wins over the schema's.
+    conform(t, json.loads(SCHEMA.read_text())["root"], "", rel)
     return out
 
 
