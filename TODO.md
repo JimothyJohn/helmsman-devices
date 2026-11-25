@@ -45,6 +45,45 @@ Open items for the device library. The board (`/todo`) renders this file; an
       asked: 2026-11-16
       by: modbus session
 
+## From Wayfinder research (2026-11-25)
+
+- [ ] **Never mirror IODDs from IODDfinder; keep a link, a hash and the `ioddId`** — IODDfinder's own terms (Clause 5.2, read in its web app on 2026-11-25) let a registered user store IODDs for internal use and bar providing them to third parties "against payment or free of charge"; Clause 5.3 bars using them to imitate the portal. A public library that copied IODDs would breach that, so an IO-Link entry should hold vendor, product, `ioddId`, version, the vendor's own page, the SHA-256 of the file one contributor downloaded, and the date read, and no file. Where the vendor also posts the IODD on its own site, cite that page. This is a reading of the terms, not legal advice, and Clause 9 lets the portal change them at any time. Confidence: medium; the API guide returned 401, so rate limits are unknown.
+      result: docs/intake.md and the README's vendor-files section say so in a short rule, with the date the terms were read
+      model: sonnet
+      est: 30m
+      difficulty: low
+      id: iodd-link-hash-rule
+      source: https://io-link.com/legal-information
+      findings: 2026-11-25-ioddfinder-terms-bar-redistribution, 2026-11-24-vendor-eds-iodd-public-addresses-terms
+      asked: 2026-11-25
+
+- [ ] **Record provenance per device, starting with Turck's Li-Q25L** — Nick backed this move on 2026-11-25. Each entry would name its page URL, file URL, read date, SHA-256 and terms URL, and CI would flag a changed hash. First row: page https://www.turck.us/en/product/IODD%20IO-Link%20Li-Q25L, file https://www.turck.us/attachment/IODD_IOL_LI-Q25L.zip, SHA-256 2493001ddf733e1670e923e9b70f1710e409933e8bdfd23da66d0fb0c75d104f (read 2026-11-24). The IODD XML inside is dated 2010-12-22 (v1.0.1), and no file-use terms were readable on Turck's pages, so ask Turck in writing before any bulk crawl. Confidence: low; one fetch, and the XML was not parsed.
+      result: the Turck Li-Q25L entry carries the row; a documented place for the fields in docs/device-toml.md; if the CI check needs a schema change, stop and say so in the pull request
+      model: sonnet
+      est: 2h
+      difficulty: med
+      id: provenance-turck-li-q25l
+      source: https://www.turck.us/attachment/IODD_IOL_LI-Q25L.zip
+      findings: 2026-11-24-turck-iodd-public-zip-dated-2010
+      asked: 2026-11-25
+
+- [ ] **Licence the device data and take contributions with a DCO sign-off** — the repo is MIT licensed today (README line 80) and has no CONTRIBUTING. CC0 waives copyright and database rights and disclaims warranty, so firms can reuse the data with no conditions; ODbL would require share-alike on any firm that publicly uses a derived database. The Developer Certificate of Origin is one `Signed-off-by` line and transfers no rights. CC0 grants no patent or trademark rights, and vendor datasheet content may carry its own terms. Not legal advice. Confidence: medium.
+      options: CC0 for device data, DCO for contributions | keep MIT for everything, add the DCO | leave as is
+      recommend: CC0 for device data and the DCO; it is the cheapest way for a firm to reuse the moat
+      stakes: med
+      id: data-licence-dco
+      source: https://developercertificate.org/
+      findings: 2026-11-25-bounty-1099-threshold-dco-cc0-device-data
+      asked: 2026-11-25
+
+- [ ] **Bounties: collect a W-9 or W-8BEN at the first payment, or pay through a platform** — for payments made in 2026 the IRS threshold for a 1099-NEC is $2,000 a year per contributor (up from $600), and a platform that pays out files its own forms. Whether overseas mappers owe withholding is unsettled in the pages read, so ask an accountant before the first payment over $2,000. Today's bounty is credit and a direct line to Nick, with no cash, so nothing is due until cash returns. Not tax advice. Confidence: medium.
+      needs: Nick, and an accountant before any cash payment
+      status: blocked
+      id: bounty-tax-forms
+      source: https://www.irs.gov/pub/irs-prior/i1099mec--2026.pdf
+      findings: 2026-11-25-bounty-1099-threshold-dco-cc0-device-data
+      asked: 2026-11-25
+
 ## Library work
 
 - [x] **Hash the documents some channels lines were read from** — channels for Schneider PM5560, STB NIP2311, TM3BCEIP, TPRBCEIP, Siemens SENTRON PAC3200/4200, SINAMICS G120, IM 155-6 MF HF and SMC EX260/EX600 came from vendor pages found by search, not from a document in the entry's `[[sources]]`. PAC4200 and G120 were read from other editions than the entries name.
