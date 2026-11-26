@@ -26,9 +26,19 @@ label and rule 2 below are what cover that.
 ## The run
 
 ```sh
-gh issue list --state open --label intake --limit 50 \
-    --json number,title,body,labels | python3 -I scripts/intake.py
+gh api 'repos/JimothyJohn/helmsman-devices/issues?state=open&labels=intake&per_page=50' \
+    --jq '[.[] | select(.pull_request | not) | {number, title, body, labels}]' \
+    | python3 -I scripts/intake.py
 ```
+
+This is GitHub's REST API, not `gh issue list`: cloud runs get HTTP 403 from
+the GraphQL API that `gh issue list`, `gh issue edit` and `gh issue comment`
+use. For the same reason, post a fixed sentence with
+`gh api repos/JimothyJohn/helmsman-devices/issues/<n>/comments -f body='<sentence>'`
+and swap the label with
+`gh api -X DELETE repos/JimothyJohn/helmsman-devices/issues/<n>/labels/intake`
+then `gh api repos/JimothyJohn/helmsman-devices/issues/<n>/labels -f 'labels[]=drafted'`.
+`gh pr create` still works there.
 
 It prints `{"items": [...], "skipped": [...]}`. An empty `items` ends the
 run.
