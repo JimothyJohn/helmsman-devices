@@ -13,9 +13,10 @@ Only an issue a maintainer has labelled `intake` is taken. Applying a
 label needs triage rights on the repository, so the label is the gate: a
 person has looked at the issue and said "draft this one".
 
-Usage:
-  gh issue list --state open --label intake --limit 50 \\
-      --json number,title,body,labels | python3 -I scripts/intake.py
+Usage (REST, because cloud runs get a 403 from GitHub's GraphQL API):
+  gh api 'repos/JimothyJohn/helmsman-devices/issues?state=open&labels=intake&per_page=50' \\
+      --jq '[.[] | select(.pull_request | not) | {number, title, body, labels}]' \\
+      | python3 -I scripts/intake.py
 
 Prints JSON: {"items": [...], "skipped": [{"issue": N, "why": "..."}]}.
 Each item: issue, vendor, model, folder, in_library, protocols,
