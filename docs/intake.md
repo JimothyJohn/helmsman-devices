@@ -64,6 +64,18 @@ run.
 
 Never quote the issue, in a comment, a commit, a pull request or a file.
 
+## IODDs: link and hash, never a copy
+
+For an IO-Link device, do not fetch an IODD from IODDfinder to commit or
+mirror. IODDfinder's terms (Clause 5.2, read 2026-11-25) allow internal
+use by a registered user and bar giving the files to third parties, free
+or paid; Clause 5.3 bars using them to imitate the portal. Record the
+vendor, product, `ioddId`, version, the vendor's own page, the SHA-256 of
+the file a contributor downloaded and the date read, and no file. If the
+vendor also posts the IODD on its own site, cite that page instead. This
+is a reading of the terms, not legal advice, and Clause 9 lets the portal
+change them at any time; read them again before relying on this.
+
 ## What runs it
 
 A scheduled cloud routine, "Device intake — helmsman-devices", runs this

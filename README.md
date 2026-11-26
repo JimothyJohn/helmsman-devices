@@ -56,6 +56,16 @@ redistribution. A folder gives the file's name, size and SHA-256 and where
 to download it; a controller with the file at hand checks the hash before
 trusting it. `*.eds` and `*.pdf` are ignored here on purpose.
 
+**IODDs are not mirrored from IODDfinder.** Its terms (Clause 5.2, read
+2026-11-25) let a registered user store IODDs for internal use and bar
+passing them to third parties, free or paid; Clause 5.3 bars using them to
+imitate the portal. An IO-Link entry keeps the vendor, product, `ioddId`,
+version, the vendor's own page, the SHA-256 of the file one contributor
+downloaded and the date it was read, and no file. Where the vendor posts
+the IODD on its own site, cite that page. This is a reading of the terms,
+not legal advice, and the portal can change them (Clause 9). Source:
+<https://io-link.com/legal-information>.
+
 ## Collecting documents
 
 [`collect/`](collect/README.md) records where each vendor file comes from
