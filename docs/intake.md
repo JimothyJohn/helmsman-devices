@@ -26,9 +26,19 @@ label and rule 2 below are what cover that.
 ## The run
 
 ```sh
-gh issue list --state open --label intake --limit 50 \
-    --json number,title,body,labels | python3 -I scripts/intake.py
+gh api 'repos/JimothyJohn/helmsman-devices/issues?state=open&labels=intake&per_page=50' \
+    --jq '[.[] | select(.pull_request | not) | {number, title, body, labels}]' \
+    | python3 -I scripts/intake.py
 ```
+
+This is GitHub's REST API, not `gh issue list`: cloud runs get HTTP 403 from
+the GraphQL API that `gh issue list`, `gh issue edit` and `gh issue comment`
+use. For the same reason, post a fixed sentence with
+`gh api repos/JimothyJohn/helmsman-devices/issues/<n>/comments -f body='<sentence>'`
+and swap the label with
+`gh api -X DELETE repos/JimothyJohn/helmsman-devices/issues/<n>/labels/intake`
+then `gh api repos/JimothyJohn/helmsman-devices/issues/<n>/labels -f 'labels[]=drafted'`.
+`gh pr create` still works there.
 
 It prints `{"items": [...], "skipped": [...]}`. An empty `items` ends the
 run.
@@ -63,6 +73,18 @@ run.
      A link to its manual or EDS would let this go ahead.`
 
 Never quote the issue, in a comment, a commit, a pull request or a file.
+
+## IODDs: link and hash, never a copy
+
+For an IO-Link device, do not fetch an IODD from IODDfinder to commit or
+mirror. IODDfinder's terms (Clause 5.2, read 2026-11-25) allow internal
+use by a registered user and bar giving the files to third parties, free
+or paid; Clause 5.3 bars using them to imitate the portal. Record the
+vendor, product, `ioddId`, version, the vendor's own page, the SHA-256 of
+the file a contributor downloaded and the date read, and no file. If the
+vendor also posts the IODD on its own site, cite that page instead. This
+is a reading of the terms, not legal advice, and Clause 9 lets the portal
+change them at any time; read them again before relying on this.
 
 ## What runs it
 
